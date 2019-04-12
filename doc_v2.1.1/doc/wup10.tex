@@ -1,0 +1,193 @@
+%\magnification=1200
+%\input wupstuff.tex
+\newtoks\footline \footline={\hss\tenrm 10.\folio\hss}
+\pageno=1
+\top
+\vskip 1.5 true in
+\centerline{Section 10: {\bf Element Data}}
+\blankline
+\blankline
+\centerline{\bf ***}
+\blankline
+\blankline
+Numerical data pertaining to electron-contributing elements are required
+for the electron density ({\bf NE}) calculations. These data comprise an
+`element table,' of {\bf NMT} rows and 9 columns, that is set up for the
+run. Each row of the table pertains to a different ion; the default
+value of {\bf NMT} = 38. The columns are for: element symbol (M), atomic
+number (atno), abundance realtive to Hydrogen (AB), ionization potential
+(CHI), partition function U-I and U-II (UI and UII), logarithmic abundance
+on a scale such that Hydrogen = 12.0 (LAB), default value of logarithmic
+abundance (DEF), and an integer (k) identifying the source of the
+abundance value. The default element table is given at the end of this
+section. {\it Note} option MCINPUT.
+\blankline
+Data other than the default values (listed below) can be input with 
+\break {\bf NEWELE} and {\bf ELEMENT} statements, as follows:
+\blankline \noindent
+{\bf NEWELE} ( {\it j M atno AB CHI UI UII LAB DEF k} ) 
+\space \noindent
+where {\it j} (an {\intg} quantity) is the index of a group of entries
+({\it i.e.} a row) in the element table; {\it M} (an {\alfa}
+quantity) must be a valid chemical element symbol; and {\it n} and {\it k}
+({\intg} quantities) and {\it AB, CHI, UI, UII, LAB} and {\it DEF} 
+({\flpt} quantities) will constitute the $j^{th}$ row of the element table. 
+These fields must be given in the order shown.
+A {\bf NEWELE} statement provides all the data for element {\it M}, 
+which will override the entire current contents of the $j^{th}$ row.
+\blankline \noindent
+{\bf ELEMENT} ( {\it M I$_1$ I$_2$ $\ldots$ I$_n$ } ) 
+\space \noindent
+where {\it M} must be a valid chemical element symbol, and {\it I}$_i$
+is one or more phrases, each consisting of a pair of input fields:
+{\it A V }. The field {\it A} must be {\alfa} and is an identifier; it can take
+on the values: {\tt AB} (= abundance), {\tt LAB} (= logarithmic
+abundance), {\tt UI} (= partition function), {\tt UII} (= partition function),
+{\tt CHI} (= ionization potential), or {\tt ATNO} (= atomic number).
+The field {\it V} is numeric, and must be {\intg} for {\it A} = {\tt ATNO},
+but {\flpt} otherwise. Upon reading the phrase {\it I} = {\it A V},
+PANDORA will set the value of {\it A} for element {\it M} equal to {\it V}.
+
+Examples:
+\blankline
+1) $\quad$ {\tt ELEMENT  ( FE  AB 3.5E-5  CHI 7.87  UI 24. ) }
+\spice \noindent
+specifies Iron, and sets the abundance, ionization potential and the
+partition function UI equal to 0.000035, 7.87 and 24.0, respectively.
+\blankline
+2) $\quad$ {\tt ELEMENT  ( FE  CHI 7.87 ) } \par $\phantom{2)} \; \quad$
+{\tt ELEMENT  ( fe  ui 24.  ab 3.5e-5 ) } 
+\spice \noindent
+is one of many configurations equivalent to example (1).
+\blankline
+Note that an {\bf ELEMENT} statement is normally used to override
+single existing entries in the current element table. The
+{\bf NEWELE} statement is provided to allow emergency wholesale changes
+in the built-in default element data; (the preferred way to make bulk
+permanent changes in this table is to modify the PANDORA source code).
+In general the {\bf NEWELE} statement should be avoided since,
+during input reading, {\bf ELEMENT} statements are checked much more
+carefully for correctness and consistency than {\bf NEWELE}
+statements.
+\ej
+PANDORA sets the value of {\bf NMT} to its default before Part B of the input
+is read, and sets up the default values for {\bf NMT} rows of the element
+table before Part D of the input is read (see Section 3). This makes a
+number of things possible; for instance:
+\spice \bull If ``{\tt NMT ( 5 ) }'' occurs, then the element table of the 
+run will contain only 5 rows, whose default data will be set equal to those
+contained in the first five rows of the default element table (see below).
+\spice \bull If ``{\tt NMT ( 39 ) }'' occurs, then the element table of the 
+run will contain 39 rows; the default data for the first 38 rows will be
+equal to those contained in the default element table (see below), while
+the default entries of the 39$^{th}$ row will all be blanks or zero,
+respectively. Note that the input value of {\bf NMT} may not exceed 50.
+\spice \bull Any of the numeric entries in the element table may be changed
+from their default values by mentioning them explicitly in
+{\bf ELEMENT} statements. For example, if only AB(Na) ({\it i.e.} the
+abundance of Sodium) needs to be changed, to 0.00001, then there need
+not be an {\bf NMT} statement, and only \break
+``{\tt Element ( NA AB 1.E-5 ) }''
+would be needed in Part D of the input.
+\spice \bull If {\bf NMT} is explicitly input as greater than 38, then 
+additional ions, with their associated data, can be input with {\bf ELEMENT}
+statements. When an {\bf ELEMENT} statement is processed, its element
+symbol ({\it M}), is compared with those currently present in the
+element table. If there is no match, and if there is at least one empty
+row, then the new element symbol and its associated data will be
+accepted. Conversely, if an attempt is made to introduce more than
+{\bf NMT} entries, then the run will be stopped. When a {\bf NEWELE}
+statement is processed, it will override the contents of the $j^{th}$
+row, regardless.
+\ej
+\centerline{\bf Default Element Table}
+\blankline
+\blankline
+\settabs 10 \columns
+\it
+\+ & \underbar{M} & \underbar{atno} & \underbar{AB} & \underbar{CHI} & 
+\underbar{UI} & \underbar{UII} & \underbar{LAB} & \underbar{DEF} & 
+\underbar{k} \cr \rm
+\spice
+\+ & H & 1 & 0 & 13.595 & 2.00 & 1.00 & 0 & 12.00  \cr
+\+ & HE & 2 & 0 & 24.58 & 1.00 & 2.00 & 0 & 11.00  \cr
+\+ & HE2 & 2 & 0 & 54.403 & 2.00 & 1.00 & 0 & 11.00 \cr
+\+ & LI & 3 & 0 & 5.39 & 2.09 & 1.00 & 0 & 1.05 & 3 \cr
+\+ & BE & 4 & 0 & 9.32 & 1.02 & 2.00 & 0 & 1.38 & 3 \cr
+\+ & B & 5 & 0 & 8.296 & 6.03 & 1.00 & 0 & 2.70 & 1 \cr
+\+ & C & 6 & 0 & 11.256 & 9.28 & 5.94 & 0 & 8.39 & 4 \cr
+\+ & N & 7 & 0 & 14.529 & 4.07 & 8.91 & 0 & 7.85 & 5 \cr
+\+ & O & 8 & 0 & 13.614 & 8.70 & 3.98 & 0 & 8.66 & 2 \cr
+\+ & F & 9 & 0 & 17.418 & 5.62 & 8.32 & 0 & 4.56 & 1 \cr
+\+ & NE & 10 & 0 & 21.558 & 1.00 & 5.37 & 0 & 7.84 & 3 \cr
+\+ & NA & 11 & 0 & 5.138 & 2.02 & 1.00 & 0 & 6.17 & 3 \cr
+\+ & MG & 12 & 0 & 7.644 & 1.01 & 2.01 & 0 & 7.53 & 3 \cr
+\+ & AL & 13 & 0 & 5.984 & 5.83 & 1.03 & 0 & 6.37 & 3 \cr
+\+ & SI & 14 & 0 & 8.149 & 9.26 & 5.82 & 0 & 7.51 & 3 \cr
+\+ & P & 15 & 0 & 10.474 & 4.46 & 8.12 & 0 & 5.36 & 3 \cr
+\+ & S & 16 & 0 & 10.357 & 8.12 & 4.16 & 0 & 7.14 & 3 \cr
+\+ & CL & 17 & 0 & 13.014 & 5.25 & 7.76 & 0 & 5.50 & 1 \cr
+\+ & AR & 18 & 0 & 15.755 & 1.00 & 4.89 & 0 & 6.18 & 3 \cr
+\+ & K & 19 & 0 & 4.339 & 2.18 & 1.00 & 0 & 5.08 & 3 \cr
+\+ & CA & 20 & 0 & 6.111 & 1.03 & 2.29 & 0 & 6.31 & 3 \cr
+\+ & SC & 21 & 0 & 6.538 & 12.0 & 22.9 & 0 & 3.05 & 3 \cr
+\+ & TI & 22 & 0 & 6.818 & 30.2 & 56.2 & 0 & 4.90 & 3 \cr
+\+ & V & 23 & 0 & 6.738 & 41.7 & 43.7 & 0 & 4.00 & 1 \cr
+\+ & CR & 24 & 0 & 6.763 & 10.3 & 7.24 & 0 & 5.64 & 3 \cr
+\+ & MN & 25 & 0 & 7.432 & 6.45 & 7.76 & 0 & 5.39 & 1 \cr
+\+ & FE & 26 & 0 & 7.896 & 24.5 & 39.2 & 0 & 7.45 & 3 \cr 
+\+ & CO & 27 & 0 & 7.863 & 31.6 & 27.5 & 0 & 4.92 & 1 \cr
+\+ & NI & 28 & 0 & 7.633 & 28.8 & 10.0 & 0 & 6.23 & 3 \cr
+\+ & CU & 29 & 0 & 7.724 & 2.29 & 1.02 & 0 & 4.21 & 1 \cr
+\+ & ZN & 30 & 0 & 9.391 & 1.00 & 2.00 & 0 & 4.60 & 1 \cr
+\+ & GA & 31 & 0 & 5.997 & 5.37 & 1.00 & 0 & 2.88 & 1 \cr
+\+ & GE & 32 & 0 & 7.899 & 8.13 & 4.37 & 0 & 3.58 & 3 \cr
+\+ & RB & 37 & 0 & 4.177 & 2.29 & 1.00 & 0 & 2.60 & 1 \cr
+\+ & SR & 38 & 0 & 5.693 & 1.26 & 2.19 & 0 & 2.92 & 3 \cr
+\+ & Y & 39 & 0 & 6.377 & 12.0 & 15.1 & 0 & 2.21 & 3 \cr
+\+ & ZR & 40 & 0 & 6.835 & 33.9 & 45.7 & 0 & 2.59 & 3 \cr
+\+ & BA & 56 & 0 & 5.210 & 2.29 & 4.17 & 0 & 2.17 & 3 \cr
+\blankline
+\blankline
+\noindent (The source citations identified by the value of the integer k
+appear in the PANDORA printout; these are built into the source code, and
+cannot be changed by {\bf ELEMENT} or {\bf NEWELE} statements.)
+\blankline
+\blankline
+When input reading is finished, the `element table' exists only
+in {\it provisional} form. It is converted into {\it final}
+form by the following sequence of steps:
+
+1) Look at every row. If any AB $>$ 0, then compute the corresponding LAB
+from it; if AB $\leq$ 0, then set LAB = DEF.
+
+2) Look at every row. If any AB = 0, then compute it from the corresponding
+LAB; if AB $\leq$ 0, then set AB = 0 and LAB = 0.
+(AB $<$ 0 is legitimate in {\bf ELEMENT} and {\bf NEWELE} statements.)
+
+3) If {\bf FABD} $\neq$ 0, then look at every row {\it except}
+those of Hydrogen or Helium. Set the final value of AB = {\bf FABD} $\times$ AB.
+If this final AB $>$ 0, then compute LAB from it.
+
+4) {\it Squeeze out} (eliminate) from the table every row whose AB = 0,
+and adjust the value of {\bf NMT} accordingly.
+
+5) If the Hamburg data (used to calculate depth-dependent partition functions
+when option PARTVAR is on) has usable {\tt CHI} values for any of the ions in
+the final table, then such Hamburg values will replace the corresponding default
+or input values of {\tt CHI} (regardless of the status of option PARTVAR).
+\blankline
+%\blankline
+%\vfill \vfill
+%\vfill \vfill
+%\vfill \vfill
+%\vfill \vfill
+%\vfill \vfill
+%\vfill \vfill
+%\vfill \vfill
+%\vfill 
+\vfill
+\noindent (Section 10 -- last revised: 2007 Feb 05) %\par
+\message{Section 10 ends at page 10.\the\pageno}
+\ej
+%\end

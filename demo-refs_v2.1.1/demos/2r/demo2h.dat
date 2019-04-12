@@ -1,0 +1,21 @@
+[ DEMO-2                  3 L H, D.B.  ITER 01-02   28 OCT 87   ]
+KK ( 9 ) > 
+NVH ( 0 ) > 
+USE ( MODEL ) >
+USE ( ATOM ) >
+DO ( LYMAN ) > 
+OMIT ( PHASE2 ) > 
+DO ( USETRIN ) >
+GO > 
+USE ( MODEL ) > 
+USE ( ATOM ) > 
+USE ( RESTART ) > 
+IOMX ( 2 ) > 
+POPUP ( HYDROGEN ) > 
+XK ( 1. 1.1 1.2 1.4 1.7 2.3 3. 5. 8. ) > 
+TRN 2 ( I 23 5000. 5000. ) >
+TRN 3 ( I 24 5300. 5300. ) >
+GO >
+GO >
+USE ( MODEL ) > 
+GO

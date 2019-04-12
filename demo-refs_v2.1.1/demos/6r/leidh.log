@@ -1,0 +1,147 @@
++ Tue Mar 25 11:06:48 EDT 2014 bin/pandora started
+  running case=leidh, atmospheric model=leid, atomic data=hl5
+          stats=stats/, opac=opacities/, bin=bin/, atoms=atoms/, input=./, output=./
+running on:
+Linux menfin 2.6.32-431.3.1.el6.x86_64 #1 SMP Fri Jan 3 21:39:27 UTC 2014 x86_64 x86_64 x86_64 GNU/Linux
+input files:
+-rw-r--r-- 1 sylvain sylvain 225487 Mar 25 11:05 ./leid.mod
+-rw-r----- 1 sylvain sylvain   7550 Mar 24 17:01 ./leidh.dat
+-rw-r----- 1 sylvain sylvain      0 Oct  3 15:59 ./leidh.jnu
+-rw-r----- 1 sylvain sylvain  75938 Jun 21  2013 ./leidh.res
+-rw-r--r-- 1 sylvain sylvain   1711 Apr 18  2007 atoms/hl5.atm
+opacity files:
+-rw-r--r-- 1 sylvain sylvain        0 Apr 15  2009 opacities/average.dat
+-r--r--r-- 1 sylvain sylvain 64155430 Apr 18  2007 opacities/composite.dat
+-r--r--r-- 1 sylvain sylvain  1074363 Apr 18  2007 opacities/statistical.dat
++ Tue Mar 25 11:07:01 EDT 2014 bin/pandora.x started
+Warning: ieee_underflow is signaling
+Warning: ieee_inexact is signaling
+PANDORA done
+ 2014-Mar-25 11:07:01  #                Read input, part 1              
+ "Delayed-ABORT" now activated.
+ 2014-Mar-25 11:07:01  #                Read input, part 2              
+ 2014-Mar-25 11:07:01  #                Input printing                  
+ "Delayed-ABORT" now deactivated.
+ 2014-Mar-25 11:07:01  #                Populations Initialization      
+ 2014-Mar-25 11:07:01  #                Precalculations                 
+ 2014-Mar-25 11:07:01  #                Line Opacities Start-Up         
+ 2014-Mar-25 11:07:02  #                Continuum Initialization        
+ 2014-Mar-25 11:07:02  #   1/11         Continuum Calculations          
+ 2014-Mar-25 11:07:32  #   1/11         Rates                           
+ 2014-Mar-25 11:07:32  #   1/11         H minus                         
+ 2014-Mar-25 11:07:32  #   1/11         B-ratios Initialization         
+ 2014-Mar-25 11:07:32  #   1/11         Damping Parameter               
+ 2014-Mar-25 11:07:32  #   1/11   1/ 1  Line Source Functions           
+ 2014-Mar-25 11:07:38  #   1/11         Number Densities                
+ 2014-Mar-25 11:07:38  #   1/11         Hydrostatic Equilibrium         
+ 2014-Mar-25 11:07:38  #   1/11         Number Densities                
+ 2014-Mar-25 11:07:38  #   1/11         Restart Data                    
+ 2014-Mar-25 11:07:38  #   2/11         Continuum Calculations          
+ 2014-Mar-25 11:08:13  #   2/11         Rates                           
+ 2014-Mar-25 11:08:14  #   2/11         H minus                         
+ 2014-Mar-25 11:08:14  #   2/11         Damping Parameter               
+ 2014-Mar-25 11:08:14  #   2/11   1/ 1  Line Source Functions           
+ 2014-Mar-25 11:08:18  #   2/11         Number Densities                
+ 2014-Mar-25 11:08:18  #   2/11         Hydrostatic Equilibrium         
+ 2014-Mar-25 11:08:18  #   2/11         Number Densities                
+ 2014-Mar-25 11:08:18  #   2/11         Restart Data                    
+ 2014-Mar-25 11:08:18  #   3/11         Continuum Calculations          
+ 2014-Mar-25 11:08:51  #   3/11         Rates                           
+ 2014-Mar-25 11:08:53  #   3/11         H minus                         
+ 2014-Mar-25 11:08:53  #   3/11         Damping Parameter               
+ 2014-Mar-25 11:08:53  #   3/11   1/ 1  Line Source Functions           
+ 2014-Mar-25 11:08:56  #   3/11         Number Densities                
+ 2014-Mar-25 11:08:56  #   3/11         Hydrostatic Equilibrium         
+ 2014-Mar-25 11:08:56  #   3/11         Number Densities                
+ 2014-Mar-25 11:08:56  #   3/11         Restart Data                    
+ 2014-Mar-25 11:08:56  #   4/11         Continuum Calculations          
+ 2014-Mar-25 11:09:30  #   4/11         Rates                           
+ 2014-Mar-25 11:09:31  #   4/11         H minus                         
+ 2014-Mar-25 11:09:31  #   4/11         Damping Parameter               
+ 2014-Mar-25 11:09:31  #   4/11   1/ 1  Line Source Functions           
+ 2014-Mar-25 11:09:35  #   4/11         Number Densities                
+ 2014-Mar-25 11:09:35  #   4/11         Hydrostatic Equilibrium         
+ 2014-Mar-25 11:09:35  #   4/11         Number Densities                
+ 2014-Mar-25 11:09:35  #   4/11         Restart Data                    
+ 2014-Mar-25 11:09:35  #   5/11         Continuum Calculations          
+ 2014-Mar-25 11:10:09  #   5/11         Rates                           
+ 2014-Mar-25 11:10:10  #   5/11         H minus                         
+ 2014-Mar-25 11:10:10  #   5/11         Damping Parameter               
+ 2014-Mar-25 11:10:10  #   5/11   1/ 1  Line Source Functions           
+ 2014-Mar-25 11:10:14  #   5/11         Number Densities                
+ 2014-Mar-25 11:10:14  #   5/11         Hydrostatic Equilibrium         
+ 2014-Mar-25 11:10:14  #   5/11         Number Densities                
+ 2014-Mar-25 11:10:14  #   5/11         Restart Data                    
+ 2014-Mar-25 11:10:14  #   6/11         Continuum Calculations          
+ 2014-Mar-25 11:10:47  #   6/11         Rates                           
+ 2014-Mar-25 11:10:48  #   6/11         H minus                         
+ 2014-Mar-25 11:10:48  #   6/11         Damping Parameter               
+ 2014-Mar-25 11:10:48  #   6/11   1/ 1  Line Source Functions           
+ 2014-Mar-25 11:10:51  #   6/11         Number Densities                
+ 2014-Mar-25 11:10:51  #   6/11         Hydrostatic Equilibrium         
+ 2014-Mar-25 11:10:51  #   6/11         Number Densities                
+ 2014-Mar-25 11:10:51  #   6/11         Restart Data                    
+ 2014-Mar-25 11:10:51  #   7/11         Continuum Calculations          
+ 2014-Mar-25 11:11:25  #   7/11         Rates                           
+ 2014-Mar-25 11:11:26  #   7/11         H minus                         
+ 2014-Mar-25 11:11:26  #   7/11         Damping Parameter               
+ 2014-Mar-25 11:11:26  #   7/11   1/ 1  Line Source Functions           
+ 2014-Mar-25 11:11:29  #   7/11         Number Densities                
+ 2014-Mar-25 11:11:29  #   7/11         Hydrostatic Equilibrium         
+ 2014-Mar-25 11:11:29  #   7/11         Number Densities                
+ 2014-Mar-25 11:11:29  #   7/11         Restart Data                    
+ 2014-Mar-25 11:11:29  #   8/11         Continuum Calculations          
+ 2014-Mar-25 11:12:03  #   8/11         Rates                           
+ 2014-Mar-25 11:12:04  #   8/11         H minus                         
+ 2014-Mar-25 11:12:04  #   8/11         Damping Parameter               
+ 2014-Mar-25 11:12:04  #   8/11   1/ 1  Line Source Functions           
+ 2014-Mar-25 11:12:08  #   8/11         Number Densities                
+ 2014-Mar-25 11:12:08  #   8/11         Hydrostatic Equilibrium         
+ 2014-Mar-25 11:12:08  #   8/11         Number Densities                
+ 2014-Mar-25 11:12:08  #   8/11         Restart Data                    
+ 2014-Mar-25 11:12:08  #   9/11         Continuum Calculations          
+ 2014-Mar-25 11:12:43  #   9/11         Rates                           
+ 2014-Mar-25 11:12:43  #   9/11         H minus                         
+ 2014-Mar-25 11:12:43  #   9/11         Damping Parameter               
+ 2014-Mar-25 11:12:43  #   9/11   1/ 1  Line Source Functions           
+ 2014-Mar-25 11:12:47  #   9/11         Number Densities                
+ 2014-Mar-25 11:12:47  #   9/11         Hydrostatic Equilibrium         
+ 2014-Mar-25 11:12:47  #   9/11         Number Densities                
+ 2014-Mar-25 11:12:47  #   9/11         Restart Data                    
+ 2014-Mar-25 11:12:47  #  10/11         Continuum Calculations          
+ 2014-Mar-25 11:13:22  #  10/11         Rates                           
+ 2014-Mar-25 11:13:22  #  10/11         H minus                         
+ 2014-Mar-25 11:13:22  #  10/11         Damping Parameter               
+ 2014-Mar-25 11:13:22  #  10/11   1/ 1  Line Source Functions           
+ 2014-Mar-25 11:13:28  #  10/11         Number Densities                
+ 2014-Mar-25 11:13:28  #  10/11         Hydrostatic Equilibrium         
+ 2014-Mar-25 11:13:28  #  10/11         Number Densities                
+ 2014-Mar-25 11:13:28  #  10/11         Restart Data                    
+ 2014-Mar-25 11:13:28  #  11/11         Continuum Calculations          
+ 2014-Mar-25 11:14:03  #  11/11         Rates                           
+ 2014-Mar-25 11:14:04  #  11/11         H minus                         
+ 2014-Mar-25 11:14:04  #  11/11         Damping Parameter               
+ 2014-Mar-25 11:14:04  #  11/11   1/ 1  Line Source Functions           
+ 2014-Mar-25 11:14:08  #  11/11         Number Densities                
+ 2014-Mar-25 11:14:08  #  11/11         Hydrostatic Equilibrium         
+ 2014-Mar-25 11:14:08  #  11/11         Number Densities                
+ 2014-Mar-25 11:14:08  #  11/11         Restart Data                    
+ 2014-Mar-25 11:14:08  #                Line Post-Processing            
+ 2014-Mar-25 11:14:08  #                Continuum Calculations          
+ 2014-Mar-25 11:14:20  #                Continuum Summary               
+ 2014-Mar-25 11:14:21  #                Iterations Summaries            
+ 2014-Mar-25 11:14:21  #                Spectrum File Start-Up          
+ 2014-Mar-25 11:14:21  #                Continuum Emission              
+ 2014-Mar-25 11:14:33  #                Line Emission                   
+ 2014-Mar-25 11:14:43  #                Contributions Summary           
+2014-Mar-25 LEID     H   ; itr  11  1(0); n,nl,nt  72    5   10; sec     406; ela  0:07:42; vrsn 78.018; cpu menfin             
++ Tue Mar 25 11:14:43 EDT 2014 bin/pandora.x completed, exit status=0
+ouput files:
+-rw-r----- 1 sylvain sylvain  421174 Mar 25 11:14 ./leidh.jrl.002
+-rw-r----- 1 sylvain sylvain 6623412 Mar 25 11:14 ./leidh.aaa.002
+-rw-r----- 1 sylvain sylvain   10148 Mar 25 11:14 ./leidh.aix.002
+-rw-r----- 1 sylvain sylvain 4951768 Mar 25 11:14 ./leidh.spc.002
+-rw-r----- 1 sylvain sylvain   39058 Mar 25 11:14 ./leidh.msc.002
+-rw-r----- 1 sylvain sylvain   75938 Mar 25 11:14 ./leidh.rst.002
+-rw-r----- 1 sylvain sylvain   85316 Mar 25 11:14 ./leidh.pop.002
+= Tue Mar 25 11:14:43 EDT 2014 done.

@@ -1,0 +1,311 @@
+> SUN        MODEL SP     15 L H       ITER 84-88     13-Sep-24
+>  ---------1------------1------------1------------1------------1
+> 
+USE ( MODEL ) >
+> 
+USE ( ATOM ) >
+> 
+K      (  30 ) >
+kmmax  ( 800 ) >
+kstmax (  44 ) >
+> 
+L   ( 2 ) >
+LF  ( 8 )  >
+NWV ( 13 ) > number of additional wavelengths
+> 
+omit ( acsfprnt ) >
+do ( addcopr ) >
+omit ( adn1dmp ) >
+omit ( alsfprnt ) >
+do ( aluprnt ) >
+do ( amdiff ) >
+do ( bdcalc ) >
+omit ( bdgraf ) >
+omit ( calcool ) >
+omit ( calheat ) >
+do ( calprnt ) >
+do ( carprnt ) >
+omit ( cefacts ) >
+do ( conflux ) >
+omit ( didhc ) >
+omit ( diffana ) >
+omit ( dpdwprnt ) >
+do ( dsmooth ) >
+do ( elecprnt ) >
+do ( emerint ) >
+do ( EMIPRNT ) >
+omit ( EPCOMP ) >
+do ( feprnt ) >
+omit ( flwbroad ) >
+DO ( HELPRNT HEL2PRNT ) >
+omit ( henorm ) >
+do ( HMS ) >
+do ( HSE ) >
+omit ( komprnt ) >
+omit ( lbdprnt ) >
+omit ( LSFGRAF ) >
+omit ( LSFPRNT ) >
+do ( LYMAN ) >
+do ( magprnt ) >
+omit ( nedit ) >
+DO ( OPAPRNT ) >
+omit ( origin orshort ) >
+do ( oxyprnt ) >
+do ( oxy2prnt ) >
+do ( oxy3prnt ) >
+do ( phase2 ) >
+do ( prdmeth ) >
+omit ( prdprnt ) >
+do ( procprnt ) >
+omit ( PROSAV ) >
+omit ( RATEFULL ) >
+OMIT ( RATEGRAF ) >
+omit ( rateprnt ) >
+do ( rhbprdt ) >
+omit ( rhedit ) >
+OMIT ( RIJPRNT ) >
+do ( rsmooth ) >
+omit ( sedit ) >
+OMIT ( SLYR ) >
+do ( sodprnt ) >
+do ( SPECSAV ) >
+do ( SSMOOTH ) >
+omit ( stimprnt ) >
+do ( sulprnt ) >
+do ( tauprnt ) >
+OMIT ( TEGRAF ) >
+omit ( usencj ) >
+omit ( wtabprnt ) >
+DO ( ZPRNT ) >
+> 
+GO > Section D follows
+> 
+> jstin ( 1 ) >
+> 
+USE ( MODEL ) >
+> 
+lwnt ( 10 ) >   for KOMPRNT
+> 
+idfsw ( 1 ) >   for dI/dh at every line wavelength
+> 
+iwsmd ( 1 ) >
+ibnview ( 50 ) >
+iprdd ( 10 )  iprdf ( 20 ) >
+> 
+ZXMIN ( 1. )  MNG1 ( 36 ) >   MN1 ( 80 )  >
+kdiag ( 5 )  kdifd1 ( 2 )  kdamp ( 0 )  n1nup ( 1 )  mdfg ( 0 )  >
+kdifgs ( 2 )  ipdij ( 0 )  nefdf ( 2 )  kbnds ( 0 )  kb1ws ( 2 )  >
+kb1wa ( 35 )  kb1wb ( 40 )  ldfd1 ( 1 )  >
+wbdir ( .5 ) >
+> 
+> NABS ( 33 35 44 45 ) > see SP.mod
+> 
+KOOLSUM ( 1 ) >
+> 
+USE ( ATOM ) >
+> 
+cimethod ( -clark shah johnson onthefly ) >
+cemethod ( -scholz pb -aggrwl johnson onthefly ) >
+> 
+CSDW ( 1. )  FSTKM ( 1. )  ISTARK ( 89 ) >
+IHSSW ( 1 )  >
+> 
+jedit ( 1 )  jnedp ( 1 )  >
+> 
+LSFPRINT  2  1 ( 1 )  LSFFDB  2  1 ( 1 )  PROF  2  1 ( 1 ) >
+LSFPRINT  3  1 ( 1 )  LSFFDB  3  1 ( 1 )  PROF  3  1 ( 1 ) >
+LSFPRINT  3  2 ( 1 )  lsffdb  3  2 ( 1 )  prof  3  2 ( 1 ) >
+LSFPRINT  4  1 ( 1 )  LSFFDB  4  1 ( 1 )  PROF  4  1 ( 1 ) >
+LSFPRINT  4  2 ( 1 )  LSFFDB  4  2 ( 1 )  PROF  4  2 ( 1 ) >
+LSFPRINT  4  3 ( 1 )  LSFFDB  4  3 ( 1 )  PROF  4  3 ( 1 ) >
+LSFPRINT  5  1 ( 1 )  LSFFDB  5  1 ( 1 )  PROF  5  1 ( 1 ) >
+LSFPRINT  5  2 ( 1 )  LSFFDB  5  2 ( 1 )  PROF  5  2 ( 1 ) >
+LSFPRINT  5  4 ( 1 )  >
+LSFPRINT  6  1 ( 1 )  LSFFDB  6  1 ( 1 )  PROF  6  1 ( 1 ) >
+LSFPRINT  7  1 ( 1 )  LSFFDB  7  1 ( 1 )  PROF  7  1 ( 1 ) >
+lsfprint  7  5 ( 1 )  >
+LSFPRINT  8  1 ( 1 )  LSFFDB  8  1 ( 1 )  PROF  8  1 ( 1 ) >
+lsfprint  8  7 ( 1 )  >
+LSFPRINT  9  1 ( 1 )  LSFFDB  9  1 ( 1 )  PROF  9  1 ( 0 ) >
+LSFPRINT 10  1 ( 1 )  LSFFDB 10  1 ( 1 )  PROF 10  1 ( 0 ) >
+LSFPRINT 11  1 ( 1 )  LSFFDB 11  1 ( 1 )  PROF 11  1 ( 0 ) >
+LSFPRINT 12  1 ( 1 )  LSFFDB 12  1 ( 1 )  PROF 12  1 ( 0 ) >
+LSFPRINT 13  1 ( 1 )  LSFFDB 13  1 ( 1 )  PROF 13  1 ( 0 ) >
+LSFPRINT 14  1 ( 1 )  LSFFDB 14  1 ( 1 )  PROF 14  1 ( 0 ) >
+LSFPRINT 15  1 ( 1 )  LSFFDB 15  1 ( 0 )  PROF 15  1 ( 0 ) >
+lsfprint 15  7 ( 1 )  lsffdb 15  7 ( 1 )  >
+> 
+> 
+LSFTYP  4  2 ( 1 ) LSFTYP  4  3 ( 1 ) >
+LSFTYP  5  2 ( 1 ) LSFTYP  5  3 ( 1 ) LSFTYP  5  4 ( 1 ) >
+LSFTYP  6  2 ( 1 ) LSFTYP  6  3 ( 1 ) LSFTYP  6  4 ( 1 ) LSFTYP  6  5 ( 1 )
+LSFTYP  7  2 ( 1 ) LSFTYP  7  3 ( 1 ) LSFTYP  7  4 ( 1 ) LSFTYP  7  5 ( 1 )
+LSFTYP  7  6 ( 1 ) >
+LSFTYP  8  2 ( 1 ) LSFTYP  8  3 ( 1 ) LSFTYP  8  4 ( 1 ) LSFTYP  8  5 ( 1 )
+LSFTYP  8  6 ( 1 ) LSFTYP  8  7 ( 1 ) >
+LSFTYP  9  2 ( 1 ) LSFTYP  9  3 ( 1 ) LSFTYP  9  4 ( 1 ) LSFTYP  9  5 ( 1 )
+LSFTYP  9  6 ( 1 ) LSFTYP  9  7 ( 1 ) LSFTYP  9  8 ( 1 ) >
+LSFTYP 10  2 ( 1 ) LSFTYP 10  3 ( 1 ) LSFTYP 10  4 ( 1 ) LSFTYP 10  5 ( 1 )
+LSFTYP 10  6 ( 1 ) LSFTYP 10  7 ( 1 ) LSFTYP 10  8 ( 1 ) LSFTYP 10  9 ( 1 )
+LSFTYP 11  2 ( 1 ) LSFTYP 11  3 ( 1 ) LSFTYP 11  4 ( 1 ) LSFTYP 11  5 ( 1 )
+LSFTYP 11  6 ( 1 ) LSFTYP 11  7 ( 1 ) LSFTYP 11  8 ( 1 ) LSFTYP 11  9 ( 1 )
+LSFTYP 11 10 ( 1 ) >
+LSFTYP 12  2 ( 1 ) LSFTYP 12  3 ( 1 ) LSFTYP 12  4 ( 1 ) LSFTYP 12  5 ( 1 )
+LSFTYP 12  6 ( 1 ) LSFTYP 12  7 ( 1 ) LSFTYP 12  8 ( 1 ) LSFTYP 12  9 ( 1 )
+LSFTYP 12 10 ( 1 ) LSFTYP 12 11 ( 1 ) >
+LSFTYP 13  2 ( 1 ) LSFTYP 13  3 ( 1 ) LSFTYP 13  4 ( 1 ) LSFTYP 13  5 ( 1 )
+LSFTYP 13  6 ( 1 ) LSFTYP 13  7 ( 1 ) LSFTYP 13  8 ( 1 ) LSFTYP 13  9 ( 1 )
+LSFTYP 13 10 ( 1 ) LSFTYP 13 11 ( 1 ) LSFTYP 13 12 ( 1 ) >
+LSFTYP 14  2 ( 1 ) LSFTYP 14  3 ( 1 ) LSFTYP 14  4 ( 1 ) LSFTYP 14  5 ( 1 )
+LSFTYP 14  6 ( 1 ) LSFTYP 14  7 ( 1 ) LSFTYP 14  8 ( 1 ) LSFTYP 14  9 ( 1 )
+LSFTYP 14 10 ( 1 ) LSFTYP 14 11 ( 1 ) LSFTYP 14 12 ( 1 ) LSFTYP 14 13 ( 1 )
+LSFTYP 15  2 ( 1 ) LSFTYP 15  3 ( 1 ) LSFTYP 15  4 ( 1 ) LSFTYP 15  5 ( 1 )
+LSFTYP 15  6 ( 1 ) LSFTYP 15  7 ( 1 ) LSFTYP 15  8 ( 1 ) LSFTYP 15  9 ( 1 )
+LSFTYP 15 10 ( 1 ) LSFTYP 15 11 ( 1 ) LSFTYP 15 12 ( 1 ) LSFTYP 15 13 ( 1 )
+LSFTYP 15 14 ( 1 ) >
+> 
+KRATE  3  2 ( 2 ) >
+KRATE  4  2 ( 2 ) KRATE  4  3 ( 2 ) >
+KRATE  5  2 ( 2 ) KRATE  5  3 ( 2 ) KRATE  5  4 ( 2 ) >
+KRATE  6  2 ( 2 ) KRATE  6  3 ( 2 ) KRATE  6  4 ( 2 ) KRATE  6  5 ( 2 )
+KRATE  7  2 ( 2 ) KRATE  7  3 ( 2 ) KRATE  7  4 ( 2 ) KRATE  7  5 ( 2 )
+KRATE  7  6 ( 2 ) >
+KRATE  8  2 ( 2 ) KRATE  8  3 ( 2 ) KRATE  8  4 ( 2 ) KRATE  8  5 ( 2 )
+KRATE  8  6 ( 2 ) KRATE  8  7 ( 2 ) >
+KRATE  9  2 ( 2 ) KRATE  9  3 ( 2 ) KRATE  9  4 ( 2 ) KRATE  9  5 ( 2 )
+KRATE  9  6 ( 2 ) KRATE  9  7 ( 2 ) KRATE  9  8 ( 2 ) >
+KRATE 10  2 ( 2 ) KRATE 10  3 ( 2 ) KRATE 10  4 ( 2 ) KRATE 10  5 ( 2 )
+KRATE 10  6 ( 2 ) KRATE 10  7 ( 2 ) KRATE 10  8 ( 2 ) KRATE 10  9 ( 2 )
+KRATE 11  2 ( 2 ) KRATE 11  3 ( 2 ) KRATE 11  4 ( 2 ) KRATE 11  5 ( 2 )
+KRATE 11  6 ( 2 ) KRATE 11  7 ( 2 ) KRATE 11  8 ( 2 ) KRATE 11  9 ( 2 )
+KRATE 11 10 ( 2 ) >
+KRATE 12  2 ( 2 ) KRATE 12  3 ( 2 ) KRATE 12  4 ( 2 ) KRATE 12  5 ( 2 )
+KRATE 12  6 ( 2 ) KRATE 12  7 ( 2 ) KRATE 12  8 ( 2 ) KRATE 12  9 ( 2 )
+KRATE 12 10 ( 2 ) KRATE 12 11 ( 2 ) >
+KRATE 13  2 ( 2 ) KRATE 13  3 ( 2 ) KRATE 13  4 ( 2 ) KRATE 13  5 ( 2 )
+KRATE 13  6 ( 2 ) KRATE 13  7 ( 2 ) KRATE 13  8 ( 2 ) KRATE 13  9 ( 2 )
+KRATE 13 10 ( 2 ) KRATE 13 11 ( 2 ) KRATE 13 12 ( 2 ) >
+KRATE 14  2 ( 2 ) KRATE 14  3 ( 2 ) KRATE 14  4 ( 2 ) KRATE 14  5 ( 2 )
+KRATE 14  6 ( 2 ) KRATE 14  7 ( 2 ) KRATE 14  8 ( 2 ) KRATE 14  9 ( 2 )
+KRATE 14 10 ( 2 ) KRATE 14 11 ( 2 ) KRATE 14 12 ( 2 ) KRATE 14 13 ( 2 )
+KRATE 15  2 ( 2 ) KRATE 15  3 ( 2 ) KRATE 15  4 ( 2 ) KRATE 15  5 ( 2 )
+KRATE 15  6 ( 2 ) KRATE 15  7 ( 2 ) KRATE 15  8 ( 2 ) KRATE 15  9 ( 2 )
+KRATE 15 10 ( 2 ) KRATE 15 11 ( 2 ) KRATE 15 12 ( 2 ) KRATE 15 13 ( 2 )
+KRATE 15 14 ( 2 ) >
+> 
+BLCSW  2 1 ( 15 )  BLCSW  3 1 ( 15 )  BLCSW  3 2 ( 15 )  BLCSW  4 1 ( 15 )
+BLCSW  4 2 ( 15 )  BLCSW  4 3 ( 15 )  BLCSW  5 1 ( 15 )  BLCSW  5 2 ( 15 )
+BLCSW  5 3 ( 15 )  BLCSW  5 4 ( 15 )  >
+BLCSW  6 1 ( 15 )  BLCSW  6 2 ( 15 )  BLCSW  6 3 ( 15 )  BLCSW  6 4 ( 15 )
+BLCSW  7 1 ( 15 )  BLCSW  7 2 ( 15 )  BLCSW  7 3 ( 15 )  BLCSW  7 4 ( 15 )
+BLCSW  8 1 ( 15 )  BLCSW  8 2 ( 15 )  BLCSW  8 3 ( 15 )  BLCSW  8 4 ( 15 )
+BLCSW  9 1 ( 15 )  BLCSW  9 2 ( 15 )  BLCSW  9 3 ( 15 )  BLCSW  9 4 ( 15 )
+BLCSW 10 1 ( 15 )  BLCSW 10 2 ( 15 )  BLCSW 10 3 ( 15 )  BLCSW 10 4 ( 15 )
+BLCSW 11 1 ( 15 )  BLCSW 11 2 ( 15 )  BLCSW 11 3 ( 15 )  BLCSW 11 4 ( 15 )
+BLCSW 12 1 ( 15 )  BLCSW 12 2 ( 15 )  BLCSW 12 3 ( 15 )  BLCSW 12 4 ( 15 )
+BLCSW 13 1 ( 15 )  BLCSW 13 2 ( 15 )  BLCSW 13 3 ( 15 )  BLCSW 13 4 ( 15 )
+BLCSW 14 1 ( 15 )  BLCSW 14 2 ( 15 )  BLCSW 14 3 ( 15 )  BLCSW 14 4 ( 15 )
+BLCSW 15 1 ( 15 )  BLCSW 15 2 ( 15 )  BLCSW 15 3 ( 15 )  BLCSW 15 4 ( 15 )
+> 
+USE ( RESTART ) >
+> 
+metse 2 1 ( 1 )   metse 3 1 ( 1 )   metse 3 2 ( 1 )   metse 4 1 ( 1 ) >
+metse 4 2 ( 1 )   metse 4 3 ( 1 )   metse 5 1 ( 1 )   metse 5 2 ( 1 ) >
+metse 5 3 ( 1 )   metse 5 4 ( 1 )   metse 6 1 ( 1 )   metse 6 2 ( 1 ) >
+metse 6 3 ( 1 )   metse 6 4 ( 1 )   metse 6 5 ( 1 )   metse 7 1 ( 1 ) >
+metse 7 2 ( 1 ) >
+metse 7 3 ( 1 )   metse 7 4 ( 1 )   metse 7 5 ( 1 )   metse 7 6 ( 1 ) >
+metse 8 1 ( 1 )   metse 8 2 ( 1 )   metse 8 3 ( 1 )   metse 8 4 ( 1 ) >
+metse 8 5 ( 1 )   metse 8 6 ( 1 )   metse 8 7 ( 1 )   metse 9 1 ( 1 ) >
+metse 9 2 ( 1 )   metse 9 3 ( 1 )   metse 9 4 ( 1 )   metse 9 5 ( 1 ) >
+metse 9 6 ( 1 )   metse 9 7 ( 1 )   metse 9 8 ( 1 )   metse 10 1 ( 1 ) >
+metse 10 2 ( 1 )  metse 10 3 ( 1 )  metse 10 4 ( 1 )  metse 10 5 ( 1 ) >
+metse 10 6 ( 1 )  metse 10 7 ( 1 )  metse 10 8 ( 1 )  metse 10 9 ( 1 ) >
+metse 11 1 ( 1 )  metse 11 2 ( 1 )  metse 11 3 ( 1 )  metse 11 4 ( 1 ) >
+metse 11 5 ( 1 )  metse 11 6 ( 1 )  metse 11 7 ( 1 )  metse 11 8 ( 1 ) >
+metse 11 9 ( 1 )  metse 11 10 ( 1 ) metse 12 1 ( 1 )  metse 12 2 ( 1 ) >
+metse 12 3 ( 1 )  metse 12 4 ( 1 )  metse 12 5 ( 1 )  metse 12 6 ( 1 ) >
+metse 12 7 ( 1 )  metse 12 8 ( 1 )  metse 12 9 ( 1 )  metse 12 10 ( 1 ) >
+metse 12 11 ( 1 ) metse 13 1 ( 1 )  metse 13 2 ( 1 )  metse 13 3 ( 1 ) >
+metse 13 4 ( 1 )  metse 13 5 ( 1 )  metse 13 6 ( 1 )  metse 13 7 ( 1 ) >
+metse 13 8 ( 1 )  metse 13 9 ( 1 )  metse 13 10 ( 1 ) metse 13 11 ( 1 ) >
+metse 13 12 ( 1 ) metse 14 1 ( 1 )  metse 14 2 ( 1 )  metse 14 3 ( 1 ) >
+metse 14 4 ( 1 )  metse 14 5 ( 1 )  metse 14 6 ( 1 )  metse 14 7 ( 2 ) >
+metse 14 8 ( 1 )  metse 14 9 ( 1 )  metse 14 10 ( 1 ) metse 14 11 ( 1 ) >
+metse 14 12 ( 1 ) metse 14 13 ( 1 ) metse 15 1 ( 1 )  metse 15 2 ( 1 ) >
+metse 15 3 ( 1 )  metse 15 4 ( 1 )  metse 15 5 ( 1 )  metse 15 6 ( 1 ) >
+metse 15 7 ( 1 )  metse 15 8 ( 1 )  metse 15 9 ( 1 )  metse 15 10 ( 1 ) >
+metse 15 11 ( 1 ) metse 15 12 ( 1 ) metse 15 13 ( 1 ) metse 15 14 ( 1 ) >
+> 
+IOMX (  5 ) >
+> 
+bdopt ( bdj )  rhopt ( rhos ) >
+wrmn ( 0.4 )  wrmx ( 0.9 ) >
+> 
+TMS ( 1.E+11 )  >
+TLARGE ( 500. )  TSMALL ( 1.E-5 )  >
+TSM ( 1.E-6 ) >
+> 
+CWJ ( 0.4 ) CWR ( .05 ) >
+HSEC ( .8 )  HEL ( .8 ) >
+> 
+METEP ( 1 ) >
+WEP ( 1. ) >
+LMT ( 5. )  LMF ( 0. )  LME ( .001 ) >
+WSM ( .3 )  INFSM ( 71 )  INLSM ( 82 ) >
+LMB ( 500. ) >
+> YL ( 0. )  YLYM ( F 0. ) >
+Y ( 0. ) >
+EXLYM ( 1.E4 )  TGLYM ( 1.E4 ) >
+> 
+> kxlym ( 1 ) >
+> 
+POPUP ( HYDROGEN ) >
+WPOP ( .8 ) >
+WBD ( .8 ) >
+WEP ( .8 ) >
+NDW ( 30 ) >
+> 
+XI ( 0. .2 .4 .6 .8 1. 1.3 1.6 2. 2.3 2.6 2.8 3. 3.2 3.4 3.6 4. >
+     4.5 5. 6. 8. 10. 12. 15. 20. 30. 40. 60. >
+     80. 100. ) >
+> 
+> KST    2 1 ( 44 ) >
+> XISYMT 2 1 ( 0. .2 .4 .6 .8 1. 1.3 1.6 2. 2.3 2.6 2.8 3. 3.2 3.4 >
+>             3.6 4. 4.5 5. 6. 8. 10. 12. 15. 20. 30. 40. 60. >
+>             80. 100. 150. 200. 250. 300. 350. 400. 450. 500. >
+>             550. 600. 650. 700. 750. 800. ) >
+> 
+> KST    3 1 ( 33 ) >
+> XISYMT 3 1 ( 0. .2 .4 .6 .8 1. 1.3 1.6 2. 2.5 3. 3.5 4. 4.5 5. 6. >
+>             8. 10. 12. 15. 20. 30. 40. 60. 80. 100. 120. 140. >
+>             180. 230. 280. 350. 400. ) >
+> 
+> JNUNC ( 1 ) >
+> 
+idex ( 50 ) >
+SCH 2 1 ( 1 )  GMMA 2 1 ( -.9 )  XC 2 1 ( 2. )  XR 2 1 ( 0.005 ) >
+SCH 3 1 ( 1 )  GMMA 3 1 ( -.9 )  XC 3 1 ( 2. )  XR 3 1 ( 0.010 ) >
+drlim ( 0.005 ) >
+> 
+> waves ( m 1.e6 .004015282 .005 .25 .3 .35 .4 .45 .8 1. 1.25 1.5 1.75 2. 2.5
+> 3. 5. 7. 10. 20. 30. 40. 60. 100. 150. 200. 250. 300. 400. 500. ) >
+waves ( 227. 228. 233. 293. 303. 310. 350. 450. 503. 505. 685. 911. 1100. ) >
+> 
+YFLUX ( .1 ) >
+> 
+> 
+GO >
+> 
+MUF ( 1. .8 .6 .4 .3 .2 .1 .05 ) >
+MU ( 1. .3 ) >
+> 
+lpmlr ( 0 ) >
+> 
+cvxf ( 300. )  wfb ( 0. )  fbvmx ( 100. )  >
+> 
+GO >
+> 
+USE ( MODEL ) >
+> 
+GO  >

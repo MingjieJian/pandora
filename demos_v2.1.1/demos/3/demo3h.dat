@@ -1,0 +1,35 @@
+[ DEMO-3                  3 L H, D.B.  ITER 03-04   02 OCT 02   ]
+USE ( MODEL ) >
+USE ( ATOM ) >
+KK ( 9 ) > 
+LF ( 1 ) > 
+OMIT ( CIJPRNT ) > 
+OMIT ( OPASUM ) > 
+OMIT ( ELECPRNT ) > 
+OMIT ( EMISUM ) > 
+DO ( IRUNT ) > 
+DO ( LYMAN ) > 
+OMIT ( PIJPRNT ) > 
+OMIT ( POPPRNT ) > 
+DO ( RATEPRNT ) > 
+OMIT ( RCOMPRNT ) > 
+DO ( RIJPRNT ) > 
+OMIT ( STANDARD ) > 
+OMIT ( SUMMARY ) > 
+DO ( TAUPRNT ) > 
+omit ( usewtab ) > 
+GO > 
+USE ( MODEL ) > 
+USE ( ATOM ) > 
+YLINE 3 2 ( -1. ) > 
+PROF 3 2 ( 1 ) > 
+USE ( RESTART ) > 
+IOMX ( 2 ) > 
+POPUP ( HYDROGEN ) > 
+XK ( 1. 1.1 1.2 1.4 1.7 2.3 3. 5. 8. ) > 
+NDW ( 7 ) > 
+TSM ( 1.E-6 )  TMS ( 5. )  TLARGE ( 6.E2 ) > 
+GO >
+GO >
+USE ( MODEL ) > 
+GO

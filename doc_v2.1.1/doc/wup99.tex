@@ -1,0 +1,497 @@
+%\magnification=1200
+5\input wupstuff.tex
+\newtoks\footline \footline={\hss\tenrm 99.\folio\hss}
+\top
+\pageno=1
+\vskip 1.5 true in
+\centerline{Section 99: {\bf Tutorial --- How to Run PANDORA}}
+\blankline
+\blankline
+\centerline{\bf ***}
+\blankline
+\blankline
+This section describes the input files and output files for four PANDORA
+demonstration runs. I hope that first-time users will find this helpful.
+By way of background: when we first began work on PANDORA, we envisioned 
+a `Dial-an-Atom' program; thus PANDORA's original {\it raison d'\^etre} was
+the coupled line source function calculation, and the statistical equilibrium
+calculations required for them, with arbitrary model ions. Over the years
+the program has grown to do many more and different things, but PANDORA's
+primary purpose remains the calculation of line source functions and
+emergent line profiles.
+{\bf Before reading this section}: be sure you have become familiar with
+the main body of this handbook, what kind of information it contains,
+and how it is organized.
+\blankline
+\blankline
+Any PANDORA run requires input from four `logical data Groups':
+1) atmosphere model data;
+2) atom (ion) model data; 3) levels- and transition-related restart data 
+({\ie} partially-converged solutions) from the preceding run (which may be
+omitted for runs starting from scratch); and 4) run-specific numeric and control
+data. Items from any of these `groups' may/will occur in each of the
+four major structural parts of PANDORA's input: Parts B, D, F and H.
+Also, all runs require a run-specific {\bf HEADING} line as the first
+line of the input file. \break (PANDORA runs that use PRD for one or more
+transitions may also require \break JNU restart values.)
+
+A basic minimum of Group-1 data and Group-2 data normally {\it must} be
+supplied, since there are no appropriate default values for them.
+Group-3 data normally are not supplied for runs beginning from scratch
+({\ie} the defaults are used); however, sometimes
+it makes sense to supply output from a related run as input for a new run.
+Restart runs normally use Group-3 data that were written in an
+output file (a `restart' file) by the preceding run.
+Group-4 data need not be supplied (especially for runs beginning
+from scratch) since the automatic defaults should be applicable to a
+variety of situations. As a calculation progresses through a series of restarts,
+it should become clear what switch settings, option settings,
+alternative numerical methods,
+and numerical control parameter values are most appropriate for any
+particular case.
+\blankline
+There are six Types of PANDORA runs: 1) population-update runs with Hydrogen;
+2) population-update runs with ions other than Hydrogen; 3) regular runs;
+4) no-ion runs; 5) continuum-only runs; and 6) input-only runs. 
+
+The distinction between population-update and regular runs arises from the
+following. PANDORA computes both `line' absorption and `continuum'
+(more properly: `background') absorption. Many `absorbers' can be included
+in the total computed `continuum' opacity, including the bound-free
+absorption of H, He-I, He-II, C-I, Si-I, Al-I, Mg-I, Fe-I, Na-I, Ca-I,
+O-I, and S-I.
+The calculations of the contributions of these absorbers require values
+of number densities and departure coefficients as functions of depth;
+computed non-LTE values will be used {\it if they are provided}.
+(If none are provided, then LTE default values of number densities will
+be computed, and/or default values of departure coefficients will be
+computed from whatever values of number density are available.)
+Consider a run with, say, Si-I.
+At the end of every overall iteration, new values of the number
+densities and departure coefficients of the `ion-of-the-run' (in this
+case, Si-I) are computed. These values {\it can} be used when the
+`continuum' opacity is recomputed at the start of 
+the next iteration ({\ie} PANDORA
+can be instructed that new values of number densities and departure
+coefficients for Si-I are available, and that therefore Si-I's contribution
+to the opacity must be recomputed). For this purpose, the new data
+must be copied from their `ion-of-the-run' slots into the appropriate
+`population-ion-data' slots ({\ie} into the `Si-I-population-data'
+slots). PANDORA will do this `updating' if the {\bf POPUP} switch is set.
+(If the population-ion-data are not updated at the end of each overall
+iteration, then they will retain their initial values.) 
+(These population ion data
+can be printed by turning on the appropriate population-ion-data
+print option -- in this case, SILPRNT.) Moreover, when the
+{\bf POPUP} switch is set, then the latest recomputed population-ion-data
+will be written in one of the restart files, for later use. Thus, any
+PANDORA run for one of the 12 ions listed above {\it may} be
+(but {\it need not} be) a population-update run. A run with a valid
+{\bf POPUP} statement among the input is a `population-update' run;
+runs without the {\bf POPUP} switch set are `regular' runs. (In Type-4
+and Type-5 runs the {\bf POPUP} switch is not used.)
+
+(The input table {\bf RUNTOPOP} is important for population update runs.
+The parameters describing the built-in population-ion-models are printed
+as part of the population ion data for a particular population-update ion -- 
+{\eg} with \break SILPRNT on. Note the input parameters {\bf POPION}, 
+{\bf POPXLM}, and \break {\bf POPRCP}, provided for emergency use.)
+
+Hydrogen runs are special because PANDORA does certain things only when
+Hydrogen is the ion-of-the-run. These include: recomputation of {\bf Z},
+of {\bf NH}, and of {\bf NE}. Such recomputed tables will be written in
+restart files, and normally \break should be used in subsequent runs.
+(Population-update runs also recompute {\bf NE} and write it out --
+however, we generally ignore such {\bf NE} values, preferring to rely
+on those produced by Hydrogen runs.)
+
+Type-5, continuum-only, runs are about as far removed from PANDORA's
+basic purpose as one can imagine. Only `continuum' source functions,
+and emergent continuum emission (depending on specific option settings),
+are computed. This is done at specific wavelengths only, as controlled
+by the switch {\bf JSTCN}.
+
+Type-4, no-ion, runs resemble continuum-only runs in that no line
+transfer is computed. In any run with the option DOION off, all
+those things, but only those things, that specifically concern an
+ion-of-the-run are omitted. Thus a no-ion run does more things (such as,
+hydrostatic equilibrium calculation, Dust temperature recalculation)
+than a continuum-only run.
+
+Type-6, input-only, runs are useful for checking whether the input data being 
+supplied for a run are what they should be. An input-only run only reads and 
+massages the raw input, and does some other input-related initializations,
+and then stops -- {\ie} its output file (provided it ran to completion)
+exhibits the {\bf Phase 0} output (see Section 11), and the input JNU
+values (if there were any). After this output has been inspected and found
+satisfactory, the statement \break ``DO ( JSTIN ) '' can be removed from the
+input, and the run resubmitted as a normal run. 
+\blankline
+\blankline
+\centerline{Tutorial Runs}
+\blankline
+DEMO1 is a type-1 run from scratch, using a single input file;
+DEMO2 is identical to DEMO1 except for using multiple input files; DEMO3 is
+a restart, with changes, of DEMO2; and DEMO4 is a type-3 run from scratch.
+
+In this section I refer to the various files by the file ``extension
+codes'' used with {\tt schema} (see Section 7). The complete file names
+of these demonstration runs are constructed with these extensions; thus:
+{\tt demo1.dat}, {\tt demo4.jnr}, etc.
+
+({\it Please note:} PANDORA's input provisions are very flexible,
+and users are free to adopt a variety of conventions for organizing
+input data. I will describe what I have found convenient;
+feel free to establish different procedures.)
+\blankline
+\blankline
+\centerline{DEMO1}
+\blankline
+This run uses a single input file, {\tt .dat}. This file first contains the
+{\bf HEADING} line (Part A); then Group-1 data, Group-2 data, and
+Group-4 data in Part B (before the first {\bf GO}); then more
+Group-1 data, Group-2 data, and Group-4 data in Part D (before the
+second {\bf GO}); Part F and Part H are empty ({\ie} defaults 
+will be used).
+
+Group-1, atmosphere model, data comprise the statements: \underbar{\bf N},
+{\bf NVH}, {\bf R1N}, {\bf CGR}, \underbar{\bf Z}, \underbar{\bf TE}, \underbar{\bf NH},
+\underbar{\bf NE}, and {\bf BDHM}. The underlined ones constitute the basic
+minimum that {\it must} be provided; if any of these are missing, the
+run will fail. (However, as a special case, when {\bf ZMASS}, {\bf TE}, and
+{\bf NE} are provided then {\bf Z} and {\bf NH} need not be.)
+(Note: I have to set {\bf NVH} = 0 because I want to have {\bf V} = 0.)
+
+Group-2, atom model, data comprise the statements: \underbar{\bf NL},
+{\bf NTE}, \underbar{\bf NT}, \break \underbar{\bf INPAIR}, {\bf NAME},
+\underbar{\bf ELSYM}, \underbar{\bf IONSTAGE}, \underbar{\bf MASS}, {\bf PART},
+\underbar{\bf ABD}, {\bf PW}, \break 
+\underbar{\bf P}, {\bf CP}, {\bf TER}, {\bf CI 1}, {\bf CI 2}, {\bf CI 3},
+{\bf CE 2 1}, {\bf CE 3 1}, {\bf A 3 2}, 
+{\bf CE 3 2}, {\bf CRD 3 2},
+{\bf CVW 3 2}, {\bf CSK 3 2}, and {\bf CRS 3 2}. Again, the underlined ones
+represent the basic minimum that {\it must} be provided, or the run will fail
+({\it Note:} see Section 19.)
+These model atom data constitute a basic three-level Hydrogen atom,
+with the (2,1) and (3,1) lines in detailed balance.
+A value of {\bf PW} is provided because a {\bf CSK} statement
+appears. If the temperature-dependence of {\bf CI} and {\bf CE} were not
+known, then {\bf NTE} and {\bf TER} would not appear, and only single,
+constant values of {\bf CI} and {\bf CE} would have to be provided.
+(But note that while the foregoing is true generally, there is much more
+to it for Hydrogen, which is a special case---see Section 19.)
+The {\bf PART} statement is not really needed (since 0 is the default);
+I like to use it to remind me that depth-dependent partition functions
+will be used (the default state of PARTVAR is on).
+
+Group-4 data comprise: {\bf DO}, {\bf OMIT}, {\bf IOMX}, {\bf POPUP}, {\bf RUNTOPOP}
+and {\bf TRN}. PANDORA provides defaults for all of them -- but this run wants
+the values appearing in {\tt .dat}. The {\bf TRN} statements appear because
+the option USETRIN is on. The {\bf POPUP} switch is on, for the
+purpose described earlier. {\bf RUNTOPOP} appears because values other than the
+defaults are required in this case.
+
+To execute this run, I submit the run-specific script {\tt demo1}, which uses
+the general script {\tt schema}. The main purpose of these scripts is to
+connect actual files to the files that Fortran I/O expects by default.
+
+Between them, {\tt pandora} and {\tt schema} send a slew of messages
+to standard output (the screen; these messages can be redirected to a
+``log'' file in the usual manner---it is useful to do that). These messages
+consist of `computation progress reports,' relevant directory listings, and
+other information that is useful for the record. The last message that comes
+from {\tt pandora} is ``{\tt PANDORA done}''; this is the {\it only} reliable
+indication that a run completed properly.
+
+The main output file (`printout' file) from PANDORA is the file {\tt .aaa};
+here, {\tt demo1.aaa}. A few of the printout sections in this output file
+always appear; the remaining printouts are controlled by option settings,
+as described in Section 11.
+
+If option LSFPRNT = off in addition to
+{\bf LSFPRINT}$^{3,2} = 0$, then the printout headed ``LINE  (3/2)''
+would not have appeared, leaving only the subsequent ``Plot of logs of ST
+$\ldots$'' as a record of the line source function calculation.
+In a converged solution the values of ``S(n)'' and ``S'' would be 
+more nearly equal.
+
+The printed values of ``Consistency CHECKs,'' at the end of the printout
+\break ``RHO AND RBD,'' look pretty good.  If these tables do not have
+almost all values close to 1, then the calculation has not converged and
+needs to be iterated further.
+
+The printout ``LEVEL  1 TO K'' appears because the option LYMAN is on and
+{\bf KOLEV} $= 1$. The fact that the printed values of ``Old/New'' for RK-1
+(on the page just before ``NE'') are rather far from unity is an
+indication that this calculation has not converged.
+
+While the sections ``WAVE SUMM 0'' and ``WAVE SUMM 1'' can be turned off
+with option WAVEPRNT, I do not recommend doing that.
+
+The various ``Iterative Ratio'' plots show significant changes from
+iteration to iteration, another strong indication that the calculation
+has not yet converged. NE has settled down in the outer half of the
+atmosphere.
+
+``Execution Data'' always appears (the amount of printout is controlled
+by option IRUNT). Before signing off, the program version identifies itself.
+
+The remaining files produced by this run are {\tt .msc}, {\tt .pop} and
+{\tt .rst}; their contents are described in Section 8. Most of these data are
+needed in order to restart this run for additional iterations -- DEMO3
+is an example of such a restart.
+\blankline
+\blankline
+\centerline{DEMO2}
+\blankline
+This run uses the same input parameters as DEMO1, and thus produces the same
+output files --- what is different is that the input, instead of being all
+contained in {\tt .dat}, is now distributed over four files: 
+{\tt .mod}, {\tt .atm}, {\tt .res}, and {\tt .dat}. (These four
+files correspond to the four `logical data Groups' described earlier.)
+
+I do this because I find this a convenient way to organize my data. My
+conventions are: {\tt .atm} contains the data specifying the physical parameters
+of an atom or ion model; {\tt .mod} contains the data specifying the physical
+parameters of a model atmosphere; {\tt .res} contains the same data as
+the output file {\tt .rst}, {\ie} the restart data for the line source
+function calculations, and the `Lyman' calculation (if any); and {\tt .dat}
+contains the heading and
+the various run-specific processing and numerological control
+parameters, {\it and the} {\bf GO} {\it statements} that define the structure
+of the input.
+
+PANDORA {\it always} begins reading from {\tt .dat};
+thereafter, {\bf USE} statements tell it which file to read from next.
+
+Input reading begins at the {\bf HEADING} in {\tt demo2.dat}.
+`{\tt USE ( MODEL ) }' then switches reading to {\tt .mod} ({\ie}
+{\tt demo2.mod} -- recall that {\tt demo2} and {\tt schema}
+set up this connection), and reading of Part B data then continues there
+until `{\tt USE ( INPUT ) }' switches reading back to {\tt .dat}. 
+`{\tt USE ( ATOM ) }' then immediately switches reading
+to {\tt .atm} ({\ie} {\tt atom2.atm}),
+and reading of Part B data then continues there until `{\tt USE ( INPUT ) }'
+switches reading back to {\tt .dat}. Reading of Part B data from {\tt .dat}
+then continues until the first {\bf GO}, which terminates Part B. Then reading
+is again switched to {\tt .mod} and {\tt .atm} for Part D data, and then
+to {\tt .res} ({\ie} {\tt demo2.res}) which, you will note, is
+{\it empty}. Thereupon the last of the Part D data are read from
+{\tt .dat}, until the second {\bf GO}, which terminates Part D. As with DEMO1,
+Part F is empty; and so is Part H, even though reading of Part H is
+switched to {\tt .mod} (the reason why I do this may become clear with
+DEMO3).
+
+When PANDORA first reads from a given file, it starts at the beginning of
+the file. When it reads from a partially-read file again, it resumes right
+after the last statement previously read.
+
+The {\tt .mod} files, in general, are convenient when you wish to calculate
+solutions for various ions in the same atmosphere -- all those runs can be
+set up to use the same {\tt .mod} file. The {\tt .atm} files, in general,
+are convenient when you wish to calculate solutions for the same ion in
+different atmospheres -- all those runs can be set up to use the same 
+{\tt .atm} file. Over the years we have accumulated many {\tt .atm} files
+for a variety of atom and ion models ({\eg} there are many different
+Hydrogen models, using different numbers of levels and transitions;
+we also have various models of atoms and ions important in the Sun;
+plus some odds and ends). All these are available for general use.
+\blankline
+\blankline
+\centerline{DEMO3}
+\blankline
+This run shows how I go about setting up a restart of DEMO2.
+
+DEMO3 needs the files: {\tt .dat}, {\tt .mod}, {\tt .atm}, and
+{\tt .res}. (Normally, the
+files for a restart of DEMO2 would have `DEMO2-names' -- these would be edited
+versions of the previous DEMO2 input files. However, for tutorial
+purposes, here I have given them new `DEMO3-names'.) I obtained the DEMO3
+input files from the input {\it and} output files of DEMO2 as follows:
+
+{\tt .res} is simply a copy of DEMO2's {\it output} file {\tt .rst}.
+(If I were restarting \break DEMO2 `normally', without changing 
+names from DEMO2 to DEMO3,
+I would: \break first delete {\tt demo2.res}, and then change the name of
+{\tt demo2.rst} to {\tt demo2.res}.) 
+
+{\tt .mod} is an edited copy of DEMO2's {\tt .mod}, with the following changes:
+\bull old values of {\bf NE} were removed, and replaced by those in
+{\tt demo2.pop};
+\bull values of {\bf NP}, {\bf HN} 1  $\ldots$  {\bf HN} 15 and 
+{\bf BDH} 1  $\ldots$  {\bf BDH} 15, from {\tt demo2.pop}, were added after
+the second `{\tt USE ( INPUT ) }' to Part H of {\tt .mod},
+where they will be read when the third occurrence of `{\tt USE ( MODEL ) }'
+in {\tt .dat} switches reading back to this {\tt .mod} file.
+To alert PANDORA to the existence of these 
+\break `Hydrogen-population-data', I had to add `{\tt NLH ( 15 ) }'
+near the beginning, in \break Part B of {\tt .mod}.
+(If DEMO2 had calculated FNRMLA,FNRMLB, then I would have used the
+updated values of these tables, found in {\tt demo2.msc}, to update
+any previous values in {\tt demo2.mod}.) \par
+
+I also introduced some further changes into Part D of this atmospheric model
+({\it not} for restart purposes, but because I wanted to change 
+the calculation):
+\bull a set of values of {\bf V} is added;
+\bull the molecular Hydrogen abundance calculation is turned off ({\bf NHTSW});
+\bull the He-II-lines and X-ray absorptions are turned off ({\bf NABS}).
+
+Atomic model data normally do not need to be changed for a {\it restart} run,
+and so {\tt demo2.atm} could (and normally would) have been used for this
+run. However, I wanted a more elaborate atomic model for DEMO3, which I
+obtained by copying {\tt demo2.atm} and adding `rates integrations' data:
+the {\bf MR}, {\bf WRAT} and {\bf RRCP} statements. (Note: none for level 1
+because the `Lyman' calculation is done for level 1; starting values for the
+the level-1 rates {\bf RL} 1 and {\bf RK} 1 are in {\tt .res}, having been
+computed by DEMO2.)
+
+Finally, {\tt .dat} for DEMO3 is a modified version of {\tt demo2.dat}. Only
+one of these modifications is strictly for {\it restart} purposes:
+the {\bf HEADING} line. The other modifications
+change the details of the calculation itself, and the contents
+of the `printout' file:
+\bull a value of {\bf LF} that differs from the default;
+\bull different option settings (note that the options PHASE2 and USETRIN
+now revert to their default settings, which are `on' and `off', 
+respectively);
+\bull the option IRUNT is changed to the `prolix' setting;
+\bull a value of {\bf YLINE}$^{3,2}$ that differs from the default;
+\bull the emergent profile calculation for the (3,2) line is turned on
+({\bf PROF});
+\bull sets of values of {\bf TRN} are omitted, since they are no longer
+needed;
+\bull and the other parameter changes that you see there. \par
+
+DEMO3 produces the same output files as DEMO2, but the contents differ.
+In {\tt .aaa}, you will note the following (among others):
+\bull ``ATMOSPHERE'' has different values of `Electron density';
+`Broadening velocity' appears;
+\bull "ND, NK, + BD" now has nonzero values (from {\tt .res});
+\bull ``ATOM'' has different `Line source function method' and `Show computed
+line profile'; it no longer has `Radiation Temperature';
+\bull the list of contributors in ``BACKGROUND'' is different;
+\bull ``INPUT'' has data for ``Rates Integrations''; non-zero input values
+of {\bf RKWT} 1, {\bf EP1}, and {\bf EP2} appear (from {\tt .res});
+``He II Lines Opacity data'' is gone; data for ``Spectrum Calculations'' appears;
+\bull ``CONSTANTS'' and ``TABLES'' are gone (why?);
+\bull ``HYDROGEN'' population data now have input values, and no longer
+their approximate ({\ie} LTE) default values;
+\bull ``RATES'' (through ``RIJ'') appears (option RATEPRNT), ``Details of
+Recombination Calculation'' is gone (why?);
+\bull ``Results of TAU Calculation, $\ldots$'' appears (option TAUPRNT);
+\bull ``NE'' and the printed tables in ``POPULATIONS'' are gone (option POPPRNT);
+\bull ``Old/New'' for RK-1 are closer to unity, overall;
+\bull ``WAVE SUMM 0'' shows that DEMO3 computed more continuum solutions
+than did DEMO2 (why?);
+\bull ``Iterative behavior $\ldots$'' printouts are gone (why?);
+\bull ``Background Intensity'' (for {\bf LF} values of {\bf MUF}) appears
+(why?, and why does ``Background Flux'' not appear?);
+\bull ``Profile of the 3/2 Line'' (for {\bf L}={\bf LF} values of 
+{\bf MU}) appears;
+\bull ``Scratch I/O $\ldots$'' appears (option IRUNT);
+\bull ``Execution Data'', and program version description, give more
+details $\qquad \qquad$ \break (option IRUNT).
+
+DEMO3's output files {\tt .msc} and {\tt .pop} contain the same amounts of
+data as those of DEMO2; {\tt .rst} has a bit more (because {\bf RHOWT}$^{3,2}$
+now has some non-zero values).
+
+DEMO3 could now be restarted further, just as before. If this were the kind
+of Hydrogen run that produces new values of {\bf Z} (say, because values of
+{\bf TAUKIN} are specified), or of {\bf NH} (say, because of option 
+HSE), or of {\bf BDHM} (option HMS), then these new sets
+would also have to be edited into {\tt .mod},
+to replace the old sets.
+\blankline
+\blankline
+\centerline{DEMO4}
+\blankline
+This is an Mg-II run, `from scratch' like DEMO1, except that it is a `regular'
+type of run and it is a PRD run.
+
+The {\tt .atm} file for this run contains a simple Mg-II model with two levels
+and one radiative transition. The {\tt .atm} file does {\it not} contain
+the specifications of the PRD parameters, since this ion model does not
+{\it require} the PRD treatment. Instead, I consider the PRD parameters
+to be run-specific, and provide them in {\tt .dat}.
+Since {\bf JNUNC} is mentioned
+neither in {\tt .mod} nor in {\tt .dat}, it retains its default value 0, and
+a {\tt .jnu} input file is not required.
+
+(By the way, regarding 
+{\bf GMMA}$^{2,1} = -0.999$: this value might put too severe a strain on a
+`from scratch' calculation. One might instead begin with, say,
+{\bf GMMA}$^{2,1} = -0.8$ and then, through a series of restarts,
+gradually work up to the `desired' value $-0.999$.)
+
+The {\tt .mod} file contains 8 levels worth of `population-ion-data' for
+H, He-I, He-II, C-I, and Si-I. Values of departure coefficients are specified
+for levels 1 - 5 of H only; default values (see the `printout') will be
+set up for everything else. {\tt .mod} also contains five auxiliary depth
+tables and illustrates their use; note that {\tt .mod} does not contain {\bf Z},
+the depth table of the run ({\it cf.} Section 13). {\tt .mod} also contains
+some {\bf DO} statements affecting the `printout' only; one can debate
+whether these belong here, or in {\tt .dat}.
+
+As with DEMO2, {\tt .res} is empty (why?).
+
+The {\tt .dat} file is relatively simple; note that it contains the {\bf N} and
+{\bf Z} statements, these being run-specific in this case. Of course, there
+is no {\bf POPUP} statement (that makes this a `regular' run). The {\bf YLINE}
+statement is superfluous (see next paragraph), but does no harm.
+(By the way, a {\tt .dat} file for most runs---other than H runs---might
+contain a table of {\bf RABD} or {\bf RABDL} values [see Section 17]; a
+{\tt .dat} file for a He-II run with diffusion might contain tables of
+{\bf PALBET} and {\bf PBETAL}.)
+
+In the `printout' file {\tt .aaa}, note that ``ATOM'' now has `Partial
+Redistribution' and several parameters for P.R.D.; moreover,
+`{\tt Line source function method}' is `{\tt (not used)}'
+because the `{\tt Background source function method}' specification
+applies to both calculations. Output from rates integrations is
+short (RATEPRNT and RATESUMM are off), consisting of graphs only (RATEGRAF is
+on). The ``LINE (2,1)'' printouts here have only very abbreviated PRD calculation
+results, because PRDPRNT and PRDCOPR are both off, and only \break
+JNUPRNT is on. Notice that the `normal' line source function calculation
+output states (between the lines of dashes) that this is a `{\tt Solution with
+partial redistribution}'. (Note option PRDMETH; often it makes sense to use
+PRDMETH off initially, until the solution is nearly converged, and then
+use PRDMETH on.) No ``Consistency Checks'' are computed
+for a 2-level ion model. 
+
+Since {\bf LF} is greater than 1, a line flux profile was also computed from
+the calculated intensity profiles (however, with only two {\bf MUF} values,
+this is not much of a calculation). Since this line is computed with PRD
+(${\bf SCH}^{2,1} = 1$), a whole profile, rather than a half profile, was
+computed. Moreover, a PRD calculation computes the background continuum for
+every point in the line, and that is why the ``Line-Free'' continuum was also
+computed for every point in the line.
+
+The other output files produced by this run are {\tt .jnr}, {\tt .msc}, and
+{\tt .rst}; of course there is no {\tt .pop} output file (why?).
+
+Restarting this run is simple. Delete {\tt .res}, and change the name of
+{\tt .rst} to {\tt .res}; change the name of {\tt .jnr} to {\tt .jnu} (first
+deleting the previous {\tt .jnu}, if any). Update the {\bf HEADING} in
+{\tt .dat}, and make any other desired changes. Make sure that the value
+of {\bf JNUNC} $> 0$ (Part D of the input, in {\tt .dat}).
+
+Again, this run only {\it uses}, but does not {\it affect},
+the atmospheric model data. (At least, not directly. In principle, values
+of {\bf RABD} for a Mg-I run could be affected by these Mg-II results, and that
+would change the `Mg-I-population-data' which are part of the atmospheric
+model --- but DEMO4 treats Mg-I in LTE. For {\bf RABD} see Section 17.)
+%\vfill \vfill
+%\vfill \vfill
+%\vfill \vfill
+%\vfill \vfill
+%\vfill \vfill
+%\vfill \vfill
+%\vfill \vfill
+%\vfill 
+\vfill
+\noindent (Section 99 -- last revised: 2007 Feb 05) \par
+\message{Section 99 ends at page 99.\the\pageno}
+\ej
+%\end

@@ -1,0 +1,130 @@
+%\magnification=1200
+%\input wupstuff.tex
+\newtoks\footline \footline={\hss\tenrm 4.\folio\hss}
+\pageno=1
+\top
+\vskip 1.5 true in
+\centerline{Section 4: {\bf Remarks on the Input Process}}
+\blankline
+\blankline
+\centerline{\bf ***}
+\blankline
+\blankline
+PANDORA's input phase must establish all the input data for the subsequent
+computations. The major activities of the input phase comprise: initialization,
+setting defaults, reading all input statements, expanding shorthand input
+notations ({\it e.g.} for {\bf KPC} or {\bf TR}), establishing defaults that
+cannot be pre-set ({\it e.g.} for {\bf NP} or {\bf ABD}), extra(inter)polating
+to {\bf Z} if necessary (see Section 13), and printing out most of the input
+values.
+\blankline
+There are two kinds of defaults: pre-read defaults, which can be set before
+any input statements are read ({\it e.g.} {\bf M} or {\bf TS} or {\bf TBAR}),
+and post-read defaults, which can only be established by referring to other
+input, and thus cannot be set until after all the input statements (of a
+given Part, {\it i.e.} B, D, F or H) have been read.
+\blankline
+The processing in the input phase proceeds as follows:
+\blankline
+\bull Read, print and write the {\bf HEADING}.
+\space
+\bull Set pre-read defaults for Part B, as specified in Section 5 of this
+writeup.
+\space
+\bull Read Part B of the input.
+\space
+\bull Read Part C of the input. After C (= {\bf GO}) has been read, only those
+of the input parameters in Part B that were explicitly mentioned in input
+statements will have had new values given them. (These explicit values need
+not necessarily be different from the defaults.) If any of these parameters
+were mentioned more than once, they will have the values given them by the
+respective input statements that were read last.
+\space
+\bull Digest the Part B input.
+\ej
+\bull Set up storage for all the parameters in Parts D and F of the input,
+and set all this storage to zero ({\it i.e.} zero is the basic default).
+\space
+\bull Set pre-read defaults for Parts D and H, as specified in Section 5.
+Pre-read defaults for tables are potential defaults
+only; they will actually be set according to the current
+values of their respective lengths.
+(This makes it easy to shorten or lengthen tables {\it vis-a-vis}
+their default states. For example, consider the table {\bf MUF} of length
+{\bf LF}. The pre-read defaults are {\bf LF} = 2 and
+{\bf MUF} = 1.0, 0.3. If {\bf LF} = 1 resulted from Part B of the input,
+then the pre-read default is {\bf MUF} = 1.0. If {\bf LF} = 4 resulted from
+part B of the input, then the pre-read default is {\bf MUF} = 1.0, 0.3, 0.0, 
+0.0. To replace the two zeroes in this {\bf MUF}-table, a statement in
+Part F of the form: ``{\bf muf} ( {\bf I} 3 0.2 0.1 ) '' would be
+sufficient.
+\space
+\bull Read Part D of the input.
+\space
+\bull Read Part E of the input. After E (= {\bf go}) has been read, only those
+input parameters of Part D that were explicitly mentioned in input
+statements will have had new values given them. (These explicit values need
+not necessarily be different from the defaults.) If any of these input
+parameters were mentioned more than once, they will have the values given
+them by the respective input statements that were read last. Provisional
+input tables of depth-dependent variables will have been inter(extra)polated
+to {\bf Z} (see Section 13); the actual provisional values will have been
+discarded.
+\space
+\bull Digest the Part D input.
+\space
+\bull Read Part F of the input.
+\space
+\bull Read Part G of the input. After G (= {\bf go}) has been read, only those
+input parameters of Part F that were explicitly mentioned in input
+statements will have had new values given them. (These explicit values need
+not necessarily be different from the defaults.) If any of these input
+parameters were mentioned more than once, they will have the values given
+them by the respective input statements that were read last. Provisional
+input tables of depth-dependent variables will have been inter(extra)polated
+to {\bf Z} (see Section 13); the actual provisional values will have been
+discarded.
+\space
+\bull Digest the Part F input.
+\ej
+\bull Set up storage, in memory and in the random-access scratch file, for the
+population data of Part H of the input.
+\space
+\bull Set pre-read defaults for Part H, as specified in Section 5.
+\space
+\bull Read Part H of the input.
+\space
+\bull Read Part I of the input. After I (= {\bf GO}) has been read, only those
+input parameters of Part H that were explicitly mentioned in input statements
+will have had new values given them. (These explicit values need not
+necessarily be different from the defaults.) If any of these input parameters
+were mentioned more than once, they will have the values given them by the
+respective input statements that were read last. Provisional input tables of
+depth-dependent variables will have been inter(extra)polated to {\bf Z}
+(see Section 13); the actual provisional values, and the auxiliary Z tables
+as well, will have been discarded.
+\space
+\bull Print the input (see Section 11 for more details about this).
+\blankline
+\blankline
+\blankline
+\noindent {\it Note}: 
+default values for unspecified populations and departure coefficients
+of Part H will be calculated later as part of the various precalculations 
+done before the first iteration. Tables of data for the various population
+ions are printed, also later, if requested with the corresponding options.
+\blankline
+%\blankline
+%\vfill \vfill
+%\vfill \vfill
+%\vfill \vfill
+%\vfill \vfill
+%\vfill \vfill
+%\vfill \vfill
+%\vfill \vfill
+%\vfill 
+\vfill
+\noindent (Section 4 -- last revised: 2003 Jul 31) \par
+\message{Section 4 ends at page 4.\the\pageno}
+\ej
+%\end

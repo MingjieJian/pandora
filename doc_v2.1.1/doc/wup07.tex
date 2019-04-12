@@ -1,0 +1,90 @@
+%\magnification=1200
+%\input wupstuff.tex
+\newtoks\footline \footline={\hss\tenrm 7.\folio\hss}
+\pageno=1
+\top
+\vskip 1.5 true in
+\centerline{Section 7: {\bf Program Execution}}
+\blankline
+\blankline
+\centerline{\bf ***}
+\blankline
+\blankline
+PANDORA is written in Fortran; work on it began in 1966. It has run on
+various computers and operating systems, both at CfA and other places;
+currently at CfA it runs under Solaris (a flavor of Unix) on a SUN workstation.
+
+PANDORA uses a large program address space, supplemented by a scratch
+disk file which can grow large (several Gbytes) depending on the run.
+
+Internally, PANDORA refers to I/O files by Fortran unit numbers ``nn.''
+Externally, under Unix these files bear the generic names ``{\tt fort.nn}.''
+I use a script called {\tt schema} which supervises a {\tt pandora} run and links
+variously-named I/O files to the proper Fortran units. While users
+are free to set up {\tt pandora} runs and I/O file names as they wish, they are
+also free to use {\tt schema}. In the listing overleaf, I give both the Fortran
+unit numbers and the specific file names or {\tt schema}'s file ``extension codes''
+by which I refer to these files.
+\blankline
+I recommend that users make {\it their own copies} of {\tt pandora},
+of {\tt schema} (if used), and of the commonly available data files
+(such as atomic model files, Line Opacity data files, etc). This insulates
+users from the changes I routinely make to these files {\it without prior
+warning}. Users can then choose to make fresh copies whenever convenient.
+\blankline
+Section 99 is a tutorial introduction to PANDORA and how to set
+up the input files.
+\ej
+The {\bf Input Files} are connected to the following units:
+\spice
+\bull 3 -- general run-specific input (---.{\tt dat});
+\bull 4 -- atmosphere model (---.{\tt mod});
+\bull 7 -- atomic model (---.{\tt atm});
+\bull 8 -- run-specific restart data (---.{\tt res});
+\bull 9 -- JNU restart values for a PRD run (---.{\tt jnu});
+\bull 10 -- required for Statistical Line opacity ({\tt statistical}, see Section 9);
+\bull 11 -- required for Composite Line opacity ({\tt composite}, see Section 9);
+\bull 12 -- required for Averaged Lines opacity ({\tt average}, see Section 9).
+\spice
+Intermixed reading from files 3, 4, 7 and 8 is controlled by the {\bf USE} statement.
+Part A of the input statements (see Section 3) must be in file 3 (---.{\tt dat});
+the very first occurrence of {\bf USE} must also be in file 3 (---.{\tt dat}).
+\blankline
+The {\bf Output Files} are connected to the following units:
+\spice
+\bull 15 -- general printout (---.{\tt aaa}, see Section 11);
+\bull 16 -- error messages and `debug' data (---.{\tt aer}, see Section 11);
+\bull 19 -- restart data, PANDORA input format (---.{\tt rst});
+\bull 20 -- restart data, mostly PANDORA input format (---.{\tt msc});
+\bull 21 -- restart data, PANDORA input format (---.{\tt pop});
+\bull 22 -- PRD JNU values, PANDORA input format (---.{\tt jnr});
+\bull 23 -- results from the emergent spectrum calculations (---.{\tt spc});
+\bull 24 -- calculated cooling rates (---.{\tt coo});
+\bull 25 -- continuum data, for use by separate programs (---.{\tt csp});
+\bull 26 -- sample matrices, for use by separate programs (---.{\tt mat});
+\bull 27 -- Source-Function-related data (transitions data) (---.{\tt tsf});
+\bull 28 -- {\tt run\_archive} (see below);
+\bull 29 -- journal file: copies of the input data statements as read (---.{\tt jrl});
+\bull 30 -- iterative studies data, for use by separate programs (---.{\tt itr});
+\bull 31 -- printout index (---.{\tt aix}, see Section 11);
+\bull 32 -- checksums, for use by separate programs (---.{\tt cks}).
+\blankline
+The {\bf Scratch File} is connected to unit 1 (---.{\tt tmp}); it is a temporary file,
+used in direct access mode (see Section 5, Note 20).
+\blankline
+The {\tt run\_archive} file is used to collect a `performance data record' from each
+PANDORA run. This is a permanent file, opened for `append access' as needed. (Making
+a `performance data record' depends on input parameter {\bf IPERFA}.)
+%\vfill \vfill
+%\vfill \vfill
+%\vfill \vfill
+%\vfill \vfill
+%\vfill \vfill
+%\vfill \vfill
+%\vfill \vfill
+%\vfill 
+\vfill
+\noindent (Section 7 -- last revised: 2003 Jul 30) \par
+\message{Section 7 ends at page 7.\the\pageno}
+\ej
+%\end

@@ -1,0 +1,366 @@
+#!/usr/local/bin/perl -w
+#
+# PANDORA utility pmerge:
+#   merge data arrays from a .pop file into a .mod file
+# syntax:
+#   pmerge VALUES XXX.pop.NNNN YYY.mod
+#      where VALUES are coma-separated entry indentifiers, like NP,NE (no blank spaces)
+#
+# expansion:
+# the VALUES can be abbreviated as follow
+#   the character '_' in a values is replaced by ' *', so 'HN_1' becomes 'HN *1'
+#   the combo     N-M, where N and M are integers, is expanded 
+#                 to a loop on I from M to N inclusive
+#   HN_1-15 --> 'HN *1,HN *2,...,HN *15'
+#
+# I also added some shorthands:
+#   @NE+ @NP+
+# run the script w/out aruments to get a full usage
+#
+# rules:
+#   the match is to the RE '^$val *('
+#   some values are preceeded by a 'header', 
+#   so if the previous line starts w/ the RE ' *>', that line is merged as well
+#
+# <- Last updated: Fri Oct  4 09:31:17 2013 -> SGK
+#
+# Oct  4 2013 - fixed bug in loop limit: '<' --> '<=' in DoSubstitute
+#
+# ---------------------------------------------------------------------------
+#
+use strict;
+#
+my $VERSION = '1.0/3 (Oct 2013)';
+my $outFn = 'output.mod';
+my $debug   = 0;
+my ($n, $values, $popFn, $modFn, @values, $nVals, $err, $file, @usage, $val, $word, $string);
+#
+checkAgain:
+$n = $#ARGV+1;
+if ($n > 0) {
+  if ($ARGV[0] eq '-o') {
+    shift @ARGV;
+    if ($#ARGV >= 0) {
+      $outFn = $ARGV[0];
+      shift @ARGV;
+      goto checkAgain;
+    }
+  }
+  if ($ARGV[0] eq '-d') {
+    shift @ARGV;
+    $debug++;
+    goto checkAgain;
+  }
+}
+#
+if ($debug) {print STDERR "pmerge: Version $VERSION\n\n"; }
+#
+my %shortHand = ('@NE+'  => 'NE,ZME,NC,BDHM,NH',
+                 '@NP+'  => 'NP,HN_1-15,BDH_1-15',
+                 '@HE+'  => 'HEK,HEN_1-13,BDHE_1-13',
+                 '@HE2+' => 'HE2K,HE2N_1-8,BDHE2_1-8',
+                 '@C+'   => 'CK,CN_1-8,BDC_1-8',
+                 '@SI+'  => 'SIK,SIN_1-8,BDSI_1-8',
+                 '@AL+'  => 'ALK,ALN_1-8,BDAL_1-8',
+                 '@MG+'  => 'MGK,MGN_1-8,BDMG_1-8',
+                 '@FE+'  => 'FEK,FEN_1-8,BDFE_1-8',
+                 '@NA+'  => 'NAK,NAN_1-8,BDNA_1-8',
+                 '@CA+'  => 'CAK,CAN_1-8,BDCA_1-8',
+                 '@O+'   => 'OK,ON_1-14,BDO_1-14',
+                 '@O2+'  => 'O2K,O2N_1-8,BDO2_1-8',
+                 '@O3+'  => 'O3K,O3N_1-8,BDO3_1-8');
+#
+@usage = ('USAGE: pmerge [-d [-d [-d]]] [-o filename.mod] VALUES XXX.pop.NNNN YYY.mod',
+          '          where VALUES are coma-separated entry indentifiers',
+          '            i.e.: NE,NP',
+          '                XXX.pop.NNNN is a population file name',
+          '                YYY.mod      is a model      file name',
+          '        use "-o filename.mod" to specify a merged model file name different from "output.mod"',
+          '            the output merge model file name can be the same as the input model file name',
+          '        use -d, -d -d, or -d -d -d to turn on debugging levels',
+          '',
+          ' also:',
+          '          XX_1   means XX *1',
+          '          YY1-3  means YY1,YY2,YY3',
+          '          ZZ_1-2 means ZZ *1,ZZ *2',
+          '',
+          ' only the characters "A-Z0-9_-" can be used as entry identifiers',
+          '',
+          ' you can also use the following short-hands as entry indentifiers', 
+          '');
+foreach $val (sort(keys(%shortHand))) {
+  @usage = (@usage, '   '.$val.' -> "'.$shortHand{$val}.'"');
+}
+@usage = (@usage ,
+          '',
+          'examples: ', 
+          '',
+          '  pmerge NE,ZME,NC,BDHM,NH   f2exh.pop.31438 f2ex.mod',
+          '  pmerge NP,HN_1-15,BDH_1-15 SPsi4.pop.6622  SPsi4.mod', 
+          '  pmerge @NE+,@NP+           TSxx.pop.1234   TSxx.mod',
+          '');
+#
+$n = $#ARGV+1;
+#
+if ($n != 3) {
+  print STDERR "ERROR - pmerge needs 3 arguments besides the options, $n supplied.\n\n", join("\n",@usage),"\n";
+  die "ABORTED";
+}
+#
+$values = $ARGV[0];
+$popFn  = $ARGV[1];
+$modFn  = $ARGV[2];
+#
+# values can only have 'A-Z,0-9,-,_'
+# expand '_' to ' *'
+# expand N-M to loop
+# then check that there are no duplicate value/home/ocohen/runZombies
+#
+my %vals = ();
+$err = 0;
+#
+# parse for short-hands
+#
+my $save = $values;
+@values = ();
+foreach $word (split(/,/, $values)) {
+  if ($shortHand{$word}) {
+    @values = (@values, $shortHand{$word});
+  } else {
+    @values = (@values, $word);
+  }
+}
+$values = join(',', @values);
+#
+@values = ();
+foreach $word (split(/,/, $values)) {
+  $val = $word;
+  $val =~ s/[^0-9A-Z\_\-]//;
+  if ($word ne $val) {
+    print STDERR  "ERROR - invalid value specification '$word' (other chars than 'A-Z0-9_-') \n";
+    $err++;
+  } else {
+    $val =~ s/_/ */;
+    if ($val =~ /[0-9]\-[0-9]/) {
+      $val =~ s/([0-9]*)\-([0-9]*)//;
+      my $iFr = $1;
+      my $iTo = $2;
+      for (;$iFr <= $iTo; $iFr++) {
+        my $valx = $val."$iFr";
+        if ($vals{$valx}) {
+          print STDERR  "ERROR - duplicate value specification '$word' -> $valx\n";
+          $err++;
+        } else {
+          @values = (@values, $valx);
+        }
+      }
+    } else {
+      if ($vals{$val}) {
+        print STDERR  "ERROR - duplicate value specification '$word' -> $val\n";
+        $err++;
+      } else {
+        @values = (@values, $val);
+      }
+    }
+  }
+}
+#
+# stop here if error
+#
+if ($err != 0) {
+  die "ABORTED";
+}
+#
+$nVals = $#values+1;
+print STDERR "pmerge: merging $values in $popFn to $modFn ($nVals values)\n";
+if ($debug) {
+  if ($save ne $values) {
+    print STDERR " the shorthand parsing was: '$save' -> '$values'\n";
+  }
+  print STDERR " the values to merge are:\n  ",join("\n  ", @values),"\n";
+}
+#
+# check that the files exists
+#
+foreach $file ($popFn, $modFn) {
+  if (! -e $file) {
+    print STDERR "pmerge: ERROR - $file file not found\n";
+    $err++;
+  }
+}
+#
+# stop here if error
+#
+if ($err != 0) {
+  die "ABORTED";
+}
+#
+# extra the values from the pop file
+#
+my %strings = ();
+foreach $val (@values) {
+  #
+  # check that $val is in pop file and save its value
+  #
+  $string = DoFind($val, $popFn);
+  if ($string eq '') {
+    print STDERR "pmerge: ERROR - entry '$val (' not found in populationPOP file ($popFn)\n";
+    $err++;
+  }
+  $strings{$val} = $string;
+  if ($debug > 1) {
+    print STDERR "*** found $val in POP file\n";
+    if ($debug > 2) { print STDERR $string."***\n"; }
+  }
+}
+#
+# stop here if error, i.e. missing $value in .pop file
+#
+if ($err != 0) {
+  die "ABORTED";
+}
+#
+# read the .mod file
+#
+open FILE, '<'.$modFn;
+my @model = <FILE>;
+close FILE;
+#
+my $nMod = $#model+1;
+print STDERR "pmerge: $nMod lines in model file ($modFn)\n";
+#
+# initiate var to check that we found everyting in .mod file
+#
+my %nFound = ();
+foreach $val (@values) {
+  $nFound{$val} = 0;
+}
+#
+# do the substitution, one value at a time
+#
+my @new;
+foreach $val (@values) {
+  #
+  @new = DoSubstitute($val, @model);
+  @model = @new;
+}
+#
+# check that they were all found
+#
+foreach $val (@values) {
+  if ($nFound{$val} == 0) {
+    print STDERR "pmerge: ERROR - value '$val ('  NOT found in model file ($modFn)\n";
+    $err++;
+  } elsif ($nFound{$val} > 1) {
+    print STDERR "pmerge: ERROR - value '$val (' found $nFound{$val} times in model file ($modFn)\n";
+    $err++;
+  }
+}
+#
+# stop here if error
+#
+if ($err != 0) {
+  die "ABORTED";
+}
+#
+# dump output, which is a new .mod file
+#
+open FILE, ">$outFn";
+print FILE @model;
+close FILE;
+print STDERR "pmerge: produced new file '$outFn'\n";
+if ($outFn ne $modFn) {
+  print STDERR "pmerge: if that file is OK do 'mv $outFn $modFn'\n";
+}
+#
+exit;
+#
+#
+# ---------------------------------------------------------------------------=
+#
+sub DoFind {
+  #
+  my ($val, $popFn) = @_;
+  #
+  my $prev = '';
+  my $found = 0;
+  #
+  open FILE, '<'.$popFn;
+  while ($_ = <FILE>) {
+    if ($found) {
+      $string .= ';'.$_;
+      if (/ *\)/) {
+        close FILE;
+        return $string;
+      }
+    } else {
+      if (/^$val *\(/) { 
+        #
+        if ($prev =~ '^ *>') {
+          # previous line is arb # of blanks (or none) then a '>'
+          $string = $prev.';'.$_;
+        } else {
+          $string = $_;
+        }
+        $found = 1;
+      }
+    }
+    $prev = $_;
+  }
+  #
+  close FILE;
+  return '';
+}
+#
+# ---------------------------------------------------------------------------
+#
+sub DoSubstitute {
+  #
+  my ($val, @model) = @_;
+  #
+  my ($i, $line);
+  #
+  my $iFound = 0;
+  my $iFirst = 0;
+  my $iLast  = 0;
+  my $nMod = $#model;
+  #
+  for ($i = 1; $i <= $nMod; $i++) {
+    $line = $model[$i];
+    #
+    if ($line =~ /^$val *\(/) { 
+      if ($debug > 1) {
+        print STDERR "--- $val found in MOD file (starting at line $i)\n";
+        if ($debug > 2) { print STDERR "<$line>\n"; }
+      }
+      # does the prev line '^ *>'
+      if ($model[$i-1] =~ /^ *>/) {
+        $iFirst = $i-2;
+      } else {
+        $iFirst = $i-1;
+      }
+      $iFound = 1;
+      $nFound{$val}++;
+    }
+    if ($iFound) {
+      if ($line =~ / *\)/ ) { 
+        $iLast  = $i+1;
+        $iFound = 0;
+      }
+    }
+    #
+  }
+  #
+  if ($debug > 2) {
+    print STDERR "--- $val from $iFirst to $iLast is\n";
+    print STDERR @model[$iFirst+1..$iLast-1];
+    print STDERR "---\n";
+  }
+  #
+  # substitute
+  #
+  my @lines = split(';',$strings{$val});
+  my @save = (@model[0..$iFirst], @lines, @model[$iLast..$#model]);
+  #
+  return @save;
+  }

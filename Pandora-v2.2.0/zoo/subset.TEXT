@@ -1,0 +1,64 @@
+      subroutine SUBSET
+     $(V,N,VS,NS,DELTA,KODE)
+C     Rudolf Loeser, 1979 Apr 18
+C
+C     This is a dummy routine, serving merely as the vehicle for
+C     a general explanation of the various "SUBSET" routines.
+C
+C     (These routines are descendants of "SUBSET," originally
+C     written for CDC 6400 in 1976 Mar.)
+C
+C---- This routine compares the elements of the array "VS"
+C     (length "NS") with those of the array "V" (length "N"),
+C     to check whether VS is a subset of V.
+C     All elements of V must be distinct, as must all elements
+C     of VS.
+C     Comparisons between elements are done with the "COMP'X"
+C     routines, which require the additional argument 
+C     "DELTA."
+C     Upon return, the value of "KODE" tells the story.
+C
+C---- We distinguish between two cases:
+C
+C---- 1) The elements of V and VS are in arbitrary order.
+C
+C     Then, VS is a subset of V if: VS(i) .eq. V(j), some j,
+C     all i. Upon return:
+C     KODE= 1 if VS is a subset of V;
+C           0 if not; and
+C          -1 if N .le. 0.
+C
+C---- 2) The elements of V and VS are in sorted order.
+C
+C     Then, VS is a subset of V if: 1) VS(i) .eq. V(j),
+C     some j, all i; and 2) if both arrays are sorted in the
+C     same sense (i.e. both ascending or both descending).
+C     Upon return:
+C     KODE= 1 if VS is a subset of V;
+C           0 if not;
+C          -1 if N .le. 0; and
+C          -2 if V is not sorted.
+C     !EJECT
+C---- The following flavors of "SUBSET" have been implemented:
+C
+C   ..1) For unsorted arrays:
+C
+C     SUBSUD (D,N,DS,NS,DELTA,KODE) - D,DS,DELTA are type
+C                                     DOUBLE PRECISION;
+C
+C     SUBSUI (I,N,IS,NS,INT,KODE)   - I,IS,INT are type INTEGER;
+C
+C     SUBSUR (R,N,RS,NS,DELTA,KODE) - R,RS,DELTA are type REAL.
+C
+C   ..2) For sorted arrays:
+C
+C     SUBSSD (D,N,DS,NS,DELTA,KODE) - analogous to SUBSUD;
+C
+C     SUBSSI (I,N,IS,NS,INT,KODE)   - analogous to SUBSUI;
+C
+C     SUBSSR (R,N,RS,NS,DELTA,KODE) - analogous to SUBSUR.
+C
+C----
+C     !beg
+C     !end
+      end

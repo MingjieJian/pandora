@@ -1,0 +1,211 @@
+> LEID       MODEL LEID   13 L He      ITER 99-09   2014-Mar-24
+>  ---------1------------1------------1------------1------------1
+> 
+USE ( MODEL ) >
+> 
+USE ( ATOM ) >
+> 
+K      ( 27 ) >
+kmmax  ( 700 ) >
+NWV ( 2 ) >
+> nvx ( 3 ) > number of additional expansion velocities
+L   ( 6 ) > length of MU (not needed when sphere=on)
+LF  ( 6 )  > length of MUF (not needed when sphere=on)
+> 
+do ( addcopr ) >
+do ( adn1dmp ) >
+omit ( all ) >
+omit ( amdiff ) >
+do ( bdcalc ) >
+omit ( bdgraf ) >
+do ( calcool ) >
+omit ( cefacts ) >
+omit ( cijprnt ) >
+omit ( didhc ) >
+omit ( diffana ) >
+omit ( dpdwprnt ) >
+do ( dsmooth ) >
+do ( elecprnt ) >
+do ( eclipse ) >
+do ( emerint ) >
+do ( emigraf ) >
+DO ( EMIPRNT ) >
+do ( emisum ) >
+do ( EPCOMP ) >
+omit ( every ) >
+omit ( expand ) >
+omit ( flwbroad ) >
+DO ( HELPRNT HEL2PRNT ) >
+omit ( henorm ) >
+omit ( HMS ) >
+do ( komprnt ) >
+omit ( lbdprnt ) >
+omit ( LSFGRAF ) >
+omit ( LSFPRNT ) >
+omit ( LYMAN ) >
+omit ( nedit ) >
+DO ( OPAPRNT ) >
+do ( origin ) >
+do ( phase2 ) >
+do ( orshort ) >
+omit ( PIJPRNT ) >
+do ( prdmeth ) >
+omit ( prdprnt ) >
+omit ( procprnt ) >
+DO ( PROSAV ) >
+omit ( RATEFULL ) >
+OMIT ( RATEGRAF ) >
+do ( rateprnt ) >
+do ( rhbprdt ) >
+do ( rhedit ) >
+omit ( RIJPRNT ) >
+do ( rsmooth ) >
+omit ( sebug ) >
+do ( sedit ) >
+OMIT ( SLYR ) >
+do ( SPECSAV ) >
+omit ( sphere ) >
+do ( SSMOOTH ) >
+do ( stimprnt ) >
+do ( tauprnt ) >
+OMIT ( TEGRAF ) >
+omit ( wtabprnt ) >
+omit ( waveprnt ) >
+DO ( ZPRNT ) >
+> 
+GO >
+> 
+> jstin ( 1 ) >
+> 
+USE ( MODEL ) >
+USE ( ATOM ) >
+> 
+> lsftyp=0 for thick, =1 for thin
+> krate=1 for thick, =2 for thin
+> 
+> values below for the 5ldb atom
+> 
+lsftyp 4 2 ( 1 )  krate 4 2 ( 2 ) >
+lsftyp 5 1 ( 0 )  krate 5 1 ( 1 ) >
+ktrans 5 3 ( passive ) >
+> lsftyp 5 3 ( 0 )  krate 5 3 ( 2 ) >
+> lsftyp 6 4 ( 1 )  krate 6 4 ( 2 ) >
+> lsftyp 7 5 ( 1 )  krate 7 5 ( 2 ) >
+> lsftyp 8 2 ( 1 )  krate 8 2 ( 2 ) >
+> lsftyp 8 6 ( 1 )  krate 8 6 ( 2 ) >
+> lsftyp 9 4 ( 1 )  krate 9 4 ( 2 ) >
+> lsftyp 10 5 ( 1 )  krate 10 5 ( 2 ) >
+> lsftyp 11 1 ( 0 )  krate 11 1 ( 1 ) >
+> lsftyp 11 3 ( 1 )  krate 11 3 ( 2 ) >
+> lsftyp 11 7 ( 1 )  krate 11 7 ( 2 ) >
+> lsftyp 12 1 ( 0 )  krate 12 1 ( 1 ) >
+> lsftyp 12 2 ( 1 )  krate 12 2 ( 2 ) >
+> lsftyp 12 3 ( 1 )  krate 12 3 ( 2 ) >
+> lsftyp 12 4 ( 1 )  krate 12 4 ( 2 ) >
+> lsftyp 12 5 ( 1 )  krate 12 5 ( 2 ) >
+> lsftyp 12 6 ( 1 )  krate 12 6 ( 2 ) >
+> lsftyp 12 7 ( 1 )  krate 12 7 ( 2 ) >
+> lsftyp 12 8 ( 1 )  krate 12 8 ( 2 ) >
+> lsftyp 12 9 ( 1 )  krate 12 9 ( 2 ) >
+> lsftyp 12 10 ( 1 )  krate 12 10 ( 2 ) >
+> lsftyp 12 11 ( 1 )  krate 12 11 ( 2 ) >
+> lsftyp 13 1 ( 0 )  krate 13 1 ( 1 ) >
+> lsftyp 13 2 ( 1 )  krate 13 2 ( 2 ) >
+> lsftyp 13 3 ( 1 )  krate 13 3 ( 2 ) >
+> lsftyp 13 4 ( 1 )  krate 13 4 ( 2 ) >
+> lsftyp 13 5 ( 1 )  krate 13 5 ( 2 ) >
+> lsftyp 13 6 ( 1 )  krate 13 6 ( 2 ) >
+> lsftyp 13 7 ( 1 )  krate 13 7 ( 2 ) >
+> lsftyp 13 8 ( 1 )  krate 13 8 ( 2 ) >
+> lsftyp 13 9 ( 1 )  krate 13 9 ( 2 ) >
+> lsftyp 13 10 ( 1 )  krate 13 10 ( 2 ) >
+> lsftyp 13 11 ( 1 )  krate 13 11 ( 2 ) >
+> lsftyp 13 12 ( 1 )  krate 13 12 ( 2 ) >
+> 
+lsffdb 4 2 ( 1 )  prof 4 2 ( 1 )  progli 4 2 ( 2. ) >
+lsffdb 5 1 ( 1 )  prof 5 1 ( 1 )  progli 5 1 ( 2. ) >
+> lsffdb 9 4 ( 1 )  prof 9 4 ( 1 )  progli 9 4 ( 2. ) >
+> 
+ecli 4 2 ( 1 ) >
+> 
+LSFPRINT 4 2 ( 1 )  METSE 4 2 ( 1 ) >
+LSFPRINT 5 1 ( 1 )  METSE 5 1 ( 1 ) >
+LSFPRINT 5 3 ( 1 )  METSE 5 3 ( 1 ) >
+> LSFPRINT 9 4 ( 1 )  METSE 9 4 ( 1 ) >
+> metse 11 1 ( 1 ) >
+> metse 12 1 ( 1 ) >
+> metse 13 1 ( 1 ) >
+> 
+dellim ( 0. ) >
+> 
+RHOPT ( RHOP )  >
+bdopt ( bdq )  >
+wrmn ( 0.5 )  wrmx ( 1.0 ) >
+TSM ( 1.E-6 ) TMS ( 1000. )  TLARGE ( 1000. ) >
+wpop ( .4 ) >
+wbd ( .4 ) >
+> 
+USE ( RESTART ) >
+> 
+IOMX ( 11 ) >
+> 
+POPUP ( HELIUM ) >
+> 
+waves ( 503. 10830. ) >
+> 
+NDW ( 50 ) >
+XI  ( 0. .2 .4 .6 .8 1.0 1.2 1.4 1.7 2. 2.5 3. 3.5 4. 5. 7. 10. 15. 20. 25. >
+      30. 35. 40. 45. 50. 55. 60. ) >
+> 
+> YPRE ( 0. ) >
+> 
+[ To use with HE-I    ]  RABDL     ( >
+-1.78442456E+00 -1.60209858E+00 -1.41022573E+00 -1.20574115E+00 -9.81784232E-01
+-7.15309273E-01 -4.53026570E-01 -2.38631532E-01 -1.04637233E-01 -4.29488938E-02
+-2.02396398E-02 -9.12923224E-03 -4.06933224E-03 -1.91617899E-03 -9.67093268E-04
+-4.87164308E-04 -2.52924431E-04 -1.11465332E-04 -5.20730509E-05 -2.35331770E-05
+-1.04177505E-05 -5.45166451E-06 -3.14868269E-06 -2.05784034E-06 -1.31033123E-06
+-8.23434536E-07 -4.76086335E-07 -2.58399708E-07 -1.24449827E-07 -2.65972273E-08
+-2.15530039E-09 -2.29890846E-11 -5.44845019E-15  0.00000000E+00  0.00000000E+00
+ 0.00000000E+00  0.00000000E+00  0.00000000E+00  0.00000000E+00  0.00000000E+00
+ 0.00000000E+00  0.00000000E+00  0.00000000E+00  0.00000000E+00  0.00000000E+00
+ 0.00000000E+00  0.00000000E+00  0.00000000E+00  0.00000000E+00  0.00000000E+00
+ 0.00000000E+00  0.00000000E+00  0.00000000E+00  0.00000000E+00  0.00000000E+00
+ 0.00000000E+00  0.00000000E+00  0.00000000E+00  0.00000000E+00  0.00000000E+00
+ 0.00000000E+00  0.00000000E+00  0.00000000E+00  0.00000000E+00  0.00000000E+00
+ 0.00000000E+00  0.00000000E+00  0.00000000E+00  0.00000000E+00  0.00000000E+00
+ 0.00000000E+00  0.00000000E+00
+ ) >
+> 
+ VXS              ( >
+ 1.00000000E+02  1.00000000E+02  1.00000000E+02  1.00000000E+02  1.00000000E+02
+ 1.00000000E+02  1.00000000E+02  1.00000000E+02  1.00000000E+02  1.00000000E+02
+ 1.00000000E+02  1.00000000E+02  9.95000000E+01  9.80000000E+01  9.60000000E+01
+ 9.30000000E+01  8.90000000E+01  8.20000000E+01  7.50000000E+01  6.70000000E+01
+ 6.00000000E+01  5.40000000E+01  4.95000000E+01  4.60000000E+01  4.30000000E+01
+ 4.00000000E+01  3.70000000E+01  3.40000000E+01  3.10000000E+01  2.70000000E+01
+ 2.25000000E+01  1.80000000E+01  1.20000000E+01  0.60000000E+01  0.00000000E+00
+ 0.00000000E+00  0.00000000E+00  0.00000000E+00  0.00000000E+00  0.00000000E+00
+ 0.00000000E+00  0.00000000E+00  0.00000000E+00  0.00000000E+00  0.00000000E+00
+ 0.00000000E+00  0.00000000E+00  0.00000000E+00  0.00000000E+00  0.00000000E+00
+ 0.00000000E+00  0.00000000E+00  0.00000000E+00  0.00000000E+00  0.00000000E+00
+ 0.00000000E+00  0.00000000E+00  0.00000000E+00  0.00000000E+00  0.00000000E+00
+ 0.00000000E+00  0.00000000E+00  0.00000000E+00  0.00000000E+00  0.00000000E+00
+ 0.00000000E+00  0.00000000E+00  0.00000000E+00  0.00000000E+00  0.00000000E+00
+ 0.00000000E+00  0.00000000E+00
+ ) >
+GO >
+> 
+MUF ( 1.0 .9 .7 .5 .3 .1 ) >
+MU ( 1.0 .9 .7 .5 .3 .1 ) >
+> 
+> cvx ( 10. 15. 20. ) > previously used
+> 
+CORMIN ( 10700. ) >
+CORMAX ( 10900. ) >
+> 
+GO >
+> 
+USE ( MODEL ) >
+> 
+GO

@@ -1,0 +1,11 @@
+  13-Apr-11 !NONAME! H   ; itr   2  1(0); n,nl,nt  25    3    3; sec       0; ela  0:00:01; vrsn 78.018; cpu menfin             
+  13-Apr-11 !NONAME! H   ; itr   2  1(0); n,nl,nt  25    3    3; sec       0; ela  0:00:00; vrsn 78.018; cpu menfin             
+  13-Apr-11 !NONAME! H   ; itr   2  1(0); n,nl,nt  25    3    3; sec       1; ela  0:00:01; vrsn 78.018; cpu menfin             
+  13-Apr-11 !NONAME! MG2 ; itr   1  1(1); n,nl,nt  34    2    1; sec       1; ela  0:00:01; vrsn 78.018; cpu menfin             
+  13-Apr-11 A1001    H   ; itr   5  1(1); n,nl,nt  91   15  105; sec    1099; ela  0:23:33; vrsn 78.018; cpu menfin             
+  13-Apr-11 LEID     H   ; itr  11  1(0); n,nl,nt  72    5   10; sec     411; ela  0:07:38; vrsn 78.018; cpu menfin             
+  13-Apr-11 LEID     HE1 ; itr  11  1(0); n,nl,nt  72    5    3; sec     176; ela  0:03:00; vrsn 78.018; cpu menfin             
+  13-Apr-11 LEID     CA2 ; itr  11  1(0); n,nl,nt  72    5    5; sec     359; ela  0:06:24; vrsn 78.018; cpu menfin             
+  13-Apr-11 LEID     H   ; itr  11  1(0); n,nl,nt  72    5   10; sec     411; ela  0:07:20; vrsn 78.018; cpu menfin             
+  13-Apr-11 LEID     HE1 ; itr  11  1(0); n,nl,nt  72    5    3; sec     175; ela  0:02:58; vrsn 78.018; cpu menfin             
+  13-Apr-11 LEID     CA2 ; itr  11  1(0); n,nl,nt  72    5    5; sec     360; ela  0:06:21; vrsn 78.018; cpu menfin             

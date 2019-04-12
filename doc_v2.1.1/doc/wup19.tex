@@ -1,0 +1,311 @@
+\magnification=1200
+\input wupstuff.tex
+\newtoks\footline \footline={\hss\tenrm 19.\folio\hss}
+%
+\pageno=1
+%
+\top
+\vskip 1.5 true in
+\centerline{Section 19: {\bf Atomic Models}}
+\blankline
+\blankline
+\centerline{\bf ***}
+\blankline
+\blankline
+PANDORA uses the numeric parameters of a model of the ion-of-the-run
+to compute the line source functions and emergent line profiles of interest.
+The user must see to it that the minimum required set of atomic model
+parameters is specified in the input. Some of these atomic parameters
+(in the case of Hydrogen: most) can take on default values supplied
+by the program.
+
+Over the years, and with the the help of many people, we have compiled and
+collected several dozen atomic model data sets. These data sets are known
+as ``atomic model files'' and are available for general use.
+\blankline
+The purpose of this section is to provide some general guidance for setting
+up an atomic model and to describe the available defaults. Please refer to
+Section 5 for complete details about the various parameters mentioned here.
+
+Note that PANDORA-supplied default parameter values are written to file
+{\tt fort.20} (\ie {\tt .msc}) when option ATOMSAV is on (see Section 8).
+\blankline
+There now follow: 1) General Information; 2) Defaults For Ions Other Than
+Hydrogen; 3) Defaults for Hydrogen; and 4) More About Collision Rates.
+\ej
+\centerline{\bf 1) General Information}
+\blankline
+An atomic model consists of a set of energy levels, a continuum level,
+specifications of the properties of levels, and specifications of the
+properties of transitions between levels and between levels and the continuum.
+(As well, PANDORA uses many other atomic model-related parameters that
+pertain to the details of various specific computational and organizational
+procedures.)
+\blankline
+\centerline{Levels}
+\blankline
+The number of energy levels (`regular levels') is {\bf NL}, $({\bf NL} 
+\geq 2)$. Additional higher levels can be included in the calculations in
+an approximate way as `supplementary levels' by setting
+${\bf NSL} > {\bf NL}$. (Normally these are not used, and the program
+sets ${\bf NSL} = {\bf NL}$.)
+
+The principal quantum numbers $n$ and $\ell$ for each level are specified by
+means of the {\bf NLPAIR} statement. (Another parameter {\bf QNL}, the
+``number of $n\ell$ electrons,'' must be specified for each level if default
+{\bf CI} values [see below] are used.)
+
+The value of ${\bf NU}^j, 1 \leq j \leq {\bf NSL}$, is the energy of
+level $j$ in frequency units (in units of $10^{15}$ Hz);
+the convention ${\bf NU}^1 = 0$ is enforced.
+The value of {\bf NUK}, similarly, is the energy of the continuum.
+If the higher level(s) of the ion model are `autoionizing' level(s),
+then auxiliary continuum energies, ${\bf NUC}^j > {\bf NUK}$, can be
+specified (the default value of ${\bf NUC}^j = {\bf NUK}$).
+
+Other parameter values needed for each level include: {\bf P}, statistical
+weight; {\bf CP}, photoionization cross-section; and values of {\bf ELSYM} and
+{\bf IONSTAGE} (e.g., for Mg-II, {\bf ELSYM} = MG and {\bf IONSTAGE} = 2).
+\blankline
+The collisional ionization rate is ${\bf CI}^j_i \times {\bf NE}_i \times
+\exp(-h \, {\bf NU}^j \times 10^{15} / k \, {\bf TE}_i)$, where {\bf CI} is the
+collisional ionization coefficient. Values of {\bf CI} can also be
+provided in the input. {\bf CI} can be given as functions of a specified short
+temperature table ${\bf TER}_k, \; 1 \leq k \leq {\bf NTE}$. When values of
+${\bf CI}^j_i$ at particular depths $i$ (\ie for particular values of
+${\bf TE}_i$) are required as the calculation proceeds, they are then
+obtained by interpolation from these given tables of
+${\bf CI}^j({\bf TER}_k), \; 1 \leq j \leq {\bf NSL}, \; 1 \leq k \leq {\bf NTE}.$
+When ${\bf NTE} = 1$, then the constant value ${\bf CI}^j$ is used for all
+temperatures.
+
+However, {\bf CI} can also be computed ``on-the-fly''
+for the specific value of {\bf TE}$_i$ (and {\bf NC}$_i$ in a Hydrogen run)
+at every depth $i$; see ({\bf 4}), below.
+\ej
+% \blankline
+\centerline{Transitions between levels}
+\blankline
+PANDORA computes the collisonal transitions, both due to electrons and due
+to hydrogen, between all levels, and from all levels to the continuum
+(thus providing rates between levels via the continuum). However radiative
+transitions are computed only between specified pairs of levels $(u,\ell), 
+\; u > \ell$. There are {\bf NT} such pairs, which are specified by means of the
+{\bf INPAIR} statement. The ``radiative'' transitions so specified, depending
+on how PANDORA should treat them, can be of five different types as indicated
+by the parameter {\bf KTRANS}$^{u,\ell}$: {\tt RADIATIVE, PASSIVE,
+THICK, THIN,} and {\tt 2-PHOTON}. Note that {\tt RADIATIVE} transitions
+can be designated as `blended lines'; this is triggered by setting
+${\bf LDL}^{u,\ell} > 1$ (see also input parameter {\bf LDLMAX}).
+
+Values of the Einstein parameter ${\bf A}^{u,\ell}$ are required for all
+{\tt RADIATIVE} and {\tt PASSIVE} transitions, and may be specified for
+{\tt THICK} transitions. Values of the broadening parameters 
+${\bf CRD}^{u,\ell}$ (radiative), ${\bf CVW}^{u,\ell}$ (van der Waals),
+${\bf CSK}^{u,\ell}$ (Stark) and ${\bf CRS}^{u,\ell}$ (resonance) may
+be specified for {\tt RADIATIVE} and {\tt PASSIVE} transitions.
+\blankline
+The collisional de-excitation rate is ${\bf CE}^{u,\ell}_i \times {\bf NE}_i
+\times ({\bf P}^u/{\bf P}^\ell)$, while the excitation rate is
+${\bf CE}^{u,\ell}_i \times {\bf NE}_i \times \exp[-h \, ({\bf NU}^u-{\bf NU}^\ell)
+\times 10^{15}/k \, {\bf TE}_i]$; here {\bf CE} is the excitation coefficient.
+Values of {\bf CE} may also be provided in the input. {\bf CE} can be
+given as functions of the short temperature table ${\bf TER}_k, \; 1 \leq k \leq
+{\bf NTE}$, mentioned above. When values of
+${\bf CE}^{u,\ell}_i$ at particular depths $i$ (\ie for particular values of
+${\bf TE}_i$) are required as the calculation proceeds, they are then obtained
+by interpolation from these given tables of ${\bf CE}^{u,\ell}({\bf TER}_k), 
+\; 2 \leq u \leq {\bf NL}, \; 1 \leq \ell < u, \; 1 \leq k \leq {\bf NTE}$.
+When ${\bf NTE} = 1$, then the constant value ${\bf CE}^{u,\ell}$ is used
+for all temperatures.
+
+However, {\bf CE} can also be computed
+``on-the-fly'' for the specific value of {\bf TE}$_i$ (and {\bf NC}$_i$
+in a Hydrogen run) at every depth $i$; see (4), below.
+\blankline
+\centerline{Minimum input}
+\blankline
+Values for at least the following atomic model parameters are required
+in order to be able to do anything at all: {\bf NL}, {\bf NU}, {\bf NUK},
+{\bf P}, {\bf CP}, {\bf NT}, {\bf A}, and values of {\bf CI} and {\bf CE}
+for one value of {\bf TER} (for, say, the default value 4000 K).
+\ej
+% \blankline
+\centerline{\bf 2) Defaults For Ions Other Than Hydrogen}
+\blankline
+a) Unspecified values of
+${\bf CI}^j({\bf TER}_k), \; 1 \leq j \leq {\bf NSL}, \; 1 \leq k 
+\leq {\bf NTE}$ are replaced by computed ones. Three different methods are
+available; the (set of) method(s) to be used can be specified in a
+CIMETHOD statement. The \break CIMETHOD statement lists methods by codename
+as follows:
+
+{\tt CLARK}: \quad Clark, Abdallah, and Mann (1991), ApJ {\bf 381}, 597;
+
+{\tt AR}: \quad Arnaud and Rothenflug (1985), A\&A {\bf 60}, 425;
+
+{\tt VORONOV}: \quad Voronov (1997), Atomic Data and Nuclear Tables {\bf 65}, 1. \np
+{\tt AR} and {\tt VORONOV} can only be used for level $j = 1$, of some ions;
+{\tt CLARK} can be used in all cases.
+
+The default methods set is: {\tt AR} for $j = 1$ if possible,
+and {\tt CLARK} otherwise.
+\blankline
+b) Unspecified values of {\bf KTRANS}$^{u,\ell}$, for all $(u,\ell)$ pairs
+mentioned in {\bf INPAIR}, are set equal to {\tt RADIATIVE}.
+\blankline
+c) If {\bf CP} is not specified, then for level 1 a default value is
+computed according to Verner {\it et al.} (1996), ApJ, {\bf 465}, 487
+if they list data for this ion. If not, and for other levels, default
+values are obtained from the hydrogenic approximation.
+\blankline
+d) Unspecified values of
+${\bf CE}^{u,\ell}({\bf TER}_k), \; 2 \leq u \leq {\bf NL}, \;
+1 \leq \ell < u, \break 1 \leq k \leq {\bf NTE}$ are replaced by computed ones.
+Two different methods are available; the (set of) method(s) to be used
+can be specified in a CEMETHOD statement. The CEMETHOD statement lists
+methods by codename as follows:
+
+{\tt SEATON}: \quad Seaton (1962), Proc.Phys.Soc. {\bf 79}, 1105;
+
+{\tt VREGE}: \quad van Regemorter (1962), ApJ {\bf 136}, 906. \np
+{\tt SEATON} can only be used for transitions with nonzero
+{\bf A}-values, of neutral atoms; {\tt VREGE} can be
+used for all cases. The {\tt VREGE} method needs {\bf A}-values.
+If ${\bf A}^{u,\ell} = 0$ then theoretical values of ${\bf A}^{u,\ell}$
+for such `forbidden' transitions are computed assuming that the
+oscillator strength of the transition is given by the parameter
+{\bf FROSCE} (whose default value = 0.01).
+
+The default methods set is: {\tt SEATON} for neutral atoms,
+and {\tt VREGE} otherwise.
+\blankline
+e) Unspecified values of {\bf CRD}$^{u,\ell}$, {\bf CVW}$^{u, \ell}$,
+and {\bf CSK}$^{u, \ell}$ are updated with computed ones.
+The calculation of {\bf CRD}-vales uses all available {\bf A}-values.
+\blankline
+f) If all values of {\bf RRCP} for any level are unspecified,
+default sets for such levels
+are computed either according to Verner {\it et al.} (see (c), above),
+or using $1/{\nu^3}$.
+\ej
+% \blankline
+\centerline{\bf 3) Defaults For Hydrogen}
+\blankline
+a) Unspecified values of {\bf NU}$^j$, {\bf P}$^j$ and {\bf CP}$^j, 
+\; 1 \leq j \leq {\bf NSL}$, and of {\bf NUK} are replaced by
+computed ones.
+\blankline
+b) Unspecified values of
+${\bf CI}^j({\bf TER}_k), \; 1 \leq j \leq {\bf NSL}, \; 1 \leq k 
+\leq {\bf NTE}$ are replaced by computed ones. Five different methods are
+available; the (set of) method(s) to be used can be specified in a
+CIMETHOD statement. The \break CIMETHOD statement lists methods by codename
+as follows:
+
+{\tt CLARK}: \quad Clark, Abdallah, and Mann (1991), ApJ {\bf 381}, 597;
+
+{\tt AR}: \quad Arnaud and Rothenflug (1985), A\&A {\bf 60}, 425;
+
+{\tt JOHNSON}: \quad Johnson (1972), ApJ {\bf 174}, 227;
+
+{\tt VS}: \quad Vriens and Smeets (1980), Phys.Rev.A {\bf 72}, 940;
+
+{\tt SHAH}: \quad Shah, Elliott, and Gilbody (1987), J.Phys.B {\bf 20}, 3506. \np
+{\tt AR} and {\tt SHAH} can be used for level $j = 1$ only; the others
+can be used in all cases.
+
+The default methods set is: {\tt SHAH} for $j = 1$, and {\tt CLARK} otherwise.
+\blankline
+c) Unspecified values of
+${\bf CE}^{u,\ell}({\bf TER}_k), \; 2 \leq u \leq {\bf NL}, \;
+1 \leq \ell < u, \break 1 \leq k \leq {\bf NTE}$ are replaced by computed ones.
+Six different methods are available; the (set of) method(s) to be used can be
+specified in a CEMETHOD statement. The CEMETHOD statement lists
+methods by codename as follows:
+
+{\tt SEATON}: \quad Seaton (1962), Proc.Phys.Soc. {\bf 79}, 1105;
+
+{\tt VREGE}: \quad van Regemorter (1962), ApJ {\bf 136}, 906;
+
+{\tt SCHOLZ}: \quad Scholz {\it et al.} (1990), MNRAS {\bf 242}, 692;
+
+{\tt PB}: \quad Przybilla and Butler (2004), ApJ {\bf 609}, 1181; 
+
+{\tt AGGRWL}: \quad Aggarwal {\it et al.} (1991), J.Phys.B {\bf 24}, 1385;
+
+{\tt VS}: \quad Vriens and Smeets (1980), Phys.Rev.A {\bf 22}, 940;
+
+{\tt JOHNSON}: \quad Johnson (1972), ApJ {\bf 174}, 227. \np
+{\tt SCHOLZ} can be used for transition (2/1) only;
+{\tt PB} works for all transitions $(u,\ell), \break u \leq 7$;
+{\tt AGGRWL} works for all transitions $(u,\ell), \; u \leq 5$;
+the others can be used for all cases.
+
+The default methods set is: {\tt AGGRWL} for all transitions it works for,
+and {\tt JOHNSON} otherwise.
+\blankline
+d) Unspecified values of ${\bf A}^{u,\ell}$, for all $(u,\ell)$ pairs
+mentioned in {\bf INPAIR}, are computed according to Johnson (1972), ApJ
+{\bf 174}, 227 (uses 'lowering of the ionization potential when
+{\bf IXNCS} = 1). All unspecified values of ${\bf KTRANS}^{u,\ell}$, for
+all $(u,\ell)$ pairs mentioned in {\bf INPAIR}, are set equal to 
+{\tt RADIATIVE}.
+\blankline
+e) Unspecified values of {\bf CRD}$^{u,\ell}$, {\bf CVW}$^{u,\ell}$,
+{\bf CSK}$^{u,\ell}$, and {\bf CRS}$^{u,\ell}$ are updated with computed ones.
+The calculation of {\bf CRD}-values uses all available {\bf A}-values;
+the calculation of {\bf CSK}-values uses the method of Sutton (1978),
+JQSRT {\bf 20}, 233.
+\ej
+% \blankline
+\centerline{\bf 4) More About Collision Rates}
+\blankline
+When PANDORA computes values of {\bf CI} and/or {\bf CE},
+as described in (2) and (3) above, such raw computed values are modified
+before use, as follows:
+$$CI^j_{default} = ACI^j + MCI^j \times CI^j_{raw}$$
+$$CE^{u,\ell}_{default} = ACE^{u,\ell} + MCE^{u,\ell} \times CE^{u,\ell}_{raw}$$
+(The default values of the input parameters {\bf ACI} and {\bf ACE} are all 0,
+and of the input parameters {\bf MCI} and {\bf MCE} are all 1.)
+\blankline
+\blankline
+Before any input or computed {\bf CI} and {\bf CE} values are used in
+the calculations, they are all multiplied by input parameter {\bf RFAC}
+(default = 1).
+\blankline
+\blankline
+When option CEFACTS is on and any values of ${\bf PCE}^{u, \ell} > 0$, then
+sets of ${\bf FCE}^{u, \ell}_i$ are computed and adjusted to prevent
+$S^{u, \ell}_i \leq 0$. Such {\bf FCE} values are saved for use in restart runs.
+\blankline
+\blankline
+If {\tt ONTHEFLY} was specified for {\bf CI} in a CIMETHOD statement, and/or
+for {\bf CE} in a CEMETHOD statement, then the tabulated values in the ATOM
+printout section are for information only. Actual values of {\bf CI} and/or
+{\bf CE} will be computed at every depth as needed.
+
+In a Hydrogen run computed default {\bf CI} and {\bf CE} values using
+{\tt JOHNSON} or {\tt VS} also depend on {\bf NC} when the value of the input
+parameter {\bf IXNCS} = 1 (the default is {\bf IXNCS} = 0, {\it i.e.} the
+{\bf NC}-dependent factor is set = 1). When the {\bf NC}-dependent factor
+is computed explicitly it is intended to account for the `lowering of the
+ionization potential.'
+\blankline
+\blankline
+A comparison of the various default {\bf CI} and {\bf CE} values appears
+in the printout section INPUT NOTES. These sample values are computed using
+{\bf TE}$_i$, where $i$ is the input parameter {\bf INCEI}.
+%\vfill \vfill
+%\vfill \vfill
+%\vfill \vfill
+%\vfill \vfill
+%\vfill \vfill
+%\vfill \vfill
+%\vfill \vfill
+%\vfill 
+\vfill
+\noindent (Section 19 -- last revised: 2007 Apr 18) %\par
+\message{Section 19 ends at page 19.\the\pageno}
+\ej
+%\end

@@ -1,0 +1,2814 @@
+%\magnification=1200
+%\input wupstuff.tex
+\newtoks\footline \footline={\hss\tenrm 5.\folio\hss}
+\pageno=1
+\def\pa{$\times 10^{4}$}
+\def\pb{$\times 10^{5}$}
+\def\pc{$\times 10^{6}$}
+\def\pd{$\times 10^{7}$}
+\def\pe{$\times 10^{8}$}
+\def\pf{$\times 10^{9}$}
+\def\pg{$\times 10^{10}$}
+\def\ph{$\times 10^{11}$}
+\def\pj{$\times 10^{12}$}
+\def\pk{$\times 10^{13}$}
+\def\pl{$\times 10^{14}$}
+\def\pm{$\times 10^{15}$}
+\def\pn{$\times 10^{16}$}
+\def\po{$\times 10^{17}$}
+\def\z{[@Z]}
+\def\Na{\space \vbox}
+\def\bang{\cr \par \hangindent=10pt \hangafter=0}
+\def\Df{\par \hangindent=10pt \hangafter=0 {\it Default: }}
+\top
+\vskip 1.5 true in
+\centerline{Section 5: {\bf Input Parameters}}
+\blankline
+\blankline
+\centerline{\bf ***}
+\blankline
+\blankline
+This section contains the complete list of input parameter specifications,
+in alphabetical order by name, followed by a set of explanatory notes,
+and finally by an alphabetized listing of keywords and descriptive
+phrases for each parameter --- this last list should be used
+when a parameter's significance or function are vaguely known and
+its name is sought. After the parameter name has been located
+in the keywords list, the complete specification can then be
+consulted in the first part of this section.
+
+The list of input parameter specifications has two or more lines
+of information for each parameter.
+
+Line 1 has the following format:
+first the parameter {\bf NAME}, in boldface type; then an optional
+reference, {\bf *note}, to one of the notes collected at the end
+of the spefications list; then, if the parameter is a table, 
+the [length] of the table, in square brackets, (if no length is
+given, then the parameter is a single item; if {\z} appears, this
+signifies that the parameter must have as many elements as the
+associated depth table ({\bf Z} or {\bf ZAUX}) -- {\it see Section 13}); 
+and then a final group of codes: 
+\bull first the letter designating the Part(s) of the input
+file the parameter may appear in ({\it see Section 3}),
+\bull then the number specifying the Statement Form to be used with this
+parameter ({\it see Section 2}), and
+\bull finally the required mode of the parameter.
+
+Line 2 contains a brief description of the function or significance 
+of the input parameter. More information can be found in the {\bf *note}
+specified (if any).
+
+Beginning on Line 3 there appears an optional
+specification of the default value(s) of the parameter. 
+\blankline
+\centerline{\bf
+If no default(s) are specified, then the default(s) equal(s) zero.}
+\ej
+\parindent=0pt
+\settabs 6 \columns
+\Na { 
+\+{\bf A}&{\bf *31, *93}&&D, 4, \flpt \bang
+Einstein A value}
+\Na { 
+\+{\bf ABD}&{\bf *1}&&D, 1, \flpt \bang
+abundance of the ion of the run}
+\Na { 
+\+{\bf ACE}&&[NSL]&D, 2, \flpt \bang
+CE (default) addend}
+\Na { 
+\+{\bf ACI}&&[NSL]&D, 2, \flpt \bang
+CI (default) addend}
+\Na { 
+\+{\bf ADMAS}&&&D, 1, \flpt \bang
+angular diameter (milliarcseconds)
+\Df as implied by ADS}
+\Na { 
+\+{\bf ADS}&&&D, 1, \flpt \bang
+star/Sun angular diameter ratio
+\Df 1.0}
+\Na { 
+\+{\bf ADT}&&[NDT]&D, 2, \flpt \bang
+Type-2 dust opacity function
+\Df (5.1, 4.7, 4.3, 3.8, 3.4, 3.0, 2.65, 2.4, 2.2, 2.1,
+2.1, 2.0, 2.1, 2.3, 2.3, 2.2, 1.9, 1.8, 1.3, 0.93, 0.34, 0.3, 0.3, 0.3, 0.3,
+0.3, 0.3, 0.3, 0.3)}
+\Na { 
+\+{\bf AEL}&&\z &D, 2*,2, \flpt \bang
+added Helium electrons}
+\Na { 
+\+{\bf AHM}&&[MHM]&D, 2, \flpt \bang
+$H^-$ bound-free absorption coefficient
+\Df (0.01989, 0.04974, 0.1302, 0.4052, 0.7407, 1.107, 1.485,
+1.862, 2.226, 2.571, 2.887, 3.172, 3.419, 3.625, 3.789, 3.906, 3.977,
+4.001, 3.977, 3.907, 3.791, 3.632, 3.432, 3.194, 2.923, 2.624, 2.302,
+1.965, 1.619, 1.275, 0.9453, 0.7918, \break 0.6512, 0.5431)}
+\Na { 
+\+{\bf AL}&&[NL]&D, 2, \flpt \bang
+added recombination fraction
+\Df AL$_1$ = 1.0, $\quad$ AL$_i$ = 0.0, $\quad i \leq 2 \leq $NL}
+\Na { 
+\+{\bf ALBDT}&&[NDT]&D, 2, \flpt \bang
+Type-2 dust albedo
+\Df 0.9}
+\Na { 
+\+{\bf ALBDUST}&&[LDU]&D, 2, \flpt \bang
+Type-1 dust albedo}
+\Na { 
+\+{\bf ALBK}&&[NKA]&D, 1, \flpt \bang
+scattering albedo parameter for Background Line Opacities
+(see Section 9)
+\Df (1.0, 0.0)}
+\Na { 
+\+{\bf ALK}&&\z &H, 2*,2, \flpt \bang
+singly-ionized Aluminum number density
+\Df computed in LTE}
+\Na { 
+\+{\bf ALN}&&\z &H, 3*,3, \flpt \bang
+Aluminum-I level populations
+\Df ALN$_{ij}$ computed in LTE, for all levels $j$ 
+such that $j >$ NAL}
+\Na { 
+\+{\bf AOWXP}&&&D, 1, \flpt \bang
+alpha-old weight exponent for Special He-II (Special N-1 calculation, Diffusion)}
+\Na { 
+\+{\bf APARAD}&&&D, 1, \flpt \bang
+dielectronic recombination parameter}
+\Na { 
+\+{\bf APCDP}&&&D, 1, \flpt \bang
+dielectronic recombination parameter}
+\Na { 
+\+{\bf APCI}&&[NAPKNT]&D, 1, \flpt \bang
+dielectronic recombination parameter}
+\Na { 
+\+{\bf APDDIFC}&&&D, 1, \flpt \bang
+ambipolar diffusion velocity calculation parameter
+\Df 90.7}
+\Na { 
+\+{\bf APDDTFC}&&&D, 1, \flpt \bang
+ambipolar diffusion velocity calculation parameter
+\Df 36.6}
+\Na { 
+\+{\bf APDTEXP}&&&D, 1, \flpt \bang
+ambipolar diffusion velocity calculation parameter
+\Df 1.76}
+\Na { 
+\+{\bf APDXICA}&&&D, 1, \flpt \bang
+ambipolar diffusion velocity calculation parameter
+\Df 1.75}
+\Na { 
+\+{\bf APDXICB}&&&D, 1, \flpt \bang
+ambipolar diffusion velocity calculation parameter
+\Df 4.5}
+\Na { 
+\+{\bf APDXICC}&&&D, 1, \flpt \bang
+ambipolar diffusion velocity calculation parameter
+\Df 0.02}
+\Na { 
+\+{\bf APDXICD}&&&D, 1, \flpt \bang
+ambipolar diffusion velocity calculation parameter
+\Df -3.5 \pb}
+\Na { 
+\+{\bf APEI}&&[NAPKNT]&D, 1, \flpt \bang
+dielectronic recombination parameter}
+\Na { 
+\+{\bf APETA}&&&D, 1, \flpt \bang
+dielectronic recombination parameter}
+\Na { 
+\+{\bf APWRA}&&&D, 1, \flpt \bang
+dielectronic recombination parameter}
+\Na { 
+\+{\bf APWRB}&&&D, 1, \flpt \bang
+dielectronic recombination parameter}
+\Na { 
+\+{\bf ASMCR}& {\bf *92}&&D, 1, \flpt \bang
+sequential smoothing parameter
+\Df 0.001}
+\Na { 
+\+{\bf ATOLAB}&&&D, 2, \alfa \bang
+``name'' of ion model data file
+\Df ``!NONAME!''}
+\Na { 
+\+{\bf AW}&&\z &D, 5*,5, \flpt \bang
+integrated diagonal of WN-matrix}
+\Na { 
+\+{\bf BANDE}& {\bf *77}&[NAB]&B, 2, \intg \bang
+Composite Line Opacities wavelengths bands continuum eclipse calculation switch}
+\Na { 
+\+{\bf BANDL}& {\bf *77}&[NAB]&B, 2, \flpt \bang
+lower limits of Composite Line Opacity wavelengths bands (see Section 9)}
+\Na { 
+\+{\bf BANDU}& {\bf *77}&[NAB]&B, 2, \flpt \bang
+upper limits of Composite Line Opacity wavelengths bands (see Section 9)}
+\Na { 
+\+{\bf BANDY}&&[NAB]&D, 2, \flpt \bang
+method control parameter for Composite Line Opacity (see Section 9)
+\Df all = -1.0}
+\Na { 
+\+{\bf BD}&&\z &D, 3*,3, \flpt \bang
+departure coefficient of the levels of the ion of the run
+\Df computed, using input number densities}
+\Na { 
+\+{\bf BDAL}&&\z &H, 3*,3, \flpt \bang
+departure coefficients of the levels of Aluminum-I
+\Df computed, using input Aluminum-I level populations}
+\Na { 
+\+{\bf BDC}&&\z &H, 3*,3, \flpt \bang
+departure coefficients of the levels of Carbon-I
+\Df computed, using input Carbon-I level populations}
+\Na { 
+\+{\bf BDCA}&&\z &H, 3*,3, \flpt \bang
+departure coefficients of the levels of Calcium-I
+\Df computed, using input Calcium-I level populations}
+\Na { 
+\+{\bf BDFE}&&\z &H, 3*,3, \flpt \bang
+departure coefficients of the levels of Iron-I
+\Df computed, using input Iron-I level populations}
+\Na { 
+\+{\bf BDH}&&\z &H, 3*,3, \flpt \bang
+departure coefficients of the levels of Hydrogen
+\Df computed, using input Hydrogen level populations}
+\Na { 
+\+{\bf BDHE}&&\z &H, 3*,3, \flpt \bang
+departure coefficients of the levels of Helium-I
+\Df computed, using input Helium-I level populations}
+\Na { 
+\+{\bf BDHE2}&&\z &H, 3*,3, \flpt \bang
+departure coefficients of the levels of Helium-II
+\Df computed, using input Helium-II level populations}
+\Na { 
+\+{\bf BDHM}&&\z &D, 2*,2, \flpt \bang
+departure coefficient of H-minus
+\Df BDHM$_i$ = 1.0, all $i$}
+\Na { 
+\+{\bf BDMG}&&\z &H, 3*,3, \flpt \bang
+departure coefficients of the levels of Magnesium-I
+\Df computed, using input Magnesium-I level populations}
+\Na { 
+\+{\bf BDNA}&&\z &H, 3*,3, \flpt \bang
+departure coefficients of the levels of Sodium-I
+\Df computed, using input Sodium-I level populations}
+\Na { 
+\+{\bf BDO}&&\z &H, 3*,3, \flpt \bang
+departure coefficients of the levels of Oxygen-I
+\Df computed, using input Oxygen-I level populations}
+\Na { 
+\+{\bf BDOPT}& {\bf *43}&&D, 1, \alfa \bang
+b-ratios selection parameter
+\Df ``BDJ''}
+\Na { 
+\+{\bf BDO2}&&\z &H, 3*,3, \flpt \bang
+departure coefficients of the levels of Oxygen-II
+\Df computed, using input Oxygen-II level populations}
+\Na { 
+\+{\bf BDO3}&&\z &H, 3*,3, \flpt \bang
+departure coefficients of the levels of Oxygen-III
+\Df computed, using input Oxygen-III level populations}
+\Na { 
+\+{\bf BDS}&&\z &H, 3*,3 \flpt \bang
+departure coefficients of the levels of Sulphur-I
+\Df computed, using input Sulphur-I level populations}
+\Na { 
+\+{\bf BDSI}&&\z &H, 3*,3 \flpt \bang
+departure coefficients of the levels of Silicon-I
+\Df computed, using input Silicon-I level populations}
+\Na { 
+\+{\bf BHORIZ}&&\z &D, 2*,2, \flpt \bang
+magnetic field strength}
+\Na { 
+\+{\bf BLCSW}& {\bf *14}&&D, 4, \intg \bang
+broadening components switch ({\it a.k.a.} damping components selector)
+\Df 31}
+\Na { 
+\+{\bf BLIMG}& {\bf *34}&&D, 1, \flpt \bang
+absorption contributors graph axis limit
+\Df -1.301 [ = log(0.05)]}
+\Na {
+\+{\bf BMWAC}&&&D, 1, \flpt \bang
+beam width parameter for continuum eclipse calculation
+\Df 0.1}
+\Na { 
+\+{\bf BXI}& {\bf *66}&[KBX]&D, 2, \flpt \bang
+background lines frequency table (half profile)
+\Df (0., .03, .06, .1, .15, .22, .3, .4, .6, .9, 1.2, 1.5, 2., 3.,
+5., 10., 20., 40., 70., 110., 200., 500., 1000., 2000., 5000.)}
+\Na { 
+\+{\bf CAK}&&\z &H, 2*,2, \flpt \bang
+singly ionized Calcium number density
+\Df computed in LTE}
+\Na { 
+\+{\bf CAN}&&\z &H, 3*,3, \flpt \bang
+Calcium-I level populations
+\Df CAN$_{ij}$ computed in LTE, for all levels $j$ 
+such that $j >$ NCA}
+\Na {
+\+{\bf CCHX}& {\bf *95}&&D, 1, \flpt \bang
+upper-level charge-exchange cross-section multiplier
+\Df 1.0}
+\Na { 
+\+{\bf CDL}& {\bf *77, *105}&[LDL]&D, 4, \flpt \bang
+weights for blended line components
+\Df 1.0}
+\Na {
+\+{\bf CDZ}& {\bf *82}&&D, 1, \flpt \bang
+fluid velocity parameter
+\Df 100.}
+\Na { 
+\+{\bf CE}&{\bf *25, *93}&[NTE]&D, 5, \flpt \bang
+collisional excitation coefficient
+\Df computed (see Section 19)}
+\Na { 
+\+{\bf CEDMN}&&&D, 1, \flpt \bang
+impact-parameter CE-value calculation parameter (for integration)
+\Df $10^{-6}$}
+\Na { 
+\+{\bf CEDMX}&&&D, 1, \flpt \bang
+impact-parameter CE-value calculation parameter (for integration)
+\Df $10^3$}
+\Na { 
+\+{\bf CEFEQ}&&&D, 1, \flpt \bang
+impact-parameter CE-value calculation parameter (for integration)
+\Df $10^{-2}$}
+\Na {
+\+{\bf CEMETHOD}& $\qquad$ {\bf *93, *139}&&D \bang
+CE-method selectors
+\Df for Hydrogen: ({\tt SCHOLZ}, {\tt GIOVAN}, {\tt JOHNSON});
+otherwise: ({\tt SEATON}, {\tt VREGE})}
+\Na { 
+\+{\bf CEQMX}&&&D, 1, \flpt \bang
+H2 number density control parameter
+\Df $10^6$}
+\Na { 
+\+{\bf CGR}&&&D, 1, \flpt \bang
+gravity ratio, with respect to Sun
+\Df 1.0}
+\Na {
+\+{\bf CHEFLOW}&&&D, 1, \flpt \bang
+Helium flow constant for RHEAB calculation}
+\Na { 
+\+{\bf CHI}&&\z &D, 5*,5, \flpt \bang
+RHO-like line transfer quantity}
+\Na { 
+\+{\bf CHLIM}& {\bf *19}&&D, 1, \flpt \bang
+RHOW parameter
+\Df 0.5}
+\Na { 
+\+{\bf CHOP}&{\bf *19}&&D, 1, \flpt \bang
+a RHO selection parameter
+\Df 1.0}
+\Na { 
+\+{\bf CI}&{\bf *93}&[NTE]&D, 3, \flpt \bang
+collisional ionization coefficient
+\Df computed (see Section 19)}
+\Na {
+\+{\bf CIJADD}&{ \bf *91}&\z &D, 5*,5, \flpt \bang
+term to be added to CIJ}
+\Na {
+\+{\bf CIMETHOD}& $\qquad$ {\bf *93, *139}&&D \bang
+CE-method selectors
+\Df for Hydrogen: ({\tt SHAH}, {\tt CLARK});
+otherwise: ({\tt AR}, {\tt CLARK})}
+\Na { 
+\+{\bf CK}&&\z &H, 2*,2, \flpt \bang
+singly-ionized Carbon number density
+\Df computed in LTE}
+\Na {
+\+{\bf CKADD}&&\z &D, 3*,3, \flpt \bang
+term to be added to CK}
+\Na { 
+\+{\bf CLEVELS}&&&D, 1, \flpt \bang
+diffusion calculation parameter
+\Df 2.0}
+\Na { 
+\+{\bf CLM}&&&D, 1, \flpt \bang
+scattering albedo parameter for Background Line Opacities
+(see Section 9)
+\Df 1.0}
+\Na { 
+\+{\bf CLOGG}&&&D, 1, \flpt \bang
+log(surface gravity)
+\Df as implied by CGR}
+\Na { 
+\+{\bf CLNH}&&&D, 1, \flpt \bang
+HSE calculation parameter
+\Df 2.0}
+\Na { 
+\+{\bf CN}&&\z &H, 3*,3, \flpt \bang
+Carbon-I level populations
+\Df CN$_{ij}$ computed in LTE, for all levels $j$ 
+such that $j >$ NLC}
+\Na {
+\+{\bf CN1S}&&&D, 1, \flpt \bang
+rcheck-criterion for Special-N1 (diffusion)
+\Df 0.01}
+\Na { 
+\+{\bf COLINES}& {\bf *112}&&D \bang
+CO lines control parameters
+\Df see Note *112}
+\Na {
+\+{\bf COMU}&&&D, 1, \flpt \bang
+mu-value for CO lines opacity calculation}
+\Na { 
+\+{\bf CORMAX}& {\bf *130}&&D, 1, \flpt \bang
+limit parameter for ORIGINS and CONTRIBUTORS printouts
+\Df -1.0}
+\Na { 
+\+{\bf CORMIN}& {\bf *130}&&D, 1, \flpt \bang
+limit parameter for ORIGINS and CONTRIBUTORS printouts
+\Df -1.0}
+\Na { 
+\+{\bf CP}& {\bf *56, *93}&[NSL]&D, 2, \flpt \bang
+photoionization cross-section
+\Df computed (see Section 19)}
+\Na { 
+\+{\bf CPRESS}&&&D, 1, \flpt \bang
+specified constant pressure}
+\Na { 
+\+{\bf CQA}& {\bf *117}&[NCQ]&D, 2, \flpt \bang
+`Line Opacity' scattering albedo parameter
+\Df $(10^{-4}, 10^{-3}, 10^{-2}, 10^{-1}, 1.0)$}
+\Na { 
+\+{\bf CQM}&&&D, 1, \flpt \bang
+scattering albedo parameter for Background Line Opacities
+(see Section 9)}
+\Na { 
+\+{\bf CQT}& {\bf *117}&[NCQ]&D, 2, \flpt \bang
+`Line Opacity' scattering albedo parameter
+\Df (4000, 5000, 6000, 7000, 8000)}
+\Na { 
+\+{\bf CRD}& {\bf *77, *93,* 105}&$\qquad$[LDL]&D, 4, \flpt \bang
+radiative broadening halfwidth}
+\Na { 
+\+{\bf CRS}& {\bf *93}&&D, 4, \flpt \bang
+resonance broadening halfwidth}
+\Na { 
+\+{\bf CSDW}&&&D, 1, \flpt \bang
+number of Doppler widths from line center at which the Hydrogen Stark
+components strengths are reduced by the factor 1/e
+\Df 1.0}
+\Na { 
+\+{\bf CSFCRIT}&&&D, 2, \flpt \bang
+convergence criterion for CSF iteration
+\Df $10^{-5}$}
+\Na { 
+\+{\bf CSK}& {\bf *93, *105}&&D, 4, \flpt \bang
+Stark broadening halfwidth}
+\Na { 
+\+{\bf CSTARK}& {\bf *107}&&D, 4, \flpt \bang
+Hydrogen Stark broadening (convolution) switch}
+\Na { 
+\+{\bf CUTFE}&&&D, 1, \flpt \bang
+cut-off criterion for injection function integration (fast electrons)
+\Df $10^{-8}$}
+\Na { 
+\+{\bf CTCO}&&&D, 1, \flpt \bang
+NCO calculation temperature enhancement factor}
+\Na { 
+\+{\bf CTMX}&&&D, 1, \flpt \bang
+maximum NCO temperature enhancement
+\Df 0.2}
+\Na { 
+\+{\bf CVSB}& {\bf *82}&&D, 1, \flpt \bang
+fluid velocity parameter for VSB}
+\Na { 
+\+{\bf CVW}& {\bf *93, *105}&&D, 4, \flpt \bang
+van der Waals broadening halfwidth}
+\Na { 
+\+{\bf CVX}& {\bf *82}&[NVX]&F, 2, \flpt \bang
+fluid velocity parameters for VX}
+\Na {
+\+{\bf CVXF}& {\bf *82}&&F, 1, \flpt \bang
+fluid velocity parameter for flow broadening velocities
+\Df 25.0}
+\Na {
+\+{\bf CVXM}& {\bf *82}&&F, 1, \flpt \bang
+fluid velocity parameter for flow broadening velocities}
+\Na { 
+\+{\bf CVXS}& {\bf *82}&&D, 1, \flpt \bang
+fluid velocity parameter for VXS}
+\Na { 
+\+{\bf CVZ}& {\bf *82}&&D, 1, \flpt \bang
+fluid velocity parameter
+\Df smallest Z$_i$ such that NH$_i > 10^{11}$}
+\Na { 
+\+{\bf CWJ}& {\bf *19}&&D, 1, \flpt \bang
+a RHOJ calculation parameter
+\Df 0.5}
+\Na { 
+\+{\bf CWR}& {\bf *19}&&D, 1, \flpt \bang
+a RHO selection parameter
+\Df 0.1}
+\Na { 
+\+{\bf DDL}& {\bf *77, *105}&[LDL]&D, 4, \flpt \bang
+displacements from reference wavelength of blended line components,
+\break in Angstroms (see also DWN)}
+\Na { 
+\+{\bf DDR}& {\bf *42}&[NDR]&D, 2, \flpt \bang
+DR parameter, PRD transitions
+\Df (1.0, 0.9, 0.65, 0.4, 0.1, 0.05, 0.0)}
+\Na { 
+\+{\bf DDT}&&&D, 1, \flpt \bang
+Type-2 dust opacity calculation convergence criterion
+\Df 0.01}
+\Na {
+\+{\bf DELLIM}&&&D, 1, \flpt \bang
+DEL-criterion for using DIRECT instead of FULL solution
+\Df $10^{-6}$}
+\Na { 
+\+{\bf DELTB}&&&D, 1, \flpt \bang
+departure coefficients editing parameter
+\Df 0.01}
+\Na { 
+\+{\bf DELWAVE}& {\bf *76}&[NWS]&D, 2, \flpt \bang
+`subtractional' wavelengths for continuum calculations}
+\Na { 
+\+{\bf DFDUST}&&[LDU]&D, 2, \flpt \bang
+Type-1 dust factor}
+\Na { 
+\+{\bf DGM}& {\bf *138}&\z &D, 2*,2, \flpt \bang
+depth-dependent G multiplier (HSE)
+\Df all = 1.0}
+\Na {
+\+{\bf DGMZ}& {\bf *138}&[NGM]&D, 2, \flpt \bang
+standard table of DGM (as a function of ZGM) for the quiet sun
+\Df (.64, .645, .66, .68, .71, .74, .77, .81, .86, .89, .92,
+.95, .97, .985, .99, .995, .995, .995, .99, .98, .97,
+.965, .96)}
+\Na { 
+\+{\bf DLU}&&&D, 1, \flpt \bang
+dilution factor
+\Df 1.0}
+\Na { 
+\+{\bf DO}&&[variable]&B, 2, \alfa \bang
+enable program options (see Section 6 for further details)}
+\Na { 
+\+{\bf DOFDB}& {\bf *80}&[$ \leq 2 \times$NT]&D, 2, \intg \bang
+alternate form of LSFFDB}
+\Na { 
+\+{\bf DOFLUX}& {\bf *79}&[$ \leq 2 \times$NT]&D, 2, \intg \bang
+alternate form of LFLUX}
+\Na { 
+\+{\bf DOPROF}& {\bf *78}&[$ \leq 2 \times$NT]&D, 2, \intg \bang
+alternate form of PROF}
+\Na { 
+\+{\bf DOSFPRNT}& $\qquad$ {\bf *81}&[$ \leq 2 \times$NT]&D, 2, \intg \bang
+alternate form of LSFPRINT}
+\Na { 
+\+{\bf DPMULT}&&&D, 4, \flpt \bang
+damping multiplier
+\Df 1.0}
+\Na { 
+\+{\bf DQMAX}&&&D, 1, \flpt \bang
+parameter for injection function integration (fast electrons)
+\Df 2.0}
+\Na { 
+\+{\bf DQMIN}&&&D, 1, \flpt \bang
+parameter for injection function integration (fast electrons)
+\Df 0.01}
+\Na { 
+\+{\bf DRHO}&&&D, 4, \flpt \bang
+RHO editing parameter
+\Df 0.05}
+\Na { 
+\+{\bf DRLIM}& {\bf *42}&&D, 1, \flpt \bang
+DR parameter, PRD transitions
+\Df 0.01}
+\Na { 
+\+{\bf DWAVE}& {\bf *65}&[NDV]&D, 2, \flpt \bang
+Continuum Source Function dump wavelengths table}
+\Na { 
+\+{\bf DWN}& {\bf *77}&[LDL]&D, 4, \flpt \bang
+= DDL, but in wavenumbers}
+\Na { 
+\+{\bf DZMSS}&&&D, 1, \flpt \bang
+Z-from-Mass calculation parameter
+\Df 0.01}
+\Na { 
+\+{\bf ECLI}& {\bf *58}&&D, 4, \intg \bang
+Eclipse line profiles computation switch}
+\Na { 
+\+{\bf EIDIF}&&&D, 1, \flpt \bang
+NE-iterations convergence criterion
+\Df $10^{-4}$}
+\Na { 
+\+{\bf ELEMENT}&&&D  \bang
+element data (see Section 10)}
+\Na { 
+\+{\bf ELLED}&&&D, 1, \flpt \bang
+particle energy dissipation calculation parameter `L' (fast electrons)
+\Df $2.4 \times 10^{-11}$}
+\Na { 
+\+{\bf ELSYM}& {\bf *93}&&D, 1, \alfa \bang
+chemical symbol of the ion of the run
+\Df ``ZZ''}
+\Na { 
+\+{\bf EMXED}&&&D, 1, \flpt \bang
+particle energy dissipation calculation parameter `EMAX' (fast electrons)
+\Df $10^{-6}$}
+\Na { 
+\+{\bf EPCBR}&&&D, 1, \flpt \bang
+branching ratio for supplementary levels in Lyman EPSILON-1}
+\Na { 
+\+{\bf EPDUST}&&[LDU]&D, 2, \flpt \bang
+Type-1 dust dilution factor}
+\Na { 
+\+{\bf EP1}&&\z &D, 2*,2, \flpt \bang
+Lyman EPSILON-1}
+\Na { 
+\+{\bf EP2}&&\z &D, 2*,2, \flpt \bang
+Lyman EPSILON-2}
+\Na { 
+\+{\bf ESCTAU}& {\bf *48}&&D, 1, \flpt \bang
+TAU criterion for automatic use of escape probability solution
+\Df 5.0}
+\Na { 
+\+{\bf EXLYM}& {\bf *67}&&D, 1, \flpt \bang
+Lyman change-over TAU parameter
+\Df 10.}
+\Na { 
+\+{\bf FABD}&&&D, 1, \flpt \bang
+multiplier for element abundances
+\Df 1.0}
+\Na {
+\+{\bf FBVMX}&&&F, 1, \flpt \bang
+maximum velocity value for flow broadening
+\Df 100.}
+\Na { 
+\+{\bf FCE}&&\z &D, 5*,5, \flpt \bang
+CE-enhancement factors}
+\Na { 
+\+{\bf FEK}&&\z &H, 2*,2, \flpt \bang
+singly-ionized Iron number density
+\Df computed in LTE}
+\Na { 
+\+{\bf FEN}&&\z &H, 3*,3, \flpt \bang
+Iron-I level populations
+\Df FEN$_{ij}$ computed in LTE, for all levels $j$ 
+such that $j >$ NFE}
+\Na { 
+\+{\bf FILE}& {\bf *44}&&B,D,F,H \alfa \bang
+input file designation}
+\Na { 
+\+{\bf FINK}&&[INK]&D, 2, \flpt \bang
+incident radiation input values
+\Df (0., $3.0 \times 10^{-12}$, $3.0 \times 10^{-12}$,
+     $1.5 \times 10^{-12}$, $1.5 \times 10^{-12}$, 0.)}
+\Na { 
+\+{\bf FKUR}&&[KURNWV]&D, 2, \flpt \bang
+multiplier for Statistical Line Opacity (see Section 9)
+\Df all = 1.0 (KURNWV = 53, built in)}
+\Na { 
+\+{\bf FMCDL}&&&D, 1, \flpt \bang
+Hydrogen Stark splitting components elimination criterion
+\Df 0.1}
+\Na { 
+\+{\bf FMVLIM}& {\bf *82}&&D, 1, \flpt \bang
+fluid velocity multiplier limit
+\Df $10^{-4}$}
+\Na {
+\+{\bf FNH}&&[NFH]&F, 2, \flpt \bang
+standard tabel of flow velocity for flow broadening
+\Df (10., 9., 7., 5., 3., 2., 1., 0.)}
+\Na {
+\+{\bf FNRMLA}&&65&D, 2, \flpt \bang
+normalizing factor for simulated background H Ly $\alpha$ profile
+\Df all = 1.0}
+\Na {
+\+{\bf FNRMLB}&&65&D, 2, \flpt \bang
+normalizing factor for simulated background H Ly $\beta$ profile
+\Df all = 1.0}
+\Na { 
+\+{\bf FRCDL}&&&D, 1, \flpt \bang
+Hydrogen Stark splitting components elimination criterion
+\Df 0.01}
+\Na { 
+\+{\bf FROSCE}& {\bf *93}&&D, 1, \flpt \bang
+fraction-of-classical-oscillator-strength used in the calculation of
+collision rates for forbidden transitions
+\Df 0.01}
+\Na { 
+\+{\bf FRR}&&[MRR]&D, 2, \flpt \bang
+radius fraction
+\Df (0.0, 0.5, 0.8, 0.9, 0.95, 1.0)}
+\Na { 
+\+{\bf FSTKM}&&&D, 1, \flpt \bang
+Hydrogen Stark splitting reduction factor
+\Df 1.0}
+\Na { 
+\+{\bf FZION}&&&D, 1, \flpt \bang
+ZION-multiplier for diffusion calculation
+\Df 1.0}
+\Na { 
+\+{\bf FZLIM}&&&D, 1, \flpt \bang
+Z-from-Mass calculation parameter
+\Df 1.5}
+\Na { 
+\+{\bf GK}& {\bf *123}&[KK]&D, 2, \flpt \bang
+Gaunt factors for Level-KOLEV-to-Continuum calculation
+\Df RRCP(KOLEV)}
+\Na { 
+\+{\bf GMMA}& {\bf *42}&&D, 4, \flpt \bang
+gamma-parameter, PRD transitions
+\Df -1.0}
+\Na {
+\+{\bf HEABL}&&&D, 1, \flpt \bang
+Helium abundance limit factor for RHEAB calculation
+\Df 3.0}
+\Na { 
+\+{\bf HEK}&&\z &H, 2*,2, \flpt \bang
+singly-ionized Helium number density
+\Df computed in LTE}
+\Na { 
+\+{\bf HEL}&&&D, 1, \flpt \bang
+weight for HSE calculation
+\Df 1.0}
+\Na { 
+\+{\bf HEN}&&\z &H, 3*,3, \flpt \bang
+Helium-I level populations
+\Df HEN$_{ij}$ computed in LTE, for all levels $j$ 
+such that $j >$ NLZ}
+\Na { 
+\+{\bf HE2K}&&\z &H, 2*,2, \flpt \bang
+doubly-ionized Helium number density
+\Df computed in LTE}
+\Na { 
+\+{\bf HE2N}&&\z &H, 3*,3, \flpt \bang
+Helium-II level populations
+\Df HE2N$_{ij}$ computed in LTE, for all levels $j$ 
+such that $j >$ NZ2}
+\Na { 
+\+{\bf HE304}&&\z &D, 2*,2, \flpt \bang
+He-II $\lambda 304$ line mean intensity}
+\Na { 
+\+{\bf HN}&&\z &H, 3*,3, \flpt \bang
+Hydrogen level populations
+\Df HN$_{ij}$ computed in LTE, for all levels $j$ 
+such that $j >$ NLH}
+\Na {
+\+{\bf HNAJL}&&&D, 1, \flpt \bang
+limit for NH-adjustment factor in HSE calculation
+\Df $10^{20}$}
+\Na {
+\+{\bf HNDF}&&[NFH]&F, 2, \flpt \bang
+Hydrogen density table for FNH
+\Df (1.0\ph, 3.0\ph, 1.0\pj, 3.0\pj, 1.0\pk, 3.0\pk, \break
+1.0\pl, 3.0\pl)}
+\Na {
+\+{\bf HNDV}& {\bf *90}&[NVH]&D, 2, \flpt \bang
+Hydrogen density table for VNH
+\Df (1.0\pf, 2.0\pf, 5.0\pf, 1.0\pg, 2.0\pg, 5.0\pg, 8.38\pg,
+1.07\ph, 1.61\ph, 3.17\ph, 7.73\ph, 2.71\pj, 9.32\pj,
+2.04\pk, 6.69\pk, 9.82\pk, 2.25\pl, 3.55\pl, 6.01\pl, 
+9.87\pl, 1.64\pm, 2.09\pm, 3.37\pm, 4.22\pm, 6.58\pm, 
+1.02\pn, 2.33\pn, 4.24\pn, 6.05\pn, 8.33\pn, 1.03\po,
+1.15\po, 1.22\po, 1.27\po, 1.30\po, 1.32\po, 1.34\po,
+1.35\po)}
+\Na { 
+\+{\bf HSBDMN}&&&D, 1, \flpt \bang
+Hydrogen Stark broadening parameter, for convolution calculation
+\Df $10^{-5}$}
+\Na { 
+\+{\bf HSBDMX}&&&D, 1, \flpt \bang
+Hydrogen Stark broadening parameter, for convolution calculation
+\Df $10^3$}
+\Na { 
+\+{\bf HSBFEQ}&&&D, 1, \flpt \bang
+Hydrogen Stark broadening parameter, for convolution calculation
+\Df 0.1}
+\Na { 
+\+{\bf HSBM}&&&D, 1, \flpt \bang
+Hydrogen Stark broadening parameter, for convolution calculation
+\Df 20.0}
+\Na { 
+\+{\bf HSEC}& {\bf *15}&&D, 1, \flpt \bang
+weight for HSE calculation
+\Df 1.0}
+\Na { 
+\+{\bf HSLITER}&&&D, 1, \flpt \bang
+number of HSL iterations
+\Df 1}
+\Na { 
+\+{\bf HTAU}&&&D, 1, \flpt \bang
+HSE calculation parameter
+\Df 1.0}
+\Na {
+\+{\bf IBETSW}& {\bf *126}&&D, 1, \intg \bang
+beta-equation selection switch, diffusion}
+\Na {
+\+{\bf IBNVIEW}&&&D, 1, \intg \bang
+depth index for illustration of BD- and ND-calculations trace
+\Df (JEDIT+1)}
+\Na {
+\+{\bf IBRDP}&&&D, 1, \intg \bang
+diffusion d-coefficients debug dump switch}
+\Na { 
+\+{\bf ICDIT}& {\bf *101}&&D, 1, \intg \bang
+dI/dh continuum wavelengths selector
+\Df 1}
+\Na { 
+\+{\bf ICHDP}&&&D, 1, \intg \bang
+hydrogen collision rates calculation dump depth index}
+\Na { 
+\+{\bf ICHSW}& { \bf *136}&&D, 1, \intg \bang
+collision-with-Hydrogen switch}
+\Na { 
+\+{\bf ICR}&&[NCR]&D, 2, \flpt \bang
+values of incident coronal radiation}
+\Na {
+\+{\bf ICXDP}& {\bf *95}&&D, 1, \intg \bang
+upper-level charge-exchange dump depth index}
+\Na {
+\+{\bf IDEDP}&&&D, 1, \intg \bang
+ion broadening (Hydrogen) dump switch}
+\Na { 
+\+{\bf IDEX}&&&D, 1, \intg \bang
+extra information switch for standard-output (or log file)
+\Df 10}
+\Na {
+\+{\bf IDFDI}& {\bf *89}&&D, 1, \intg \bang
+d-coefficients dump index
+\Df N/4}
+\Na {
+\+{\bf IDFDM}& {\bf *89}&&D, 1, \intg \bang
+d-coefficients method selection switch
+\Df 1}
+\Na {
+\+{\bf IDFDS}&&&D, 1, \intg \bang
+d-coefficients smoothing
+\Df 1}
+\Na {
+\+{\bf IDFSW}&&&D, 1, \intg \bang
+dI/dh details print switch}
+\Na { 
+\+{\bf IDNRT}&&&D, 1, \intg \bang
+switch for calculation of DNRT, DNRTC in Lyman
+\Df 1}
+\Na { 
+\+{\bf IDRCD}&&&D, 1, \intg \bang
+index of disk ray for CSF debug printout
+\Df 1}
+\Na { 
+\+{\bf IDRDP}&&&D, 1, \intg \bang
+depth index for option DRDMP 
+\Df N/2}
+\Na { 
+\+{\bf IDWIN}&&&D, 1, \intg \bang
+DW-dump index increment}
+\Na { 
+\+{\bf IFXDS}& {\bf *70}&&D, 1, \intg \bang
+continuum flux detail output control}
+\Na {
+\+{\bf IGII}& {\bf *42}&&D, 1, \intg \bang
+RII-approximation selector (PRD) 
+\Df 1}
+\Na {
+\+{\bf IGMSW}& {\bf *42}&&D, 1, \intg \bang
+alternate GMMA for H Lyman alpha and beta (PRD)}
+\Na { 
+\+{\bf IHDMP}&&&D, 1, \intg \bang
+dump output control switch for Line Flux Distribution calculation}
+\Na {
+\+{\bf IHEAB}&&&D, 1, \intg \bang
+reference depth index for RHEAB calculation}
+\Na { 
+\+{\bf IHSDD}& {\bf *106}&&D, 1, \intg \bang
+Hydrogen Stark broadening dump switch}
+\Na { 
+\+{\bf IHSDP}& {\bf *106}&&D, 1, \intg \bang
+Hydrogen Stark broadening dump switch}
+\Na { 
+\+{\bf IHSKM}&&&D, 1, \intg \bang
+Hydrogen Stark broadening calculation table limit
+\Df 100}
+\Na { 
+\+{\bf IHSSM}&&&D, 1, \intg \bang
+Hydrogen Stark broadening calculation table limit
+\Df 2000}
+\Na { 
+\+{\bf IHSSP}&&&D, 1, \intg \bang
+Hydrogen Stark splitting control switch}
+\Na { 
+\+{\bf IHSSW}&&&D, 1, \intg \bang
+Hydrogen Stark broadening (convolution) switch}
+\Na { 
+\+{\bf ILI}& {\bf *19}&&D, 1, \intg \bang
+a RHO selection parameter}
+\Na { 
+\+{\bf IMUCD}&&&D, 1, \intg \bang
+index of XMU for Continuum Source Function debug printout
+\Df 1}
+\Na {
+\+{\bf INCEI }& {\bf *93}&&D, 1, \intg \bang
+depth index for CI and CE comparison calculations
+\Df index of TE-value closest to 8000 K, going in}
+\Na { 
+\+{\bf INCH}&&&D, 1, \flpt \bang
+RHO weight adjustment parameter
+\Df 0.1}
+\Na {
+\+{\bf INDRN}&&&D, 1, \intg \bang
+input number densities renormalization switch
+\Df 1}
+\Na { 
+\+{\bf INFSM}&&&D, 1, \intg \bang
+Lyman RK-Kolev smoothing delimiter
+\Df 1}
+\Na { 
+\+{\bf INK}&&&B, 1, \intg \bang
+length of XINK
+\Df 6}
+\Na { 
+\+{\bf INLSM}&&&D, 1, \intg \bang
+Lyman RK-Kolev smoothing delimiter
+\Df N}
+\Na { 
+\+{\bf INPAIR}& {\bf *2, *77}&[2$\times$NT]&B, 2, \intg \bang
+list of transition indices}
+\Na { 
+\+{\bf INRHO}&&&D, 4, \intg \bang
+input-RHO use switch}
+\Na { 
+\+{\bf IOMX}&&&D, 1, \intg \bang
+number of overall iterations
+\Df 1}
+\Na { 
+\+{\bf IONSTAGE}& $\qquad$ {\bf *93}&&D, 1, \intg \bang
+stage of ionization of the ion of the run
+\Df 1}
+\Na {
+\+{\bf IORIC}&&&D, 1, \intg \bang
+line-center depths-of-formation print switch
+\Df 1}
+\Na { 
+\+{\bf IPDEE}& {\bf *125}&&D, 1, \intg \bang
+d-coefficients printout switch, diffusion calculation}
+\Na { 
+\+{\bf IPDIJ}& {\bf *127}&&D, 1, \intg \bang
+DIJ printout switch, diffusion analysis}
+\Na {
+\+{\bf IPERFA}&&&D, 1, \intg \bang
+performance data archive record switch
+\Df 1}
+\Na { 
+\+{\bf IPEX}& {\bf *113}&&D, 1, \intg \bang
+switch for extra debug output}
+\Na {
+\+{\bf IPIJG}&&&D, 1, \intg \bang
+fudge GNV in the equation for PIJ
+\Df 1}
+\Na { 
+\+{\bf IPPOD}& {\bf *52}&&D, 1, \intg \bang
+`population ion' absorption/emission calculation dump switch}
+\Na { 
+\+{\bf IPR01}& {\bf *59}&&D, 1, \intg \bang
+Line Source Function debug printout limiting index
+\Df 1}
+\Na { 
+\+{\bf IPR02}& {\bf *59}&&D, 1, \intg \bang
+Line Source Function debug printout limiting index
+\Df 5}
+\Na { 
+\+{\bf IPR03}& {\bf *59}&&D, 1, \intg \bang
+Line Source Function debug printout limiting index
+\Df 10}
+\Na { 
+\+{\bf IPR04}& {\bf *59}&&D, 1, \intg \bang
+Line Source Function debug printout limiting index
+\Df 15}
+\Na { 
+\+{\bf IPRDD}& {\bf *30}&&D, 1, \intg \bang
+depth interval for PRD printout
+\Df 1}
+\Na { 
+\+{\bf IPRDF}& {\bf *30}&&D, 1, \intg \bang
+frequency printout for PRD printout
+\Df 1}
+\Na { 
+\+{\bf IPZER}& {\bf *71}&&D, 1, \intg \bang
+dump printout selector for subroutine {\tt DIVIDE}}
+\Na { 
+\+{\bf IRATE}& {\bf *100}&&D, 1, \intg \bang
+depth index for `minimal' rates printout}
+\Na { 
+\+{\bf IRFNC}& {\bf *111}&&D, 1, \intg \bang
+depth index of reference value of charged particle number density
+for printed sample values of Hydrogen CE and CI
+\Df $i$ such that $TE_i$ ``equals" the middle value of TER, where
+$i$ is the smallest such value}
+\Na { 
+\+{\bf IRKCOMP}& {\bf *45}&[NSL]&D, 2, \intg \bang
+RK-components compute switches
+\Df all =1}
+\Na { 
+\+{\bf IRLCOMP}& {\bf *45}&[NSL]&D, 2, \intg \bang
+RL-components compute switches
+\Df all =1}
+\Na { 
+\+{\bf IRLSN}& {\bf *39}&&D, 1, \intg \bang
+RL integration methods switch
+\Df 1}
+\Na { 
+\+{\bf IRLS1}& {\bf *39}&&D, 1, \intg \bang
+RL integration methods switch
+\Df 1}
+\Na { 
+\+{\bf IRPUN}& {\bf *84}&&D, 1, \intg \bang
+RABD calculation data output switch
+\Df 1}
+\Na { 
+\+{\bf IRTIS}& {\bf *63}&&D, 1, \intg \bang
+incident radiation table interpolation selector
+\Df 2}
+\Na { 
+\+{\bf IRUNT}& {\bf *74, *84}&&D, 1, \intg \bang
+run type switch}
+\Na { 
+\+{\bf ISCOMP}&&&D, 1, \intg \bang
+line source functions comparison printout details switch}
+\Na { 
+\+{\bf ISCRS}& {\bf *20, *84}&&B, 1, \intg \bang
+scratch I/O mode switch}
+\Na { 
+\+{\bf ISRCD}&&&D, 1, \intg \bang
+index of shell ray for Continuum Source Function debug printout
+\Df 1}
+\Na { 
+\+{\bf ISMBD}&&&D, 1, \intg \bang
+intensity integration ({\tt SIMBA}) dump interval}
+\Na { 
+\+{\bf ISMSW}& {\bf *99}&&D, 1, \intg \bang
+iteration summaries format switch}
+\Na {
+\+{\bf ISMVE}&&&D, 1, \intg \bang
+small-values editing switch
+\Df 1}
+\Na {
+\+{\bf ISNDD}& {\bf *121}&&D, 1, \intg \bang
+S(n) calculation dump switch}
+\Na { 
+\+{\bf ISNUD}&&&D, 1, \intg \bang
+PRD SNU-shift debug dump switch}
+\Na { 
+\+{\bf ISOD}&&&D, 1, \intg \bang
+depth index for Sobolev integration dump}
+\Na {
+\+{\bf ISSV}& {\bf *55}&[NVX]&F, 2, \intg \bang
+shock velocity depth indices}
+\Na { 
+\+{\bf ISTARK}&&&D, 1, \intg \bang
+default value of NE-index for Stark splitting of Hydrogen lines
+\Df largest index where NE $\approx 10^{12}$}
+\Na { 
+\+{\bf ISUB}&&&D, 1, \intg \bang
+number of sub-iterations (= RHO-iterations)
+\Df 1}
+\Na {
+\+{\bf ITKZA}&&&D, 1, \intg \bang
+Z-augmentation (diffusion) iteration limit
+\Df 1}
+\Na { 
+\+{\bf ITN1R}&&&D, 1, \intg \bang
+``Special N1'' iterations limit (diffusion calculations)
+\Df 10}
+\Na {
+\+{\bf ITPRD}& {\bf *42}&&D, 1, \intg, \bang
+PRD-iterations limit
+\Df 4}
+\Na { 
+\+{\bf ITRFI}&&&D, 1, \intg \bang
+TR-iteration debug output control}
+\Na { 
+\+{\bf IVOIT}& {\bf *50}&&D, 1, \intg \bang
+Voigt profile methods selector
+\Df 1}
+\Na { 
+\+{\bf IWEIT}&&&D, 1, \intg \bang
+weighting details print switch}
+\Na { 
+\+{\bf IWSMD}&&&D, 1, \intg \bang
+WAVELENGTHS summary Part-2 switch}
+\Na {
+\+{\bf IXASM}&&&D, 1, \intg \bang
+smoothing dump (IPEX=25) detail control index}
+\Na { 
+\+{\bf IXNCS}& {\bf *111}&&D, 1, \intg \bang
+switch controlling calculation of on-the-fly Hydrogen CE and CI values}
+\Na { 
+\+{\bf IXSTA}& {\bf *84}&&D, 1, \intg \bang
+performance statistics printout control
+\Df 1}
+\Na { 
+\+{\bf IZOPT}& {\bf *38}&&D, 1, \intg \bang
+graph Z-scale (axis) option
+\Df 1}
+\Na { 
+\+{\bf I4DEQ}& {\bf *122}&&D, 1, \intg \bang
+four-diagonal method (``Special N1''), equation selector}
+\Na { 
+\+{\bf I4DFM}& {\bf *122}&&D, 1, \intg \bang
+four-diagonal method (``Special N1''), version selector
+\Df 1}
+\Na { 
+\+{\bf I4DIO}& {\bf *122}&&D, 1, \intg \bang
+four-diagonal method (``Special N1''), flow direction specifier
+\Df 1}
+\Na {
+\+{\bf JATAW}&&&D, 1, \intg \bang
+write values of WRAT and RRCP as part of atomic data defaults output}
+\Na { 
+\+{\bf JBAR}&&\z &D, 5*,5, \flpt \bang
+mean intensity}
+\Na { 
+\+{\bf JBDNC}& {\bf *84}&&D, 1, \intg \bang
+Rho and b-ratio calculation bypass switch}
+\Na { 
+\+{\bf JBFSW}&&&D, 1, \intg \bang
+b calculation method selector for supplementary levels
+\Df 1}
+\Na { 
+\+{\bf JDMCE}& {\bf *115}&&D, 1, \intg \bang
+debug dump switch for default calculation of Hydrogen CE values}
+\Na { 
+\+{\bf JDMCI}& {\bf *115}&&D, 1, \intg \bang
+debug dump switch for default calculation of Hydrogen CI values}
+\Na {
+\+{\bf JEDIT}&&&D, 1, \intg \bang
+depth index for N-editing
+\Df N/2}
+\Na {
+\+{\bf JHBFD}&&&D, 1, \intg \bang
+debug dump switch for H-bf background absorption and emission}
+\Na {
+\+{\bf JHEAS}&&&D, 1, \intg \bang
+secret HEABD switch}
+\Na {
+\+{\bf JHLSK}& {\bf *137}&&D, 1, \intg \bang
+Stark broadening in H Lyman lines background opacity
+\Df 1}
+\Na { 
+\+{\bf JH1}& {\bf *102}&&D, 1, \intg \bang
+photoionization rates multiplier index}
+\Na { 
+\+{\bf JH2}& {\bf *102}&&D, 1, \intg \bang
+photoionization rates multiplier index}
+\Na { 
+\+{\bf JM}&&&B, 1, \intg \bang
+lenght of LMM
+\Df 1}
+\Na {
+\+{\bf JNEDP}&&&D, 1, \intg \bang
+N-editing dump switch}
+\Na { 
+\+{\bf JNUNC}& {\bf *46}&&D, 1, \intg \bang
+JNU input switch}
+\Na {
+\+{\bf JSFEX}&&&D, 1, \intg \bang
+LSF-solution-explanation print switch
+\Df 1}
+\Na {
+\+{\bf JSSV}& {\bf * 55}&&D, 1, \intg \bang
+shock temperature depth index}
+\Na { 
+\+{\bf JSTCN}& {\bf *5, *6, *11}&&D, 1, \intg \bang
+Continuum-only run type selector}
+\Na { 
+\+{\bf JSTIN}& {\bf *6, *40, *84}&&D, 1, \intg \bang
+input-check only switch}
+\Na {
+\+{\bf JZATMO}& {\bf *133}&&D, 1, \intg \bang
+zero-print mode switch for ATMOSPHERE}
+\Na {
+\+{\bf JZATOM}& {\bf *133}&&D, 1, \intg \bang
+zero-print mode switch for ATOM}
+\Na { 
+\+{\bf JZOPT}& {\bf *38}&&D, 1, \intg \bang
+graph Z-scale (axis) option}
+\Na { 
+\+{\bf K}&&&B, 1, \intg \bang
+= KS}
+\Na {
+\+{\bf KALHD}& {\bf *73}&&B, 1, \alfa \bang
+{\tt Hi/Bye/Abort}-system control parameter
+\Df `` '' (\ie blank)}
+\Na {
+\+{\bf KALOR}& {\bf *73}&&B, 1, \intg \bang
+{\tt Hi/Bye/Abort}-system control parameter
+\Df 1}
+\Na {
+\+{\bf KANTNU}& {\bf *129}&&D, 1, \intg \bang
+TNU-analysis switch}
+\Na { 
+\+{\bf KAPDB}&&&D, 1, \intg \bang
+continuum contributors control debug switch}
+\Na { 
+\+{\bf KARB}& {\bf *75}&&B, 1, \intg \bang
+`print character' selector for `banner' page
+\Df 1}
+\Na { 
+\+{\bf KB}& {\bf *66}&&B, 1, \intg \bang
+length of XIBLU
+\Df KS}
+\Na {
+\+{\bf KBNDS}& {\bf *122}&&D, 1, \intg \bang
+boundary condition switch for diffusion (``Special N1'')
+\Df 1}
+\Na { 
+\+{\bf KBT}& {\bf *66}&&D, 4, \intg \bang
+length of XIBLUT
+\Df KST}
+\Na { 
+\+{\bf KBTMAX}&&&B, 1, \intg \bang
+maximum of the various values of KBT occurring in {\bf Part D}}
+\Na { 
+\+{\bf KBX}& {\bf *66}&&B, 1, \intg \bang
+length of BXI
+\Df 25}
+\Na {
+\+{\bf KB1WA}& {\bf *128}&&D, 1, \intg \bang
+B1-weights depth index}
+\Na {
+\+{\bf KB1WB}& {\bf *128}&&D, 1, \intg \bang
+B1-weights depth index}
+\Na {
+\+{\bf KB1WS}& {\bf *128}&&D, 1, \intg \bang
+B1-weights type selection switch
+\Df 2}
+\Na {
+\+{\bf KCOAA}&&&D, 1, \intg \bang
+switch of short form of Composite Line Analysis output}
+\Na {
+\+{\bf KDAMP}& {\bf *122}&&D, 1, \intg \bang
+matrix solution damping switch for ``Special N1'' (diffusion)}
+\Na { 
+\+{\bf KDIAG}& {\bf *122}&&D, 1, \intg \bang
+diagonal method selector for diffusion (``Special N1'')
+\Df 3}
+\Na {
+\+{\bf KDIFD1}& {\bf *119}&&D, 1, \intg \bang
+method switch for derivatives in diffusion calculations
+\Df -1}
+\Na {
+\+{\bf KDIFGA}& {\bf *124}&&D, 1, \intg \bang
+GNV-fudging depth index
+\Df -1}
+\Na {
+\+{\bf KDIFGB}& {\bf *124}&&D, 1, \intg \bang
+GNV-fudging depth index
+\Df -1}
+\Na {
+\+{\bf KDIFGS}& {\bf *124}&&D, 1, \intg \bang
+GNV-fudging switch}
+\Na { 
+\+{\bf KDRDP}&&&D, 1, \intg \bang
+frequency index for option DRDMP
+\Df K/2}
+\Na { 
+\+{\bf KDUST}&&&D, 1, \flpt \bang
+dust constant}
+\Na { 
+\+{\bf KHFFS}& $\quad$ {\bf *41}&&D, 1, \intg \bang
+H free-free contribution to Total Hydrogen cooling
+\Df 1}
+\Na { 
+\+{\bf KININT}&&&D, 1, \intg \bang
+plot index selection increment for Line Background opacities (see Section 9)
+\Df 5}
+\Na { 
+\+{\bf KINMAX}&&&D, 1, \intg \bang
+plot index for Line Background opacities (see Section 9)
+\Df index of depth near the minimum of TE}
+\Na { 
+\+{\bf KK}&&&B, 1, \intg \bang
+length of XK
+\Df MR(KOLEV)}
+\Na { 
+\+{\bf KKPR}&&&D, 1, \intg  \bang
+frequency index for detailed Lyman printout
+\Df KK}
+\Na {
+\+{\bf KLDIN}&&&D, 1, \intg \bang
+Lyman dump depth interval}
+\Na {
+\+{\bf KLFIN}&&&D, 1, \intg \bang
+Lyman dump frequency interval}
+\Na { 
+\+{\bf KMMAX}& {\bf *66}&&D, 1, \intg \bang
+maximum XIFUL length}
+\Na { 
+\+{\bf KODNT}&&&D, 1, \intg \bang
+Composite Line Opacity raw data dump interval (see Section 9)}
+\Na { 
+\+{\bf KOELS}&&&D, 1, \intg \bang
+every-line switch for ORIGIN printout
+\Df 1}
+\Na { 
+\+{\bf KOLEV}&&&B, 1, \intg \bang
+level index ({\it i.e.} $\cal N$) for `Level-$\cal N$-to-Continuum' transfer
+calculation
+\Df 1}
+\Na { 
+\+{\bf KONFORM}& $\quad$ {\bf *12}&&D, 1, \intg \bang
+detail contributions printout format selector
+\Df 2}
+\Na { 
+\+{\bf KOOLSUM}& $\quad$ {\bf *41}&&D, 1, \intg \bang
+control for components added into Total Cooling Rate for Hydrogen runs}
+\Na { 
+\+{\bf KPC}& {\bf *10}&\z &D, 5*,5, \flpt \bang
+continuous opacity
+\Df KPC$^{u,\ell}$ = KPC$^{MS,NS} \times$ KPCR$^{u,\ell}, \quad$
+for $u \neq$ MS, $\ell \neq$ NS}
+\Na { 
+\+{\bf KPCR}&&&D, 4, \flpt \bang
+ratio of the continuous opacity with respect to that of transition (MS,NS)}
+\Na { 
+\+{\bf KR}& {\bf *66}&&B, 1, \intg \bang
+length of XIRED
+\Df KS}
+\Na { 
+\+{\bf KRATE}& {\bf *118}&&D, 4, \intg \bang
+single-vs.-net rate switch for transition terms
+\Df 1}
+\Na { 
+\+{\bf KRT}& {\bf *66}&&D, 4, \intg \bang
+length of XIREDT
+\Df KST}
+\Na { 
+\+{\bf KRTMAX}&&&B, 1, \intg \bang
+maximum of the various values of KRT occurring in {\bf Part D}}
+\Na { 
+\+{\bf KS}& {\bf *66}&&B, 1, \intg \bang
+length of XISYM
+\Df 24}
+\Na { 
+\+{\bf KST}& {\bf *66}&&D, 4, \intg \bang
+length of XISYMT
+\Df KS}
+\Na { 
+\+{\bf KSTMAX}&&&B, 1, \intg \bang
+maximum of the various values of KST occurring in {\bf Part D}}
+\Na { 
+\+{\bf KTRANS}& {\bf *33}&&D, 4, \alfa \bang
+transition descriptor
+\Df ``RADIATIVE''}
+\Na { 
+\+{\bf KUDNT}&&&D, 1, \intg \bang
+Statistical Line Opacity raw data dump interval (see Section 9)}
+\Na { 
+\+{\bf KURIN}&&&D, 1, \intg \bang
+step selection index for Statistical Line Opacity data
+(see Section 9)}
+\Na { 
+\+{\bf KURMA}&&&D, 1, \intg \bang
+long-wavelength cutoff for Statistical Line Opacity data
+(see Section 9)
+\Df 9000.0}
+\Na { 
+\+{\bf KURMI}&&&D, 1, \intg \bang
+short-wavelength cutoff for Statistical Line Opacity data
+(see \break Section 9)
+\Df 1682.0}
+\Na {
+\+{\bf KXLYM}&&&D, 1, \intg \bang
+XK-table augmentation switch}
+\Na { 
+\+{\bf L}& {\bf *24}&&B, 1, \intg \bang
+length of MU
+\Df LF}
+\Na { 
+\+{\bf LCEX}&&&D, 1, \intg \bang
+charge exchange index
+\Df 1}
+\Na { 
+\+{\bf LCH}& {\bf *136}&[NSL]&D, 2, \intg \bang
+collisions-with-Hydrogen codes}
+\Na { 
+\+{\bf LCOA}&&[NCB]&D, 2, \flpt \bang
+CO-lines opacity wavelength band lower limit}
+\Na { 
+\+{\bf LCOB}&&[NCB]&D, 2, \flpt \bang
+CO-lines opacity wavelength band upper limit}
+\Na { 
+\+{\bf LCOD}&&&D, 1, \flpt \bang
+CO-lines opacity dump printout wavelength}
+\Na { 
+\+{\bf LCR}&&[LCR]&D, 2, \flpt \bang
+wavelengths at which incident coronal radiation is specified}
+\Na {
+\+{\bf LDFD1}&&&D, 1, \intg \bang
+smoothing control switch for computed derivatives}
+\Na { 
+\+{\bf LDINT}& {\bf *54}&&D, 1, \intg \bang
+depth increment for detailed printout of transition terms
+\Df 5}
+\Na { 
+\+{\bf LDL}& {\bf *77, *105}&&D, 3, \intg \bang
+length of DDL
+\Df 1}
+\Na {
+\+{\bf LDLMAX}&&&B, 1, \intg \bang
+maximum of the various values of LDL occurring in {\bf Part D}
+\Df 1}
+\Na { 
+\+{\bf LDT}&&[NDT]&D, 2, \flpt \bang
+wavelengths tables for Type-2 dust opacity calculation
+\Df (910.0, 952.0, 1000.0, 1050.0, 1110.0, 1180.0, 1250.0, 1330.0,
+1430.0, \hfill\break 1540.0, 1670.0, 1820.0, 2000.0, 2080.0, 2170.0,
+2270.0, 2380.0, 2500.0, 3330.0, \hfill\break 5000.0, 
+1.0\pa, 3.0\pa, 1.0\pb, 3.0\pb, 1.0\pc, 3.0\pc, 1.0\pd, \break
+3.0\pd, 1.0\pe)}
+\Na { 
+\+{\bf LDTYP}& {\bf *54}&&D, 1, \intg \bang
+type control for detailed printout of transition terms
+\Df 1}
+\Na { 
+\+{\bf LDU}&&&B, 1, \intg \bang
+length of LMDUST
+\Df 1}
+\Na { 
+\+{\bf LEEDS}&&&D, 1, \intg \bang
+He-I background lines opacity calculation debug switch}
+\Na { 
+\+{\bf LEVDES}& {\bf *53}&[NSL]&D \bang
+level designation (term designation)}
+\Na { 
+\+{\bf LF}& {\bf *17, *24}&&B, 1, \intg \bang
+length of MUF
+\Df 2}
+\Na { 
+\+{\bf LFLUX}& {\bf *72}&&D, 1, \intg \bang
+Line Flux Distribution calculation control switch}
+\Na { 
+\+{\bf LG}&&&B, 1, \intg \bang
+length of XMU
+\Df 8}
+\Na { 
+\+{\bf LHEDS}&&&D, 1, \intg \bang
+He-II background lines opacity calculation debug switch}
+\Na {
+\+{\bf LHHSE}&&&D, 1, \intg \bang
+reference depth index for H and M in HSE}
+\Na { 
+\+{\bf LHM}&&[MHM]&D, 2, \flpt \bang
+wavelengths for H-minus continuum calculations
+\Df (16300.0, 16200.0, 16000.0, 15500.0, 15000.0, 14500.0, 14000.0,
+\hfill\break 13500.0, 13000.0, 12500.0, 12000.0, 11500.0, 11000.0,
+10500.0, 10000.0, 9500.0, \hfill\break 9000.0, 8500.0, 8000.0, 7500.0,
+7000.0, 6500.0, 6000.0, 5500.0, 5000.0, 4500.0, \hfill\break 4000.0,
+3500.0, 3000.0, 2500.0, 2000.0, 1750.0, 1500.0, 1250.0)}
+\Na { 
+\+{\bf LLY}&&&B, 1, \intg \bang
+length of LMXX}
+\Na { 
+\+{\bf LMA}& {\bf *104}&&D, 1, \flpt \bang
+Lyman EP-1 edit parameter
+\Df 0.3}
+\Na { 
+\+{\bf LMB}& {\bf *104}&&D, 1, \flpt \bang
+Lyman EP-1 edit parameter
+\Df $10^4$}
+\Na { 
+\+{\bf LMCR}& {\bf *137}&&D, 1, \flpt \bang
+Hydrogen Lyman lines background opacity parameter
+\Df 85.0}
+\Na { 
+\+{\bf LMDL2}& {\bf *137}&&D, 1, \flpt \bang
+DR parameter, Hydrogen Lyman lines background opacity
+\Df 0.01}
+\Na { 
+\+{\bf LMDL3}& {\bf *137}&&D, 1, \flpt \bang
+DR parameter, Hydrogen Lyman lines background opacity
+\Df 0.01}
+\Na { 
+\+{\bf LMDR}& {\bf *137}&[LLY]&D, 2, \flpt \bang
+DR parameter, Hydrogen Lyman lines background opacity}
+\Na { 
+\+{\bf LMDUST}&&[LDU]&D, 2, \flpt \bang
+wavelengths table for Type-1 dust opacity data
+\Df 5000.0}
+\Na { 
+\+{\bf LME}& {\bf *104}&&D, 1, \flpt \bang
+Lyman EP-1 edit parameter
+\Df $10^{-4}$}
+\Na { 
+\+{\bf LMF}& {\bf *104}&&D, 1, \flpt \bang
+Lyman EP-1 edit parameter
+\Df $10^{-5}$}
+\Na { 
+\+{\bf LMH}& {\bf *137}&&D, 1, \flpt \bang
+wavelength cutoff for highest H Lyman lines background opacity
+\Df 950.}
+\Na { 
+\+{\bf LMM}&&[JM]&D, 2, \flpt \bang
+wavelengths table for opacity multiplier
+\Df 1682.0}
+\Na { 
+\+{\bf LMR}& {\bf *104}&&D, 1, \flpt \bang
+Lyman EP-1 edit parameter
+\Df $10^4$}
+\Na { 
+\+{\bf LMT}& {\bf *104}&&D, 1, \flpt \bang
+Lyman EP-1 edit parameter
+\Df 0.3}
+\Na { 
+\+{\bf LMXC}& {\bf *137}&&D, 1, \flpt \bang
+DR parameter, Hydrogen Lyman lines background opacity
+\Df 2.0}
+\Na { 
+\+{\bf LMXP}& {\bf *137}&&D, 1, \flpt \bang
+DR parameter, Hydrogen Lyman lines background opacity
+\Df 3.0}
+\Na { 
+\+{\bf LMXX}& {\bf *137}&[LLY]&D, 2, \flpt \bang
+DR parameter, Hydrogen Lyman lines background opacity}
+\Na { 
+\+{\bf LMZ}&&&D, 1, \flpt \bang
+Lyman alpha wing background opacity cut-off wavelength
+\Df 2500.0}
+\Na { 
+\+{\bf LN}& {\bf *67}&&D, 1, \intg \bang
+depth index limit for saturation approximation in ``Lyman'' calculation
+\Df 8}
+\Na { 
+\+{\bf LODCG}& {\bf *88}&&D, 1, \intg \bang
+depth index for diffusion calculation graphs
+\Df -1}
+\Na { 
+\+{\bf LOGAS}& {\bf *114}&&D, 1, \intg \bang
+location analysis graph switch}
+\Na { 
+\+{\bf LOXDS}&&&D, 1, \intg \bang
+O-I background lines opacity calculation debug switch}
+\Na {
+\+{\bf LPMLR}&&&F, 1, \intg \bang
+mass-loss-rates print switch (used with LPVEL)
+\Df 1}
+\Na {
+\+{\bf LPVEL}&&&F, 1, \intg \bang
+profile-velocities print switch
+\Df 1}
+\Na { 
+\+{\bf LR}& {\bf *77}&[NL]&B, 2, \intg \bang
+number of RKC values (one LR for each level)}
+\Na { 
+\+{\bf LSFBOC}& {\bf *16}&&D, 4, \intg \bang
+Line Source Function background opacity control}
+\Na { 
+\+{\bf LSFFDB}& {\bf *36}&&D, 4, \intg \bang
+Line Source Function background type selector}
+\Na {
+\+{\bf LSFGC}& {\bf *68}&&D, 1, \intg \bang
+Line Source Function graph control code
+\Df 1}
+\Na { 
+\+{\bf LSFPRINT}& {\bf *81}&&D, 4, \intg \bang
+Line Source Function printout switch}
+\Na {
+\+{\bf LSTMP}&&&D, 1. \intg \bang
+STIM-for-GTN details print switch}
+\Na { 
+\+{\bf LSFTYP}& {\bf *48}&&D, 4, \intg \bang
+Line Source Function solution method selector}
+\Na { 
+\+{\bf LWNT}&&&D, 1, \intg \bang
+`Line Opacity' printout wavelengths interval (see Section 9)
+\Df 1}
+\Na { 
+\+{\bf LX2DS}&&&D, 1, \intg \bang
+O-II background lines opacity calculation debug switch}
+\Na { 
+\+{\bf LX3DS}&&&D, 1, \intg \bang
+O-III background lines opacity calculation debug switch}
+\Na { 
+\+{\bf LYMITER}&&&D, 1, \intg \bang
+number of Lyman iterations
+\Df 1}
+\Na { 
+\+{\bf LYODS}&&&D, 1, \intg \bang
+H Lyman background lines opacity calculation debug switch}
+\Na { 
+\+{\bf LZA}&&&B, 1*, \intg \bang
+length of ZAUX}
+\Na { 
+\+{\bf M}&&&B, 1, \intg \bang
+length of TS
+\Df 33}
+\Na { 
+\+{\bf MAMAS}&&&D, 1, \intg \bang
+matrix elements magnitude scan switch
+\Df 1}
+\Na { 
+\+{\bf MASS}&&&D, 1, \flpt \bang
+atomic mass}
+\Na { 
+\+{\bf MATRIX}& {\bf *140}&&D  \bang
+matrix manipulation control data}
+\Na { 
+\+{\bf MAUX}&&&D,F,H, 1, \intg \bang
+index specifying a ZAUX table}
+\Na { 
+\+{\bf MCE}&&[NSL]&D, 2, \flpt \bang
+CE (default) multiplier
+\Df 1.0}
+\Na { 
+\+{\bf MCI}&&[NSL]&D, 2, \flpt \bang
+CI (default) multiplier
+\Df 1.0}
+\Na {
+\+{\bf MCOA}&&&D, 1, \flpt \bang
+mulitplier of van der Waals damping for CO-lines profiles
+\Df all = 1.0}
+\Na { 
+\+{\bf MCON}&&&D, 1, \intg \bang
+CO number density output switch}
+\Na {
+\+{\bf MDFG}&&&D, 1, \intg \bang
+diffusion terms (GVL) output switch
+\Df 1}
+\Na { 
+\+{\bf MDFV}&&&D, 1, \intg \bang
+diffusion velocities output switch
+\Df 1}
+\Na { 
+\+{\bf MDTR1}&&&D, 1, \intg \bang
+Type-2 dust opacity calculation iteration limit
+\Df 10}
+\Na { 
+\+{\bf MDTR2}&&&D, 1, \intg \bang
+Type-2 dust opacity calculation iteration limit
+\Df 20}
+\Na { 
+\+{\bf METEP}& {\bf *21}&&D, 1, \intg \bang
+Lyman EP-1 and EP-2 calculation methods selector
+\Df 3}
+\Na { 
+\+{\bf METSE}& {\bf *35}&&D, 4, \intg \bang
+Statistical Equilibrium equations calculation methods selector
+\Df {\bf METSEDG} or {\bf METSEDW}}
+\Na {
+\+{\bf METSEDG}& {\bf \quad *35}&&D, 1, \intg \bang
+general default value of METSE
+\Df 1}
+\Na {
+\+{\bf METSEDW}& {\bf \quad *35}&&D, 1, \intg \bang
+default value of METSE for transitions down to Level 1
+\Df 3}
+\Na {
+\+{\bf MFONT}&&&D, 1, \intg \bang
+Fontenla atmosphere data output switch
+\Df 1}
+\Na { 
+\+{\bf MGK}&&\z &H, 2*,2, \flpt \bang
+singly-ionized Magnesium number density
+\Df computed in LTE}
+\Na { 
+\+{\bf MGN}&&\z &H, 3*,3, \flpt \bang
+Magnesium-I level populations
+\Df MGN$_{ij}$ computed in LTE, for all levels $j$ 
+such that $j >$ NMG}
+\Na { 
+\+{\bf MHM}&&&B, 1, \intg \bang
+length of LHM
+\Df 34}
+\Na { 
+\+{\bf MH2N}&&&D, 1, \intg \bang
+H2 number density output switch}
+\Na {
+\+{\bf MKURU}&&&D, 1, \intg \bang
+Kurucz spectrum data output switch
+\Df 1}
+\Na { 
+\+{\bf MLC}&&[JM]&D, 2, \flpt \bang
+opacity multiplier
+\Df 1.0}
+\Na { 
+\+{\bf MN1}&&&D, 1, \intg \bang
+depth limit for N1 recalculation in the ambipolar diffusion calculation
+\Df N}
+\Na { 
+\+{\bf MNG1}&&&D, 1, \intg \bang
+depth limit for GNV-1 replacement in the ambipolar diffusion calculation
+\Df -MN1}
+\Na { 
+\+{\bf MODLAB}& {\bf *37}&&D, 1, \alfa \bang
+name of atmospheric model
+\Df ``!NONAME!''}
+\Na { 
+\+{\bf MOPRNT}&&&D, 1, \intg \bang
+switch to print built-in population-ion models
+\Df 1}
+\Na { 
+\+{\bf MQT}&&&B, 1, \intg \bang
+length of QTAIL
+\Df 3}
+\Na { 
+\+{\bf MR}&{\bf *29, *77}&[NSL]&B, 2, \intg \bang
+number of WRAT values (one MR for each level)}
+\Na { 
+\+{\bf MRR}&&&B, 1, \intg \bang
+length of FRR
+\Df 6}
+\Na { 
+\+{\bf MS}& {\bf *2, *59}&&D, 1, \intg \bang
+index of upper level of `reference transition'
+\Df from INPAIR; see Note *2}
+\Na { 
+\+{\bf MSKIP}& {\bf *62}&&D, 1, \intg \bang
+ray selection parameter for computing weight matrices in spherical coordinates}
+\Na { 
+\+{\bf MSSPR}&&&D, 1, \intg \bang
+print switch for matrix of simultaneous ``Special N1'' solution (diffusion)
+\Df 1}
+\Na { 
+\+{\bf MTHEI}& {\bf *83}&&D, 1, \intg \bang
+exponential integral method selector
+\Df 1}
+\Na {
+\+{\bf MTREF}&&&D, 1, \intg \bang
+TR-effective output switch}
+\Na { 
+\+{\bf MU}& {\bf *24}&[L]&F, 2, \flpt \bang
+cosine-of-lookangle values for emergent intensity calculation
+\Df MUF}
+\Na { 
+\+{\bf MUF}& {\bf *24}&[LF]&F, 2, \flpt \bang
+cosine-of-lookangle values for emergent flux calculation
+\Df (1.0, 0.3)}
+\Na {
+\+{\bf MXPPI}&&&D, 1, \intg \bang
+limit for individual KZAUG values (Z-augmentation, diffusion)
+\Df 5}
+\Na {
+\+{\bf MXTAP}&&&D, 1, \intg \bang
+limit for sum of KZAUG values (Z-augmentation, diffusion)
+\Df 100}
+\Na { 
+\+{\bf M304}&&&D, 1, \intg \bang
+index of reference value of He-II $\lambda 304$ line mean intensity
+\Df 10}
+\Na { 
+\+{\bf N}&&&B, 1, \intg \bang
+length of Z}
+\Na { 
+\+{\bf NAB}& {\bf *77}&&B, 1, \intg \bang
+length of BANDL (see Section 9)}
+\Na { 
+\+{\bf NABS}& {\bf *7}&[37]&D, 2, \intg \bang
+absorber/emitter switches
+\Df NABS$_i =$ on, for all $i$}
+\Na { 
+\+{\bf NAK}&&\z &H, 2*,2, \flpt \bang
+singly-ionized Sodium number density
+\Df computed in LTE}
+\Na { 
+\+{\bf NAL}&&&B, 1, \intg \bang
+number of levels for which Aluminum populations are specified}
+\Na { 
+\+{\bf NAME}& {\bf *3}&&D, 1, \alfa \bang
+name of ion of run}
+\Na { 
+\+{\bf NAN}&&\z &H, 3*,3, \flpt \bang
+Sodium-I level populations
+\Df NAN$_{ij}$ computed in LTE, for all levels $j$ 
+such that $j >$ NNA}
+\Na { 
+\+{\bf NANAL1}&&&D, 1, \intg \bang
+profile ANALYSIS depth selection parameter
+\Df 1}
+\Na { 
+\+{\bf NANAL2}&&&D, 1, \intg \bang
+profile ANALYSIS depth selection parameter
+\Df 5}
+\Na { 
+\+{\bf NAPKNT}&&&D, 1, \intg \bang
+recombination parameter}
+\Na { 
+\+{\bf NAPWRA}&&&D, 1, \intg \bang
+recombination parameter
+\Df 1}
+\Na { 
+\+{\bf NAPWRB}&&&D, 1, \intg \bang
+recombination parameter
+\Df 2}
+\Na {
+\+{\bf NARB}& {\bf *75}&&B, 1, \intg \bang
+number of `banner' pages}
+\Na { 
+\+{\bf NBS}&&&D, 1, \intg \bang
+b-smoothing control (level) index
+\Df 2}
+\Na { 
+\+{\bf NC}&&\z &H, 2*,2, \flpt \bang
+charged particle number density}
+\Na { 
+\+{\bf NCA}&&&B, 1, \intg \bang
+number of levels for which Calcium populations are specified}
+\Na { 
+\+{\bf NCB}&&&B, 1, \intg \bang
+length of LCOA, LCOB}
+\Na { 
+\+{\bf NCL}& {\bf *29, *109}&&B, 1, \intg \bang
+length of XCOL
+\Df 5}
+\Na { 
+\+{\bf NCOI}&&\z &D, 2*,2, \flpt \bang
+CO number density, input (to replace computed values)}
+\Na {
+\+{\bf NCOPT}&&&D, 1, \intg \bang
+CO-lines opacity calculations statistics-keeping switch}
+\Na { 
+\+{\bf NCOSW}&&&D, 1, \intg \bang
+Carbon Monoxide abundance correction computation method selector
+\Df 1}
+\Na { 
+\+{\bf NCQ}&&&B, 1, \intg \bang
+length of CQT
+\Df 5}
+\Na { 
+\+{\bf NCR}&&&B, 1, \intg \bang
+length of LCR}
+\Na { 
+\+{\bf ND}& {\bf *32}&\z &D, 3*,3, \flpt \bang
+number densities of the levels of the ion of the run
+\Df computed in LTE}
+\Na { 
+\+{\bf NDR}&&&B, 1, \intg \bang
+length of XDR
+\Df 7}
+\Na {
+\+{\bf NDSN1}&&&D, 1, \intg \bang
+skip Special N-1 recalculation in first overall calculation}
+\Na { 
+\+{\bf NDT}&&&B, 1, \intg \bang
+length of LDT
+\Df 29}
+\Na { 
+\+{\bf NDV}&&&B, 1, \intg \bang
+length of DWAVE}
+\Na { 
+\+{\bf NDW}& {\bf *86}&&D, 1, \intg \bang
+depth index for reference value of DW (Doppler width)
+\Df either index of Z-value closest to ZNDW, or N/2}
+\Na {
+\+{\bf NDWM}&&&D, 1, \intg \bang
+depth index for reference value of DW (Doppler width), for
+atmospheric model
+\Df NDW}
+\Na { 
+\+{\bf NE}&&\z &D, 2*,2, \flpt \bang
+electron number density}
+\Na {
+\+{\bf NECLIP}&&&D, 1, \intg \bang
+continuum eclipse printout quantity selector}
+\Na { 
+\+{\bf NED}&&&D, 4, \intg \bang
+RHO editing index
+\Df N}
+\Na { 
+\+{\bf NEFDF}& {\bf *125}&&D, 4, \intg \bang
+switch for NE for d-coefficients in diffusion calculation
+\Df 1}
+\Na { 
+\+{\bf NERM}& {\bf *85}&&D, 1, \intg \bang
+limit for some error messages from {\tt EDITH}
+\Df 10}
+\Na { 
+\+{\bf NEWELE}&&&D  \bang
+element data (see Section 10)}
+\Na {
+\+{\bf NFB}&&&B, 1, \intg \bang
+number of isotropic flow broadening velocities
+\Df 6}
+\Na { 
+\+{\bf NFE}&&&B, 1, \intg \bang
+number of levels for which Iron populations are specified}
+\Na {
+\+{\bf NFH}&&&B, 1, \intg \bang
+length of HNDF
+\Df 8}
+\Na {
+\+{\bf NGM}& {\bf *138}&&B, 1, \intg \bang
+length of DGMZ
+\Df 23}
+\Na {
+\+{\bf NGNV}& {\bf *116}&&D, 1, \intg \bang
+GNVL-suppression level limit}
+\Na { 
+\+{\bf NGRL}& {\bf *38}&&D, 1, \intg \bang
+graphs Z-scale (axis) limit}
+\Na { 
+\+{\bf NGRR}& {\bf *38}&&D, 1, \intg \bang
+graphs Z-scale (axis) limit}
+\Na { 
+\+{\bf NH}&&\z &D, 2*,2, \flpt \bang
+total Hydrogen number density}
+\Na { 
+\+{\bf NHN}  \bang
+= ``HN 1 ''}
+\Na { 
+\+{\bf NHTSW}& {\bf *64}&&D, 1, \intg \bang
+H2 abundance correction method selector
+\Df 2}
+\Na { 
+\+{\bf NIASM}&&&D, 1, \intg \bang
+sequential smoothing parameter
+\Df 20}
+\Na { 
+\+{\bf NIL}& {\bf *19}&&D, 1, \intg \bang
+a RHO selection parameter
+\Df 2}
+\Na { 
+\+{\bf NK}&&\z &D, 3*,3, \flpt \bang
+ionized number density of the ion of the run
+\Df computed in LTE}
+\Na { 
+\+{\bf NKA}&&&B, 1, \intg \bang
+length of ZALBK (see Section 9)
+\Df 2}
+\Na { 
+\+{\bf NL}&{\bf *29, *77}&&B, 1, \intg \bang
+number of levels of the ion of the run
+\Df 2}
+\Na { 
+\+{\bf NLC}&&&B, 1, \intg \bang
+number of levels for which Carbon populations are specified}
+\Na { 
+\+{\bf NLH}&&&B, 1, \intg \bang
+number of levels for which Hydrogen populations are specified}
+\Na { 
+\+{\bf NLO}&&&B, 1, \intg \bang
+number of levels for which Oxygen populations are specified}
+\Na {
+\+{\bf NLPAIR}& {\bf *94, *95}&[2$\times$NL]&B, 2, \intg \bang
+list of quantum numbers}
+\Na { 
+\+{\bf NLS}&&&B, 1, \intg \bang
+number of levels for which Silicon populations are specified}
+\Na { 
+\+{\bf NLU}&&&B, 1, \intg \bang
+number of levels for which Sulphur populations are specified}
+\Na { 
+\+{\bf NLY}&&&D, 1, \intg \bang
+H Ly lines background opacity limit
+\Df 15}
+\Na { 
+\+{\bf NLZ}&&&B, 1, \intg \bang
+number of levels for which Helium populations are specified}
+\Na { 
+\+{\bf NMG}&&&B, 1, \intg \bang
+number of levels for which Magnesium populations are specified}
+\Na {
+\+{\bf NMLR}&&&D, 1, \intg \bang
+mass-loss-rate index
+\Df NDW}
+\Na { 
+\+{\bf NMT}& {\bf *16, *77}&&B, 1, \intg \bang
+number of rows in the table ELE (see Section 10)
+\Df 38}
+\Na { 
+\+{\bf NNA}&&&B, 1, \intg \bang
+number of levels for which Sodium populations are specified}
+\Na { 
+\+{\bf NNDFE}&&&D, 1, \intg \bang
+dump control for injection function FJIN (fast electrons)
+\Df -1}
+\Na { 
+\+{\bf NODCG}& {\bf *88}&&D, 1, \intg \bang
+depth index for diffusion calculation graphs
+\Df -1}
+\Na { 
+\+{\bf NOION}& {\bf *11, *84}&&B, 1, \intg \bang
+`no ion' switch}
+\Na { 
+\+{\bf NO2}&&&B, 1, \intg \bang
+number of levels for which Oxygen-II populations are specified}
+\Na { 
+\+{\bf NO3}&&&B, 1, \intg \bang
+number of levels for which Oxygen-III populations are specified}
+\Na { 
+\+{\bf NP}&&\z &H, 2*,2, \flpt \bang
+proton number density
+\Df computed in LTE}
+\Na { 
+\+{\bf NQLYM}& {\bf *137}&&D, 1, \intg \bang
+weight limit for highest H Lyman lines background opacity}
+\Na { 
+\+{\bf NS}& {\bf *2, *59}&&D, 1, \intg \bang
+index of lower level of `reference transition'
+\Df from INPAIR; see Note *2}
+\Na { 
+\+{\bf NSL}&{\bf *29, *77}&&B, 1, \intg \bang
+total number of levels of the ion of the run (including supplementary levels)
+\Df NL}
+\Na { 
+\+{\bf NSPED}&&&D, 1, \intg \bang
+particle energy dissipation calculation parameter ``NS'' (fast electrons)
+\Df 1}
+\Na {
+\+{\bf NSPRD}&&&D, 1, \intg \bang
+secret PRD switch}
+\Na {
+\+{\bf NSW}&{\bf *134}&&B, 1, \intg \bang
+length of SCOW}
+\Na { 
+\+{\bf NT}&{\bf *29, *77}&&B, 1, \intg \bang
+number of transitions specified in INPAIR}
+\Na { 
+\+{\bf NTAN}& {\bf *62}&&B, 1, \intg \bang
+ray selection parameter for computing weight matrices in spherical coordinates
+\Df 4}
+\Na { 
+\+{\bf NTE}&&&B, 1, \intg \bang
+length of TER
+\Df 1}
+\Na { 
+\+{\bf NU}& {\bf *93}&[NSL]&D, 2, \flpt \bang
+frequency intervals between levels of the ion of the run,
+in frequency units (see also WNU)}
+\Na { 
+\+{\bf NUC}& {\bf *93}&[NSL]&D, 2, \flpt \bang
+auxiliary continuum frequency intervals of the ion of the run,
+in frequency units (see also WNUC)
+\Df NUK}
+\Na { 
+\+{\bf NUK}& {\bf *93}&&D, 1, \flpt \bang
+continuum frequency interval of the ion of the run,
+in frequency units (see also WNUK)}
+\Na { 
+\+{\bf NVDFE}&&&D, 1, \intg \bang
+dump control for injection function FINJ (fast electrons)
+\Df -1}
+\Na { 
+\+{\bf NVF}&&&B, 1, \intg \bang
+number of velocity values (fast electrons)
+\Df 30}
+\Na {
+\+{\bf NVH}& {\bf *90}&&B, 1, \intg \bang
+length of HNDV
+\Df 38}
+\Na { 
+\+{\bf NVOIT}& {\bf *50, *84}&&D, 1, \intg \bang
+Voigt profiles subroutine execution statistics printout switch
+\Df 1}
+\Na { 
+\+{\bf NVX}& {\bf *29, *82, *108}&&B, 1, \intg \bang
+number of VX tables}
+\Na { 
+\+{\bf NWS}&&&B, 1, \intg \bang
+length of DELWAVE}
+\Na { 
+\+{\bf NWV}&&&B, 1, \intg \bang
+length of WAVES}
+\Na { 
+\+{\bf NXF}&&&B, 1, \intg \bang
+maximum number of integrand values for injection functions (fast electrons)
+\Df 1000}
+\Na { 
+\+{\bf NZDFE}&&&D, 1, \intg \bang
+dump control (fast electrons)
+\Df -1}
+\Na { 
+\+{\bf NZE}&&&B, 1, \intg \bang
+length of ZECL}
+\Na { 
+\+{\bf NZ2}&&&B, 1, \intg \bang
+number of levels for which Helium-II populations are specified}
+\Na { 
+\+{\bf N1MET}& {\bf *122}&&D, 1, \intg \bang
+``Special N1'' (diffusion calculation), method selector
+\Df 2}
+\Na {
+\+{\bf N1NUP}&&&D, 1, \intg \bang
+populations-of-the-run update switch, ``Special N1'' calculation
+\Df 1}
+\Na { 
+\+{\bf OK}&&\z &H, 2*,2, \flpt \bang
+singly-ionized Oxygen number density
+\Df computed in LTE}
+\Na { 
+\+{\bf OLL}& {\bf *18}&&D, 4, \flpt \bang
+line opacity multiplier
+\Df 1.0}
+\Na { 
+\+{\bf OMIT}&&[variable]&B, 2, \alfa \bang
+disable program options (see Section 6 for further details)}
+\Na { 
+\+{\bf OML}& {\bf *16}&&D, 4, \flpt \bang
+line-background opacity multiplier
+\Df 1.0}
+\Na { 
+\+{\bf ON}&&\z &H, 3*,3, \flpt \bang
+Oxygen-I level populations
+\Df ON$_{ij}$ computed in LTE, for all levels $j$ 
+such that $j >$ NLO}
+\Na { 
+\+{\bf OPF}&&&D, 1, \flpt \bang
+incident radiation extinction factor
+\Df 1.0}
+\Na { 
+\+{\bf OUTPUT}& {\bf *23}&&B, 1, \alfa \bang
+`general printout' file scope switch
+\Df ``MERGE''}
+\Na { 
+\+{\bf O2K}&&\z &H, 2*,2, \flpt \bang
+doubly-ionized Oxygen number density
+\Df computed in LTE}
+\Na { 
+\+{\bf O2N}&&\z &H, 3*,3, \flpt \bang
+Oxygen-II level populations
+\Df O2N$_{ij}$ computed in LTE, for all levels $j$ 
+such that $j >$ NO2}
+\Na { 
+\+{\bf O3K}&&\z &H, 2*,2, \flpt \bang
+triply-ionized Oxygen number density
+\Df computed in LTE}
+\Na { 
+\+{\bf O3N}&&\z &H, 3*,3, \flpt \bang
+Oxygen-I level populations
+\Df O3N$_{ij}$ computed in LTE, for all levels $j$ 
+such that $j >$ NO3}
+\Na { 
+\+{\bf P}& {\bf *93}&[NSL]&D, 2, \flpt \bang
+statistical weight}
+\Na { 
+\+{\bf PALBET}&&\z &D, 2*,2, \flpt \bang
+Helium diffusion parameter}
+\Na { 
+\+{\bf PART}& {\bf *61}&&D, 1, \flpt \bang
+partition function for the ion of the run}
+\Na { 
+\+{\bf PARTLIM}&&&D, 1, \flpt \bang
+partition functions component limit (for ions in table ELE)
+\Df 3.0}
+\Na { 
+\+{\bf PBETAL}&&\z &D, 2*,2, \flpt \bang
+Helium diffusion parameter}
+\Na { 
+\+{\bf PBETGM}&&\z &D, 2*,2, \flpt \bang
+Helium diffusion parameter}
+\Na { 
+\+{\bf PCE}&&&D, 5, \flpt \bang
+FCE adjustment factors}
+\Na { 
+\+{\bf PGMBET}&&\z &D, 2*,2, \flpt \bang
+Helium diffusion parameter}
+\Na { 
+\+{\bf PMSK}&&&D, 1, \flpt \bang
+multiplier of default Stark half-width
+\Df 1.0}
+\Na { 
+\+{\bf PNH}&&&D, 1, \flpt \bang
+scattering albedo parameter for Background Line Opacities
+(see Section 9)}
+\Na { 
+\+{\bf POPION}& {\bf *28}&&H  \bang
+`population update' ion data}
+\Na { 
+\+{\bf POPRCP}& {\bf *28}&&H  \bang
+`population update' ion data}
+\Na { 
+\+{\bf POPUP}& {\bf *8}&&D, 1, \alfa \bang
+populations data update switch}
+\Na { 
+\+{\bf POPXLM}& {\bf *28}&&H  \bang
+`population update' ion data}
+\Na {
+\+{\bf PRDCV}& {\bf *42}&&D, 1, \flpt \bang
+PRD-iterations convergence criterion
+\Df 0.1}
+\Na { 
+\+{\bf PROF}& {\bf *17}&&D, 4, \intg \bang
+emergent line profiles calculations switch}
+\Na {
+\+{\bf PROGLI}& {\bf *98}&&D, 4, \flpt \bang
+profile graphs control parameter}
+\Na { 
+\+{\bf PW}&&&D, 1, \flpt \bang
+exponent for Stark broadening term
+\Df 1.0}
+\Na { 
+\+{\bf PZERO}& {\bf *103}&&D, 1, \flpt \bang
+Z-from-TAUKIN recalculation parameter}
+\Na { 
+\+{\bf QIN}&&\z &D, 2*,2, \flpt \bang
+K-shell ionization calculation data}
+\Na { 
+\+{\bf QNL}&&[NSL]&D, 2, \intg \bang
+number of ``$n\ell$'' electrons
+\Df all = 1}
+\Na { 
+\+{\bf QTAIL}&&[MQT]&D, 2, \flpt \bang
+Lyman EP-1 Q-smoothing tail
+\Df (0.5, 0.1, 0.01)}
+\Na { 
+\+{\bf RABD}& {\bf *120}&\z &D, 2*,2, \flpt \bang
+depth variation of abundance ratio
+\Df antilog(RABDL$_i$), or RABD$_i$ = 1.0, for all $i$}
+\Na { 
+\+{\bf RABDL}& {\bf *120}&\z &D, 2*,2, \flpt \bang
+depth variation of log of abundance ratio}
+\Na { 
+\+{\bf RCCFE}&&&D, 1, \flpt \bang
+accuracy criterion for injection function integrations (fast electrons)
+\Df 0.1} 
+\Na {
+\+{\bf RCHX}& {\bf *95, *97}&&D, 4, \flpt \bang
+upper-level charge-exchange parameter}
+\Na { 
+\+{\bf RCOMIN}&&&D, 1, \flpt \bang
+CO abundance lower limit
+\Df $10^{-10}$} 
+\Na { 
+\+{\bf REFLM}& {\bf *103}&&D, 1, \flpt \bang
+wavelength to which TAUKIN values correspond
+\Df 911.1236}
+\Na {
+\+{\bf RFAC }&&&D, 1, \flpt \bang
+reduction factor for all collision rates
+\Df 1.0}
+\Na {
+\+{\bf RFHEAB}&&&D, 1, \flpt \bang
+Helium abundance coefficient reduction factor for RHEAB calculation
+\Df 1.0}
+\Na { 
+\+{\bf RFMAS}& {\bf *103}&&D, 1, \flpt \bang
+reference mass}
+\Na { 
+\+{\bf RHEAB}&&\z &D, 2*,2, \flpt \bang
+depth dependence of total Helium abundance
+\Df RHEAB$_i$ = 1.0, for all $i$}
+\Na { 
+\+{\bf RHO}&&\z &D, 5*,5, \flpt \bang
+net radiative bracket}
+\Na { 
+\+{\bf RHOPT}& {\bf *4}, {\bf *19}&&D, 1, \alfa \bang
+a RHO selection parameter
+\Df ``RHOJ''}
+\Na { 
+\+{\bf RHOWT}& {\bf *13, *131}&\z &D, 5*,5, \flpt \bang
+RHO weights}
+\Na { 
+\+{\bf RHWT}& {\bf *13, *131}&\z &D, 5*,5, \flpt \bang
+RHO weights
+\Df 1.0}
+\Na { 
+\+{\bf RK}& {\bf *45}&\z &D, 3*,3, \flpt \bang
+photoionization rate (for level KOLEV)}
+\Na { 
+\+{\bf RKC}&&[LR]&D, 3, \flpt \bang
+additional photoionization parameter}
+\Na {
+\+{\bf RKMULT}&&[NSL]&D, 2, \flpt \bang
+RK enhancement factor}
+\Na { 
+\+{\bf RKW}& {\bf *13, *131}&\z &D, 3*,3, \flpt \bang
+RK-KOLEV weights}
+\Na { 
+\+{\bf RKWT}& {\bf *13, *131}&\z &D, 3*,3, \flpt \bang
+RK-KOLEV weights
+\Df 1.0}
+\Na { 
+\+{\bf RL}& {\bf *39}, {\bf *45}&\z &D, 3*,3, \flpt \bang
+photorecombination rate (for level KOLEV)}
+\Na { 
+\+{\bf RQCP}& {\bf *22, *93}&[MR+1]&D, 3, \flpt \bang
+= RRCP}
+\Na { 
+\+{\bf RRCP}& {\bf *22}, {\bf *56}&[MR]&D, 3, \flpt \bang
+ratios of photoionization cross-sections
+\Df computed for Level 1 for some non-Hydrogen runs}
+\Na { 
+\+{\bf RUNTOPOP}& {\bf \quad *8}&[8]&B, 2, \intg \bang
+ion-of-the-run vs. built-in population-ion-model level correspondences,
+for \break `population update' runs}
+\Na { 
+\+{\bf RZM}&&\z &D, 2*,2, \flpt \bang
+metal electrons multiplier
+\Df RZM$_i$ = 1.0, for all $i$}
+\Na { 
+\+{\bf R1N}&&&D, 1, \flpt \bang
+distance from illuminating source}
+\Na { 
+\+{\bf SCH}& {\bf *47}&&D, 4, \intg \bang
+partial redistribution calculation selector for Line Source Function
+calculations}
+\Na {
+\+{\bf SCOW}&{\bf *134}&[NSW]&D, 2, \flpt \bang
+selected Continuum output wavelengths}
+\Na {
+\+{\bf SCTA}&{ \bf *55}&&D, 1, \flpt \bang
+shock temperature amplitude}
+\Na {
+\+{\bf SCTS}&{ \bf *55}&&D, 1, \flpt \bang
+shock temperature scale height}
+\Na {
+\+{\bf SCVA}&{ \bf *55}&&F, 1, \flpt \bang
+shock velocity amplitude}
+\Na {
+\+{\bf SCVB}&{ \bf *55}&&F, 1, \flpt \bang
+shock velocity parameter}
+\Na {
+\+{\bf SCVS}&{ \bf *55}&&F, 1, \flpt \bang
+shock velocity scale height}
+\Na { 
+\+{\bf SGRAF}& {\bf *98}&&D, 4, \intg \bang
+profile graphs control parameter}
+\Na { 
+\+{\bf SHCOC}&&&D, 1, \flpt \bang
+CO chromospheric scale height
+\Df 100.}
+\Na { 
+\+{\bf SHCOP}&&&D, 1, \flpt \bang
+CO photospheric scale height
+\Df 400.}
+\Na { 
+\+{\bf SIK}&&\z &H, 2*,2, \flpt \bang
+singly-ionized Silicon number density
+\Df computed in LTE}
+\Na { 
+\+{\bf SIN}&&\z &H, 3*,3, \flpt \bang
+Silicon-I level populations
+\Df SIN$_{ij}$ computed in LTE, for all levels $j$ 
+such that $j >$ NLS}
+\Na { 
+\+{\bf SK}&&\z &H, 2*,2, \flpt \bang
+singly-ionized Sulphur number density
+\Df computed in LTE}
+\Na { 
+\+{\bf SMATC}&&&D, 1, \flpt \bang
+matrix samples output selection criterion}
+\Na { 
+\+{\bf SMOOTH}& {\bf *49}&&D  \bang
+RHO smoothing control parameters
+\Df see Note *49}
+\Na { 
+\+{\bf SMP}&&&D, 1, \flpt \bang
+RHO weights adjustment parameter
+\Df 0.3}
+\Na { 
+\+{\bf SN}&&\z &H, 3*,3, \flpt \bang
+Sulphur-I level populations
+\Df SIN$_{ij}$ computed in LTE, for all levels $j$ 
+such that $j >$ NLU}
+\Na { 
+\+{\bf SN1CC}&&&D, 1, \flpt \bang
+convergence criterion for ``Special N1'' calculation (diffusion)
+\Df $10^{-8}$}
+\Na { 
+\+{\bf SOBDMN}& {\bf *51}&&D, 1, \flpt \bang
+Sobolev escape probability calculation integration control parameter
+\Df 0.001}
+\Na { 
+\+{\bf SOBDMX}& {\bf *51}&&D, 1, \flpt \bang
+Sobolev escape probability calculation integration control parameter
+\Df 0.01}
+\Na { 
+\+{\bf SOBFEQ}& {\bf *51}&&D, 1, \flpt \bang
+Sobolev escape probability calculation integration control parameter
+\Df 0.001}
+\Na { 
+\+{\bf SOBOLEV}& {\bf *51, *82}&[2]&D, 5, \intg \bang
+Sobolev solution limit indices
+\Df (1, 1)}
+\Na {
+\+{\bf SRCO}&&&D, 1, \flpt \bang
+scattering ratio for CO lines
+\Df 0.1}
+\Na { 
+\+{\bf STARKI}&&&D, 4, \flpt \bang
+value of NE-index for Stark splitting of Hydrogen lines
+\Df ISTARK}
+\Na { 
+\+{\bf TAUCL}& {\bf *42}&&D, 1, \flpt \bang
+DR parameter, PRD transitions
+\Df $10^4$}
+\Na { 
+\+{\bf TAUKIN}& {\bf *103}&[N]&D, 2*,2, \flpt \bang
+input TAUK values}
+\Na { 
+\+{\bf TB}&&\z &D, 2*,2, \flpt \bang
+blanketing temperature
+\Df TE}
+\Na { 
+\+{\bf TBAR}&&&D, 1, \flpt \bang
+change-over TAU-value for weight matrix calculation
+\Df 0.5}
+\Na { 
+\+{\bf TDST}&&\z &D, 2*,2, \flpt \bang
+Type-2 dust opacity calculation temperature values}
+\Na { 
+\+{\bf TDUST}&&&D, 1, \flpt \bang
+Type-1 dust temperature
+\Df 200.0}
+\Na { 
+\+{\bf TE}&&\z &D, 2*,2, \flpt \bang
+kinetic temperature}
+\Na { 
+\+{\bf TER}& {\bf *93}&[NTE]&D, 2, \flpt \bang
+temperature table for input values of CE and CI
+\Df 4000.0}
+\Na { 
+\+{\bf TEX}&&\z &D, 2*,2, \flpt \bang
+excitation temperature
+\Df TE}
+\Na { 
+\+{\bf TGLYM}& {\bf *67}&&D, 1, \flpt \bang
+Lyman change-over TAU parameter
+\Df 100.0}
+\Na { 
+\+{\bf TKR}&&[LR]&D, 3, \flpt \bang
+wavelengths for which additional photoionization values are specified}
+\Na { 
+\+{\bf TLARGE}&&&D, 1, \flpt \bang
+TNP-from-TNU selection parameter
+\Df 200.0}
+\Na { 
+\+{\bf TLIMG}& {\bf *34}&&D, 1, \flpt \bang
+absorption contributors graph axis limit
+\Df 0.0 [ = log(1.0)]}
+\Na { 
+\+{\bf TLTR}&&&D, 1, \flpt \bang
+limiting multiplier for TDST recalculation
+\Df 1.3}
+\Na { 
+\+{\bf TML}&&&D, 1, \flpt \bang
+large-TAU cut-off for intensity integrals
+\Df 30.0}
+\Na { 
+\+{\bf TMS}&&&D, 1, \flpt \bang
+small-TAU change-over for RT weight matrices
+\Df 5.0}
+\Na { 
+\+{\bf TOPE}& {\bf *84}&&D, 1, \intg \bang
+Continuum Plots save switch}
+\Na { 
+\+{\bf TR}  \bang
+= ``TRN 1 ''}
+\Na {
+\+{\bf TRFLI}&&&D, 1, \flpt \bang
+limit-interval for TR-effective calculation
+\Df 1.1}
+\Na { 
+\+{\bf TRN}& {\bf *9, *102}&\z &D, 3*,3, \flpt \bang
+radiation temperature (for a given level of the ion of the run)
+\Df TRN$_{i,1}$ = TE$_i, \quad$ TRN$_{i,j}$ = TRN$_{i,1}, \,$ all $i, \,$
+all $j >$ 1}
+\Na { 
+\+{\bf TS}&&[M]&D, 2, \flpt \bang
+standard TAU table
+\Df (0.0, 0.0001, 0.0002, 0.0003, 0.0006, 0.001, 0.002, 0.003, 0.006,
+0.01, 0.02, 0.03, 0.06, 0.1, 0.2, 0.3, 0.6, 1.0, 2.0, 3.0, 5.0, 7.0,
+10.0, 15.0, 20.0, 30.0, 50.0, 75.0, 100.0, 150.0, 200.0, 300.0, 500.0)}
+\Na { 
+\+{\bf TSM}&&&D, 1, \flpt \bang
+change-over TAU for mean intensity and emergent intensity calculations
+\Df $10^{-4}$}
+\Na { 
+\+{\bf TSMALL}&&&D, 1, \flpt \bang
+TNP-from-TNU selection parameter
+\Df $10^{-10}$}
+\Na { 
+\+{\bf TX}&&&D, 1, \flpt \bang
+brightness temperature of illuminating source}
+\Na { 
+\+{\bf USE}& {\bf *44}&&B,D,F,H, 1, \alfa \bang
+input file designation
+\Df ``INPUT''}
+\Na { 
+\+{\bf V}& {\bf *69, *82, *90}& $\qquad$ \z &D, 2*,2, \flpt \bang
+broadening velocity}
+\Na { 
+\+{\bf VM}& {\bf *82}&\z &D, 2*,2, \flpt \bang
+mass motion velocity}
+\Na { 
+\+{\bf VMNFE}&&&D, 1, \flpt \bang
+minimum velocity (fast electrons)
+\Df 0.003}
+\Na {
+\+{\bf VNH}& {\bf *90}&[NVH]&D, 1, \flpt \bang
+standard table of V (as a function of HNDV) for the quiet sun
+\Df (15.18, 13.68, 11.92, 10.75, 9.68, 8.44, 7.81, 7.52, 6.95,
+6.28, 5.52, 4.60, 3.59, 2.98, 2.20, 2.00, 1.54, 1.38, 1.18,
+1.00, 0.86, 0.80, 0.68, 0.65, 0.55, 0.52, 0.63, 0.90, 1.10,
+1.30, 1.46, 1.56, 1.64, 1.71, 1.76, 1.80, 1.82, 1.83)}
+\Na { 
+\+{\bf VOITC}& {\bf *50}&&D, 1, \flpt \bang
+Voigt function calculation cut-off
+\Df $10^{-6}$}
+\Na { 
+\+{\bf VR}& {\bf *69, *82}&\z &D, 2*,2, \flpt \bang
+broadening velocity}
+\Na { 
+\+{\bf VSB}& {\bf *51, *82}&\z &D, 2*,2, \flpt \bang
+Sobolev velocity
+\Df VXS or VM}
+\Na { 
+\+{\bf VSMLL}& {\bf *71}&&D, 1, \flpt \bang
+replacement value for divisors that equal zero (subroutine
+{\tt DIVIDE})
+\Df $10^{-100}$}
+\Na { 
+\+{\bf VT}& {\bf *82}&\z &D, 2*,2, \flpt \bang
+turbulent pressure velocity}
+\Na { 
+\+{\bf VX}& {\bf *57, *82}&[N]&F, 3, \flpt \bang
+additional expansion velocity for emergent profile calculation}
+\Na { 
+\+{\bf VXS}& {\bf *60, *82}&\z &D, 2*,2, \flpt \bang
+basic expansion velocity for Line Source Function calculations
+\Df VM}
+\Na { 
+\+{\bf WAVEMN}& {\bf *110}&&D, 1, \flpt \bang
+automatic additional wavelengths limit}
+\Na { 
+\+{\bf WAVEMX}& {\bf *110}&&D, 1, \flpt \bang
+automatic additional wavelengths limit}
+\Na { 
+\+{\bf WAVES}& {\bf *27}&[NWV]&D, 2, \flpt \bang
+additional wavelengths for continuum calculations}
+\Na { 
+\+{\bf WBD}& {\bf *26}&&D, 1, \flpt \bang
+weight for departure coefficient updating
+\Df WPOP}
+\Na { 
+\+{\bf WBDIR}&&&D, 1, \flpt \bang
+weight for results of ``direct'' departure coefficient calculation
+\Df 1.0}
+\Na { 
+\+{\bf WEIGHT}&&&D, 6, \flpt \bang
+weight for Statistical Equilibrium equations calculation}
+\Na { 
+\+{\bf WEP}& {\bf *104}&&D, 1, \flpt \bang
+Lyman EP-1 weighting parameter
+\Df 1.0}
+\Na {
+\+{\bf WFB}&&&F, 1, \flpt \bang
+weight for flow broadening component velocities
+\Df 0.6}
+\Na { 
+\+{\bf WMN}& {\bf *131}&&D, 1, \flpt \bang
+RHO weight adjustment parameter
+\Df 0.3}
+\Na { 
+\+{\bf WMX}& {\bf *131}&&D, 1, \flpt \bang
+RHO weight adjustment parameter
+\Df 0.9}
+\Na { 
+\+{\bf WNJUNK}& {\bf *87}&&D, 1, \flpt \bang
+WN-matrix ``cleanup'' parameter}
+\Na { 
+\+{\bf WNU}&&[NSL]&D, 2, \flpt \bang
+= NU, but in wavenumbers}
+\Na { 
+\+{\bf WNUC}&&[NSL]&D, 2, \flpt \bang
+= NUC, but in wavenumbers}
+\Na { 
+\+{\bf WNUK}&&&D, 1, \flpt \bang
+= NUK, but in wavenumbers}
+\Na {
+\+{\bf WORLDLY}& {\bf *132}&&B, 1, \alfa \bang
+storage management dump control switch}
+\Na { 
+\+{\bf WPOP}& {\bf *26}&&D, 1, \flpt \bang
+weight for number densities updating
+\Df WBD, or 1.0}
+\Na { 
+\+{\bf WPRESS}&&&D, 1, \flpt \bang
+weight for adjusting NH to achieve constant pressure
+\Df 1.0}
+\Na { 
+\+{\bf WR}& {\bf *13}&&D, 4, \flpt \bang
+RHO weighting parameter
+\Df 1.0}
+\Na { 
+\+{\bf WRAT}& {\bf *22}, {\bf *56}&[MR]&D, 3, \flpt \bang
+wavelengths for rates integrations}
+\Na { 
+\+{\bf WRATMN}& {\bf *135}&&D, 1, \flpt \bang
+standard rates integrations wavelengths table limit
+\Df 100.}
+\Na { 
+\+{\bf WRATMX}& {\bf *135}&&D, 1, \flpt \bang
+standard rates integrations wavelengths table limit
+\Df 20000.}
+\Na { 
+\+{\bf WRMN}& {\bf *131}&&D, 1, \flpt \bang
+RHO weight adjustment parameter
+\Df 0.1}
+\Na { 
+\+{\bf WRMX}& {\bf *131}&&D, 1, \flpt \bang
+RHO weight adjustment parameter
+\Df 0.7}
+\Na { 
+\+{\bf WSM}&&&D, 1, \flpt \bang
+Lyman RK-KOLEV smoothing parameter}
+\Na { 
+\+{\bf WSN1D}&&&D, 1, \flpt \bang
+weight for Special N1 and Special NK, Diffusion
+\Df 1.0}
+\Na { 
+\+{\bf WTD}&&&D, 1, \flpt \bang
+weight for TDST recalculation
+\Df 1.0}
+\Na { 
+\+{\bf WZ}&&&D, 1, \flpt \bang
+Z-from-TAUKIN weight
+\Df 0.5}
+\Na { 
+\+{\bf WZM}& {\bf *103}&&D, 1, \flpt \bang
+Z weighting parameter
+\Df 0.8}
+\Na { 
+\+{\bf XC}& {\bf *42}&&D, 4, \flpt \bang
+DR parameter, PRD transitions
+\Df 2.0}
+\Na { 
+\+{\bf XCL}& {\bf *42}&&D, 1, \flpt \bang
+DR parameter, PRD transitions
+\Df 3.5}
+\Na { 
+\+{\bf XCOL}&&[NCL]&D, 2, \flpt \bang
+table of wavelengths for {\it each} CO line, in doppler widths,
+for the CO-lines opacity
+\Df (0.0, 0.5, 1.0, 1.5, 2.0)}
+\Na { 
+\+{\bf XCOMX}&&&D, 1, \flpt \bang
+width limit for {\it each} CO line, in \AA, for the CO-lines
+opacity
+\Df 3.0}
+\Na { 
+\+{\bf XDR}& {\bf *42}&[NDR]&D, 2, \flpt \bang
+DR parameter, PRD transitions
+\Df (5.5, 6.0, 7.0, 8.0, 10.0, 12.0, 15.0)}
+\Na { 
+\+{\bf XI}&&&D, 2, \flpt \bang
+= XISYM}
+\Na { 
+\+{\bf XIBLU}& {\bf *66}&[KB]&D, 2, \flpt \bang
+Line Transitions frequency table, for blue side
+\Df XISYM}
+\Na { 
+\+{\bf XIBLUT}& {\bf *66}&[KBT]&D, 5, \flpt \bang
+Line Transition frequency table, for blue side
+\Df XISYMT}
+\Na { 
+\+{\bf XINK}&&[INK]&D, 2, \flpt \bang
+table of frequencies for which incident radiation is specified
+\Df (5.948, 5.949, 7.48, 7.51, 13.16, 13.17)}
+\Na { 
+\+{\bf XIRED}& {\bf *66}&[KR]&D, 2, \flpt \bang
+Line Transitions frequency table, for red side
+\Df XISYM}
+\Na { 
+\+{\bf XIREDT}& {\bf *66}&[KRT]&D, 5, \flpt \bang
+Line Transition frequency table, for red side
+\Df XISYMT}
+\Na { 
+\+{\bf XISYM}& {\bf *66}&[KS]&D, 2, \flpt \bang
+Line Transitions frequency table, for half of a symmetric profile
+\Df (0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.1, 1.3, 1.5,
+1.8, 2.1, 2.4, 2.8, 3.4, 3.9, 4.5, 6.0, 8.0, 15.0, 50.0)}
+\Na { 
+\+{\bf XISYMT}& {\bf *66}&[KST]&D, 5, \flpt \bang
+Line Transition frequency table, for half of a symmetric profile
+\Df XISYM}
+\Na { 
+\+{\bf XJFE}&&&D, 1, \flpt \bang
+electron flux (fast electrons)
+\Df $2.0\times10^{-10}$}
+\Na { 
+\+{\bf XK}& {\bf *123}&[KK]&D, 2, \flpt \bang
+Level-$\cal N$-to-Continuum calculation (Lyman) frequency table
+\Df RRNU(KOLEV), where RRNU is computed from WRAT}
+\Na { 
+\+{\bf XMU}&&[LG]&D, 1, \flpt \bang
+MU table for GR-method weight matrix calculation
+\Df (1.0, 0.8, 0.6, 0.5, 0.4, 0.3, 0.2, 0.1)}
+\Na { 
+\+{\bf XP}& {\bf *42}&&D, 4, \flpt \bang
+DR parameter, PRD transitions
+\Df 2.0}
+\Na { 
+\+{\bf XR}& {\bf *42}&&D, 4, \flpt \bang
+DR parameter, PRD transitions
+\Df -1.0}
+\Na { 
+\+{\bf XQMAX}&&&D, 1, \flpt \bang
+parameter for injection function integrations (fast electrons)
+\Df 200.0}
+\Na {
+\+{\bf XRKH}& {\bf *95, *96}& \z &D, 5,5*, \flpt \bang
+upper-level charge-exchange data for Hydrogen}
+\Na {
+\+{\bf XRLH}& {\bf *95, *96}& \z &D, 5,5*, \flpt \bang
+upper-level charge-exchange data for Hydrogen}
+\Na { 
+\+{\bf Y}&&&D, 1, \flpt \bang
+damping parameter for frequency integrations weights (see Section 12)
+\Df 0.5}
+\Na { 
+\+{\bf YCOL}&&&D, 1, \flpt \bang
+weight matrix method control parameter for the continuum calculations
+\break required for the CO-lines opacity (see Section 12)
+\Df -1.0}
+\Na { 
+\+{\bf YCONT}&&&D, 4, \flpt \bang
+weight matrix method parameter, for Continuum calculations (see Section 12)
+\Df -1.0}
+\Na { 
+\+{\bf YCR}&&[NCR]&D, 2, \flpt \bang
+weight matrix method control parameter, for incident coronal radiation (see
+Section 12)
+\Df -1.0}
+\Na { 
+\+{\bf YFLUX}&&&D, 1, \flpt \bang
+damping parameter for emergent continuum flux
+\Df 0.5}
+\Na { 
+\+{\bf YH}&&&D, 1, \flpt \bang
+Helium-to-Hydrogen ratio
+\Df Helium abundance (from ELE table)}
+\Na { 
+\+{\bf YHM}&&[MHM]&D, 2, \flpt \bang
+weight matrix method parameter, for H-minus calculation (see Section 12)
+\Df -1.0}
+\Na { 
+\+{\bf YK}&&[NSL]&D, 2, \flpt \bang
+Hydrogen recombination parameter}
+\Na { 
+\+{\bf YKR}&&[LR]&D, 3, \flpt \bang
+weight matrix method parameter, for additional photoionization (see \break
+Section 12)
+\Df -1.0}
+\Na { 
+\+{\bf YL}&&&D, 1, \flpt \bang
+weight matrix parameter, for Level-$\cal N$-to-Continuum source function
+calculation (see Section 12)
+\Df -1.0}
+\Na { 
+\+{\bf YLDT}&&[NDT]&D, 2, \flpt \bang
+weight matrix method parameter, for Type-2 dust opacity calculation (see
+Section 12)
+\Df -1.0}
+\Na { 
+\+{\bf YLINE}&&&D, 4, \flpt \bang
+weight matrix method parameter, for Line Source Function (see Section 12)
+\Df -1.0}
+\Na { 
+\+{\bf YLYM}&&[KK]&D, 2, \flpt \bang
+weight matrix parameter, for Level-$\cal N$-to-Continuum continuum source
+function calculations (see Section 12)
+\Df -1.0}
+\Na { 
+\+{\bf YPRE}&&&D, 1, \flpt \bang
+damping parameter for standard weight matrix (see Section 12)}
+\Na { 
+\+{\bf YRATE}& {\bf *22}&[MR+1]&D, 3, \flpt \bang
+weight matrix method parameter, for rates calculations (see Section 12)
+\Df -1.0}
+\Na { 
+\+{\bf YRATS}&&&D, 1, \flpt \bang
+damping parameter for standard rates integrations wavelengths (see Section 12)
+\Df -1.0}
+\Na { 
+\+{\bf YWAVE}&&[NWV]&D, 2, \flpt \bang
+weight matrix method parameter, for additional calculations (see Section 12)
+\Df -1.0}
+\Na { 
+\+{\bf Z}&&[N]&D, 2, \flpt \bang
+grid of geometrical depths (main Z-table of the run)}
+\Na { 
+\+{\bf ZALBK}&&[NKA]&D, 1, \flpt \bang
+scattering albedo parameter for Background Line Opacities (see Section 9)
+\Df (Z$_1$, Z$_N$)}
+\Na { 
+\+{\bf ZAUX}&&[LZA]&D,F,H, 3, \flpt \bang
+auxiliary Z-table}
+\Na { 
+\+{\bf ZECL}&&[NZE]&F, 2, \flpt \bang
+selected Z-values for eclipse continuum calculation}
+\Na {
+\+{\bf ZGM}& {\bf *138}&[NGM]&D, 2, \flpt \bang
+Z-table for DGMZ
+\Df (-2000, -1900, -1800, -1700, -1600, -1500, -1400, -1300,
+-1200, -1100, -1000, -900, -800, -700, -600, -500, -400, -300,
+-200, -100, -50, 0, 50)}
+\Na { 
+\+{\bf ZMASS}& {\bf *103}&[N]&D, 2, \flpt \bang
+gas column mass}
+\Na { 
+\+{\bf ZME}&&\z &D, 2*,2, \flpt \bang
+non-H electron ratio}
+\Na { 
+\+{\bf ZNDW}& {\bf *86}&&D, 1, \flpt \bang
+Z-value for optional NDW-default calculation}
+\Na { 
+\+{\bf ZRCO}&&&D, 1, \flpt \bang
+CO reference height
+\Df -500.}
+\Na { 
+\+{\bf ZXMIN}&&&D, 1, \flpt \bang
+diffusion calculation parameter for ZION
+\Df 0.1}
+\par\vfill
+%\end

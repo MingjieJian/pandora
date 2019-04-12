@@ -1,0 +1,56 @@
+ > LEID       MODEL LEID   13 L He      ITER 99-09   2014-Mar-24                 
+ 
+ 
+ PSN171148  OPTIONS               OVER=  0     SUB=  0     HSL=  0     LYM=  0                                                  
+ PSN171149  INPUT NOTES           OVER=  0     SUB=  0     HSL=  0     LYM=  0                                                  
+ PSN171150  ATMOSPHERE-1          OVER=  0     SUB=  0     HSL=  0     LYM=  0                                                  
+ PSN171151  ATMOSPHERE-2          OVER=  0     SUB=  0     HSL=  0     LYM=  0                                                  
+ PSN171152  ND, NK, + BD          OVER=  0     SUB=  0     HSL=  0     LYM=  0                                                  
+ PSN171153  ATOM                  OVER=  0     SUB=  0     HSL=  0     LYM=  0                                                  
+ PSN171154  RHO, JBAR ...         OVER=  0     SUB=  0     HSL=  0     LYM=  0                                                  
+ PSN171155  ELEMENTS              OVER=  0     SUB=  0     HSL=  0     LYM=  0                                                  
+ PSN171156  BACKGROUND            OVER=  0     SUB=  0     HSL=  0     LYM=  0                                                  
+ PSN171157  INPUT                 OVER=  0     SUB=  0     HSL=  0     LYM=  0                                                  
+ PSN171158  CONSTANTS             OVER=  0     SUB=  0     HSL=  0     LYM=  0                                                  
+ PSN171159  HYDROGEN              OVER=  0     SUB=  0     HSL=  0     LYM=  0                                                  
+ PSN171160  HELIUM                OVER=  0     SUB=  0     HSL=  0     LYM=  0                                                  
+ PSN171161  HELIUM2               OVER=  0     SUB=  0     HSL=  0     LYM=  0                                                  
+ PSN171162  ALPHA+BETA            OVER=  0     SUB=  0     HSL=  0     LYM=  0                                                  
+ PSN171163  TABLES                OVER=  0     SUB=  0     HSL=  0     LYM=  0                                                  
+ PSN171164  INTEGRATION           OVER=  0     SUB=  0     HSL=  0     LYM=  0                                                  
+ PSN171165  COMPOSITE             OVER=  0     SUB=  0     HSL=  0     LYM=  0                                                  
+ PSN171166  ITERATION  1          OVER=  1     SUB=  0     HSL=  0     LYM=  0                                                  
+ PSN171167  START VALUES          OVER=  1     SUB=  0     HSL=  0     LYM=  0                                                  
+ PSN171168  ITERATION  2          OVER=  2     SUB=  0     HSL=  0     LYM=  0                                                  
+ PSN171169  ITERATION  3          OVER=  3     SUB=  0     HSL=  0     LYM=  0                                                  
+ PSN171170  ITERATION  4          OVER=  4     SUB=  0     HSL=  0     LYM=  0                                                  
+ PSN171171  ITERATION  5          OVER=  5     SUB=  0     HSL=  0     LYM=  0                                                  
+ PSN171172  ITERATION  6          OVER=  6     SUB=  0     HSL=  0     LYM=  0                                                  
+ PSN171173  ITERATION  7          OVER=  7     SUB=  0     HSL=  0     LYM=  0                                                  
+ PSN171174  ITERATION  8          OVER=  8     SUB=  0     HSL=  0     LYM=  0                                                  
+ PSN171175  ITERATION  9          OVER=  9     SUB=  0     HSL=  0     LYM=  0                                                  
+ PSN171176  ITERATION 10          OVER= 10     SUB=  0     HSL=  0     LYM=  0                                                  
+ PSN171177  ITERATION 11          OVER= 11     SUB=  0     HSL=  0     LYM=  0                                                  
+ PSN171178  50.30  NANOM          OVER= 11     SUB=  0     HSL=  0     LYM=  0                                                  
+ PSN171179  1.083 MICROM          OVER= 11     SUB=  0     HSL=  0     LYM=  0                                                  
+ PSN171180  RATES                 OVER= 11     SUB=  0     HSL=  0     LYM=  0                                                  
+ PSN171181  RECOMB                OVER= 11     SUB=  0     HSL=  0     LYM=  0                                                  
+ PSN171182  LINE (U/L)            OVER= 11     SUB=  1     HSL=  0     LYM=  0                                                  
+ PSN171183  LINE (4/2)            OVER= 11     SUB=  1     HSL=  0     LYM=  0                                                  
+ PSN171184  LINE (5/1)            OVER= 11     SUB=  1     HSL=  0     LYM=  0                                                  
+ PSN171185  RHO AND RBD           OVER= 11     SUB=  1     HSL=  0     LYM=  0                                                  
+ PSN171186  NE                    OVER= 11     SUB=  0     HSL=  1     LYM=  0                                                  
+ PSN171187  ELECTRONS             OVER= 11     SUB=  0     HSL=  1     LYM=  0                                                  
+ PSN171188  POPULATIONS           OVER= 11     SUB=  0     HSL=  1     LYM=  0                                                  
+ PSN171189  HELIUM                OVER= 11     SUB=  0     HSL=  1     LYM=  0                                                  
+ PSN171190  POST (4/2)            OVER=  0     SUB=  0     HSL=  0     LYM=  0                                                  
+ PSN171191  POST (5/1)            OVER=  0     SUB=  0     HSL=  0     LYM=  0                                                  
+ PSN171192  PROF-PREP             OVER=  0     SUB=  0     HSL=  0     LYM=  0                                                  
+ PSN171193  WAVE SUMM 0           OVER=  0     SUB=  0     HSL=  0     LYM=  0                                                  
+ PSN171194  COOLING               OVER=  0     SUB=  0     HSL=  0     LYM=  0                                                  
+ PSN171195  CHECKS                OVER=  0     SUB=  0     HSL=  0     LYM=  0                                                  
+ PSN171196  ITERATES              OVER=  0     SUB=  0     HSL=  0     LYM=  0                                                  
+ PSN171197  CONTINUUM             OVER=  0     SUB=  0     HSL=  0     LYM=  0                                                  
+ PSN171198  PROF (4/2)            OVER=  0     SUB=  0     HSL=  0     LYM=  0                                                  
+ PSN171199  PROF (5/1)            OVER=  0     SUB=  0     HSL=  0     LYM=  0                                                  
+ PSN171200  SIGN-OFF              OVER=  0     SUB=  0     HSL=  0     LYM=  0                                                  

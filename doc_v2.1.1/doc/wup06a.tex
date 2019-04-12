@@ -1,0 +1,881 @@
+%\magnification=1200
+%\input wupstuff.tex
+\newtoks\footline \footline={\hss\tenrm 6.\folio\hss}
+\pageno=1
+\def\bang{\par \hangindent=10pt \hangafter=0}
+\top
+\vskip 1.5 true in
+\centerline{Section 6: {\bf Program Options}}
+\blankline
+\blankline
+\centerline{\bf ***}
+\blankline
+\blankline
+Many features of PANDORA may be enabled or disabled, as desired. Some of
+these optional features are controlled by assigning particular values to
+certain input parameters; all others are controlled through the following
+two input statements: \par
+\centerline{``{\bf DO ( } OPTION$_1$ OPTION$_2$ OPTION$_3$ 
+$\ldots$ OPTION$_n$ {\bf ) }'',}
+\noindent {\it i.e.} {\tt DO ( ADDCOPR EPSW ) }, and \par
+\centerline{``{\bf OMIT ( } OPTION$_1$ OPTION$_2$ OPTION$_3$ 
+$\ldots$ OPTION$_n$ {\bf ) }'',}
+\noindent {\it i.e.} {\tt OMIT ( FELE SCOPRNT QSFEDIT ) }, \par
+\noindent where OPTION$_i$ is the {\alfa} code name, to be described below,
+of a particular processing or output feature of PANDORA. Options appearing
+in {\bf DO} statements will be enabled, those appearing in {\bf OMIT}
+statements will be disabled. Only the OPTIONs appearing in the following
+table are valid. There may be any number of {\bf DO} and/or {\bf OMIT}
+statements, and a particular OPTION may appear several times --
+however, only the status resulting from its last appearance will prevail.
+Every OPTION not mentioned in {\bf DO} and/or {\bf OMIT} statements
+will retain its default setting.
+
+All OPTIONS are listed and defined on the following table. This list is
+in alphabetical order by option name; the default settings are given
+in parentheses. After this table of definitions there follows an
+alphabetized listing of keywords and descriptive phrases for each
+OPTION -- this last list should be consulted when an OPTION's significance
+or function are only vaguely known, and its name is sought. After
+the OPTION name has been located in the keywords list, the complete
+definition can then be found in the first part of this section.
+\blankline
+\blankline
+\centerline{\bf See next page for important information about}
+\centerline{\bf automatic options adjustments.}
+\ej
+\top
+\vskip 2 in
+\centerline{\bf Note:}
+\blankline
+After all {\bf DO} and/or {\bf OMIT} statements have been read, and before
+the \break printout OPTIONS is produced, some options are reset automatically
+as follows, in the sequence shown:
+\bull If PHASE2 is off: LIGHT, ECLIPSE and EMERINT are turned off;
+\bull If FINITE is off: REFLECT is turned off;
+\bull If FINITE and INCRFRNT are both off: INCIDNT is turned off;
+\bull If SPHERE is on: SPHOUT, GDS, ENHANCE, HSE, INCIDNT and
+\break INCIFRNT are turned off;
+\bull If USETRIN is off: CSWITCH is turned off;
+\bull If ORT is on: GDS is turned off;
+\bull If SPECSAV is on: CONSAV and PROSAV are turned on.
+\bull If SPHERE and PRODMP are both on: ECLIDMP and LINTDMP are turned on.
+\ej
+\parindent=0pt
+\space \vbox {\noindent {\bf  ACSFPRNT} (off): \bang
+print abbreviated results of continuum source function calculation
+(used only if CSFPRNT is on).}
+\space \vbox {\noindent {\bf  ADDCOPR} (off): \bang
+print continuum data for additional wavelengths.}
+\space \vbox {\noindent {\bf  ADN1DMP} (off): \bang
+print details of ``sepcial N1'' calculation (used only when ADN1PRNT
+is on).}
+\space \vbox {\noindent {\bf  ADN1PRNT} (on): \bang
+print ``special N1'' calculation results (used only if AMBPRNT is on).}
+\space \vbox {\noindent {\bf  AEDIT} (off): \bang
+replace negative final A-values (frequency integration weights) with zero.}
+\space \vbox {\noindent {\bf  AHSEPRNT} (off): \bang
+print abbreviated results of HSE calculation.}
+\space \vbox {\noindent {\bf  AINDPRNT} (off): \bang
+print abbreviated version of INPUT listing (used only when INDAPRNT
+is on).}
+\space \vbox {\noindent {\bf  AINTPRNT} (off): \bang
+print abbreviated frequency integrations data.}
+\space \vbox {\noindent {\bf  ALL} (off): \bang 
+provide complete printout for all overall iterations,
+not just the last one.}
+\space \vbox {\noindent {\bf  ALLY} (off): \bang 
+provide complete Lyman and HSE printouts for every
+iteration, not just the last one.}
+\space \vbox {\noindent {\bf  ALSFPRNT} (off): \bang
+print abbreviated results of Line Source Function calculation.}
+\space \vbox {\noindent {\bf  ALUPRNT} (off): \bang 
+print Aluminum populations and departure coefficients.}
+\space \vbox {\noindent {\bf  ALYMPRNT} (off): \bang
+print abbreviated results of Level-${\cal N}$-to-Continuum transfer
+calculation.}
+\space \vbox {\noindent {\bf  AMBPRNT} (on): \bang
+print data from ambipolar diffusion calculations, (used only
+when AMDIFF is on).}
+\space \vbox {\noindent {\bf  AMDDMP} (off): \bang
+print details of ambipolar diffusion calculations, (used only when
+AMBPRNT is on).}
+\space \vbox {\noindent {\bf  AMDIFF} (off): \bang
+include ambipolar diffusion (only in Hydrogen or Helium runs).}
+\space \vbox {\noindent {\bf  AMDN1} (on): \bang
+use ``special N1'' calculation for ambipolar diffsuion, (used only
+when AMDIFF is on). Caution: AMDN1 should {\bf not} be turned off
+(this switch is provided for testing only).}
+\space \vbox {\noindent {\bf  ANALYSIS} (off): \bang 
+print details of line absorption profile calculations (note input parameters
+\break NANAL1, NANAL2).}
+\space \vbox {\noindent {\bf  AOPTPRNT} (off): \bang
+print abbreviated version of OPTIONS listing (used only when OPTPRNT is on).}
+\space \vbox {\noindent {\bf  APHICOPR} (on): \bang
+print continuum data for additional photoionization wavelengths.}
+\space \vbox {\noindent {\bf  APHIPRNT} (off): \bang
+print results and details of generalized additional photoionization
+calculation.}
+\space \vbox {\noindent {\bf  APOPPRNT} (off): \bang
+print abbreviated populations of the ion-of-the-run.}
+\space \vbox {\noindent {\bf  APRFPRNT} (off): \bang
+print abbreviated line profile calculation results.}
+\space \vbox {\noindent {\bf  ARHODMP} (off): \bang
+print detailed sets of `transition terms' (uses input parameter LDINT).}
+\space \vbox {\noindent {\bf  ATMOPRNT} (on): \bang
+print ATMOSPHERE input data listing.}
+\space \vbox {\noindent {\bf  ATOMPRNT} (on): \bang
+print ATOM input data listing.}
+\space \vbox {\noindent {\bf  ATOMSAV} (off): \bang
+save computed default atomic model parameters in output file.}
+\space \vbox {\noindent {\bf AVCON } (off): \bang
+calculate the average of the continuum intensity.}
+\space \vbox {\noindent {\bf AVELOP } (off): \bang
+use Averaged Line opacities.}
+\space \vbox {\noindent {\bf AVOPRNT } (on): \bang
+print Averaged Line opacities data table as used in this run (also uses
+the value of LWNT).}
+\space \vbox {\noindent {\bf  BDCALC} (off): \bang
+departure coefficients calculated from all level equations, rather than
+from the continuum equation.}
+\space \vbox {\noindent {\bf  BDGRAF} (on): \bang
+print graphs of departure coefficients.}
+\space \vbox {\noindent {\bf  BDMP} (off): \bang
+print details of departure coefficients calculation.}
+\space \vbox {\noindent {\bf  BDPRNT} (off): \bang
+print complete sets of BDR, BDJ, BDS, and S* from `RHO + RBD' calculation 
+(only if RHBPRNT is on).}
+\space \vbox {\noindent {\bf  BEDIT} (off): \bang 
+edit departure coefficients.}
+\space \vbox {\noindent {\bf  BLENDMP} (off): \bang
+print Voigt function details for each blended line component,
+(used only when ANALYSIS is on).}
+\space \vbox {\noindent {\bf  BRATDMP} (off): \bang
+print details of b-ratios calculation (uses input parameter LDINT).}
+\space \vbox {\noindent {\bf  BSMOOTH} (off): \bang
+do ``alternate'' sequential smoothing for departure coefficients
+(note input parameter ASMCR).}
+\space \vbox {\noindent {\bf  CALCOOL} (off): \bang
+calculate net cooling rates.}
+\space \vbox {\noindent {\bf  CALHEAT} (off): \bang
+calculate net heating rates.}
+\space \vbox {\noindent {\bf  CALPRNT} (off): \bang
+print Calcium populations and departure coefficients.}
+\space \vbox {\noindent {\bf  CARPRNT} (off): \bang 
+print Carbon populations and departure coefficients.}
+\space \vbox {\noindent {\bf  CEFACTS} (off): \bang
+update CE-enhancement factors where possible and needed.}
+\space \vbox {\noindent {\bf  CHEXLO} (off): \bang 
+use lower-level charge exchange.}
+\space \vbox {\noindent {\bf  CHEXLOL} (off): \bang
+use LTE hydrogen number density for lower-level charge exchange.}
+\space \vbox {\noindent {\bf  CHEXUP} (off): \bang 
+use upper-level charge exchange.}
+\space \vbox {\noindent {\bf  CHKGRAF} (on): \bang 
+print graphs of CHECKs for all iterations.}
+\space \vbox {\noindent {\bf  CHKPRNT} (on): \bang 
+print Consistency CHECKs from `RHO + RBD' calculation.}
+\space \vbox {\noindent {\bf  CHXDMP} (off): \bang 
+print details of upper-level charge-exchange calculation.}
+\space \vbox {\noindent {\bf  CHXPRNT} (on): \bang 
+print results of upper-level charge-exchange calculation
+(used only when CHXCNG is on).}
+\space \vbox {\noindent {\bf  CIJPRNT} (off): \bang 
+print the bound-bound collision rates CIJ (for `minimal' printout,
+see input parameter IRATE).}
+\space \vbox {\noindent {\bf  CLNORM} (on): \bang
+compute H Lyman lines normalization factors.}
+\space \vbox {\noindent {\bf  CNFLXDMP} (off): \bang
+print debug dump output from continuum flux calculation.}
+\space \vbox {\noindent {\bf COCLIPSE } (off): \bang
+calculate emergent continuum eclipse intensities for CO lines wavelengths.}
+\space \vbox {\noindent {\bf  COCOPR} (off): \bang
+print continuum data for CO-lines opacity wavelengths.}
+\space \vbox {\noindent {\bf  COCRID} (off): \bang
+print details of CO-lines cooling rate wavelength integration.}
+\space \vbox {\noindent {\bf  CODMP} (off): \bang
+print details of CO-lines absorption calculation.}
+\space \vbox {\noindent {\bf  COLHPRNT} (on): \bang
+print calculated rates for collisions with Hydrogen atoms.}
+\space \vbox {\noindent {\bf  COLTEMP} (off): \bang
+calculate color temperatures.}
+\space \vbox {\noindent {\bf  COMCRID} (off): \bang
+print details of Composite Lines cooling rates wavelength integration.}
+\space \vbox {\noindent {\bf  COMOPAN} (off): \bang
+Composite Line Opacity analysis.}
+\space \vbox {\noindent {\bf  COMPCOPR} (off): \bang
+print continuum data for Composite Line Opacity wavelengths.}
+\space \vbox {\noindent {\bf  COMPRK} (off): \bang
+print comparison RKs.}
+\space \vbox {\noindent {\bf  CONFLUX} (off): \bang
+calculate continuum flux.}
+\space \vbox {\noindent {\bf  CONSAV} (off): \bang 
+write continuum spectrum data in Special Spectrum Save File,
+(this option will be turned on automatically when SPECSAV is on).}
+\space \vbox {\noindent {\bf  COOLCO} (off): \bang
+calculate CO-lines cooling rate, (used only when CALCOOL is on).}
+\space \vbox {\noindent {\bf  COOLCOM} (on): \bang
+calculate Composite Lines cooling rate, (used only when CALCOOL is on).}
+\space \vbox {\noindent {\bf  COOLINT} (off): \bang
+calculate integrated net heating and cooling rates, (used only when
+CALCOOL is on).}
+\space \vbox {\noindent {\bf  COOLXRAY} (on): \bang
+calculate X-rays cooling rate, (used only when CALCOOL is on).}
+\space \vbox {\noindent {\bf  COOLSAV} (off): \bang
+write cooling and heating rates in a save file.}
+\space \vbox {\noindent {\bf  CPSW} (on): \bang
+adjust total Hydrogen density to give constant pressure, (used only when
+HSE is off).}
+\space \vbox {\noindent {\bf  CSF} (on): \bang
+use calculated background continuum source function when calculating line
+source function.}
+\space \vbox {\noindent {\bf  CSFB} (off): \bang
+set BC in line source function calculation = min(CSF, B), instead of = CSF,
+(used only when CSF is on).}
+\space \vbox {\noindent {\bf  CSFDMP} (off): \bang
+print debug dump output for background continuum source function calculation.}
+\space \vbox {\noindent {\bf  CSFPRNT} (on): \bang
+print results from background continuum source function calculation.}
+\space \vbox {\noindent {\bf  CSFGRAF} (off): \bang
+print graphs of background continuum opacity and background continuum source
+function.}
+\space \vbox {\noindent {\bf  CSWITCH} (off): \bang
+use TR (level 1), instead of TE, in the stimulated emission factor (BETA) for BC in the
+line source function calculation, (this option  will be turned off automatically
+when USETRIN is off).}
+\space \vbox {\noindent {\bf DELABORT} (on): \bang
+try to read all the input before stopping because of error(s).}
+\space \vbox {\noindent {\bf  DIDHC} (off): \bang
+print dI/dh for emergent continuum intensities (see also input parameter 
+\break ICDIT).}
+\space \vbox {\noindent {\bf  DIDHL} (on): \bang
+print and save dI/dh for emergent line intensity profiles.}
+\space \vbox {\noindent {\bf DIFFANA} (on): \bang
+analyze results of diffusion calculations (used only if AMDIFF is on and/or
+VELGRAD is on) for radiative CRD transitions.}
+\space \vbox {\noindent {\bf  DOION} (on): \bang
+do all the normal calculations pertaining to the ion-of-the-run.}
+\space \vbox {\noindent {\bf  DPDWPRNT} (off): \bang
+print results of Doppler Width and Damping Paramater calculations.}
+\space \vbox {\noindent {\bf  DRDMP} (off): \bang
+print debug details of PRD DR calculation for transition (MS/NS) at depth
+IDRDP and frequency KDRDP.}
+\space \vbox {\noindent {\bf  DSMOOTH} (off): \bang
+smooth the calculated diffusion terms with the sequential
+smoothing procedure.}
+\space \vbox {\noindent {\bf  DUSTCOPR} (on): \bang
+print continuum data for Dust opacity wavelengths, (used only when 
+\break DUSTEMP is on).}
+\space \vbox {\noindent {\bf  DUSTDMP} (off): \bang
+print debug dump output from Type-2 Dust temperature recalculation.}
+\space \vbox {\noindent {\bf  DUSTEMP} (on): \bang
+calculate new values of TDST, (used only when DUSTYPE is on).}
+\space \vbox {\noindent {\bf  DUSTYPE} (off): \bang
+use Type-2 version of Dust background continuum opacity.}
+\space \vbox {\noindent {\bf  ECLIDMP} (off): \bang
+print debug dump output from Eclipse calculation.}
+\space \vbox {\noindent {\bf  ECLIGRAF} (on): \bang
+print graphs of results of Line Eclipse calculation.}
+\space \vbox {\noindent {\bf  ECLIPSE} (off): \bang
+calculate emergent continuum Eclipse intensities, (pertains to
+WAVES$_i < 0$ only).}
+\space \vbox {\noindent {\bf  ECLISAV} (off): \bang
+write Eclipse emission data to an output file.}
+\space \vbox {\noindent {\bf  ELECPRNT} (off): \bang
+print and plot results of electron density calculations.}
+\space \vbox {\noindent {\bf  EMERBACK} (off): \bang
+calculate intensity and flux emerging from back face (far face) of finite 
+atmosphere.}
+\space \vbox {\noindent {\bf  EMERINT} (on): \bang
+calculate emergent continuum intensities for all wavelengths for which
+background continuum calculations were done.}
+\space \vbox {\noindent {\bf  EMIGRAF} (off): \bang
+print graph of emitters.}
+\space \vbox {\noindent {\bf  EMINDMP} (off): \bang
+print debug dump output from emergent continuum intensity calculations.}
+\space \vbox {\noindent {\bf  EMIPRNT} (off): \bang
+print detailed analysis of the contributions to the background continuum
+emission.}
+\space \vbox {\noindent {\bf  EMISUM} (off): \bang
+print an `Emitters Summary'.}
+\space \vbox {\noindent {\bf  ENHANCE} (off): \bang
+use R$^2$ source function enhancement factor in emergent intensity 
+calculations, (used only when SPHERE is off).}
+\space \vbox {\noindent {\bf  ENL} (off): \bang
+edit negative values out of tables of EP1 (Lyman Epsilon-1) by 
+interpolating from neighboring positive values.}
+\space \vbox {\noindent {\bf  ENL2} (off): \bang
+edit negative values out of tables of EP1 (Lyman Epsilon-1) by 
+shifting the \break entire EP1 and EP2 tables.}
+\space \vbox {\noindent {\bf  EPCOMP} (off): \bang
+print comparison of the results obtained from the various methods for the
+\break Lyman EP1, EP2 calculations.}
+\space \vbox {\noindent {\bf  EPDMP} (on): \bang
+print intermediate details of the Lyman EP1, EP2 calculations,
+(also uses the value of LDINT).}
+\space \vbox {\noindent {\bf  EPSNEDC} (off): \bang
+eliminate negative values of EP1 (Lyman Epsilon-1) when using the CHAIN
+method.}
+\space \vbox {\noindent {\bf  EPSW} (off): \bang
+replace any line-source-function-epsilons $< -0.9999$ by $-0.9999$.}
+\space \vbox {\noindent {\bf  EVERY} (off): \bang
+print complete printout for all sub-iterations, not just the last one.}
+\space \vbox {\noindent {\bf  EXPAND} (off): \bang
+the atmosphere is expanding.}
+\space \vbox {\noindent {\bf  FDBCOPR} (off): \bang
+print continuum data for FDB (frequency-dependent line source function
+background) wavelengths.}
+\space \vbox {\noindent {\bf  FDBDMP} (off): \bang
+print frequency-dependent background terms for FDB transitions.}
+\space \vbox {\noindent {\bf  FELE} (off): \bang
+use results from fast electrons calculation.}
+\space \vbox {\noindent {\bf  FELEC} (off): \bang
+calculate fast electrons.}
+\space \vbox {\noindent {\bf  FELEDMP} (off): \bang
+print debug dump output from fast electrons calculation.}
+\space \vbox {\noindent {\bf  FELEPRNT} (on): \bang
+print results of fast electrons calculations.}
+\space \vbox {\noindent {\bf  FEPRNT} (off): \bang
+print Iron populations and departure coefficients.}
+\space \vbox {\noindent {\bf  FINITE} (off): \bang
+the atmosphere is finite, instead of semi-infinite.}
+\space \vbox {\noindent {\bf  FLUXDMP} (off): \bang
+print details of emergent continuum flux calculation at each wavelength, (also
+uses the value of IFXDS).}
+\space \vbox {\noindent {\bf  FLUXSAV} (off): \bang
+write integrated flux quantities to an output file.}
+\space \vbox {\noindent {\bf  FLWBPRNT} (off): \bang
+print component profiles of flow broadening.}
+\space \vbox {\noindent {\bf  FLWBROAD} (off): \bang
+compute flow-broadened profiles, (used only when EXPAND is off).}
+\space \vbox {\noindent {\bf  GDMP} (on): \bang
+print debug dump consisting of all `geometric dilution matrices', (used
+only when GDS is on).}
+\space \vbox {\noindent {\bf  GDS} (off): \bang
+calculate geometric dilution.}
+\space \vbox {\noindent {\bf  GDSDMP} (off): \bang
+print geometric dilution terms, (used only when GDS is on).}
+\space \vbox {\noindent {\bf  GNVCALC} (off): \bang
+compute the diffusion term GNV1 from the non-local N1 calculation, (used
+only when AMDIFF is on).}
+\space \vbox {\noindent {\bf  GTNSMTH} (on): \bang
+smooth STIM when calculating GTN(u,l).}
+\space \vbox {\noindent {\bf  GTNSTIM} (off): \bang
+use departure coefficients, instead of number densities, in STIM
+for GTN(u,l).}
+\space \vbox {\noindent {\bf  HBROAD} (on): \bang
+in a Hydrogen run, use ion collision broadening for transitions
+above level 5.}
+\space \vbox {\noindent {\bf  HEABD} (off): \bang 
+calculate depth dependence of Helium abundance (used only when
+AMDIFF is on).}
+\space \vbox {\noindent {\bf  HELPRNT} (off): \bang
+print Helium populations and departure coefficients.}
+\space \vbox {\noindent {\bf  HEL2PRNT} (off): \bang
+print Helium-II populations and departure coefficients.}
+\space \vbox {\noindent {\bf  HENORM} (on): \bang
+renormalize Helium number densities in the diffusion calculations.}
+\space \vbox {\noindent {\bf  HFFCOOLD} (off): \bang
+print details of H free-free and H-minus free-free net cooling rates
+integrations.}
+\space \vbox {\noindent {\bf  HMS} (off): \bang
+calculate H-minus departure coefficient.}
+\space \vbox {\noindent {\bf  HMSCOPR} (off): \bang
+print continuum data for H-minus departure coefficient calculation
+wavelengths.}
+\space \vbox {\noindent {\bf  HMSJPRNT} (off): \bang
+print values of mean intensity used in H-minus departure coefficient
+calculation.}
+\space \vbox {\noindent {\bf  HMSONLY} (off): \bang
+use only continuum data pertaining to `H-minus wavelengths' in the
+H-minus departure coefficient calculation.}
+\space \vbox {\noindent {\bf  HNPRNT} (on): \bang
+print Hydrogen populations and departure coefficients.}
+\space \vbox {\noindent {\bf  HSE} (off): \bang
+recalculate NE and NH via the hydrostatic equilibrium equation.}
+\space \vbox {\noindent {\bf  HSEDMP} (off): \bang
+print debug dump output from the hydrostatic equlibrium calculation,
+(used only when HSE is on).}
+\space \vbox {\noindent {\bf  HSEV} (on): \bang
+include mass motion velocity in the hydrostatic equilibrium calculations, 
+(used only when HSE is on).}
+\space \vbox {\noindent {\bf  HSTSUMM} (on): \bang
+print summary of calculation of Stark splitting of Hydrogen lines.}
+\space \vbox {\noindent {\bf  ILR} (on): \bang
+calculate incident line radiation terms, (used only when INCIDNT is on).}
+\space \vbox {\noindent {\bf  INBED} (off): \bang
+edit negative values out of tables of BDIJ values calculated from
+unfudged \break input RHO values.}
+\space \vbox {\noindent {\bf  INCIDNT} (off): \bang
+there is external radiation shining upon the atmosphere, and it is
+shining on the back face (far face).}
+\space \vbox {\noindent {\bf  INCIFRNT} (off): \bang
+the external incident radiation is shining upon the front face of the
+atmosphere, (used only when INCIDNT is on).}
+\space \vbox {\noindent {\bf  INDAPRNT} (on): \bang
+print miscellaneous INPUT data listing.}
+\space \vbox {\noindent {\bf  INDPRNT} (off): \bang
+print the input values of number density and departure coefficient of the
+ion of the run.}
+\space \vbox {\noindent {\bf  INDXDMP} (off): \bang
+print debug dumps of the contents of the random-access scratch file indices.}
+\space \vbox {\noindent {\bf  INPEX} (on): \bang
+extrapolate input tables to added depths, instead of just extending the end
+values.}
+\space \vbox {\noindent {\bf  INNBPRNT} (on): \bang
+print input values of NK, ND and BD.}
+\space \vbox {\noindent {\bf  INPEXW} (on): \bang
+print input table extrapolation warning messages.}
+\space \vbox {\noindent {\bf  INSCARD} (on): \bang
+write the current iterates to the restart files for every iteration, not just
+for the last iteration only. (Note: the results for iteration $i+1$ will
+overwrite the results for iteration $i$.)}
+\space \vbox {\noindent {\bf  INTAPRNT} (on): \bang
+print frequency integrations data for all radiative transitions.}
+\space \vbox {\noindent {\bf  INTEDIT} (off): \bang
+use edited TE values instead of input.}
+\space \vbox {\noindent {\bf  INTGRAF} (on): \bang
+print graphs of the results of emergent line profile calculations, and graphs
+of S and B {\it vs.} Z with the emergent line profile calculation.}
+\space \vbox {\noindent {\bf  INTRPRNT} (on) \bang
+print input values of RHO, JBAR, CHI and AW.}
+\space \vbox {\noindent {\bf  IRHWED} (on): \bang
+edit input values of RHOWT.}
+\space \vbox {\noindent {\bf  IRUNT} (off): \bang
+print the most detailed execution performance and version description data.}
+\space \vbox {\noindent {\bf  ISCRS} (on): \bang
+use `in-memory' scratch I/O to the extent possible.}
+\space \vbox {\noindent {\bf  ITDMP} (off): \bang
+print debug dump of `Iterative Summary File' contents summary.}
+\space \vbox {\noindent {\bf  ITERB} (on): \bang
+print Iterative Summary of values of departure coefficients.}
+\space \vbox {\noindent {\bf  ITERCHI} (off): \bang
+print Iterative Summary of CHI.}
+\space \vbox {\noindent {\bf  ITERCHK} (on): \bang
+print Iterative Summary of values of consistency checks.}
+\space \vbox {\noindent {\bf  ITERN} (on): \bang
+print Iterative Summary of values of number densities.}
+\space \vbox {\noindent {\bf  ITERNE} (on): \bang
+print Iterative Summary of values of electron density.}
+\space \vbox {\noindent {\bf  ITERNH} (on): \bang
+print Iterative Summary of values of total Hydrogen density.}
+\space \vbox {\noindent {\bf  ITERRHO} (on): \bang
+print Iterative Summary of values of net radiative bracket.}
+\space \vbox {\noindent {\bf  ITERRK} (on): \bang
+print Iterative Summary of values of Lyman RK-1.}
+\space \vbox {\noindent {\bf  ITERRWT} (off): \bang
+print Iterative Summary of values of RHO-weights.}
+\space \vbox {\noindent {\bf  ITERS} (on): \bang
+print Iterative Summary of values of line source functions.}
+\space \vbox {\noindent {\bf  ITERTAU} (off): \bang
+print Iterative Summary of values of line core optical depths.}
+\space \vbox {\noindent {\bf  ITERTD} (on): \bang
+print Iterative Summary of values of TDST (Type-2 Dust temperature).}
+\space \vbox {\noindent {\bf  ITERZ} (on): \bang
+print Iterative Summary of values of Z.}
+\space \vbox {\noindent {\bf  IVALICK} (on): \bang
+check `validity' of emergent intensity integrations.}
+\space \vbox {\noindent {\bf  IXSTA} (on): \bang
+print performance statistics.}
+\space \vbox {\noindent {\bf  JBDNC} (off): \bang
+bypass the calculation of unused Rhos and b-ratios.}
+\space \vbox {\noindent {\bf  JLYSAV} (off): \bang
+save Lyman-continuum JNU (=JB).}
+\space \vbox {\noindent {\bf  JNTRPOL} (off): \bang
+interpolate input values of PRD JNU to new Z-scale (instead of simply
+assigning values to the new Z-scale), in runs for which TAUKIN is
+specified.}
+\space \vbox {\noindent {\bf  JNUPRNT} (off): \bang
+print values of mean intensity for PRD transitions, for each iteration.}
+\space \vbox {\noindent {\bf  JSTIN} (off): \bang
+just read and check all the input, then stop.}
+\space \vbox {\noindent {\bf  KOMPRNT} (off): \bang
+print Composite Line Opacity (Kurucz) data table, as used in this run
+(also uses the value of LWNT).}
+\space \vbox {\noindent {\bf  KROSSID} (off): \bang
+print details of Rosseland mean opacity wavelength integration.}
+\space \vbox {\noindent {\bf  KSHLCOPR} (off): \bang 
+print continuum data for K-shell wavelengths.}
+\space \vbox {\noindent {\bf  KURPRNT} (off): \bang
+print Statistical Line Opacity (Kurucz) data table, as used in this run
+(also uses the value of LWNT).}
+\space \vbox {\noindent {\bf  LBDPRNT} (on): \bang
+print summary of line center background.}
+\space \vbox {\noindent {\bf  LFDPRNT} (off): \bang
+print full arrays of values of Line Flux Distribution.}
+\space \vbox {\noindent {\bf  LIGHT} (on): \bang
+calculate emergent line intensity and flux profiles.}
+\space \vbox {\noindent {\bf  LINECDMP} (off): \bang
+print details of scattering albedo analysis (used only when LINECOMP is on).}
+\space \vbox {\noindent {\bf  LINECOMP} (off): \bang
+compare results from Line Source Function and Composite Line calculations.}
+\space \vbox {\noindent {\bf  LINECOPR} (off): \bang
+print continuum data for line core wavelengths.}
+\space \vbox {\noindent {\bf  LINTDMP} (off): \bang
+print debug dump output from emergent line intensity calculation.}
+\space \vbox {\noindent {\bf  LNUMDMP} (off): \bang
+print dump of number density calculations.}
+\space \vbox {\noindent {\bf  LONGNBM} (off): \bang
+use the long, detailed version of the error message that is printed when
+a calculated value of BDIJ $ < 0$.}
+\space \vbox {\noindent {\bf  LSCALE} (off): \bang
+print graph of logs of TAU scales.}
+\space \vbox {\noindent {\bf  LSFFULL} (on): \bang
+print full set of standard line source function calculation results
+(used only if the basic set of results is printed).}
+\space \vbox {\noindent {\bf  LSFGRAF} (on): \bang
+print Line Source Function graphs for all transitions, not just
+for those with LSFPRINT = 1.}
+\space \vbox {\noindent {\bf  LSFPRNT} (on): \bang
+print results of Line Source Function calculations for all transitions,
+not just for those with LSFPRINT = 1.}
+\space \vbox {\noindent {\bf  LTE} (off): \bang
+calculate LTE versions of emergent line intensity and flux profiles.}
+\space \vbox {\noindent {\bf  LTEDATA} (on): \bang
+print LTE values of S and FR, (used only when LTE is on).}
+\space \vbox {\noindent {\bf  LYMAN} (off): \bang
+calculate Level-${\cal N}$-to-Continuum transfer in detail (the `Lyman'
+calculation).}
+\space \vbox {\noindent {\bf  LYMCOPR} (off): \bang
+print continuum data for Level-${\cal N}$-to-Continuum transfer calculation
+wavelengths, (used only when LYMAN is on).}
+\space \vbox {\noindent {\bf  LYMDMP} (off): \bang
+print debug dump output from Level-${\cal N}$-to-Continuum transfer
+calculation, (used only when LYMAN is on).}
+\space \vbox {\noindent {\bf  MAGPRNT} (off): \bang
+print Magnesium populations and departure coefficients.}
+\space \vbox {\noindent {\bf  MAKIX} (on): \bang
+insert place-markers in printout file, and generate the corresponding
+index file.}
+\space \vbox {\noindent {\bf MCINPUT} (on): \bang
+accept lower- and MiXed-case input statements, instead of UPPER-case only.}
+\space \vbox {\noindent {\bf  METPRNT} (off): \bang
+print details of automatic Statistical Equilibrium Equation Method selection,
+(used only when METSW is on).}
+\space \vbox {\noindent {\bf  METSW} (off): \bang
+try the other Statistical Equlibrium Equation methods whenever a value of
+line-source-function-epsilon $ < -0.9999$.}
+\space \vbox {\noindent {\bf  MITPRNT} (off): \bang
+provide only a bare minimum printout for each iteration, (used only when
+ALL is off or EVERY is off).}
+\space \vbox {\noindent {\bf  MONOTAU} (off): \bang
+force all sets of calculated optical depths to increase monotonically.}
+\space \vbox {\noindent {\bf  NBPRNT} (off): \bang
+print final, weighted values of number density and departure coefficient.}
+\space \vbox {\noindent {\bf  NEDIT} (off): \bang
+edit number densities to insure positive line source functions.}
+\space \vbox {\noindent {\bf  NESWICH} (on): \bang
+recalculate NE in detail, instead of setting NE = NP.}
+\space \vbox {\noindent {\bf  NHADJ} (on): \bang
+adjust the calculated values of NH so that TAU5000 = 1 where Z = 0,
+(used only when HSE is on; will be turned off automatically when HSE is off).}
+\space \vbox {\noindent {\bf NRSMOOTH} (on): \bang
+smooth the n$\ell$/n1 ratios in the diffusion calculations.}
+\space \vbox {\noindent {\bf  NVOIT} (on): \bang
+print Voigt function calculations execution statistics.}
+\space \vbox {\noindent {\bf  OPAGRAF} (off): \bang
+print graph of absorbers.}
+\space \vbox {\noindent {\bf  OPANEG} (on): \bang
+edit negative Line Opacity only to keep Total Opacity positive.}
+\space \vbox {\noindent {\bf  OPAPRNT} (off): \bang
+print detailed analysis of the contributions to the background opacity.}
+\space \vbox {\noindent {\bf  OPASUM} (off): \bang 
+print an `Absorber Summary'.}
+\space \vbox {\noindent {\bf  OPTHINL} (off): \bang
+use the optically-thin-limit approximation.}
+\space \vbox {\noindent {\bf  OPTPRNT} (on): \bang
+print OPTIONS listing.}
+\space \vbox {\noindent {\bf  ORIGIN} (off): \bang
+provide `long version' of analyses of regions of formation of values of 
+emergent intensity.}
+\space \vbox {\noindent {\bf  ORSHORT} (off): \bang
+provide `short version' of analyses of regions of formation of values of
+emergent intensity, (used only when ORIGIN is on).}
+\space \vbox {\noindent {\bf  ORT} (off): \bang
+radiation flows in the `outward' direction only, instead of isotropically.}
+\space \vbox {\noindent {\bf  OXYPRNT} (off): \bang
+print Oxygen populations and departure coefficients.}
+\space \vbox {\noindent {\bf  OXY2PRNT} (off): \bang
+print Oxygen-II populations and departure coefficients.}
+\space \vbox {\noindent {\bf  OXY3PRNT} (off): \bang
+print Oxygen-III populations and departure coefficients.}
+\space \vbox {\noindent {\bf  PARTPRNT} (off): \bang
+print the tables of Ionization Potentials, Partition Functions and/or 
+Partition Function ratios.}
+\space \vbox {\noindent {\bf  PARTVAR} (on): \bang
+use depth-varying values of Partition Functions (instead of constant values).}
+\space \vbox {\noindent {\bf  PASSPRNT} (on): \bang
+print results and details of line source function calculations for passive
+\break transitions.}
+\space \vbox {\noindent {\bf  PDCHECK} (off): \bang
+print debug checksums.}
+\space \vbox {\noindent {\bf PDETPRNT} (on): \bang
+print details of BD and ND calculations, illustrated at depth \# IBNVIEW
+(used only when POPPRNT is on).}
+\space \vbox {\noindent {\bf  PED} (off): \bang
+print results and details of particle energy dissipation calculation.}
+\space \vbox {\noindent {\bf  PEDDMP} (off): \bang
+print debug dump output from particle energy dissipation calculation.}
+\space \vbox {\noindent {\bf  PEGTNALL} (on): \bang
+print GTN-editing messages for every iteration, not just the last one.}
+\space \vbox {\noindent {\bf  PERDMP0} (off): \bang
+print debug dump output from {\tt PERSEUS} for transition (MS/NS):
+contents of data blocks, (see Note 59, Section 5).}
+\space \vbox {\noindent {\bf  PERDMP1} (off): \bang
+print debug dump output from {\tt PERSEUS} for transition (MS/NS):
+but without details of frequency/angle summations, (see Note 59, Section 5).}
+\space \vbox {\noindent {\bf  PERDMP2} (off): \bang
+print debug dump output from {\tt PERSEUS} for transition (MS/NS):
+details of frequency/angle summations, (see Note 59, Section 5).}
+\space \vbox {\noindent {\bf  PERDMP3} (off): \bang
+print debug dump output from {\tt PERSEUS} for transition (MS/NS):
+PRD data arrays, (see Note 59, Section 5).}
+\space \vbox {\noindent {\bf  PESRJALL} (off): \bang
+print S, RHO and JBAR editing messages in every iteration,
+not just the last one.}
+\space \vbox {\noindent {\bf  PHASE2} (on): \bang
+calculate emergent spectrum, and provide summary analyses.}
+\space \vbox {\noindent {\bf  PIJPRNT} (off): \bang 
+print the bound-free collision rates PIJ (for `minimal' printout,
+see input parameter IRATE).}
+\space \vbox {\noindent {\bf  POPBSW} (off): \bang
+set the departure coefficients for higher levels equal to those for the
+highest \break calculated level (instead of their LTE values), for `population
+update ions' only.}
+\space \vbox {\noindent {\bf  POPGRAF} (on): \bang
+print graph of number densities.}
+\space \vbox {\noindent {\bf  POPPRNT} (on): \bang
+print results and details of the number densities calculations.}
+\space \vbox {\noindent {\bf  PRDCOPR} (off): \bang
+print continuum data for PRD (partial redistribution profile points) 
+\break wavelengths (see also input parameter {\bf IPRDF}).}
+\space \vbox {\noindent {\bf  PRDITER} (off): \bang
+print results of all PRD-iterations, not just the last one.}
+\space \vbox {\noindent {\bf  PRDMETH} (on): \bang
+Use the Hubeny-Lites, instead of the Kneer-Heasley, formulation for PRD.}
+\space \vbox {\noindent {\bf  PRDPRNT} (off): \bang
+print results and details of PRD calculations.}
+\space \vbox {\noindent {\bf  PROCPRNT} (on): \bang
+print line profile-specific emergent continuum intensities.}
+\space \vbox {\noindent {\bf  PRODMP} (off): \bang
+print debug dump output from emergent intensity calculations.}
+\space \vbox {\noindent {\bf  PROSAV} (off): \bang
+write emergent line profile data in the Special Spectrum Save File,
+(this option will be turned on automatically when SPECSAV is on).}
+\space \vbox {\noindent {\bf  PTN} (on): \bang
+edit negative values out of tables of TAU integrands.}
+\space \vbox {\noindent {\bf  QSFEDIT} (on): \bang
+edit negative values out of tables of QSF (PRD modified source function).}
+\space \vbox {\noindent {\bf  RABDAT} (on): \bang
+save data needed for separate RABD calculation.}
+\space \vbox {\noindent {\bf  RATEALL} (off): \bang
+print complete details of rates integrations.}
+\space \vbox {\noindent {\bf  RATECOPR} (off): \bang 
+print continuum data for rates integrations wavelengths.}
+\space \vbox {\noindent {\bf  RATEFULL} (on): \bang
+print details of the rates integrations.}
+\space \vbox {\noindent {\bf  RATEGRAF} (on): \bang
+print graphs of the TR sets and JNU sets used in rates calculations.}
+\space \vbox {\noindent {\bf  RATEPRNT} (off): \bang
+print results and details of the `SETTUP' calculation, \ie rates
+calculation (for `minimal' printout, see input parameter IRATE).}
+\space \vbox {\noindent {\bf  RATESUMM} (off): \bang
+print rate integration summary for every level.}
+\space \vbox {\noindent {\bf  RCOMPRNT} (on): \bang
+print details of recombination calculation.}
+\space \vbox {\noindent {\bf  REFLECT} (off): \bang
+the plane-parallel atmosphere is symmetric about the lowest depth value.}
+\space \vbox {\noindent {\bf  RHBPRDT} (on): \bang
+print details of `RHO + RBD' calculation for each radiative transition 
+(only if RHBPRNT is on).}
+\space \vbox {\noindent {\bf  RHBPRNT} (on): \bang
+print Explanation, and Results (optional), of the `RHO + RBD' calculations 
+(see also options BDPRNT, RHBPRDT, RHBPRSM).}
+\space \vbox {\noindent {\bf  RHBPRSM} (off): \bang
+print final sets of Rho and b-ratios from `RHO + RBD' calculation 
+(only if RHBPRNT is on).}
+\space \vbox {\noindent {\bf  RHEDIT} (off): \bang
+edit the calculated values of RHO (net radiative bracket).}
+\space \vbox {\noindent {\bf  RHOFUDGE} (off): \bang
+`fudge' RHO's as necessary for calculation of BDIJ, (to assure positive
+values of BDIJ).}
+\space \vbox {\noindent {\bf  RHOWOPT} (on): \bang
+use the same `artificial' set of TAU values for all transitions when
+computing RHO/W, instead of the line-core TAUs of each transition.}
+\space \vbox {\noindent {\bf  RIJPRNT} (on): \bang
+print ratio of collision rates RIJ.}
+\space \vbox {\noindent {\bf  RKINCR} (off): \bang
+artificial RK enhancement.}
+\space \vbox {\noindent {\bf  RSMOOTH} (off): \bang
+smooth the calculated RHO sets using the sequential smoothing procedure.}
+\space \vbox {\noindent {\bf  RSQUARE} (off): \bang
+use depth-varying (instead of constant) dilution factor, (used only when
+INCIDNT is on).}
+\space \vbox {\noindent {\bf  SCALE} (off): \bang
+print collated TAU scales.}
+\space \vbox {\noindent {\bf  SDIRECT} (off): \bang
+replace negative Line Source Function values in ``Direct'' calculations
+by interpolated positive ones.}
+\space \vbox {\noindent {\bf  SEBUG} (off): \bang
+print intermediate details of the statistical equlibrium calculations
+for transition (MS/NS), (also uses the value of LDINT).}
+\space \vbox {\noindent {\bf  SECOMP} (off): \bang
+print comparative analysis of the results from the different Statistical
+Equlibrium methods.}
+\space \vbox {\noindent {\bf  SEDIT} (on): \bang
+edit negative values out of calculated sets of Line Source Functions
+obtained by the ``Full'' solution.}
+\space \vbox {\noindent {\bf  SEDITIF} (off): \bang
+edit negative values out of frequency-dependent Line Source Functions
+used for intensity and flux profiles.}
+\space \vbox {\noindent {\bf  SEPRNT} (off): \bang
+print results and details of Statistical Equilibrium calculations.}
+\space \vbox {\noindent {\bf  SETIME} (off): \bang
+print timings for the different Statistical Equilibrium methods, (used only
+when SECOMP is on).}
+\space \vbox {\noindent {\bf  SILPRNT} (off): \bang
+print Silicon populations and departure coefficients.}
+\space \vbox {\noindent {\bf  SLFGRAF} (off): \bang
+print graph of SLF for transition (MS/NS).}
+\space \vbox {\noindent {\bf  SLFPRNT} (off): \bang
+print SLF for transition (MS/NS).}
+\space \vbox {\noindent {\bf  SLFSAV} (off): \bang
+save SLF in the Special Spectrum Save File.}
+\space \vbox {\noindent {\bf  SLYR} (on): \bang
+smooth the calculated Lyman RK-${\cal N}$ set.}
+\space \vbox {\noindent {\bf  SNUSHFT} (off): \bang
+apply frequency-shift to PRD SNU in emergent profile calculations.}
+\space \vbox {\noindent {\bf  SOBDMP} (off): \bang
+print debug dump output from Sobolev escape probability calculation.}
+\space \vbox {\noindent {\bf SOBINT} (off): \bang
+print Sobolev integration details, (used only when SOBDMP is on).}
+\space \vbox {\noindent {\bf  SODPRNT} (off): \bang
+print Sodium populations and departure coefficients.}
+\space \vbox {\noindent {\bf  SPECSAV} (off): \bang 
+save all spectrum data in the Special Spectrum Save File, 
+(this is equivalent to turning on both CONSAV and PROSAV).}
+\space \vbox {\noindent {\bf  SPECSUM} (off): \bang
+provide a `Spectrum Summary'.}
+\space \vbox {\noindent {\bf  SPHEGEOM} (off): \bang
+print complete sets of all Z-dependent geometrical quantities, (used only
+when SPHERE is on).}
+\space \vbox {\noindent {\bf  SPHERE} (off): \bang
+the atmosphere is spherically symmetric, instead of being plane-parallel
+and semi-infinite.}
+\space \vbox {\noindent {\bf  SPHETAU} (off): \bang
+calculate optical depths along rays by quadratic integration, instead of by
+\break trapezoidal rule, (used only when SPHERE is on).}
+\space \vbox {\noindent {\bf  SPHOUT} (off): \bang
+use spherically-symmetric geometry in computing emergent line and
+continuum flux, (used only in cases where the line source functions were
+calculated with plane-parallel coordinates).}
+\space \vbox {\noindent {\bf  SQSMDMP} (off): \bang
+print details of sequential smoothing, (used only when SQSMPRNT is on).}
+\space \vbox {\noindent {\bf  SQSMPRNT} (off): \bang
+print brief messages for all occurrences of sequential smoothing.}
+\space \vbox {\noindent {\bf  SSMOOTH} (off): \bang
+do ``alternate'' sequential smoothing for S-from-number densities.}
+\space \vbox {\noindent {\bf  STANDARD} (on): \bang
+print various basic numerical data.}
+\space \vbox {\noindent {\bf  STANCOPR} (off): \bang
+print results of continuum calculations for standard background
+wavelengths.}
+\space \vbox {\noindent {\bf  STANPRNT} (off): \bang
+print provisional depth-dependent input tables, before interpolation
+to the standard Z table of this run.}
+\space \vbox {\noindent {\bf  STAUREDM} (on): \bang
+print short version of TAU-reduction error message from the WN-matrix
+calculation.}
+\space \vbox {\noindent {\bf  STIMPRNT} (off): \bang
+print values of stimulated emission factors.}
+\space \vbox {\noindent {\bf  STKWATT} (on): \bang
+attenuate Hydrogen line Stark splitting components outside the Doppler
+core at each depth.}
+\space \vbox {\noindent {\bf  SULPRNT} (off): \bang
+print Sulphur populations and departure coefficients.}
+\space \vbox {\noindent {\bf  SUMGRAF} (on): \bang
+print `iterative summaries' in graphical, rather than in tabular, form,
+(used only when SUMMARY is on.}
+\space \vbox {\noindent {\bf  SUMMARY} (on): \bang
+print `iterative summaries,' and a fudging summary.}
+\space \vbox {\noindent {\bf  SUMTREND} (on): \bang
+print Iteration Trends summary.}
+\space \vbox {\noindent {\bf  TANG} (on): \bang
+include the ray tangent to the first depth ({\it i.e.} shell) in the angle
+integrations for spherical geometry, (used only when NTAN = 1, and only
+when SPHERE \break is on).}
+\space \vbox {\noindent {\bf  TAUDMP} (off): \bang
+print debug dump output from all optical depth integrations (TAU calculations).}
+\space \vbox {\noindent {\bf  TAUPLOT} (on): \bang
+print TAU scales for all transitions beneath the departure coefficient graphs.}
+\space \vbox {\noindent {\bf  TAUPRNT} (off): \bang
+print results and details of the line-core optical depth calculations.}
+\space \vbox {\noindent {\bf  TAUSUM} (off): \bang
+print a `TAU Summary'.}
+\space \vbox {\noindent {\bf  TEGRAF} (on): \bang
+print graph of temperature vs. optical depth.}
+\space \vbox {\noindent {\bf  TOPE} (off): \bang
+save data for separate `Continuum Plots' program.}
+\space \vbox {\noindent {\bf  TRANSAV} (off): \bang
+save transitions data in special file (.tsf).}
+\space \vbox {\noindent {\bf  TRPRNT} (off): \bang
+print computed effective radiation temperatures.}
+\space \vbox {\noindent {\bf  TRUECONT} (off): \bang
+compute ``true continuum'' as needed for residual line profiles.}
+\space \vbox {\noindent {\bf  TRUECOPR} (off): \bang
+print results of ``true continuum'' calculations needed for residual
+line profiles.}
+\space \vbox {\noindent {\bf  ULNORM} (on): \bang
+use H Lyman lines normalization factors.}
+\space \vbox {\noindent {\bf  USENCJ} (on): \bang
+calculate background continuum JNU directly, instead of from the source
+\break function.}
+\space \vbox {\noindent {\bf  USETRIN} (off): \bang
+calculate values of the rates RK and RL with the `old' method, which
+requires input values of TR.}
+\space \vbox {\noindent {\bf  USETSM} (off): \bang
+eliminate TAU values smaller than TSM in emergent intensity and
+continuum mean intensity calculations.}
+\space \vbox {\noindent {\bf  USEWTAB} (on): \bang
+use standard rates integrations wavelengths.}
+\space \vbox {\noindent {\bf  VELGDMP} (off): \bang
+print details of velocity gradient terms calculation, (used only when
+VLGPRNT is on).}
+\space \vbox {\noindent {\bf  VELGRAD} (off): \bang
+include velocity gradient terms in statistical equilibrium equations
+(only in Hydrogen or Helium runs).}
+\space \vbox {\noindent {\bf  VELS} (off): \bang
+use calculated diffusion velocity in source function calculations.}
+\space \vbox {\noindent {\bf  VESCAPE} (off): \bang
+use Voigt expression for the escape probability.}
+\space \vbox {\noindent {\bf  VLGPRNT} (on): \bang
+print data from velocity terms calculation (used only when VELGRAD
+is on).}
+\space \vbox {\noindent {\bf  VSWITCH} (off): \bang
+use two broadening velocity sets, instead of just one.}
+\space \vbox {\noindent {\bf  VTV} (on): \bang
+set VT = V.}
+\space \vbox {\noindent {\bf  WATESTE} (on): \bang
+use logarithmic style of weighting for Lyman EP1, EP2.}
+\space \vbox {\noindent {\bf  WATESTR} (on): \bang
+use logarithmic style of weighting for all RHO sets.}
+\space \vbox {\noindent {\bf  WAVENUMB} (off): \bang
+print results in wavenumber instead of wavelength units.}
+\space \vbox {\noindent {\bf  WAVEPRNT} (on): \bang
+print Continuum Wavelengths summary table (also uses the value
+of LWNT).}
+\space \vbox {\noindent {\bf  WISFILE} (off): \bang
+write an `iterative studies' save file for transition (MS/NS).}
+\space \vbox {\noindent {\bf  WNDMP} (off): \bang
+print debug dump output for all WN-matrix calculations.}
+\space \vbox {\noindent {\bf  WTABPRNT} (off): \bang
+print standard rates integrations wavelengths.}
+\space \vbox {\noindent {\bf  XRAYCRID} (off): \bang
+print details of X-ray cooling rates wavelength integration.}
+\space \vbox {\noindent {\bf  ZCOMP} (off): \bang
+when mass is prescribed, adjust Z to match the input mass scale.}
+\space \vbox {\noindent {\bf  ZPRNT} (off): \bang
+reprint input values of Z and TE to nine significant figures.}
+\par\vfill
+\ej
+%\end

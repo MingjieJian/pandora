@@ -1,0 +1,16 @@
++ Mon Mar 24 17:03:33 EDT 2014 running H, for case 001
+pmerge: merging NE,ZME,NC,BDHM,NH,NP,HN_1-15,BDH_1-15 in leidh.pop.001 to leid.mod (36 values)
+pmerge: 3005 lines in model file (leid.mod)
+pmerge: produced new file 'output.mod'
+pmerge: if that file is OK do 'mv output.mod leid.mod'
++ Mon Mar 24 17:11:40 EDT 2014 running HeI, for case 001
+pmerge: merging HEK,HEN_1-13,BDHE_1-13 in leidhe1.pop.001 to leid.mod (27 values)
+pmerge: 3005 lines in model file (leid.mod)
+pmerge: produced new file 'output.mod'
+pmerge: if that file is OK do 'mv output.mod leid.mod'
++ Mon Mar 24 17:14:50 EDT 2014 running CaII, for case 001
+extract: section " PROF (3/2) " of "leidh.aaa.001" extracted to file "leidh.prof_3-2.out.001" (1608 lines)
+extract: section " MODEL DATA " of "leidh.aaa.001" extracted to file "leidh.model_data.out.001" (318 lines)
+extract: section " PROF (5/1) " of "leidca2.aaa.001" extracted to file "leidca2.prof_5-1.out.001" (163 lines)
+extract: section " PROF (4/2) " of "leidhe1.aaa.001" extracted to file "leidhe1.prof_4-2.out.001" (4496 lines)
+= Mon Mar 24 17:21:32 EDT 2014 001 done.

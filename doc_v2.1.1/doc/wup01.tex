@@ -1,0 +1,218 @@
+%\magnification=1200
+%\input wupstuff.tex
+\newtoks\footline \footline={\hss\tenrm 1.\folio\hss}
+\pageno=1
+\top
+\vskip 1.5 true in
+\centerline{Section 1: {\bf Input Language}}
+\blankline
+\blankline
+\centerline{\bf ***}
+\blankline
+\blankline
+PANDORA uses free-field self-identified input. The basic input unit is the 
+vector or one-dimensioned array; single variables, on the one hand, and
+multiply-dimensioned arrays, on the other, are treated as special cases of
+the vector. A PANDORA input statement specifies the name of the
+array, and the values to be stored in consecutive locations of it. Several
+control facilities are provided, to make specifying input statements less
+tedious.
+\blankline
+The general input statement is:  {\bf NAME} {\it j} {\bf (} {\it Q} {\bf )}  .
+\blankline
+Each component of that statement (including `{\bf (}' or `{\bf )}')
+is a separate `field' or a set of fields.
+PANDORA's input routines use {\tt NUDEAL}, whose conventions require that 
+every `field' be preceded by at least one blank, and followed by at least
+one blank; ({\it i.e.} blank is the required `separator' between fields).
+In the example above, {\bf NAME} is the name of the input quantity (array)
+whose values follow; {\it j} is none or several auxiliary indices; and
+{\it Q} is the sequence of fields and control parameters that specify
+the values to be stored in memory.
+
+PANDORA's input routines maintain an internal pointer, initially set to 1
+and subsequently incremented or set as specified or implied by {\it Q},
+which identifies that member of the array that will be affected by the
+next input specification in {\it Q}. Therefore, when in the
+remainder of this section
+I use phrases like `the array member currently being read into,'
+I mean the array member identified by that internal pointer.
+
+The remainder of this section deals with: 
+1) field format basics; 2) {\bf (} {\it Q} {\bf)}; and 3) examples.
+The various types of input statements ({\it i.e.}, combinations of
+{\bf NAME} and {\it j}) are  discussed in Section 2; the many {\bf NAME}s
+recognized by \break PANDORA are treated in Section 5.
+\ej
+\centerline{1. \underbar{Format Basics}}
+\blankline
+\blankline
+PANDORA reads input file(s) line by line; only the first 80 characters
+of each line are read. Each line is scanned, character-by-character,
+from left to right, beginning with the first character, until end-of-line
+(which normally occurs after the 80. character). Five types of input
+fields are recognized: 1) null field, 2) excessive field, 3) {\intg} field,
+4) {\flpt} field, and 5) {\alfa} field. Only {\intg}, {\flpt} and {\alfa}
+fields are legal PANDORA input fields, the other two are considered
+errors.
+\blankline
+1) Null field: the scan encountered more than 159 successive blanks,
+without a non-blank character turning up.
+\blankline
+2) Excessive field: the scan encountered more than 60 successive
+non-blank characters, without a blank ({\it i.e.} break character)
+turning up.
+\blankline
+3) Integer field: like an integer constant in FORTRAN, containing up
+to 9 significant digits. An {\intg} field may contain: digits,
+and at most a single sign.
+\blankline
+4) Floating point field: like a real constant in FORTRAN, containing up
+16 significant digits, with an exponent value not exceeding 300.
+A {\flpt} field may contain: digits, at most a single sign for the 
+mantissa, at most a single decimal point for the mantissa,
+at most a single exponent flag, at most a single sign for the exponent.
+\blankline
+5) Alphanumeric field: anything that is not one of the field types
+(1) -- (4), above.
+\blankline
+Digits: [ 0 1 2 3 4 5 6 7 8 9 ]
+\blankline
+Signs: [ $+ \quad -$ ]
+\blankline
+Decimal point: [ . ]
+\blankline
+Exponent flags: [ E e D d ]
+\ej
+\centerline{2. \underbar{Q}}
+\blankline
+\blankline
+{\it Q} may contain the following fields: {\it n}, {\bf M}, {\bf m}, {\it m},
+{\bf I}, {\bf i}, {\it i}, {\bf R}, {\bf r}, {\it r}, {\bf S}, {\bf s}, {\bf F}
+and {\bf f}. Here the
+{\bf boldface} fields are names (identifiers) of control parameters, and
+the {\it italic} fields are numerical values, either of input
+quantities, or of the control parameters whose names precede them.
+\blankline
+{\it n} is the quantity (an {\intg}, a {\flpt} number, or an {\alfa} quantity)
+to be stored in the array member currently being read into; before
+being stored in memory, the value of {\it n} (if an {\intg} or a {\flpt}
+number) will be multiplied by {\it m}.
+\blankline
+{\bf M} or {\bf m} signal that a value of {\it m} will follow.
+
+{\it m} is either a {\flpt} number, by which all {\flpt} {\it n's} following
+{\it m} will be multiplied before being stored in memory; or is an \intg,
+by which all {\intg} {\it n's} will be multiplied before being stored in memory.
+The modes of {\it m} and {\it n} must agree ({\it i.e.} both
+{\intg} or both \flpt). The default value of {\it m} is 1; this value will be
+used if a different value of {\it m} is not specified explicitly in {\it Q}.
+Successive values of {\it m} are not multiplied together; it is always
+the latest value encountered that will be used.
+\blankline
+{\bf I} or {\bf i} signal that a value of {\it i} will follow.
+
+{\it i} is an {\intg} which explicitly specifies the next array member to be read
+into ({\it i.e.} it is used to reset the internal array pointer). Any {\it n}
+not preceeded by an {\it i} will be stored in the array member specified
+by the internal array pointer. If the first {\it n} in {\it Q} is not
+preceeded by an {\it i}, it will be stored as the first array member.
+\blankline
+{\bf R} or {\bf r} signal that a value of {\it r} will follow.
+
+{\it r} is an {\intg} specifying the value of the `repeat' counter. The repeat
+\break counter specifies that the next {\it n} should be `used' {\it r} times.
+For example:  {\bf R} 3 1.7  means that the next array member to be read into,
+and the two succeeding ones as well, will all be set equal to 1.7; also:
+{\bf I} 7 {\bf r} 3 1.0  (which is equivalent to  {\bf R} 3 {\bf i} 7 1.0 )
+means that array members 7 -- 9 will all be set equal to 1.0. If the specified
+value of {\it r} implies members beyond the high end of the array, then
+such `excess' will be ignored. The default value of {\it r} is 1.
+\ej
+{\bf S} or {\bf s} signal that the next array member to be read into should be skipped
+\break ({\it i.e.} no value will be specified for it, and its current contents
+should be left \break unchanged). The sequence  {\bf R} {\it r} {\bf S}
+means that the next {\it r} array members to be read into should be skipped.
+\blankline
+{\bf F} or {\bf f} signal that the {\it n} following {\bf F} should be stored in the
+current array member to be read into and all succeeding ones as well
+({\it i.e.} the sequence  {\bf F} {\it n}  `fills' the remainder of the array,
+or indeed the entire array, with {\it n}).
+\blankline
+The sequence  {\bf [} {\it A} {\bf ]}  constitutes a comment or remark.
+The occurrence of
+opening square bracket (followed by a blank) signals the beginning of a
+comment, {\it A}, which may comprise any number of fields consisting of any
+characters, except closing square bracket. The occurrence of closing square
+bracket (preceeded and followed by blank) signals the end of the comment.
+PANDORA ignores the entire comment (including the delimiting brackets).
+\blankline
+The field  $ > $ (`greater than' sign) indicates end-of-line ({\it i.e.} 
+the remainder of the input line on which it occurs should be skipped).
+\blankline
+{\it Note}: only UPPERCASE alphabetic characters were recognized originally;
+the generalization to mixeD-CAse was implemented later.
+\ej
+\centerline{3. \underbar{Examples}}
+\blankline
+\blankline
+Here are some sample lines of input:
+\blankline
+\blankline
+\blankline
+\blankline
+{\tt
+\noindent {\it 0001} \qquad N ( 34 ) \par
+\noindent {\it 0002} \qquad KK ( 13 ) $>$ \par
+\noindent {\it 0003} \qquad IOMX ( 2 ) $>$  STUFF AFTER `GREATER THAN' 
+IS IGNORED \par
+\noindent {\it 0004} \qquad [ THIS IS A REMARK ] \par
+\noindent {\it 0005} \qquad XK ( I 13 5.5 )  DLU  ( 0.1 )  $>$ \par
+\noindent {\it 0006} \qquad TE ( F 10000. ) \par
+\noindent {\it 0007} \qquad NE ( 0. M 1.E1 1. 2. 3. 4. 5. \par
+\noindent {\it 0008} \qquad R 5 6. F 7. ) \par
+\noindent {\it 0009} \qquad [THIS STUFF IS NOT A COMMENT ]  \par
+\noindent {\it 0010} \qquad [ THIS ALSO IS NOT A   R E M A R K]  \par
+\noindent {\it 0011} \qquad A 2 1 ( 1.E8 )  [ ESTIMATE $>$ ]  \par
+\noindent {\it 0012} \qquad CRD 2 1 ( 1.E-5 )  [ ESTIMATE ] $>$ \par
+}
+\blankline
+\blankline
+\blankline
+\blankline
+--- Lines 1, 4, 6, 7, 8, 9 and 10 are scanned in their entirety
+({\it i.e.}, all 80 characters); the others up to $>$ only.
+ 
+--- Line 3 shows an alternate form of comment.
+ 
+--- In Line 5, the 13. value of XK is set to 5.5, and DLU is set
+to 0.1; showing that there may be more than one input statement in a line.
+ 
+--- Lines 7 and 8 show that one input statement may extend over
+several lines; it is the final `)' that indicates the end of the NE statement.
+The values in memory of NE will be:
+0, 10, 20, 30, 40, 50, 60, 60, 60, 60, 60, 70 $\ldots$ 70.
+ 
+--- Line 9 would be a valid comment if there were a blank after [ , Line 10
+likewise if there were a blank before  ] .
+ 
+--- Line 12 illustrates a pernicious
+error: it is ignored since it is considered part of the comment begun
+on Line 11. To get the intended effect, interchange $>$ and ] on Line 11.
+\blankline
+\centerline{{\it Note}: line numbers are not allowed in PANDORA input.}
+%\blankline
+%\blankline
+%\blankline
+%\vfill \vfill
+%\vfill \vfill
+%\vfill \vfill
+%\vfill \vfill
+%\vfill \vfill
+%\vfill \vfill
+%\vfill \vfill
+%\vfill \vfill
+\noindent (Section 1 -- last revised: 2003 Aug 01) \par
+\message{Section 1 ends at page 1.\the\pageno}
+\ej
+%\end

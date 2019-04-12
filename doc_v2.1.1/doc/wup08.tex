@@ -1,0 +1,361 @@
+%\magnification=1200
+%\input wupstuff.tex
+\newtoks\footline \footline={\hss\tenrm 8.\folio\hss}
+\pageno=1
+\top
+\vskip 1.5 true in
+\centerline{Section 8: {\bf Output Files}}
+\blankline
+\blankline
+\centerline{\bf ***}
+\blankline
+\blankline
+Besides the printout files (described in Sections 7 and 11),
+PANDORA provides output in several
+additional files. Some of these contain data that can be used to
+restart the run (and may also contain data that is neither needed
+nor permissible for restarting -- such files must be edited appropriately).
+Other files provide collections of data and results that are useful
+for various special purposes. See also Section 7.
+
+Each of the four basic restart data files begins with the set of four
+``Run ID'' lines (in the form of PANDORA comments), containing the run
+{\bf HEADING}, program version number, two time stamps (one expressed in
+Smithsonian Days), and a summary of basic run data. Copies of the 
+{\bf HEADING} line also appear at various places in several files.
+\blankline
+\blankline
+\underbar{ {\bf File {\tt fort.19} contains} } general restart data,
+as follows: 
+\blankline
+\bull {\it Always} --- \par \noindent
+Run ID
+\spice
+\bull {\it Always} --- \par \noindent
+for all radiative transitions $u,\ell$:
+{\bf METSE}$^{u,\ell}$ ({\it if} METSW {\it is on}), {\bf RHO}$^{u,\ell}_i$,
+\break {\bf RHWT}$^{u,\ell}_i$, {\bf JBAR}$^{u,\ell}_i$, {\bf CHI}$^{u,\ell}_i$,
+{\bf AW}$^{u,\ell}_i$
+\spice
+\bull {\it If option} LYMAN {\it is on} --- \par \noindent
+for level $j =$ {\bf KOLEV}:
+{\bf IRKCOMP}$^j$ = 0, {\bf RK}$^j_i$, {\bf RKWT}$_i$, {\bf IRLCOMP}$^j$ = 0, 
+{\bf RL}$^j_i$, {\bf EP1}$_i$, {\bf EP2}$_i$
+\spice
+\bull {\it Always} --- \par \noindent
+{\bf NK}$_i$, 
+{\bf ND}$^j_i$ for all levels $j$; {\bf BD}$^j_i$ for all levels $j$
+\spice
+\bull {\it Always} --- \par \noindent
+``{\bf USE ( INPUT ) }''
+\ej
+\underbar{ {\bf File {\tt fort.20} contains} } miscellaneous restart
+and other data, as follows:
+\blankline
+\bull {\it Always} --- \par \noindent
+Run ID
+\spice
+\bull {\it Always} --- \par \noindent
+{\bf N}, {\bf Z}$_i$, {\bf TE}$_i$
+\spice
+\bull {\it If } {\bf POPUP} {\it is on but} $\neq$ {\tt HYDROGEN} --- 
+\par \noindent
+{\bf NE}$_i$, {\bf ZME}$_i$, {\bf NC}$_i$
+\spice
+\bull {\it If option } HSE {\it is on} --- \par \noindent
+{\bf MASS}$_i$, {\bf PGS}$_i$, {\bf PTO}$_i$, {\bf TE}$_i$,
+{\bf VT}$_i$, {\bf VM}$_i$, {\bf GD}$_i$, {\bf T5000}$_i$
+\spice
+\bull {\it If option } ATOMSAV {\it is on and default values of atomic
+parameters were computed} --- \np
+atomic model parameter values
+\spice
+\bull {\it If options } DUSTEMP {\it and} DUSTYPE
+{\it are both on} --- \par \noindent
+{\bf TDST}$_i$
+\spice
+\bull {\it If } {\bf MH2N} = 1 --- \par \noindent
+{\bf H2N}$_i$
+\spice
+\bull {\it If } {\bf MCON} = 1 --- \par \noindent
+{\bf CON}$_i$
+\spice
+\bull {\it If} {\bf POPUP} = {\tt HYDROGEN} {\it and} {\bf MFONT} = 1 --- \np
+atmosphere model data tables for Juan Fontenla
+\spice
+\bull {\it If} {\bf NAME} = {\tt HELIUM2} --- \par \noindent
+{\bf N}, {\bf Z}$_i$, {\bf HE304}$_i$
+\spice
+\bull {\it If this is a K-shell run} --- \par \noindent
+{\bf N}, {\bf Z}$_i$, {\bf QIN}$_i$
+\spice
+\bull {\it If } {\bf IRPUN} = 1 --- \par \noindent
+two sets of data for a separate program (CENSUS) which calculates abundance
+ratios of ions of the same element \par
+\spice
+\vbox{\parindent=0pt \hangindent=10pt \hangafter=0
+(these data include {\bf Z}, and FLVSL and FIONL, as they
+appear in the \break `POPULATIONS' printout; if AMDIFF is on
+and this is a Helium run, then a second set of these data
+will appear)}
+\spice
+\bull {\it If option } JLYSAV {\it is on} --- \par \noindent
+Level-$\cal N$-to-Continuum (Lyman) J-bar values
+\spice
+\bull {\it If option {\rm USETRIN} is off and} {\bf MTREF} = 1 --- \np
+Effective Radiation Temperature values
+\ej
+% \spice
+\bull {\it If } {\bf MDFV} = 1 {\it and} AMDIFF
+{\it is on} --- \par \noindent
+{\bf N}, {\bf Z}$_i$, {\bf TE}$_i$, {\bf VM}$_i$,
+{\bf VAMB}$_i$, {\bf VBMB}$_i$, {\bf VCMB}$_i$, {\bf VDMB}$_i$, 
+{\bf VH}$_i$, {\bf VP}$_i$, {\bf VE}$_i$, {\bf V1}$_i$, 
+{\bf V2}$_i$, {\bf V3}$_i$
+\spice
+\bull {\it If } {\bf MDFG} = 1 {\it and} AMDIFF
+{\it is on} --- \par \noindent
+{\bf GVL}$_i^j, \; 1 \leq j \leq {\bf NL}$
+\spice
+\bull {\it If {\bf RHEAB} was recomputed} --- \np
+{\bf N}, {\bf Z}$_i$, {\bf RHEAB}$_i$
+\spice
+\bull {\it If} {\bf NAME} = {\tt HELIUM} {\it or} {\tt HELIUM2}
+{\it and} AMDIFF {\it is on} --- \np
+{\bf N}, {\bf Z}$_i$, and either: {\bf PALBET}$_i$,
+{\bf PBETAL}$_i$ if {\tt HELIUM}; or {\bf PGMBET}$_i$,
+\break {\bf PBETGM}$_i$ if {\tt HELIUM2}
+\spice
+\bull {\it If option } CHEXUP {\it is on and this is one of the 10
+``charge exchange'' ions} --- \par \noindent
+{\bf N}, {\bf Z}$_i$, {\bf XRKH}$^j_i$, {\bf XRLH}$^j_i,
+\; 4 \leq j \leq $ NPQMX
+\spice
+\bull {\it If } {\bf MKURU} = 1 --- \par \noindent
+then data for Kurucz's spectrum programs \par
+\spice
+\vbox{\parindent=0pt \hangindent=10pt \hangafter = 0
+(these data comprise the computed departure coefficients of the
+ion-of-the-run plus, if this is a Hydrogen run, some atmosphere
+data tables)}
+\spice
+\bull {\it If option } CALCOOL {\it is on} --- \par \noindent
+data for separate program to calculate new {\bf TE} values \par
+\spice
+\vbox{\parindent=0pt \hangindent=10pt \hangafter=0
+(these data include {\bf NE}, {\bf NH}, {\bf TE}, SUM [which
+is called `Total Rate' in the `NET RADIATIVE COOLING RATES' printout],
+and, in a Hydrogen run, SUMSM [\ie smoothed values of SUM])}
+\spice
+\bull {\it If option } FLUXSAV {\it is on} --- \par \noindent
+data for separate programs to calculate new {\bf TE} values \par
+\spice
+\vbox{\parindent=0pt \hangindent=10pt \hangafter=0
+(these data include {\bf Z} and {\bf TE}, and `Integrated Flux', 
+`Integrated Derivatives' and `Effective Temperature', as they appear
+in the `CONTINUUM FLUX INTEGRALS' printout)}
+\spice
+\bull {\it If option } ECLISAV {\it is on} --- \par \noindent
+results of eclipse emergent profile calculations \par
+\spice
+\vbox{\parindent=0pt \hangindent=10pt \hangafter=0
+(these data include {\bf R1N}, {\bf Z} and {\bf FRR}, and `DL', `ID'
+and `IS', as they appear in the `ECLIPSE INTENSITY AND FLUX' printout)}
+\spice
+\bull {\it If option } CLNORM {\it is on and this run calculates H
+Lyman $\alpha$ and/or $\beta$} --- \par \noindent
+{\bf FNRMLA} and {\bf FNRMLB} \par
+\spice
+\vbox{\parindent=0pt \hangindent=10pt \hangafter=0
+(used by PANDORA to adjust the simulated H Lyman $\alpha$
+and $\beta$ lines in the background)}
+\ej
+% \blankline
+% \blankline
+\underbar{ {\bf File {\tt fort.21} contains} } populations restart data
+as follows:
+\blankline
+\bull {\it Always} --- \par \noindent
+Run ID
+\spice
+\bull {\it If option } HSE {\it is on, and } {\bf POPUP}
+{\it is set, and } {\bf NAME} = {\tt HYDROGEN} --- \par \noindent
+{\bf NE}$_i$, {\bf ZME}$_i$, {\bf NC}$_i$
+\spice
+\bull {\it If option } HMS {\it is on} --- \par \noindent
+{\bf BDHM}$_i$
+\spice
+\bull {\it If option } AMDIFF {\it or option } VELGRAD
+{\it is on, and {\rm VBMB} $\neq 0$} --- \np
+{\bf VBMB}$_i$
+\spice
+\bull {\it If option } HSE {\it is on, or if option }
+HSE {\it is off and option } CPSW {\it is on} --- \par \noindent
+{\bf NH}$_i$
+\spice
+\bull {\it If } {\bf POPUP} = {\tt HYDROGEN} --- \par \noindent
+for all levels $j$ such that $1 \leq j \leq 15$ :
+{\bf NP}$_i$, {\bf HN}$^j_i$, {\bf BDH}$^j_i$, \par \noindent
+plus all those `population ions' populations tables (in the order shown
+just below) for which there was at least some input
+\spice
+\bull {\it If } {\bf POPUP} = {\tt CARBON} --- \par \noindent
+for all levels $j$ such that $1 \leq j \leq 8$ :
+{\bf CK}$_i$, {\bf CN}$^j_i$, {\bf BDC}$^j_i$
+\spice
+\bull {\it If } {\bf POPUP} = {\tt SILICON} --- \par \noindent
+for all levels $j$ such that $1 \leq j \leq 8$ :
+{\bf SIK}$_i$, {\bf SIN}$^j_i$, {\bf BDSI}$^j_i$
+\spice
+\bull {\it If } {\bf POPUP} = {\tt HELIUM} --- \par \noindent
+for all levels $j$ such that $1 \leq j \leq 13$ :
+{\bf HEK}$_i$, {\bf HEN}$^j_i$, {\bf BDHE}$^j_i$
+\spice
+\bull {\it If } {\bf POPUP} = {\tt HELIUM2} --- \par \noindent
+for all levels $j$ such that $1 \leq j \leq 8$ :
+{\bf HE2K}$_i$, {\bf HE2N}$^j_i$, {\bf BDHE2}$^j_i$
+\spice
+\bull {\it If } {\bf POPUP} = {\tt ALUMINUM} --- \par \noindent
+for all levels $j$ such that $1 \leq j \leq 8$ :
+{\bf ALK}$_i$, {\bf ALN}$^j_i$, {\bf BDAL}$^j_i$
+\spice
+\bull {\it If } {\bf POPUP} = {\tt MAGNESIUM} --- \par \noindent
+for all levels $j$ such that $1 \leq j \leq 8$ :
+{\bf MGK}$_i$, {\bf MGN}$^j_i$, {\bf BDMG}$^j_i$
+\spice
+\bull {\it If } {\bf POPUP} = {\tt IRON} --- \par \noindent
+for all levels $j$ such that $1 \leq j \leq 8$ :
+{\bf FEK}$_i$, {\bf FEN}$^j_i$, {\bf BDFE}$^j_i$
+\ej
+% \spice
+\bull {\it If } {\bf POPUP} = {\tt SODIUM} --- \par \noindent
+for all levels $j$ such that $1 \leq j \leq 8$ :
+{\bf NAK}$_i$, {\bf NAN}$^j_i$, {\bf BDNA}$^j_i$
+\spice
+\bull {\it If } {\bf POPUP} = {\tt CALCIUM} --- \par \noindent
+for all levels $j$ such that $1 \leq j \leq 8$ :
+{\bf CAK}$_i$, {\bf CAN}$^j_i$, {\bf BDCA}$^j_i$
+\spice
+\bull {\it If } {\bf POPUP} = {\tt OXYGEN} --- \par \noindent
+for all levels $j$ such that $1 \leq j \leq 14$ :
+{\bf OK}$_i$, {\bf ON}$^j_i$, {\bf BDO}$^j_i$
+\spice
+\bull {\it If } {\bf POPUP} = {\tt OXYGEN2} --- \par \noindent
+for all levels $j$ such that $1 \leq j \leq 8$ :
+{\bf O2K}$_i$, {\bf O2N}$^j_i$, {\bf BDO2}$^j_i$
+\spice
+\bull {\it If } {\bf POPUP} = {\tt OXYGEN3} --- \par \noindent
+for all levels $j$ such that $1 \leq j \leq 8$ :
+{\bf O3K}$_i$, {\bf O3N}$^j_i$, {\bf BDO3}$^j_i$
+\spice
+\bull {\it If } {\bf POPUP} = {\tt SULPHUR} --- \par \noindent
+for all levels $j$ such that $1 \leq j \leq 8$ :
+{\bf SK}$_i$, {\bf SN}$^j_i$, {\bf BDS}$^j_i$
+\ej
+% \blankline
+% \blankline
+\underbar{ {\bf File {\tt fort.22} contains} } special restart data
+as follows:
+\blankline
+\bull {\it Always} --- \par \noindent
+Run ID
+\spice
+\bull {\bf JNU}$^{u,\ell}_{i,k}$ for all PRD transitions
+\blankline
+\blankline
+\underbar{ {\bf File {\tt fort.23} contains} } 
+data from all emergent spectrum calculations, to make them available
+to various auxiliary programs; this file is written
+only if options SPECSAV, PROSAV and/or CONSAV are on. \par
+\spice
+\vbox{\parindent=0pt \hangindent=10pt \hangafter=0
+(These data include much of the input for the continuous intensity
+and flux calculations, and for the line intensity and flux calculations --
+mostly labelled in the file. The various quatities in the file can be
+identified by comparing them with the detailed normal printout. Note
+that, for Continuum Flux, the value printed is $4 \pi H$, while the
+value saved is $H$. Both continuous intensity and line intensity are
+given for each value of $\mu$, as is obvious. Extra data are saved when
+there is incident radiation -- again, this should be clear.
+{\it Note}: flow-broadened profiles are indicated by setting the value
+of the velocity table index ${\bf NVY} = 0$.
+{\it Note} the effect of options WAVENUMB and INCIFRNT)}
+\blankline
+\blankline
+\underbar{ {\bf File {\tt fort.24} contains} } 
+results of the cooling and heating rates calculations, for separate
+plotting programs; this file is written only when options
+CALCOOL and COOLSAV are both on. \par
+\spice
+\vbox{\parindent=0pt \hangindent=10pt \hangafter=0
+(These data include almost all the quantities that appear in the two
+COOLING RATES and the two HEATING RATES printouts)}
+\blankline
+\blankline
+\underbar{ {\bf File {\tt fort.25} contains} } 
+data for separate programs to produce `continuum data' plots;
+this file is written only when the option TOPE is on. \par
+\spice
+\vbox{\parindent=0pt \hangindent=10pt \hangafter=0
+(These data include, for each wavelength, the complete `Continuum
+Data \break Blocks' (which contain all the information that appears in
+complete `CONTINUUM DATA' printouts), followed by, again for each
+wavelength, the computed continuous emergent intensities and intermediate
+results from those computations. Since these data are not normally 
+accessible, they are provided in this special file.}
+\ej
+% \blankline
+% \blankline
+\underbar{ {\bf File {\tt fort.26} contains} } 
+contains data for separate programs to
+analyze the performance of PANDORA's matrix inversion algorithms;
+this file is written only when the switch {\bf SMATC} $ > 0$ and
+qualifying matrices were encountered; (this file is only of use to me,
+as the program developer)
+\blankline
+\blankline
+\underbar{ {\bf File {\tt fort.27} contains} } 
+final values of data from the line source function calculations for
+all radiative transitions, as they appear in the printout file; this
+file has them in a format intended to be more convenient for 
+user-written analysis and plotting programs. This file is written
+when the option TRANSAV is on. \par
+\spice
+\vbox{\parindent=0pt \hangindent=10pt \hangafter=0
+(These data include {\bf Z} and {\bf TE}, and then `TAU', `S', `RHO',
+`JBAR' and ST, the total source function as plotted)}
+\blankline
+\blankline
+\underbar{ {\bf File {\tt fort.30} contains} } 
+`iterative studies' data for a separate program to
+analyze the performance of PANDORA's iterative
+procedures, and provides various graphical displays of the data. \par
+\spice
+\vbox{\parindent=0pt \hangindent=10pt \hangafter=0
+(These data include {\bf Z} and {\bf TE}, and `EPSILON', `S',
+`TAU' and `JBAR', as they appear in the `LINE SOURCE FUNCTION' printout,
+for transition \break ({\bf MS}/{\bf NS}) {\it only}, for every iteration)}
+\blankline
+\blankline
+\underbar{ {\bf File {\tt fort.32} contains} } 
+debug checksums, for separate program {\tt RELAX} that compares checksum
+data files from different runs. \par
+\spice
+\vbox{\parindent=0pt \hangindent=10pt \hangafter=0
+(This is not intended for routine use; it is a debugging aid for
+ongoing program development)}
+\blankline
+%\blankline
+%\vfill \vfill
+%\vfill \vfill
+%\vfill \vfill
+%\vfill \vfill
+%\vfill \vfill
+%\vfill \vfill
+%\vfill \vfill
+%\vfill 
+\vfill
+\noindent (Section 8 -- last revised: 2007 Feb 05) \par
+\message{Section 8 ends at page 8.\the\pageno}
+\ej
+%\end

@@ -1,0 +1,69 @@
+#!/bin/csh -f
+#
+# extract a section from a .aaa file
+#
+if ($#argv != 3) then
+  echo 'ERROR - extract needs 3 arguments'
+  echo '  example: extact "PROF ( 3/2)" leidh.aaa.001 leidh.prof_3-2.out.0001'
+  exit 1
+endif
+set section = " $1 "
+set aaaFile = $2
+set outFile = $3
+#
+set aixFile = `echo $aaaFile | sed s/aaa/aix/`
+#
+foreach file ($aaaFile $aixFile)
+  if (! -e $file) then
+    echo 'ERROR - file "'$file'" NOT found'
+    @ ERR++
+  endif
+end
+#
+if ($?ERR) then
+  echo "$ERR error(s)"
+  exit 1
+endif
+#
+# this grep may not be unique if the section identifier is not...
+#
+grep -i "$section" $aixFile | egrep '^ PSN' > /tmp/grep.$$
+@ n = `cat /tmp/grep.$$ | wc -l`
+if ($n == 0) then
+  echo 'ERROR - section "'$section'" NOT found in file "'$aixFile'"'
+  exit 1
+endif
+if ($n > 1) then
+  echo 'ERROR - '$n' sections "'$section'" found in file "'$aixFile'"'
+  exit 1
+endif
+set N = `awk '{ print $1 }' /tmp/grep.$$ | sed 's/PSN//'`
+@ n = $N
+@ m = $n + 1
+rm /tmp/grep.$$
+#
+echo '25p'                  >  /tmp/sed.$$
+echo "/^1PSN$n/,/^1PSN$m/p" >> /tmp/sed.$$
+echo '1,$d'                 >> /tmp/sed.$$
+#
+sed -f /tmp/sed.$$ $aaaFile > /tmp/out.$$
+rm /tmp/sed.$$
+#
+# convert to machine readable
+#
+# Rudy uses '> E.EEE' or '< E.EEE', the < or > need to be blanked
+#            ( ... ... )  -->  ... ... 
+#              E.___      -->  E.0000
+sed -e '/^ *$/d' \
+    -e 's/^1PSN/;&/' \
+    -e 's/\cL/;/' \
+    -e 's/^.*####/;&/' \
+    -e 's/^  *[0-9][0-9]* /x&/' \
+    -e 's/^ /; /' \
+    -e '/^x/s/[><)(]/ /g' \
+    -e '/^x/s/[X_]/0/g' \
+    -e '/^x/s/ -- /  0 /g' \
+    -e '/^x/s/ nano /      /g' \
+    -e 's/^x/ /' /tmp/out.$$ > $outFile
+rm /tmp/out.$$
+echo 'extract: section "'$section'" of "'$aaaFile'" extracted to file "'$outFile'" ('`cat $outFile|wc -l`' lines)'

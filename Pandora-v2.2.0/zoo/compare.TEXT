@@ -1,0 +1,41 @@
+      subroutine COMPARE
+C
+C     Rudolf Loeser, 1979 Mar 30
+C
+C     This is a dummy routine, serving merely as the vehicle for a
+C     general explanation of the various "COMPARE" routines.
+C
+C     (These routines are descendants of the functions
+C     "RELATE" and "ALCOMP," first written for the
+C     Control Data 6400 in 1970 Oct.)
+C
+C---- These routines compare the values of their first and second
+C     arguments, and, with the help of other control parameters,
+C     determine how these two values are related. They return a
+C     value in the parameter "FLAG" (type INTEGER), such that:
+C     FLAG= 0 if FIRST .eq. SECOND, to the specified tolerance;
+C     FLAG=+1 if FIRST .gt. SECOND; and
+C     FLAG=-1 if FIRST .lt. SECOND.
+C---- The value of FLAG will be set by testing for .eq. first!
+C
+C---- The following flavors of "COMPARE" have been implemented:
+C
+C     COMPD  (A,B,DELTA,FLAG)
+C             A,B,DELTA are double precision REALs (R*8), and
+C             DELTA is a relative tolerance.
+C
+C     COMPR (A,B,DELTA,FLAG)
+C             A,B,DELTA are single precision REALs (R*4), and
+C             otherwise "COMPR" is like "COMPD."
+C
+C     COMPI  (I,J,INT,FLAG)
+C             I,J,INT are long INTEGERs (I*4), and
+C             INT is an absolute tolerance.
+C
+C     COMPC  (P,Q,FLAG)
+C             P,Q are CHARACTER variables.
+C
+C----
+C     !beg
+C     !end
+      end

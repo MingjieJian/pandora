@@ -1,0 +1,141 @@
+%\magnification=1200
+%\input wupstuff.tex
+\newtoks\footline \footline={\hss\tenrm 2.\folio\hss}
+\pageno=1
+\top
+\vskip 1.5 true in
+\centerline{Section 2: {\bf Input Statements}}
+\blankline
+\blankline
+\centerline{\bf ***}
+\blankline
+\blankline
+PANDORA's input routines distinguish among several types of input
+statements, according to their format.
+\blankline
+\blankline
+\noindent {\bf 1}) Input of single quatities:
+\space
+NAME \quad ( \quad {\it q} \quad ) 
+\space
+where {\it q} can be a single {\intg}, {\flpt} or {\alfa} variable.
+\blankline
+\blankline    
+\noindent {\bf 1*}) Input of single quatities with one Z index:
+\space
+NAME \quad {\it z} \quad ( \quad {\it q} \quad )
+\space
+where {\it z} (\intg) is a Z index, and {\it q} can be a single
+{\intg} or {\flpt} variable.
+\blankline
+\blankline
+\noindent {\bf 2}) Input of simple arrays:
+\space
+NAME \quad ( \quad {\it q} \quad )
+\space
+where {\it q} can be an array of {\intg} elements or of {\flpt} elements.
+\blankline
+\blankline
+\noindent {\bf 2*}) Input of simple arrays with one Z index:
+\space
+NAME \quad Z \quad {\it z} \quad ( \quad {\it q} \quad )
+\space
+where {\it z} (\intg) is a Z index, and {\it q} can be an array of {\intg}
+elements or of {\flpt} elements.
+\ej
+\noindent {\bf 3}) Input of simple arrays with one level index or one Z index:
+\space
+NAME \quad {\it k} \quad ( \quad {\it q} \quad )
+\space
+where {\it k} (\intg) is either a level index or a Z index,
+and {\it q} can be an array of {\intg}
+elements or of {\flpt} elements.
+\blankline
+\blankline
+\noindent {\bf 3*}) Input of simple arrays with one level index and one Z index:
+\space
+NAME \quad {\it k} \quad Z \quad {\it z} \quad ( \quad {\it q} \quad )
+\space
+where {\it k} (\intg) is a level index, {\it z} (\intg) is a Z index, and {\it q}
+can be an array of {\intg} elements or of {\flpt} elements.
+\blankline
+\blankline
+\noindent {\bf 4}) Input of single quantities with two level indices:
+\space
+NAME \quad {\it u} \quad {\it l} \quad ( \quad {\it q} \quad )
+\space
+where {\it u} (\intg) and {\it l} (\intg) are two indices specifying a particular
+transition, ({\it u} $>$ {\it l}$\,$), and {\it q} can be a single {\intg},
+{\flpt} or {\alfa} variable.
+\blankline
+\blankline
+\noindent {\bf 5}) Input of simple arrays with two level indices:
+\space
+NAME \quad {\it u} \quad {\it l} \quad ( \quad {\it q} \quad )
+\space
+where {\it u} (\intg) and {\it l} (\intg) are two indices specifying a particular
+transition, ({\it u} $>$ {\it l}$\,$), and {\it q} can be an array of {\intg}
+elements or of {\flpt} elements.
+\blankline
+\blankline
+\noindent {\bf 5*}) Input of simple arrays with two level indices and one
+Z index:
+\space
+NAME \quad {\it u} \quad {\it l} \quad Z \quad {\it z} 
+\quad ( \quad {\it q} \quad )
+\space
+where {\it u} (\intg) and {\it l} (\intg) are two indices specifying a particular
+transition, ({\it u} $>$ {\it l}$\,$), {\it z} (\intg) is a Z index,
+and {\it q} can be an array of {\intg}
+elements or of {\flpt} elements.
+\ej
+\noindent {\bf 6}) Input of {\bf WEIGHT}:
+\space
+{\bf WEIGHT} \quad {\it u} \quad {\it l} \quad (
+\quad {\it m} \quad {\it n} \quad {\it w} \quad )
+\space
+where {\it u} (\intg) and {\it l} (\intg) are two indices specifying a particular
+transition, ({\it u} $>$ {\it l}$\,$), {\it m} (\intg) and {\it n} (\intg) are two
+indices specifying a particular term, ({\it m} $>$ {\it n}), and {\it w}
+(\flpt) is the weight itself.
+\blankline
+\blankline
+\noindent {\bf 7}) Input of single quatities with two level indices and one
+$\mu$ index:
+\space
+NAME \quad {\it u} \quad {\it l} \quad {\it k} \quad ( \quad {\it q} \quad )
+\space
+where {\it u} (\intg) and {\it l} (\intg) are two indices specifying a particular
+transition, ({\it u} $>$ {\it l}$\,$), {\it k} (\intg) is an index specifying a
+particular value of {\bf MU}, and {\it q} can be a single \intg, {\flpt} or
+{\alfa} variable.
+\blankline
+\blankline
+\noindent {\bf 8}) Input of simple arrays with two level indices and one
+$\mu$ index:
+\space
+NAME \quad {\it u} \quad {\it l} \quad {\it k} \quad ( \quad {\it q} \quad )
+\space
+where {\it u} (\intg) and {\it l} (\intg) are two indices specifying a particular
+transition, ({\it u} $>$ {\it l}$\,$), {\it k} (\intg) is an index specifying a
+particular value of {\bf MU}, and {\it q} can be an array of {\intg} elements or 
+of {\flpt} elements.
+\blankline
+\blankline
+\centerline{NOTE}
+\blankline
+\centerline{``NAME,'' ``Z,'' and ``{\bf WEIGHT},'' can be UPPER-, lower-, or
+MIxed-CasE.}
+%\vfill \vfill
+%\vfill \vfill
+%\vfill \vfill
+%\vfill \vfill
+%\vfill \vfill
+%\vfill \vfill
+%\vfill \vfill
+%\vfill 
+\vfill
+\noindent (Section 2 -- last revised: 1997 Apr 02) \par
+\message{Section 2 ends at page 2.\the\pageno}
+\ej
+%\end

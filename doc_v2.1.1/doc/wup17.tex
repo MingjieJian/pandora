@@ -1,0 +1,114 @@
+%\magnification=1200
+%\input wupstuff.tex
+\newtoks\footline \footline={\hss\tenrm 17.\folio\hss}
+\pageno=1
+\def\sI{\thinspace I}
+\def\sII{\thinspace II}
+\def\sIII{\thinspace III}
+\def\sIV{\thinspace IV}
+%
+%
+\top
+\vskip 1.5 true in
+\centerline{Section 17: {\bf Ion Abundances}}
+\blankline
+\blankline
+\centerline{\bf ***}
+\blankline
+\blankline
+For simplicity, PANDORA treats, in any one run, the levels of a
+single ionization stage together with the lowest level of the next
+higher stage. The sum of the populations of these two {\it ions}
+at depth $i$ is {\bf ABD} $\x$ {\bf RABD}$_i$ $\x$ {\bf HND}$_i$,
+where {\bf ABD} is the {\it elemental} abundance relative to 
+hydrogen, {\bf HND}$_i$ is the total hydrogen number density 
+(\ie protons + neutral hydrogen atoms + 2 $\x$ hydrogen molecules),
+and {\bf RABD}$_i$ is the fraction of the elemental abundance in 
+the two stages. By default, {\bf RABD}$_i = 1$ for all $i$.
+
+In a hydrogen run, {\bf ABD} = 1, and {\bf RABD}$_i$ is automatically
+calculated to account for the atomic fraction relative to the
+total including molecules (input parameter {\bf NHTSW}).
+In carbon and oxygen runs, {\bf RABD}$_i$ is automatically reduced
+to account for the portions of those elements that are in the form
+of carbon monoxide (input parameter {\bf NCOSW}).
+
+Diffusion may render invalid the assumption that {\bf ABD} of a
+particular element is constant throughout the atmosphere (\ie the
+elemental abundance itself may be depth-dependent). When the
+options AMDIFF and HEABD are both on, PANDORA calculates the
+depth-dependence of the total helium abundance, {\bf RHEAB}$_i$.
+The product {\bf ABD}$_{\rm He}$ $\x$ {\bf RHEAB}$_i$ is then
+used in that run in place of the constant {\bf ABD}$_{\rm He}$
+as appropriate. (By default, {\bf RHEAB}$_i = 1$ for all $i$.)
+\blankline
+The quantities FION$_i$ (the fraction of ions) and FLVS$_i$ 
+(the fraction representing the sum of bound-level populations),
+as they appear in the POPULATIONS printout, are included in
+output file {\tt fort.20} (see Section 8). Note that
+FLVS$_i$ + FION$_i$ = {\bf RABD}$_i$. Sets of FION \& FLVS values
+from the runs with different ionization stages can then be read
+by a separate program, called {\tt CENSUS}, which computes tables
+of {\bf RABD}$_i$ for the different ions. {\tt CENSUS} is available
+for general use, as an auxiliary program for PANDORA.
+
+For example, a He{\sI} run (He{\sI} levels plus the lowest level of He\sII)
+and a He{\sII} run (He{\sII} plus He\sIII) could both be started with default
+values of {\bf RABD}. The sets of FION \& FLVS values obtained from
+both these runs are then used by {\tt CENSUS} to compute a table
+of {\bf RABD}$_i$ values for He{\sI} and another table for He\sII.
+Values of the He{\sI} table will be less than unity because of
+the He{\sIII} fraction, and values of the He{\sII} table will be less
+than unity because of the He{\sI} fraction. \break After those initial parallel
+He{\sI} and He{\sII} runs starting with {\bf RABD}$_i$ = 1,
+it is then better to alternate between He{\sI} and He{\sII} runs, each
+followed by a {\tt CENSUS} run to update the {\bf RABD}$_i$ values,
+instead of making He{\sI} and He{\sII} runs in parallel before using
+{\tt CENSUS}.
+\blankline
+The FION \& FLVS data from PANDORA output file {\tt fort.20} consist
+of the lines following the marker {\tt [ CENSUS data start ]} and
+up to the marker \break {\tt [ CENSUS data end ]}, exclusive (see Section 8).
+Note that each set includes the {\bf Z}$_i$ table, and a number specifying
+the stage of ionization. 
+
+The input file for {\tt CENSUS} is {\tt fort.91}. It should contain the
+FION \& FLVS sets from the latest runs with all the ions of the element.
+The main {\tt CENSUS} \break printout file is {\tt fort.92}. There is also a
+data output file, {\tt fort.93}, which contains tables of {\bf RABD}$_i$
+for all the ions represented in the input, in the form of valid
+PANDORA input statements.
+\blankline
+{\tt CENSUS} can deal with the case of different {\bf Z}$_i$ tables in the
+various FION \& FLVS sets. If the {\bf Z}$_i$ tables do differ (in length
+and/or by value), the program constructs an all-inclusive merged
+table, $Z_{m}$, interpolates all FION and FLVS input tables to
+$Z_{m}$, computes the various {\bf RABD}$_i$ tables to correspond
+to $Z_{m}$, and then writes out the individual {\bf RABD}$_i$ tables
+to correspond to the appropriate original input {\bf Z}$_i$ tables. This
+procedure can lead to unwanted results if the various FION \& FLVS sets
+are intended to correspond to, say, identical {\bf TE}$_i$ tables, but
+the different PANDORA runs had assigned different {\bf Z} values to
+the depth slots associated with that same {\bf TE}$_i$ table. ({\it Note}
+that PANDORA recomputes {\bf Z} in HSE runs for which input values of
+{\bf ZMASS}$_i$ or {\bf TAUKIN}$_i$ were provided.) It is important to
+pay attention to this. The user may need to intervene and edit the data
+in the {\tt CENSUS} input file to make sure that the FION \& FLVS tables
+are associated with appropriate {\bf Z}$_i$ tables, and that inappropriate
+interpolations are avoided.
+
+
+\blankline
+\blankline
+\vfill \vfill
+\vfill \vfill
+\vfill \vfill
+\vfill \vfill
+\vfill \vfill
+\vfill \vfill
+\vfill \vfill
+\vfill \vfill
+\noindent (Section 17 -- last revised: 1997 Apr 08) \par
+\message{Section 17 ends at page 17.\the\pageno}
+\ej
+%\end

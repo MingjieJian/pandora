@@ -1,0 +1,69 @@
+%\magnification=1200
+%\input wupstuff.tex
+\newtoks\footline \footline={\hss\tenrm 20.\folio\hss}
+%
+\pageno=1
+%
+\top
+\vskip 1.5 true in
+\centerline{Section 20: {\bf Statistical Equilibrium Equations}}
+\blankline
+\blankline
+\centerline{\bf ***}
+\blankline
+\blankline
+This section supplements the derivation and discussion given in the paper
+``Iterative Solutions of Multilevel Transfer Problems'' by Avrett \& Loeser in
+\break {\it Numerical Radiative Transfer}, ed. W. Kalkofen (Cambridge University
+Press, 1987), pp. 135--161.
+\blankline
+The single-rate and net-rate statistical equilibrium equations are equations
+(10) and (14), respectively, in the paper cited above. To change from a net rate
+to a single rate for the $u,\ell$ transition, $u > \ell$, $\rho_{u,\ell}$ is
+replaced by $1 + (\Jbar_{u,\ell}/\alpha_{u,\ell})$ where $\alpha_{u,\ell}
+= 2 h \nu^3_{u,\ell} / c^2$, and $A_{u,\ell} (\Jbar_{u,\ell}/\alpha_{u,\ell})
+(p_u/p_\ell)$ is added to the collisional excitation rate $C_{\ell,u}$. 
+(Here $A_{u,\ell}$ is the Einstein emission coefficient and $p_u/p_\ell$
+is the ratio of statistical weights.) These equations are written in terms
+of the bound-level number densities $n_m$. The continuum number density
+was eliminated by the use of equation (2).
+
+Equation (10) or (14) for $m = 2, 3, \cdots , M$ 
+when divided by $n_1$ each form a set of $M-1$ equations
+for $n_2/n_1, n_3/n_1, \cdots , n_M/n_1$ given the {\Jbar} values in the
+first case and the $\rho$ values in the second. (Here M, the number of bound
+levels, corresponds to the input parameter {\bf NL}.) These equations can be
+expressed in terms of the departure coefficient ratios $b_2/b_1, 
+b_3/b_1, \cdots , b_M/b_1$ if the rate coefficients are multiplied by
+$\gamma_m/\gamma_1$ where $\gamma_m = p_m \exp(-h\nu_{m1}/{kT})$.
+
+If we specified all transitions as ``single,'' PANDORA would use the set of
+equations (10) to obtain ``b-ratios from {\Jbar}.'' If we specified all
+transitions as ``net,'' PANDORA would use equations (14) to obtain ``b-ratios
+from $\rho$.'' When PANDORA starts a calculation from scratch with no
+input $\rho$ values ({\ie} all input ${\bf RHO}^{u,\ell}_i = 0$) and no input
+{\Jbar} values ({\ie} all input ${\bf JBAR}^{u,\ell}_i = 0$)
+the ``b-ratios from $\rho$'' equations are used regardless of
+any transitions specified as ``single.'' We include a ``b-ratios from
+{\Jbar}'' calculation in each iteration mainly as a consistency check
+regardless of transitions specified as ``net.''
+
+Otherwise, transitions are consistently treated as net or single according
+to the input transition rate selector {\bf KRATE}$^{u,\ell} = 1$ or
+{\bf KRATE}$^{u,\ell} = 2$, respectively. Some experimentation may be
+required in any given situation to determine which rate selector value to
+use for which transitions; we have found that best results are obtained by
+choosing 1 for strong lines and 2 for weak lines.
+%\vfill \vfill
+%\vfill \vfill
+%\vfill \vfill
+%\vfill \vfill
+%\vfill \vfill
+%\vfill \vfill
+%\vfill \vfill
+%\vfill 
+\vfill
+\noindent (Section 20 -- last revised: 1996 Apr 02)% \par
+\message{Section 20 ends at page 20.\the\pageno}
+\ej
+%\end

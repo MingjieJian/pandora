@@ -1,0 +1,457 @@
+      subroutine RIIA
+     $(X1,X2,AV,RII)
+C
+C
+C     RETURNS THE REDISTRIBUTION FUNCTION (RII-A).  X1 AND X2 ARE THE
+C     FREQUENCY ARGUMENTS IN DOPPLER UNITS.  THE VOIGT PARAMETER AV IS
+C     PASSED THROUGH COMMON/PAR/.  THE METHOD IS DESCRIBED IN
+C     ADAMS, T.F., HUMMER, D.G., AND RYBICKI, G.B. 1971,
+C     J. QUANT. SPECTROSC. RADIAT. TRANSFER. VOL.11, PP. 1365-1376.
+C
+C
+C     RL, 2005 Feb 25
+C     Adpated (to conform minimally to PANDORA conventions)
+C     from the original code of Adams, Hummer and Rybicki (above),
+C     kindly provided by George Rybicki.
+C
+C     !DASH
+      save
+C     !DASH
+      real*8 A, ACCU, AV, B, BIN, C1, C2, C3, C4, CRIT, CWARTR, DERFCR,
+     $       DERFCRS, ECR, ER, FOUR, HALF, ONE, PI, R, R2, R4, RII, S,
+     $       S2, SQPI, SUM, SUM1, T, TT, TWO, W, X, X1, X2, XINT, XP,
+     $       Y1, Y2, ZERO
+      integer I, IZONE, JJM, K, NOR, NORD, NORK, NZONE
+      logical INIT, MORE
+C     !COM
+      common /RIIAFLT/ BIN,T,TT,W
+      common /RIIAINT/ NZONE,NORD
+C     !DASH
+C     !EJECT
+      external  RIISNAP, RIIEYE, DERFC
+      intrinsic abs
+C
+      dimension BIN(11,11),T(31),TT(31),NORD(31),W(31,11)
+      dimension XINT(11)
+C
+      data PI/3.14159265358979D0/, SQPI/1.77245385090552D0/
+      data CRIT,ACCU /1.D-20, 3.D-6/
+      data ZERO,CWARTR,HALF /0.D0, 2.5D-1, 5.D-1/
+      data ONE,TWO,FOUR     /1.D0, 2.D0, 4.D0/
+      data C1,C2,C3,C4 /1.5D0, 4.5D0, 15.D0, 20.D0/
+      data INIT/.TRUE./
+C
+C     !BEG
+C
+C     ON FIRST ENTRY ARRAYS BIN, NORD, T, TT, AND W ARE INITIALIZED
+C     BY SSNAP.
+C
+      if(INIT) then
+        call RIISNAP
+        INIT=.FALSE.
+      endif
+C
+C
+      R= HALF*abs(X1- X2)
+      S= HALF*abs(X1+ X2)
+C
+C     SOME SECTIONS BELOW REQUIRE X BE THE GREATER OF ABS(X1) AND
+C     ABS(X2). XP IS CHOSEN TO GIVE THE SAME R AND S AS X1 AND X2 DO.
+C
+      X=  R+S
+      XP= S-R
+C     !EJECT
+C
+      if((S.le.FOUR).and.(R.le.FOUR).and.(AV.ge.CRIT)) then
+C
+C       THIS SECTION WRITTEN BY D. G. HUMMER GIVES AT LEAST FIVE
+C       SIGNIFICANT FIGURES FOR S.LE.4. AND R.LE.4.. (ORIGINALLY SNAP.)
+C
+C       FIND K SUCH THAT TT(K-1).LT.R.LE.TT(K)
+C
+        K=1
+        do while (R.gt.TT(K))
+          K=K+1
+          if(K.eq.20)then
+            stop 'RII FAILED'
+          endif
+        enddo
+        NORK=NORD(K)
+        A=R
+        B=TT(K)
+        Y1=XP
+        Y2=-X
+        JJM=NORK
+        call RIIEYE (XINT,JJM,A,B,Y1,Y2,AV)
+        SUM=ZERO
+        do I=1,NORK
+          SUM=SUM+W(K,I)*XINT(I)
+        enddo
+        IZONE=K
+        MORE=.TRUE.
+        do while(MORE)
+          IZONE=IZONE+1
+          NOR=NORD(IZONE)
+          A=T(IZONE)
+          B=TT(IZONE)
+          Y1=XP
+          Y2=-X
+          JJM=NOR
+          call RIIEYE (XINT,JJM,A,B,Y1,Y2,AV)
+          SUM1=ZERO
+          do I=1,NOR
+            SUM1=SUM1+W(IZONE,I)*XINT(I)
+          enddo
+          SUM=SUM+SUM1
+          MORE=(SUM1/SUM).GT.ACCU.AND.IZONE.LT.NZONE
+        enddo
+        RII= HALF*SUM/PI
+C
+C     !EJECT
+      else if(S.gt.ONE) then
+C
+C       THIS SECTION WRITTEN BY T. ADAMS IS ACCURATE TO  2 PARTS IN
+C       1000.  FOR AV=0.01,  S=4.0 AND R=0. AND IS MUCH BETTER FOR
+C       LARGER R,S.  RIIA IS COMPUTED USING THE CORE PLUS FIRST THREE
+C       WING TERMS FOR THE VOIGT FUNCTION UNDER THE INTEGRAL.
+C
+        R2= R**2
+        R4= R2**2
+        S2= S**2
+        ER= exp(-R2)
+        call DERFC (R,DERFCR)
+        ECR= SQPI*R*DERFCR
+        call DERFC ((R+S),DERFCRS)
+        RII= HALF*DERFCRS+
+     $	  AV/(PI*SQPI*S2)*((ER-ECR)*(ONE-AV**2/S2)+
+     $	 ((ONE+R**2)*ER-(C1+R**2)*ECR)/S2+
+     $	  ((TWO+C2*R2+R4)*ER-CWARTR*(C3+C4*R2
+     $    + FOUR*R4)*ECR)/S2**2)
+C
+      else
+C
+C       IN THE REMAINING REGIONS R(II-A) IS APPROXIMATED WELL BY R(I-A).
+C
+        call DERFC ((R+S),DERFCRS)
+        RII= HALF*DERFCRS
+C
+      endif
+C     !END
+C
+      return
+      end
+      subroutine RIIEYE
+     $(XINT,JJM,A,B,Y1,Y2,AV)
+C
+C     COMPUTES XINT(J)= I(J,A,B,Y1) + I(J,A,B,Y2), J=1,JJM.
+C     WRITTEN BY D. G. HUMMER.  REQUIRED BY SUBROUTINE RIIA.
+C
+C       JJM IS MAXIMUM ORDER OF I(A,B,Y) PLUS ONE
+C
+C     !DASH
+      save
+C     !DASH
+      real*8 A, APY1, APY2, ATERM1, ATERM2, AV, AVI, AVS, B, BIN, BPY1,
+     $       BPY2, BTERM1, BTERM2, F11, F12, F21, F22, G1, G2, HALF,
+     $       ONE, SUM, T, TT, U1, U2, W, XINT, Y1, Y2, YM1, YM2, YY1,
+     $       YY2, ZERO
+      integer II, IND, JJ, JJJ, JJM, NORD, NZONE
+C     !COM
+      common /RIIAFLT/ BIN,T,TT,W
+      common /RIIAINT/ NZONE,NORD
+C     !DASH
+      dimension BIN(11,11),T(31),TT(31),NORD(31),W(31,11)
+      dimension XINT(11),U1(11),U2(11)
+C
+      data ZERO,HALF,ONE /0.D0, 5.D-1, 1.D0/
+C
+C     !BEG
+      AVI=ONE/AV
+      AVS=AV**2
+      YM1=-Y1
+      YM2=-Y2
+      APY1=A+Y1
+      BPY1=B+Y1
+      APY2=A+Y2
+      BPY2=B+Y2
+      ATERM1=APY1
+      BTERM1=BPY1
+      ATERM2=APY2
+      BTERM2=BPY2
+C     !EJECT
+      F11=atan (BPY1*AVI)-atan (APY1*AVI)
+      F12=atan (BPY2*AVI)-atan (APY2*AVI)
+      F21=HALF*log((BPY1*BPY1+AVS)/(APY1*APY1+AVS))
+      F22=HALF*log((BPY2*BPY2+AVS)/(APY2*APY2+AVS))
+      U1(1)=F11
+      U1(2)=AV*F21
+      U2(1)=F12
+      U2(2)=AV*F22
+      G2=B-A
+      G1=G2
+      JJJ=1
+      do JJ=3,JJM
+        U1(JJ)=-AVS*U1(JJJ) +AV*G1
+        U2(JJ)=-AVS*U2(JJJ) +AV*G2
+        JJJ=JJJ+1
+        ATERM1=ATERM1*APY1
+        BTERM1=BTERM1*BPY1
+        ATERM2=ATERM2*APY2
+        BTERM2=BTERM2*BPY2
+        G1=(BTERM1-ATERM1)/JJJ
+        G2=(BTERM2-ATERM2)/JJJ
+      enddo
+      do JJ=1,JJM
+        IND=JJ
+        SUM=ZERO
+        YY1=ONE
+        YY2=ONE
+        do II=1,JJ
+          SUM=SUM+(YY1*U1(IND) +YY2*U2(IND))*BIN(JJ,II)
+          IND=IND-1
+          YY1=YM1*YY1
+          YY2=YM2*YY2
+        enddo
+        XINT(JJ)=SUM
+      enddo
+C     !END
+C
+      return
+      end
+      subroutine DERFC
+     $(X,VAL)
+C
+C     DOUBLE PRECISION COMPLEMENTARY ERROR FUNCTION.
+C     WRITTEN BY G. RYBICKI
+C
+C     !DASH
+      save
+C     !DASH
+      real*8 C, CWARTR, D, E, FAC, HALF, ONE, SUM, V1, V2, V3, VAL, W,
+     $       X, X2, XN, Y, ZERO
+      integer N
+      logical INIT
+C     !DASH
+      dimension C(26),D(26),E(26)
+C
+      data ZERO,HALF,CWARTR,ONE /0.D0, 5.D-1, 2.5D-1, 1.D0/
+      data V1,V2,V3 /0.159154943091895D0, 12.5663706143592D0, 6.5D0/
+      DATA INIT /.TRUE./
+C
+C     !BEG
+      if(INIT)then
+        FAC = ONE
+        do N=1,26
+          FAC=-FAC
+          XN=N
+          Y=V3-CWARTR*(XN-HALF)
+          C(N)=V1*exp(-Y**2)
+          D(N)=Y*FAC
+          E(N)=Y**2
+        enddo
+        INIT=.FALSE.
+      endif
+      X2=X*X
+      W=exp(-V2*X)
+      SUM=ZERO
+      do N=1,26
+        SUM=SUM+C(N)*(X+D(N)*W)/(E(N)+X2)
+      enddo
+      VAL=exp(-X2)*SUM
+C     !END
+C
+      return
+      end
+      subroutine RIISNAP
+C
+C     INITIALIZATION FOR RIIA.
+C
+C     !DASH
+      save
+C     !DASH
+      real*8 BIN, ONE, T, TT, W
+      integer I, I1, J, NORD, NZONE
+C     !COM
+      common /RIIAFLT/ BIN,T,TT,W
+      common /RIIAINT/ NZONE,NORD
+C     !DASH
+      dimension BIN(11,11),T(31),TT(31),NORD(31),W(31,11)
+C
+      data T( 1), TT( 1), NORD( 1) /0.000D+00, 1.000D+00, 7/
+      data (W( 1,J),J=1,7) /
+     $  9.9999976605455533D-01, -1.1283651862212391D+00,
+     $ -3.1507009819096987D-05,  3.7469691326482499D-01,
+     $  1.0969577323715365D-02, -1.4525320059547539D-01,
+     $  4.5283629139899707D-02/
+C
+      data T( 2), TT( 2), NORD( 2) /1.000D+00, 2.000D+00, 9/
+      data (W( 2,J),J=1,9) /
+     $  9.6945181482093085D-01, -9.5401029664329423D-01,
+     $ -4.1602911755930486D-01,  8.9493265047642982D-01,
+     $ -3.2244140891627473D-01, -8.3741908992954001D-02,
+     $  9.1724012562984287D-02, -2.4988480635675690D-02,
+     $  2.4019302313051109D-03/
+C
+      data T( 3), TT( 3), NORD( 3) /2.000D+00, 2.500D+00, 9/
+      data (W( 3,J),J=1,9) /
+     $  9.6122755007256179D-01, -6.6521758412350755D-01,
+     $ -1.4238822991911908D+00,  2.4731134586778161D+00,
+     $ -1.7173568010483990D+00,  6.6301916407353585D-01,
+     $ -1.4983293464482282D-01,  1.8673668868899161D-02,
+     $ -9.9734121494596668D-04/
+C
+      data T( 4), TT( 4), NORD( 4) /2.500D+00, 3.000D+00, 9/
+      data (W( 4,J),J=1,9) /
+     $  2.4274989282613694D+00, -5.3860364770826217D+00,
+     $  5.2417052130382153D+00, -2.9177400191658891D+00,
+     $  1.0140379931366116D+00, -2.2476407481903181D-01,
+     $  3.0929736484216383D-02, -2.4054251792972537D-03,
+     $  8.0436808520971681D-05/
+C
+      data T( 5), TT( 5), NORD( 5) /3.000D+00, 3.250D+00, 7/
+      data (W( 5,J),J=1,7) /
+     $  6.6617627254774300D-01, -1.1747192424864846D+00,
+     $  8.6693506608773022D-01, -3.4261786575313326D-01,
+     $  7.6452669714395068D-02, -9.1303145891920381D-03,
+     $  4.5578947086331330D-04/
+C
+      data T( 6), TT( 6), NORD( 6) /3.250D+00, 3.500D+00, 8/
+      data (W( 6,J),J=1,8) /
+     $  8.2654668703602811D-01, -1.5855728654916279D+00,
+     $  1.3084659346211094D+00, -6.0198331987668255D-01,
+     $  1.6671260761855972D-01, -2.7785269478297982D-02,
+     $  2.5799238314300036D-03, -1.0293324261700339D-04/
+      data T( 7), TT( 7), NORD( 7) /3.500D+00, 3.750D+00, 8/
+      data (W( 7,J),J=1,8) /
+     $  3.8441821577836399D-01, -6.9792089444541446D-01,
+     $  5.4445199853411977D-01, -2.3653356670252645D-01,
+     $  6.1795863115287350D-02, -9.7072124657690512D-03,
+     $  8.4881749346542359D-04, -3.1868297194771837D-05/
+C
+      data T( 8), TT( 8), NORD( 8) /3.750D+00, 4.000D+00, 8/
+      data (W( 8,J),J=1,8) /
+     $  1.4688078503902387D-01, -2.5232926550330950D-01,
+     $  1.8611997106863650D-01, -7.6400403447549874D-02,
+     $  1.8847479149378969D-02, -2.7939780205202362D-03,
+     $  2.3043117408351151D-04, -8.1558033653491198D-06/
+C
+      data T( 9), TT( 9), NORD( 9) /4.000D+00, 4.200D+00, 7/
+      data (W( 9,J),J=1,7) /
+     $  1.2499605057081141D-02, -1.7588407256874286D-02,
+     $  1.0324506069553962D-02, -3.2359781167923114D-03,
+     $  5.7112627249201389D-04, -5.3814576486265758D-05,
+     $  2.1148296663807851D-06/
+C
+      data T(10), TT(10), NORD(10) /4.200D+00, 4.400D+00, 7/
+      data (W(10,J),J=1,7) /
+     $  3.9836219092089166D-03, -5.3689403398009252D-03,
+     $  3.0179080851003607D-03, -9.0556335089643629D-04,
+     $  1.5297860375300709D-04, -1.3794274639275200D-05,
+     $  5.1867541661709880D-07/
+C
+      data T(11), TT(11), NORD(11) /4.400D+00, 4.600D+00, 7/
+      data (W(11,J),J=1,7) /
+     $  1.1431088137144679D-03, -1.4776826259657368D-03,
+     $  7.9652849728328882D-04, -2.2916157482797515D-04,
+     $  3.7111727654208043D-05, -3.2075342830142669D-06,
+     $  1.1558426974927460D-07/
+C
+      data T(12), TT(12), NORD(12) /4.600D+00, 4.800D+00, 7/
+      data (W(12,J),J=1,7) /
+     $  2.9600628822365973D-04, -3.6751415325883580D-04,
+     $  1.9024430833723876D-04, -5.2554678928271394D-05,
+     $  8.1711911496448604D-06, -6.7795181153507954D-07,
+     $  2.3449381343972771D-08/
+C
+      data T(13), TT(13), NORD(13) /4.800D+00, 5.000D+00, 7/
+      data (W(13,J),J=1,7) /
+     $  6.9305939431374369D-05, -8.2756676634722019D-05,
+     $  4.1195668454915408D-05, -1.0942497785901749D-05,
+     $  1.6357336365588354D-06, -1.3046907348388944D-07,
+     $  4.3379384916748285D-09/
+C
+      data T(14), TT(14), NORD(14) /5.000D+00, 5.100D+00, 6/
+      data (W(14,J),J=1,6) /
+     $  2.6801418201315893D-06, -2.5949023706929707D-06,
+     $  1.0053885270759394D-06, -1.9484960159510124D-07,
+     $  1.8889096353337952D-08, -7.3274452081745953D-10/
+C
+      data T(15), TT(15), NORD(15) /5.100D+00, 5.200D+00, 6/
+      data (W(15,J),J=1,6) /
+     $  1.1540395300048841D-06, -1.0967040251693193D-06,
+     $  4.1705413443270171D-07, -7.9329275359352108D-08,
+     $  7.5475623266619174D-09, -2.8734024546808320D-10/
+C
+      data T(16), TT(16), NORD(16) /5.200D+00, 5.300D+00, 6/
+      data (W(16,J),J=1,6) /
+     $  4.8542241356883816D-07, -4.5292903272606608D-07,
+     $  1.6910671597377248D-07, -3.1580311974333084D-08,
+     $  2.9497932922038958D-09, -1.1024815432352461D-10/
+C
+      data T(17), TT(17), NORD(17) /5.300D+00, 5.400D+00, 6/
+      data (W(17,J),J=1,6) /
+     $  1.9948530083700565D-07, -1.8280797773574517D-07,
+     $  6.7032778930242616D-08, -1.2293972512503073D-08,
+     $  1.1277309261138931D-09, -4.1391625345607203D-11/
+C
+      data T(18), TT(18), NORD(18) /5.400D+00, 5.500D+00, 6/
+      data (W(18,J),J=1,6) /
+     $  8.0102592626519187D-08, -7.2116291040880039D-08,
+     $  2.5978657238718047D-08, -4.6806066517200111D-09,
+     $  4.2177954820762054D-10, -1.5207323328264058D-11/
+C
+      data T(19), TT(19), NORD(19) /5.500D+00, 5.600D+00, 6/
+      data (W(19,J),J=1,6) /
+     $  3.1432337409157419D-08, -2.7809368351101950D-08,
+     $  9.8444580738216470D-09, -1.7429495839624309D-09,
+     $  1.5433569793879611D-10, -5.4679292232604127D-12/
+C
+      data T(20), TT(20), NORD(20) /5.600D+00, 5.700D+00, 6/
+      data (W(20,J),J=1,6) /
+     $  1.2054478144762794D-08, -1.0483639511004741D-08,
+     $  3.6479818298991201D-09, -6.3485809339278195D-10,
+     $  5.5256156792650127D-11, -1.9242054869084460D-12/
+C
+      data T(21), TT(21), NORD(21) /5.700D+00, 5.800D+00, 6/
+      data (W(21,J),J=1,6) /
+     $  4.5186273247581747D-09, -3.8640042617166820D-09,
+     $  1.3220172275959838D-09, -2.2621006170021051D-10,
+     $  1.9357932007821166D-11, -6.6277374968707293D-13/
+C
+      data T(22), TT(22), NORD(22) /5.800D+00, 5.900D+00, 6/
+      data (W(22,J),J=1,6) /
+     $  1.6557450287559433D-09, -1.3925373033619080D-09,
+     $  4.6857696687193210D-10, -7.8853851770893526D-11,
+     $  6.6363612069443661D-12, -2.2345475042644403D-13/
+C
+      data T(23), TT(23), NORD(23) /5.900D+00, 6.000D+00, 6/
+      data (W(23,J),J=1,6) /
+     $  5.9312950862548702D-10, -4.9074617530745739D-10,
+     $  1.6244935301540863D-10, -2.6893055824333123D-11,
+     $  2.2264909976491307D-12, -7.3747610431211406D-14/
+C
+      data ONE /1.D0/
+C     !DASH
+C     !EJECT
+C
+C     !BEG
+C
+C     BINOMIAL COEFFICIENTS COMPUTED BY PASCAL'S TRIANGLE.
+C
+      do 100 I=1,11
+        BIN(I,1)=ONE
+        BIN(I,I)=ONE
+  100 continue
+      do 102 I=3,11
+        I1=I-1
+        do 101 J=2,I1
+          BIN(I,J)=BIN(I1,J)+BIN(I1,J-1)
+  101   continue
+  102 continue
+C
+      NZONE = 23
+C
+C     !END
+C
+      return
+      end

@@ -1,0 +1,75 @@
+>
+>
+>   C A R B O N   I ,   2   L E V E L S
+>
+>   started from c1l19, by removing levels 8-19. 2006 Jan 17
+>   2-level version of c1l7 with level 2 equal to level 5 of c1l7
+>   and two symmetric components of the PRD 2/1 line instead of 6
+>   2006 Jul 3, same dielectronic recombination as in c1l19.atm
+>   2006 Dec 11, CE 2/1 from Pequignot & Aldrovandi 1976 
+>
+NL ( 2 ) >
+MR ( 9 4 ) >
+>
+RUNTOPOP ( 1 2 ) >
+>
+NT     ( 1 ) >
+INPAIR ( 2 1 ) >
+>
+NTE    ( 5 ) >
+LDLMAX ( 2 ) >
+>
+USE ( INPUT ) >
+>
+>   C A R B O N   I ,   2   L E V E L S
+>
+>
+ATOLAB ( C1L2 ) >
+NAME   ( CARBON ) >
+ELSYM  ( C )  IONSTAGE ( 1 ) >
+>
+MASS ( 12. ) >
+PART ( 6. ) >
+>
+WNU    ( 0. 60352.63 ) >
+LEVDES ( 2p2_3P p3s_3P ) >
+WNUK   ( 90917.36 ) >
+>
+P   ( 9. 9. ) >
+LCH ( 0 0 ) >
+>
+> PHOTO CROSSSECTIONS FOR THE THREE LOWEST LEVELS FROM
+> N. Przybilla, K. Butler, & R. P. Kudritzki 2001, A&A 379, 936, Fig. 2.
+> STRONG AUTOIONIZATION FEATURES INCLUDED
+CP ( M 1.E-17 1.8 .0146 ) >
+>
+aparad ( 4.7e-13 )  apeta ( .624 ) >
+napknt ( 10 ) >
+apci   ( 2.115e-9 3.264e-9 5.447e-7 2.79e-4 1.118e-4 5.277e-7 8.887e-7 > 
+         5.215e-4 2.193e-4 -2.605e-5 ) >
+apei   ( .001049 .00636 1.312 10.4 18.48 1.061 2.116 10.7 20.6 44.08 ) >
+>
+TER ( M 1000. 3. 5. 7. 9. 10. )
+>
+CI 1   ( M 1.E-9 2.45 3.52 4.54 5.57 8.68 )
+WRAT 1 ( 1080. 1050. 1000. 950. 900. 850. 800. 750. 700. ) >
+RRCP 1 ( 1. .99 .97 .94 .94 .91 .83 .74 .67 ) >
+>
+CI   2 ( M 1.E-10 3.35 4.55 5.5 6.27 7.87 ) >
+WRAT 2 ( 2000. 1680. 1217. 950. ) >
+RRCP 2 ( .5531 .44869 .3047 .2263 ) >
+>
+> CSKul: Konjevic et al. (1984, J.Phys.Chem.Ref.Data 13, 619) - PM
+>
+A   2   1 ( 3.2987E+08 ) >
+> CE 2 1 ( F 6.93E-8 ) >
+LDL 2 1 ( 2 ) >
+DDL 2 1 ( -1. 1. ) >
+CDL 2 1 ( .5 .5 ) >
+CVW 2 1 ( F 1.67E-5 )
+CSK 2 1 ( F 2.36E-7 ) >
+>
+CE 2 1 ( M 1.E-08 2.104 2.288 2.331 2.319 2.305 ) >
+>
+USE ( INPUT ) >
+

@@ -1,0 +1,80 @@
+      subroutine BRON
+     $(VEC,N,L,PNT,JUDGE)
+C
+C---- ACM Algorithm # 426, written by C. BRON,
+C     CACM Vol. 15, # 6, May 1972, p. 357.
+C
+C     Adapted to the DEC VAX11/780 by R. Loeser, April 1979
+C
+C     This is a dummy routine, serving merely as a vehicle for an
+C     explanation of various versions of "BRON."
+C
+C---- "BRON" is an internal sorting procedure.
+C     It establishes the sorted order of the array "VEC," of length N.
+C
+C---- The following flavors of "BRON" have been implemented:
+C
+C     BRONC (C,N,L,PNT,JUDGE) - C is type CHARACTER*(*);
+C
+C     BROND (D,N,L,PNT,JUDGE) - D is type DOUBLE PRECISION;
+C
+C     BRONI (I,N,L,PNT,JUDGE) - I is type INTEGER;
+C
+C     BRONR (R,N,L,PNT,JUDGE) - R is type REAL.
+C
+C---- Comparisons of array elements are done by means of a
+C     user-supplied subroutine, "JUDGE," as follows:
+C
+C     call JUDGE (VEC,I,J,IFLG) must return -
+C
+C       IFLG .lt. 0 when VEC(I) .lt. VEC(J);
+C       IFLG .eq. 0 when VEC(I) .eq. VEC(J); and
+C       IFLG .gt. 0 when VEC(I) .gt. VEC(J).
+C
+C---- Adaptation of "BRON" from the ALGOL original involves
+C     simulation of a pushdown stack. Storage for this stack,
+C     "PUSH," is allocated within "BRON," and its size (4*26)
+C     is sufficient for values of "N" .le. 2**(24)-1.
+C
+C---- An auxiliary array, "PNT" (type INTEGER) of size M,
+C     M .ge. N, is also required. Its role is described below.
+C     !EJECT
+C---- Upon return from "BRON," the contents of "VEC" will
+C                      ***   N O T   ***
+C     have been rearranged into sorted order. Instead, the values
+C     of "L" and "PNT" will have been set to indicate the sorted
+C     order of "VEC" as follows:
+C
+C     (A)  to obtain the first member of the sorted sequence -
+C          set K=L, then VEC(K);
+C     (B)  to obtain the next member of the sorted sequence -
+C          set K=PNT(K), then VEC(K);
+C     (C)  to obtain the remaining members of the sorted sequence -
+C          repeat step (B) as needed.
+C
+C     Note that "L" and "PNT" can also be used to access
+C     other arrays which might be associated with the key
+C     array "VEC."
+C
+C     Other subroutines exist, called "ORDER'X," which use a
+C     canonical pointer array, similar to "L" and "PNT," 
+C     to permute arrays in to sort order. A special subroutine,
+C     "BRONTP," must first be used to translate "L" and "PNT"
+C     into canonical form.
+C
+C---- Error returns:
+C     L .gt. 0 means - OK;
+C     L .eq. 0 means - N .le. 0; and
+C     L .lt. 0 means - pushdown storage capacity exceeded.
+C
+C---- Two measures of algorithm performance are also returned
+C     by "BRON," in
+C     common /SORTST/ XNC,XNR
+C     XNC will be the number of comparisons, and
+C     XNR will be the number of recursive calls (of "HEAD"),
+C     each normalized by N*log2(N).
+C
+C----
+C     !beg
+C     !end
+      end

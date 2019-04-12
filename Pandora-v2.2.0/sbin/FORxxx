@@ -1,0 +1,19 @@
+#!/bin/csh
+#
+if ($#argv != 2) then
+  echo FORx need 2 args
+  exit
+endif
+#
+switch ($1)
+ case -ifort:
+   echo $2 | awk '{printf "FORT%d",$1}'
+ breaksw
+ case -pgi:
+   echo $2 | awk '{printf "FOR%3.3d",$1}'
+ breaksw
+ default:
+   echo invalid case
+endsw
+exit
+#

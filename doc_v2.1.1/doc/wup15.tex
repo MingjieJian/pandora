@@ -1,0 +1,197 @@
+%\magnification=1200
+%\input wupstuff.tex
+\newtoks\footline \footline={\hss\tenrm 15.\folio\hss}
+%
+\pageno=1
+%
+\top
+\vskip 1.5 true in
+\centerline{Section 15: {\bf \underbar{P}artial 
+                         \underbar{R}e\underbar{D}istribution}}
+\blankline
+\blankline
+\centerline{\bf ***}
+\blankline
+\blankline
+PANDORA uses either ``complete redistribution'' (CRD, the default) or \break
+``partial redistribution'' (PRD, selected by input switch {\bf SCH}$^{u, \ell}$)
+to compute the line source function of transition $(u,\ell)$. PRD can be done
+by one of two methods, depending on the option PRDMETH. When PRDMETH is on,
+PANDORA uses a procedure based on the formulation of Hubeny \& Lites as
+discussed in ApJ., {\bf 455}, 376. When PRDMETH is off, PANDORA uses a
+simplified procedure based on the formulation of Kneer \& Heasley as discussed
+in Appendix A of Vernazza, Avrett \& Loeser (1981), Astrophys.J.Suppl.
+{\bf 45}, 635, and in a paper by Avrett \& Loeser (1984) appearing in
+{\it Methods in Radiative Transfer}, Kalkofen, ed., pp. 341--379. Note that
+PRDMETH selects the method for all PRD-transitions in a run.
+\blankline
+\blankline
+\blankline
+\centerline{\underbar{Input Parameters}}
+\blankline
+Set {\bf SCH}$^{u, \ell} = 1$ when PRD is to be used for transition
+$(u, \ell)$ (see also Note 47 of Section 5), and set option PRDMETH for the
+desired procedure. The input parameters ${\bf GMMA}^{u,\ell}$ and
+{\bf IGMSW} control the calculation of $\gamma$ and are always required.
+\blankline
+When PRDMETH is on the other input parameters are {\bf ITPRD}, {\bf PRDCV}
+and {\bf IGII}. The iterations limit {\bf ITPRD} and the convergence
+criterion {\bf PRDCV} control the (JNU : S) iterations.
+{\bf IGII} determines how the function RII is computed:
+{\bf IGII} = 1 selects the fast approximations developed by Gouttebroze, while 
+{\bf IGII} = 2 selects the more accurate calculation of Adams, Hummer \& Rybicki.
+\ej
+When PRDMETH is off the other input parameters are:
+${\bf XC}^{u,\ell}$, ${\bf XP}^{u,\ell}$, ${\bf XR}^{u,\ell}$, ${\bf DDR}_k$
+and ${\bf XDR}_k$ for $0 \leq k \leq {\bf NDR}$, {\bf XCL}, {\bf TAUCL},
+{\bf LMDL2}, {\bf LMDL3}, and {\bf DRLIM}, used to compute $DR$.
+Note that values of ${\bf XC}^{u,\ell}$, ${\bf XP}^{u,\ell}$,
+and ${\bf XR}^{u,\ell}$ can be specified for each PRD transition;
+but there is only one table of {\bf DDR} vs. {\bf XDR} values,
+used by all PRD transitions of a run, and only one pair of {\bf XCL} and
+{\bf TAUCL} values.
+\blankline
+The remainder of this section relates to Gamma($\gamma$) and to $DR$.
+\blankline
+\blankline
+\centerline{\underbar{Gamma}}
+\blankline
+$\gamma_i^{u, \ell}$ is the degree of coherent scattering in the wings
+of the $(u,\ell)$ line. $\gamma$ is defined in equation (73) of
+Avrett \& Loeser (1984).  $\gamma$ depends on depth (index $i$) and is very
+close to unity for low densities. PANDORA provides three ways of specifying
+$\gamma_i^{u, \ell}$, selected by the value of input parameter
+{\bf GMMA}$^{u, \ell}$.
+\blankline
+When {\bf GMMA}$^{u, \ell} = -1$
+(the default value), then $\gamma_i^{u, \ell}$ = 
+{\bf CRD}$^{u, \ell} / DP_i^{u, \ell}$, where the input parameter
+{\bf CRD}$^{u, \ell}$ is the radiative damping parameter and \break
+$DP_i^{u, \ell}$ is the computed total (radiative and collisional) damping
+parameter. 
+\blankline
+When {\bf GMMA}$^{u, \ell} < 0$, but $> -1$, (say,
+{\bf GMMA}$^{u, \ell} = -.99$), then the smaller of
+($|${\bf GMMA}$^{u, \ell}|$, {\bf CRD}$^{u, \ell} / DP_i^{u, \ell}$)
+is used as the value of $\gamma_i^{u, \ell}$.
+\blankline
+When {\bf GMMA}$^{u, \ell} > 0$, then 
+$\gamma_i^{u, \ell}$ = {\bf GMMA}$^{u, \ell}$ ({\it i.e.} that constant
+value at all depths), disregarding {\bf CRD}$^{u, \ell} / DP_i^{u, \ell}$.
+\blankline
+When {\bf IGMSW}$ = 1$, then the alternate formulas specified in the writeup
+dated [05 Feb 18] are used for $\gamma^{2,1}$ and $\gamma^{3,1}$
+(Lyman alpha and beta) in Hydrogen runs.
+\blankline
+\blankline
+\centerline{\underbar{DR}}
+\blankline
+When PRDMETH is off one must specify the function $DR(x)$, which describes
+the change from zero coherent scattering in the Doppler core to
+partial coherent scattering in the wing. $DR(x)$ is the
+function $f(x)$ defined by equation (78) of Avrett \& Loeser (1984).
+
+PANDORA provides three options for computing values of $DR(x)$,
+selected by the value of input parameter ${\bf XC}^{u,\ell}$.
+\ej
+% \blankline
+% \blankline
+1) When {\bf XC}$^{u, \ell} < 0$, then $DR(x)$ is
+obtained by interpolation from the input table {\bf DDR}$_k$ vs.
+{\bf XDR}$_k$, $1 \le k \le $ {\bf NDR}. The default values of this
+input table are the same as Table 33 of Vernazza, Avrett \& Loeser (1981).
+\blankline
+\blankline
+2) When {\bf XC}$^{u, \ell} > 0$, PANDORA uses
+%
+$$ DR(x) = \cases { 1, 
+                 & $x \le x_c$, \cr
+                 \exp \left[ - \left( {\displaystyle
+                 {{x-x_c} \over x_c}   }   \right) ^p \right],
+                 & $x > x_c$. \cr}   \eqno(1)  $$
+%
+({\it c.f.} equation (78) in Avrett \& Loeser (1984)). Here
+$x_c$ = {\bf XC}$^{u, \ell}$ and $p$ = {\bf XP}$^{u, \ell}$.
+Moreover, when $DR(x)$ is computed in this way it may not be less than
+$drlim^{u,\ell}$ (see below).
+\blankline
+\blankline
+3) When {\bf XC}$^{u,\ell} = 0$, $DR(x)$ is computed from equation (1)
+but with $XXC_i$ in place of $x_c$. $XXC_i$ depends on the
+depth-dependent Voigt function parameter $a_i$; on the mean optical
+depth of the line
+%
+$$ TAUM_i = 10^5 \int_{Z_1}^{Z_i} (GTN_i + KPC_{i1}) dz \, ;$$
+%
+and on the input parameters {\bf XCL} (default $= 3.5$) and {\bf TAUCL}
+(default $= 10^4$) as follows. For $TAUM_i \le$ {\bf TAUCL}, $XXC_i =$
+{\bf XCL}. For $TAUM_i \ge 10^6$, \break $XXC_i = FXC_i$ where 
+%
+$$ FXC_i = \left({{4 a_i TAUM_i} \over {\pi}} \right)^{0.3333}. $$
+%
+For {\bf TAUCL} $< TAUM_i < 10^6$, linear interpolation is used, so that
+%
+$$ XXC_i = {{(6 - {\log}_{10}TAUM_i){\tenbf XCL} + 
+         (\log_{10}TAUM_i - \log_{10}{\tenbf TAUCL}) FXCC_i}
+         \over {6 - \log_{10}TAUCL}} $$
+%
+where
+%
+$$ FXCC_i = \left({{4 a_i 10^6} \over {\pi}} \right)^{0.3333}. $$
+%
+However, whenever $XXC_i$ is less than {\bf XCL}, it is replaced
+by {\bf XCL}. Again, when $DR(x)$ is computed in this way it may not be
+less than $drlim^{u,\ell}$ (see below).
+\ej
+\centerline{\underbar{DR limit}}
+\blankline
+The value of $DR(x)^{u,\ell}$ computed from equation (1) above is not
+allowed to be less than the specified limit $drlim^{u,\ell}$ for that
+transition. There are two procedures for obtaining the value of
+$drlim^{u,\ell}$: a) the general case, and b) Hydrogen $(u,1)$
+transitions, {\it i.e.}, the Hydrogen Lyman lines. These procedures
+use the input parameters ${\bf XR}^{u,\ell}$, {\bf DRLIM}, {\bf LMDL2},
+and {\bf LMDL3}.
+\blankline
+\noindent{\it a) \underbar{General case}}
+\blankline
+If ${\bf XR}^{u,\ell} \ne -1$, then
+$$ drlim^{u,\ell} = {\bf XR}^{u,\ell} \, ; $$
+
+but if ${\bf XR}^{u,\ell} = -1$, then
+$$ drlim^{u,\ell} = {\bf DRLIM} \, . $$
+\blankline
+\noindent{\it b) \underbar{Hydrogen Lyman lines}}
+\blankline
+If ${\bf XR}^{u,1} \ne -1$, then
+$$ drlim^{u,1} = {\bf XR}^{u,1} \, ; $$
+
+but if ${\bf XR}^{u,1} = -1$, then
+\blankline
+if $u = 2$, {\it i.e.} the Lyman-$\alpha$ line, then
+$$ drlim^{2,1} = {\bf LMDL2} \, , $$
+
+if $u = 3$, {\it i.e.} the Lyman-$\beta$ line, then
+$$ drlim^{3,1} = {\bf LMDL3} \, , $$
+
+but if $4 \leq u \leq 15$, then
+$$ drlim^{u,1} = { \sum_{k=2}^{u-1} A^{u,k}
+                   \over 
+                   { A^{u,1} + \sum_{k=2}^{u-1} A^{u,k} } } \, , $$
+
+\noindent the branching ratio equation,
+where the $A^{i,j}$ are the computed Einstein A coefficients
+(see Section 19).
+%\vfill \vfill
+%\vfill \vfill
+%\vfill \vfill
+%\vfill \vfill
+%\vfill \vfill
+%\vfill \vfill
+%\vfill \vfill
+%\vfill 
+\vfill
+\noindent (Section 15 -- last revised: 2005 Jun 15) \par
+\message{Section 15 ends at page 15.\the\pageno}
+\ej
+%\end

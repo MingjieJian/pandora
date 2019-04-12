@@ -1,0 +1,70 @@
+HISTORY - SGK
+
+2.1.0
+
+  * consolidated Makefile(s) to build the code
+
+  * fixed is_bad.f to work w/ pgfortran, ifort and pgf77
+
+  * fixed other minor inconsistencies to allow compilation w/ all 3 compilers
+    
+  * included scripts
+    extract  pandora  pmerge  ready
+    pgfortran, ifort and pgf77 versions of pandora and ready
+
+  * checked that it builds and run all 6 demos with
+
+     pgfortran -g -C
+     pgfortran, pgfortran -O, pgfortran -fast
+     ifort, ifort -O, ifort -O4
+     pgf77, pgf77 -O, pgf77 -fast
+
+  * ran all demos
+
+    1 2 3 4 5 6
+
+  * wrote this file and the file DETAILS
+
+2.1.1
+
+  * new version of cents.x (cent.f) that uses a file to list the ions
+    (ions.list)
+
+  * added support for
+
+     census   (consolidated script to run census)
+     census.x (census.f executable)
+     lookat.x (RL's lookat.f executable)
+
+  * added a demo for census
+
+     demo/7
+
+  * consolidated scripts to use one setup file (bin/setFORx.sou) to link f77
+    LU to names for different compilers (FORnnn vs FORTn)
+
+  * updated documentation files
+     DETAILS, README and HISTORY
+     demos/HOWTO
+
+2.2.0
+
+ * the following files where changed
+
+    pan/ 
+
+     aardvrk.f angry.f astrid.f box.f bristle.f bullet.f drum.f eliot.f
+     fizmo.f fop.f friday.f furry.f guinea.F hamre.f helga.f henry.f hygry.f
+     iceman.f icy.f jezebel.f lockup.f logone.f mallet.f mica.f millet.f
+     model.f mong.f pearl.f perseus.f refault.f richard.f satin.f sauce.f
+     sherbet.f sunday.f thomas.f tuesday.f tympani.f zippy.f zloty.f zornig.f
+
+  79.007: revised NE calculations
+  79.008: added ALLCIE
+    aardvrk.f box.f fop.f furry.f hamre.f refault.f
+  79.009: no call ABORT in ENLIL when beta1 => 0
+    aardvrk.f enlil.f hamre.f
+
+---
+
+<- Last updated: Tue Dec  9 15:20:10 2014 -> SGK

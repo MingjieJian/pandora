@@ -1,0 +1,81 @@
+ > LEID       MODEL LEID   5 L H        ITER 07-17   2014-Mar-24                 
+ 
+ 
+ PSN110701  OPTIONS               OVER=  0     SUB=  0     HSL=  0     LYM=  0                                                  
+ PSN110702  INPUT NOTES           OVER=  0     SUB=  0     HSL=  0     LYM=  0                                                  
+ PSN110703  ATMOSPHERE-1          OVER=  0     SUB=  0     HSL=  0     LYM=  0                                                  
+ PSN110704  ATMOSPHERE-2          OVER=  0     SUB=  0     HSL=  0     LYM=  0                                                  
+ PSN110705  ND, NK, + BD          OVER=  0     SUB=  0     HSL=  0     LYM=  0                                                  
+ PSN110706  ATOM                  OVER=  0     SUB=  0     HSL=  0     LYM=  0                                                  
+ PSN110707  RHO, JBAR ...         OVER=  0     SUB=  0     HSL=  0     LYM=  0                                                  
+ PSN110708  ELEMENTS              OVER=  0     SUB=  0     HSL=  0     LYM=  0                                                  
+ PSN110709  BACKGROUND            OVER=  0     SUB=  0     HSL=  0     LYM=  0                                                  
+ PSN110710  INPUT                 OVER=  0     SUB=  0     HSL=  0     LYM=  0                                                  
+ PSN110711  CONSTANTS             OVER=  0     SUB=  0     HSL=  0     LYM=  0                                                  
+ PSN110712  HYDROGEN              OVER=  0     SUB=  0     HSL=  0     LYM=  0                                                  
+ PSN110713  HELIUM                OVER=  0     SUB=  0     HSL=  0     LYM=  0                                                  
+ PSN110714  HELIUM2               OVER=  0     SUB=  0     HSL=  0     LYM=  0                                                  
+ PSN110715  ALPHA+BETA            OVER=  0     SUB=  0     HSL=  0     LYM=  0                                                  
+ PSN110716  TABLES                OVER=  0     SUB=  0     HSL=  0     LYM=  0                                                  
+ PSN110717  INTEGRATION           OVER=  0     SUB=  0     HSL=  0     LYM=  0                                                  
+ PSN110718  DOPPLER               OVER=  0     SUB=  0     HSL=  0     LYM=  0                                                  
+ PSN110719  COMPOSITE             OVER=  0     SUB=  0     HSL=  0     LYM=  0                                                  
+ PSN110720  ITERATION  1          OVER=  1     SUB=  0     HSL=  0     LYM=  0                                                  
+ PSN110721  START VALUES          OVER=  1     SUB=  0     HSL=  0     LYM=  0                                                  
+ PSN110722  ITERATION  2          OVER=  2     SUB=  0     HSL=  0     LYM=  0                                                  
+ PSN110723  ITERATION  3          OVER=  3     SUB=  0     HSL=  0     LYM=  0                                                  
+ PSN110724  ITERATION  4          OVER=  4     SUB=  0     HSL=  0     LYM=  0                                                  
+ PSN110725  ITERATION  5          OVER=  5     SUB=  0     HSL=  0     LYM=  0                                                  
+ PSN110726  ITERATION  6          OVER=  6     SUB=  0     HSL=  0     LYM=  0                                                  
+ PSN110727  ITERATION  7          OVER=  7     SUB=  0     HSL=  0     LYM=  0                                                  
+ PSN110728  ITERATION  8          OVER=  8     SUB=  0     HSL=  0     LYM=  0                                                  
+ PSN110729  ITERATION  9          OVER=  9     SUB=  0     HSL=  0     LYM=  0                                                  
+ PSN110730  ITERATION 10          OVER= 10     SUB=  0     HSL=  0     LYM=  0                                                  
+ PSN110731  ITERATION 11          OVER= 11     SUB=  0     HSL=  0     LYM=  0                                                  
+ PSN110732  22.75  NANOM          OVER= 11     SUB=  0     HSL=  0     LYM=  0                                                  
+ PSN110733  22.79  NANOM          OVER= 11     SUB=  0     HSL=  0     LYM=  0                                                  
+ PSN110734  39.90  NANOM          OVER= 11     SUB=  0     HSL=  0     LYM=  0                                                  
+ PSN110735  39.92  NANOM          OVER= 11     SUB=  0     HSL=  0     LYM=  0                                                  
+ PSN110736  40.06  NANOM          OVER= 11     SUB=  0     HSL=  0     LYM=  0                                                  
+ PSN110737  40.08  NANOM          OVER= 11     SUB=  0     HSL=  0     LYM=  0                                                  
+ PSN110738  50.38  NANOM          OVER= 11     SUB=  0     HSL=  0     LYM=  0                                                  
+ PSN110739  50.41  NANOM          OVER= 11     SUB=  0     HSL=  0     LYM=  0                                                  
+ PSN110740  91.18  NANOM          OVER= 11     SUB=  0     HSL=  0     LYM=  0                                                  
+ PSN110741  500.0  NANOM          OVER= 11     SUB=  0     HSL=  0     LYM=  0                                                  
+ PSN110742  656.5  NANOM          OVER= 11     SUB=  0     HSL=  0     LYM=  0                                                  
+ PSN110743  RATES                 OVER= 11     SUB=  0     HSL=  0     LYM=  0                                                  
+ PSN110744  RIJ                   OVER= 11     SUB=  0     HSL=  0     LYM=  0                                                  
+ PSN110745  RECOMB                OVER= 11     SUB=  0     HSL=  0     LYM=  0                                                  
+ PSN110746  H MINUS               OVER= 11     SUB=  0     HSL=  0     LYM=  0                                                  
+ PSN110747  DAMPING               OVER= 11     SUB=  0     HSL=  0     LYM=  0                                                  
+ PSN110748  LINE (U/L)            OVER= 11     SUB=  1     HSL=  0     LYM=  0                                                  
+ PSN110749  LINE (2/1)            OVER= 11     SUB=  1     HSL=  0     LYM=  0                                                  
+ PSN110750  LINE (3/1)            OVER= 11     SUB=  1     HSL=  0     LYM=  0                                                  
+ PSN110751  LINE (3/2)            OVER= 11     SUB=  1     HSL=  0     LYM=  0                                                  
+ PSN110752  LINE (4/2)            OVER= 11     SUB=  1     HSL=  0     LYM=  0                                                  
+ PSN110753  LINE (5/2)            OVER= 11     SUB=  1     HSL=  0     LYM=  0                                                  
+ PSN110754  RHO AND RBD           OVER= 11     SUB=  1     HSL=  0     LYM=  0                                                  
+ PSN110755  POPULATIONS           OVER= 11     SUB=  0     HSL=  1     LYM=  0                                                  
+ PSN110756  HYDROGEN              OVER= 11     SUB=  0     HSL=  1     LYM=  0                                                  
+ PSN110757  H.S.E.                OVER= 11     SUB=  0     HSL=  1     LYM=  0                                                  
+ PSN110758  MODEL DATA            OVER= 11     SUB=  0     HSL=  1     LYM=  0                                                  
+ PSN110759  HYDROGEN              OVER= 11     SUB=  0     HSL=  1     LYM=  0                                                  
+ PSN110760  ELECTRONS             OVER= 11     SUB=  0     HSL=  1     LYM=  0                                                  
+ PSN110761  POPULATIONS           OVER= 11     SUB=  0     HSL=  1     LYM=  0                                                  
+ PSN110762  HYDROGEN              OVER= 11     SUB=  0     HSL=  1     LYM=  0                                                  
+ PSN110763  POST (2/1)            OVER=  0     SUB=  0     HSL=  0     LYM=  0                                                  
+ PSN110764  POST (3/1)            OVER=  0     SUB=  0     HSL=  0     LYM=  0                                                  
+ PSN110765  POST (3/2)            OVER=  0     SUB=  0     HSL=  0     LYM=  0                                                  
+ PSN110766  POST (4/2)            OVER=  0     SUB=  0     HSL=  0     LYM=  0                                                  
+ PSN110767  POST (5/2)            OVER=  0     SUB=  0     HSL=  0     LYM=  0                                                  
+ PSN110768  PROF-PREP             OVER=  0     SUB=  0     HSL=  0     LYM=  0                                                  
+ PSN110769  WAVE SUMM 0           OVER=  0     SUB=  0     HSL=  0     LYM=  0                                                  
+ PSN110770  CHECKS                OVER=  0     SUB=  0     HSL=  0     LYM=  0                                                  
+ PSN110771  ITERATES              OVER=  0     SUB=  0     HSL=  0     LYM=  0                                                  
+ PSN110772  CONTINUUM             OVER=  0     SUB=  0     HSL=  0     LYM=  0                                                  
+ PSN110773  PROF (2/1)            OVER=  0     SUB=  0     HSL=  0     LYM=  0                                                  
+ PSN110774  PROF (3/1)            OVER=  0     SUB=  0     HSL=  0     LYM=  0                                                  
+ PSN110775  PROF (3/2)            OVER=  0     SUB=  0     HSL=  0     LYM=  0                                                  
+ PSN110776  PROF (4/2)            OVER=  0     SUB=  0     HSL=  0     LYM=  0                                                  
+ PSN110777  PROF (5/2)            OVER=  0     SUB=  0     HSL=  0     LYM=  0                                                  
+ PSN110778  SIGN-OFF              OVER=  0     SUB=  0     HSL=  0     LYM=  0                                                  

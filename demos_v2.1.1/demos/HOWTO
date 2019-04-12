@@ -1,0 +1,44 @@
+* You must first
+
+   - build and install the executables 
+   - extracted the tables
+
+   see the top level README
+
+* You can run demos 1-4 as follow:
+
+     bin/pandora -io 1/ -atoms 1/ demo1 none '' 001 >& 1/demo1.log
+     bin/pandora -io 2/ -atoms 2/ demo2 h    l3 001 >& 2/demo2.log
+     bin/pandora -io 3/ -atoms 3/ demo3 h    l3 001 >& 3/demo3.log
+     bin/pandora -io 4/ -atoms 4/ demo4 mg2  l2 001 >& 4/demo4.log
+
+   where
+
+    -io    indicate where to find input and where to send the output
+    -atoms indicates where to find the atomic data
+
+    h   l3 stands for Hydrogen    - 3 levels (in file hl3.atm)
+    mg2 l2 stands for MagnesiumII - 2 levels (in file mg2l2.atm)
+
+    001 is an arbitrary string to indentify that run, all the files resulting
+    from that run will have names ending w/ that string (ie *.001).
+
+  Demos 1-4 are short runs and are explained in Rudy's documentation.
+
+* To run demos 5, 6 & 7, look at the HOWTO in the respective directories (5/ 6/ & 7/)
+
+* You can check
+
+   what the demos should produce using the tar-compressed archive
+   pandora-vX.X.X-demos-refs.tgz
+
+   tar xv /where/downloaded/pandoora-vX.X.X-demos-refs.tgz
+
+   and look at the directories 1r, 2r, ..., 7r
+ 
+Good luck. 
+
+---
+
+<- Last updated: Fri Mar 21 14:16:18 2014 -> SGK
+

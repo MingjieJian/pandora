@@ -1,0 +1,3 @@
+alias FORxxx $BIN/FORxxx -ifort
+alias setFOR   'set F = `FORxxx \!\!:1`; setenv   $F \!\!:2; unset F'
+alias unsetFOR 'set F = `FORxxx \!\!:1`; unsetenv $F;        unset F'

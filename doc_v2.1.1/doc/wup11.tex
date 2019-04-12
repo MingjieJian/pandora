@@ -1,0 +1,878 @@
+%\magnification=1200
+%\input wupstuff.tex
+\newtoks\footline \footline={\hss\tenrm 11.\folio\hss}
+\pageno=1
+\top
+\vskip 1.5 true in
+\centerline{Section 11: {\bf Printout}}
+\blankline
+\blankline
+Initial PANDORA development occurred in a batch-oriented environment
+using a remote central computing system. Output was written to a file
+that was printed sometime after completion of the run. The printers
+were expected to use 11$\times$14${7\over8}''$ fan-fold paper providing
+about 60 lines per page and 132-136 character positions per line.
+The resulting hardcopy was called ``output'' or ``printout.''
+
+Things have changed. Now PANDORA runs on desktop workstations. (But it
+is not an interactive program---things have not changed that much.)
+The user still deals with output files and normally waits for a run
+to finish before doing so. Complete output files are no longer routinely
+printed but are stored on disk to be displayed and examined on
+CRT screens. Nevertheless, in this writeup we retain the old terms
+``output'' and ``printout'' to refer to PANDORA's output files and
+their contents.
+
+PANDORA has been revised to limit the lengths of lines in the output
+files to no more than 128 characters.
+\blankline
+This Section consists of two parts. Part A has general information
+about output files and their use while Part B has detailed information
+about how to control their contents.
+\ej
+\top
+\vskip 1 true in
+\centerline{\bf A) Printout Files}
+\blankline
+The `general printout' file is connected to unit 15, and the `error printout'
+file may be connected to unit 16; see Section 7.
+
+The `general printout' file is the main output file of the run. Its normal
+contents, while to some extend fixed, can generally be controlled by various
+switches and options (see Part B, below). In addition, PANDORA also prints
+various `debug' data and/or error messages, and these are written to the
+`error printout' file. Normally the general printout file and the error
+printout file are {\it both} connected to unit 15, so that normal and
+error printouts appear in one file, in a single, {\it merged} sequence.
+(A merged arrangement preserves the context of error messages.)
+
+However, the {\bf OUTPUT} statement can be used to make PANDORA connect the
+error printout file to unit 16. Thus the two types of output can be
+{\it split}. This makes for cleaner normal output, which may be
+especially desirable in those situations where various error messages are
+considered inconsequential. (But note that a `split' arrangement tends to
+obscure the context of error messages.)
+\blankline
+The general printout file can be very large---this can make it difficult to
+scan it interactively with an editor. Option MAKIX has been provided
+to help with this. When MAKIX is on, then a `printout index' file (connected
+to unit 31; see Section 7) will be generated, as follows:
+
+Every `major' printout section in the general printout file will be
+preceded by a unique `identifier line'. These indentifier lines,
+and these lines only, will also appear in the `printout index' file. Having
+in hand a copy of this index, the user can decide which printout sections
+to examine, and can use the unique identifier string as an unambiguous
+target for a string-search. 
+\blankline
+\centerline{\tt LOOKAT}
+\blankline
+A separate program {\tt LOOKAT} helps to display the `general printout'
+file on a screen, and to select portions to be printed. It works best when the
+associated `printout index' file is also available (see above). {\tt LOOKAT}
+is intended to be self-contained, self-explanatory, and easy to use.
+\ej
+\top
+\vskip 1 true in
+\centerline{\bf B) Printout control}
+\blankline
+Most sections of PANDORA's output can be enabled or suppressed at will.
+The various program `options' ({\it i.e.} those mentioned in {\bf DO}
+and {\bf OMIT} statements) provide most of the control facilities for
+this purpose, but some other input parameters (especially those that
+control various `debug dumps' and `details dumps') also can affect the
+amount of printout.
+
+There follows a list of every `section' of PANDORA's printout, with
+descriptions of the conditions that determine whether or not
+that section appears.
+Many of these descriptions mention `subsections' of major `parent'
+sections. Such subsections are {\it not printed}
+if conditions are such that the parent section does not appear.
+Many parent sections contain stuff in addition to the subsections
+mentioned; some do not.
+\blankline
+Besides the printout sections listed below, there are some debugging
+aid \break printouts that are under `option' control; these options are
+listed in the TEST/ DEBUG part of the printout section OPTIONS.
+The option MITPRNT controls whether or not even a 
+minimum of information appears for all but the last iteration. Also,
+some error printouts appear invariably whenever certain problems are
+detected.
+\blankline
+{\it Printed Graphs.} PANDORA produces many graphs of selected tables.
+The resolution is crude: character positions. Nevertheless, in many cases
+these convenient graphs provide adequate pictures of what is poing on.
+Before any graph image is actually printed, however, PANDORA determines
+whether it is ``interesting'' (\ie whether a `sufficient' number of data
+points fall within, rather than on, the graph borders)---boring graphs
+are not printed. In such cases only a single print line, consisting of the
+graph title and the word ``BORING,'' will appear.   \par
+\ej
+\vskip 1 in
+\centerline{\underbar{The following {\bf Notes} are referred to in the
+remainder of this Section:}}
+\blankline
+\centerline{\it Note A}
+\np
+This section appears for every overall iteration of a run in which any
+atmospheric model tables, involved in the calculations giving rise to this
+printout section, are being recomputed, {\it i.e.} if the option HSE
+is on, or if the {\bf POPUP} switch has been set. However, if the option
+ALL is off, then this printout section appears only once, in any
+case.
+\blankline
+\centerline{\it Note B}
+\np
+If the option EVERY is off, then this printout section appears for
+the last sub-iteration only.
+\blankline
+\centerline{\it Note C}
+\np
+If the option ALL is off, then this printout section appears for the
+last overall \break iteration only.
+\blankline
+\centerline{\it Note D}
+\np
+If the option ALLY is off, then this printout section appears for the
+last HSL-iteration only.
+\ej
+\parindent=0pt
+\centerline{\bf Output from {\rm PHASE 0}: Input and Initialization}
+\blankline
+\blankline
+\blankline
+\underbar{PROVISIONAL INPUT} \par
+appears if STANPRNT is on, and if at least one value of {\bf LZA}
+$ > 0$.
+\blankline
+\underbar{STATUS OF OPTION} \par
+appears if OPTPRNT is on. (An abbreviated version of this listing appears
+if AOPTPRNT is on.)
+\blankline
+\underbar{INPUT NOTES} \par
+appears always.
+\blankline
+\underbar{CO LINES} \par
+appears when CO line absorption is included and CODMP is on.
+\blankline
+\underbar{ATMOSPHERE} \par
+appears if ATMOPRNT is on. When ZPRNT is on this printout has two
+sections, \underbar{ATMOSPHERE-1} and \underbar{ATMOSPHERE-2}; the
+second section gives {\bf Z}, {\bf TE}, etc., to nine figures.
+\blankline
+\underbar{INPUT NUMBER DENSITY AND DEPARTURE COEFFICIENT} \par
+appears if INNBPRNT is on.
+\blankline
+\underbar{ATOM} \par
+appears if ATOMPRNT is on.
+\blankline
+\underbar{DEPTH-DEPENDENT TRANSITIONS DATA} \par
+appears if INRBPRNT is on.
+\ej
+% \blankline
+\underbar{ELEMENTS} \par
+appears always.
+\blankline
+\underbar{BACKGROUND} \par
+appears always.
+\blankline
+\underbar{INPUT} \par
+appears if INDAPRNT is on. (An abbreviated version of this printout
+appears if AINDPRNT is on.) Many diverse parameters may be printed here.
+The first page is a bit of a grab bag; the remaining input values are
+grouped in various subsections dealing with specific topics, shown in
+the headings. Still, some input parameters could equally well have been
+included in several of these groups, so, which group a given parameter
+is printed with may seem somewhat arbitrary. Subsections are printed
+as needed.
+\blankline
+\underbar{CONSTANTS} \par
+appears if STANDARD is on.
+\ej
+% \blankline
+\underbar{HYDROGEN} and \underbar{H2} \par
+appear if HNPRNT is on (note input parameter {\bf MOPRNT}).
+\blankline
+\underbar{CARBON} \par
+appears if CARPRNT is on (note input parameter {\bf MOPRNT}).
+\blankline
+\underbar{SILICON} \par
+appears if SILPRNT is on (note input parameter {\bf MOPRNT}).
+\blankline
+\underbar{HELIUM} \par
+appears if HELPRNT is on (note input parameter {\bf MOPRNT}).
+\blankline
+\underbar{HELIUM-II} \par
+appears if HEL2PRNT is on (note input parameter {\bf MOPRNT}).
+\blankline
+\underbar{ALUMINUM} \par
+appears if ALUPRNT is on (note input parameter {\bf MOPRNT}).
+\blankline
+\underbar{MAGNESIUM} \par
+appears if MAGPRNT is on (note input parameter {\bf MOPRNT}).
+\blankline
+\underbar{IRON} \par
+appears if FEPRNT is on (note input parameter {\bf MOPRNT}).
+\blankline
+\underbar{SODIUM} \par
+appears if SODPRNT is on (note input parameter {\bf MOPRNT}).
+\blankline
+\underbar{CALCIUM} \par
+appears if CALPRNT is on (note input parameter {\bf MOPRNT}).
+\blankline
+\underbar{OXYGEN} \par
+appears if OXYPRNT is on (note input parameter {\bf MOPRNT}).
+\blankline
+\underbar{OXYGEN2} \par
+appears if OXY2PRNT is on (note input parameter {\bf MOPRNT}).
+\blankline
+\underbar{OXYGEN3} \par
+appears if OXY3PRNT is on (note input parameter {\bf MOPRNT}).
+\blankline
+\underbar{SULPHUR} \par
+appears if SULPRNT is on (note input parameter {\bf MOPRNT}).
+\ej
+% \blankline
+\underbar{DIRECTIONS} \par
+appears if SPHERE is off and STANDARD is on, and if either
+GRCONT or \break GRLINE is on.
+\blankline
+\underbar{SPHERE} \par
+appears if SPHERE is on, and if either STANDARD or
+SPHEGEOM is on.
+\blankline
+\underbar{PARTITION} \par
+appears if PARTPRNT is on.
+\blankline
+\underbar{STIMULATED EMISSION FACTORS} \par
+appears if STIMPRNT in on. BETA(TR) appears only if CSWITCH is on.
+\blankline
+\underbar{TABLES} \par
+appears if STANDARD is on.
+\blankline
+\underbar{INTEGRATION} \par
+appears if INTAPRNT is on. (An abbreviated version of this listing
+appears if AINTPRNT is on.)
+\blankline
+\underbar{DOPPLER} \par
+appears if DPDWPRNT is on, for every radiative transition $u,\ell$ for
+which \break {\bf LSFPRINT}$^{u,\ell} = 1$ or {\bf PROF}$^{u,\ell} = 1$.
+\blankline
+\underbar{CHARGE EXCH.} \par
+appears if CHXPRNT is on.
+\ej
+\underbar{STATISTICAL} \par
+appears if KURPRNT is on (note input parameter {\bf LWNT}).
+This is a parent section, with one subsection as follows:
+\bull dump of unprocessed data: the value of {\bf KUDNT} must be $ > 0$.
+\blankline
+\underbar{COMPOSITE} \par
+appears if KOMPRNT is on (note input parameter {\bf LWNT}).
+This is a parent section, with one subsection as follows:
+\bull dump of unprocessed data: the value of {\bf KODNT} must be $ > 0$.
+\blankline
+\underbar{AVERAGED} \par
+appears if AVOPRNT is on (note input parameter {\bf LWNT}).
+\blankline
+\underbar{STANDARD RATES INTEGRATION WAVELENGTHS} \par
+appears if both USEWTAB and WTABPRNT are on.
+\blankline
+\underbar{JNU} \par
+appears if there is at least one PRD transition, and if {\bf JNUNC} $> 0$.
+\ej
+
+\headline={\centerline{{\bf *****}
+{\it Notes A, B, C, D are explained on page 11.4 } {\bf *****}}}
+
+\centerline{\bf Output from {\rm PHASE 1}: Iterations}
+\blankline
+\blankline
+\blankline
+\underbar{ND, NK and BD} \par
+appears at the start of every overall iteration, if ALL is off and
+MITPRNT is on.
+\blankline
+\underbar{Z-SCALE} \par
+appears in a Hydrogen run if values of {\bf TAUKIN} were provided, 
+so that the values of {\bf Z} had to be updated (see also Note A).
+\blankline
+\underbar{CONTINUUM DATA} \par
+may appear in every overall iteration of a run which recomputes any
+of the atmosphere model data needed for continuum calculations ($JNU$, etc.)
+--- {\it i.e.} if option HSE is on, if the {\bf POPUP} switch has been
+set, and/or if {\bf Z} must be updated. In other runs continuum calculations
+need to be done (and this printout can appear!) in the first overall
+iteration only. (If such a run has ${\bf IOMX} > 1$ and option ALL
+is off, this printout will not appear!)
+
+This is a major parent section whose subsections are related to the
+various contexts in which continuum calculations arise, as follows:
+\bull for line core wavelengths: LINECOPR or LBDPRNT must be on
+(when \break LINECOPR is on, LBDPRNT is superfluous here)
+(see also Notes A and C);
+\bull for transition rates integrations: RATEPRNT and RATECOPR
+must both be on and USETRIN must be off (see also Notes A and C);
+\bull for standard background wavelengths: USEWTAB and STANCOPR
+must both be on (see also Notes A and C);
+\bull for H-minus calculations: HMS and HMSCOPR
+must both be on (see also Notes A and C);
+\bull for dust opacity wavelengths: DUSTYPE, DUSTEMP,
+and DUSTCOPR must all be on (see also Notes A and C);
+\bull for `additional wavelengths': ADDCOPR must be on;
+\bull for additional photoionization: RATEPRNT and APHICOPR
+must both be on (see also Notes A and C);
+\bull for Composite Line Opacity data wavelengths: appears only if these
+data are actually used, and if COMPCOPR is on (see also
+Notes A and C);
+\bull for K-shell wavelengths: KSHLCOPR must be on (see also
+Notes A and C);
+\bull for FDB wavelengths: FDBCOPR must be on (see also Notes
+A and C);
+\bull for CO-lines absorption wavelengths: COCOPR must be on (see
+also Notes A and C);
+\bull for every wavelength whose corresponding context OPTION is off:
+output {\it will} appear if that wavelength occurs in the {\bf SCOW}
+table.
+\blankline
+\centerline{\it More control information on next page.}
+\ej
+% \blankline
+These Continuum Data printouts, from all contexts, are grouped as
+one batch and appear in order of increasing wavelength.
+\blankline
+{\it The printout for any particular wavelength} consists
+of several parts, each of which appears only if the appropriate option is
+on, as follows:
+\settabs 4 \columns
+\spice
+\+ & absorbers printout & OPAPRNT \cr
+\+ & emitters printout  & EMIPRNT \cr
+\+ & CSF printout       & CSFPRNT (note option ACSFPRNT)\cr
+\+ & absorbers graph    & OPAGRAF \cr
+\+ & emitters graph     & EMIGRAF \cr
+\+ & CSF graph          & CSFGRAF \cr
+\+ & summary graph      & CSFGRAF \cr
+\blankline
+\blankline
+\blankline
+\underbar{RATES} \par
+is a major parent section; a summary explanation of the calculations,
+and the printouts available from them, always appears. Substantive
+printouts appear if RATEPRNT is on. This section may appear both
+in the first and the last iteration of some runs.
+The amount of information printed depends on options
+RATEALL and RATEFULL. It has subsections as follows:
+\bull for CHKI and CHIJ: COLHPRNT must be on;
+\bull for upper-level charge exchange: CHEXUP and CHXPRNT must be on;
+\bull for CIJ: CIJPRNT must be on;
+\bull for PIJ: PIJPRNT must be on;
+\bull for RIJ: RIJPRNT must be on;
+\bull for additional photoionization: APHIPRNT must be on;
+\bull for fast electrons: FELEPRNT must be on. \np
+{\it Note} the extensive explanatory text in the regular printout.
+\blankline
+\underbar{RATES GRAPHS} \par
+appears if RATEGRAF is on.
+\ej
+\underbar{AMBIPOLAR DIFFUSION} \par
+appears if RATEPRNT is on and if either AMBPRNT or VLGPRNT is on. \np
+{\it Note:} this printout occcurs near the end of the regular RATES printout,
+if one or both of the options AMDIFF or VELGRAD are on. Options ADN1DMP,
+AMDDMP, DIFFANA, and VELGDMP affect this printout.
+\blankline
+% \blankline
+\underbar{DIELECTRONIC RECOMBINATION} \par
+appears if RCOMPRNT is on.
+\blankline
+\underbar{H MINUS} \par
+appears if HMS is on (see also Notes A and C). This is a parent
+section, with one subsection as follows:
+\bull for JNU: HMSJPRNT must be on.
+\blankline
+\underbar{DUST} \par
+appears if DUSTEMP and DUSTYPE are both on (see also Notes
+A and C).
+\ej
+\centerline{\bf*****}
+\centerline{\bf***}
+\centerline{\bf*}
+\blankline
+\centerline{Start of Line Source Function printout
+{\it groups} (if any).}
+\blankline
+Printout can appear if there is at least one radiative transition.
+At least some part of the printout group for transition
+$u,\ell$ appears if {\bf LSFPRINT}$^{u,\ell} = 1$, or if option
+LSFPRNT is on, or if option LSFGRAF is on.
+({\it Note:} {\bf LSFPRINT}$^{u,\ell}$ and option LSFPRNT are different
+beasties, but they work together.)
+\blankline
+\underbar{STARTING NUMBER DENSITY AND DEPARTURE COEFFICIENT} \par
+appears for the first iteration if default values were computed.
+\blankline
+\underbar{DAMPING} \par
+appears if DPDWPRNT is on (see also Notes A and C).
+It will {\it not} appear
+if a) HSE is on and this is not the last overall iteration, or
+b) HSE is off and this is not the last overall iteration but
+this is a Hydrogen run.
+\blankline
+\underbar{ANALYSIS} \par
+appears if ANALYSIS is on (see also Notes A and C).
+\blankline
+\underbar{LINE (U/L)} \par
+always appears; it contains a summary explanation of the various
+printouts related to the line source function calculations for
+radiative tramsitions.
+\blankline
+% \blankline
+\underbar{STIM, and TAU} \par
+appear if TAUPRNT is on (see also Note B). (See also option PEGTNALL.)
+\blankline
+\underbar{STATISTICAL EQUILIBRIUM} \par
+is a major parent section which has three subsections as follows:
+\bull for timing data: SETIME must be on;
+\bull for PE, FE, {\it etc.}: SEPRNT must be on;
+\bull for methods comparison: SECOMP or METPRNT must be on. \np
+{\it Note:} option DIFFANA also affects this printout (see also Note B).
+\ej
+% \blankline
+\underbar{PRD} \par
+Printouts related to PRD calculations appear, for all
+PRD transitions, if option PRDPRNT is on. The amount of output depends on
+input parameters {\bf IPRDF} and {\bf IPRDD}. Tables of JNU are printed
+if option JNUPRNT is on. Printouts from PRD-related background (continuum)
+calculations, for wavelengths (frequencies, XI-values) selected by
+{\bf IPRDF}, appear if option PRDCOPR is on (and/or for every PRD
+wavelength occurring in the {\bf SCOW} table). For the purposes of PRD
+these ``continuum printouts'' have been split into two separate parts,
+but they have the standard format used for `CONTINUUM DATA,' above, and
+use the same options for detailed control as described there.
+If iterations are used with the Hubeny-Lites formulation (i.e. option
+PRDMETH is on), then only the results of the last iteration are printed
+unless option PRDITER is on (see also Note B).
+\blankline
+\underbar{LINE SOURCE FUNTION} \par
+is a major parent section which has several subsections as follows:
+\bull TNU-analysis is controlled by {\bf KANTNU} (q.v.); \np
+\bull for Line Source Function details for transition $u,\ell$:
+{\bf LSFPRINT}$^{u,\ell} = 1$ or option LSFPRNT must be on
+(an abbreviated version of this printout appears if option ALSFPRNT is
+on); a part of this detail printout also depends on option LSFFULL; \np
+\bull for source function graph for transition $u,\ell$: 
+{\bf LSFPRINT}$^{u,\ell} = 1$ or option LSFGRAF must be on;
+\bull for radiative force for transition $u,\ell$:
+{\bf LFLUX}$^{u,\ell} = 1$, (the full computed Line Flux Distribution
+appears if LFDPRNT is on). \np
+{\it Note:} See also option PESRJALL (see also Note B). \np
+{\it Note:} The section `LINE SOURCE FUNCTION' (if not a PRD transition)
+will appear twice in a diffusion run with DIFFANA on, concluding with a
+summary graph comparing the results with and without diffusion terms.
+\blankline
+\centerline{ End of Line Source Function printout {\it groups} (if any).}
+\blankline
+\centerline{\bf*}
+\centerline{\bf***}
+\centerline{\bf*****}
+\ej
+\underbar{LOG PLOT OF TAU SCALES} \par
+appears if there is at least one radiative transition and if LSCALE
+is on, in the very last sub-iteration only.
+\blankline
+\underbar{COLLATED TAU SCALES} \par
+appears if there is at least one radiative transition and if SCALE
+is on, in the very last sub-iteration only.
+\blankline
+\underbar{RHO AND RBD} \par
+is a major parent section. An explanation of the available printouts
+always appears. Substantive results appear if
+RHBPRNT is on, and subsections may appear as follows:
+\bull for details of each radiative transition: RHBPRDT must be on;
+\bull for details of BDQ calculation: BDQPRDT must be on;
+\bull for complete sets of BDR, BDJ, BDS, and S*: BDPRNT must be on;
+\bull for final sets of Rho and b-ratios: RHBPRSM must be on. \par
+{\it Note} that the results printed by RHBPRSM are also printed by RHBPRDT;
+thus it is not normally necessary to turn both on; (RHBPRSM is intended
+to provide ``minimal'' printout).
+\blankline
+\underbar{CONSISTENCY CHECKS} \par
+appears if CHKPRNT is on, and is controlled by EVERY (see also Note B).
+\ej
+% \blankline
+\underbar{POPULATIONS} \par
+is a major parent section which appears here if LYMAN is on (see also Note D).
+See detailed description below.
+\blankline
+\underbar{CONTINUUM DATA FOR LYMAN} \par
+appears if LYMAN is on, and if either LYMCOPR is on or for every
+wavelength that occurs in the {\bf SCOW} table
+(see also Note D). Detailed control of the printout parts for each
+Lyman wavelength is as for other `CONTINUUM DATA', described above.
+\blankline
+\underbar{LYMAN} \par
+is a major parent section which appears if LYMAN is on (see also
+Note D). (An abbreviated version of this major parent section is printed
+if ALYMPRNT is on.) It has three subsections as follows:
+\bull for EP methods comparison: EPCOMP must be on;
+\bull for RK comparison: COMPRK must be on;
+\bull for PIJ: HSE must be off and this must not be the last
+iteration.
+\blankline
+\underbar{POPULATIONS} \par
+is a major parent section which appears here if HSE is on (see also Note D).
+See detailed description below.
+\blankline
+\underbar{NE} \par
+appears if HSE and NESWICH are both off and {\bf POPUP} has been
+set.
+\blankline
+\underbar{HSE} \par
+appears if HSE is on (see also Note D).
+(An abbreviated version of this section is printed if AHSEPRNT is on.)
+\blankline
+\underbar{MODEL DATA} \par
+is a major parent section which appears if HSE is on (see also Note D);
+it is a continuation of the HSE section. It has subsections as follows:
+\bull for absorbers at 500 nm: OPAPRNT must be on;
+\bull for HYDROGEN: this always appears;
+\bull recalculated Z-scale appears if values of {\bf TAUKIN} were provided,
+or if values of {\bf ZMASS} were provided and ZCOMP is on;
+\bull for electrons calculations results (with graphs): ELECPRNT must
+be on (appears in the last iteration only).
+\blankline
+\underbar{GAS} \par
+appears if HSE is off and {\bf POPUP} equals {\tt HYDROGEN} (see also
+Note D).
+\ej
+\underbar{POPULATIONS} \par
+is a major parent section controlled by ALL (see also Note D).
+An explanation of the various controls for this section always appears.
+Substative printout appears if either
+POPPRNT or POPGRAF are on. There are five subsections as follows:
+\bull for NE results: {\bf POPUP} must equal {\tt HYDROGEN} and 
+POPPRNT must be on;
+\bull for the full tables: POPPRNT must be on, (the supplementary
+printout appears if NBPRNT is on), (an abbreviated version of the full
+tables appears if $\qquad$ \break APOPPRNT is on);
+\bull for graphs of ND: POPGRAF must be on (see Note D);
+\bull for a trace of the Populations Calculations at depth \# {\bf IBNVIEW}:
+\break PDETPRNT must be on;
+\bull for graph of BD vs. {\bf Z}: BDGRAF must be on (the plots of TAU
+vs. {\bf Z} appear only if TAUPLOT is on) (see Note D);
+\bull for graph of BDIJ vs. {\bf Z}: BDGRAF must be on and there must be
+at least one radiative transition (the plots of TAU vs. {\bf Z} appear only if
+TAUPLOT is on) (see Note D);
+\bull for graph of {\bf TE} vs. log(TAU): TEGRAF must be on and there must be
+at least one radiative transition (see Note D).
+\blankline
+\underbar{UPDATED POPULATIONS DATA} \par
+is a major parent section, controlled by ALLY (see also Note D). Its
+various subsections are concerned with the various `population-update ions,'
+as follows:
+\bull for Hydrogen: HNPRNT must be on and {\bf POPUP} must equal
+{\tt HYDROGEN};
+\bull H2: {\bf POPUP} must equal {\tt HYDROGEN} and ${\bf NHTSW} > 0$;
+\bull for Carbon: CARPRNT must be on and {\bf POPUP} must equal
+{\tt CARBON};
+\bull for Silicon: SILPRNT must be on and {\bf POPUP} must equal
+{\tt SILICON};
+\bull for Helium: HELPRNT must be on and {\bf POPUP} must equal
+{\tt HELIUM};
+\bull for Helium-II: HEL2PRNT must be on and {\bf POPUP} must equal
+{\tt HELIUM2};
+\bull for Aluminum: ALUPRNT must be on and {\bf POPUP} must equal
+{\tt ALUMINUM};
+\bull for Magnesium: MAGPRNT must be on and {\bf POPUP} must equal
+{\tt MAGNESIUM};
+\bull for Iron: FEPRNT must be on and {\bf POPUP} must equal
+{\tt IRON};
+\bull for Sodium: SODPRNT must be on and {\bf POPUP} must equal
+{\tt SODIUM};
+\bull for Calcium: CALPRNT must be on and {\bf POPUP} must equal
+{\tt CALCIUM};
+\bull for Oxygen: OXYPRNT must be on and {\bf POPUP} must equal
+{\tt OXYGEN};
+\bull for Oxygen-II: OXY2PRNT must be on and {\bf POPUP} must equal
+{\tt OXYGEN2};
+\bull for Oxygen-III: OXY3PRNT must be on and {\bf POPUP} must equal
+{\tt OXYGEN3};
+\bull for Sulphur: SULPRNT must be on and {\bf POPUP} must equal
+{\tt SULPHUR}.
+\ej
+% \blankline
+\underbar{K-SHELL} \par
+appears if a K-shell ionization calculation has been requested in a 
+Carbon run (see Note D).
+\blankline
+\underbar{CHARGE EXCHANGE} \par
+appears if upper-level charge exchange has been requested in a Hydrogen
+run and option CHXPRNT is on (see Note D).
+\blankline
+\underbar{RESTART VALUES OF JNU} \par
+appears in a PRD run when option JNUPRNT is on.
+\blankline
+\underbar{DAMPING} \par
+appears if PHASE2, PASSPRNT, and DPDWPRNT are
+all on, and if there is at least one passive transition for which the emergent
+profile calculation has been turned on.
+\blankline
+\underbar{ANALYSIS} \par
+appears if PHASE2, PASSPRNT, and ANALYSIS are
+all on, and if there is at least one passive transition for which the emergent
+profile calculation has been turned on.
+\blankline
+\underbar{TAU} \par
+appears if PHASE2, PASSPRNT, and TAUPRNT are
+all on, and if there is at least one passive transition for which the emergent
+profile calculation has been turned on.
+\blankline
+\underbar{PASSIVES} \par
+appears if PHASE2 and PASSPRNT are both on.
+\ej
+
+\headline={\hfil}
+
+% \blankline
+\underbar{DAMPING} and \underbar{ANALYSIS} \par
+appear if PHASE2 is on, only for those transitions $u,\ell$
+whose values of \break {\bf BLCSW}$^{u,\ell}$ require this
+and for which emergent profile calculations are \break requested. 
+For \underbar{DAMPING}, DPDWPRNT must be on, for
+\underbar{ANALYSIS}, ANALYSIS must be on.
+\blankline
+\underbar{TAU} \par
+appears if PHASE2, TAUPRNT, LTE and LTEDATA are all
+on, only for those transitions for which emergent profiles calculations
+are requested.
+\blankline
+\underbar{LTE DATA} \par
+appears if PHASE2, LTE and LTEDATA are all
+on, only for those transitions for which emergent profiles calculations
+are requested.
+\blankline
+\underbar{ANALYSIS} \par
+appears if PHASE2, ANALYSIS, LTE and LTEDATA are all
+on, only for those transitions for which emergent profiles calculations
+are requested.
+\blankline
+\underbar{FREQUENCY-DEPENDENT LINE SOURCE FUNCTION} \par
+is a major section, which may appear for the ({\bf MS}, {\bf NS})
+transition only. It has two subsections, as follows:
+\bull for printout: SLFPRNT must be on;
+\bull for graph: SLFGRAF must be on.
+\blankline
+\underbar{SCATTERING ALBEDO ANALYSIS} \par
+appears, for suitable transitions, if LINECOMP is on.
+\blankline
+\underbar{CONTINUUM DATA} \par
+appears for all wavelengthe needed for line profile calculations
+if FBDCOPR is on, or if TRUECONT and TRUECOPR are both on. Detailed
+control of the printout is as for other `CONTINUUM DATA', described above.
+\ej
+% \blankline
+\underbar{WAVE SUMM 0} \par
+always appears.
+\blankline
+\underbar{WAVE SUMM 1} \par
+appears if WAVEPRNT is on. It provides a basic summary of the background
+(continuum) calculations at each wavelength.
+\blankline
+\underbar{WAVE SUMM 2} \par
+appears if WAVEPRNT is on and {\bf IWSMD} = 1. It provides a basic
+summary of the contributors to the background (continuum) at each
+wavelength.
+\blankline
+\underbar{COMPOSITE LINE OPACITY ANALYSIS} \par
+appears if COMOPAN is on. (An abbreviated version of this printout
+appears if {\bf KCOAA} is set = 1.)
+\blankline
+\underbar{COOLING} \par
+appears if CALCOOL is on. This is a parent section, with one subsection
+as follows:
+\bull for integrated rates: COOLINT must be on.
+\blankline
+\underbar{HEATING} \par
+appears if CALHEAT is on. This is a parent section, with one subsection
+as follows:
+\bull for integrated rates: COOLINT must be on.
+\blankline
+\underbar{HEATING/COOLING SUMMARY} \par
+appears if CALCOOL and CALHEAT are both on.
+\ej
+% \blankline
+\underbar{FUDGERS} \par
+appears as needed.
+\blankline
+\underbar{A-TROUBLES} \par
+appears as needed.
+\blankline
+\underbar{CHECKS GRAPHS} \par
+appears if there is at least one radiative transition and CHKGRAF is on.
+\blankline
+\underbar{ITERATIVE SUMMARIES} \par
+is a major parent section which appears as needed and if SUMMARY is on.
+An Explanation of the various controls for this section appears if
+either SUMMARY or SUMTREND is on.
+Its various subsections are controlled by separate options, and are
+related to various calculated quantities which
+are obtained by iterative improvement; they appear only in those cases
+where more than one iterate has been saved so that comparison among
+successive iterates is possible, as follows:
+\bull for CHECKs: ITERCHK must be on;
+\bull for S$^{u,\ell}$: ITERS must be on, and $u,\ell$ must be a 
+radiative transition;
+\bull for RHO$^{u,\ell}$: ITERRHO must be on, and $u,\ell$ must be a 
+radiative transition;
+\bull for CHI$^{u,\ell}$: ITERCHI must be on, and $u,\ell$ must be a 
+radiative transition;
+\bull for TAU$^{u,\ell}$: ITERTAU must be on, and $u,\ell$ must be a 
+radiative transition;
+\bull for RK: ITERRK must be on;
+\bull for ND: ITERN must be on;
+\bull for RHOWT$^{u,\ell}$: ITERRWT must be on, and $u,\ell$ must be a 
+radiative transition;
+\bull for BD: ITERB must be on;
+\bull for NE: ITERNE must be on;
+\bull for Z: ITERZ must be on;
+\bull for TDST: ITERTD must be on. \np
+Iterative Summaries appear in tabular and/or in graphical from,
+depending on option SUMGRAF and input parameter {\bf ISMSW}.
+\blankline
+\underbar{ITERATION TREND SUMMARY} \par
+may appear if there is at least one radiative transition and SUMTREND is on.
+\ej
+\centerline{\bf Output from {\rm PHASE 2}: Spectrum and Summaries}
+\blankline
+\blankline
+\blankline
+\centerline{\it None of these sections appear if {\rm PHASE2} 
+is off.}
+\blankline
+\blankline
+\blankline
+\underbar{EMERGENT CONTINUOUS INTENSITY} \par
+appears if EMERINT is on. This is a parent section, with subsections
+as follows:
+\bull for depths-of-formation: ORIGIN must be on (see option ORSHORT);
+\bull for dI/dh: DIDHC must be on (see also input parameter {\bf ICDIT};
+\bull for color temperatures: COLTEMP must be on;
+\bull for average continuum intensities: AVCON muts be on. \np
+{\it Note} the effect of option WAVENUMB.
+\blankline
+\underbar{CONTINUOUS FLUX} \par
+appears if CONFLUX is on. This section includes the integrated flux
+quantities, and the Rosseland means. It has one subsection as follows:
+\bull for details at each wavelength: FLUXDMP must be on; (which specific
+details are printed depends on the value of {\bf IFXDS}). \np
+{\it Note} the effect of option WAVENUMB.
+\blankline
+\underbar{CONTINUUM ECLIPSE INTENSITIES} \par
+appears if EMERINT and ECLIPSE are both on, only for those 
+`additional wavelengths' and Composite Line Opacity wavelengths for which
+this was requested explicitly, and for CO lines wavelengths if COCLIPSE
+is on. Calculations for selected beams of specified widths are done
+when ${\bf NZE} > 0$. \np
+{\it Note} the effect of option WAVENUMB.
+\blankline
+\underbar{VELOCITIES} \par
+appears if LIGHT is on and {\bf LPVEL} = 1, but only if there are non-zero
+velocity tables worth printing. (The corresponding mass-loss rates are
+printed only if {\bf LPVEL} and {\bf LPMLR} both = 1.)
+\ej
+\centerline{\bf*****} 
+\centerline{\bf***}
+\centerline{\bf*}
+\blankline
+\centerline{ Start of Emergent Line Profile printout {\it groups} (if any).}
+\blankline
+These appear, if option LIGHT is on, for every transition
+$(u, \ell)$ for which the input parameter {\bf PROF}$^{u,\ell} > 0$.
+\blankline
+\underbar{BACKGROUND INTENSITY} \par
+computed continuum intensities amd flux needed for residuals calculation
+will be printed if option PROCPRNT is on.
+\blankline
+\underbar{GRAPH OF S, B VS. Z} \par
+appears if LIGHT and INTGRAF are both on, only for those
+transitions for \break which emergent profiles calculations were requested.
+These graphs do not appear if graphs were printed earlier in the
+LINE SOURCE FUNCTION section.
+\blankline
+\underbar{EMERGENT LINE PROFILES} \par
+shows the various versions of the emergent intensity profiles for a
+given transition, for all values of lookangle ($\mu$), velocity, and
+viewing position (front-face (always), back-face (if requested); followed
+by the flux profiles computed from the intensity profiles.
+(A somewhat abbreviated version of this printout appears if 
+APRFPRNT is on.) This parent section has subsections as follows:
+\bull for profile analyses other than those printed earlier: ANALYSIS
+must be on;
+\bull for depths-of-formation: ORIGIN must be on ({\it note} also option
+ORSHORT);
+\bull for dI/dh: DIDHL must be on;
+\bull for location analysis graph: LOGAS must be $> 0$;
+\bull for FNRMLA, FNRMLB: CLNORM must be on in a Hydrogen run. \np
+{\it Note} the effect of option WAVENUMB.
+\ej
+% \blankline
+\underbar{GRAPH OF RESIDUAL INTENSITY PROFILE} \par
+appears if LIGHT and INTGRAF are both on, only for those
+transitions for \break which emergent profiles calculations were requested. \np
+{\it Note} the effect of option WAVENUMB.
+\blankline
+\underbar{GRAPH OF ABSOLUTE INTENSITY/FLUX PROFILE} \par
+appears if LIGHT and INTGRAF are both on, only for those
+transitions for \break which emergent profiles calculations were requested. \np
+{\it Note} the effect of option WAVENUMB.
+\blankline
+\underbar{ECLIPSE} \par
+appears if LIGHT is on, only for those transitions $u,\ell$ for
+which {\bf ECLI}$^{u,\ell} > 0$. \np
+{\it Note} the effect of option WAVENUMB.
+\blankline
+\centerline{ End of Emergent Line Profile printout {\it groups} (if any).}
+\blankline
+\centerline{\bf*}
+\centerline{\bf***}
+\centerline{\bf*****}
+\blankline
+\blankline
+\underbar{SPECTRUM SUMMARY} \par
+appears if SPECSUM is on and if either LIGHT or EMERINT
+is on.
+\blankline
+\underbar{CONTINUUM CONTRIBUTIONS SUMMARIES} \par
+is a major parent section which appears if EMERINT is on. It has
+three subsections as follows:
+\bull for absorbers: OPASUM must be on;
+\bull for emitters: EMISUM must be on;
+\bull for TAU: TAUSUM must be on.
+\ej
+\centerline{\bf Performance Data, and Program Version Description}
+\blankline
+\blankline
+\blankline
+\underbar{SCRATCH I/O SUMMARY} \par
+appears when {\bf IRUNT}$\; > 0$.
+\blankline
+\underbar{TIMING SUMMARY} \par
+appears when {\bf IXSTA}$\; > 0$.
+\blankline
+\underbar{VERSION DESCRIPTION} \par
+appears always (amount of detail depends on {\bf IRUNT}).
+\blankline
+%\blankline
+%\vfill \vfill
+%\vfill \vfill
+%\vfill \vfill
+%\vfill \vfill
+%\vfill \vfill
+%\vfill \vfill
+%\vfill \vfill
+%\vfill 
+\vfill
+\noindent (Section 11 -- last revised: 2007 Feb 05) \par
+\message{Section 11 ends at page 11.\the\pageno}
+\ej
+%\end

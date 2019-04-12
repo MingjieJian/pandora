@@ -1,0 +1,6527 @@
+This is pdfTeXk, Version 3.141592-1.40.3 (Web2C 7.5.6) (format=pdftex 2013.9.5)  1 NOV 2013 16:36
+entering extended mode
+ %&-line parsing enabled.
+**wup
+(./wup.tex (./wup00a.tex (./wupstuff.tex) [1{/usr/share/texmf/fonts/map/pdftex/
+updmap/pdftex.map}] [2] [3]) (./wup01.tex
+\footline=\toks12
+ [1] [2] [3] [4] [5]
+Section 1 ends at page 1.6 [6] [7]) (./wup02.tex
+\footline=\toks13
+ [1] [2] [3]
+Section 2 ends at page 2.4 [4]) (./wup03.tex
+\footline=\toks14
+ [1] [2] [3]
+Section 3 ends at page 3.4 [4]) (./wup04.tex
+\footline=\toks15
+ [1] [2] [3]
+Section 4 ends at page 4.4 [4]) (./wup05a.tex
+\footline=\toks16
+ [1] [2]
+Underfull \vbox (badness 10000) has occurred while \output is active
+\vbox(511.91212+1.94444)x361.34999
+.\glue(\topskip) 0.0
+.\vbox(21.5+0.0)x361.34999
+..\hbox(7.5+1.94444)x264.42412
+...\glue(\tabskip) 0.0
+...\hbox(7.5+1.94444)x60.22499 []
+...\glue(\tabskip) 0.0
+...\hbox(7.5+1.94444)x60.22499 []
+...\glue(\tabskip) 0.0
+...etc.
+..\glue(\parskip) 0.0 plus 1.0
+..\glue(\baselineskip) 5.11111
+..\hbox(6.94444+0.0)x351.34999, glue set 278.93388fil, shifted 10.0
+...\hbox(0.0+0.0)x0.0
+...\tenrm E
+...\tenrm i
+...\tenrm n
+...\tenrm s
+...etc.
+.\glue 7.5
+.\glue(\lineskip) 1.0
+.\vbox(21.5+0.0)x361.34999
+..\hbox(7.5+1.94444)x264.42412
+...\glue(\tabskip) 0.0
+...\hbox(7.5+1.94444)x60.22499 []
+...\glue(\tabskip) 0.0
+...\hbox(7.5+1.94444)x60.22499 []
+...\glue(\tabskip) 0.0
+...etc.
+..\glue(\parskip) 0.0 plus 1.0
+..\glue(\baselineskip) 5.11111
+..\hbox(6.94444+0.0)x351.34999, glue set 212.43515fil, shifted 10.0
+...\hbox(0.0+0.0)x0.0
+...\tenrm a
+...\tenrm b
+...\tenrm u
+...\tenrm n
+...etc.
+.etc.
+
+ [3]
+Underfull \vbox (badness 10000) has occurred while \output is active
+\vbox(511.91212+1.94444)x361.34999
+.\glue(\topskip) 0.0
+.\vbox(35.5+2.5)x361.34999
+..\hbox(7.5+2.5)x264.42412
+...\glue(\tabskip) 0.0
+...\hbox(7.5+2.5)x60.22499 []
+...\glue(\tabskip) 0.0
+...\hbox(7.5+2.5)x60.22499 []
+...\glue(\tabskip) 0.0
+...etc.
+..\glue(\parskip) 0.0 plus 1.0
+..\glue(\baselineskip) 4.0
+..\hbox(7.5+2.5)x351.34999, glue set 24.38033fil, shifted 10.0
+...\hbox(0.0+0.0)x0.0
+...\tenrm s
+...\tenrm c
+...\tenrm a
+...\tenrm t
+...etc.
+..\glue(\parskip) 0.0 plus 1.0
+..etc.
+.\glue 7.5
+.\glue(\lineskip) 1.0
+.\vbox(35.5+1.94444)x361.34999
+..\hbox(7.5+2.5)x277.06305
+...\glue(\tabskip) 0.0
+...\hbox(7.5+2.5)x60.22499 []
+...\glue(\tabskip) 0.0
+...\hbox(7.5+2.5)x60.22499 []
+...\glue(\tabskip) 0.0
+...etc.
+..\glue(\parskip) 0.0 plus 1.0
+..\glue(\baselineskip) 4.55556
+..\hbox(6.94444+1.94444)x351.34999, glue set 171.76733fil, shifted 10.0
+...\hbox(0.0+0.0)x0.0
+...\tenrm s
+...\tenrm i
+...\tenrm n
+...\tenrm g
+...etc.
+..\glue(\parskip) 0.0 plus 1.0
+..etc.
+.etc.
+
+ [4]
+Underfull \vbox (badness 10000) has occurred while \output is active
+\vbox(511.91212+1.94444)x361.34999
+.\glue(\topskip) 0.0
+.\vbox(34.94444+1.94444)x361.34999
+..\hbox(6.94444+1.94444)x264.42412
+...\glue(\tabskip) 0.0
+...\hbox(6.94444+1.94444)x60.22499 []
+...\glue(\tabskip) 0.0
+...\hbox(6.94444+1.94444)x60.22499 []
+...\glue(\tabskip) 0.0
+...etc.
+..\glue(\parskip) 0.0 plus 1.0
+..\glue(\baselineskip) 5.11111
+..\hbox(6.94444+1.94444)x351.34999, glue set 131.76756fil, shifted 10.0
+...\hbox(0.0+0.0)x0.0
+...\tenrm a
+...\tenrm m
+...\kern-0.27779
+...\tenrm b
+...etc.
+..\glue(\parskip) 0.0 plus 1.0
+..etc.
+.\glue 7.5
+.\glue(\lineskip) 1.0
+.\vbox(34.94444+1.94444)x361.34999
+..\hbox(6.94444+1.94444)x264.42412
+...\glue(\tabskip) 0.0
+...\hbox(6.94444+1.94444)x60.22499 []
+...\glue(\tabskip) 0.0
+...\hbox(6.94444+1.94444)x60.22499 []
+...\glue(\tabskip) 0.0
+...etc.
+..\glue(\parskip) 0.0 plus 1.0
+..\glue(\baselineskip) 5.11111
+..\hbox(6.94444+1.94444)x351.34999, glue set 131.76756fil, shifted 10.0
+...\hbox(0.0+0.0)x0.0
+...\tenrm a
+...\tenrm m
+...\kern-0.27779
+...\tenrm b
+...etc.
+..\glue(\parskip) 0.0 plus 1.0
+..etc.
+.etc.
+
+ [5]
+Underfull \vbox (badness 10000) has occurred while \output is active
+\vbox(511.91212+1.94444)x361.34999
+.\glue(\topskip) 0.0
+.\vbox(35.5+1.94444)x361.34999
+..\hbox(7.5+2.5)x277.20193
+...\glue(\tabskip) 0.0
+...\hbox(7.5+2.5)x60.22499 []
+...\glue(\tabskip) 0.0
+...\hbox(7.5+2.5)x60.22499 []
+...\glue(\tabskip) 0.0
+...etc.
+..\glue(\parskip) 0.0 plus 1.0
+..\glue(\baselineskip) 4.55556
+..\hbox(6.94444+1.94444)x351.34999, glue set 114.82533fil, shifted 10.0
+...\hbox(0.0+0.0)x0.0
+...\tenrm d
+...\tenrm e
+...\tenrm p
+...\tenrm a
+...etc.
+..\glue(\parskip) 0.0 plus 1.0
+..etc.
+.\glue 7.5
+.\glue(\lineskip) 1.0
+.\vbox(35.5+1.94444)x361.34999
+..\hbox(7.5+2.5)x277.06305
+...\glue(\tabskip) 0.0
+...\hbox(7.5+2.5)x60.22499 []
+...\glue(\tabskip) 0.0
+...\hbox(7.5+2.5)x60.22499 []
+...\glue(\tabskip) 0.0
+...etc.
+..\glue(\parskip) 0.0 plus 1.0
+..\glue(\baselineskip) 4.55556
+..\hbox(6.94444+1.94444)x351.34999, glue set 135.35173fil, shifted 10.0
+...\hbox(0.0+0.0)x0.0
+...\tenrm d
+...\tenrm e
+...\tenrm p
+...\tenrm a
+...etc.
+..\glue(\parskip) 0.0 plus 1.0
+..etc.
+.etc.
+
+ [6]
+Underfull \vbox (badness 10000) has occurred while \output is active
+\vbox(511.91212+2.5)x361.34999
+.\glue(\topskip) 0.0
+.\vbox(35.5+1.94444)x361.34999
+..\hbox(7.5+2.5)x277.06305
+...\glue(\tabskip) 0.0
+...\hbox(7.5+2.5)x60.22499 []
+...\glue(\tabskip) 0.0
+...\hbox(7.5+2.5)x60.22499 []
+...\glue(\tabskip) 0.0
+...etc.
+..\glue(\parskip) 0.0 plus 1.0
+..\glue(\baselineskip) 4.55556
+..\hbox(6.94444+1.94444)x351.34999, glue set 148.12953fil, shifted 10.0
+...\hbox(0.0+0.0)x0.0
+...\tenrm d
+...\tenrm e
+...\tenrm p
+...\tenrm a
+...etc.
+..\glue(\parskip) 0.0 plus 1.0
+..etc.
+.\glue 7.5
+.\glue(\lineskip) 1.0
+.\vbox(35.5+1.94444)x361.34999
+..\hbox(7.5+1.94444)x264.17444
+...\glue(\tabskip) 0.0
+...\hbox(7.5+1.94444)x60.22499 []
+...\glue(\tabskip) 0.0
+...\hbox(7.5+1.94444)x60.22499 []
+...\glue(\tabskip) 0.0
+...etc.
+..\glue(\parskip) 0.0 plus 1.0
+..\glue(\baselineskip) 5.11111
+..\hbox(6.94444+1.94444)x351.34999, glue set 229.48938fil, shifted 10.0
+...\hbox(0.0+0.0)x0.0
+...\tenrm b
+...\tenrm -
+...\discretionary
+...\tenrm r
+...etc.
+..\glue(\parskip) 0.0 plus 1.0
+..etc.
+.etc.
+
+ [7]
+Underfull \vbox (badness 10000) has occurred while \output is active
+\vbox(511.91212+1.94444)x361.34999
+.\glue(\topskip) 0.0
+.\vbox(35.5+1.94444)x361.34999
+..\hbox(7.5+2.5)x277.06305
+...\glue(\tabskip) 0.0
+...\hbox(7.5+2.5)x60.22499 []
+...\glue(\tabskip) 0.0
+...\hbox(7.5+2.5)x60.22499 []
+...\glue(\tabskip) 0.0
+...etc.
+..\glue(\parskip) 0.0 plus 1.0
+..\glue(\baselineskip) 4.55556
+..\hbox(6.94444+1.94444)x351.34999, glue set 181.76773fil, shifted 10.0
+...\hbox(0.0+0.0)x0.0
+...\tenrm s
+...\tenrm i
+...\tenrm n
+...\tenrm g
+...etc.
+..\glue(\parskip) 0.0 plus 1.0
+..etc.
+.\glue 7.5
+.\glue(\lineskip) 1.0
+.\vbox(35.5+2.86108)x361.34999
+..\hbox(7.5+2.5)x277.06305
+...\glue(\tabskip) 0.0
+...\hbox(7.5+2.5)x60.22499 []
+...\glue(\tabskip) 0.0
+...\hbox(7.5+2.5)x60.22499 []
+...\glue(\tabskip) 0.0
+...etc.
+..\glue(\parskip) 0.0 plus 1.0
+..\glue(\baselineskip) 4.55556
+..\hbox(6.94444+1.94444)x351.34999, glue set 231.29489fil, shifted 10.0
+...\hbox(0.0+0.0)x0.0
+...\tenrm C
+...\tenrm a
+...\tenrm l
+...\tenrm c
+...etc.
+..\glue(\parskip) 0.0 plus 1.0
+..etc.
+.etc.
+
+ [8]
+Underfull \vbox (badness 10000) has occurred while \output is active
+\vbox(511.91212+1.94444)x361.34999
+.\glue(\topskip) 0.0
+.\vbox(34.94444+1.94444)x361.34999
+..\hbox(6.94444+1.94444)x264.42412
+...\glue(\tabskip) 0.0
+...\hbox(6.94444+1.94444)x60.22499 []
+...\glue(\tabskip) 0.0
+...\hbox(6.94444+1.94444)x60.22499 []
+...\glue(\tabskip) 0.0
+...etc.
+..\glue(\parskip) 0.0 plus 1.0
+..\glue(\baselineskip) 5.11111
+..\hbox(6.94444+1.94444)x351.34999, glue set 204.82368fil, shifted 10.0
+...\hbox(0.0+0.0)x0.0
+...\tenrm g
+...\tenrm r
+...\tenrm a
+...\kern-0.27779
+...etc.
+..\glue(\parskip) 0.0 plus 1.0
+..etc.
+.\glue 7.5
+.\glue(\lineskip) 1.0
+.\vbox(20.94444+0.0)x361.34999
+..\hbox(6.94444+1.94444)x264.42412
+...\glue(\tabskip) 0.0
+...\hbox(6.94444+1.94444)x60.22499 []
+...\glue(\tabskip) 0.0
+...\hbox(6.94444+1.94444)x60.22499 []
+...\glue(\tabskip) 0.0
+...etc.
+..\glue(\parskip) 0.0 plus 1.0
+..\glue(\baselineskip) 5.11111
+..\hbox(6.94444+0.0)x351.34999, glue set 153.35136fil, shifted 10.0
+...\hbox(0.0+0.0)x0.0
+...\tenrm H
+...\tenrm e
+...\tenrm l
+...\tenrm i
+...etc.
+.etc.
+
+ [9]
+Underfull \vbox (badness 10000) has occurred while \output is active
+\vbox(511.91212+2.5)x361.34999
+.\glue(\topskip) 0.0
+.\vbox(34.94444+1.94444)x361.34999
+..\hbox(6.94444+1.94444)x264.42412
+...\glue(\tabskip) 0.0
+...\hbox(6.94444+1.94444)x60.22499 []
+...\glue(\tabskip) 0.0
+...\hbox(6.94444+1.94444)x60.22499 []
+...\glue(\tabskip) 0.0
+...etc.
+..\glue(\parskip) 0.0 plus 1.0
+..\glue(\baselineskip) 4.55556
+..\hbox(7.5+2.5)x351.34999, glue set 266.51682fil, shifted 10.0
+...\hbox(0.0+0.0)x0.0
+...\tenrm l
+...\tenrm o
+...\tenrm g
+...\tenrm (
+...etc.
+..\glue(\parskip) 0.0 plus 1.0
+..etc.
+.\glue 7.5
+.\glue(\lineskip) 1.0
+.\vbox(34.94444+1.94444)x361.34999
+..\hbox(6.94444+1.94444)x264.42412
+...\glue(\tabskip) 0.0
+...\hbox(6.94444+1.94444)x60.22499 []
+...\glue(\tabskip) 0.0
+...\hbox(6.94444+1.94444)x60.22499 []
+...\glue(\tabskip) 0.0
+...etc.
+..\glue(\parskip) 0.0 plus 1.0
+..\glue(\baselineskip) 5.11111
+..\hbox(6.94444+1.94444)x351.34999, glue set 233.10045fil, shifted 10.0
+...\hbox(0.0+0.0)x0.0
+...\tenrm H
+...\tenrm S
+...\tenrm E
+...\glue 3.33298
+...etc.
+..\glue(\parskip) 0.0 plus 1.0
+..etc.
+.etc.
+
+ [10]
+Underfull \vbox (badness 10000) has occurred while \output is active
+\vbox(511.91212+1.94444)x361.34999
+.\glue(\topskip) 0.0
+.\vbox(35.5+2.5)x361.34999
+..\hbox(7.5+2.5)x264.42412
+...\glue(\tabskip) 0.0
+...\hbox(7.5+2.5)x60.22499 []
+...\glue(\tabskip) 0.0
+...\hbox(7.5+2.5)x60.22499 []
+...\glue(\tabskip) 0.0
+...etc.
+..\glue(\parskip) 0.0 plus 1.0
+..\glue(\baselineskip) 4.55556
+..\hbox(6.94444+1.94444)x351.34999, glue set 163.01768fil, shifted 10.0
+...\hbox(0.0+0.0)x0.0
+...\tenrm `
+...\tenrm L
+...\tenrm i
+...\tenrm n
+...etc.
+..\glue(\parskip) 0.0 plus 1.0
+..etc.
+.\glue 7.5
+.\glue(\lineskip) 1.0
+.\vbox(21.5+1.94444)x361.34999
+..\hbox(7.5+2.5)x264.42412
+...\glue(\tabskip) 0.0
+...\hbox(7.5+2.5)x60.22499 []
+...\glue(\tabskip) 0.0
+...\hbox(7.5+2.5)x60.22499 []
+...\glue(\tabskip) 0.0
+...etc.
+..\glue(\parskip) 0.0 plus 1.0
+..\glue(\baselineskip) 4.55556
+..\hbox(6.94444+1.94444)x351.34999, glue set 216.57259fil, shifted 10.0
+...\hbox(0.0+0.0)x0.0
+...\tenrm r
+...\tenrm a
+...\tenrm d
+...\tenrm i
+...etc.
+.etc.
+
+ [11]
+Underfull \hbox (badness 1137) in paragraph at lines 503--504
+[]\tenrm displacements from ref-er-ence wave-length of blended line com-po-nent
+s,  
+
+\hbox(6.94444+1.94444)x351.34999, glue set 2.24956
+.\hbox(0.0+0.0)x0.0
+.\tenrm d
+.\tenrm i
+.\tenrm s
+.\tenrm p
+.etc.
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active
+\vbox(511.91212+1.94444)x361.34999
+.\glue(\topskip) 0.0
+.\vbox(35.5+1.94444)x361.34999
+..\hbox(7.5+1.94444)x263.31302
+...\glue(\tabskip) 0.0
+...\hbox(7.5+1.94444)x60.22499 []
+...\glue(\tabskip) 0.0
+...\hbox(7.5+1.94444)x60.22499 []
+...\glue(\tabskip) 0.0
+...etc.
+..\glue(\parskip) 0.0 plus 1.0
+..\glue(\baselineskip) 5.11111
+..\hbox(6.94444+1.94444)x351.34999, glue set 116.18497fil, shifted 10.0
+...\hbox(0.0+0.0)x0.0
+...\tenrm ^^M (ligature fl)
+...\tenrm u
+...\tenrm i
+...\tenrm d
+...etc.
+..\glue(\parskip) 0.0 plus 1.0
+..etc.
+.\glue 7.5
+.\glue(\lineskip) 1.0
+.\vbox(21.5+1.94444)x361.34999
+..\hbox(7.5+1.94444)x263.31302
+...\glue(\tabskip) 0.0
+...\hbox(7.5+1.94444)x60.22499 []
+...\glue(\tabskip) 0.0
+...\hbox(7.5+1.94444)x60.22499 []
+...\glue(\tabskip) 0.0
+...etc.
+..\glue(\parskip) 0.0 plus 1.0
+..\glue(\baselineskip) 5.11111
+..\hbox(6.94444+1.94444)x351.34999, glue set 116.18497fil, shifted 10.0
+...\hbox(0.0+0.0)x0.0
+...\tenrm ^^M (ligature fl)
+...\tenrm u
+...\tenrm i
+...\tenrm d
+...etc.
+.etc.
+
+ [12]
+Underfull \vbox (badness 10000) has occurred while \output is active
+\vbox(511.91212+1.94444)x361.34999
+.\glue(\topskip) 0.0
+.\vbox(21.5+1.94444)x361.34999
+..\hbox(7.5+2.5)x264.42412
+...\glue(\tabskip) 0.0
+...\hbox(7.5+2.5)x60.22499 []
+...\glue(\tabskip) 0.0
+...\hbox(7.5+2.5)x60.22499 []
+...\glue(\tabskip) 0.0
+...etc.
+..\glue(\parskip) 0.0 plus 1.0
+..\glue(\baselineskip) 4.55556
+..\hbox(6.94444+1.94444)x351.34999, glue set 269.60054fil, shifted 10.0
+...\hbox(0.0+0.0)x0.0
+...\tenrm T
+...\kern-0.27779
+...\tenrm y
+...\tenrm p
+...etc.
+.\glue 7.5
+.\glue(\lineskip) 1.0
+.\vbox(35.5+1.94444)x361.34999
+..\hbox(7.5+2.5)x277.20193
+...\glue(\tabskip) 0.0
+...\hbox(7.5+2.5)x60.22499 []
+...\glue(\tabskip) 0.0
+...\hbox(7.5+2.5)x60.22499 []
+...\glue(\tabskip) 0.0
+...etc.
+..\glue(\parskip) 0.0 plus 1.0
+..\glue(\baselineskip) 4.0
+..\hbox(7.5+2.5)x351.34999, glue set 190.00351fil, shifted 10.0
+...\hbox(0.0+0.0)x0.0
+...\tenrm d
+...\tenrm e
+...\tenrm p
+...\tenrm t
+...etc.
+..\glue(\parskip) 0.0 plus 1.0
+..etc.
+.etc.
+
+ [13]
+Underfull \vbox (badness 10000) has occurred while \output is active
+\vbox(511.91212+1.94444)x361.34999
+.\glue(\topskip) 0.0
+.\vbox(35.5+1.94444)x361.34999
+..\hbox(7.5+1.94444)x264.42412
+...\glue(\tabskip) 0.0
+...\hbox(7.5+1.94444)x60.22499 []
+...\glue(\tabskip) 0.0
+...\hbox(7.5+1.94444)x60.22499 []
+...\glue(\tabskip) 0.0
+...etc.
+..\glue(\parskip) 0.0 plus 1.0
+..\glue(\baselineskip) 5.22224
+..\hbox(6.83331+1.94444)x351.34999, glue set 211.01747fil, shifted 10.0
+...\hbox(0.0+0.0)x0.0
+...\tenrm D
+...\tenrm R
+...\glue 3.33298
+...\tenrm p
+...etc.
+..\glue(\parskip) 0.0 plus 1.0
+..etc.
+.\glue 7.5
+.\glue(\lineskip) 1.0
+.\vbox(21.5+1.94444)x361.34999
+..\hbox(7.5+2.5)x264.42412
+...\glue(\tabskip) 0.0
+...\hbox(7.5+2.5)x60.22499 []
+...\glue(\tabskip) 0.0
+...\hbox(7.5+2.5)x60.22499 []
+...\glue(\tabskip) 0.0
+...etc.
+..\glue(\parskip) 0.0 plus 1.0
+..\glue(\baselineskip) 4.55556
+..\hbox(6.94444+1.94444)x351.34999, glue set 119.4624fil, shifted 10.0
+...\hbox(0.0+0.0)x0.0
+...\tenrm C
+...\tenrm o
+...\tenrm n
+...\kern-0.27779
+...etc.
+.etc.
+
+ [14]
+Underfull \vbox (badness 10000) has occurred while \output is active
+\vbox(511.91212+1.94444)x361.34999
+.\glue(\topskip) 0.0
+.\vbox(21.5+1.94444)x361.34999
+..\hbox(7.5+2.5)x277.20193
+...\glue(\tabskip) 0.0
+...\hbox(7.5+2.5)x60.22499 []
+...\glue(\tabskip) 0.0
+...\hbox(7.5+2.5)x60.22499 []
+...\glue(\tabskip) 0.0
+...etc.
+..\glue(\parskip) 0.0 plus 1.0
+..\glue(\baselineskip) 4.66669
+..\hbox(6.83331+1.94444)x351.34999, glue set 264.96124fil, shifted 10.0
+...\hbox(0.0+0.0)x0.0
+...\tenrm L
+...\tenrm y
+...\tenrm m
+...\tenrm a
+...etc.
+.\glue 7.5
+.\glue(\lineskip) 1.0
+.\vbox(35.5+1.94444)x361.34999
+..\hbox(7.5+1.94444)x264.42412
+...\glue(\tabskip) 0.0
+...\hbox(7.5+1.94444)x60.22499 []
+...\glue(\tabskip) 0.0
+...\hbox(7.5+1.94444)x60.22499 []
+...\glue(\tabskip) 0.0
+...etc.
+..\glue(\parskip) 0.0 plus 1.0
+..\glue(\baselineskip) 5.11111
+..\hbox(6.94444+1.94444)x351.34999, glue set 78.57451fil, shifted 10.0
+...\hbox(0.0+0.0)x0.0
+...\tenrm T
+...\kern-0.83334
+...\tenrm A
+...\kern-0.27779
+...etc.
+..\glue(\parskip) 0.0 plus 1.0
+..etc.
+.etc.
+
+ [15]
+Underfull \vbox (badness 10000) has occurred while \output is active
+\vbox(511.91212+2.5)x361.34999
+.\glue(\topskip) 0.0
+.\vbox(35.5+1.94444)x361.34999
+..\hbox(7.5+1.94444)x264.42412
+...\glue(\tabskip) 0.0
+...\hbox(7.5+1.94444)x60.22499 []
+...\glue(\tabskip) 0.0
+...\hbox(7.5+1.94444)x60.22499 []
+...\glue(\tabskip) 0.0
+...etc.
+..\glue(\parskip) 0.0 plus 1.0
+..\glue(\baselineskip) 5.11111
+..\hbox(6.94444+1.94444)x351.34999, glue set 225.21187fil, shifted 10.0
+...\hbox(0.0+0.0)x0.0
+...\tenrm ^^M (ligature fl)
+...\tenrm u
+...\tenrm i
+...\tenrm d
+...etc.
+..\glue(\parskip) 0.0 plus 1.0
+..etc.
+.\glue 7.5
+.\glue(\lineskip) 1.0
+.\vbox(35.5+2.5)x361.34999
+..\hbox(7.5+2.5)x263.31302
+...\glue(\tabskip) 0.0
+...\hbox(7.5+2.5)x60.22499 []
+...\glue(\tabskip) 0.0
+...\hbox(7.5+2.5)x60.22499 []
+...\glue(\tabskip) 0.0
+...etc.
+..\glue(\parskip) 0.0 plus 1.0
+..\glue(\baselineskip) 4.55556
+..\hbox(6.94444+1.94444)x351.34999, glue set 130.65755fil, shifted 10.0
+...\hbox(0.0+0.0)x0.0
+...\tenrm s
+...\tenrm t
+...\tenrm a
+...\tenrm n
+...etc.
+..\glue(\parskip) 0.0 plus 1.0
+..etc.
+.etc.
+
+ [16]
+Underfull \vbox (badness 10000) has occurred while \output is active
+\vbox(511.91212+2.5)x361.34999
+.\glue(\topskip) 0.0
+.\vbox(35.5+1.94444)x361.34999
+..\hbox(7.5+1.94444)x264.42412
+...\glue(\tabskip) 0.0
+...\hbox(7.5+1.94444)x60.22499 []
+...\glue(\tabskip) 0.0
+...\hbox(7.5+1.94444)x60.22499 []
+...\glue(\tabskip) 0.0
+...etc.
+..\glue(\parskip) 0.0 plus 1.0
+..\glue(\baselineskip) 5.22224
+..\hbox(6.83331+1.94444)x351.34999, glue set 194.35037fil, shifted 10.0
+...\hbox(0.0+0.0)x0.0
+...\tenrm g
+...\tenrm a
+...\tenrm m
+...\tenrm m
+...etc.
+..\glue(\parskip) 0.0 plus 1.0
+..etc.
+.\glue 7.5
+.\glue(\lineskip) 1.0
+.\vbox(34.94444+1.94444)x361.34999
+..\hbox(6.94444+1.94444)x264.42412
+...\glue(\tabskip) 0.0
+...\hbox(6.94444+1.94444)x60.22499 []
+...\glue(\tabskip) 0.0
+...\hbox(6.94444+1.94444)x60.22499 []
+...\glue(\tabskip) 0.0
+...etc.
+..\glue(\parskip) 0.0 plus 1.0
+..\glue(\baselineskip) 5.11111
+..\hbox(6.94444+0.0)x351.34999, glue set 111.99048fil, shifted 10.0
+...\hbox(0.0+0.0)x0.0
+...\tenrm H
+...\tenrm e
+...\tenrm l
+...\tenrm i
+...etc.
+..\glue(\parskip) 0.0 plus 1.0
+..etc.
+.etc.
+
+ [17]
+Underfull \vbox (badness 10000) has occurred while \output is active
+\vbox(511.91212+2.5)x361.34999
+.\glue(\topskip) 0.0
+.\vbox(105.5+2.5)x361.34999
+..\hbox(7.5+2.5)x264.42412
+...\glue(\tabskip) 0.0
+...\hbox(7.5+2.5)x60.22499 []
+...\glue(\tabskip) 0.0
+...\hbox(7.5+2.5)x60.22499 []
+...\glue(\tabskip) 0.0
+...etc.
+..\glue(\parskip) 0.0 plus 1.0
+..\glue(\baselineskip) 4.55556
+..\hbox(6.94444+1.94444)x351.34999, glue set 208.46222fil, shifted 10.0
+...\hbox(0.0+0.0)x0.0
+...\tenrm H
+...\tenrm y
+...\tenrm d
+...\tenrm r
+...etc.
+..\glue(\parskip) 0.0 plus 1.0
+..etc.
+.\glue 7.5
+.\glue(\lineskip) 1.0
+.\vbox(34.94444+1.94444)x361.34999
+..\hbox(6.94444+1.94444)x264.42412
+...\glue(\tabskip) 0.0
+...\hbox(6.94444+1.94444)x60.22499 []
+...\glue(\tabskip) 0.0
+...\hbox(6.94444+1.94444)x60.22499 []
+...\glue(\tabskip) 0.0
+...etc.
+..\glue(\parskip) 0.0 plus 1.0
+..\glue(\baselineskip) 5.11111
+..\hbox(6.94444+1.94444)x351.34999, glue set 60.35144fil, shifted 10.0
+...\hbox(0.0+0.0)x0.0
+...\tenrm H
+...\tenrm y
+...\tenrm d
+...\tenrm r
+...etc.
+..\glue(\parskip) 0.0 plus 1.0
+..etc.
+.etc.
+
+ [18]
+Underfull \vbox (badness 10000) has occurred while \output is active
+\vbox(511.91212+1.94444)x361.34999
+.\glue(\topskip) 0.0
+.\vbox(20.86111+1.94444)x361.34999
+..\hbox(6.86111+1.94444)x235.28546
+...\glue(\tabskip) 0.0
+...\hbox(6.86111+1.94444)x60.22499 []
+...\glue(\tabskip) 0.0
+...\hbox(6.86111+1.94444)x60.22499 []
+...\glue(\tabskip) 0.0
+...etc.
+..\glue(\parskip) 0.0 plus 1.0
+..\glue(\baselineskip) 5.11111
+..\hbox(6.94444+1.94444)x351.34999, glue set 166.18439fil, shifted 10.0
+...\hbox(0.0+0.0)x0.0
+...\tenrm d
+...\tenrm i
+...\tenrm  (ligature ff)
+...\tenrm u
+...etc.
+.\glue 7.5
+.\glue(\lineskip) 1.0
+.\vbox(35.5+1.94444)x361.34999
+..\hbox(7.5+1.94444)x235.28546
+...\glue(\tabskip) 0.0
+...\hbox(7.5+1.94444)x60.22499 []
+...\glue(\tabskip) 0.0
+...\hbox(7.5+1.94444)x60.22499 []
+...\glue(\tabskip) 0.0
+...etc.
+..\glue(\parskip) 0.0 plus 1.0
+..\glue(\baselineskip) 4.55556
+..\hbox(7.5+2.5)x351.34999, glue set 184.82298fil, shifted 10.0
+...\hbox(0.0+0.0)x0.0
+...\tenrm d
+...\tenrm I
+...\tenrm /
+...\tenrm d
+...etc.
+..\glue(\parskip) 0.0 plus 1.0
+..etc.
+.etc.
+
+ [19]
+Underfull \vbox (badness 10000) has occurred while \output is active
+\vbox(511.91212+2.5)x361.34999
+.\glue(\topskip) 0.0
+.\vbox(34.86111+1.94444)x361.34999
+..\hbox(6.86111+1.94444)x235.28546
+...\glue(\tabskip) 0.0
+...\hbox(6.86111+1.94444)x60.22499 []
+...\glue(\tabskip) 0.0
+...\hbox(6.86111+1.94444)x60.22499 []
+...\glue(\tabskip) 0.0
+...etc.
+..\glue(\parskip) 0.0 plus 1.0
+..\glue(\baselineskip) 5.11111
+..\hbox(6.94444+1.94444)x351.34999, glue set 171.62984fil, shifted 10.0
+...\hbox(0.0+0.0)x0.0
+...\tenrm i
+...\tenrm n
+...\tenrm d
+...\tenrm e
+...etc.
+..\glue(\parskip) 0.0 plus 1.0
+..etc.
+.\glue 7.5
+.\glue(\lineskip) 1.0
+.\vbox(34.86111+2.5)x361.34999
+..\hbox(6.86111+1.94444)x235.28546
+...\glue(\tabskip) 0.0
+...\hbox(6.86111+1.94444)x60.22499 []
+...\glue(\tabskip) 0.0
+...\hbox(6.86111+1.94444)x60.22499 []
+...\glue(\tabskip) 0.0
+...etc.
+..\glue(\parskip) 0.0 plus 1.0
+..\glue(\baselineskip) 5.11111
+..\hbox(6.94444+1.94444)x351.34999, glue set 211.04555fil, shifted 10.0
+...\hbox(0.0+0.0)x0.0
+...\tenrm d
+...\tenrm e
+...\tenrm p
+...\tenrm t
+...etc.
+..\glue(\parskip) 0.0 plus 1.0
+..etc.
+.etc.
+
+ [20]
+Underfull \vbox (badness 10000) has occurred while \output is active
+\vbox(511.91212+1.94444)x361.34999
+.\glue(\topskip) 0.0
+.\vbox(21.5+1.94444)x361.34999
+..\hbox(7.5+1.94444)x235.28546
+...\glue(\tabskip) 0.0
+...\hbox(7.5+1.94444)x60.22499 []
+...\glue(\tabskip) 0.0
+...\hbox(7.5+1.94444)x60.22499 []
+...\glue(\tabskip) 0.0
+...etc.
+..\glue(\parskip) 0.0 plus 1.0
+..\glue(\baselineskip) 5.11111
+..\hbox(6.94444+1.94444)x351.34999, glue set 231.93419fil, shifted 10.0
+...\hbox(0.0+0.0)x0.0
+...\tenrm a
+...\glue(\spaceskip) 3.33298
+...\tenrm R
+...\tenrm H
+...etc.
+.\glue 7.5
+.\glue(\lineskip) 1.0
+.\vbox(34.86111+1.94444)x361.34999
+..\hbox(6.86111+1.94444)x235.28546
+...\glue(\tabskip) 0.0
+...\hbox(6.86111+1.94444)x60.22499 []
+...\glue(\tabskip) 0.0
+...\hbox(6.86111+1.94444)x60.22499 []
+...\glue(\tabskip) 0.0
+...etc.
+..\glue(\parskip) 0.0 plus 1.0
+..\glue(\baselineskip) 5.11111
+..\hbox(6.94444+1.94444)x351.34999, glue set 78.63fil, shifted 10.0
+...\hbox(0.0+0.0)x0.0
+...\tenrm i
+...\tenrm n
+...\tenrm d
+...\tenrm e
+...etc.
+..\glue(\parskip) 0.0 plus 1.0
+..etc.
+.etc.
+
+ [21]
+Underfull \vbox (badness 10000) has occurred while \output is active
+\vbox(511.91212+1.94444)x361.34999
+.\glue(\topskip) 0.0
+.\vbox(34.86111+1.94444)x361.34999
+..\hbox(6.86111+1.94444)x235.28546
+...\glue(\tabskip) 0.0
+...\hbox(6.86111+1.94444)x60.22499 []
+...\glue(\tabskip) 0.0
+...\hbox(6.86111+1.94444)x60.22499 []
+...\glue(\tabskip) 0.0
+...etc.
+..\glue(\parskip) 0.0 plus 1.0
+..\glue(\baselineskip) 5.11111
+..\hbox(6.94444+1.94444)x351.34999, glue set 160.8785fil, shifted 10.0
+...\hbox(0.0+0.0)x0.0
+...\tenrm l
+...\tenrm i
+...\tenrm n
+...\tenrm e
+...etc.
+..\glue(\parskip) 0.0 plus 1.0
+..etc.
+.\glue 7.5
+.\glue(\lineskip) 1.0
+.\vbox(21.5+1.94444)x361.34999
+..\hbox(7.5+1.94444)x235.28546
+...\glue(\tabskip) 0.0
+...\hbox(7.5+1.94444)x60.22499 []
+...\glue(\tabskip) 0.0
+...\hbox(7.5+1.94444)x60.22499 []
+...\glue(\tabskip) 0.0
+...etc.
+..\glue(\parskip) 0.0 plus 1.0
+..\glue(\baselineskip) 5.11111
+..\hbox(6.94444+1.94444)x351.34999, glue set 131.43431fil, shifted 10.0
+...\hbox(0.0+0.0)x0.0
+...\tenrm d
+...\tenrm -
+...\discretionary
+...\tenrm c
+...etc.
+.etc.
+
+ [22]
+Underfull \vbox (badness 10000) has occurred while \output is active
+\vbox(511.91212+1.94444)x361.34999
+.\glue(\topskip) 0.0
+.\vbox(35.5+1.94444)x361.34999
+..\hbox(7.5+1.94444)x235.28546
+...\glue(\tabskip) 0.0
+...\hbox(7.5+1.94444)x60.22499 []
+...\glue(\tabskip) 0.0
+...\hbox(7.5+1.94444)x60.22499 []
+...\glue(\tabskip) 0.0
+...etc.
+..\glue(\parskip) 0.0 plus 1.0
+..\glue(\baselineskip) 5.11111
+..\hbox(6.94444+1.94444)x351.34999, glue set 190.54552fil, shifted 10.0
+...\hbox(0.0+0.0)x0.0
+...\tenrm f
+...\tenrm r
+...\tenrm e
+...\tenrm q
+...etc.
+..\glue(\parskip) 0.0 plus 1.0
+..etc.
+.\glue 7.5
+.\glue(\lineskip) 1.0
+.\vbox(21.5+1.94444)x361.34999
+..\hbox(7.5+1.94444)x235.28546
+...\glue(\tabskip) 0.0
+...\hbox(7.5+1.94444)x60.22499 []
+...\glue(\tabskip) 0.0
+...\hbox(7.5+1.94444)x60.22499 []
+...\glue(\tabskip) 0.0
+...etc.
+..\glue(\parskip) 0.0 plus 1.0
+..\glue(\baselineskip) 5.11111
+..\hbox(6.94444+1.94444)x351.34999, glue set 151.29614fil, shifted 10.0
+...\hbox(0.0+0.0)x0.0
+...\tenrm d
+...\tenrm u
+...\tenrm m
+...\tenrm p
+...etc.
+.etc.
+
+ [23]
+Underfull \vbox (badness 10000) has occurred while \output is active
+\vbox(511.91212+1.94444)x361.34999
+.\glue(\topskip) 0.0
+.\vbox(21.5+2.5)x361.34999
+..\hbox(7.5+1.94444)x234.72992
+...\glue(\tabskip) 0.0
+...\hbox(7.5+1.94444)x60.22499 []
+...\glue(\tabskip) 0.0
+...\hbox(7.5+1.94444)x60.22499 []
+...\glue(\tabskip) 0.0
+...etc.
+..\glue(\parskip) 0.0 plus 1.0
+..\glue(\baselineskip) 4.55556
+..\hbox(7.5+2.5)x351.34999, glue set 242.87866fil, shifted 10.0
+...\hbox(0.0+0.0)x0.0
+...\tenrm s
+...\tenrm c
+...\tenrm r
+...\tenrm a
+...etc.
+.\glue 7.5
+.\glue(\lineskip) 1.0
+.\vbox(34.86111+1.94444)x361.34999
+..\hbox(6.86111+1.94444)x235.28546
+...\glue(\tabskip) 0.0
+...\hbox(6.86111+1.94444)x60.22499 []
+...\glue(\tabskip) 0.0
+...\hbox(6.86111+1.94444)x60.22499 []
+...\glue(\tabskip) 0.0
+...etc.
+..\glue(\parskip) 0.0 plus 1.0
+..\glue(\baselineskip) 5.11111
+..\hbox(6.94444+1.94444)x351.34999, glue set 66.04701fil, shifted 10.0
+...\hbox(0.0+0.0)x0.0
+...\tenrm i
+...\tenrm n
+...\tenrm d
+...\tenrm e
+...etc.
+..\glue(\parskip) 0.0 plus 1.0
+..etc.
+.etc.
+
+ [24]
+Underfull \vbox (badness 10000) has occurred while \output is active
+\vbox(511.91212+1.94444)x361.34999
+.\glue(\topskip) 0.0
+.\vbox(35.5+1.94444)x361.34999
+..\hbox(7.5+1.94444)x241.39622
+...\glue(\tabskip) 0.0
+...\hbox(7.5+1.94444)x60.22499 []
+...\glue(\tabskip) 0.0
+...\hbox(7.5+1.94444)x60.22499 []
+...\glue(\tabskip) 0.0
+...etc.
+..\glue(\parskip) 0.0 plus 1.0
+..\glue(\baselineskip) 5.11111
+..\hbox(6.94444+0.0)x351.34999, glue set 261.12794fil, shifted 10.0
+...\hbox(0.0+0.0)x0.0
+...\tenrm P
+...\tenrm R
+...\tenrm D
+...\tenrm -
+...etc.
+..\glue(\parskip) 0.0 plus 1.0
+..etc.
+.\glue 7.5
+.\glue(\lineskip) 1.0
+.\vbox(20.86111+1.94444)x361.34999
+..\hbox(6.86111+1.94444)x235.28546
+...\glue(\tabskip) 0.0
+...\hbox(6.86111+1.94444)x60.22499 []
+...\glue(\tabskip) 0.0
+...\hbox(6.86111+1.94444)x60.22499 []
+...\glue(\tabskip) 0.0
+...etc.
+..\glue(\parskip) 0.0 plus 1.0
+..\glue(\baselineskip) 5.11111
+..\hbox(6.94444+1.94444)x351.34999, glue set 200.32297fil, shifted 10.0
+...\hbox(0.0+0.0)x0.0
+...\tenrm T
+...\tenrm R
+...\tenrm -
+...\discretionary
+...etc.
+.etc.
+
+ [25]
+Underfull \vbox (badness 10000) has occurred while \output is active
+\vbox(511.91212+1.94444)x361.34999
+.\glue(\topskip) 0.0
+.\vbox(21.5+1.94444)x361.34999
+..\hbox(7.5+2.5)x277.20193
+...\glue(\tabskip) 0.0
+...\hbox(7.5+2.5)x60.22499 []
+...\glue(\tabskip) 0.0
+...\hbox(7.5+2.5)x60.22499 []
+...\glue(\tabskip) 0.0
+...etc.
+..\glue(\parskip) 0.0 plus 1.0
+..\glue(\baselineskip) 4.82141
+..\hbox(6.67859+1.94444)x351.34999, glue set 287.12799fil, shifted 10.0
+...\hbox(0.0+0.0)x0.0
+...\tenrm m
+...\tenrm e
+...\tenrm a
+...\tenrm n
+...etc.
+.\glue 7.5
+.\glue(\lineskip) 1.0
+.\vbox(21.5+1.94444)x361.34999
+..\hbox(7.5+1.94444)x235.28546
+...\glue(\tabskip) 0.0
+...\hbox(7.5+1.94444)x60.22499 []
+...\glue(\tabskip) 0.0
+...\hbox(7.5+1.94444)x60.22499 []
+...\glue(\tabskip) 0.0
+...etc.
+..\glue(\parskip) 0.0 plus 1.0
+..\glue(\baselineskip) 5.11111
+..\hbox(6.94444+1.94444)x351.34999, glue set 167.40697fil, shifted 10.0
+...\hbox(0.0+0.0)x0.0
+...\tenrm R
+...\tenrm h
+...\tenrm o
+...\glue(\spaceskip) 3.33298
+...etc.
+.etc.
+
+ [26]
+Underfull \vbox (badness 10000) has occurred while \output is active
+\vbox(511.91212+1.94444)x361.34999
+.\glue(\topskip) 0.0
+.\vbox(34.86111+1.94444)x361.34999
+..\hbox(6.86111+1.94444)x235.28546
+...\glue(\tabskip) 0.0
+...\hbox(6.86111+1.94444)x60.22499 []
+...\glue(\tabskip) 0.0
+...\hbox(6.86111+1.94444)x60.22499 []
+...\glue(\tabskip) 0.0
+...etc.
+..\glue(\parskip) 0.0 plus 1.0
+..\glue(\baselineskip) 5.11111
+..\hbox(6.94444+1.94444)x351.34999, glue set 185.37811fil, shifted 10.0
+...\hbox(0.0+0.0)x0.0
+...\tenrm L
+...\tenrm S
+...\tenrm F
+...\tenrm -
+...etc.
+..\glue(\parskip) 0.0 plus 1.0
+..etc.
+.\glue 7.5
+.\glue(\lineskip) 1.0
+.\vbox(21.5+1.94444)x361.34999
+..\hbox(7.5+1.94444)x235.28546
+...\glue(\tabskip) 0.0
+...\hbox(7.5+1.94444)x60.22499 []
+...\glue(\tabskip) 0.0
+...\hbox(7.5+1.94444)x60.22499 []
+...\glue(\tabskip) 0.0
+...etc.
+..\glue(\parskip) 0.0 plus 1.0
+..\glue(\baselineskip) 5.11111
+..\hbox(6.94444+1.94444)x351.34999, glue set 214.85077fil, shifted 10.0
+...\hbox(0.0+0.0)x0.0
+...\tenrm s
+...\tenrm h
+...\tenrm o
+...\kern0.27779
+...etc.
+.etc.
+
+ [27]
+Underfull \vbox (badness 10000) has occurred while \output is active
+\vbox(511.91212+1.94444)x361.34999
+.\glue(\topskip) 0.0
+.\vbox(35.5+1.94444)x361.34999
+..\hbox(7.5+1.94444)x235.28546
+...\glue(\tabskip) 0.0
+...\hbox(7.5+1.94444)x60.22499 []
+...\glue(\tabskip) 0.0
+...\hbox(7.5+1.94444)x60.22499 []
+...\glue(\tabskip) 0.0
+...etc.
+..\glue(\parskip) 0.0 plus 1.0
+..\glue(\baselineskip) 4.55556
+..\hbox(7.5+2.5)x351.34999, glue set 111.46266fil, shifted 10.0
+...\hbox(0.0+0.0)x0.0
+...\tenrm b
+...\kern0.27779
+...\tenrm o
+...\tenrm u
+...etc.
+..\glue(\parskip) 0.0 plus 1.0
+..etc.
+.\glue 7.5
+.\glue(\lineskip) 1.0
+.\vbox(35.5+1.94444)x361.34999
+..\hbox(7.5+1.94444)x235.28546
+...\glue(\tabskip) 0.0
+...\hbox(7.5+1.94444)x60.22499 []
+...\glue(\tabskip) 0.0
+...\hbox(7.5+1.94444)x60.22499 []
+...\glue(\tabskip) 0.0
+...etc.
+..\glue(\parskip) 0.0 plus 1.0
+..\glue(\baselineskip) 5.11111
+..\hbox(6.94444+1.94444)x351.34999, glue set 270.23941fil, shifted 10.0
+...\hbox(0.0+0.0)x0.0
+...\tenrm l
+...\tenrm e
+...\tenrm n
+...\tenrm g
+...etc.
+..\glue(\parskip) 0.0 plus 1.0
+..etc.
+.etc.
+
+ [28]
+Underfull \vbox (badness 10000) has occurred while \output is active
+\vbox(511.91212+2.5)x361.34999
+.\glue(\topskip) 0.0
+.\vbox(35.5+1.94444)x361.34999
+..\hbox(7.5+1.94444)x235.28546
+...\glue(\tabskip) 0.0
+...\hbox(7.5+1.94444)x60.22499 []
+...\glue(\tabskip) 0.0
+...\hbox(7.5+1.94444)x60.22499 []
+...\glue(\tabskip) 0.0
+...etc.
+..\glue(\parskip) 0.0 plus 1.0
+..\glue(\baselineskip) 5.11111
+..\hbox(6.94444+1.94444)x351.34999, glue set 237.3921fil, shifted 10.0
+...\hbox(0.0+0.0)x0.0
+...\tenrm G
+...\tenrm N
+...\tenrm V
+...\tenrm -
+...etc.
+..\glue(\parskip) 0.0 plus 1.0
+..etc.
+.\glue 7.5
+.\glue(\lineskip) 1.0
+.\vbox(21.5+1.94444)x361.34999
+..\hbox(7.5+1.94444)x235.28546
+...\glue(\tabskip) 0.0
+...\hbox(7.5+1.94444)x60.22499 []
+...\glue(\tabskip) 0.0
+...\hbox(7.5+1.94444)x60.22499 []
+...\glue(\tabskip) 0.0
+...etc.
+..\glue(\parskip) 0.0 plus 1.0
+..\glue(\baselineskip) 5.11111
+..\hbox(6.94444+1.94444)x351.34999, glue set 261.78073fil, shifted 10.0
+...\hbox(0.0+0.0)x0.0
+...\tenrm G
+...\tenrm N
+...\tenrm V
+...\tenrm -
+...etc.
+.etc.
+
+ [29]
+Underfull \vbox (badness 10000) has occurred while \output is active
+\vbox(511.91212+1.94444)x361.34999
+.\glue(\topskip) 0.0
+.\vbox(34.86111+1.94444)x361.34999
+..\hbox(6.86111+1.94444)x235.28546
+...\glue(\tabskip) 0.0
+...\hbox(6.86111+1.94444)x60.22499 []
+...\glue(\tabskip) 0.0
+...\hbox(6.86111+1.94444)x60.22499 []
+...\glue(\tabskip) 0.0
+...etc.
+..\glue(\parskip) 0.0 plus 1.0
+..\glue(\baselineskip) 5.11111
+..\hbox(6.94444+1.94444)x351.34999, glue set 182.94835fil, shifted 10.0
+...\hbox(0.0+0.0)x0.0
+...\tenrm e
+...\tenrm v
+...\kern-0.27779
+...\tenrm e
+...etc.
+..\glue(\parskip) 0.0 plus 1.0
+..etc.
+.\glue 7.5
+.\glue(\lineskip) 1.0
+.\vbox(34.86111+1.94444)x361.34999
+..\hbox(6.86111+1.94444)x234.72992
+...\glue(\tabskip) 0.0
+...\hbox(6.86111+1.94444)x60.22499 []
+...\glue(\tabskip) 0.0
+...\hbox(6.86111+1.94444)x60.22499 []
+...\glue(\tabskip) 0.0
+...etc.
+..\glue(\parskip) 0.0 plus 1.0
+..\glue(\baselineskip) 4.55556
+..\hbox(7.5+2.5)x351.34999, glue set 53.19473fil, shifted 10.0
+...\hbox(0.0+0.0)x0.0
+...\tenrm l
+...\tenrm e
+...\tenrm v
+...\kern-0.27779
+...etc.
+..\glue(\parskip) 0.0 plus 1.0
+..etc.
+.etc.
+
+ [30]
+Underfull \hbox (badness 6493) in paragraph at lines 1368--1370
+[]\tenrm short-wavelength cut-off for Sta-tis-ti-cal Line Opac-ity data (see  
+
+\hbox(7.5+2.5)x351.34999, glue set 4.02177
+.\hbox(0.0+0.0)x0.0
+.\tenrm s
+.\tenrm h
+.\tenrm o
+.\tenrm r
+.etc.
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active
+\vbox(511.91212+1.94444)x361.34999
+.\glue(\topskip) 0.0
+.\vbox(20.86111+1.94444)x361.34999
+..\hbox(6.86111+1.94444)x234.72992
+...\glue(\tabskip) 0.0
+...\hbox(6.86111+1.94444)x60.22499 []
+...\glue(\tabskip) 0.0
+...\hbox(6.86111+1.94444)x60.22499 []
+...\glue(\tabskip) 0.0
+...etc.
+..\glue(\parskip) 0.0 plus 1.0
+..\glue(\baselineskip) 5.11111
+..\hbox(6.94444+1.94444)x351.34999, glue set 86.38792fil, shifted 10.0
+...\hbox(0.0+0.0)x0.0
+...\tenrm m
+...\tenrm a
+...\tenrm x
+...\tenrm i
+...etc.
+.\glue 7.5
+.\glue(\lineskip) 1.0
+.\vbox(35.5+1.94444)x361.34999
+..\hbox(7.5+1.94444)x264.17444
+...\glue(\tabskip) 0.0
+...\hbox(7.5+1.94444)x60.22499 []
+...\glue(\tabskip) 0.0
+...\hbox(7.5+1.94444)x60.22499 []
+...\glue(\tabskip) 0.0
+...etc.
+..\glue(\parskip) 0.0 plus 1.0
+..\glue(\baselineskip) 5.11111
+..\hbox(6.94444+1.94444)x351.34999, glue set 262.26683fil, shifted 10.0
+...\hbox(0.0+0.0)x0.0
+...\tenrm t
+...\tenrm r
+...\tenrm a
+...\tenrm n
+...etc.
+..\glue(\parskip) 0.0 plus 1.0
+..etc.
+.etc.
+
+ [31]
+Underfull \vbox (badness 10000) has occurred while \output is active
+\vbox(511.91212+0.0)x361.34999
+.\glue(\topskip) 0.0
+.\vbox(21.5+1.94444)x361.34999
+..\hbox(7.5+2.5)x264.42412
+...\glue(\tabskip) 0.0
+...\hbox(7.5+2.5)x60.22499 []
+...\glue(\tabskip) 0.0
+...\hbox(7.5+2.5)x60.22499 []
+...\glue(\tabskip) 0.0
+...etc.
+..\glue(\parskip) 0.0 plus 1.0
+..\glue(\baselineskip) 4.55556
+..\hbox(6.94444+1.94444)x351.34999, glue set 91.96312fil, shifted 10.0
+...\hbox(0.0+0.0)x0.0
+...\tenrm w
+...\kern-0.27779
+...\tenrm a
+...\kern-0.27779
+...etc.
+.\glue 7.5
+.\glue(\lineskip) 1.0
+.\vbox(20.86111+1.94444)x361.34999
+..\hbox(6.86111+1.94444)x235.28546
+...\glue(\tabskip) 0.0
+...\hbox(6.86111+1.94444)x60.22499 []
+...\glue(\tabskip) 0.0
+...\hbox(6.86111+1.94444)x60.22499 []
+...\glue(\tabskip) 0.0
+...etc.
+..\glue(\parskip) 0.0 plus 1.0
+..\glue(\baselineskip) 5.11111
+..\hbox(6.94444+1.94444)x351.34999, glue set 130.26797fil, shifted 10.0
+...\hbox(0.0+0.0)x0.0
+...\tenrm s
+...\tenrm m
+...\tenrm o
+...\kern0.27779
+...etc.
+.etc.
+
+ [32]
+Underfull \vbox (badness 10000) has occurred while \output is active
+\vbox(511.91212+1.94444)x361.34999
+.\glue(\topskip) 0.0
+.\vbox(34.86111+1.94444)x361.34999
+..\hbox(6.86111+1.94444)x234.72992
+...\glue(\tabskip) 0.0
+...\hbox(6.86111+1.94444)x60.22499 []
+...\glue(\tabskip) 0.0
+...\hbox(6.86111+1.94444)x60.22499 []
+...\glue(\tabskip) 0.0
+...etc.
+..\glue(\parskip) 0.0 plus 1.0
+..\glue(\baselineskip) 5.11111
+..\hbox(6.94444+1.94444)x351.34999, glue set 285.23944fil, shifted 10.0
+...\hbox(0.0+0.0)x0.0
+...\tenrm l
+...\tenrm e
+...\tenrm n
+...\tenrm g
+...etc.
+..\glue(\parskip) 0.0 plus 1.0
+..etc.
+.\glue 7.5
+.\glue(\lineskip) 1.0
+.\vbox(20.86111+1.94444)x361.34999
+..\hbox(6.86111+1.94444)x235.28546
+...\glue(\tabskip) 0.0
+...\hbox(6.86111+1.94444)x60.22499 []
+...\glue(\tabskip) 0.0
+...\hbox(6.86111+1.94444)x60.22499 []
+...\glue(\tabskip) 0.0
+...etc.
+..\glue(\parskip) 0.0 plus 1.0
+..\glue(\baselineskip) 5.11111
+..\hbox(6.94444+1.94444)x351.34999, glue set 105.93498fil, shifted 10.0
+...\hbox(0.0+0.0)x0.0
+...\tenrm H
+...\tenrm e
+...\tenrm -
+...\discretionary
+...etc.
+.etc.
+
+ [33]
+Underfull \vbox (badness 10000) has occurred while \output is active
+\vbox(511.91212+1.94444)x361.34999
+.\glue(\topskip) 0.0
+.\vbox(35.5+1.94444)x361.34999
+..\hbox(7.5+2.5)x264.42412
+...\glue(\tabskip) 0.0
+...\hbox(7.5+2.5)x60.22499 []
+...\glue(\tabskip) 0.0
+...\hbox(7.5+2.5)x60.22499 []
+...\glue(\tabskip) 0.0
+...etc.
+..\glue(\parskip) 0.0 plus 1.0
+..\glue(\baselineskip) 4.55556
+..\hbox(6.94444+1.94444)x351.34999, glue set 144.54616fil, shifted 10.0
+...\hbox(0.0+0.0)x0.0
+...\tenrm w
+...\kern-0.27779
+...\tenrm a
+...\kern-0.27779
+...etc.
+..\glue(\parskip) 0.0 plus 1.0
+..etc.
+.\glue 7.5
+.\glue(\lineskip) 1.0
+.\vbox(35.5+1.94444)x361.34999
+..\hbox(7.5+1.94444)x264.42412
+...\glue(\tabskip) 0.0
+...\hbox(7.5+1.94444)x60.22499 []
+...\glue(\tabskip) 0.0
+...\hbox(7.5+1.94444)x60.22499 []
+...\glue(\tabskip) 0.0
+...etc.
+..\glue(\parskip) 0.0 plus 1.0
+..\glue(\baselineskip) 5.11111
+..\hbox(6.94444+1.94444)x351.34999, glue set 227.82301fil, shifted 10.0
+...\hbox(0.0+0.0)x0.0
+...\tenrm L
+...\tenrm y
+...\tenrm m
+...\tenrm a
+...etc.
+..\glue(\parskip) 0.0 plus 1.0
+..etc.
+.etc.
+
+ [34]
+Underfull \vbox (badness 10000) has occurred while \output is active
+\vbox(511.91212+0.0)x361.34999
+.\glue(\topskip) 0.0
+.\vbox(35.5+1.94444)x361.34999
+..\hbox(7.5+1.94444)x235.28546
+...\glue(\tabskip) 0.0
+...\hbox(7.5+1.94444)x60.22499 []
+...\glue(\tabskip) 0.0
+...\hbox(7.5+1.94444)x60.22499 []
+...\glue(\tabskip) 0.0
+...etc.
+..\glue(\parskip) 0.0 plus 1.0
+..\glue(\baselineskip) 5.11111
+..\hbox(6.94444+1.94444)x351.34999, glue set 39.68538fil, shifted 10.0
+...\hbox(0.0+0.0)x0.0
+...\tenrm d
+...\tenrm e
+...\tenrm p
+...\tenrm t
+...etc.
+..\glue(\parskip) 0.0 plus 1.0
+..etc.
+.\glue 7.5
+.\glue(\lineskip) 1.0
+.\vbox(35.5+1.94444)x361.34999
+..\hbox(7.5+1.94444)x235.28546
+...\glue(\tabskip) 0.0
+...\hbox(7.5+1.94444)x60.22499 []
+...\glue(\tabskip) 0.0
+...\hbox(7.5+1.94444)x60.22499 []
+...\glue(\tabskip) 0.0
+...etc.
+..\glue(\parskip) 0.0 plus 1.0
+..\glue(\baselineskip) 5.11111
+..\hbox(6.94444+1.94444)x351.34999, glue set 160.90688fil, shifted 10.0
+...\hbox(0.0+0.0)x0.0
+...\tenrm d
+...\tenrm e
+...\tenrm p
+...\tenrm t
+...etc.
+..\glue(\parskip) 0.0 plus 1.0
+..etc.
+.etc.
+
+ [35]
+Underfull \vbox (badness 10000) has occurred while \output is active
+\vbox(511.91212+1.94444)x361.34999
+.\glue(\topskip) 0.0
+.\vbox(34.86111+1.94444)x361.34999
+..\hbox(6.86111+1.94444)x235.28546
+...\glue(\tabskip) 0.0
+...\hbox(6.86111+1.94444)x60.22499 []
+...\glue(\tabskip) 0.0
+...\hbox(6.86111+1.94444)x60.22499 []
+...\glue(\tabskip) 0.0
+...etc.
+..\glue(\parskip) 0.0 plus 1.0
+..\glue(\baselineskip) 4.55556
+..\hbox(7.5+2.5)x351.34999, glue set 90.76865fil, shifted 10.0
+...\hbox(0.0+0.0)x0.0
+...\tenrm `
+...\tenrm L
+...\tenrm i
+...\tenrm n
+...etc.
+..\glue(\parskip) 0.0 plus 1.0
+..etc.
+.\glue 7.5
+.\glue(\lineskip) 1.0
+.\vbox(20.86111+1.94444)x361.34999
+..\hbox(6.86111+1.94444)x235.28546
+...\glue(\tabskip) 0.0
+...\hbox(6.86111+1.94444)x60.22499 []
+...\glue(\tabskip) 0.0
+...\hbox(6.86111+1.94444)x60.22499 []
+...\glue(\tabskip) 0.0
+...etc.
+..\glue(\parskip) 0.0 plus 1.0
+..\glue(\baselineskip) 5.11111
+..\hbox(6.94444+1.94444)x351.34999, glue set 110.10164fil, shifted 10.0
+...\hbox(0.0+0.0)x0.0
+...\tenrm O
+...\tenrm -
+...\discretionary
+...\tenrm I
+...etc.
+.etc.
+
+ [36]
+Underfull \vbox (badness 10000) has occurred while \output is active
+\vbox(511.91212+1.94444)x361.34999
+.\glue(\topskip) 0.0
+.\vbox(34.94444+1.94444)x361.34999
+..\hbox(6.94444+1.94444)x264.42412
+...\glue(\tabskip) 0.0
+...\hbox(6.94444+1.94444)x60.22499 []
+...\glue(\tabskip) 0.0
+...\hbox(6.94444+1.94444)x60.22499 []
+...\glue(\tabskip) 0.0
+...etc.
+..\glue(\parskip) 0.0 plus 1.0
+..\glue(\baselineskip) 5.11111
+..\hbox(6.94444+1.94444)x351.34999, glue set 99.96342fil, shifted 10.0
+...\hbox(0.0+0.0)x0.0
+...\tenrm m
+...\kern-0.27779
+...\tenrm u
+...\tenrm l
+...etc.
+..\glue(\parskip) 0.0 plus 1.0
+..etc.
+.\glue 7.5
+.\glue(\lineskip) 1.0
+.\vbox(20.86111+1.94444)x361.34999
+..\hbox(6.86111+1.94444)x235.28546
+...\glue(\tabskip) 0.0
+...\hbox(6.86111+1.94444)x60.22499 []
+...\glue(\tabskip) 0.0
+...\hbox(6.86111+1.94444)x60.22499 []
+...\glue(\tabskip) 0.0
+...etc.
+..\glue(\parskip) 0.0 plus 1.0
+..\glue(\baselineskip) 5.11111
+..\hbox(6.94444+1.94444)x351.34999, glue set 201.76779fil, shifted 10.0
+...\hbox(0.0+0.0)x0.0
+...\tenrm C
+...\tenrm O
+...\glue 3.33298
+...\tenrm n
+...etc.
+.etc.
+
+ [37]
+Underfull \vbox (badness 10000) has occurred while \output is active
+\vbox(511.91212+2.5)x361.34999
+.\glue(\topskip) 0.0
+.\vbox(35.5+1.94444)x361.34999
+..\hbox(7.5+2.5)x277.06305
+...\glue(\tabskip) 0.0
+...\hbox(7.5+2.5)x60.22499 []
+...\glue(\tabskip) 0.0
+...\hbox(7.5+2.5)x60.22499 []
+...\glue(\tabskip) 0.0
+...etc.
+..\glue(\parskip) 0.0 plus 1.0
+..\glue(\baselineskip) 4.55556
+..\hbox(6.94444+1.94444)x351.34999, glue set 168.10068fil, shifted 10.0
+...\hbox(0.0+0.0)x0.0
+...\tenrm s
+...\tenrm i
+...\tenrm n
+...\tenrm g
+...etc.
+..\glue(\parskip) 0.0 plus 1.0
+..etc.
+.\glue 7.5
+.\glue(\lineskip) 1.0
+.\vbox(35.5+2.86108)x361.34999
+..\hbox(7.5+2.5)x277.06305
+...\glue(\tabskip) 0.0
+...\hbox(7.5+2.5)x60.22499 []
+...\glue(\tabskip) 0.0
+...\hbox(7.5+2.5)x60.22499 []
+...\glue(\tabskip) 0.0
+...etc.
+..\glue(\parskip) 0.0 plus 1.0
+..\glue(\baselineskip) 4.55556
+..\hbox(6.94444+1.94444)x351.34999, glue set 217.62819fil, shifted 10.0
+...\hbox(0.0+0.0)x0.0
+...\tenrm M
+...\tenrm a
+...\tenrm g
+...\tenrm n
+...etc.
+..\glue(\parskip) 0.0 plus 1.0
+..etc.
+.etc.
+
+ [38]
+Underfull \vbox (badness 10000) has occurred while \output is active
+\vbox(511.91212+1.94444)x361.34999
+.\glue(\topskip) 0.0
+.\vbox(34.86111+1.94444)x361.34999
+..\hbox(6.86111+1.94444)x234.72992
+...\glue(\tabskip) 0.0
+...\hbox(6.86111+1.94444)x60.22499 []
+...\glue(\tabskip) 0.0
+...\hbox(6.86111+1.94444)x60.22499 []
+...\glue(\tabskip) 0.0
+...etc.
+..\glue(\parskip) 0.0 plus 1.0
+..\glue(\baselineskip) 5.11111
+..\hbox(6.94444+1.94444)x351.34999, glue set 288.15613fil, shifted 10.0
+...\hbox(0.0+0.0)x0.0
+...\tenrm l
+...\tenrm e
+...\tenrm n
+...\tenrm g
+...etc.
+..\glue(\parskip) 0.0 plus 1.0
+..etc.
+.\glue 7.5
+.\glue(\lineskip) 1.0
+.\vbox(35.5+1.94444)x361.34999
+..\hbox(7.5+1.94444)x235.28546
+...\glue(\tabskip) 0.0
+...\hbox(7.5+1.94444)x60.22499 []
+...\glue(\tabskip) 0.0
+...\hbox(7.5+1.94444)x60.22499 []
+...\glue(\tabskip) 0.0
+...etc.
+..\glue(\parskip) 0.0 plus 1.0
+..\glue(\baselineskip) 5.11111
+..\hbox(6.94444+1.94444)x351.34999, glue set 160.35175fil, shifted 10.0
+...\hbox(0.0+0.0)x0.0
+...\tenrm i
+...\tenrm n
+...\tenrm d
+...\tenrm e
+...etc.
+..\glue(\parskip) 0.0 plus 1.0
+..etc.
+.etc.
+
+ [39]
+Underfull \vbox (badness 10000) has occurred while \output is active
+\vbox(511.91212+1.94444)x361.34999
+.\glue(\topskip) 0.0
+.\vbox(21.5+2.5)x361.34999
+..\hbox(7.5+1.94444)x234.72992
+...\glue(\tabskip) 0.0
+...\hbox(7.5+1.94444)x60.22499 []
+...\glue(\tabskip) 0.0
+...\hbox(7.5+1.94444)x60.22499 []
+...\glue(\tabskip) 0.0
+...etc.
+..\glue(\parskip) 0.0 plus 1.0
+..\glue(\baselineskip) 4.55556
+..\hbox(7.5+2.5)x351.34999, glue set 206.15704fil, shifted 10.0
+...\hbox(0.0+0.0)x0.0
+...\tenrm l
+...\tenrm e
+...\tenrm n
+...\tenrm g
+...etc.
+.\glue 7.5
+.\glue(\lineskip) 1.0
+.\vbox(35.5+1.94444)x361.34999
+..\hbox(7.5+2.5)x235.28546
+...\glue(\tabskip) 0.0
+...\hbox(7.5+2.5)x60.22499 []
+...\glue(\tabskip) 0.0
+...\hbox(7.5+2.5)x60.22499 []
+...\glue(\tabskip) 0.0
+...etc.
+..\glue(\parskip) 0.0 plus 1.0
+..\glue(\baselineskip) 4.0
+..\hbox(7.5+2.5)x351.34999, glue set 237.76683fil, shifted 10.0
+...\hbox(0.0+0.0)x0.0
+...\tenrm a
+...\tenrm b
+...\tenrm s
+...\tenrm o
+...etc.
+..\glue(\parskip) 0.0 plus 1.0
+..etc.
+.etc.
+
+ [40]
+Underfull \vbox (badness 10000) has occurred while \output is active
+\vbox(511.91212+1.94444)x361.34999
+.\glue(\topskip) 0.0
+.\vbox(21.5+1.94444)x361.34999
+..\hbox(7.5+2.5)x277.06305
+...\glue(\tabskip) 0.0
+...\hbox(7.5+2.5)x60.22499 []
+...\glue(\tabskip) 0.0
+...\hbox(7.5+2.5)x60.22499 []
+...\glue(\tabskip) 0.0
+...etc.
+..\glue(\parskip) 0.0 plus 1.0
+..\glue(\baselineskip) 4.55556
+..\hbox(6.94444+1.94444)x351.34999, glue set 210.65636fil, shifted 10.0
+...\hbox(0.0+0.0)x0.0
+...\tenrm c
+...\kern-0.27779
+...\tenrm h
+...\tenrm a
+...etc.
+.\glue 7.5
+.\glue(\lineskip) 1.0
+.\vbox(20.86111+1.94444)x361.34999
+..\hbox(6.86111+1.94444)x234.72992
+...\glue(\tabskip) 0.0
+...\hbox(6.86111+1.94444)x60.22499 []
+...\glue(\tabskip) 0.0
+...\hbox(6.86111+1.94444)x60.22499 []
+...\glue(\tabskip) 0.0
+...etc.
+..\glue(\parskip) 0.0 plus 1.0
+..\glue(\baselineskip) 5.11111
+..\hbox(6.94444+1.94444)x351.34999, glue set 85.54677fil, shifted 10.0
+...\hbox(0.0+0.0)x0.0
+...\tenrm n
+...\kern-0.27779
+...\tenrm u
+...\tenrm m
+...etc.
+.etc.
+
+ [41]
+Underfull \vbox (badness 10000) has occurred while \output is active
+\vbox(511.91212+1.94444)x361.34999
+.\glue(\topskip) 0.0
+.\vbox(20.86111+1.94444)x361.34999
+..\hbox(6.86111+1.94444)x234.72992
+...\glue(\tabskip) 0.0
+...\hbox(6.86111+1.94444)x60.22499 []
+...\glue(\tabskip) 0.0
+...\hbox(6.86111+1.94444)x60.22499 []
+...\glue(\tabskip) 0.0
+...etc.
+..\glue(\parskip) 0.0 plus 1.0
+..\glue(\baselineskip) 5.11111
+..\hbox(6.94444+1.94444)x351.34999, glue set 272.1839fil, shifted 10.0
+...\hbox(0.0+0.0)x0.0
+...\tenrm l
+...\tenrm e
+...\tenrm n
+...\tenrm g
+...etc.
+.\glue 7.5
+.\glue(\lineskip) 1.0
+.\vbox(35.5+2.5)x361.34999
+..\hbox(7.5+1.94444)x235.28546
+...\glue(\tabskip) 0.0
+...\hbox(7.5+1.94444)x60.22499 []
+...\glue(\tabskip) 0.0
+...\hbox(7.5+1.94444)x60.22499 []
+...\glue(\tabskip) 0.0
+...etc.
+..\glue(\parskip) 0.0 plus 1.0
+..\glue(\baselineskip) 4.55556
+..\hbox(7.5+2.5)x351.34999, glue set 109.57458fil, shifted 10.0
+...\hbox(0.0+0.0)x0.0
+...\tenrm d
+...\tenrm e
+...\tenrm p
+...\tenrm t
+...etc.
+..\glue(\parskip) 0.0 plus 1.0
+..etc.
+.etc.
+
+ [42]
+Underfull \vbox (badness 10000) has occurred while \output is active
+\vbox(511.91212+1.94444)x361.34999
+.\glue(\topskip) 0.0
+.\vbox(35.5+1.94444)x361.34999
+..\hbox(7.5+1.94444)x234.72992
+...\glue(\tabskip) 0.0
+...\hbox(7.5+1.94444)x60.22499 []
+...\glue(\tabskip) 0.0
+...\hbox(7.5+1.94444)x60.22499 []
+...\glue(\tabskip) 0.0
+...etc.
+..\glue(\parskip) 0.0 plus 1.0
+..\glue(\baselineskip) 5.11111
+..\hbox(6.94444+1.94444)x351.34999, glue set 278.64223fil, shifted 10.0
+...\hbox(0.0+0.0)x0.0
+...\tenrm l
+...\tenrm e
+...\tenrm n
+...\tenrm g
+...etc.
+..\glue(\parskip) 0.0 plus 1.0
+..etc.
+.\glue 7.5
+.\glue(\lineskip) 1.0
+.\vbox(21.5+1.94444)x361.34999
+..\hbox(7.5+1.94444)x235.28546
+...\glue(\tabskip) 0.0
+...\hbox(7.5+1.94444)x60.22499 []
+...\glue(\tabskip) 0.0
+...\hbox(7.5+1.94444)x60.22499 []
+...\glue(\tabskip) 0.0
+...etc.
+..\glue(\parskip) 0.0 plus 1.0
+..\glue(\baselineskip) 5.11111
+..\hbox(6.94444+1.94444)x351.34999, glue set 222.0588fil, shifted 10.0
+...\hbox(0.0+0.0)x0.0
+...\tenrm G
+...\tenrm N
+...\tenrm V
+...\tenrm L
+...etc.
+.etc.
+
+ [43]
+Underfull \vbox (badness 10000) has occurred while \output is active
+\vbox(511.91212+0.0)x361.34999
+.\glue(\topskip) 0.0
+.\vbox(20.86111+1.94444)x361.34999
+..\hbox(6.86111+1.94444)x234.72992
+...\glue(\tabskip) 0.0
+...\hbox(6.86111+1.94444)x60.22499 []
+...\glue(\tabskip) 0.0
+...\hbox(6.86111+1.94444)x60.22499 []
+...\glue(\tabskip) 0.0
+...etc.
+..\glue(\parskip) 0.0 plus 1.0
+..\glue(\baselineskip) 5.11111
+..\hbox(6.94444+1.94444)x351.34999, glue set 79.40785fil, shifted 10.0
+...\hbox(0.0+0.0)x0.0
+...\tenrm n
+...\kern-0.27779
+...\tenrm u
+...\tenrm m
+...etc.
+.\glue 7.5
+.\glue(\lineskip) 1.0
+.\vbox(20.86111+1.94444)x361.34999
+..\hbox(6.86111+1.94444)x234.72992
+...\glue(\tabskip) 0.0
+...\hbox(6.86111+1.94444)x60.22499 []
+...\glue(\tabskip) 0.0
+...\hbox(6.86111+1.94444)x60.22499 []
+...\glue(\tabskip) 0.0
+...etc.
+..\glue(\parskip) 0.0 plus 1.0
+..\glue(\baselineskip) 5.11111
+..\hbox(6.94444+1.94444)x351.34999, glue set 88.32452fil, shifted 10.0
+...\hbox(0.0+0.0)x0.0
+...\tenrm n
+...\kern-0.27779
+...\tenrm u
+...\tenrm m
+...etc.
+.etc.
+
+ [44]
+Underfull \vbox (badness 10000) has occurred while \output is active
+\vbox(511.91212+2.5)x361.34999
+.\glue(\topskip) 0.0
+.\vbox(20.86111+1.94444)x361.34999
+..\hbox(6.86111+1.94444)x234.72992
+...\glue(\tabskip) 0.0
+...\hbox(6.86111+1.94444)x60.22499 []
+...\glue(\tabskip) 0.0
+...\hbox(6.86111+1.94444)x60.22499 []
+...\glue(\tabskip) 0.0
+...etc.
+..\glue(\parskip) 0.0 plus 1.0
+..\glue(\baselineskip) 5.11111
+..\hbox(6.94444+1.94444)x351.34999, glue set 77.49118fil, shifted 10.0
+...\hbox(0.0+0.0)x0.0
+...\tenrm n
+...\kern-0.27779
+...\tenrm u
+...\tenrm m
+...etc.
+.\glue 7.5
+.\glue(\lineskip) 1.0
+.\vbox(20.86111+1.94444)x361.34999
+..\hbox(6.86111+1.94444)x234.72992
+...\glue(\tabskip) 0.0
+...\hbox(6.86111+1.94444)x60.22499 []
+...\glue(\tabskip) 0.0
+...\hbox(6.86111+1.94444)x60.22499 []
+...\glue(\tabskip) 0.0
+...etc.
+..\glue(\parskip) 0.0 plus 1.0
+..\glue(\baselineskip) 5.11111
+..\hbox(6.94444+1.94444)x351.34999, glue set 73.60228fil, shifted 10.0
+...\hbox(0.0+0.0)x0.0
+...\tenrm n
+...\kern-0.27779
+...\tenrm u
+...\tenrm m
+...etc.
+.etc.
+
+ [45]
+Underfull \vbox (badness 10000) has occurred while \output is active
+\vbox(511.91212+1.94444)x361.34999
+.\glue(\topskip) 0.0
+.\vbox(49.5+1.94444)x361.34999
+..\hbox(7.5+2.5)x264.42412
+...\glue(\tabskip) 0.0
+...\hbox(7.5+2.5)x60.22499 []
+...\glue(\tabskip) 0.0
+...\hbox(7.5+2.5)x60.22499 []
+...\glue(\tabskip) 0.0
+...etc.
+..\glue(\parskip) 0.0 plus 1.0
+..\glue(\baselineskip) 4.55556
+..\hbox(6.94444+1.94444)x351.34999, glue set 0.05518, shifted 10.0
+...\hbox(0.0+0.0)x0.0
+...\tenrm a
+...\tenrm u
+...\tenrm x
+...\tenrm i
+...etc.
+..\penalty 300
+..etc.
+.\glue 7.5
+.\glue(\lineskip) 1.0
+.\vbox(35.5+2.5)x361.34999
+..\hbox(7.5+1.94444)x264.42412
+...\glue(\tabskip) 0.0
+...\hbox(7.5+1.94444)x60.22499 []
+...\glue(\tabskip) 0.0
+...\hbox(7.5+1.94444)x60.22499 []
+...\glue(\tabskip) 0.0
+...etc.
+..\glue(\parskip) 0.0 plus 1.0
+..\glue(\baselineskip) 4.55556
+..\hbox(7.5+2.5)x351.34999, glue set 0.33159, shifted 10.0
+...\hbox(0.0+0.0)x0.0
+...\tenrm c
+...\tenrm o
+...\tenrm n
+...\kern-0.27779
+...etc.
+..\penalty 300
+..etc.
+.etc.
+
+ [46]
+Underfull \vbox (badness 10000) has occurred while \output is active
+\vbox(511.91212+1.94444)x361.34999
+.\glue(\topskip) 0.0
+.\vbox(20.86111+1.94444)x361.34999
+..\hbox(6.86111+1.94444)x234.72992
+...\glue(\tabskip) 0.0
+...\hbox(6.86111+1.94444)x60.22499 []
+...\glue(\tabskip) 0.0
+...\hbox(6.86111+1.94444)x60.22499 []
+...\glue(\tabskip) 0.0
+...etc.
+..\glue(\parskip) 0.0 plus 1.0
+..\glue(\baselineskip) 5.11111
+..\hbox(6.94444+1.94444)x351.34999, glue set 79.43565fil, shifted 10.0
+...\hbox(0.0+0.0)x0.0
+...\tenrm n
+...\kern-0.27779
+...\tenrm u
+...\tenrm m
+...etc.
+.\glue 7.5
+.\glue(\lineskip) 1.0
+.\vbox(35.5+1.94444)x361.34999
+..\hbox(7.5+1.94444)x235.28546
+...\glue(\tabskip) 0.0
+...\hbox(7.5+1.94444)x60.22499 []
+...\glue(\tabskip) 0.0
+...\hbox(7.5+1.94444)x60.22499 []
+...\glue(\tabskip) 0.0
+...etc.
+..\glue(\parskip) 0.0 plus 1.0
+..\glue(\baselineskip) 4.55556
+..\hbox(7.5+2.5)x351.34999, glue set 120.65681fil, shifted 10.0
+...\hbox(0.0+0.0)x0.0
+...\tenrm \ (ligature ``)
+...\tenrm S
+...\tenrm p
+...\kern0.27779
+...etc.
+..\glue(\parskip) 0.0 plus 1.0
+..etc.
+.etc.
+
+ [47]
+Underfull \vbox (badness 10000) has occurred while \output is active
+\vbox(511.91212+1.94444)x361.34999
+.\glue(\topskip) 0.0
+.\vbox(35.5+2.86108)x361.34999
+..\hbox(7.5+2.5)x277.06305
+...\glue(\tabskip) 0.0
+...\hbox(7.5+2.5)x60.22499 []
+...\glue(\tabskip) 0.0
+...\hbox(7.5+2.5)x60.22499 []
+...\glue(\tabskip) 0.0
+...etc.
+..\glue(\parskip) 0.0 plus 1.0
+..\glue(\baselineskip) 4.55556
+..\hbox(6.94444+1.94444)x351.34999, glue set 230.18375fil, shifted 10.0
+...\hbox(0.0+0.0)x0.0
+...\tenrm O
+...\tenrm x
+...\tenrm y
+...\tenrm g
+...etc.
+..\glue(\parskip) 0.0 plus 1.0
+..etc.
+.\glue 7.5
+.\glue(\lineskip) 1.0
+.\vbox(35.5+1.94444)x361.34999
+..\hbox(7.5+2.5)x277.06305
+...\glue(\tabskip) 0.0
+...\hbox(7.5+2.5)x60.22499 []
+...\glue(\tabskip) 0.0
+...\hbox(7.5+2.5)x60.22499 []
+...\glue(\tabskip) 0.0
+...etc.
+..\glue(\parskip) 0.0 plus 1.0
+..\glue(\baselineskip) 4.55556
+..\hbox(6.94444+1.94444)x351.34999, glue set 185.68402fil, shifted 10.0
+...\hbox(0.0+0.0)x0.0
+...\tenrm t
+...\tenrm r
+...\tenrm i
+...\tenrm p
+...etc.
+..\glue(\parskip) 0.0 plus 1.0
+..etc.
+.etc.
+
+ [48]
+Underfull \vbox (badness 10000) has occurred while \output is active
+\vbox(511.91212+1.94444)x361.34999
+.\glue(\topskip) 0.0
+.\vbox(21.5+1.94444)x361.34999
+..\hbox(7.5+0.0)x191.50797
+...\glue(\tabskip) 0.0
+...\hbox(7.5+0.0)x60.22499 []
+...\glue(\tabskip) 0.0
+...\hbox(7.5+0.0)x60.22499 []
+...\glue(\tabskip) 0.0
+...etc.
+..\glue(\parskip) 0.0 plus 1.0
+..\glue(\baselineskip) 7.05556
+..\hbox(6.94444+1.94444)x351.34999, glue set 225.79515fil, shifted 10.0
+...\hbox(0.0+0.0)x0.0
+...\tenrm `
+...\tenrm p
+...\kern0.27779
+...\tenrm o
+...etc.
+.\glue 7.5
+.\glue(\lineskip) 1.0
+.\vbox(21.5+1.94444)x361.34999
+..\hbox(7.5+1.94444)x264.17444
+...\glue(\tabskip) 0.0
+...\hbox(7.5+1.94444)x60.22499 []
+...\glue(\tabskip) 0.0
+...\hbox(7.5+1.94444)x60.22499 []
+...\glue(\tabskip) 0.0
+...etc.
+..\glue(\parskip) 0.0 plus 1.0
+..\glue(\baselineskip) 5.11111
+..\hbox(6.94444+1.94444)x351.34999, glue set 213.18407fil, shifted 10.0
+...\hbox(0.0+0.0)x0.0
+...\tenrm p
+...\kern0.27779
+...\tenrm o
+...\tenrm p
+...etc.
+.etc.
+
+ [49]
+Underfull \vbox (badness 10000) has occurred while \output is active
+\vbox(511.91212+2.5)x361.34999
+.\glue(\topskip) 0.0
+.\vbox(34.94444+1.94444)x361.34999
+..\hbox(6.94444+1.94444)x264.42412
+...\glue(\tabskip) 0.0
+...\hbox(6.94444+1.94444)x60.22499 []
+...\glue(\tabskip) 0.0
+...\hbox(6.94444+1.94444)x60.22499 []
+...\glue(\tabskip) 0.0
+...etc.
+..\glue(\parskip) 0.0 plus 1.0
+..\glue(\baselineskip) 4.55556
+..\hbox(7.5+2.5)x351.34999, glue set 54.35188fil, shifted 10.0
+...\hbox(0.0+0.0)x0.0
+...\tenrm a
+...\tenrm c
+...\tenrm c
+...\tenrm u
+...etc.
+..\glue(\parskip) 0.0 plus 1.0
+..etc.
+.\glue 7.5
+.\glue(\lineskip) 1.0
+.\vbox(21.5+1.94444)x361.34999
+..\hbox(7.5+1.94444)x264.42412
+...\glue(\tabskip) 0.0
+...\hbox(7.5+1.94444)x60.22499 []
+...\glue(\tabskip) 0.0
+...\hbox(7.5+1.94444)x60.22499 []
+...\glue(\tabskip) 0.0
+...etc.
+..\glue(\parskip) 0.0 plus 1.0
+..\glue(\baselineskip) 5.11111
+..\hbox(6.94444+1.94444)x351.34999, glue set 181.2393fil, shifted 10.0
+...\hbox(0.0+0.0)x0.0
+...\tenrm u
+...\tenrm p
+...\tenrm p
+...\kern0.27779
+...etc.
+.etc.
+
+ [50]
+Underfull \vbox (badness 10000) has occurred while \output is active
+\vbox(511.91212+1.94444)x361.34999
+.\glue(\topskip) 0.0
+.\vbox(21.5+1.94444)x361.34999
+..\hbox(7.5+2.5)x264.42412
+...\glue(\tabskip) 0.0
+...\hbox(7.5+2.5)x60.22499 []
+...\glue(\tabskip) 0.0
+...\hbox(7.5+2.5)x60.22499 []
+...\glue(\tabskip) 0.0
+...etc.
+..\glue(\parskip) 0.0 plus 1.0
+..\glue(\baselineskip) 4.55556
+..\hbox(6.94444+1.94444)x351.34999, glue set 188.51695fil, shifted 10.0
+...\hbox(0.0+0.0)x0.0
+...\tenrm a
+...\tenrm d
+...\tenrm d
+...\tenrm i
+...etc.
+.\glue 7.5
+.\glue(\lineskip) 1.0
+.\vbox(21.5+0.0)x361.34999
+..\hbox(7.5+2.5)x264.42412
+...\glue(\tabskip) 0.0
+...\hbox(7.5+2.5)x60.22499 []
+...\glue(\tabskip) 0.0
+...\hbox(7.5+2.5)x60.22499 []
+...\glue(\tabskip) 0.0
+...etc.
+..\glue(\parskip) 0.0 plus 1.0
+..\glue(\baselineskip) 4.55556
+..\hbox(6.94444+0.0)x351.34999, glue set 247.29495fil, shifted 10.0
+...\hbox(0.0+0.0)x0.0
+...\tenrm R
+...\tenrm K
+...\glue 3.33298
+...\tenrm e
+...etc.
+.etc.
+
+ [51]
+Underfull \vbox (badness 10000) has occurred while \output is active
+\vbox(511.91212+1.94444)x361.34999
+.\glue(\topskip) 0.0
+.\vbox(21.5+1.94444)x361.34999
+..\hbox(7.5+1.94444)x263.31302
+...\glue(\tabskip) 0.0
+...\hbox(7.5+1.94444)x60.22499 []
+...\glue(\tabskip) 0.0
+...\hbox(7.5+1.94444)x60.22499 []
+...\glue(\tabskip) 0.0
+...etc.
+..\glue(\parskip) 0.0 plus 1.0
+..\glue(\baselineskip) 5.11111
+..\hbox(6.94444+1.94444)x351.34999, glue set 242.96156fil, shifted 10.0
+...\hbox(0.0+0.0)x0.0
+...\tenrm s
+...\tenrm h
+...\tenrm o
+...\kern0.27779
+...etc.
+.\glue 7.5
+.\glue(\lineskip) 1.0
+.\vbox(21.5+1.94444)x361.34999
+..\hbox(7.5+1.94444)x263.31302
+...\glue(\tabskip) 0.0
+...\hbox(7.5+1.94444)x60.22499 []
+...\glue(\tabskip) 0.0
+...\hbox(7.5+1.94444)x60.22499 []
+...\glue(\tabskip) 0.0
+...etc.
+..\glue(\parskip) 0.0 plus 1.0
+..\glue(\baselineskip) 5.11111
+..\hbox(6.94444+1.94444)x351.34999, glue set 242.35048fil, shifted 10.0
+...\hbox(0.0+0.0)x0.0
+...\tenrm s
+...\tenrm h
+...\tenrm o
+...\kern0.27779
+...etc.
+.etc.
+
+ [52]
+Underfull \vbox (badness 10000) has occurred while \output is active
+\vbox(511.91212+1.94444)x361.34999
+.\glue(\topskip) 0.0
+.\vbox(35.5+2.86108)x361.34999
+..\hbox(7.5+2.5)x277.06305
+...\glue(\tabskip) 0.0
+...\hbox(7.5+2.5)x60.22499 []
+...\glue(\tabskip) 0.0
+...\hbox(7.5+2.5)x60.22499 []
+...\glue(\tabskip) 0.0
+...etc.
+..\glue(\parskip) 0.0 plus 1.0
+..\glue(\baselineskip) 4.55556
+..\hbox(6.94444+1.94444)x351.34999, glue set 233.21155fil, shifted 10.0
+...\hbox(0.0+0.0)x0.0
+...\tenrm S
+...\tenrm u
+...\tenrm l
+...\tenrm p
+...etc.
+..\glue(\parskip) 0.0 plus 1.0
+..etc.
+.\glue 7.5
+.\glue(\lineskip) 1.0
+.\vbox(34.94444+1.94444)x361.34999
+..\hbox(6.94444+1.94444)x264.42412
+...\glue(\tabskip) 0.0
+...\hbox(6.94444+1.94444)x60.22499 []
+...\glue(\tabskip) 0.0
+...\hbox(6.94444+1.94444)x60.22499 []
+...\glue(\tabskip) 0.0
+...etc.
+..\glue(\parskip) 0.0 plus 1.0
+..\glue(\baselineskip) 4.55556
+..\hbox(7.5+2.5)x351.34999, glue set 85.35158fil, shifted 10.0
+...\hbox(0.0+0.0)x0.0
+...\tenrm c
+...\tenrm o
+...\tenrm n
+...\kern-0.27779
+...etc.
+..\glue(\parskip) 0.0 plus 1.0
+..etc.
+.etc.
+
+ [53]
+Underfull \vbox (badness 10000) has occurred while \output is active
+\vbox(511.91212+1.94444)x361.34999
+.\glue(\topskip) 0.0
+.\vbox(34.94444+1.94444)x361.34999
+..\hbox(6.94444+1.94444)x264.42412
+...\glue(\tabskip) 0.0
+...\hbox(6.94444+1.94444)x60.22499 []
+...\glue(\tabskip) 0.0
+...\hbox(6.94444+1.94444)x60.22499 []
+...\glue(\tabskip) 0.0
+...etc.
+..\glue(\parskip) 0.0 plus 1.0
+..\glue(\baselineskip) 5.11111
+..\hbox(6.94444+1.94444)x351.34999, glue set 119.87912fil, shifted 10.0
+...\hbox(0.0+0.0)x0.0
+...\tenrm c
+...\kern-0.27779
+...\tenrm h
+...\tenrm a
+...etc.
+..\glue(\parskip) 0.0 plus 1.0
+..etc.
+.\glue 7.5
+.\glue(\lineskip) 1.0
+.\vbox(21.5+1.94444)x361.34999
+..\hbox(7.5+2.5)x277.20193
+...\glue(\tabskip) 0.0
+...\hbox(7.5+2.5)x60.22499 []
+...\glue(\tabskip) 0.0
+...\hbox(7.5+2.5)x60.22499 []
+...\glue(\tabskip) 0.0
+...etc.
+..\glue(\parskip) 0.0 plus 1.0
+..\glue(\baselineskip) 4.55556
+..\hbox(6.94444+1.94444)x351.34999, glue set 125.90686fil, shifted 10.0
+...\hbox(0.0+0.0)x0.0
+...\tenrm T
+...\kern-0.27779
+...\tenrm y
+...\tenrm p
+...etc.
+.etc.
+
+ [54]
+Underfull \vbox (badness 10000) has occurred while \output is active
+\vbox(511.91212+1.94444)x361.34999
+.\glue(\topskip) 0.0
+.\vbox(34.94444+1.94444)x361.34999
+..\hbox(6.94444+1.94444)x264.42412
+...\glue(\tabskip) 0.0
+...\hbox(6.94444+1.94444)x60.22499 []
+...\glue(\tabskip) 0.0
+...\hbox(6.94444+1.94444)x60.22499 []
+...\glue(\tabskip) 0.0
+...etc.
+..\glue(\parskip) 0.0 plus 1.0
+..\glue(\baselineskip) 5.11111
+..\hbox(6.94444+1.94444)x351.34999, glue set 145.4626fil, shifted 10.0
+...\hbox(0.0+0.0)x0.0
+...\tenrm s
+...\tenrm m
+...\tenrm a
+...\tenrm l
+...etc.
+..\glue(\parskip) 0.0 plus 1.0
+..etc.
+.\glue 7.5
+.\glue(\lineskip) 1.0
+.\vbox(21.5+0.0)x361.34999
+..\hbox(7.5+1.94444)x235.28546
+...\glue(\tabskip) 0.0
+...\hbox(7.5+1.94444)x60.22499 []
+...\glue(\tabskip) 0.0
+...\hbox(7.5+1.94444)x60.22499 []
+...\glue(\tabskip) 0.0
+...etc.
+..\glue(\parskip) 0.0 plus 1.0
+..\glue(\baselineskip) 5.11111
+..\hbox(6.94444+0.0)x351.34999, glue set 224.37862fil, shifted 10.0
+...\hbox(0.0+0.0)x0.0
+...\tenrm C
+...\tenrm o
+...\tenrm n
+...\kern-0.27779
+...etc.
+.etc.
+
+ [55]
+Underfull \vbox (badness 10000) has occurred while \output is active
+\vbox(511.91212+1.94444)x361.34999
+.\glue(\topskip) 0.0
+.\vbox(34.94444+1.94444)x361.34999
+..\hbox(6.94444+1.94444)x264.42412
+...\glue(\tabskip) 0.0
+...\hbox(6.94444+1.94444)x60.22499 []
+...\glue(\tabskip) 0.0
+...\hbox(6.94444+1.94444)x60.22499 []
+...\glue(\tabskip) 0.0
+...etc.
+..\glue(\parskip) 0.0 plus 1.0
+..\glue(\baselineskip) 4.55556
+..\hbox(7.5+2.5)x351.34999, glue set 204.26741fil, shifted 10.0
+...\hbox(0.0+0.0)x0.0
+...\tenrm m
+...\tenrm i
+...\tenrm n
+...\tenrm i
+...etc.
+..\glue(\parskip) 0.0 plus 1.0
+..etc.
+.\glue 7.5
+.\glue(\lineskip) 1.0
+.\vbox(63.5+2.5)x361.34999
+..\hbox(7.5+2.5)x264.42412
+...\glue(\tabskip) 0.0
+...\hbox(7.5+2.5)x60.22499 []
+...\glue(\tabskip) 0.0
+...\hbox(7.5+2.5)x60.22499 []
+...\glue(\tabskip) 0.0
+...etc.
+..\glue(\parskip) 0.0 plus 1.0
+..\glue(\baselineskip) 4.0
+..\hbox(7.5+2.5)x351.34999, glue set 77.38147fil, shifted 10.0
+...\hbox(0.0+0.0)x0.0
+...\tenrm s
+...\tenrm t
+...\tenrm a
+...\tenrm n
+...etc.
+..\glue(\parskip) 0.0 plus 1.0
+..etc.
+.etc.
+
+ [56]
+Underfull \vbox (badness 10000) has occurred while \output is active
+\vbox(511.91212+1.94444)x361.34999
+.\glue(\topskip) 0.0
+.\vbox(35.5+1.94444)x361.34999
+..\hbox(7.5+1.94444)x264.42412
+...\glue(\tabskip) 0.0
+...\hbox(7.5+1.94444)x60.22499 []
+...\glue(\tabskip) 0.0
+...\hbox(7.5+1.94444)x60.22499 []
+...\glue(\tabskip) 0.0
+...etc.
+..\glue(\parskip) 0.0 plus 1.0
+..\glue(\baselineskip) 5.11111
+..\hbox(6.94444+1.94444)x351.34999, glue set 172.93439fil, shifted 10.0
+...\hbox(0.0+0.0)x0.0
+...\tenrm w
+...\kern-0.27779
+...\tenrm e
+...\tenrm i
+...etc.
+..\glue(\parskip) 0.0 plus 1.0
+..etc.
+.\glue 7.5
+.\glue(\lineskip) 1.0
+.\vbox(34.94444+1.94444)x361.34999
+..\hbox(6.94444+1.94444)x264.42412
+...\glue(\tabskip) 0.0
+...\hbox(6.94444+1.94444)x60.22499 []
+...\glue(\tabskip) 0.0
+...\hbox(6.94444+1.94444)x60.22499 []
+...\glue(\tabskip) 0.0
+...etc.
+..\glue(\parskip) 0.0 plus 1.0
+..\glue(\baselineskip) 5.11111
+..\hbox(6.94444+1.94444)x351.34999, glue set 83.32422fil, shifted 10.0
+...\hbox(0.0+0.0)x0.0
+...\tenrm w
+...\kern-0.27779
+...\tenrm e
+...\tenrm i
+...etc.
+..\glue(\parskip) 0.0 plus 1.0
+..etc.
+.etc.
+
+ [57]
+Underfull \vbox (badness 10000) has occurred while \output is active
+\vbox(511.91212+1.94444)x361.34999
+.\glue(\topskip) 0.0
+.\vbox(34.94444+1.94444)x361.34999
+..\hbox(6.94444+1.94444)x264.42412
+...\glue(\tabskip) 0.0
+...\hbox(6.94444+1.94444)x60.22499 []
+...\glue(\tabskip) 0.0
+...\hbox(6.94444+1.94444)x60.22499 []
+...\glue(\tabskip) 0.0
+...etc.
+..\glue(\parskip) 0.0 plus 1.0
+..\glue(\baselineskip) 5.11111
+..\hbox(6.94444+1.94444)x351.34999, glue set 119.37985fil, shifted 10.0
+...\hbox(0.0+0.0)x0.0
+...\tenrm w
+...\kern-0.27779
+...\tenrm e
+...\tenrm i
+...etc.
+..\glue(\parskip) 0.0 plus 1.0
+..etc.
+.\glue 7.5
+.\glue(\lineskip) 1.0
+.\vbox(35.5+1.94444)x361.34999
+..\hbox(7.5+1.94444)x264.42412
+...\glue(\tabskip) 0.0
+...\hbox(7.5+1.94444)x60.22499 []
+...\glue(\tabskip) 0.0
+...\hbox(7.5+1.94444)x60.22499 []
+...\glue(\tabskip) 0.0
+...etc.
+..\glue(\parskip) 0.0 plus 1.0
+..\glue(\baselineskip) 5.11111
+..\hbox(6.94444+1.94444)x351.34999, glue set 235.87827fil, shifted 10.0
+...\hbox(0.0+0.0)x0.0
+...\tenrm R
+...\tenrm H
+...\tenrm O
+...\glue 3.33298
+...etc.
+..\glue(\parskip) 0.0 plus 1.0
+..etc.
+.etc.
+
+ [58]
+Underfull \vbox (badness 10000) has occurred while \output is active
+\vbox(511.91212+1.94444)x361.34999
+.\glue(\topskip) 0.0
+.\vbox(35.5+1.94444)x361.34999
+..\hbox(7.5+1.94444)x264.42412
+...\glue(\tabskip) 0.0
+...\hbox(7.5+1.94444)x60.22499 []
+...\glue(\tabskip) 0.0
+...\hbox(7.5+1.94444)x60.22499 []
+...\glue(\tabskip) 0.0
+...etc.
+..\glue(\parskip) 0.0 plus 1.0
+..\glue(\baselineskip) 5.22224
+..\hbox(6.83331+1.94444)x351.34999, glue set 211.01747fil, shifted 10.0
+...\hbox(0.0+0.0)x0.0
+...\tenrm D
+...\tenrm R
+...\glue 3.33298
+...\tenrm p
+...etc.
+..\glue(\parskip) 0.0 plus 1.0
+..etc.
+.\glue 7.5
+.\glue(\lineskip) 1.0
+.\vbox(35.5+1.94444)x361.34999
+..\hbox(7.5+1.94444)x264.42412
+...\glue(\tabskip) 0.0
+...\hbox(7.5+1.94444)x60.22499 []
+...\glue(\tabskip) 0.0
+...\hbox(7.5+1.94444)x60.22499 []
+...\glue(\tabskip) 0.0
+...etc.
+..\glue(\parskip) 0.0 plus 1.0
+..\glue(\baselineskip) 5.22224
+..\hbox(6.83331+1.94444)x351.34999, glue set 211.01747fil, shifted 10.0
+...\hbox(0.0+0.0)x0.0
+...\tenrm D
+...\tenrm R
+...\glue 3.33298
+...\tenrm p
+...etc.
+..\glue(\parskip) 0.0 plus 1.0
+..etc.
+.etc.
+
+ [59]
+Underfull \vbox (badness 10000) has occurred while \output is active
+\vbox(511.91212+1.94444)x361.34999
+.\glue(\topskip) 0.0
+.\vbox(49.5+2.5)x361.34999
+..\hbox(7.5+2.5)x264.42412
+...\glue(\tabskip) 0.0
+...\hbox(7.5+2.5)x60.22499 []
+...\glue(\tabskip) 0.0
+...\hbox(7.5+2.5)x60.22499 []
+...\glue(\tabskip) 0.0
+...etc.
+..\glue(\parskip) 0.0 plus 1.0
+..\glue(\baselineskip) 4.55556
+..\hbox(6.94444+1.94444)x351.34999, glue set 73.1304fil, shifted 10.0
+...\hbox(0.0+0.0)x0.0
+...\tenrm L
+...\tenrm i
+...\tenrm n
+...\tenrm e
+...etc.
+..\glue(\parskip) 0.0 plus 1.0
+..etc.
+.\glue 7.5
+.\glue(\lineskip) 1.0
+.\vbox(35.5+1.94444)x361.34999
+..\hbox(7.5+2.5)x264.42412
+...\glue(\tabskip) 0.0
+...\hbox(7.5+2.5)x60.22499 []
+...\glue(\tabskip) 0.0
+...\hbox(7.5+2.5)x60.22499 []
+...\glue(\tabskip) 0.0
+...etc.
+..\glue(\parskip) 0.0 plus 1.0
+..\glue(\baselineskip) 4.55556
+..\hbox(6.94444+1.94444)x351.34999, glue set 77.07484fil, shifted 10.0
+...\hbox(0.0+0.0)x0.0
+...\tenrm L
+...\tenrm i
+...\tenrm n
+...\tenrm e
+...etc.
+..\glue(\parskip) 0.0 plus 1.0
+..etc.
+.etc.
+
+ [60]
+Underfull \hbox (badness 1248) in paragraph at lines 2740--2742
+[]\tenrm weight ma-trix method pa-ram-e-ter, for ad-di-tional pho-toion-iza-tio
+n (see  
+
+\hbox(7.5+2.5)x351.34999, glue set 2.32317
+.\hbox(0.0+0.0)x0.0
+.\tenrm w
+.\kern-0.27779
+.\tenrm e
+.\tenrm i
+.etc.
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active
+\vbox(511.91212+1.94444)x361.34999
+.\glue(\topskip) 0.0
+.\vbox(48.94444+1.94444)x361.34999
+..\hbox(6.94444+1.94444)x264.42412
+...\glue(\tabskip) 0.0
+...\hbox(6.94444+1.94444)x60.22499 []
+...\glue(\tabskip) 0.0
+...\hbox(6.94444+1.94444)x60.22499 []
+...\glue(\tabskip) 0.0
+...etc.
+..\glue(\parskip) 0.0 plus 1.0
+..\glue(\baselineskip) 5.11111
+..\hbox(6.94444+1.94444)x351.34999, glue set 1.64124, shifted 10.0
+...\hbox(0.0+0.0)x0.0
+...\tenrm w
+...\kern-0.27779
+...\tenrm e
+...\tenrm i
+...etc.
+..\penalty 300
+..etc.
+.\glue 7.5
+.\glue(\lineskip) 1.0
+.\vbox(34.94444+1.94444)x361.34999
+..\hbox(6.94444+1.94444)x264.42412
+...\glue(\tabskip) 0.0
+...\hbox(6.94444+1.94444)x60.22499 []
+...\glue(\tabskip) 0.0
+...\hbox(6.94444+1.94444)x60.22499 []
+...\glue(\tabskip) 0.0
+...etc.
+..\glue(\parskip) 0.0 plus 1.0
+..\glue(\baselineskip) 4.55556
+..\hbox(7.5+2.5)x351.34999, glue set 9.18582fil, shifted 10.0
+...\hbox(0.0+0.0)x0.0
+...\tenrm w
+...\kern-0.27779
+...\tenrm e
+...\tenrm i
+...etc.
+..\glue(\parskip) 0.0 plus 1.0
+..etc.
+.etc.
+
+ [61]
+Underfull \vbox (badness 10000) has occurred while \output is active
+\vbox(511.91212+1.94444)x361.34999
+.\glue(\topskip) 0.0
+.\vbox(34.94444+1.94444)x361.34999
+..\hbox(6.94444+1.94444)x264.42412
+...\glue(\tabskip) 0.0
+...\hbox(6.94444+1.94444)x60.22499 []
+...\glue(\tabskip) 0.0
+...\hbox(6.94444+1.94444)x60.22499 []
+...\glue(\tabskip) 0.0
+...etc.
+..\glue(\parskip) 0.0 plus 1.0
+..\glue(\baselineskip) 4.55556
+..\hbox(7.5+2.5)x351.34999, glue set 19.49178fil, shifted 10.0
+...\hbox(0.0+0.0)x0.0
+...\tenrm w
+...\kern-0.27779
+...\tenrm e
+...\tenrm i
+...etc.
+..\glue(\parskip) 0.0 plus 1.0
+..etc.
+.\glue 7.5
+.\glue(\lineskip) 1.0
+.\vbox(49.5+1.94444)x361.34999
+..\hbox(7.5+2.5)x264.42412
+...\glue(\tabskip) 0.0
+...\hbox(7.5+2.5)x60.22499 []
+...\glue(\tabskip) 0.0
+...\hbox(7.5+2.5)x60.22499 []
+...\glue(\tabskip) 0.0
+...etc.
+..\glue(\parskip) 0.0 plus 1.0
+..\glue(\baselineskip) 4.55556
+..\hbox(6.94444+1.94444)x351.34999, glue set 0.08089, shifted 10.0
+...\hbox(0.0+0.0)x0.0
+...\tenrm w
+...\kern-0.27779
+...\tenrm e
+...\tenrm i
+...etc.
+..\penalty 300
+..etc.
+.etc.
+
+ [62])
+(./wup05b.tex
+\footline=\toks17
+ [63] [64] [65] [66] [67] [68] [69] [70] [71] [72] [73] [74]
+[75] [76] [77] [78] [79] [80] [81] [82] [83] [84] [85] [86] [87]
+Overfull \hbox (2.43738pt too wide) in paragraph at lines 804--807
+[]\tenrm In the same way, \tenbf LDINT \tenrm spec-i-fies the in-ter-val be-twe
+en depth points for the print- |
+
+\hbox(6.94444+1.94444)x361.34999
+.\hbox(0.0+0.0)x0.0
+.\tenrm I
+.\tenrm n
+.\glue(\spaceskip) 3.33298
+.\tenrm t
+.etc.
+
+[88] [89] [90] [91] [92] [93] [94] [95] [96] [97] [98] [99] [100] [101]
+Underfull \hbox (badness 1038) in paragraph at lines 1149--1156
+\tenrm The switches \tenbf IS-CRS\tenrm , \tenbf NOION\tenrm , \tenbf NVOIT\ten
+rm , \tenbf IXSTA\tenrm , \tenbf JBDNC\tenrm , \tenbf JSTIN\tenrm ,  
+
+\hbox(6.94444+1.94444)x361.34999, glue set 2.18228
+.\tenrm T
+.\tenrm h
+.\tenrm e
+.\glue(\spaceskip) 3.33298
+.\tenrm s
+.etc.
+
+
+Underfull \hbox (badness 4217) in paragraph at lines 1149--1156
+\tenbf IRPUN\tenrm , \tenbf IRUNT \tenrm and \tenbf TOPE \tenrm are al-ter-nate
+ forms of the op-tions  
+
+\hbox(6.94444+1.94444)x361.34999, glue set 3.48366
+.\tenbf I
+.\tenbf R
+.\tenbf P
+.\tenbf U
+.\tenbf N
+.etc.
+
+
+Underfull \hbox (badness 1383) in paragraph at lines 1149--1156
+\tenrm ISCRS, DOION, NVOIT, IXSTA, JBDNC, JSTIN, RAB-DAT, IRUNT  
+
+\hbox(6.83331+1.94444)x361.34999, glue set 2.40094
+.\tenrm I
+.\tenrm S
+.\tenrm C
+.\tenrm R
+.\tenrm S
+.etc.
+
+[102] [103] [104] [105]
+Underfull \hbox (badness 10000) in paragraph at lines 1282--1289
+\tenrm I, N-I, O-I, Na-I, Mg-I, Al-I, Si-I, S-I, and  
+
+\hbox(6.94444+1.94444)x361.34999, glue set 8.7343
+.\tenrm I
+.\tenrm ,
+.\glue(\spaceskip) 3.33298
+.\tenrm N
+.\tenrm -
+.etc.
+
+[106] [107] [108] [109] [110] [111] [112]
+Underfull \hbox (badness 3098) in paragraph at lines 1524--1527
+\tenrm 1) all stan-dard rates in-te-gra-tion wave-lengths $\teni ^^U[]$ \tenrm 
+falling in the range  
+
+\hbox(7.5+2.5)x361.34999, glue set 3.14175
+.\tenrm 1
+.\tenrm )
+.\glue(\spaceskip) 3.33298
+.\tenrm a
+.\tenrm l
+.etc.
+
+
+Underfull \hbox (badness 4779) in paragraph at lines 1530--1533
+\tenrm 2) those re-main-ing ze-roes will be re-placed by val-ues $\teni ^^U[]$ 
+\tenrm such that  
+
+\hbox(7.5+2.5)x361.34999, glue set 3.62996
+.\tenrm 2
+.\tenrm )
+.\glue(\spaceskip) 3.33298
+.\tenrm t
+.\tenrm h
+.etc.
+
+[113] [114]
+Underfull \hbox (badness 10000) in paragraph at lines 1583--1586
+\tenrm METHCOF se-lects the method for com-put-ing f-values;  
+
+\hbox(6.94444+1.94444)x361.34999, glue set 5.86342
+.\tenrm M
+.\tenrm E
+.\tenrm T
+.\tenrm H
+.\tenrm C
+.etc.
+
+
+Underfull \hbox (badness 1442) in paragraph at lines 1586--1589
+\tenrm METHCOW se-lects the method for com-put-ing en-er-gies (wave-lengths);  
+
+
+\hbox(7.5+2.5)x361.34999, glue set 2.43567
+.\tenrm M
+.\tenrm E
+.\tenrm T
+.\tenrm H
+.\tenrm C
+.etc.
+
+[115] [116]
+Underfull \hbox (badness 4168) in paragraph at lines 1647--1649
+\tenrm CQM$[]$ oc-curs in the equa-tion of the scat-ter-ing albedo of the `Line
+  
+
+\hbox(6.94444+1.94444)x361.34999, glue set 3.46927
+.\tenrm C
+.\tenrm Q
+.\tenrm M
+.\mathon
+.\hbox(4.63193+0.0)x3.32928, shifted 1.49998
+..\seveni i
+.etc.
+
+
+Underfull \hbox (badness 2150) in paragraph at lines 1651--1656
+\tenrm tem-per-a-ture. PAN-DORA in-ter-po-lates in $[][[]([])]$ to ob-tain  
+
+\hbox(7.5+2.5)x361.34999, glue set 2.78148
+.\tenrm t
+.\tenrm e
+.\tenrm m
+.\discretionary
+..\tenrm -
+.\tenrm p
+.etc.
+
+[117]
+Underfull \hbox (badness 1881) in paragraph at lines 1717--1724
+[]\tenbf KDIAG \tenrm = 3, 4, or 5 se-lects the 3-diagonal, 4-diagonal, or 5-di
+agonal  
+
+\hbox(6.94444+1.94444)x361.34999, glue set 2.66214
+.\hbox(0.0+0.0)x0.0
+.\tenbf K
+.\tenbf D
+.\tenbf I
+.\tenbf A
+.etc.
+
+[118] [119] [120]
+Underfull \hbox (badness 2486) in paragraph at lines 1831--1835
+\tenrm rith-mic weight-ing can also be used for RHO$[]$, de-pend-ing on op-tion
+  
+
+\hbox(8.49002+1.94444)x361.34999, glue set 2.92154
+.\tenrm r
+.\tenrm i
+.\tenrm t
+.\tenrm h
+.\discretionary
+..\tenrm -
+.etc.
+
+[121] [122] [123] [124] [125]) (./wup05c.tex
+\footline=\toks18
+
+Overfull \hbox (137.48456pt too wide) in paragraph at lines 1993--6
+\tenrm ab-so-lute value is less than $\teni Z$\tenrm .  []  |
+
+\hbox(6.94444+0.0)x361.34999
+.\tenrm a
+.\tenrm b
+.\discretionary
+..\tenrm -
+.\tenrm s
+.\tenrm o
+.etc.
+
+[126]
+Underfull \vbox (badness 10000) has occurred while \output is active
+\vbox(511.91212+2.5)x368.4622
+.\glue(\topskip) 3.05556
+.\hbox(6.94444+1.94444)x335.76805
+..\glue(\tabskip) 0.0
+..\hbox(6.94444+1.94444)x72.26999
+...\hbox(6.86111+0.0)x72.26999, glue set 19.56296fil []
+..\glue(\tabskip) 0.0
+..\hbox(6.94444+1.94444)x263.49806
+...\hbox(6.94444+1.94444)x263.49806 []
+..\glue(\tabskip) 0.0
+.\glue(\baselineskip) 5.11111
+.\hbox(6.94444+2.22223)x253.2408
+..\glue(\tabskip) 0.0
+..\hbox(6.94444+2.22223)x72.26999
+...\hbox(6.86111+0.0)x72.26999, glue set 19.82684fil []
+..\glue(\tabskip) 0.0
+..\hbox(6.94444+2.22223)x180.97081
+...\hbox(6.94444+2.22223)x180.97081 []
+..\glue(\tabskip) 0.0
+.\glue(\baselineskip) 4.83333
+.etc.
+
+ [127]
+Underfull \vbox (badness 10000) has occurred while \output is active
+\vbox(511.91212+1.94444)x381.10188
+.\glue(\topskip) 3.05556
+.\hbox(6.94444+1.94444)x150.07501
+..\glue(\tabskip) 0.0
+..\hbox(6.94444+1.94444)x72.26999
+...\hbox(6.86111+1.94444)x72.26999, glue set 34.4101fil []
+..\glue(\tabskip) 0.0
+..\hbox(6.94444+1.94444)x77.80502
+...\hbox(6.94444+1.94444)x77.80502 []
+..\glue(\tabskip) 0.0
+.\glue(\baselineskip) 5.11111
+.\hbox(6.94444+1.94444)x152.04723
+..\glue(\tabskip) 0.0
+..\hbox(6.94444+1.94444)x72.26999
+...\hbox(6.86111+1.94444)x72.26999, glue set 36.63231fil []
+..\glue(\tabskip) 0.0
+..\hbox(6.94444+1.94444)x79.77724
+...\hbox(6.94444+1.94444)x79.77724 []
+..\glue(\tabskip) 0.0
+.\glue(\baselineskip) 5.11111
+.etc.
+
+ [128]
+Underfull \vbox (badness 10000) has occurred while \output is active
+\vbox(511.91212+2.5)x332.99025
+.\glue(\topskip) 3.05556
+.\hbox(6.94444+1.94444)x316.26768
+..\glue(\tabskip) 0.0
+..\hbox(6.94444+1.94444)x72.26999
+...\hbox(6.86111+0.0)x72.26999, glue set 20.42406fil []
+..\glue(\tabskip) 0.0
+..\hbox(6.94444+1.94444)x243.9977
+...\hbox(6.94444+1.94444)x243.9977 []
+..\glue(\tabskip) 0.0
+.\glue(\baselineskip) 5.11111
+.\hbox(6.94444+1.94444)x244.63008
+..\glue(\tabskip) 0.0
+..\hbox(6.94444+1.94444)x72.26999
+...\hbox(6.86111+0.0)x72.26999, glue set 8.49358fil []
+..\glue(\tabskip) 0.0
+..\hbox(6.94444+1.94444)x172.36009
+...\hbox(6.94444+1.94444)x172.36009 []
+..\glue(\tabskip) 0.0
+.\glue(\baselineskip) 5.11111
+.etc.
+
+ [129]
+Underfull \vbox (badness 10000) has occurred while \output is active
+\vbox(511.91212+1.94444)x336.90695
+.\glue(\topskip) 2.5
+.\hbox(7.5+2.5)x336.87915
+..\glue(\tabskip) 0.0
+..\hbox(7.5+2.5)x72.26999
+...\hbox(6.86111+0.0)x72.26999, glue set 23.59071fil []
+..\glue(\tabskip) 0.0
+..\hbox(7.5+2.5)x264.60916
+...\hbox(7.5+2.5)x264.60916 []
+..\glue(\tabskip) 0.0
+.\glue(\baselineskip) 4.0
+.\hbox(7.5+2.5)x336.90695
+..\glue(\tabskip) 0.0
+..\hbox(7.5+2.5)x72.26999
+...\hbox(6.86111+0.0)x72.26999, glue set 23.77127fil []
+..\glue(\tabskip) 0.0
+..\hbox(7.5+2.5)x264.63696
+...\hbox(7.5+2.5)x264.63696 []
+..\glue(\tabskip) 0.0
+.\glue(\baselineskip) 4.0
+.etc.
+
+ [130]
+Underfull \vbox (badness 10000) has occurred while \output is active
+\vbox(511.91212+1.94444)x391.96179
+.\glue(\topskip) 3.05556
+.\hbox(6.94444+1.94444)x217.29655
+..\glue(\tabskip) 0.0
+..\hbox(6.94444+1.94444)x72.26999
+...\hbox(6.86111+0.0)x72.26999, glue set 21.04906fil []
+..\glue(\tabskip) 0.0
+..\hbox(6.94444+1.94444)x145.02657
+...\hbox(6.94444+1.94444)x145.02657 []
+..\glue(\tabskip) 0.0
+.\glue(\baselineskip) 4.55556
+.\hbox(7.5+2.5)x246.24112
+..\glue(\tabskip) 0.0
+..\hbox(7.5+2.5)x72.26999
+...\hbox(6.86111+0.0)x72.26999, glue set 28.27124fil []
+..\glue(\tabskip) 0.0
+..\hbox(7.5+2.5)x173.97113
+...\hbox(7.5+2.5)x173.97113 []
+..\glue(\tabskip) 0.0
+.\glue(\baselineskip) 4.0
+.etc.
+
+ [131]
+Underfull \vbox (badness 10000) has occurred while \output is active
+\vbox(511.91212+0.0)x337.07394
+.\glue(\topskip) 3.05556
+.\hbox(6.94444+1.94444)x227.35216
+..\glue(\tabskip) 0.0
+..\hbox(6.94444+1.94444)x72.26999
+...\hbox(6.86111+0.0)x72.26999, glue set 29.03513fil []
+..\glue(\tabskip) 0.0
+..\hbox(6.94444+1.94444)x155.08217
+...\hbox(6.94444+1.94444)x155.08217 []
+..\glue(\tabskip) 0.0
+.\glue(\baselineskip) 5.11111
+.\hbox(6.94444+0.0)x144.93571
+..\glue(\tabskip) 0.0
+..\hbox(6.94444+0.0)x72.26999
+...\hbox(6.86111+0.0)x72.26999, glue set 17.32686fil []
+..\glue(\tabskip) 0.0
+..\hbox(6.94444+0.0)x72.66573
+...\hbox(6.94444+0.0)x72.66573 []
+..\glue(\tabskip) 0.0
+.\glue(\baselineskip) 7.13889
+.etc.
+
+ [132]
+Underfull \vbox (badness 10000) has occurred while \output is active
+\vbox(511.91212+1.94444)x353.76811
+.\glue(\topskip) 3.05556
+.\hbox(6.94444+0.0)x211.21365
+..\glue(\tabskip) 0.0
+..\hbox(6.94444+0.0)x72.26999
+...\hbox(6.86111+0.0)x72.26999, glue set 49.60446fil []
+..\glue(\tabskip) 0.0
+..\hbox(6.94444+0.0)x138.94366
+...\hbox(6.94444+0.0)x138.94366 []
+..\glue(\tabskip) 0.0
+.\glue(\baselineskip) 6.5
+.\hbox(7.5+2.5)x267.37938
+..\glue(\tabskip) 0.0
+..\hbox(7.5+2.5)x72.26999
+...\hbox(6.86111+0.0)x72.26999, glue set 18.61852fil []
+..\glue(\tabskip) 0.0
+..\hbox(7.5+2.5)x195.10939
+...\hbox(7.5+2.5)x195.10939 []
+..\glue(\tabskip) 0.0
+.\glue(\baselineskip) 4.0
+.etc.
+
+ [133]
+Underfull \vbox (badness 10000) has occurred while \output is active
+\vbox(511.91212+1.94444)x334.21214
+.\glue(\topskip) 3.05556
+.\hbox(6.94444+1.94444)x247.63008
+..\glue(\tabskip) 0.0
+..\hbox(6.94444+1.94444)x72.26999
+...\hbox(6.86111+0.0)x72.26999, glue set 24.2296fil []
+..\glue(\tabskip) 0.0
+..\hbox(6.94444+1.94444)x175.36009
+...\hbox(6.94444+1.94444)x175.36009 []
+..\glue(\tabskip) 0.0
+.\glue(\baselineskip) 5.11111
+.\hbox(6.94444+1.94444)x203.15808
+..\glue(\tabskip) 0.0
+..\hbox(6.94444+1.94444)x72.26999
+...\hbox(6.86111+0.0)x72.26999, glue set 23.52127fil []
+..\glue(\tabskip) 0.0
+..\hbox(6.94444+1.94444)x130.88809
+...\hbox(6.94444+1.94444)x130.88809 []
+..\glue(\tabskip) 0.0
+.\glue(\baselineskip) 5.11111
+.etc.
+
+ [134]
+Underfull \vbox (badness 10000) has occurred while \output is active
+\vbox(511.91212+2.5)x338.32391
+.\glue(\topskip) 3.05556
+.\hbox(6.94444+1.94444)x215.7133
+..\glue(\tabskip) 0.0
+..\hbox(6.94444+1.94444)x72.26999
+...\hbox(6.86111+0.0)x72.26999, glue set 23.39627fil []
+..\glue(\tabskip) 0.0
+..\hbox(6.94444+1.94444)x143.44331
+...\hbox(6.94444+1.94444)x143.44331 []
+..\glue(\tabskip) 0.0
+.\glue(\baselineskip) 5.11111
+.\hbox(6.94444+1.94444)x215.7133
+..\glue(\tabskip) 0.0
+..\hbox(6.94444+1.94444)x72.26999
+...\hbox(6.86111+0.0)x72.26999, glue set 3.22972fil []
+..\glue(\tabskip) 0.0
+..\hbox(6.94444+1.94444)x143.44331
+...\hbox(6.94444+1.94444)x143.44331 []
+..\glue(\tabskip) 0.0
+.\glue(\baselineskip) 5.11111
+.etc.
+
+ [135]
+Underfull \vbox (badness 10000) has occurred while \output is active
+\vbox(511.91212+1.94444)x378.18413
+.\glue(\topskip) 2.5
+.\hbox(7.5+2.5)x295.93466
+..\glue(\tabskip) 0.0
+..\hbox(7.5+2.5)x72.26999
+...\hbox(6.86111+0.0)x72.26999, glue set 29.92401fil []
+..\glue(\tabskip) 0.0
+..\hbox(7.5+2.5)x223.66467
+...\hbox(7.5+2.5)x223.66467 []
+..\glue(\tabskip) 0.0
+.\glue(\baselineskip) 4.55556
+.\hbox(6.94444+1.94444)x326.68468
+..\glue(\tabskip) 0.0
+..\hbox(6.94444+1.94444)x72.26999
+...\hbox(6.86111+0.0)x72.26999, glue set 19.70184fil []
+..\glue(\tabskip) 0.0
+..\hbox(6.94444+1.94444)x254.41469
+...\hbox(6.94444+1.94444)x254.41469 []
+..\glue(\tabskip) 0.0
+.\glue(\baselineskip) 5.11111
+.etc.
+
+ [136]
+Underfull \vbox (badness 10000) has occurred while \output is active
+\vbox(511.91212+0.0)x355.65591
+.\glue(\topskip) 3.05556
+.\hbox(6.94444+1.94444)x188.74135
+..\glue(\tabskip) 0.0
+..\hbox(6.94444+1.94444)x72.26999
+...\hbox(6.86111+0.0)x72.26999, glue set 30.47957fil []
+..\glue(\tabskip) 0.0
+..\hbox(6.94444+1.94444)x116.47136
+...\hbox(6.94444+1.94444)x116.47136 []
+..\glue(\tabskip) 0.0
+.\glue(\baselineskip) 5.11111
+.\hbox(6.94444+1.94444)x202.04694
+..\glue(\tabskip) 0.0
+..\hbox(6.94444+1.94444)x72.26999
+...\hbox(6.86111+0.0)x72.26999, glue set 28.71568fil []
+..\glue(\tabskip) 0.0
+..\hbox(6.94444+1.94444)x129.77695
+...\hbox(6.94444+1.94444)x129.77695 []
+..\glue(\tabskip) 0.0
+.\glue(\baselineskip) 5.11111
+.etc.
+
+ [137]
+Underfull \vbox (badness 10000) has occurred while \output is active
+\vbox(511.91212+2.5)x320.65729
+.\glue(\topskip) 3.05556
+.\hbox(6.94444+1.94444)x235.26889
+..\glue(\tabskip) 0.0
+..\hbox(6.94444+1.94444)x72.26999
+...\hbox(6.86111+0.0)x72.26999, glue set 24.7296fil []
+..\glue(\tabskip) 0.0
+..\hbox(6.94444+1.94444)x162.9989
+...\hbox(6.94444+1.94444)x162.9989 []
+..\glue(\tabskip) 0.0
+.\glue(\baselineskip) 5.11111
+.\hbox(6.94444+1.94444)x192.0466
+..\glue(\tabskip) 0.0
+..\hbox(6.94444+1.94444)x72.26999
+...\hbox(6.86111+0.0)x72.26999, glue set 16.34076fil []
+..\glue(\tabskip) 0.0
+..\hbox(6.94444+1.94444)x119.77661
+...\hbox(6.94444+1.94444)x119.77661 []
+..\glue(\tabskip) 0.0
+.\glue(\baselineskip) 5.11111
+.etc.
+
+ [138]
+Underfull \vbox (badness 10000) has occurred while \output is active
+\vbox(511.91212+2.5)x302.90764
+.\glue(\topskip) 2.5
+.\hbox(7.5+2.5)x247.79636
+..\glue(\tabskip) 0.0
+..\hbox(7.5+2.5)x72.26999
+...\hbox(6.86111+0.0)x72.26999, glue set 30.92401fil []
+..\glue(\tabskip) 0.0
+..\hbox(7.5+2.5)x175.52637
+...\hbox(7.5+2.5)x175.52637 []
+..\glue(\tabskip) 0.0
+.\glue(\baselineskip) 4.55556
+.\hbox(6.94444+1.94444)x250.78249
+..\glue(\tabskip) 0.0
+..\hbox(6.94444+1.94444)x72.26999
+...\hbox(6.86111+0.0)x72.26999, glue set 19.06296fil []
+..\glue(\tabskip) 0.0
+..\hbox(6.94444+1.94444)x178.5125
+...\hbox(6.94444+1.94444)x178.5125 []
+..\glue(\tabskip) 0.0
+.\glue(\baselineskip) 5.11111
+.etc.
+
+ [139]
+Underfull \vbox (badness 10000) has occurred while \output is active
+\vbox(511.91212+1.94444)x332.29584
+.\glue(\topskip) 3.05556
+.\hbox(6.94444+1.94444)x221.60222
+..\glue(\tabskip) 0.0
+..\hbox(6.94444+1.94444)x72.26999
+...\hbox(6.86111+0.0)x72.26999, glue set 38.89618fil []
+..\glue(\tabskip) 0.0
+..\hbox(6.94444+1.94444)x149.33223
+...\hbox(6.94444+1.94444)x149.33223 []
+..\glue(\tabskip) 0.0
+.\glue(\baselineskip) 5.11111
+.\hbox(6.94444+1.94444)x198.24068
+..\glue(\tabskip) 0.0
+..\hbox(6.94444+1.94444)x72.26999
+...\hbox(6.86111+0.0)x72.26999, glue set 22.43794fil []
+..\glue(\tabskip) 0.0
+..\hbox(6.94444+1.94444)x125.97069
+...\hbox(6.94444+1.94444)x125.97069 []
+..\glue(\tabskip) 0.0
+.\glue(\baselineskip) 4.55556
+.etc.
+
+ [140]
+Underfull \vbox (badness 10000) has occurred while \output is active
+\vbox(511.91212+2.5)x346.96257
+.\glue(\topskip) 3.13889
+.\hbox(6.86111+1.94444)x153.63054
+..\glue(\tabskip) 0.0
+..\hbox(6.86111+1.94444)x72.26999
+...\hbox(6.86111+0.0)x72.26999, glue set 22.21573fil []
+..\glue(\tabskip) 0.0
+..\hbox(6.86111+1.94444)x81.36055
+...\hbox(6.83331+1.94444)x81.36055 []
+..\glue(\tabskip) 0.0
+.\glue(\baselineskip) 4.55556
+.\hbox(7.5+2.5)x195.5747
+..\glue(\tabskip) 0.0
+..\hbox(7.5+2.5)x72.26999
+...\hbox(6.86111+0.0)x72.26999, glue set 31.0629fil []
+..\glue(\tabskip) 0.0
+..\hbox(7.5+2.5)x123.30472
+...\hbox(7.5+2.5)x123.30472 []
+..\glue(\tabskip) 0.0
+.\glue(\baselineskip) 4.0
+.etc.
+
+ [141]
+Underfull \vbox (badness 10000) has occurred while \output is active
+\vbox(511.91212+0.0)x329.7125
+.\glue(\topskip) 2.5
+.\hbox(7.5+2.5)x246.10225
+..\glue(\tabskip) 0.0
+..\hbox(7.5+2.5)x72.26999
+...\hbox(6.86111+0.0)x72.26999, glue set 18.72963fil []
+..\glue(\tabskip) 0.0
+..\hbox(7.5+2.5)x173.83226
+...\hbox(7.5+2.5)x173.83226 []
+..\glue(\tabskip) 0.0
+.\glue(\baselineskip) 4.0
+.\hbox(7.5+2.5)x246.10225
+..\glue(\tabskip) 0.0
+..\hbox(7.5+2.5)x72.26999
+...\hbox(6.86111+0.0)x72.26999, glue set 22.64627fil []
+..\glue(\tabskip) 0.0
+..\hbox(7.5+2.5)x173.83226
+...\hbox(7.5+2.5)x173.83226 []
+..\glue(\tabskip) 0.0
+.\glue(\baselineskip) 4.55556
+.etc.
+
+ [142]
+Underfull \vbox (badness 10000) has occurred while \output is active
+\vbox(511.91212+1.94444)x297.74059
+.\glue(\topskip) 2.5
+.\hbox(7.5+2.5)x297.74059
+..\glue(\tabskip) 0.0
+..\hbox(7.5+2.5)x72.26999
+...\hbox(6.86111+0.0)x72.26999, glue set 32.84067fil []
+..\glue(\tabskip) 0.0
+..\hbox(7.5+2.5)x225.4706
+...\hbox(7.5+2.5)x225.4706 []
+..\glue(\tabskip) 0.0
+.\glue(\baselineskip) 4.0
+.\hbox(7.5+2.5)x239.07413
+..\glue(\tabskip) 0.0
+..\hbox(7.5+2.5)x72.26999
+...\hbox(6.86111+0.0)x72.26999, glue set 33.799fil []
+..\glue(\tabskip) 0.0
+..\hbox(7.5+2.5)x166.80414
+...\hbox(7.5+2.5)x166.80414 []
+..\glue(\tabskip) 0.0
+.\glue(\baselineskip) 4.55556
+.etc.
+
+ [143]
+Underfull \vbox (badness 10000) has occurred while \output is active
+\vbox(511.91212+1.94444)x351.87961
+.\glue(\topskip) 3.05556
+.\hbox(6.94444+1.94444)x179.8247
+..\glue(\tabskip) 0.0
+..\hbox(6.94444+1.94444)x72.26999
+...\hbox(6.86111+0.0)x72.26999, glue set 38.24341fil []
+..\glue(\tabskip) 0.0
+..\hbox(6.94444+1.94444)x107.55472
+...\hbox(6.94444+1.94444)x107.55472 []
+..\glue(\tabskip) 0.0
+.\glue(\baselineskip) 5.11111
+.\hbox(6.94444+1.94444)x179.8247
+..\glue(\tabskip) 0.0
+..\hbox(6.94444+1.94444)x72.26999
+...\hbox(6.86111+0.0)x72.26999, glue set 13.22966fil []
+..\glue(\tabskip) 0.0
+..\hbox(6.94444+1.94444)x107.55472
+...\hbox(6.94444+1.94444)x107.55472 []
+..\glue(\tabskip) 0.0
+.\glue(\baselineskip) 4.55556
+.etc.
+
+ [144]
+Underfull \vbox (badness 10000) has occurred while \output is active
+\vbox(511.91212+2.5)x332.65729
+.\glue(\topskip) 3.05556
+.\hbox(6.94444+1.94444)x155.28333
+..\glue(\tabskip) 0.0
+..\hbox(6.94444+1.94444)x72.26999
+...\hbox(6.86111+0.0)x72.26999, glue set 33.49344fil []
+..\glue(\tabskip) 0.0
+..\hbox(6.94444+1.94444)x83.01334
+...\hbox(6.94444+1.94444)x83.01334 []
+..\glue(\tabskip) 0.0
+.\glue(\baselineskip) 5.11111
+.\hbox(6.94444+1.94444)x224.81055
+..\glue(\tabskip) 0.0
+..\hbox(6.94444+1.94444)x72.26999
+...\hbox(6.86111+0.0)x72.26999, glue set 26.4657fil []
+..\glue(\tabskip) 0.0
+..\hbox(6.94444+1.94444)x152.54056
+...\hbox(6.94444+1.94444)x152.54056 []
+..\glue(\tabskip) 0.0
+.\glue(\baselineskip) 5.11111
+.etc.
+
+ [145]
+Underfull \vbox (badness 10000) has occurred while \output is active
+\vbox(511.91212+1.94444)x347.87921
+.\glue(\topskip) 2.5
+.\hbox(7.5+2.5)x226.24113
+..\glue(\tabskip) 0.0
+..\hbox(7.5+2.5)x72.26999
+...\hbox(6.86111+0.0)x72.26999, glue set 36.71564fil []
+..\glue(\tabskip) 0.0
+..\hbox(7.5+2.5)x153.97115
+...\hbox(7.5+2.5)x153.97115 []
+..\glue(\tabskip) 0.0
+.\glue(\baselineskip) 4.55556
+.\hbox(6.94444+1.94444)x188.71397
+..\glue(\tabskip) 0.0
+..\hbox(6.94444+1.94444)x72.26999
+...\hbox(6.86111+0.0)x72.26999, glue set 44.5767fil []
+..\glue(\tabskip) 0.0
+..\hbox(6.94444+1.94444)x116.44398
+...\hbox(6.94444+1.94444)x116.44398 []
+..\glue(\tabskip) 0.0
+.\glue(\baselineskip) 5.11111
+.etc.
+
+ [146]
+Underfull \vbox (badness 10000) has occurred while \output is active
+\vbox(511.91212+1.94444)x374.31297
+.\glue(\topskip) 3.05556
+.\hbox(6.94444+1.94444)x259.10228
+..\glue(\tabskip) 0.0
+..\hbox(6.94444+1.94444)x72.26999
+...\hbox(6.86111+0.0)x72.26999, glue set 17.1463fil []
+..\glue(\tabskip) 0.0
+..\hbox(6.94444+1.94444)x186.83229
+...\hbox(6.94444+1.94444)x186.83229 []
+..\glue(\tabskip) 0.0
+.\glue(\baselineskip) 5.11111
+.\hbox(6.94444+1.94444)x259.10228
+..\glue(\tabskip) 0.0
+..\hbox(6.94444+1.94444)x72.26999
+...\hbox(6.86111+0.0)x72.26999, glue set 13.56299fil []
+..\glue(\tabskip) 0.0
+..\hbox(6.94444+1.94444)x186.83229
+...\hbox(6.94444+1.94444)x186.83229 []
+..\glue(\tabskip) 0.0
+.\glue(\baselineskip) 5.11111
+.etc.
+
+ [147]
+Underfull \vbox (badness 10000) has occurred while \output is active
+\vbox(511.91212+1.94444)x358.68477
+.\glue(\topskip) 3.05556
+.\hbox(6.94444+1.94444)x299.90727
+..\glue(\tabskip) 0.0
+..\hbox(6.94444+1.94444)x72.26999
+...\hbox(6.86111+0.0)x72.26999, glue set 25.2157fil []
+..\glue(\tabskip) 0.0
+..\hbox(6.94444+1.94444)x227.63728
+...\hbox(6.94444+1.94444)x227.63728 []
+..\glue(\tabskip) 0.0
+.\glue(\baselineskip) 5.11111
+.\hbox(6.94444+1.94444)x255.74084
+..\glue(\tabskip) 0.0
+..\hbox(6.94444+1.94444)x72.26999
+...\hbox(6.86111+0.0)x72.26999, glue set 24.88237fil []
+..\glue(\tabskip) 0.0
+..\hbox(6.94444+1.94444)x183.47086
+...\hbox(6.94444+1.94444)x183.47086 []
+..\glue(\tabskip) 0.0
+.\glue(\baselineskip) 5.11111
+.etc.
+
+ [148]
+Underfull \vbox (badness 10000) has occurred while \output is active
+\vbox(511.91212+1.94444)x365.96252
+.\glue(\topskip) 2.5
+.\hbox(7.5+2.5)x315.43501
+..\glue(\tabskip) 0.0
+..\hbox(7.5+2.5)x72.26999
+...\hbox(6.86111+0.0)x72.26999, glue set 24.2296fil []
+..\glue(\tabskip) 0.0
+..\hbox(7.5+2.5)x243.16502
+...\hbox(7.5+2.5)x243.16502 []
+..\glue(\tabskip) 0.0
+.\glue(\baselineskip) 4.55556
+.\hbox(6.94444+1.94444)x265.82416
+..\glue(\tabskip) 0.0
+..\hbox(6.94444+1.94444)x72.26999
+...\hbox(6.86111+0.0)x72.26999, glue set 28.68791fil []
+..\glue(\tabskip) 0.0
+..\hbox(6.94444+1.94444)x193.55417
+...\hbox(6.94444+1.94444)x193.55417 []
+..\glue(\tabskip) 0.0
+.\glue(\baselineskip) 5.11111
+.etc.
+
+ [149]
+Underfull \vbox (badness 10000) has occurred while \output is active
+\vbox(511.91212+0.0)x308.07393
+.\glue(\topskip) 3.05556
+.\hbox(6.94444+1.94444)x300.90718
+..\glue(\tabskip) 0.0
+..\hbox(6.94444+1.94444)x72.26999
+...\hbox(6.86111+0.0)x72.26999, glue set 6.10469fil []
+..\glue(\tabskip) 0.0
+..\hbox(6.94444+1.94444)x228.63719
+...\hbox(6.94444+1.94444)x228.63719 []
+..\glue(\tabskip) 0.0
+.\glue(\baselineskip) 5.11111
+.\hbox(6.94444+1.94444)x300.90718
+..\glue(\tabskip) 0.0
+..\hbox(6.94444+1.94444)x72.26999
+...\hbox(6.86111+0.0)x72.26999, glue set 6.41025fil []
+..\glue(\tabskip) 0.0
+..\hbox(6.94444+1.94444)x228.63719
+...\hbox(6.94444+1.94444)x228.63719 []
+..\glue(\tabskip) 0.0
+.\glue(\baselineskip) 5.11111
+.etc.
+
+ [150]
+Underfull \vbox (badness 10000) has occurred while \output is active
+\vbox(511.91212+1.94444)x305.32361
+.\glue(\topskip) 3.05556
+.\hbox(6.94444+1.94444)x211.10214
+..\glue(\tabskip) 0.0
+..\hbox(6.94444+1.94444)x72.26999
+...\hbox(6.86111+0.0)x72.26999, glue set 3.04916fil []
+..\glue(\tabskip) 0.0
+..\hbox(6.94444+1.94444)x138.83215
+...\hbox(6.94444+1.94444)x138.83215 []
+..\glue(\tabskip) 0.0
+.\glue(\baselineskip) 5.11111
+.\hbox(6.94444+1.94444)x193.74065
+..\glue(\tabskip) 0.0
+..\hbox(6.94444+1.94444)x72.26999
+...\hbox(6.86111+0.0)x72.26999, glue set 21.17406fil []
+..\glue(\tabskip) 0.0
+..\hbox(6.94444+1.94444)x121.47066
+...\hbox(6.94444+1.94444)x121.47066 []
+..\glue(\tabskip) 0.0
+.\glue(\baselineskip) 5.11111
+.etc.
+
+ [151]
+Underfull \vbox (badness 10000) has occurred while \output is active
+\vbox(511.91212+1.94444)x358.8375
+.\glue(\topskip) 3.05556
+.\hbox(6.94444+1.94444)x321.99036
+..\glue(\tabskip) 0.0
+..\hbox(6.94444+1.94444)x72.26999
+...\hbox(6.86111+0.0)x72.26999, glue set 46.35448fil []
+..\glue(\tabskip) 0.0
+..\hbox(6.94444+1.94444)x249.72037
+...\hbox(6.94444+1.94444)x249.72037 []
+..\glue(\tabskip) 0.0
+.\glue(\baselineskip) 5.11111
+.\hbox(6.94444+0.0)x192.35179
+..\glue(\tabskip) 0.0
+..\hbox(6.94444+0.0)x72.26999
+...\hbox(6.86111+0.0)x72.26999, glue set 17.34074fil []
+..\glue(\tabskip) 0.0
+..\hbox(6.94444+0.0)x120.0818
+...\hbox(6.94444+0.0)x120.0818 []
+..\glue(\tabskip) 0.0
+.\glue(\baselineskip) 6.5
+.etc.
+
+ [152]
+Underfull \vbox (badness 10000) has occurred while \output is active
+\vbox(511.91212+1.94444)x327.29576
+.\glue(\topskip) 3.05556
+.\hbox(6.94444+1.94444)x327.29576
+..\glue(\tabskip) 0.0
+..\hbox(6.94444+1.94444)x72.26999
+...\hbox(6.86111+0.0)x72.26999, glue set 15.79909fil []
+..\glue(\tabskip) 0.0
+..\hbox(6.94444+1.94444)x255.02577
+...\hbox(6.94444+1.94444)x255.02577 []
+..\glue(\tabskip) 0.0
+.\glue(\baselineskip) 5.11111
+.\hbox(6.94444+1.94444)x288.15686
+..\glue(\tabskip) 0.0
+..\hbox(6.94444+1.94444)x72.26999
+...\hbox(6.86111+0.0)x72.26999, glue set 29.92401fil []
+..\glue(\tabskip) 0.0
+..\hbox(6.94444+1.94444)x215.88687
+...\hbox(6.94444+1.94444)x215.88687 []
+..\glue(\tabskip) 0.0
+.\glue(\baselineskip) 5.11111
+.etc.
+
+ [153]
+Underfull \vbox (badness 10000) has occurred while \output is active
+\vbox(511.91212+2.5)x278.10162
+.\glue(\topskip) 3.05556
+.\hbox(6.94444+1.94444)x261.90741
+..\glue(\tabskip) 0.0
+..\hbox(6.94444+1.94444)x72.26999
+...\hbox(6.86111+0.0)x72.26999, glue set 24.42404fil []
+..\glue(\tabskip) 0.0
+..\hbox(6.94444+1.94444)x189.63742
+...\hbox(6.94444+1.94444)x189.63742 []
+..\glue(\tabskip) 0.0
+.\glue(\baselineskip) 5.11111
+.\hbox(6.94444+1.94444)x198.82443
+..\glue(\tabskip) 0.0
+..\hbox(6.94444+1.94444)x72.26999
+...\hbox(6.86111+0.0)x72.26999, glue set 24.16016fil []
+..\glue(\tabskip) 0.0
+..\hbox(6.94444+1.94444)x126.55444
+...\hbox(6.94444+1.94444)x126.55444 []
+..\glue(\tabskip) 0.0
+.\glue(\baselineskip) 5.11111
+.etc.
+
+ [154]
+Underfull \vbox (badness 10000) has occurred while \output is active
+\vbox(511.91212+2.5)x363.60144
+.\glue(\topskip) 2.5
+.\hbox(7.5+2.5)x313.5184
+..\glue(\tabskip) 0.0
+..\hbox(7.5+2.5)x72.26999
+...\hbox(6.86111+0.0)x72.26999, glue set 33.299fil []
+..\glue(\tabskip) 0.0
+..\hbox(7.5+2.5)x241.24841
+...\hbox(7.5+2.5)x241.24841 []
+..\glue(\tabskip) 0.0
+.\glue(\baselineskip) 4.55556
+.\hbox(6.94444+1.94444)x176.24135
+..\glue(\tabskip) 0.0
+..\hbox(6.94444+1.94444)x72.26999
+...\hbox(6.86111+0.0)x72.26999, glue set 16.43797fil []
+..\glue(\tabskip) 0.0
+..\hbox(6.94444+1.94444)x103.97136
+...\hbox(6.94444+1.94444)x103.97136 []
+..\glue(\tabskip) 0.0
+.\glue(\baselineskip) 5.11111
+.etc.
+
+ [155]
+Underfull \vbox (badness 10000) has occurred while \output is active
+\vbox(511.91212+1.94444)x348.96252
+.\glue(\topskip) 2.5
+.\hbox(7.5+2.5)x303.54614
+..\glue(\tabskip) 0.0
+..\hbox(7.5+2.5)x72.26999
+...\hbox(6.86111+1.94444)x72.26999, glue set 27.14626fil []
+..\glue(\tabskip) 0.0
+..\hbox(7.5+2.5)x231.27615
+...\hbox(7.5+2.5)x231.27615 []
+..\glue(\tabskip) 0.0
+.\glue(\baselineskip) 4.0
+.\hbox(7.5+2.5)x303.54614
+..\glue(\tabskip) 0.0
+..\hbox(7.5+2.5)x72.26999
+...\hbox(6.86111+0.0)x72.26999, glue set 25.18793fil []
+..\glue(\tabskip) 0.0
+..\hbox(7.5+2.5)x231.27615
+...\hbox(7.5+2.5)x231.27615 []
+..\glue(\tabskip) 0.0
+.\glue(\baselineskip) 4.0
+.etc.
+
+ [156]
+Underfull \vbox (badness 10000) has occurred while \output is active
+\vbox(511.91212+1.94444)x389.61821
+.\glue(\topskip) 3.05556
+.\hbox(6.94444+1.94444)x211.57442
+..\glue(\tabskip) 0.0
+..\hbox(6.94444+1.94444)x72.26999
+...\hbox(6.86111+1.94444)x72.26999, glue set 34.4101fil []
+..\glue(\tabskip) 0.0
+..\hbox(6.94444+1.94444)x139.30443
+...\hbox(6.94444+1.94444)x139.30443 []
+..\glue(\tabskip) 0.0
+.\glue(\baselineskip) 5.11111
+.\hbox(6.94444+1.94444)x205.13
+..\glue(\tabskip) 0.0
+..\hbox(6.94444+1.94444)x72.26999
+...\hbox(6.86111+0.0)x72.26999, glue set 28.09068fil []
+..\glue(\tabskip) 0.0
+..\hbox(6.94444+1.94444)x132.86002
+...\hbox(6.94444+1.94444)x132.86002 []
+..\glue(\tabskip) 0.0
+.\glue(\baselineskip) 5.11111
+.etc.
+
+ [157]
+Underfull \vbox (badness 10000) has occurred while \output is active
+\vbox(511.91212+0.0)x337.8236
+.\glue(\topskip) 3.05556
+.\hbox(6.94444+1.94444)x197.6858
+..\glue(\tabskip) 0.0
+..\hbox(6.94444+1.94444)x72.26999
+...\hbox(6.86111+0.0)x72.26999, glue set 30.96567fil []
+..\glue(\tabskip) 0.0
+..\hbox(6.94444+1.94444)x125.41582
+...\hbox(6.94444+1.94444)x125.41582 []
+..\glue(\tabskip) 0.0
+.\glue(\baselineskip) 5.11111
+.\hbox(6.94444+1.94444)x197.71361
+..\glue(\tabskip) 0.0
+..\hbox(6.94444+1.94444)x72.26999
+...\hbox(6.86111+0.0)x72.26999, glue set 44.27115fil []
+..\glue(\tabskip) 0.0
+..\hbox(6.94444+1.94444)x125.44362
+...\hbox(6.94444+1.94444)x125.44362 []
+..\glue(\tabskip) 0.0
+.\glue(\baselineskip) 5.11111
+.etc.
+
+ [158]
+Underfull \vbox (badness 10000) has occurred while \output is active
+\vbox(511.91212+2.5)x331.04582
+.\glue(\topskip) 3.05556
+.\hbox(6.94444+0.0)x161.24132
+..\glue(\tabskip) 0.0
+..\hbox(6.94444+0.0)x72.26999
+...\hbox(6.86111+0.0)x72.26999, glue set 38.8823fil []
+..\glue(\tabskip) 0.0
+..\hbox(6.94444+0.0)x88.97133
+...\hbox(6.94444+0.0)x88.97133 []
+..\glue(\tabskip) 0.0
+.\glue(\baselineskip) 7.05556
+.\hbox(6.94444+1.94444)x302.51834
+..\glue(\tabskip) 0.0
+..\hbox(6.94444+1.94444)x72.26999
+...\hbox(6.86111+0.0)x72.26999, glue set 0.84084fil []
+..\glue(\tabskip) 0.0
+..\hbox(6.94444+1.94444)x230.24835
+...\hbox(6.94444+1.94444)x230.24835 []
+..\glue(\tabskip) 0.0
+.\glue(\baselineskip) 5.11111
+.etc.
+
+ [159]
+Underfull \vbox (badness 10000) has occurred while \output is active
+\vbox(511.91212+1.94444)x344.29578
+.\glue(\topskip) 2.5
+.\hbox(7.5+2.5)x290.65791
+..\glue(\tabskip) 0.0
+..\hbox(7.5+2.5)x72.26999
+...\hbox(6.86111+0.0)x72.26999, glue set 30.88234fil []
+..\glue(\tabskip) 0.0
+..\hbox(7.5+2.5)x218.38792
+...\hbox(7.5+2.5)x218.38792 []
+..\glue(\tabskip) 0.0
+.\glue(\baselineskip) 4.0
+.\hbox(7.5+2.5)x305.35176
+..\glue(\tabskip) 0.0
+..\hbox(7.5+2.5)x72.26999
+...\hbox(6.86111+0.0)x72.26999, glue set 38.86841fil []
+..\glue(\tabskip) 0.0
+..\hbox(7.5+2.5)x233.08177
+...\hbox(7.5+2.5)x233.08177 []
+..\glue(\tabskip) 0.0
+.\glue(\baselineskip) 4.0
+.etc.
+
+ [160]
+Underfull \vbox (badness 10000) has occurred while \output is active
+\vbox(511.91212+1.94444)x338.85213
+.\glue(\topskip) 2.5
+.\hbox(7.5+2.5)x289.74094
+..\glue(\tabskip) 0.0
+..\hbox(7.5+2.5)x72.26999
+...\hbox(6.86111+0.0)x72.26999, glue set 24.7296fil []
+..\glue(\tabskip) 0.0
+..\hbox(7.5+2.5)x217.47095
+...\hbox(7.5+2.5)x217.47095 []
+..\glue(\tabskip) 0.0
+.\glue(\baselineskip) 4.55556
+.\hbox(6.94444+1.94444)x235.76889
+..\glue(\tabskip) 0.0
+..\hbox(6.94444+1.94444)x72.26999
+...\hbox(6.86111+0.0)x72.26999, glue set - 4.88135fil []
+..\glue(\tabskip) 0.0
+..\hbox(6.94444+1.94444)x163.4989
+...\hbox(6.94444+1.94444)x163.4989 []
+..\glue(\tabskip) 0.0
+.\glue(\baselineskip) 5.11111
+.etc.
+
+ [161]
+Underfull \vbox (badness 10000) has occurred while \output is active
+\vbox(511.91212+1.94444)x380.42412
+.\glue(\topskip) 3.05556
+.\hbox(6.94444+1.94444)x289.37938
+..\glue(\tabskip) 0.0
+..\hbox(6.94444+1.94444)x72.26999
+...\hbox(6.86111+0.0)x72.26999, glue set 18.2713fil []
+..\glue(\tabskip) 0.0
+..\hbox(6.94444+1.94444)x217.10939
+...\hbox(6.94444+1.94444)x217.10939 []
+..\glue(\tabskip) 0.0
+.\glue(\baselineskip) 4.55556
+.\hbox(7.5+2.5)x225.49075
+..\glue(\tabskip) 0.0
+..\hbox(7.5+2.5)x72.26999
+...\hbox(6.86111+0.0)x72.26999, glue set 30.92401fil []
+..\glue(\tabskip) 0.0
+..\hbox(7.5+2.5)x153.22076
+...\hbox(7.5+2.5)x153.22076 []
+..\glue(\tabskip) 0.0
+.\glue(\baselineskip) 4.55556
+.etc.
+
+ [162]
+Underfull \vbox (badness 10000) has occurred while \output is active
+\vbox(511.91212+1.94444)x344.57393
+.\glue(\topskip) 2.5
+.\hbox(7.5+2.5)x235.49081
+..\glue(\tabskip) 0.0
+..\hbox(7.5+2.5)x72.26999
+...\hbox(6.86111+0.0)x72.26999, glue set 38.36841fil []
+..\glue(\tabskip) 0.0
+..\hbox(7.5+2.5)x163.22083
+...\hbox(7.5+2.5)x163.22083 []
+..\glue(\tabskip) 0.0
+.\glue(\baselineskip) 4.55556
+.\hbox(6.94444+1.94444)x175.40768
+..\glue(\tabskip) 0.0
+..\hbox(6.94444+1.94444)x72.26999
+...\hbox(6.86111+0.0)x72.26999, glue set 28.46568fil []
+..\glue(\tabskip) 0.0
+..\hbox(6.94444+1.94444)x103.1377
+...\hbox(6.94444+1.94444)x103.1377 []
+..\glue(\tabskip) 0.0
+.\glue(\baselineskip) 5.11111
+.etc.
+
+ [163]
+Underfull \vbox (badness 10000) has occurred while \output is active
+\vbox(511.91212+1.94444)x355.54543
+.\glue(\topskip) 3.05556
+.\hbox(6.94444+1.94444)x324.90656
+..\glue(\tabskip) 0.0
+..\hbox(6.94444+1.94444)x72.26999
+...\hbox(0.0+0.0)x72.26999, glue set 65.60403fil []
+..\glue(\tabskip) 0.0
+..\hbox(6.94444+1.94444)x252.63657
+...\hbox(6.94444+1.94444)x252.63657 []
+..\glue(\tabskip) 0.0
+.\glue(\baselineskip) 5.11111
+.\hbox(6.94444+1.94444)x210.24142
+..\glue(\tabskip) 0.0
+..\hbox(6.94444+1.94444)x72.26999
+...\hbox(6.86111+0.0)x72.26999, glue set 3.04916fil []
+..\glue(\tabskip) 0.0
+..\hbox(6.94444+1.94444)x137.97144
+...\hbox(6.94444+1.94444)x137.97144 []
+..\glue(\tabskip) 0.0
+.\glue(\baselineskip) 5.11111
+.etc.
+
+ [164]
+Underfull \vbox (badness 10000) has occurred while \output is active
+\vbox(511.91212+2.5)x381.60143
+.\glue(\topskip) 3.05556
+.\hbox(6.94444+1.94444)x135.8805
+..\glue(\tabskip) 0.0
+..\hbox(6.94444+1.94444)x72.26999
+...\hbox(6.86111+0.0)x72.26999, glue set 42.72949fil []
+..\glue(\tabskip) 0.0
+..\hbox(6.94444+1.94444)x63.6105
+...\hbox(6.94444+1.94444)x63.6105 []
+..\glue(\tabskip) 0.0
+.\glue(\baselineskip) 5.11111
+.\hbox(6.94444+1.94444)x144.01904
+..\glue(\tabskip) 0.0
+..\hbox(6.94444+1.94444)x72.26999
+...\hbox(6.86111+0.0)x72.26999, glue set 23.75739fil []
+..\glue(\tabskip) 0.0
+..\hbox(6.94444+1.94444)x71.74905
+...\hbox(6.94444+1.94444)x71.74905 []
+..\glue(\tabskip) 0.0
+.\glue(\baselineskip) 5.11111
+.etc.
+
+ [165]
+Underfull \vbox (badness 10000) has occurred while \output is active
+\vbox(511.91212+2.5)x377.09076
+.\glue(\topskip) 2.5
+.\hbox(7.5+2.5)x223.74113
+..\glue(\tabskip) 0.0
+..\hbox(7.5+2.5)x72.26999
+...\hbox(6.86111+0.0)x72.26999, glue set 42.52116fil []
+..\glue(\tabskip) 0.0
+..\hbox(7.5+2.5)x151.47115
+...\hbox(7.5+2.5)x151.47115 []
+..\glue(\tabskip) 0.0
+.\glue(\baselineskip) 4.0
+.\hbox(7.5+2.5)x292.62947
+..\glue(\tabskip) 0.0
+..\hbox(7.5+2.5)x72.26999
+...\hbox(6.86111+0.0)x72.26999, glue set 42.50728fil []
+..\glue(\tabskip) 0.0
+..\hbox(7.5+2.5)x220.35948
+...\hbox(7.5+2.5)x220.35948 []
+..\glue(\tabskip) 0.0
+.\glue(\baselineskip) 4.0
+.etc.
+
+ [166]
+Underfull \vbox (badness 10000) has occurred while \output is active
+\vbox(511.91212+1.94444)x338.85213
+.\glue(\topskip) 3.05556
+.\hbox(6.94444+1.94444)x259.93526
+..\glue(\tabskip) 0.0
+..\hbox(6.94444+1.94444)x72.26999
+...\hbox(6.86111+0.0)x72.26999, glue set 19.20184fil []
+..\glue(\tabskip) 0.0
+..\hbox(6.94444+1.94444)x187.66527
+...\hbox(6.94444+1.94444)x187.66527 []
+..\glue(\tabskip) 0.0
+.\glue(\baselineskip) 5.11111
+.\hbox(6.94444+1.94444)x259.93526
+..\glue(\tabskip) 0.0
+..\hbox(6.94444+1.94444)x72.26999
+...\hbox(6.86111+0.0)x72.26999, glue set 19.6324fil []
+..\glue(\tabskip) 0.0
+..\hbox(6.94444+1.94444)x187.66527
+...\hbox(6.94444+1.94444)x187.66527 []
+..\glue(\tabskip) 0.0
+.\glue(\baselineskip) 5.11111
+.etc.
+
+ [167]
+Underfull \vbox (badness 10000) has occurred while \output is active
+\vbox(511.91212+2.5)x355.9903
+.\glue(\topskip) 2.5
+.\hbox(7.5+2.5)x266.32382
+..\glue(\tabskip) 0.0
+..\hbox(7.5+2.5)x72.26999
+...\hbox(6.86111+0.0)x72.26999, glue set 32.84067fil []
+..\glue(\tabskip) 0.0
+..\hbox(7.5+2.5)x194.05383
+...\hbox(7.5+2.5)x194.05383 []
+..\glue(\tabskip) 0.0
+.\glue(\baselineskip) 4.55556
+.\hbox(6.94444+1.94444)x208.18517
+..\glue(\tabskip) 0.0
+..\hbox(6.94444+1.94444)x72.26999
+...\hbox(6.86111+0.0)x72.26999, glue set 37.03508fil []
+..\glue(\tabskip) 0.0
+..\hbox(6.94444+1.94444)x135.91518
+...\hbox(6.94444+1.94444)x135.91518 []
+..\glue(\tabskip) 0.0
+.\glue(\baselineskip) 5.11111
+.etc.
+
+ [168]
+Underfull \vbox (badness 10000) has occurred while \output is active
+\vbox(511.91212+1.94444)x313.01834
+.\glue(\topskip) 2.5
+.\hbox(7.5+2.5)x270.32417
+..\glue(\tabskip) 0.0
+..\hbox(7.5+2.5)x72.26999
+...\hbox(6.86111+0.0)x72.26999, glue set 22.42406fil []
+..\glue(\tabskip) 0.0
+..\hbox(7.5+2.5)x198.05418
+...\hbox(7.5+2.5)x198.05418 []
+..\glue(\tabskip) 0.0
+.\glue(\baselineskip) 4.0
+.\hbox(7.5+2.5)x270.32417
+..\glue(\tabskip) 0.0
+..\hbox(7.5+2.5)x72.26999
+...\hbox(6.86111+0.0)x72.26999, glue set 16.17409fil []
+..\glue(\tabskip) 0.0
+..\hbox(7.5+2.5)x198.05418
+...\hbox(7.5+2.5)x198.05418 []
+..\glue(\tabskip) 0.0
+.\glue(\baselineskip) 4.0
+.etc.
+
+ [169]
+Underfull \vbox (badness 10000) has occurred while \output is active
+\vbox(511.91212+2.5)x348.37845
+.\glue(\topskip) 3.05556
+.\hbox(6.94444+1.94444)x233.5463
+..\glue(\tabskip) 0.0
+..\hbox(6.94444+1.94444)x72.26999
+...\hbox(6.86111+0.0)x72.26999, glue set 23.09071fil []
+..\glue(\tabskip) 0.0
+..\hbox(6.94444+1.94444)x161.2763
+...\hbox(6.94444+1.94444)x161.2763 []
+..\glue(\tabskip) 0.0
+.\glue(\baselineskip) 5.11111
+.\hbox(6.94444+1.94444)x230.15742
+..\glue(\tabskip) 0.0
+..\hbox(6.94444+1.94444)x72.26999
+...\hbox(6.86111+0.0)x72.26999, glue set 23.09071fil []
+..\glue(\tabskip) 0.0
+..\hbox(6.94444+1.94444)x157.88744
+...\hbox(6.94444+1.94444)x157.88744 []
+..\glue(\tabskip) 0.0
+.\glue(\baselineskip) 4.55556
+.etc.
+
+ [170]
+Underfull \vbox (badness 10000) has occurred while \output is active
+\vbox(511.91212+1.94444)x306.0461
+.\glue(\topskip) 3.05556
+.\hbox(6.94444+0.0)x182.99028
+..\glue(\tabskip) 0.0
+..\hbox(6.94444+0.0)x72.26999
+...\hbox(6.86111+0.0)x72.26999, glue set 17.32686fil []
+..\glue(\tabskip) 0.0
+..\hbox(6.94444+0.0)x110.72029
+...\hbox(6.94444+0.0)x110.72029 []
+..\glue(\tabskip) 0.0
+.\glue(\baselineskip) 7.05556
+.\hbox(6.94444+0.0)x182.01807
+..\glue(\tabskip) 0.0
+..\hbox(6.94444+0.0)x72.26999
+...\hbox(6.86111+0.0)x72.26999, glue set 18.61852fil []
+..\glue(\tabskip) 0.0
+..\hbox(6.94444+0.0)x109.74808
+...\hbox(6.94444+0.0)x109.74808 []
+..\glue(\tabskip) 0.0
+.\glue(\baselineskip) 6.5
+.etc.
+
+ [171]
+Underfull \vbox (badness 10000) has occurred while \output is active
+\vbox(511.91212+1.94444)x281.07349
+.\glue(\topskip) 3.05556
+.\hbox(6.94444+1.94444)x222.71292
+..\glue(\tabskip) 0.0
+..\hbox(6.94444+1.94444)x72.26999
+...\hbox(6.86111+0.0)x72.26999, glue set 44.96559fil []
+..\glue(\tabskip) 0.0
+..\hbox(6.94444+1.94444)x150.44293
+...\hbox(6.94444+1.94444)x150.44293 []
+..\glue(\tabskip) 0.0
+.\glue(\baselineskip) 5.11111
+.\hbox(6.94444+1.94444)x164.13022
+..\glue(\tabskip) 0.0
+..\hbox(6.94444+1.94444)x72.26999
+...\hbox(6.86111+0.0)x72.26999, glue set 22.64627fil []
+..\glue(\tabskip) 0.0
+..\hbox(6.94444+1.94444)x91.86023
+...\hbox(6.94444+1.94444)x91.86023 []
+..\glue(\tabskip) 0.0
+.\glue(\baselineskip) 5.11111
+.etc.
+
+ [172]
+Underfull \vbox (badness 10000) has occurred while \output is active
+\vbox(511.91212+1.94444)x358.8375
+.\glue(\topskip) 3.05556
+.\hbox(6.94444+1.94444)x198.99142
+..\glue(\tabskip) 0.0
+..\hbox(6.94444+1.94444)x72.26999
+...\hbox(6.86111+0.0)x72.26999, glue set 30.70178fil []
+..\glue(\tabskip) 0.0
+..\hbox(6.94444+1.94444)x126.72144
+...\hbox(6.94444+1.94444)x126.72144 []
+..\glue(\tabskip) 0.0
+.\glue(\baselineskip) 5.11111
+.\hbox(6.94444+1.94444)x194.40802
+..\glue(\tabskip) 0.0
+..\hbox(6.94444+1.94444)x72.26999
+...\hbox(6.86111+0.0)x72.26999, glue set 45.5767fil []
+..\glue(\tabskip) 0.0
+..\hbox(6.94444+1.94444)x122.13803
+...\hbox(6.94444+1.94444)x122.13803 []
+..\glue(\tabskip) 0.0
+.\glue(\baselineskip) 5.11111
+.etc.
+
+ [173]
+Underfull \vbox (badness 10000) has occurred while \output is active
+\vbox(511.91212+1.94444)x317.76836
+.\glue(\topskip) 3.05556
+.\hbox(6.94444+1.94444)x199.65738
+..\glue(\tabskip) 0.0
+..\hbox(6.94444+1.94444)x72.26999
+...\hbox(6.86111+0.0)x72.26999, glue set 34.96565fil []
+..\glue(\tabskip) 0.0
+..\hbox(6.94444+1.94444)x127.38739
+...\hbox(6.94444+1.94444)x127.38739 []
+..\glue(\tabskip) 0.0
+.\glue(\baselineskip) 5.11111
+.\hbox(6.94444+1.94444)x215.96336
+..\glue(\tabskip) 0.0
+..\hbox(6.94444+1.94444)x72.26999
+...\hbox(6.86111+0.0)x72.26999, glue set 26.02126fil []
+..\glue(\tabskip) 0.0
+..\hbox(6.94444+1.94444)x143.69337
+...\hbox(6.94444+1.94444)x143.69337 []
+..\glue(\tabskip) 0.0
+.\glue(\baselineskip) 4.55556
+.etc.
+
+ [174]
+Section 5 ends at page 5.175 [175]) (./wup06a.tex
+\footline=\toks19
+
+Underfull \vbox (badness 8019) has occurred while \output is active
+\vbox(511.91212+1.94444)x361.34999, glue set 4.31493
+.\glue(\topskip) 8.94446
+.\hbox(1.05554+0.0)x361.34999, glue set 179.2861fill
+..\glue 0.0 plus 1.0fill
+..\mathon
+..\hbox(1.05554+0.0)x2.77779
+..\mathoff
+..\glue 0.0 plus 1.0fill
+.\glue 90.3375
+.\glue(\baselineskip) 7.05556
+.\hbox(6.94444+1.94444)x361.34999, glue set 113.4318fill
+..\glue 0.0 plus 1.0fill
+..\tenrm S
+..\tenrm e
+..\tenrm c
+..\tenrm t
+..etc.
+.etc.
+
+ [1]
+[2] [3]
+Underfull \vbox (badness 10000) has occurred while \output is active
+\vbox(511.91212+2.5)x361.34999
+.\glue(\topskip) 0.0
+.\vbox(35.5+2.5)x361.34999
+..\hbox(7.5+2.5)x361.34999, glue set 272.05894fil
+...\tenbf A
+...\kern-0.31944
+...\tenbf C
+...\tenbf S
+...\tenbf F
+...etc.
+..\glue(\parskip) 0.0 plus 1.0
+..\glue(\baselineskip) 4.0
+..\hbox(7.5+2.5)x351.34999, glue set 0.21764, shifted 10.0
+...\hbox(0.0+0.0)x0.0
+...\tenrm p
+...\tenrm r
+...\tenrm i
+...\tenrm n
+...etc.
+..\penalty 300
+..etc.
+.\glue 7.5
+.\glue(\lineskip) 1.0
+.\vbox(21.5+1.94444)x361.34999
+..\hbox(7.5+2.5)x361.34999, glue set 276.0867fil
+...\tenbf A
+...\tenbf D
+...\tenbf D
+...\tenbf C
+...\tenbf O
+...etc.
+..\glue(\parskip) 0.0 plus 1.0
+..\glue(\baselineskip) 4.55556
+..\hbox(6.94444+1.94444)x351.34999, glue set 136.79573fil, shifted 10.0
+...\hbox(0.0+0.0)x0.0
+...\tenrm p
+...\tenrm r
+...\tenrm i
+...\tenrm n
+...etc.
+.etc.
+
+ [4]
+Underfull \vbox (badness 10000) has occurred while \output is active
+\vbox(511.91212+1.94444)x361.34999
+.\glue(\topskip) 0.0
+.\vbox(35.5+2.5)x361.34999
+..\hbox(7.5+2.5)x361.34999, glue set 279.82278fil
+...\tenbf A
+...\tenbf M
+...\tenbf D
+...\tenbf D
+...\tenbf M
+...etc.
+..\glue(\parskip) 0.0 plus 1.0
+..\glue(\baselineskip) 4.0
+..\hbox(7.5+2.5)x351.34999, glue set 0.05792, shifted 10.0
+...\hbox(0.0+0.0)x0.0
+...\tenrm p
+...\tenrm r
+...\tenrm i
+...\tenrm n
+...etc.
+..\penalty 300
+..etc.
+.\glue 7.5
+.\glue(\lineskip) 1.0
+.\vbox(21.5+2.5)x361.34999
+..\hbox(7.5+2.5)x361.34999, glue set 288.58664fil
+...\tenbf A
+...\tenbf M
+...\tenbf D
+...\tenbf I
+...\tenbf F
+...etc.
+..\glue(\parskip) 0.0 plus 1.0
+..\glue(\baselineskip) 4.0
+..\hbox(7.5+2.5)x351.34999, glue set 73.62996fil, shifted 10.0
+...\hbox(0.0+0.0)x0.0
+...\tenrm i
+...\tenrm n
+...\tenrm c
+...\tenrm l
+...etc.
+.etc.
+
+ [5]
+Underfull \vbox (badness 10000) has occurred while \output is active
+\vbox(511.91212+1.94444)x361.34999
+.\glue(\topskip) 0.0
+.\vbox(21.5+1.94444)x361.34999
+..\hbox(7.5+2.5)x361.34999, glue set 285.43422fil
+...\tenbf A
+...\kern-1.27777
+...\tenbf V
+...\tenbf E
+...\tenbf L
+...etc.
+..\glue(\parskip) 0.0 plus 1.0
+..\glue(\baselineskip) 4.55556
+..\hbox(6.94444+1.94444)x351.34999, glue set 226.9064fil, shifted 10.0
+...\hbox(0.0+0.0)x0.0
+...\tenrm u
+...\tenrm s
+...\tenrm e
+...\glue(\spaceskip) 3.33298
+...etc.
+.\glue 7.5
+.\glue(\lineskip) 1.0
+.\vbox(35.5+2.5)x361.34999
+..\hbox(7.5+2.5)x361.34999, glue set 275.65651fil
+...\tenbf A
+...\kern-1.27777
+...\tenbf V
+...\kern-0.31944
+...\tenbf O
+...etc.
+..\glue(\parskip) 0.0 plus 1.0
+..\glue(\baselineskip) 4.0
+..\hbox(7.5+2.5)x351.34999, glue set 0.07883, shifted 10.0
+...\hbox(0.0+0.0)x0.0
+...\tenrm p
+...\tenrm r
+...\tenrm i
+...\tenrm n
+...etc.
+..\penalty 300
+..etc.
+.etc.
+
+ [6]
+Underfull \vbox (badness 10000) has occurred while \output is active
+\vbox(511.91212+1.94444)x361.34999
+.\glue(\topskip) 0.0
+.\vbox(21.5+1.94444)x361.34999
+..\hbox(7.5+2.5)x361.34999, glue set 282.96167fil
+...\tenbf C
+...\tenbf E
+...\tenbf F
+...\kern-1.27777
+...\tenbf A
+...etc.
+..\glue(\parskip) 0.0 plus 1.0
+..\glue(\baselineskip) 4.55556
+..\hbox(6.94444+1.94444)x351.34999, glue set 88.76833fil, shifted 10.0
+...\hbox(0.0+0.0)x0.0
+...\tenrm u
+...\tenrm p
+...\kern0.27779
+...\tenrm d
+...etc.
+.\glue 7.5
+.\glue(\lineskip) 1.0
+.\vbox(21.5+1.94444)x361.34999
+..\hbox(7.5+2.5)x361.34999, glue set 286.73943fil
+...\tenbf C
+...\tenbf H
+...\tenbf E
+...\tenbf X
+...\tenbf L
+...etc.
+..\glue(\parskip) 0.0 plus 1.0
+..\glue(\baselineskip) 4.55556
+..\hbox(6.94444+1.94444)x351.34999, glue set 211.51755fil, shifted 10.0
+...\hbox(0.0+0.0)x0.0
+...\tenrm u
+...\tenrm s
+...\tenrm e
+...\glue(\spaceskip) 3.33298
+...etc.
+.etc.
+
+ [7]
+Underfull \vbox (badness 10000) has occurred while \output is active
+\vbox(511.91212+2.5)x361.34999
+.\glue(\topskip) 0.0
+.\vbox(21.5+1.94444)x361.34999
+..\hbox(7.5+2.5)x361.34999, glue set 270.55898fil
+...\tenbf C
+...\tenbf O
+...\tenbf L
+...\tenbf H
+...\tenbf P
+...etc.
+..\glue(\parskip) 0.0 plus 1.0
+..\glue(\baselineskip) 4.55556
+..\hbox(6.94444+1.94444)x351.34999, glue set 99.90753fil, shifted 10.0
+...\hbox(0.0+0.0)x0.0
+...\tenrm p
+...\tenrm r
+...\tenrm i
+...\tenrm n
+...etc.
+.\glue 7.5
+.\glue(\lineskip) 1.0
+.\vbox(21.5+1.94444)x361.34999
+..\hbox(7.5+2.5)x361.34999, glue set 278.61447fil
+...\tenbf C
+...\tenbf O
+...\tenbf L
+...\kern-0.95833
+...\tenbf T
+...etc.
+..\glue(\parskip) 0.0 plus 1.0
+..\glue(\baselineskip) 4.55556
+..\hbox(6.94444+1.94444)x351.34999, glue set 224.8227fil, shifted 10.0
+...\hbox(0.0+0.0)x0.0
+...\tenrm c
+...\tenrm a
+...\tenrm l
+...\tenrm c
+...etc.
+.etc.
+
+ [8]
+Underfull \vbox (badness 10000) has occurred while \output is active
+\vbox(511.91212+1.94444)x361.34999
+.\glue(\topskip) 0.0
+.\vbox(35.5+0.0)x361.34999
+..\hbox(7.5+2.5)x361.34999, glue set 314.9754fil
+...\tenbf C
+...\tenbf S
+...\tenbf F
+...\glue 3.33298
+...\tenrm (
+...etc.
+..\glue(\parskip) 0.0 plus 1.0
+..\glue(\baselineskip) 4.55556
+..\hbox(6.94444+1.94444)x351.34999, glue set 1.07317, shifted 10.0
+...\hbox(0.0+0.0)x0.0
+...\tenrm u
+...\tenrm s
+...\tenrm e
+...\glue(\spaceskip) 3.33298
+...etc.
+..\penalty 300
+..etc.
+.\glue 7.5
+.\glue(\lineskip) 1.0
+.\vbox(35.5+2.5)x361.34999
+..\hbox(7.5+2.5)x361.34999, glue set 305.73932fil
+...\tenbf C
+...\tenbf S
+...\tenbf F
+...\tenbf B
+...\glue 3.33298
+...etc.
+..\glue(\parskip) 0.0 plus 1.0
+..\glue(\baselineskip) 4.0
+..\hbox(7.5+2.5)x351.34999, glue set 0.69685, shifted 10.0
+...\hbox(0.0+0.0)x0.0
+...\tenrm s
+...\tenrm e
+...\tenrm t
+...\glue(\spaceskip) 3.33298
+...etc.
+..\penalty 300
+..etc.
+.etc.
+
+ [9]
+Underfull \hbox (badness 1259) in paragraph at lines 267--268
+[]\tenrm print con-tin-uum data for Dust opac-ity wave-lengths, (used only when
+  
+
+\hbox(7.5+2.5)x351.34999, glue set 2.32736
+.\hbox(0.0+0.0)x0.0
+.\tenrm p
+.\tenrm r
+.\tenrm i
+.\tenrm n
+.etc.
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active
+\vbox(511.91212+1.94444)x361.34999
+.\glue(\topskip) 0.0
+.\vbox(35.5+1.94444)x361.34999
+..\hbox(7.5+2.5)x361.34999, glue set 290.80884fil
+...\tenbf D
+...\tenbf R
+...\tenbf D
+...\tenbf M
+...\tenbf P
+...etc.
+..\glue(\parskip) 0.0 plus 1.0
+..\glue(\baselineskip) 4.0
+..\hbox(7.5+2.5)x351.34999, glue set 0.89821, shifted 10.0
+...\hbox(0.0+0.0)x0.0
+...\tenrm p
+...\tenrm r
+...\tenrm i
+...\tenrm n
+...etc.
+..\penalty 300
+..etc.
+.\glue 7.5
+.\glue(\lineskip) 1.0
+.\vbox(21.5+1.94444)x361.34999
+..\hbox(7.5+2.5)x361.34999, glue set 275.44781fil
+...\tenbf D
+...\tenbf S
+...\tenbf M
+...\tenbf O
+...\tenbf O
+...etc.
+..\glue(\parskip) 0.0 plus 1.0
+..\glue(\baselineskip) 4.55556
+..\hbox(6.94444+1.94444)x351.34999, glue set 2.10248fil, shifted 10.0
+...\hbox(0.0+0.0)x0.0
+...\tenrm s
+...\tenrm m
+...\tenrm o
+...\kern0.27779
+...etc.
+.etc.
+
+ [10]
+Underfull \vbox (badness 10000) has occurred while \output is active
+\vbox(511.91212+1.94444)x361.34999
+.\glue(\topskip) 0.0
+.\vbox(21.5+1.94444)x361.34999
+..\hbox(7.5+2.5)x361.34999, glue set 276.42003fil
+...\tenbf E
+...\tenbf M
+...\tenbf I
+...\tenbf N
+...\tenbf D
+...etc.
+..\glue(\parskip) 0.0 plus 1.0
+..\glue(\baselineskip) 4.55556
+..\hbox(6.94444+1.94444)x351.34999, glue set 25.04657fil, shifted 10.0
+...\hbox(0.0+0.0)x0.0
+...\tenrm p
+...\tenrm r
+...\tenrm i
+...\tenrm n
+...etc.
+.\glue 7.5
+.\glue(\lineskip) 1.0
+.\vbox(35.5+0.0)x361.34999
+..\hbox(7.5+2.5)x361.34999, glue set 279.53113fil
+...\tenbf E
+...\tenbf M
+...\tenbf I
+...\tenbf P
+...\tenbf R
+...etc.
+..\glue(\parskip) 0.0 plus 1.0
+..\glue(\baselineskip) 4.55556
+..\hbox(6.94444+1.94444)x351.34999, glue set 0.30237, shifted 10.0
+...\hbox(0.0+0.0)x0.0
+...\tenrm p
+...\tenrm r
+...\tenrm i
+...\tenrm n
+...etc.
+..\penalty 400
+..etc.
+.etc.
+
+ [11]
+Underfull \vbox (badness 10000) has occurred while \output is active
+\vbox(511.91212+2.5)x361.34999
+.\glue(\topskip) 0.0
+.\vbox(35.5+2.5)x361.34999
+..\hbox(7.5+2.5)x361.34999, glue set 278.18391fil
+...\tenbf F
+...\tenbf D
+...\tenbf B
+...\tenbf C
+...\tenbf O
+...etc.
+..\glue(\parskip) 0.0 plus 1.0
+..\glue(\baselineskip) 4.0
+..\hbox(7.5+2.5)x351.34999, glue set 0.2468, shifted 10.0
+...\hbox(0.0+0.0)x0.0
+...\tenrm p
+...\tenrm r
+...\tenrm i
+...\tenrm n
+...etc.
+..\penalty 400
+..etc.
+.\glue 7.5
+.\glue(\lineskip) 1.0
+.\vbox(21.5+1.94444)x361.34999
+..\hbox(7.5+2.5)x361.34999, glue set 284.01721fil
+...\tenbf F
+...\tenbf D
+...\tenbf B
+...\tenbf D
+...\tenbf M
+...etc.
+..\glue(\parskip) 0.0 plus 1.0
+..\glue(\baselineskip) 4.55556
+..\hbox(6.94444+1.94444)x351.34999, glue set 62.26819fil, shifted 10.0
+...\hbox(0.0+0.0)x0.0
+...\tenrm p
+...\tenrm r
+...\tenrm i
+...\tenrm n
+...etc.
+.etc.
+
+ [12]
+Underfull \vbox (badness 10000) has occurred while \output is active
+\vbox(511.91212+1.94444)x361.34999
+.\glue(\topskip) 0.0
+.\vbox(35.5+2.5)x361.34999
+..\hbox(7.5+2.5)x361.34999, glue set 277.2117fil
+...\tenbf G
+...\tenbf N
+...\tenbf V
+...\kern-0.31944
+...\tenbf C
+...etc.
+..\glue(\parskip) 0.0 plus 1.0
+..\glue(\baselineskip) 4.0
+..\hbox(7.5+2.5)x351.34999, glue set 1.08362, shifted 10.0
+...\hbox(0.0+0.0)x0.0
+...\tenrm c
+...\tenrm o
+...\tenrm m
+...\tenrm p
+...etc.
+..\penalty 300
+..etc.
+.\glue 7.5
+.\glue(\lineskip) 1.0
+.\vbox(21.5+2.5)x361.34999
+..\hbox(7.5+2.5)x361.34999, glue set 276.55894fil
+...\tenbf G
+...\tenbf T
+...\tenbf N
+...\tenbf S
+...\tenbf M
+...etc.
+..\glue(\parskip) 0.0 plus 1.0
+..\glue(\baselineskip) 4.0
+..\hbox(7.5+2.5)x351.34999, glue set 166.22603fil, shifted 10.0
+...\hbox(0.0+0.0)x0.0
+...\tenrm s
+...\tenrm m
+...\tenrm o
+...\kern0.27779
+...etc.
+.etc.
+
+ [13]
+Underfull \vbox (badness 10000) has occurred while \output is active
+\vbox(511.91212+1.94444)x361.34999
+.\glue(\topskip) 0.0
+.\vbox(35.5+2.5)x361.34999
+..\hbox(7.5+2.5)x361.34999, glue set 285.30887fil
+...\tenbf H
+...\tenbf S
+...\tenbf E
+...\tenbf D
+...\tenbf M
+...etc.
+..\glue(\parskip) 0.0 plus 1.0
+..\glue(\baselineskip) 4.0
+..\hbox(7.5+2.5)x351.34999, glue set 0.79262, shifted 10.0
+...\hbox(0.0+0.0)x0.0
+...\tenrm p
+...\tenrm r
+...\tenrm i
+...\tenrm n
+...etc.
+..\penalty 300
+..etc.
+.\glue 7.5
+.\glue(\lineskip) 1.0
+.\vbox(35.5+2.5)x361.34999
+..\hbox(7.5+2.5)x361.34999, glue set 305.26712fil
+...\tenbf H
+...\tenbf S
+...\tenbf E
+...\tenbf V
+...\glue 3.33298
+...etc.
+..\glue(\parskip) 0.0 plus 1.0
+..\glue(\baselineskip) 4.0
+..\hbox(7.5+2.5)x351.34999, glue set 0.32874, shifted 10.0
+...\hbox(0.0+0.0)x0.0
+...\tenrm i
+...\tenrm n
+...\tenrm c
+...\tenrm l
+...etc.
+..\penalty 300
+..etc.
+.etc.
+
+ [14]
+Underfull \vbox (badness 10000) has occurred while \output is active
+\vbox(511.91212+1.94444)x361.34999
+.\glue(\topskip) 0.0
+.\vbox(49.5+2.5)x361.34999
+..\hbox(7.5+2.5)x361.34999, glue set 282.71169fil
+...\tenbf I
+...\tenbf N
+...\tenbf S
+...\tenbf C
+...\tenbf A
+...etc.
+..\glue(\parskip) 0.0 plus 1.0
+..\glue(\baselineskip) 4.55556
+..\hbox(6.94444+1.94444)x351.34999, glue set 0.22327, shifted 10.0
+...\hbox(0.0+0.0)x0.0
+...\tenrm w
+...\tenrm r
+...\tenrm i
+...\tenrm t
+...etc.
+..\penalty 150
+..etc.
+.\glue 7.5
+.\glue(\lineskip) 1.0
+.\vbox(21.5+1.94444)x361.34999
+..\hbox(7.5+2.5)x361.34999, glue set 274.32285fil
+...\tenbf I
+...\tenbf N
+...\tenbf T
+...\kern-0.95833
+...\tenbf A
+...etc.
+..\glue(\parskip) 0.0 plus 1.0
+..\glue(\baselineskip) 4.55556
+..\hbox(6.94444+1.94444)x351.34999, glue set 83.79634fil, shifted 10.0
+...\hbox(0.0+0.0)x0.0
+...\tenrm p
+...\tenrm r
+...\tenrm i
+...\tenrm n
+...etc.
+.etc.
+
+ [15]
+Underfull \vbox (badness 10000) has occurred while \output is active
+\vbox(511.91212+2.5)x361.34999
+.\glue(\topskip) 0.0
+.\vbox(21.5+1.94444)x361.34999
+..\hbox(7.5+2.5)x361.34999, glue set 282.10059fil
+...\tenbf I
+...\tenbf T
+...\tenbf E
+...\tenbf R
+...\tenbf R
+...etc.
+..\glue(\parskip) 0.0 plus 1.0
+..\glue(\baselineskip) 4.55556
+..\hbox(6.94444+1.94444)x351.34999, glue set 94.76895fil, shifted 10.0
+...\hbox(0.0+0.0)x0.0
+...\tenrm p
+...\tenrm r
+...\tenrm i
+...\tenrm n
+...etc.
+.\glue 7.5
+.\glue(\lineskip) 1.0
+.\vbox(21.5+1.94444)x361.34999
+..\hbox(7.5+2.5)x361.34999, glue set 290.72554fil
+...\tenbf I
+...\tenbf T
+...\tenbf E
+...\tenbf R
+...\tenbf R
+...etc.
+..\glue(\parskip) 0.0 plus 1.0
+..\glue(\baselineskip) 4.55556
+..\hbox(6.94444+1.94444)x351.34999, glue set 128.4353fil, shifted 10.0
+...\hbox(0.0+0.0)x0.0
+...\tenrm p
+...\tenrm r
+...\tenrm i
+...\tenrm n
+...etc.
+.etc.
+
+ [16]
+Underfull \vbox (badness 10000) has occurred while \output is active
+\vbox(511.91212+2.5)x361.34999
+.\glue(\topskip) 0.0
+.\vbox(21.5+1.94444)x361.34999
+..\hbox(7.5+2.5)x361.34999, glue set 283.93388fil
+...\tenbf K
+...\tenbf R
+...\kern-0.31944
+...\tenbf O
+...\tenbf S
+...etc.
+..\glue(\parskip) 0.0 plus 1.0
+..\glue(\baselineskip) 4.55556
+..\hbox(6.94444+1.94444)x351.34999, glue set 72.93526fil, shifted 10.0
+...\hbox(0.0+0.0)x0.0
+...\tenrm p
+...\tenrm r
+...\tenrm i
+...\tenrm n
+...etc.
+.\glue 7.5
+.\glue(\lineskip) 1.0
+.\vbox(21.5+1.94444)x361.34999
+..\hbox(7.5+2.5)x361.34999, glue set 271.10062fil
+...\tenbf K
+...\tenbf S
+...\tenbf H
+...\tenbf L
+...\tenbf C
+...etc.
+..\glue(\parskip) 0.0 plus 1.0
+..\glue(\baselineskip) 4.55556
+..\hbox(6.94444+1.94444)x351.34999, glue set 150.0736fil, shifted 10.0
+...\hbox(0.0+0.0)x0.0
+...\tenrm p
+...\tenrm r
+...\tenrm i
+...\tenrm n
+...etc.
+.etc.
+
+ [17]
+Underfull \vbox (badness 10000) has occurred while \output is active
+\vbox(511.91212+2.5)x361.34999
+.\glue(\topskip) 0.0
+.\vbox(35.5+0.0)x361.34999
+..\hbox(7.5+2.5)x361.34999, glue set 283.0867fil
+...\tenbf L
+...\tenbf S
+...\tenbf F
+...\kern-0.31944
+...\tenbf G
+...etc.
+..\glue(\parskip) 0.0 plus 1.0
+..\glue(\baselineskip) 4.55556
+..\hbox(6.94444+1.94444)x351.34999, glue set 0.89267, shifted 10.0
+...\hbox(0.0+0.0)x0.0
+...\tenrm p
+...\tenrm r
+...\tenrm i
+...\tenrm n
+...etc.
+..\penalty 300
+..etc.
+.\glue 7.5
+.\glue(\lineskip) 1.0
+.\vbox(35.5+0.0)x361.34999
+..\hbox(7.5+2.5)x361.34999, glue set 282.87836fil
+...\tenbf L
+...\tenbf S
+...\tenbf F
+...\tenbf P
+...\tenbf R
+...etc.
+..\glue(\parskip) 0.0 plus 1.0
+..\glue(\baselineskip) 4.55556
+..\hbox(6.94444+1.94444)x351.34999, glue set 0.07045, shifted 10.0
+...\hbox(0.0+0.0)x0.0
+...\tenrm p
+...\tenrm r
+...\tenrm i
+...\tenrm n
+...etc.
+..\penalty 300
+..etc.
+.etc.
+
+ [18]
+Underfull \vbox (badness 10000) has occurred while \output is active
+\vbox(511.91212+2.5)x361.34999
+.\glue(\topskip) 0.0
+.\vbox(21.5+1.94444)x361.34999
+..\hbox(7.5+2.5)x361.34999, glue set 274.39227fil
+...\tenbf M
+...\tenbf O
+...\tenbf N
+...\tenbf O
+...\tenbf T
+...etc.
+..\glue(\parskip) 0.0 plus 1.0
+..\glue(\baselineskip) 4.55556
+..\hbox(6.94444+1.94444)x351.34999, glue set 56.6304fil, shifted 10.0
+...\hbox(0.0+0.0)x0.0
+...\tenrm f
+...\tenrm o
+...\tenrm r
+...\tenrm c
+...etc.
+.\glue 7.5
+.\glue(\lineskip) 1.0
+.\vbox(21.5+1.94444)x361.34999
+..\hbox(7.5+2.5)x361.34999, glue set 285.18387fil
+...\tenbf N
+...\tenbf B
+...\tenbf P
+...\tenbf R
+...\tenbf N
+...etc.
+..\glue(\parskip) 0.0 plus 1.0
+..\glue(\baselineskip) 4.55556
+..\hbox(6.94444+1.94444)x351.34999, glue set 36.68591fil, shifted 10.0
+...\hbox(0.0+0.0)x0.0
+...\tenrm p
+...\tenrm r
+...\tenrm i
+...\tenrm n
+...etc.
+.etc.
+
+ [19]
+Underfull \vbox (badness 10000) has occurred while \output is active
+\vbox(511.91212+2.5)x361.34999
+.\glue(\topskip) 0.0
+.\vbox(21.5+1.94444)x361.34999
+..\hbox(7.5+2.5)x361.34999, glue set 311.54485fil
+...\tenbf O
+...\tenbf R
+...\kern-0.95833
+...\tenbf T
+...\glue 3.33298
+...etc.
+..\glue(\parskip) 0.0 plus 1.0
+..\glue(\baselineskip) 4.55556
+..\hbox(6.94444+1.94444)x351.34999, glue set 43.85254fil, shifted 10.0
+...\hbox(0.0+0.0)x0.0
+...\tenrm r
+...\tenrm a
+...\tenrm d
+...\tenrm i
+...etc.
+.\glue 7.5
+.\glue(\lineskip) 1.0
+.\vbox(21.5+1.94444)x361.34999
+..\hbox(7.5+2.5)x361.34999, glue set 276.65614fil
+...\tenbf O
+...\kern-0.31944
+...\tenbf X
+...\tenbf Y
+...\tenbf P
+...etc.
+..\glue(\parskip) 0.0 plus 1.0
+..\glue(\baselineskip) 4.55556
+..\hbox(6.94444+1.94444)x351.34999, glue set 120.60126fil, shifted 10.0
+...\hbox(0.0+0.0)x0.0
+...\tenrm p
+...\tenrm r
+...\tenrm i
+...\tenrm n
+...etc.
+.etc.
+
+ [20]
+Underfull \hbox (badness 1596) in paragraph at lines 650--651
+[]\tenrm print con-tin-uum data for PRD (par-tial re-dis-tri-bu-tion pro-file p
+oints)  
+
+\hbox(7.5+2.5)x351.34999, glue set 2.51901
+.\hbox(0.0+0.0)x0.0
+.\tenrm p
+.\tenrm r
+.\tenrm i
+.\tenrm n
+.etc.
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active
+\vbox(511.91212+1.94444)x361.34999
+.\glue(\topskip) 0.0
+.\vbox(35.5+2.5)x361.34999
+..\hbox(7.5+2.5)x361.34999, glue set 278.46169fil
+...\tenbf P
+...\tenbf E
+...\tenbf R
+...\tenbf D
+...\tenbf M
+...etc.
+..\glue(\parskip) 0.0 plus 1.0
+..\glue(\baselineskip) 4.0
+..\hbox(7.5+2.5)x351.34999, glue set 0.34268, shifted 10.0
+...\hbox(0.0+0.0)x0.0
+...\tenrm p
+...\tenrm r
+...\tenrm i
+...\tenrm n
+...etc.
+..\penalty 400
+..etc.
+.\glue 7.5
+.\glue(\lineskip) 1.0
+.\vbox(35.5+2.5)x361.34999
+..\hbox(7.5+2.5)x361.34999, glue set 278.46169fil
+...\tenbf P
+...\tenbf E
+...\tenbf R
+...\tenbf D
+...\tenbf M
+...etc.
+..\glue(\parskip) 0.0 plus 1.0
+..\glue(\baselineskip) 4.0
+..\hbox(7.5+2.5)x351.34999, glue set 0.2274, shifted 10.0
+...\hbox(0.0+0.0)x0.0
+...\tenrm p
+...\tenrm r
+...\tenrm i
+...\tenrm n
+...etc.
+..\penalty 400
+..etc.
+.etc.
+
+ [21]
+Underfull \vbox (badness 10000) has occurred while \output is active
+\vbox(511.91212+2.5)x361.34999
+.\glue(\topskip) 0.0
+.\vbox(21.5+1.94444)x361.34999
+..\hbox(7.5+2.5)x361.34999, glue set 283.44777fil
+...\tenbf P
+...\tenbf R
+...\kern-0.31944
+...\tenbf O
+...\tenbf D
+...etc.
+..\glue(\parskip) 0.0 plus 1.0
+..\glue(\baselineskip) 4.55556
+..\hbox(6.94444+1.94444)x351.34999, glue set 74.49077fil, shifted 10.0
+...\hbox(0.0+0.0)x0.0
+...\tenrm p
+...\tenrm r
+...\tenrm i
+...\tenrm n
+...etc.
+.\glue 7.5
+.\glue(\lineskip) 1.0
+.\vbox(35.5+2.5)x361.34999
+..\hbox(7.5+2.5)x361.34999, glue set 288.54497fil
+...\tenbf P
+...\tenbf R
+...\kern-0.31944
+...\tenbf O
+...\tenbf S
+...etc.
+..\glue(\parskip) 0.0 plus 1.0
+..\glue(\baselineskip) 4.0
+..\hbox(7.5+2.5)x351.34999, glue set 0.26073, shifted 10.0
+...\hbox(0.0+0.0)x0.0
+...\tenrm w
+...\tenrm r
+...\tenrm i
+...\tenrm t
+...etc.
+..\penalty 300
+..etc.
+.etc.
+
+ [22]
+Underfull \vbox (badness 10000) has occurred while \output is active
+\vbox(511.91212+2.5)x361.34999
+.\glue(\topskip) 0.0
+.\vbox(35.5+2.5)x361.34999
+..\hbox(7.5+2.5)x361.34999, glue set 277.61449fil
+...\tenbf R
+...\tenbf H
+...\tenbf B
+...\tenbf P
+...\tenbf R
+...etc.
+..\glue(\parskip) 0.0 plus 1.0
+..\glue(\baselineskip) 4.0
+..\hbox(7.5+2.5)x351.34999, glue set 0.76625, shifted 10.0
+...\hbox(0.0+0.0)x0.0
+...\tenrm p
+...\tenrm r
+...\tenrm i
+...\tenrm n
+...etc.
+..\penalty 300
+..etc.
+.\glue 7.5
+.\glue(\lineskip) 1.0
+.\vbox(35.5+2.5)x361.34999
+..\hbox(7.5+2.5)x361.34999, glue set 276.25336fil
+...\tenbf R
+...\tenbf H
+...\tenbf B
+...\tenbf P
+...\tenbf R
+...etc.
+..\glue(\parskip) 0.0 plus 1.0
+..\glue(\baselineskip) 4.0
+..\hbox(7.5+2.5)x351.34999, glue set 1.1038, shifted 10.0
+...\hbox(0.0+0.0)x0.0
+...\tenrm p
+...\tenrm r
+...\tenrm i
+...\tenrm n
+...etc.
+..\penalty 300
+..etc.
+.etc.
+
+ [23]
+Underfull \vbox (badness 10000) has occurred while \output is active
+\vbox(511.91212+1.94444)x361.34999
+.\glue(\topskip) 0.0
+.\vbox(35.5+0.0)x361.34999
+..\hbox(7.5+2.5)x361.34999, glue set 286.18387fil
+...\tenbf S
+...\tenbf E
+...\tenbf C
+...\tenbf O
+...\tenbf M
+...etc.
+..\glue(\parskip) 0.0 plus 1.0
+..\glue(\baselineskip) 4.55556
+..\hbox(6.94444+1.94444)x351.34999, glue set 0.60931, shifted 10.0
+...\hbox(0.0+0.0)x0.0
+...\tenrm p
+...\tenrm r
+...\tenrm i
+...\tenrm n
+...etc.
+..\penalty 400
+..etc.
+.\glue 7.5
+.\glue(\lineskip) 1.0
+.\vbox(35.5+0.0)x361.34999
+..\hbox(7.5+2.5)x361.34999, glue set 301.78104fil
+...\tenbf S
+...\tenbf E
+...\tenbf D
+...\tenbf I
+...\tenbf T
+...etc.
+..\glue(\parskip) 0.0 plus 1.0
+..\glue(\baselineskip) 4.55556
+..\hbox(6.94444+1.94444)x351.34999, glue set 0.1385, shifted 10.0
+...\hbox(0.0+0.0)x0.0
+...\tenrm e
+...\tenrm d
+...\tenrm i
+...\tenrm t
+...etc.
+..\penalty 300
+..etc.
+.etc.
+
+ [24]
+Underfull \vbox (badness 10000) has occurred while \output is active
+\vbox(511.91212+0.0)x361.34999
+.\glue(\topskip) 0.0
+.\vbox(35.5+2.5)x361.34999
+..\hbox(7.5+2.5)x361.34999, glue set 283.23944fil
+...\tenbf S
+...\tenbf P
+...\tenbf E
+...\tenbf C
+...\tenbf S
+...etc.
+..\glue(\parskip) 0.0 plus 1.0
+..\glue(\baselineskip) 4.0
+..\hbox(7.5+2.5)x351.34999, glue set 0.28297, shifted 10.0
+...\hbox(0.0+0.0)x0.0
+...\tenrm s
+...\tenrm a
+...\kern-0.27779
+...\tenrm v
+...etc.
+..\penalty 300
+..etc.
+.\glue 7.5
+.\glue(\lineskip) 1.0
+.\vbox(21.5+1.94444)x361.34999
+..\hbox(7.5+2.5)x361.34999, glue set 279.58669fil
+...\tenbf S
+...\tenbf P
+...\tenbf E
+...\tenbf C
+...\tenbf S
+...etc.
+..\glue(\parskip) 0.0 plus 1.0
+..\glue(\baselineskip) 4.55556
+..\hbox(6.94444+1.94444)x351.34999, glue set 211.82294fil, shifted 10.0
+...\hbox(0.0+0.0)x0.0
+...\tenrm p
+...\tenrm r
+...\tenrm o
+...\kern-0.27779
+...etc.
+.etc.
+
+ [25]
+Underfull \vbox (badness 10000) has occurred while \output is active
+\vbox(511.91212+1.94444)x361.34999
+.\glue(\topskip) 0.0
+.\vbox(35.5+0.0)x361.34999
+..\hbox(7.5+2.5)x361.34999, glue set 270.33676fil
+...\tenbf S
+...\tenbf T
+...\kern-0.95833
+...\tenbf A
+...\kern-0.31944
+...etc.
+..\glue(\parskip) 0.0 plus 1.0
+..\glue(\baselineskip) 4.55556
+..\hbox(6.94444+1.94444)x351.34999, glue set 0.18292, shifted 10.0
+...\hbox(0.0+0.0)x0.0
+...\tenrm p
+...\tenrm r
+...\tenrm i
+...\tenrm n
+...etc.
+..\penalty 400
+..etc.
+.\glue 7.5
+.\glue(\lineskip) 1.0
+.\vbox(21.5+1.94444)x361.34999
+..\hbox(7.5+2.5)x361.34999, glue set 272.69783fil
+...\tenbf S
+...\tenbf T
+...\tenbf I
+...\tenbf M
+...\tenbf P
+...etc.
+..\glue(\parskip) 0.0 plus 1.0
+..\glue(\baselineskip) 4.55556
+..\hbox(6.94444+1.94444)x351.34999, glue set 164.07361fil, shifted 10.0
+...\hbox(0.0+0.0)x0.0
+...\tenrm p
+...\tenrm r
+...\tenrm i
+...\tenrm n
+...etc.
+.etc.
+
+ [26]
+Underfull \vbox (badness 10000) has occurred while \output is active
+\vbox(511.91212+1.94444)x361.34999
+.\glue(\topskip) 0.0
+.\vbox(21.5+1.94444)x361.34999
+..\hbox(7.5+2.5)x361.34999, glue set 303.79489fil
+...\tenbf T
+...\tenbf O
+...\tenbf P
+...\tenbf E
+...\glue 3.33298
+...etc.
+..\glue(\parskip) 0.0 plus 1.0
+..\glue(\baselineskip) 4.55556
+..\hbox(6.94444+1.94444)x351.34999, glue set 129.26833fil, shifted 10.0
+...\hbox(0.0+0.0)x0.0
+...\tenrm s
+...\tenrm a
+...\kern-0.27779
+...\tenrm v
+...etc.
+.\glue 7.5
+.\glue(\lineskip) 1.0
+.\vbox(21.5+2.5)x361.34999
+..\hbox(7.5+2.5)x361.34999, glue set 279.03113fil
+...\tenbf T
+...\tenbf R
+...\tenbf A
+...\tenbf N
+...\tenbf S
+...etc.
+..\glue(\parskip) 0.0 plus 1.0
+..\glue(\baselineskip) 4.0
+..\hbox(7.5+2.5)x351.34999, glue set 172.21288fil, shifted 10.0
+...\hbox(0.0+0.0)x0.0
+...\tenrm s
+...\tenrm a
+...\kern-0.27779
+...\tenrm v
+...etc.
+.etc.
+
+ [27]
+[28]) (./wup06b.tex
+\footline=\toks20
+ [29]
+Underfull \vbox (badness 10000) has occurred while \output is active
+\vbox(511.91212+2.5)x360.82294
+.\glue(\topskip) 3.05556
+.\hbox(6.94444+1.94444)x256.76826
+..\glue(\tabskip) 0.0
+..\hbox(6.94444+1.94444)x72.26999
+...\hbox(6.86111+0.0)x72.26999, glue set 9.50746fil []
+..\glue(\tabskip) 0.0
+..\hbox(6.94444+1.94444)x184.49828
+...\hbox(6.94444+1.94444)x184.49828 []
+..\glue(\tabskip) 0.0
+.\glue(\baselineskip) 5.11111
+.\hbox(6.94444+1.94444)x334.79553
+..\glue(\tabskip) 0.0
+..\hbox(6.94444+1.94444)x72.26999
+...\hbox(6.86111+0.0)x72.26999, glue set - 6.9369fil []
+..\glue(\tabskip) 0.0
+..\hbox(6.94444+1.94444)x262.52554
+...\hbox(6.94444+1.94444)x262.52554 []
+..\glue(\tabskip) 0.0
+.\glue(\baselineskip) 5.11111
+.etc.
+
+ [30]
+Underfull \vbox (badness 10000) has occurred while \output is active
+\vbox(511.91212+1.94444)x314.0742
+.\glue(\topskip) 3.05556
+.\hbox(6.94444+0.0)x189.8799
+..\glue(\tabskip) 0.0
+..\hbox(6.94444+0.0)x72.26999
+...\hbox(6.86111+0.0)x72.26999, glue set 26.49347fil []
+..\glue(\tabskip) 0.0
+..\hbox(6.94444+0.0)x117.60991
+...\hbox(6.94444+0.0)x117.60991 []
+..\glue(\tabskip) 0.0
+.\glue(\baselineskip) 7.05556
+.\hbox(6.94444+1.94444)x261.85155
+..\glue(\tabskip) 0.0
+..\hbox(6.94444+1.94444)x72.26999
+...\hbox(6.86111+0.0)x72.26999, glue set - 3.4508fil []
+..\glue(\tabskip) 0.0
+..\hbox(6.94444+1.94444)x189.58156
+...\hbox(6.94444+1.94444)x189.58156 []
+..\glue(\tabskip) 0.0
+.\glue(\baselineskip) 5.11111
+.etc.
+
+ [31]
+Underfull \vbox (badness 10000) has occurred while \output is active
+\vbox(511.91212+2.5)x395.43445
+.\glue(\topskip) 3.05556
+.\hbox(6.94444+1.94444)x302.99017
+..\glue(\tabskip) 0.0
+..\hbox(6.94444+1.94444)x72.26999
+...\hbox(6.86111+0.0)x72.26999, glue set 15.21576fil []
+..\glue(\tabskip) 0.0
+..\hbox(6.94444+1.94444)x230.72018
+...\hbox(6.94444+1.94444)x230.72018 []
+..\glue(\tabskip) 0.0
+.\glue(\baselineskip) 5.11111
+.\hbox(6.94444+1.94444)x293.79605
+..\glue(\tabskip) 0.0
+..\hbox(6.94444+1.94444)x72.26999
+...\hbox(6.86111+0.0)x72.26999, glue set 11.89633fil []
+..\glue(\tabskip) 0.0
+..\hbox(6.94444+1.94444)x221.52606
+...\hbox(6.94444+1.94444)x221.52606 []
+..\glue(\tabskip) 0.0
+.\glue(\baselineskip) 5.11111
+.etc.
+
+ [32]
+Underfull \vbox (badness 10000) has occurred while \output is active
+\vbox(511.91212+1.94444)x356.3507
+.\glue(\topskip) 2.5
+.\hbox(7.5+2.5)x294.35162
+..\glue(\tabskip) 0.0
+..\hbox(7.5+2.5)x72.26999
+...\hbox(6.86111+0.0)x72.26999, glue set - 2.47859fil []
+..\glue(\tabskip) 0.0
+..\hbox(7.5+2.5)x222.08163
+...\hbox(7.5+2.5)x222.08163 []
+..\glue(\tabskip) 0.0
+.\glue(\baselineskip) 4.0
+.\hbox(7.5+2.5)x306.68462
+..\glue(\tabskip) 0.0
+..\hbox(7.5+2.5)x72.26999
+...\hbox(6.86111+0.0)x72.26999, glue set 1.0075fil []
+..\glue(\tabskip) 0.0
+..\hbox(7.5+2.5)x234.41463
+...\hbox(7.5+2.5)x234.41463 []
+..\glue(\tabskip) 0.0
+.\glue(\baselineskip) 4.0
+.etc.
+
+ [33]
+Underfull \vbox (badness 10000) has occurred while \output is active
+\vbox(511.91212+1.94444)x341.6558
+.\glue(\topskip) 3.05556
+.\hbox(6.94444+1.94444)x313.26767
+..\glue(\tabskip) 0.0
+..\hbox(6.94444+1.94444)x72.26999
+...\hbox(6.86111+0.0)x72.26999, glue set 7.27136fil []
+..\glue(\tabskip) 0.0
+..\hbox(6.94444+1.94444)x240.99768
+...\hbox(6.94444+1.94444)x240.99768 []
+..\glue(\tabskip) 0.0
+.\glue(\baselineskip) 5.11111
+.\hbox(6.94444+1.94444)x256.87932
+..\glue(\tabskip) 0.0
+..\hbox(6.94444+1.94444)x72.26999
+...\hbox(6.86111+0.0)x72.26999, glue set 15.21576fil []
+..\glue(\tabskip) 0.0
+..\hbox(6.94444+1.94444)x184.60933
+...\hbox(6.94444+1.94444)x184.60933 []
+..\glue(\tabskip) 0.0
+.\glue(\baselineskip) 5.11111
+.etc.
+
+ [34]
+Underfull \vbox (badness 10000) has occurred while \output is active
+\vbox(511.91212+1.94444)x348.69748
+.\glue(\topskip) 3.05556
+.\hbox(6.94444+1.94444)x197.10176
+..\glue(\tabskip) 0.0
+..\hbox(6.94444+1.94444)x72.26999
+...\hbox(6.86111+0.0)x72.26999, glue set 4.88248fil []
+..\glue(\tabskip) 0.0
+..\hbox(6.94444+1.94444)x124.83177
+...\hbox(6.94444+1.94444)x124.83177 []
+..\glue(\tabskip) 0.0
+.\glue(\baselineskip) 5.11111
+.\hbox(6.94444+1.94444)x197.10176
+..\glue(\tabskip) 0.0
+..\hbox(6.94444+1.94444)x72.26999
+...\hbox(6.86111+0.0)x72.26999, glue set 4.88248fil []
+..\glue(\tabskip) 0.0
+..\hbox(6.94444+1.94444)x124.83177
+...\hbox(6.94444+1.94444)x124.83177 []
+..\glue(\tabskip) 0.0
+.\glue(\baselineskip) 5.11111
+.etc.
+
+ [35]
+Underfull \vbox (badness 10000) has occurred while \output is active
+\vbox(511.91212+1.94444)x392.51778
+.\glue(\topskip) 3.05556
+.\hbox(6.94444+1.94444)x289.35129
+..\glue(\tabskip) 0.0
+..\hbox(6.94444+1.94444)x72.26999
+...\hbox(6.86111+0.0)x72.26999, glue set - 1.00638fil []
+..\glue(\tabskip) 0.0
+..\hbox(6.94444+1.94444)x217.0813
+...\hbox(6.94444+1.94444)x217.0813 []
+..\glue(\tabskip) 0.0
+.\glue(\baselineskip) 5.11111
+.\hbox(6.94444+1.94444)x283.74054
+..\glue(\tabskip) 0.0
+..\hbox(6.94444+1.94444)x72.26999
+...\hbox(6.86111+0.0)x72.26999, glue set - 7.38135fil []
+..\glue(\tabskip) 0.0
+..\hbox(6.94444+1.94444)x211.47055
+...\hbox(6.94444+1.94444)x211.47055 []
+..\glue(\tabskip) 0.0
+.\glue(\baselineskip) 5.11111
+.etc.
+
+ [36]
+Underfull \vbox (badness 10000) has occurred while \output is active
+\vbox(511.91212+2.5)x358.74031
+.\glue(\topskip) 3.05556
+.\hbox(6.94444+1.94444)x190.79587
+..\glue(\tabskip) 0.0
+..\hbox(6.94444+1.94444)x72.26999
+...\hbox(6.86111+0.0)x72.26999, glue set 12.17412fil []
+..\glue(\tabskip) 0.0
+..\hbox(6.94444+1.94444)x118.52588
+...\hbox(6.94444+1.94444)x118.52588 []
+..\glue(\tabskip) 0.0
+.\glue(\baselineskip) 5.11111
+.\hbox(6.94444+1.94444)x165.74097
+..\glue(\tabskip) 0.0
+..\hbox(6.94444+1.94444)x72.26999
+...\hbox(6.86111+0.0)x72.26999, glue set 12.438fil []
+..\glue(\tabskip) 0.0
+..\hbox(6.94444+1.94444)x93.47098
+...\hbox(6.94444+1.94444)x93.47098 []
+..\glue(\tabskip) 0.0
+.\glue(\baselineskip) 5.11111
+.etc.
+
+ [37]
+Underfull \vbox (badness 10000) has occurred while \output is active
+\vbox(511.91212+1.94444)x399.2397
+.\glue(\topskip) 2.5
+.\hbox(7.5+2.5)x399.2397
+..\glue(\tabskip) 0.0
+..\hbox(7.5+2.5)x72.26999
+...\hbox(6.86111+0.0)x72.26999, glue set 17.5213fil []
+..\glue(\tabskip) 0.0
+..\hbox(7.5+2.5)x326.96971
+...\hbox(7.5+2.5)x326.96971 []
+..\glue(\tabskip) 0.0
+.\glue(\baselineskip) 4.0
+.\hbox(7.5+2.5)x235.46303
+..\glue(\tabskip) 0.0
+..\hbox(7.5+2.5)x72.26999
+...\hbox(6.86111+0.0)x72.26999, glue set 19.2574fil []
+..\glue(\tabskip) 0.0
+..\hbox(7.5+2.5)x163.19304
+...\hbox(7.5+2.5)x163.19304 []
+..\glue(\tabskip) 0.0
+.\glue(\baselineskip) 4.0
+.etc.
+
+ [38]
+Underfull \vbox (badness 10000) has occurred while \output is active
+\vbox(511.91212+1.94444)x375.26807
+.\glue(\topskip) 3.05556
+.\hbox(6.94444+1.94444)x300.71237
+..\glue(\tabskip) 0.0
+..\hbox(6.94444+1.94444)x72.26999
+...\hbox(0.0+0.0)x72.26999, glue set 65.60403fil []
+..\glue(\tabskip) 0.0
+..\hbox(6.94444+1.94444)x228.44238
+...\hbox(6.94444+1.94444)x228.44238 []
+..\glue(\tabskip) 0.0
+.\glue(\baselineskip) 5.11111
+.\hbox(6.94444+1.94444)x247.68524
+..\glue(\tabskip) 0.0
+..\hbox(6.94444+1.94444)x72.26999
+...\hbox(6.86111+0.0)x72.26999, glue set - 1.27026fil []
+..\glue(\tabskip) 0.0
+..\hbox(6.94444+1.94444)x175.41525
+...\hbox(6.94444+1.94444)x175.41525 []
+..\glue(\tabskip) 0.0
+.\glue(\baselineskip) 5.11111
+.etc.
+
+ [39]
+Underfull \vbox (badness 10000) has occurred while \output is active
+\vbox(511.91212+2.5)x345.40701
+.\glue(\topskip) 3.05556
+.\hbox(6.94444+1.94444)x217.93547
+..\glue(\tabskip) 0.0
+..\hbox(6.94444+1.94444)x72.26999
+...\hbox(6.86111+0.0)x72.26999, glue set 35.96564fil []
+..\glue(\tabskip) 0.0
+..\hbox(6.94444+1.94444)x145.66548
+...\hbox(6.94444+1.94444)x145.66548 []
+..\glue(\tabskip) 0.0
+.\glue(\baselineskip) 5.11111
+.\hbox(6.94444+1.94444)x329.35133
+..\glue(\tabskip) 0.0
+..\hbox(6.94444+1.94444)x72.26999
+...\hbox(6.86111+0.0)x72.26999, glue set 2.53526fil []
+..\glue(\tabskip) 0.0
+..\hbox(6.94444+1.94444)x257.08134
+...\hbox(6.94444+1.94444)x257.08134 []
+..\glue(\tabskip) 0.0
+.\glue(\baselineskip) 5.11111
+.etc.
+
+ [40]
+Underfull \vbox (badness 10000) has occurred while \output is active
+\vbox(511.91212+1.94444)x340.32181
+.\glue(\topskip) 3.05556
+.\hbox(6.94444+1.94444)x183.54657
+..\glue(\tabskip) 0.0
+..\hbox(6.94444+1.94444)x72.26999
+...\hbox(6.86111+0.0)x72.26999, glue set - 2.0897fil []
+..\glue(\tabskip) 0.0
+..\hbox(6.94444+1.94444)x111.27658
+...\hbox(6.94444+1.94444)x111.27658 []
+..\glue(\tabskip) 0.0
+.\glue(\baselineskip) 5.11111
+.\hbox(6.94444+1.94444)x183.54657
+..\glue(\tabskip) 0.0
+..\hbox(6.94444+1.94444)x72.26999
+...\hbox(6.86111+0.0)x72.26999, glue set - 1.77026fil []
+..\glue(\tabskip) 0.0
+..\hbox(6.94444+1.94444)x111.27658
+...\hbox(6.94444+1.94444)x111.27658 []
+..\glue(\tabskip) 0.0
+.\glue(\baselineskip) 5.11111
+.etc.
+
+ [41]
+Underfull \vbox (badness 10000) has occurred while \output is active
+\vbox(511.91212+1.94444)x290.51793
+.\glue(\topskip) 3.05556
+.\hbox(6.94444+1.94444)x215.43515
+..\glue(\tabskip) 0.0
+..\hbox(6.94444+1.94444)x72.26999
+...\hbox(6.86111+0.0)x72.26999, glue set 9.66023fil []
+..\glue(\tabskip) 0.0
+..\hbox(6.94444+1.94444)x143.16516
+...\hbox(6.94444+1.94444)x143.16516 []
+..\glue(\tabskip) 0.0
+.\glue(\baselineskip) 5.11111
+.\hbox(6.94444+1.94444)x215.43515
+..\glue(\tabskip) 0.0
+..\hbox(6.94444+1.94444)x72.26999
+...\hbox(6.86111+0.0)x72.26999, glue set 14.96576fil []
+..\glue(\tabskip) 0.0
+..\hbox(6.94444+1.94444)x143.16516
+...\hbox(6.94444+1.94444)x143.16516 []
+..\glue(\tabskip) 0.0
+.\glue(\baselineskip) 5.11111
+.etc.
+
+ [42]
+Underfull \vbox (badness 10000) has occurred while \output is active
+\vbox(511.91212+1.94444)x363.21257
+.\glue(\topskip) 3.05556
+.\hbox(6.94444+1.94444)x199.4077
+..\glue(\tabskip) 0.0
+..\hbox(6.94444+1.94444)x72.26999
+...\hbox(6.86111+0.0)x72.26999, glue set - 5.88135fil []
+..\glue(\tabskip) 0.0
+..\hbox(6.94444+1.94444)x127.13771
+...\hbox(6.94444+1.94444)x127.13771 []
+..\glue(\tabskip) 0.0
+.\glue(\baselineskip) 4.55556
+.\hbox(7.5+2.5)x244.46263
+..\glue(\tabskip) 0.0
+..\hbox(7.5+2.5)x72.26999
+...\hbox(6.86111+0.0)x72.26999, glue set 19.17407fil []
+..\glue(\tabskip) 0.0
+..\hbox(7.5+2.5)x172.19264
+...\hbox(7.5+2.5)x172.19264 []
+..\glue(\tabskip) 0.0
+.\glue(\baselineskip) 4.55556
+.etc.
+
+ [43]
+Underfull \vbox (badness 10000) has occurred while \output is active
+\vbox(511.91212+2.5)x365.8515
+.\glue(\topskip) 3.05556
+.\hbox(6.94444+1.94444)x301.21242
+..\glue(\tabskip) 0.0
+..\hbox(6.94444+1.94444)x72.26999
+...\hbox(6.86111+0.0)x72.26999, glue set 4.88248fil []
+..\glue(\tabskip) 0.0
+..\hbox(6.94444+1.94444)x228.94243
+...\hbox(6.94444+1.94444)x228.94243 []
+..\glue(\tabskip) 0.0
+.\glue(\baselineskip) 5.11111
+.\hbox(6.94444+1.94444)x301.21242
+..\glue(\tabskip) 0.0
+..\hbox(6.94444+1.94444)x72.26999
+...\hbox(6.86111+0.0)x72.26999, glue set 4.88248fil []
+..\glue(\tabskip) 0.0
+..\hbox(6.94444+1.94444)x228.94243
+...\hbox(6.94444+1.94444)x228.94243 []
+..\glue(\tabskip) 0.0
+.\glue(\baselineskip) 5.11111
+.etc.
+
+ [44]
+Underfull \vbox (badness 10000) has occurred while \output is active
+\vbox(511.91212+2.5)x361.74037
+.\glue(\topskip) 3.13889
+.\hbox(6.86111+1.94444)x158.5469
+..\glue(\tabskip) 0.0
+..\hbox(6.86111+1.94444)x72.26999
+...\hbox(6.86111+0.0)x72.26999, glue set - 5.47858fil []
+..\glue(\tabskip) 0.0
+..\hbox(6.86111+1.94444)x86.27692
+...\hbox(6.83331+1.94444)x86.27692 []
+..\glue(\tabskip) 0.0
+.\glue(\baselineskip) 5.19444
+.\hbox(6.86111+1.94444)x259.07382
+..\glue(\tabskip) 0.0
+..\hbox(6.86111+1.94444)x72.26999
+...\hbox(6.86111+0.0)x72.26999, glue set 16.09076fil []
+..\glue(\tabskip) 0.0
+..\hbox(6.86111+1.94444)x186.80383
+...\hbox(6.83331+1.94444)x186.80383 []
+..\glue(\tabskip) 0.0
+.\glue(\baselineskip) 5.11111
+.etc.
+
+ [45]
+Underfull \vbox (badness 10000) has occurred while \output is active
+\vbox(511.91212+1.94444)x352.93445
+.\glue(\topskip) 3.13889
+.\hbox(6.86111+1.94444)x187.10213
+..\glue(\tabskip) 0.0
+..\hbox(6.86111+1.94444)x72.26999
+...\hbox(6.86111+0.0)x72.26999, glue set 15.72964fil []
+..\glue(\tabskip) 0.0
+..\hbox(6.86111+1.94444)x114.83214
+...\hbox(6.83331+1.94444)x114.83214 []
+..\glue(\tabskip) 0.0
+.\glue(\baselineskip) 5.11111
+.\hbox(6.94444+1.94444)x198.7407
+..\glue(\tabskip) 0.0
+..\hbox(6.94444+1.94444)x72.26999
+...\hbox(6.86111+0.0)x72.26999, glue set - 1.75638fil []
+..\glue(\tabskip) 0.0
+..\hbox(6.94444+1.94444)x126.47072
+...\hbox(6.94444+1.94444)x126.47072 []
+..\glue(\tabskip) 0.0
+.\glue(\baselineskip) 5.11111
+.etc.
+
+ [46]
+Underfull \vbox (badness 10000) has occurred while \output is active
+\vbox(511.91212+1.94444)x379.82382
+.\glue(\topskip) 3.05556
+.\hbox(6.94444+1.94444)x230.40784
+..\glue(\tabskip) 0.0
+..\hbox(6.94444+1.94444)x72.26999
+...\hbox(6.86111+0.0)x72.26999, glue set - 2.67303fil []
+..\glue(\tabskip) 0.0
+..\hbox(6.94444+1.94444)x158.13785
+...\hbox(6.94444+1.94444)x158.13785 []
+..\glue(\tabskip) 0.0
+.\glue(\baselineskip) 5.11111
+.\hbox(6.94444+1.94444)x254.37968
+..\glue(\tabskip) 0.0
+..\hbox(6.94444+1.94444)x72.26999
+...\hbox(6.86111+0.0)x72.26999, glue set 38.03508fil []
+..\glue(\tabskip) 0.0
+..\hbox(6.94444+1.94444)x182.1097
+...\hbox(6.94444+1.94444)x182.1097 []
+..\glue(\tabskip) 0.0
+.\glue(\baselineskip) 5.11111
+.etc.
+
+ [47]
+Underfull \vbox (badness 10000) has occurred while \output is active
+\vbox(511.91212+1.94444)x326.01805
+.\glue(\topskip) 3.13889
+.\hbox(6.86111+1.94444)x232.07448
+..\glue(\tabskip) 0.0
+..\hbox(6.86111+1.94444)x72.26999
+...\hbox(6.86111+0.0)x72.26999, glue set 5.50748fil []
+..\glue(\tabskip) 0.0
+..\hbox(6.86111+1.94444)x159.80449
+...\hbox(6.67859+1.94444)x159.80449 []
+..\glue(\tabskip) 0.0
+.\glue(\baselineskip) 5.11111
+.\hbox(6.94444+1.94444)x283.62901
+..\glue(\tabskip) 0.0
+..\hbox(6.94444+1.94444)x72.26999
+...\hbox(6.86111+0.0)x72.26999, glue set 7.41025fil []
+..\glue(\tabskip) 0.0
+..\hbox(6.94444+1.94444)x211.35902
+...\hbox(6.94444+1.94444)x211.35902 []
+..\glue(\tabskip) 0.0
+.\glue(\baselineskip) 5.11111
+.etc.
+
+ [48]
+Underfull \vbox (badness 10000) has occurred while \output is active
+\vbox(511.91212+1.94444)x356.32373
+.\glue(\topskip) 3.05556
+.\hbox(6.94444+1.94444)x273.46307
+..\glue(\tabskip) 0.0
+..\hbox(6.94444+1.94444)x72.26999
+...\hbox(6.86111+0.0)x72.26999, glue set 7.20192fil []
+..\glue(\tabskip) 0.0
+..\hbox(6.94444+1.94444)x201.19308
+...\hbox(6.94444+1.94444)x201.19308 []
+..\glue(\tabskip) 0.0
+.\glue(\baselineskip) 5.11111
+.\hbox(6.94444+1.94444)x215.1022
+..\glue(\tabskip) 0.0
+..\hbox(6.94444+1.94444)x72.26999
+...\hbox(6.86111+0.0)x72.26999, glue set - 2.2008fil []
+..\glue(\tabskip) 0.0
+..\hbox(6.94444+1.94444)x142.83221
+...\hbox(6.94444+1.94444)x142.83221 []
+..\glue(\tabskip) 0.0
+.\glue(\baselineskip) 5.11111
+.etc.
+
+ [49]
+Underfull \vbox (badness 10000) has occurred while \output is active
+\vbox(511.91212+1.94444)x348.21217
+.\glue(\topskip) 3.05556
+.\hbox(6.94444+0.0)x213.35182
+..\glue(\tabskip) 0.0
+..\hbox(6.94444+0.0)x72.26999
+...\hbox(6.86111+0.0)x72.26999, glue set 30.21568fil []
+..\glue(\tabskip) 0.0
+..\hbox(6.94444+0.0)x141.08183
+...\hbox(6.94444+0.0)x141.08183 []
+..\glue(\tabskip) 0.0
+.\glue(\baselineskip) 7.05556
+.\hbox(6.94444+1.94444)x241.60118
+..\glue(\tabskip) 0.0
+..\hbox(6.94444+1.94444)x72.26999
+...\hbox(6.86111+0.0)x72.26999, glue set 7.27136fil []
+..\glue(\tabskip) 0.0
+..\hbox(6.94444+1.94444)x169.33119
+...\hbox(6.94444+1.94444)x169.33119 []
+..\glue(\tabskip) 0.0
+.\glue(\baselineskip) 5.11111
+.etc.
+
+ [50]
+Underfull \vbox (badness 10000) has occurred while \output is active
+\vbox(511.91212+2.5)x376.62875
+.\glue(\topskip) 3.05556
+.\hbox(6.94444+1.94444)x215.40782
+..\glue(\tabskip) 0.0
+..\hbox(6.94444+1.94444)x72.26999
+...\hbox(6.86111+0.0)x72.26999, glue set 4.93803fil []
+..\glue(\tabskip) 0.0
+..\hbox(6.94444+1.94444)x143.13783
+...\hbox(6.94444+1.94444)x143.13783 []
+..\glue(\tabskip) 0.0
+.\glue(\baselineskip) 5.11111
+.\hbox(6.94444+0.0)x292.4901
+..\glue(\tabskip) 0.0
+..\hbox(6.94444+0.0)x72.26999
+...\hbox(0.0+0.0)x72.26999, glue set 65.60403fil []
+..\glue(\tabskip) 0.0
+..\hbox(6.94444+0.0)x220.22011
+...\hbox(6.94444+0.0)x220.22011 []
+..\glue(\tabskip) 0.0
+.\glue(\baselineskip) 7.05556
+.etc.
+
+ [51]
+Underfull \vbox (badness 10000) has occurred while \output is active
+\vbox(511.91212+2.5)x384.85106
+.\glue(\topskip) 3.05556
+.\hbox(6.94444+1.94444)x246.713
+..\glue(\tabskip) 0.0
+..\hbox(6.94444+1.94444)x72.26999
+...\hbox(6.86111+0.0)x72.26999, glue set - 0.88138fil []
+..\glue(\tabskip) 0.0
+..\hbox(6.94444+1.94444)x174.44301
+...\hbox(6.94444+1.94444)x174.44301 []
+..\glue(\tabskip) 0.0
+.\glue(\baselineskip) 5.11111
+.\hbox(6.94444+1.94444)x266.65747
+..\glue(\tabskip) 0.0
+..\hbox(6.94444+1.94444)x72.26999
+...\hbox(6.86111+0.0)x72.26999, glue set 22.10461fil []
+..\glue(\tabskip) 0.0
+..\hbox(6.94444+1.94444)x194.38748
+...\hbox(6.94444+1.94444)x194.38748 []
+..\glue(\tabskip) 0.0
+.\glue(\baselineskip) 5.11111
+.etc.
+
+ [52]
+Underfull \vbox (badness 10000) has occurred while \output is active
+\vbox(511.91212+1.94444)x334.43326
+.\glue(\topskip) 3.05556
+.\hbox(6.94444+1.94444)x320.60138
+..\glue(\tabskip) 0.0
+..\hbox(6.94444+1.94444)x72.26999
+...\hbox(6.86111+0.0)x72.26999, glue set 17.49353fil []
+..\glue(\tabskip) 0.0
+..\hbox(6.94444+1.94444)x248.33139
+...\hbox(6.94444+1.94444)x248.33139 []
+..\glue(\tabskip) 0.0
+.\glue(\baselineskip) 5.11111
+.\hbox(6.94444+1.94444)x268.2405
+..\glue(\tabskip) 0.0
+..\hbox(6.94444+1.94444)x72.26999
+...\hbox(6.86111+0.0)x72.26999, glue set 15.72964fil []
+..\glue(\tabskip) 0.0
+..\hbox(6.94444+1.94444)x195.9705
+...\hbox(6.94444+1.94444)x195.9705 []
+..\glue(\tabskip) 0.0
+.\glue(\baselineskip) 5.11111
+.etc.
+
+ [53]
+Section 6 ends at page 6.54 [54]) (./wup07.tex
+\footline=\toks21
+ [1] [2]
+Section 7 ends at page 7.3 [3]) (./wup08.tex
+\footline=\toks22
+ [1] [2]
+Underfull \hbox (badness 1043) in paragraph at lines 97--100
+[]\tenrm (these data in-clude \tenbf Z\tenrm , and FLVSL and FIONL, as they ap-
+pear in the  
+
+\hbox(7.5+2.5)x351.34999, glue set 2.18854
+.\hbox(0.0+0.0)x0.0
+.\tenrm (
+.\tenrm t
+.\tenrm h
+.\tenrm e
+.etc.
+
+[3] [4]
+Underfull \hbox (badness 1460) in paragraph at lines 124--128
+\tenbf N\tenrm , \tenbf Z$[]$\tenrm , and ei-ther: \tenbf PALBET$[]$\tenrm , \t
+enbf PBETAL$[]$ \tenrm if \tentt HE-LIUM\tenrm ; or \tenbf PGMBET$[]$\tenrm ,  
+
+
+\hbox(6.94444+1.94444)x361.34999, glue set 2.4449
+.\tenbf N
+.\tenrm ,
+.\glue(\spaceskip) 3.33298
+.\tenbf Z
+.\mathon
+.etc.
+
+[5] [6] [7] [8] [9] Section 8 ends at page 8.10 [10]) (./wup09.tex
+\footline=\toks23
+ [1]
+Overfull \hbox (1.11734pt too wide) in paragraph at lines 40--45
+\tenrm part and a scat-ter-ing part by means of an albedo ta-ble that is a func
+-tion of depth. |
+
+\hbox(6.94444+1.94444)x361.34999
+.\tenrm p
+.\tenrm a
+.\tenrm r
+.\tenrm t
+.\glue(\spaceskip) 3.33298
+.etc.
+
+
+Overfull \hbox (30.59042pt too wide) in paragraph at lines 40--45
+\tenrm This ta-ble is ob-tained by in-ter-po-la-tion from the in-put ta-bles \t
+enbf ZALBK$[]$ \tenrm and \tenbf ALBK$[]\teni ; \tenrm 1 \tensy ^^T |
+
+\hbox(6.94444+1.94444)x361.34999
+.\tenrm T
+.\tenrm h
+.\tenrm i
+.\tenrm s
+.\glue(\spaceskip) 3.33298
+.etc.
+
+[2]
+Underfull \hbox (badness 10000) in paragraph at lines 121--129
+\tenrm ted for all 53 wave-lengths, at five depths whose in-dices are:  
+
+\hbox(6.94444+1.94444)x361.34999, glue set 4.84543
+.\tenrm t
+.\tenrm e
+.\tenrm d
+.\glue(\spaceskip) 3.33298
+.\tenrm f
+.etc.
+
+[3] [4] [5] [6]
+Underfull \hbox (badness 1210) in paragraph at lines 243--248
+[]\tenrm PANDORA au-to-mat-i-cally com-putes `con-tin-uum data' for these KOMP 
+ 
+
+\hbox(6.94444+1.94444)x361.34999, glue set 2.29677
+.\hbox(0.0+0.0)x0.0
+.\tenrm P
+.\kern-0.83334
+.\tenrm A
+.\tenrm N
+.etc.
+
+[7]
+Overfull \hbox (4.45163pt too wide) in paragraph at lines 270--279
+\tenrm opac-ity sets are in-ter-po-lated to the val-ues of depth and wave-lengt
+h that are needed |
+
+\hbox(6.94444+1.94444)x361.34999
+.\tenrm o
+.\tenrm p
+.\tenrm a
+.\tenrm c
+.\discretionary
+..\tenrm -
+.etc.
+
+[8] Section 9 ends at page 9.9 [9]) (./wup10.tex
+\footline=\toks24
+
+Underfull \hbox (badness 3000) in paragraph at lines 25--27
+[]\tenrm Data other than the de-fault val-ues (listed be-low) can be in-put wit
+h  
+
+\hbox(7.5+2.5)x361.34999, glue set 3.10934
+.\hbox(0.0+0.0)x0.0
+.\tenrm D
+.\tenrm a
+.\tenrm t
+.\tenrm a
+.etc.
+
+[1] [2]
+Underfull \hbox (badness 7291) in paragraph at lines 85--92
+\tenrm 0.00001, then there need not be an \tenbf NMT \tenrm state-ment, and onl
+y  
+
+\hbox(6.94444+1.94444)x361.34999, glue set 4.18156
+.\tenrm 0
+.\tenrm .
+.\tenrm 0
+.\tenrm 0
+.\tenrm 0
+.etc.
+
+[3]
+Underfull \vbox (badness 10000) has occurred while \output is active
+\vbox(511.91212+0.0)x361.34999
+.\glue(\topskip) 3.05556
+.\hbox(6.94444+0.0)x361.34999, glue set 124.26593fill
+..\glue 0.0 plus 1.0fill
+..\tenbf D
+..\tenbf e
+..\tenbf f
+..\tenbf a
+..etc.
+.\glue 10.0
+.\glue 10.0
+.\glue(\baselineskip) 7.05556
+.etc.
+
+ [4]
+Section 10 ends at page 10.5 [5]) (./wup11.tex
+\footline=\toks25
+ [1] [2] [3]
+Overfull \hbox (1.36943pt too wide) in paragraph at lines 79--85
+\tenrm ram-e-ters (es-pe-cially those that con-trol var-i-ous `de-bug dumps' an
+d `de-tails dumps') |
+
+\hbox(7.5+2.5)x361.34999
+.\tenrm r
+.\tenrm a
+.\tenrm m
+.\discretionary
+..\tenrm -
+.\tenrm e
+.etc.
+
+[4] [5] [6] [7] [8] [9] [10] [11] [12] [13] [14] [15] [16] [17] [18] [19]
+[20]
+Underfull \hbox (badness 1168) in paragraph at lines 559--561
+$\tensy ^^O $\tenrm for a trace of the Pop-u-la-tions Cal-cu-la-tions at depth 
+# \tenbf IB-N-VIEW\tenrm :  
+
+\hbox(6.94444+1.94444)x361.34999, glue set 2.27103
+.\mathon
+.\tensy ^^O
+.\glue 2.77771 plus 2.77771
+.\mathoff
+.\tenrm f
+.etc.
+
+[21] [22]
+Underfull \hbox (badness 1424) in paragraph at lines 638--643
+[]\tenrm appear if PHASE2 is on, only for those tran-si-tions $\teni u; `$ \ten
+rm whose val-ues of  
+
+\hbox(6.94444+1.94444)x361.34999, glue set 2.4273
+.\hbox(0.0+0.0)x0.0
+.\tenrm a
+.\tenrm p
+.\tenrm p
+.\kern0.27779
+.etc.
+
+
+Underfull \hbox (badness 1062) in paragraph at lines 638--643
+\tenbf BLCSW$[]$ \tenrm re-quire this and for which emer-gent pro-file cal-cu-l
+a-tions are  
+
+\hbox(8.49002+1.94444)x361.34999, glue set 2.20001
+.\tenbf B
+.\tenbf L
+.\tenbf C
+.\tenbf S
+.\tenbf W
+.etc.
+
+[23] [24] [25] [26] [27] [28] Section 11 ends at page 11.29 [29]) (./wup12.tex
+\footline=\toks26
+
+[1]
+Underfull \hbox (badness 1184) in paragraph at lines 29--34
+[]\tenrm When the \tenbf QR \tenrm method is used for the Line Source Func-tion
+ cal-cu-la-tion  
+
+\hbox(6.94444+1.94444)x361.34999, glue set 2.2795
+.\hbox(0.0+0.0)x0.0
+.\tenrm W
+.\tenrm h
+.\tenrm e
+.\tenrm n
+.etc.
+
+
+Overfull \hbox (14.4249pt too wide) in paragraph at lines 35--37
+[]\tenrm When `QR-direct' is spec-i-fied, weight ma-tri-ces (as func-tions of T
+NU, mono-chromatic |
+
+\hbox(7.5+2.5)x361.34999
+.\hbox(0.0+0.0)x0.0
+.\tenrm W
+.\tenrm h
+.\tenrm e
+.\tenrm n
+.etc.
+
+[2] [3] Section 12 ends at page 12.4 [4] [5]) (./wup13.tex
+\footline=\toks27
+
+Overfull \hbox (2.57501pt too wide) in paragraph at lines 35--40
+[]\tenrm To in-tro-duce an aux-il-iary Z ta-ble, it is only nec-es-sary to spec
+-ify its length, \tenbf LZA$[]$\tenrm , |
+
+\hbox(6.94444+1.94444)x361.34999
+.\hbox(0.0+0.0)x0.0
+.\tenrm T
+.\kern-0.83334
+.\tenrm o
+.\glue(\spaceskip) 3.33298
+.etc.
+
+[1] [2] Section 13 ends at page 13.3 [3]) (./wup15.tex
+\footline=\toks28
+
+Underfull \vbox (badness 10000) has occurred while \output is active
+\vbox(511.91212+1.94444)x361.34999, glue set 4.52487
+.\glue(\topskip) 8.94446
+.\hbox(1.05554+0.0)x361.34999, glue set 179.2861fill
+..\glue 0.0 plus 1.0fill
+..\mathon
+..\hbox(1.05554+0.0)x2.77779
+..\mathoff
+..\glue 0.0 plus 1.0fill
+.\glue 90.3375
+.\glue(\baselineskip) 7.05556
+.\hbox(6.94444+1.9999)x361.34999, glue set 97.58464fill
+..\glue 0.0 plus 1.0fill
+..\tenrm S
+..\tenrm e
+..\tenrm c
+..\tenrm t
+..etc.
+.etc.
+
+ [1]
+[2]
+Underfull \hbox (badness 1776) in paragraph at lines 66--72
+\tenrm the in-put pa-ram-e-ter \tenbf CRD$[]$ \tenrm is the ra-dia-tive damp-in
+g pa-ram-e-ter and  
+
+\hbox(8.49002+1.94444)x361.34999, glue set 2.6118
+.\tenrm t
+.\tenrm h
+.\tenrm e
+.\glue(\spaceskip) 3.33298
+.\tenrm i
+.etc.
+
+[3] [4] Section 15 ends at page 15.5 [5]) (./wup16.tex
+\footline=\toks29
+ [1] [2]
+Underfull \hbox (badness 10000) in paragraph at lines 72--81
+\tenrm tional pro-files us-ing ``ad-di-tional'' ex-pan-sion ve-loc-i-ties \tenb
+f VX\tenrm .  
+
+\hbox(6.94444+1.94444)x361.34999, glue set 5.10231
+.\tenrm t
+.\tenrm i
+.\tenrm o
+.\tenrm n
+.\tenrm a
+.etc.
+
+[3]
+Overfull \hbox (21.7846pt too wide) in paragraph at lines 123--129
+\tenrm to com-pute a set of line pro-files; these pro-files are av-er-aged to y
+ield a ``flow-broadened'' |
+
+\hbox(6.94444+1.94444)x361.34999
+.\tenrm t
+.\tenrm o
+.\glue(\spaceskip) 3.33298
+.\tenrm c
+.\tenrm o
+.etc.
+
+[4] [5] [6]
+Overfull \hbox (11.95236pt too wide) in paragraph at lines 251--260
+\tenrm gen-er-at-ing pro-ce-dure dis-cussed above does not pro-duce proper val-
+ues of the isotropic |
+
+\hbox(6.94444+1.94444)x361.34999
+.\tenrm g
+.\tenrm e
+.\tenrm n
+.\discretionary
+..\tenrm -
+.\tenrm e
+.etc.
+
+[7] [8] [9] [10] Section 16 ends at page 16.11 [11]) (./wup17.tex
+\footline=\toks30
+
+Overfull \hbox (3.25426pt too wide) in paragraph at lines 36--44
+\tenrm DORA cal-cu-lates the depth-dependence of the to-tal he-lium abun-dance,
+ \tenbf RHEAB$[]$\tenrm . |
+
+\hbox(6.94444+1.94444)x361.34999
+.\tenrm D
+.\tenrm O
+.\tenrm R
+.\tenrm A
+.\glue 3.33298
+.etc.
+
+
+Underfull \vbox (badness 2418) has occurred while \output is active
+\vbox(511.91212+1.94444)x361.34999, glue set 2.89366
+.\glue(\topskip) 8.94446
+.\hbox(1.05554+0.0)x361.34999, glue set 179.2861fill
+..\glue 0.0 plus 1.0fill
+..\mathon
+..\hbox(1.05554+0.0)x2.77779
+..\mathoff
+..\glue 0.0 plus 1.0fill
+.\glue 90.3375
+.\glue(\baselineskip) 7.05556
+.\hbox(6.94444+0.0)x361.34999, glue set 113.79636fill
+..\glue 0.0 plus 1.0fill
+..\tenrm S
+..\tenrm e
+..\tenrm c
+..\tenrm t
+..etc.
+.etc.
+
+ [1]
+Underfull \hbox (badness 3386) in paragraph at lines 69--74
+\tenrm fol-low-ing the marker \tentt [ CEN-SUS data start ] \tenrm and up to th
+e marker  
+
+\hbox(6.94444+1.94444)x361.34999, glue set 3.23857
+.\tenrm f
+.\tenrm o
+.\tenrm l
+.\discretionary
+..\tenrm -
+.\tenrm l
+.etc.
+
+
+Underfull \hbox (badness 1215) in paragraph at lines 75--81
+\tenrm from the lat-est runs with all the ions of the el-e-ment. The main \tent
+t CEN-SUS  
+
+\hbox(6.94444+0.0)x361.34999, glue set 2.30106
+.\tenrm f
+.\tenrm r
+.\tenrm o
+.\tenrm m
+.\glue(\spaceskip) 3.33298
+.etc.
+
+Section 17 ends at page 17.2
+Underfull \vbox (badness 10000) has occurred while \output is active
+\vbox(511.91212+1.94444)x361.34999, glue set 4.97803
+.\glue(\topskip) 3.05556
+.\hbox(6.94444+1.94444)x361.34999, glue set 0.30193
+..\tenrm c
+..\tenrm o
+..\tenrm m
+..\discretionary
+...\tenrm -
+..\tenrm p
+..etc.
+.\penalty 150
+.\glue(\baselineskip) 5.11111
+.\hbox(6.94444+1.94444)x361.34999, glue set 164.04614fil
+..\tenrm u
+..\tenrm s
+..\tenrm e
+..\tenrm ,
+..\glue 3.33298
+..etc.
+.etc.
+
+ [2]
+[3]) (./wup18.tex
+\footline=\toks31
+ [1] [2]
+Underfull \hbox (badness 1308) in paragraph at lines 90--92
+[]\tenit Note \tenrm also the rel-e-vant in-put pa-ram-e-ters \tenbf KST-MAX\te
+nrm , \tenbf KBT-MAX\tenrm , and  
+
+\hbox(6.94444+1.94444)x361.34999, glue set 2.35753
+.\hbox(0.0+0.0)x0.0
+.\tenit N
+.\tenit o
+.\tenit t
+.\tenit e
+.etc.
+
+
+Overfull \hbox (5.6762pt too wide) in paragraph at lines 98--105
+[]\tenrm After \tenbf XI-BLUT \tenrm and \tenbf XIREDT \tenrm for tran-si-tion 
+$(\teni u; `\tenrm )$ have been es-tab-lished, a whole- |
+
+\hbox(7.5+2.5)x361.34999
+.\hbox(0.0+0.0)x0.0
+.\tenrm A
+.\tenrm f
+.\tenrm t
+.\tenrm e
+.etc.
+
+
+Overfull \hbox (0.18736pt too wide) in paragraph at lines 98--105
+\tenrm the val-ues of \tenbf XIREDT \tenrm and the neg-a-tives of the val-ues o
+f \tenbf XI-BLUT\tenrm : $[][] = |
+
+\hbox(6.94444+1.94444)x361.34999
+.\tenrm t
+.\tenrm h
+.\tenrm e
+.\glue(\spaceskip) 3.33298
+.\tenrm v
+.etc.
+
+[3] [4] [5] Section 18 ends at page 18.6 [6]) (./wup19.tex (./wupstuff.tex)
+\footline=\toks32
+
+Overfull \hbox (6.5912pt too wide) in paragraph at lines 30--32
+[]\tenrm Note that PANDORA-supplied de-fault pa-ram-e-ter val-ues are writ-ten 
+to file \tentt fort.20 |
+
+\hbox(6.94444+1.94444)x361.34999
+.\hbox(0.0+0.0)x0.0
+.\tenrm N
+.\tenrm o
+.\tenrm t
+.\tenrm e
+.etc.
+
+[1] [2] [3]
+Underfull \hbox (badness 10000) in paragraph at lines 136--142
+\tenrm to be used can be spec-i-fied in a CIMETHOD state-ment. The  
+
+\hbox(6.94444+1.94444)x361.34999, glue set 4.43431
+.\tenrm t
+.\tenrm o
+.\glue(\spaceskip) 3.33298
+.\tenrm b
+.\kern0.27779
+.etc.
+
+[4]
+Underfull \hbox (badness 10000) in paragraph at lines 199--205
+\tenrm be used can be spec-i-fied in a CIMETHOD state-ment. The  
+
+\hbox(6.94444+1.94444)x361.34999, glue set 5.04541
+.\tenrm b
+.\kern0.27779
+.\tenrm e
+.\glue(\spaceskip) 3.33298
+.\tenrm u
+.etc.
+
+[5] [6] Section 19 ends at page 19.7 [7]) (./wup20.tex
+\footline=\toks33
+
+Underfull \hbox (badness 1655) in paragraph at lines 15--19
+\tenrm tive So-lu-tions of Mul-ti-level Trans-fer Prob-lems'' by Avrett & Loese
+r in  
+
+\hbox(6.94444+1.94444)x361.34999, glue set 2.5496
+.\tenrm t
+.\tenrm i
+.\tenrm v
+.\kern-0.27779
+.\tenrm e
+.etc.
+
+
+Underfull \vbox (badness 2418) has occurred while \output is active
+\vbox(511.91212+2.78741)x361.34999, glue set 2.89366
+.\glue(\topskip) 8.94446
+.\hbox(1.05554+0.0)x361.34999, glue set 179.2861fill
+..\glue 0.0 plus 1.0fill
+..\mathon
+..\hbox(1.05554+0.0)x2.77779
+..\mathoff
+..\glue 0.0 plus 1.0fill
+.\glue 90.3375
+.\glue(\baselineskip) 7.05556
+.\hbox(6.94444+1.94444)x361.34999, glue set 70.92804fill
+..\glue 0.0 plus 1.0fill
+..\tenrm S
+..\tenrm e
+..\tenrm c
+..\tenrm t
+..etc.
+.etc.
+
+ [1]
+Section 20 ends at page 20.2 [2]) (./wup21.tex
+\footline=\toks34
+ [1] [2] [3] [4] [5]
+Overfull \hbox (15.64374pt too wide) in paragraph at lines 267--273
+[]\tenrm The fol-low-ing in-put pa-ram-e-ters con-trol these cal-cu-la-tions: \
+tenbf NLY\tenrm ; $[][]$, $[][]$, |
+
+\hbox(6.94444+2.86108)x361.34999
+.\hbox(0.0+0.0)x0.0
+.\tenrm T
+.\tenrm h
+.\tenrm e
+.\glue(\spaceskip) 3.33298
+.etc.
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active
+\vbox(511.91212+1.94444)x361.34999, glue set 5.98535
+.\glue(\topskip) 3.16669
+.\hbox(6.83331+1.9999)x361.34999, glue set 156.42496fill
+..\glue 0.0 plus 1.0fill
+..\tenrm 2
+..\tenrm .
+..\glue(\xspaceskip) 5.0
+..\mathon
+..etc.
+.\glue 10.0
+.\glue 10.0
+.\glue(\parskip) 0.0 plus 1.0
+.etc.
+
+ [6]
+[7]
+Overfull \hbox (6.52145pt too wide) in paragraph at lines 317--321
+[]\tenrm The Lyman-$\teni $ \tenrm line sim-u-la-tion can use N. F. Al-lard's 
+ex-per-i-men-tal val-ues of $\teni F\tenrm (\teni ^^U; T\tenrm )$, |
+
+\hbox(7.5+2.5)x361.34999
+.\hbox(0.0+0.0)x0.0
+.\tenrm T
+.\tenrm h
+.\tenrm e
+.\glue(\spaceskip) 3.33298
+.etc.
+
+Section 21 ends at page 21.8 [8]) (./wup99.tex (./wupstuff.tex)
+\footline=\toks35
+
+Overfull \hbox (81.6585pt too wide) in paragraph at lines 2--6
+[]\tenrm 5                       []  |
+
+\hbox(6.44444+0.0)x361.34999
+.\hbox(0.0+0.0)x0.0
+.\tenrm 5
+.\glue(\spaceskip) 3.33298
+.\glue(\spaceskip) 3.33298
+.\glue(\spaceskip) 3.33298
+.etc.
+
+
+Overfull \hbox (0.23044pt too wide) in paragraph at lines 13--25
+\tenrm ground: when we first be-gan work on PAN-DORA, we en-vi-sioned a `Dial-a
+n-Atom' |
+
+\hbox(6.94444+1.94444)x361.34999
+.\tenrm g
+.\tenrm r
+.\tenrm o
+.\tenrm u
+.\tenrm n
+.etc.
+
+
+Overfull \hbox (0.59203pt too wide) in paragraph at lines 13--25
+\tenrm func-tion cal-cu-la-tion, and the sta-tis-ti-cal equi-lib-rium cal-cu-la
+-tions re-quired for them, |
+
+\hbox(6.94444+1.94444)x361.34999
+.\tenrm f
+.\tenrm u
+.\tenrm n
+.\tenrm c
+.\discretionary
+..\tenrm -
+.etc.
+
+[1] [2]
+Underfull \hbox (badness 1264) in paragraph at lines 94--99
+\tenrm SILPRNT on. Note the in-put pa-ram-e-ters \tenbf POPION\tenrm , \tenbf P
+OPXLM\tenrm , and  
+
+\hbox(6.94444+1.94444)x361.34999, glue set 2.33153
+.\tenrm S
+.\tenrm I
+.\tenrm L
+.\tenrm P
+.\tenrm R
+.etc.
+
+
+Overfull \hbox (0.64618pt too wide) in paragraph at lines 114--120
+\tenrm com-puted. In any run with the op-tion DOION off, all those things, but 
+only those |
+
+\hbox(6.94444+1.94444)x361.34999
+.\tenrm c
+.\tenrm o
+.\tenrm m
+.\discretionary
+..\tenrm -
+.\tenrm p
+.etc.
+
+
+Underfull \hbox (badness 5548) in paragraph at lines 121--129
+\tenrm out-put has been in-spected and found sat-is-fac-tory, the state-ment  
+
+\hbox(6.94444+1.94444)x361.34999, glue set 3.81624
+.\tenrm o
+.\tenrm u
+.\tenrm t
+.\discretionary
+..\tenrm -
+.\tenrm p
+.etc.
+
+[3]
+Underfull \hbox (badness 1430) in paragraph at lines 165--186
+[]\tenrm Group-2, atom model, data com-prise the state-ments: $[]$, \tenbf NTE\
+tenrm , $[]$,  
+
+\hbox(6.94444+1.9999)x361.34999, glue set 2.42946
+.\hbox(0.0+0.0)x0.0
+.\tenrm G
+.\tenrm r
+.\tenrm o
+.\tenrm u
+.etc.
+
+
+Overfull \hbox (6.6606pt too wide) in paragraph at lines 187--193
+\tenrm ues ap-pear-ing in \tentt .dat\tenrm . The \tenbf TRN \tenrm state-ments
+ ap-pear be-cause the op-tion USETRIN |
+
+\hbox(6.94444+1.94444)x361.34999
+.\tenrm u
+.\tenrm e
+.\tenrm s
+.\glue(\spaceskip) 3.33298
+.\tenrm a
+.etc.
+
+
+Overfull \hbox (6.17403pt too wide) in paragraph at lines 187--193
+\tenrm is on. The \tenbf POPUP \tenrm switch is on, for the pur-pose de-scribed
+ ear-lier. \tenbf RUN-TOPOP |
+
+\hbox(6.94444+1.94444)x361.34999
+.\tenrm i
+.\tenrm s
+.\glue(\spaceskip) 3.33298
+.\tenrm o
+.\tenrm n
+.etc.
+
+[4]
+Overfull \hbox (24.95096pt too wide) in paragraph at lines 206--210
+[]\tenrm The main out-put file (`print-out' file) from PAN-DORA is the file \te
+ntt .aaa\tenrm ; here, \tentt demo1.aaa\tenrm . |
+
+\hbox(7.5+2.5)x361.34999
+.\hbox(0.0+0.0)x0.0
+.\tenrm T
+.\tenrm h
+.\tenrm e
+.\glue(\spaceskip) 3.33298
+.etc.
+
+[5]
+Overfull \hbox (3.56259pt too wide) in paragraph at lines 253--263
+\tenrm or ion model; \tentt .mod \tenrm con-tains the data spec-i-fy-ing the ph
+ys-i-cal pa-ram-e-ters of a model |
+
+\hbox(6.94444+1.94444)x361.34999
+.\tenrm o
+.\tenrm r
+.\glue(\spaceskip) 3.33298
+.\tenrm i
+.\tenrm o
+.etc.
+
+[6]
+Underfull \hbox (badness 2662) in paragraph at lines 321--331
+\tenrm back to this \tentt .mod \tenrm file. To alert PAN-DORA to the ex-is-ten
+ce of these  
+
+\hbox(6.94444+0.0)x361.34999, glue set 2.98714
+.\tenrm b
+.\tenrm a
+.\tenrm c
+.\kern-0.27779
+.\tenrm k
+.etc.
+
+[7] [8]
+Overfull \hbox (24.64653pt too wide) in paragraph at lines 422--427
+\tenrm strain on a `from scratch' cal-cu-la-tion. One might in-stead be-gin wit
+h, say, \tenbf GMMA$[] \tenrm = |
+
+\hbox(8.14003+1.94444)x361.34999
+.\tenrm s
+.\tenrm t
+.\tenrm r
+.\tenrm a
+.\tenrm i
+.etc.
+
+[9]
+Underfull \hbox (badness 10000) in paragraph at lines 448--462
+\tenrm be-cause PRD-PRNT and PRD-COPR are both off, and only  
+
+\hbox(6.94444+1.94444)x361.34999, glue set 4.89679
+.\tenrm b
+.\kern0.27779
+.\tenrm e
+.\discretionary
+..\tenrm -
+.\tenrm c
+.etc.
+
+[10] Section 99 ends at page 99.11 [11]) )</usr/share/texmf/fonts/type1/bluesky
+/cm/cmbx10.pfb></usr/share/texmf/fonts/type1/bluesky/cm/cmbx7.pfb></usr/share/t
+exmf/fonts/type1/bluesky/cm/cmex10.pfb></usr/share/texmf/fonts/type1/bluesky/cm
+/cmmi10.pfb></usr/share/texmf/fonts/type1/bluesky/cm/cmmi5.pfb></usr/share/texm
+f/fonts/type1/bluesky/cm/cmmi7.pfb></usr/share/texmf/fonts/type1/bluesky/cm/cmr
+10.pfb></usr/share/texmf/fonts/type1/bluesky/cm/cmr5.pfb></usr/share/texmf/font
+s/type1/bluesky/cm/cmr7.pfb></usr/share/texmf/fonts/type1/bluesky/cm/cmsy10.pfb
+></usr/share/texmf/fonts/type1/bluesky/cm/cmsy7.pfb></usr/share/texmf/fonts/typ
+e1/bluesky/cm/cmti10.pfb></usr/share/texmf/fonts/type1/bluesky/cm/cmtt10.pfb>
+Output written on wup.pdf (368 pages, 723887 bytes).
+PDF statistics:
+ 1234 PDF objects out of 1440 (max. 8388607)
+ 0 named destinations out of 1000 (max. 131072)
+ 1 words of extra memory for PDF output out of 10000 (max. 10000000)
+

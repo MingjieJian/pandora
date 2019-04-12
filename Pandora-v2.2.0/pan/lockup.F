@@ -1,0 +1,118 @@
+      subroutine LOCKUP
+     $(AR,IS,IE,N,NO,TIT)
+C
+C     Rudolf Loeser, 1980 Mar 10
+C     Revised RL/SGK Apr  9 2014 
+C---- Prints an array of the form (N,NMT), for MONG.
+C     (This is version 2 of LOCKUP.)
+C     !DASH
+      save
+C     !DASH
+      real*8 A, AR, ARLIM, ZERO
+      integer I, IE, IS, J, K, N, NO, LL
+      character BLANK*1, MINUS*1, TIT*(*), TITLE*21, VAL*10, VLIM*10
+      logical ALLZERO
+C     !COM
+C---- ELEMENT     as of 1998 Aug 17
+      integer     NELX
+      parameter   (NELX=50)
+C     (Remember to recompile all users when changing NELX)
+      real*8      ELABD,ELCHI,ELLU1,ELLU2,ELABL,ELDEF
+      integer     LATNO,LDEFR,NMT,NMTMAX
+      logical     LATEM
+      character   ELSYM*3, ELSUB*3
+      dimension   ELSYM(NELX),ELSUB(NELX),ELABD(NELX),ELCHI(NELX),
+     $            ELLU1(NELX),ELLU2(NELX),ELABL(NELX),ELDEF(NELX),
+     $            LATNO(NELX),LDEFR(NELX),LATEM(NELX)
+C
+      common      /ELEMNT0/ NMT,NMTMAX
+      common      /ELEMNT1/ ELSYM,ELSUB
+      common      /ELEMNT2/ ELABD,ELCHI,ELLU1,ELLU2,ELABL,ELDEF
+      common      /ELEMNT3/ LATNO,LDEFR
+      common      /ELEMNT4/ LATEM
+C
+C     Element data tables:
+C             ELSYM - element symbol;
+C             ELSUB - (Scratch storage for I.D. symbols);
+C             ELABD - abundance (w.r.t. Hydrogen);
+C             ELCHI - Chi, i.e. ionization potential;
+C             ELLU1 - U-I partition function;
+C             ELLU2 - U-II partition function;
+C             ELABL - logarithmic abundance;
+C             ELDEF - defaults values of logarithmic abundance;
+C             LATNO - atomic number; and
+C             LDEFR - default values sources codes.
+C             LATEM - "metal" designator
+C     .
+C---- SYMBS       as of 1999 Feb 09
+      character   SYMBS*1, ALPHS*1, NUMBS*1
+      dimension   SYMBS(52),ALPHS(26),NUMBS(10)
+      equivalence (SYMBS(1),ALPHS(1)),(SYMBS(27),NUMBS(1))
+      common      /SYMBS/ SYMBS
+C     Character literals.
+      equivalence (SYMBS(43),BLANK )
+      equivalence (SYMBS(40),MINUS )
+C     !EJECT
+C---- DLIT        as of 1999 Jan 29
+      real*8      DLIT, ORD
+      dimension   DLIT(19), ORD(11)
+      equivalence (DLIT(1), ORD(1))
+      common      /DLIT/ DLIT
+C     Floating point literals.
+      equivalence (DLIT( 1),ZERO  )
+C     !DASH
+      external  LINER, NAUGHTD, HI, BYE
+      intrinsic abs
+C
+C               AR(N,NMT)
+      dimension AR(N,*)
+C
+      dimension VAL(10)
+C
+      data VLIM,ARLIM  /' 99.999999', 99.999999D0/
+C
+      call HI ('LOCKUP')
+C     !BEG
+      if((NO.gt.0).and.(NMT.gt.0)) then
+        LL = IE-IS+1
+        call LINER (1,NO)
+        TITLE = TIT
+C
+        do 103 J = 1,NMT
+          if(LATEM(J)) then
+            call NAUGHTD(AR(IS,J), 1, LL, ALLZERO)
+#ifdef DEBUG
+            write (NO, 9888) IS, IE, LL, NMT, J, ALLZERO, 
+     $           (AR(K,J), K=IS,IE)
+ 9888       format(' ', 5I6, 2X, L1, 2X, 1P10E9.1)
+#endif
+            if(.NOT.ALLZERO) then 
+C
+              K = 0
+              do 101 I = IS,IE
+                A = AR(I,J)
+                K = K+1
+                if(abs(A).gt.ARLIM) then
+                  VAL(K) = VLIM
+                  if(A.lt.ZERO) then
+                    VAL(K)(1:1) = MINUS
+                  end if
+                else
+                  write (VAL(K),100) A
+ 100              format(F10.6)
+                end if
+ 101          continue
+C     
+              write (NO,102) TITLE,ELSYM(J),(VAL(I),I=1,K)
+ 102          format(' ',A21,3X,A3,10A10)
+              TITLE = BLANK
+            end if
+C     
+          end if
+ 103    continue
+      end if
+C     !END
+      call BYE ('LOCKUP')
+C
+      return
+      end

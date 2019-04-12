@@ -1,0 +1,54 @@
+% Basic input routine for WUP files.
+% Adapted to DEC Alpha under DEC UNix, 1996 Jun 24
+% start.tex read on advice of G Nassiopoulos, 03/04/97
+% and eliminated again, with his agreement, 2002 Feb 27
+% \input start.tex
+%
+\def\tex{\TeX}
+\def\boxit#1{\vbox{\hrule height .8pt\hbox{\vrule width .8pt\hskip 3pt
+             \vbox{\vskip 3pt #1 \vskip 3pt}\hskip 3pt\vrule width .8pt}\hrule height .8pt}}
+%      \boxit   builds a visible box around its argument.
+%
+\def\bigdots{\hskip 0.15em \vrule width0.09em height0.09em depth0em 
+           \hskip 0.12em \vrule width0.09em height0.09em depth0em \hskip 0.12em
+           \vrule width0.09em height0.09em depth0em}
+%      \bigdots  is useful to generating ellipsis for use with the forty-point
+%                and inch fonts.
+%
+% To catch overflow when using the centerline command
+\def\centerline#1{\hbox to \hsize{\hfill#1\hfill}}
+%                                   hss instead of hfill allows overflow
+%
+\hsize 6.0 true in
+\vsize 8.5 true in
+\hoffset=0.125 true in
+\voffset=0.0 true in
+\raggedright
+%
+% ----------------------------------------------
+%   other WUP stuff
+% ----------------------------------------------
+%
+\def\apj{{\it Ap. J.},\ }
+\def\apjs{{\it Ap. J. Suppl.},\ }
+\def\apjl{{\it Ap. J. Letters},\ }
+\def\blankline{\par\vskip 10 pt}
+\def\space{\par\vskip 7.5 pt}
+\def\spice{\par\vskip 5 pt}
+\def\top{\centerline{$\phantom{.}$}}
+\def\bull{\par \noindent $\bullet \;$}
+\def\flpt{floating point}
+\def\intg{integer}
+\def\alfa{alphanumeric}
+\def\Jbar{\hbox{$J$\hskip-5pt\raise8pt
+    \vbox{\hrule width5pt height.4pt}}}
+\def\x{\times}
+\def\ea{{\it et\thinspace al.}\ }
+\def\eg{{\it e.g.}\ }
+\def\ie{{\it i.e.,}\ }
+\def\np{\par \noindent}
+\def\ej{\par \vfill \vfill \vfill \eject}
+%
+%
+% The end.
+%

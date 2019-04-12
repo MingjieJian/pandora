@@ -1,0 +1,171 @@
+%\magnification=1200
+%\input wupstuff.tex
+\newtoks\footline \footline={\hss\tenrm 3.\folio\hss}
+\pageno=1
+\top
+\vskip 1.5 true in
+\centerline{Section 3: {\bf Input Files Set-Up}}
+\blankline
+\blankline
+\centerline{\bf ***}
+\blankline
+\blankline
+Years ago I thought it would be ideal if input statements could appear in
+PANDORA's input files in any order whatever; it seemed to me that this
+was almost required in the interest of consistency with self-identified
+free-field input. It became clear, however, that in order to do this
+I would have to use a two-pass input reading procedure instead of the
+current single-pass one; since, for programming purposes, certain parameters
+must already have been specified before others can be accepted. I have not
+yet been persuaded that the extra complication of a two-pass procedure
+is worth it. Thus input statements may not appear in whatever order a
+user might like best, but must conform to the structure described here.
+(Don't overlook the small number of rather detailed special requirements
+noted below.)
+\blankline
+The set of input statements for a run is divided into nine parts, A -- I.
+Their contents are sketched below. All these nine parts must appear,
+and in that order. The input statements in parts B, D, F and H may appear
+in any order (except as noted below). However any of
+B, D, F and/or H may be empty. Further information about input
+reading and processing appears in Section 4. 
+\blankline
+The following subsections describe: 1) overall input file structure;
+2) special requirements (concerning maximum array sizes, and specific
+statement order); and 3) input error handling.
+\ej
+\centerline{1. \underbar{Input File Structure}}
+\blankline
+\blankline
+\underbar{Part A} must contain: {\bf HEADING}.
+\blankline
+\underbar{Part B} contains mainly table lengths and option settings,
+as well as other control parameters.
+\blankline
+\underbar{Part C} must contain: {\bf GO}.
+\blankline
+\underbar{Part D} contains all the input parameters for the basic
+calculations, except that populations data appear in part H.
+\blankline
+\underbar{Part E} must contain: {\bf GO}.
+\blankline
+\underbar{Part F} contains input parameters for the ``spectrum''
+calculations.
+\blankline
+\underbar{Part G} must contain: {\bf GO}.
+\blankline
+\underbar{Part H} contains populations data and related parameters.
+\blankline
+\underbar{Part I} must contain: {\bf GO}.
+\blankline
+\blankline
+\blankline
+\blankline
+\blankline
+\blankline
+\blankline
+The {\bf HEADING} is a single comment line, which will be printed on the
+`banner' pages at the start of the printed output, and will be inserted
+at various \break places in the restart file(s) (see Section 8).
+\blankline
+The {\bf GO} lines must appear as shown; they indicate the ends of parts
+B, D, F and H, respectively. The input statement after
+{\bf GO} must begin on a new line.
+\blankline
+The complete list of all input parameters is given in Section 5. That
+list specifies which of the parts B, D, F, or H each parameter may
+appear in. The names of input parameters may be given in UPPER-, 
+lower-, or MixEd-case. The complete set of input statements need not
+occur in just one file, but may be distributed over several files
+that are coordinated by {\bf USE} statements (see Section 5, note 44).
+\ej
+\centerline{2. \underbar{Special Requirements}}
+\blankline
+\blankline
+\centerline{In Part B:}
+\bull {\bf NT} must occur before {\bf INPAIR};
+\bull {\bf NSL} must be less than 51;
+\bull {\bf NSL} must occur before {\bf MR} and/or {\bf LR};
+\bull {\bf NL} must be less than {\bf NSL};
+\bull {\bf NMT} must be less than 51;
+\bull {\bf NCL} must be less than 100;
+\bull {\bf NAB} must be less than 100;
+\bull {\bf NAB} must occur before {\bf BANDL}, {\bf BANDU}, or {\bf BANDE};
+\bull {\bf NVX} must be less than 100.
+\blankline
+\blankline
+\centerline{In Part D:}
+\bull {\bf LDL}$_{i,j}^{u,\ell}$ must not exceed {\bf LDLMAX};
+\bull {\bf LDL}$_{i,j}^{u,\ell}$ must occur before 
+{\bf DDL}$_{i,j}^{u,\ell}$, {\bf CDL}$_{i,j}^{u,\ell}$, and the
+broadening halfwidths for transition $(u,\ell)$;
+\bull {\bf KST}$^{u,\ell}$ must not exceed {\bf KSTMAX};
+\bull {\bf KST}$^{u,\ell}$ must occur before {\bf XISYMT}$^{u,\ell}$;
+\bull {\bf KBT}$^{u,\ell}$ must not exceed {\bf KBTMAX};
+\bull {\bf KBT}$^{u,\ell}$ must occur before {\bf XIBLUT}$^{u,\ell}$;
+\bull {\bf KRT}$^{u,\ell}$ must not exceed {\bf KRTMAX};
+\bull {\bf KRT}$^{u,\ell}$ must occur before {\bf XIREDT}$^{u,\ell}$.
+\blankline
+\blankline
+\centerline{Also:}
+\bull the total number of Composite Line Opacity wavelengths, from all
+bands, must be less than 20001 (see also Section 9);
+\bull {\bf MAUX} must be less than 51 (see also Section 13).
+\ej
+\centerline{3. \underbar{Input Errors}}
+\blankline
+\blankline
+Several types of errors commonly occur: violations of input language
+syntax; violations of prescribed structure; typos in field names and
+control character names; logical inconsistencies ({\it i.e.}, 
+specifying undefined transitions, giving more array members than
+the stated size); diddly errors related to comments or field
+separators (too few or too many blanks).
+
+It can be frustratingly time-consuming to correct all errors in a 
+newly-typed input file. Many extensive, detailed error diagnostics
+have been provided to help with this. Most input error notifications
+provided by PANDORA display the image of the current input line, and
+then a single asterisk on the printout line immediately below that 
+input line. This asterisk is positioned beneath the terminating blank
+(break character) of the input field which triggered the error
+notification.
+\blankline
+When option DELABORT is on, PANDORA attempts to ignore an erroneous
+input statement (by attempting to find its closing ``)'') in order
+to read all the input (perhaps encountering additonal errors and
+attempting to ignore them as well) before stopping. This does not
+always work well, but when it does work, it saves time.
+
+(Option DELABORT is on by default; turning it off
+[{\tt OMIT ( DELABORT ) }]
+will affect the reading of the remaining input statements only.)
+\blankline
+Note the input parameter {\bf JSTIN} (also, equivalently, available
+as an option) which stops the run after all input has been
+read and most of the preprocessing leading up to the first iteration
+has been done. Such an
+``input-only'' run typically takes little time and provides an
+efficient means of checking the input for a run starting from
+scratch.
+\blankline
+Since most PANDORA runs are restarts of preceding runs, the input
+files for a given run are usually obtained through only minor
+incremental changes to the files of preceding runs. Thus, in
+practice, only few input errors tend to occur once a new series of
+runs (restarts) has been launched successfully.
+\blankline
+%\blankline
+%\vfill \vfill
+%\vfill \vfill
+%\vfill \vfill
+%\vfill \vfill
+%\vfill \vfill
+%\vfill \vfill
+%\vfill \vfill
+%\vfill 
+\vfill
+\noindent (Section 3 -- last revised: 2007 Apr 11) \par
+\message{Section 3 ends at page 3.\the\pageno}
+\ej
+%\end

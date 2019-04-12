@@ -1,0 +1,190 @@
+%\magnification=1200
+%\input wupstuff.tex
+\newtoks\footline \footline={\hss\tenrm 18.\folio\hss}
+%
+\pageno=1
+%
+\top
+\vskip 1.5 true in
+\centerline{Section 18: {\bf Frequency Tables}}
+\blankline
+\blankline
+\centerline{\bf ***}
+\blankline
+\blankline
+Tables of frequency values, $\xi$ of length $k$,
+are needed ---1) for the calculations performed for
+every radiative transition $(u,\ell)$ as follows:
+a) integration over frequency for the Line Source Function,
+b) integration over frequency for PRD terms (if needed),
+c) emergent line profile calculation;
+and ---2) to capture simulated lines in the ``background''
+(continuum). A frequency table can span either a 
+half-profile (which then implies a symmetric whole profile), or a
+whole profile (which need not be symmetric).
+
+Internally, PANDORA establishes separate complete sets of preliminary frequency tables
+for every transition $(u,\ell)$. Such a complete set consists of:
+a symmetric half-profile table, a blue-side half-profile table,
+and a red-side half-profile table. These tables will be set equal
+to {\it unique} transition-specific half-profile input tables if
+such were provided, otherwise to general-purpose {\it common} half-profile input tables.
+
+Full-profile frequency tables are assembled from half-profile tables. However, for every
+transition $(u,\ell)$ that is a blended line, a composite full-profile frequency
+table is specially constructed by combining the full-profile tables of each
+of the component lines. Full-profile tables are augmented automatically
+to account properly for ``background lines.''
+\blankline
+The remainder of this section describes the input, the defaults provided
+when no inputs are specified, how the full-profile table and the composite
+full-profile table (if needed) are constructed, and which tables are selected
+for the source function and emergent profile calculations.
+\blankline
+\vfill \vfill
+\vfill \vfill
+\vfill \vfill
+\vfill \vfill
+\centerline{\bf Important Note}
+\blankline
+The lengths of the various input and constructed frequency tables should
+not exceed the limits explained below for {\bf KMMAX}, and also in
+Section 5, Note 47.
+\ej
+\centerline{\bf Input}
+\blankline
+For historical reasons, {\it only half-profile frequency tables may be specified in the input.}
+All these tables must be specified with their values in ascending order, and each table's
+first value must = 0.
+\blankline
+One may specify {\it unique} half-profile frequency tables for some or all transitions
+$(u,\ell)$, and/or one may specify {\it common} half-profile frequency tables to be
+used for all those transitions for which no unique sets are specified.
+\blankline
+\noindent 1) {\it Common} half-profile frequency tables:
+
+The basic {\it common} half-profile frequency table is {\bf XISYM} of length {\bf KS}.
+(The defaults are given is Section 5, above.)
+A {\it common} blue-side half-profile table, {\bf XIBLU} of length {\bf KB},
+and a {\it common} red-side half-profile table, {\bf XIRED} of length {\bf KR},
+may also be specified. After PANDORA has read Part D of the input,
+defaults will be provided for unspecified tables: {\bf XIBLU} will be set
+equal to {\bf XISYM} if no values were input, and {\bf XIRED} will be set
+equal to {\bf XISYM} similarly.
+\blankline
+\noindent 2) {\it Unique} half-profile frequency tables:
+
+[The transition-superscripts $(u,\ell)$ on names ending in `T'
+are omitted in the next paragraph.]
+
+The following half-profile frequency tables can be input for transition $(u,\ell)$:
+symmetric {\bf XISYMT} of length {\bf KST},
+blue-side {\bf XIBLUT} of length {\bf KBT}, and
+red-side {\bf XIREDT} of length {\bf KRT}. After PANDORA has read Part D
+of the input, defaults will be provided for unspecified tables:
+The {\it unique} {\bf XISYMT} will be set equal to {\it common}
+{\bf XISYM} if no values were input; thereafter, {\bf XIBLUT} will
+be set equal to {\bf XISYMT} if no values were input, and {\bf XIREDT}
+will be set equal to {\bf XISYMT} similarly.
+
+{\it Note} also the relevant input parameters {\bf KSTMAX},
+{\bf KBTMAX}, and \break {\bf KRTMAX}, which must be specified.
+\blankline
+\noindent 3) {\it Full-profile} frequency table:
+
+[The transition-superscripts $(u,\ell)$ on names ending in `T'
+are omitted in the next paragraph.]
+
+After {\bf XIBLUT} and {\bf XIREDT} for transition $(u,\ell)$ have been
+established, a whole-profile frequency table XIFULT of length KFT
+is constructed by concatenating the values of {\bf XIREDT} and the negatives
+of the values of {\bf XIBLUT}:
+${\rm XIFULT}_1 = - {\bf XIBLU}_{\bf KBT}$, ${\rm XIFULT}_{\bf KBT} = 0.0$,
+${\rm XIFULT}_{\rm KFT} = {\bf XIREDT}_{\bf KRT}$,
+where ${\rm KFT} = {\bf KBT} + {\bf KRT} - 1$.
+\ej
+% \blankline
+\noindent 4) {\it Blended} line transitions:
+
+A special composite full-profile frequency table XICMPT$^{u,\ell}$
+of length KCT$^{u,\ell}$ is constructed by merging {\bf LDL}$^{u,\ell}$
+XIFULT$^{u,\ell}$ tables, each offset appropriately, with redundant
+points eliminated as much as possible.
+
+{\it Note:} For storage allocation purposes, PANDORA estimates the value
+of the largest KCT$^{u,\ell}$ {\it before} any have been computed.
+This estimate may be much too large (in cases when many
+redundant points can be eliminated). Yet a run could be stopped if this
+estimate is larger than can be accommodated. The input parameter
+{\bf KMMAX} has been provided for such a case: if ${\bf KMMAX} > 0$ then,
+if it is larger than the estimate, {\bf KMMAX} will be used for
+storage allocation purposes instead of an internal estimate;
+if ${\bf KMMAX} < 0$ then, if $-{\bf KMMAX}$ is less than the estimate,
+$-{\bf KMMAX}$ will be used for storage allocation purposes instead.
+A run will still be stopped, however, if ultimately any
+${\rm KCT}^{u,\ell} > |{\bf KMMAX}|$.
+\blankline
+\blankline
+\centerline{\bf Uses}
+\blankline
+After all these preliminaries, PANDORA is ready to set up the frequency table 
+$\xi$ for each transition. The choice of table depends on whether the range of the
+Line Source Function frequency integration extends over the whole profile,
+or only over half a profile:
+\spice
+1) If option EXPAND is on, then full-profile integrations are done for all
+transitions.
+\spice
+2) If ${\bf NVX} > 0$, then full-profile integrations are done for all
+transitions.
+\spice
+3) If ${\bf LDL}^{u,\ell} > 1$ (\ie if this is a blended line transition), then
+full-profile integration is used for transition $(u,\ell)$.
+\spice
+4) If ${\bf LSFFDB}^{u,\ell} = 1$ (\ie if frequency-dependent background is required
+for this transition), then full-profile integration is used for transition
+$(u,\ell)$.  {\it Note} that PANDORA sets ${\bf LSFFDB}^{u,\ell} = 1$
+automatically for every PRD transition.
+\spice
+5) In {\bf all other} cases, half-profile integrations are used.
+\ej
+% \blankline
+\noindent {\bf Then}, for every radiative transition $(u,\ell)$:
+\spice
+If half-profile integration is used for transition $(u,\ell)$, then
+$k^{u,\ell}$ is set equal to ${\bf KST}^{u,\ell}$ and $\xi^{u,\ell}$
+is set equal to ${\bf XISYMT}^{u,\ell}$.
+\spice
+If full-profile integration is used for transition $(u,\ell)$ and this
+is a blended line, then $k^{u,\ell}$ is set equal to ${\rm KCT}^{u,\ell}$
+and $\xi^{u,\ell}$ is set equal to ${\rm XICMPT}^{u,\ell}$.
+\spice
+If full-profile integration is used for transition $(u,\ell)$ and this
+is not a blended line, then $k^{u,\ell}$ is set equal to ${\rm KFT}^{u,\ell}$
+and $\xi^{u,\ell}$ is set equal to ${\rm XIFULT}^{u,\ell}$.
+\blankline
+\noindent {\bf Moreover}, if a full-profile $\xi$-table has been selected:
+\spice
+PANDORA checks whether the centers of any simulated ``background lines''
+occur in the wavelength band corresponding to the range $\xi_1$ to $\xi_k$.
+If yes, then the $\xi$-table is augmented with enough additional values to resolve
+such lines properly. The Hydrogen Lyman lines are handled as a special
+case. All other background lines cause all or part of a set of frequency
+values---obtained by constructing a full-profile frequency table from
+the input table {\bf BXI} of length {\bf KBX}---to be inserted in the
+$\xi$-table.
+({\it Note}: {\bf BXI} is also used for inserting ``background
+line wavelengths'' in the standard Rates Integrations wavelengths table
+constructed and used when option USEWTAB is on.)
+%\vfill \vfill
+%\vfill \vfill
+%\vfill \vfill
+%\vfill \vfill
+%\vfill \vfill
+%\vfill \vfill
+%\vfill 
+\vfill
+\noindent (Section 18 -- last revised: 2004 Jul 07) %\par
+\message{Section 18 ends at page 18.\the\pageno}
+\ej
+%\end

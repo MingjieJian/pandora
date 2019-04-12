@@ -1,0 +1,72 @@
+;                                > SUN        MODEL SP     15 L H       ITER 84-94   2014-Mar-24                 
+;1PSN154735  POST (5/1)            OVER=  0     SUB=  0     HSL=  0     LYM=  0                                                  
+; $$$$$$      $$$      $$$$ $  $$$$$$$$            $ $$$$$$$$          $ $$$  $                                                  
+;  $$  $$    $$ $$    $$  $$$  $  $$  $           $$ $$     $         $$  $$  $$                                                 
+;  $$   $$  $$   $$  $$    $$  $  $$  $          $$  $$              $$   $$   $$                                                
+;  $$   $$ $$     $$ $$     $     $$            $$   $$             $$    $$    $$                                               
+;  $$  $$  $$   $ $$  $$          $$            $$   $$$$$$        $$     $$    $$                                               
+;  $$$$$   $$  $  $$   $$$$$      $$            $$        $$      $$      $$    $$                                               
+;  $$      $$ $   $$       $$     $$            $$         $$    $$       $$    $$                                               
+;  $$      $$     $$ $      $$    $$            $$         $$   $$        $$    $$                                               
+;  $$       $$   $$  $$     $$    $$             $$  $$    $$  $$         $$   $$                                                
+;  $$        $$ $$   $$$   $$     $$              $$  $$  $$  $$          $$  $$                                                 
+; $$$$        $$$    $ $$$$$     $$$$              $   $$$$   $          $$$$ $                                                  
+; To get printout of frequency-dependent line source function SLF(MS,NS), turn option SLFPRNT on.
+; The summary graph of all SLFs always appears; the subsequent detail graphs depend on option SLFGRAF.
+;
+; Plot of log(SLF) vs. Z-index    for all DL; K = 59.
+;             SLF is the frequency-dependent line source function, at every wavelength across the profile.
+;           1.                                                                                                                91.
+;       -8. #####################################################################################################################
+;           #                                                                                                                   #
+;           #          GGGGGGGGGGGGGGGGGGGG                                                                                     #
+;           # GGGGGGGGG                    GG                                                                                   #
+;           GG                               G                                                                                  #
+;           #                                G                                                                                  G
+;           #                                G                                                                                GG#
+;           #                                 G                                                                              G  #
+;           #                                 G               G                                                              G  #
+;           #                                  GG             G                                                             G   #
+;           #                                    G           G G                                                          GG    #
+;           #                                     G          G GGGGGGGG         GG                                        G     #
+;           #                                      G        G      AWWBG   GGGGGECG                                      G      #
+;           #                                      G        G          G GGR      AGG                                    G      #
+;           #                                       GG     G           BG          AG                                   G       #
+;           #                                         GGGG G                         G                                  G       #
+;           #                                             G                          G                                 G        #
+;           #                                                                        G                                G         #
+;           #                                                                        G                                G         #
+;           #                                                                        ZG                              G          #
+;           #                                                                         G                              G          #
+;           #                                                                         G                             G           #
+;           #                                                                         G                             G           #
+;           #                                                                         ZG                            G           #
+;           #                                                                          G                           G            #
+;           #                                                                          FG                          G            #
+;           #                                                                           G                         G             #
+;           #                                                                           G                         G             #
+;           #                                                                            G                       G              #
+;           #                                                                            G                       G              #
+;           #                                                                             G                     G               #
+;           #                                                                             G                     G               #
+;           #                                                                              G                   GB               #
+;           #                                                                              G                  GC                #
+;           #                                                                               G                 G                 #
+;           #                                                                               BG               G                  #
+;           #                                                                                G               G                  #
+;           #                                                                                BG             G                   #
+;           #                                                                                 G            GD                   #
+;           #                                                                                 G           GE                    #
+;           #                                                                                 G         GGE                     #
+;           #                                                                                 DG        GB                      #
+;           #                                                                                  G       G                        #
+;           #                                                                                  G       G                        #
+;           #                                                                                  DG     G                         #
+;           #                                                                                   G   GGA                         #
+;           #                                                                                    GG GA                          #
+;           #                                                                                     CGI                           #
+;           #                                                                                      G                            #
+;           #                                                                                                                   #
+;      -25. #####################################################################################################################
+; Post-Processing for transition  5/ 1 took     0.010 sec.
+;1PSN154736  POST (5/2)            OVER=  0     SUB=  0     HSL=  0     LYM=  0                                                  

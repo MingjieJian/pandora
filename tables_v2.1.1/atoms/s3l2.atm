@@ -1,0 +1,46 @@
+> 
+>   S U L P H U R   I I I ,   2  L E V E L S
+>
+>   2005 Aug 16, EHA
+>
+NL     ( 2 ) >
+NLPAIR ( 1 -1  2 -1 ) >
+>
+NT     ( 1 ) >
+INPAIR ( 2 1 ) >
+>
+NTE ( 7 ) >
+LDLMAX ( 6 ) >
+>
+USE ( INPUT ) >
+> 
+>
+>   S U L P H U R   I I I ,   2  L E V E L S
+>
+ATOLAB ( S3L2 ) >
+NAME   ( SULPHUR3 ) >
+ELSYM  ( S )  IONSTAGE ( 3 ) >
+> 
+MASS ( 32.06 ) >
+>
+NUK ( 8.476692 ) >
+NU  ( 0. 2.518826 ) >
+>
+P   ( 8. 15. ) >
+LCH ( f 0 ) > 
+CP  ( 1.E-18 1.E-18 ) >
+> 
+napknt ( 9 ) > 
+apci ( 7.e-6 1.e-6 1.25e-5 3.35e-5 1.18e-4 3.09e-3 1.1e-2 > 
+       7.72e-3 1.93e-4 ) > 
+apei ( 1.07 1.55 2.71 3.78 7.18 11.2 15.9 18.5 22.3 ) > 
+>
+TER ( m 1.e+3 4. 6. 8. 10. 15. 20. 30. ) >
+>
+A 2 1   ( 1.52e+9 ) >
+LDL 2 1 ( 6 ) >
+DDL 2 1 ( 0. 3.85 4.23 10.8 11.54 11.93 ) >
+CDL 2 1 ( .112 .254 .083 .464 .082 .005 ) >
+CRD 2 1 ( f 6.5e-5 ) >
+>
+USE ( INPUT ) >

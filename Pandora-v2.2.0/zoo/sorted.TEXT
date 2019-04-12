@@ -1,0 +1,45 @@
+      subroutine SORTED
+     $(A,N,JUDGE,KSORT,KDIST)
+C     Rudolf Loeser, 1979 Apr 05
+C
+C     This is a dummy routine, serving merely as a vehicle for a
+C     general explanation of various versions of "SORTED."
+C
+C---- "SORTED" investigates and reports on the order of the values
+C     of the elements of the array "A", of length "N".
+C     "A" can be data of various types, which leads to various
+C     flavors of "SORTED"; see below.
+C
+C---- Comparisons of array elements are done by means of a
+C     user-supplied subroutine, "JUDGE," as follows:
+C
+C     call JUDGE(VEC,I,J,IFLG) must return -
+C
+C     IFLG .lT. 0 when VEC(i) .lt. VEC(j);
+C     IFLG .eq. 0 when VEC(i) .eq. VEC(j); and
+C     IFLG .gt. 0 when VEC(i) .gt. VEC(j).
+C
+C---- Upon return,
+C     "KSORT" = +1 means - A(i+1) .ge. A(i), 1 .le. i .le. (N-1),
+C                0 means - the elements of A are not sorted,
+C               -1 means - A(i+1) .le. A(i), 1 .le. i .le. (N-1).
+C
+C     Also, but only if KSORT .ne. 0,
+C     "KDIST" = 1 means - all elements of A are distinct,
+C               0 means - some elements of A are equal.
+C     (When KSORT=0, then KDIST is not set.)
+C
+C---- The following flavors of "SORTED" have been implemented:
+C
+C---- SORTDC (C,N,JUDGE,KSORT,KDIST) - C is type CHARACTER
+C
+C---- SORTDD (D,N,JUDGE,KSORT,KDIST) - D is type DOUBLE PRECISION
+C
+C---- SORTDI (I,N,JUDGE,KSORT,KDIST) - I is type INTEGER
+C
+C---- SORTDR (R,N,JUDGE,KSORT,KDIST) - R is type REAL
+C
+C----
+C     !beg
+C     !end
+      end

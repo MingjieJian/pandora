@@ -1,0 +1,116 @@
+      subroutine SCANNER
+     $(A,INC,N,DELTA,DIV,XCL,IMIN,IMAX,KLT,KEQ,KGT,KXCL)
+C     Rudolf Loeser, 1979 Apr 19
+C
+C     This is a dummy routine, serving merely as a vehicle for a
+C     general explanation of the various array-scanning routines.
+C
+C     (These routines are descendants of a set of routines first
+C     written for CDC 6400: "EXAMINE" (1971 Aug 11),
+C     "MINMAX" (1970 Oct 23), "NAUGHT" (1970 Oct 28), and
+C     "SELSCAN" (1973 Apr 03).)
+C
+C---- This routine examines the elements of the array "A", as
+C     follows: A(1+0*INC), A(1+1*INC), A(1+2*INC), etc.,
+C     for a total of "N" elements. All such elements which
+C     are exactly equal to "XCL" will not be processed
+C     further; (i.e. except for being encountered in the loop
+C     over N elements, they are excluded from further
+C     processing). Thus this routine is in effect
+C     concerned with the array "AS", having "M" elements,
+C     M .le. N, which is the subset of "A" obtained by
+C     deleting all those elements of "A" which .eq. "XCL".
+C
+C---- Upon return:
+C
+C     (IMIN-1) = index such that A(1+(IMIN-1)*INC) is the smallest
+C            element of "AS";
+C     (IMAX-1) = index such that A(1+(IMAX-1)*INC) is the largest
+C            element of "AS";
+C     KLT  = count of elements of "AS" .lt. "DIV";
+C     KEQ  = count of elements of "AS" .eq. "DIV";
+C     KGT  = count of elements of "AS" .gt. "DIV"; and
+C     KXCL = count of elements of "A"  .eq. "XCL".
+C
+C---- Comparisons are done by means of "COMP//X" routines,
+C     which require the additional argument "DELTA";
+C     refer to remarks in "COMPARE."
+C
+C---- The following subroutines form part of this set:
+C     !EJECT
+C   ..1) Basic subroutines:
+C
+C     subroutine SCAN//"X" (A,INC,N,DELTA,DIV,XCL,IMIN,IMAX,
+C                           KLT,KEQ,KGT,KXCL)
+C
+C       if "X" = R, then A,DELTA,DIV,XCL are type REAL;
+C                I, then A,DELTA,DIV,XCL are type INTEGER;
+C                D, then A,DELTA,DIV,XCL are type DOUBLE PRECISION;
+C                C, then A,DIV,XCL       are type CHARACTER,
+C                   and the argument "DELTA" must be omitted.
+C
+C   ..2) Extrema finders:
+C
+C     subroutine MINMAX//"X" (A,INC,N,IMIN,IMAX)
+C
+C       if "X" = R, then A is type REAL;
+C                I, then A is type INTEGER;
+C                D, then A is type DOUBLE PRECISION;
+C                C, then A is type CHARACTER.
+C
+C     subroutine MNMX//"X" (A,INC,N,XCL,IMIN,IMAX)
+C
+C       if "X" = R, then A,XCL are type REAL;
+C                I, then A,XCL are type INTEGER;
+C                D, then A,XCL are type DOUBLE PRECISION;
+C                C, then A,XCL are type CHARACTER.
+C     !EJECT
+C   ..3) Constant counters, (the value of FLAG = .true. if every
+C        element exactly equals XCL, = .false. if not):
+C
+C     subroutine KONST//"X" (A,INC,N,XCL,FLAG)
+C
+C       if "X" = R, then A,XCL are type REAL;
+C                I, then A,XCL are type INTEGER;
+C                D, then A,XCL are type DOUBLE PRECISION;
+C                C, then A,XCL are type CHARACTER.
+C
+C   ..4) Zero counters, (the value of FLAG =.true. if every
+C        element exactly equals 0, = .false. if not):
+C
+C     subroutine NAUGHT//"X" (A,INC,N,FLAG)
+C
+C       if "X" = R, then A is type REAL;
+C                I, then A is type INTEGER;
+C                D, then A is type DOUBLE PRECISION.
+C
+C   ..5) Value counters:
+C
+C     subroutine RANGE//"X" (A,INC,N,DELTA,DIV,KEQ)
+C
+C       if "X" = R, then A,DELTA,DIV are type REAL;
+C                I, then A,DELTA,DIV are type INTEGER;
+C                D, then A,DELTA,DIV are type DOUBLE PRECISION.
+C
+C   ..6) Greater_than_zero counters, (the value of LGT = the number
+C        elements .gt. 0):
+C
+C     subroutine PLUS//"X" (A,INC,N,LGT)
+C
+C       if "X" = R, then A is type REAL;
+C                I, then A is type INTEGER;
+C                D, then A is type DOUBLE PRECISION.
+C
+C   ..7) Less_than_zero counters, (the value of LLT = the number
+C        elements .lt. 0):
+C
+C     subroutine MINUS//"X" (A,INC,N,LLT)
+C
+C       if "X" = R, then A is type REAL;
+C                I, then A is type INTEGER;
+C                D, then A is type DOUBLE PRECISION.
+C
+C----
+C     !beg
+C     !end
+      end

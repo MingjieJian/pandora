@@ -1,0 +1,59 @@
+>
+>   O X Y G E N   V ,   5   L E V E L S
+>
+>   2004 Mar 02
+>   2006 Jan 23, nlpair, lch
+>   2006 Jun 7, level 1 WRAT added
+>               and CP1 changed from 0.78E-18 to 0 to get defaults
+>   2006 Jul 4, dielectronic recombination from Badnell et al.
+>
+NL     ( 5 ) >
+NLPAIR ( 1 0  2 -1  3 -1  4 -1  5 -1 ) >
+MR     ( 5 ) >
+>
+NT     ( 4 ) >
+INPAIR ( 2 1  3 2  4 2  5 1 )  >
+>
+NTE ( 4 ) >
+>
+USE ( INPUT ) >
+>
+> 
+>   O X Y G E N   V ,   5   L E V E L S
+> 
+>
+ATOLAB ( O5L5 ) >
+NAME   ( OXYGEN5 ) >
+ELSYM  ( O )  IONSTAGE ( 5 ) >
+>
+MASS ( 15.999 ) >
+PART ( 2. ) >
+>
+NU  ( 0. 4.760644 6.946851 8.631295 17.41273 ) >
+NUK ( 27.54064 ) >
+>
+P   ( 1. 3. 5. 1. 3. ) >
+LCH ( f 0 ) >
+CP  ( M 1.E-18 0. R 4 1. ) >
+>
+napknt ( 6 ) >
+apci   ( 2.389e-5 1.355e-4 5.885e-3 2.163e-3 6.341e-4 1.348e-2 ) >
+apei   ( 2.004 2.765 11.34 58. 163. 530. ) >
+>
+TER ( m 1000. 5. 10. 15. 30. ) >
+>
+WRAT 1 ( 100. 90. 80. 70. 60. ) >
+>
+A   2 1 ( 3.E+9 ) >
+CRD 2 1 ( 3.2E-5 ) >
+>
+A   3 2 ( 6.7E+8 ) >
+CRD 3 2 ( 3.3E-5 ) >
+>
+A   4 2 ( 2.1E+9 ) >
+CRD 4 2 ( 3.3E-5 ) >
+>
+A   5 1 ( 4.5E+10 ) >
+CRD 5 1 ( 3.5E-5 ) >
+>
+USE ( INPUT ) >

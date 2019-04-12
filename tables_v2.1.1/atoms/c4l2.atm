@@ -1,0 +1,64 @@
+> 
+>
+>   C A R B O N   I V ,   2   L E V E L S
+>
+>  made from c4l3, 2004 Jun 01
+>  nlpair, lch, 2006 Jan 23
+>  2006 Jun 9, CP1=0, from 0.66E-18, and RRCP1s=0 to use defaults
+>  2006 Jul 3, new dielectronic recombination coefficients, from Badnell et al.
+>
+NL     ( 2 ) >
+nlpair ( 1  0  2 -1 ) >
+MR     ( 9 1 ) >
+>
+NT     ( 1 )  >
+INPAIR ( 2 1 ) >
+>
+NTE    ( 12 ) >
+LDLMAX ( 2 ) >
+>
+USE ( INPUT ) >
+>
+>
+>   C A R B O N   I V ,   2   L E V E L S
+>
+>
+ATOLAB ( C4L2 ) >
+NAME   ( CARBON4 ) >
+>
+ELSYM    ( C ) >
+IONSTAGE ( 4 ) >
+>
+MASS ( 12. ) >
+>
+APARAD ( 7.5E-12 )  APETA ( .817 ) >
+NAPKNT ( 3 )  APCI ( 2.646e-3 1.762e-2 -7.843e-4 )  APEI ( 241.6 300.3 372.6 ) >
+>
+NU  ( 0. 1.93641 ) >
+NUK ( 15.59454 ) >
+>
+P   ( 2. 6. ) >
+lch ( f 0 ) >
+CP  ( M 1.E-18 0. .95 ) >
+>
+TER ( M 1.E4 .8 2. 4. 5.5 7. 8. 9. 10. 11. 12. 15. 20. ) >
+>
+CI 1 ( M 1.E-9 .37 .58 .82 .98 1.1 1.17 1.24 1.31 1.37 >
+       1.43 1.6 1.85 ) >
+WRAT 1 ( 177.3 165.7 158.8 120.9 100. 80.9 68.5 50. 35. ) >
+> RRCP 1 ( .85 .79 .724 .437 .309 .2 .14 .069 .029 ) >
+>
+CI 2 ( M 1.E-9 .6 .95 1.34 1.58 1.78 1.9 2. 2.12 2.22 >
+       2.33 2.59 3. )
+WRAT 2 ( 154.6 ) >
+RRCP 2 ( .343 ) >
+>
+A   2 1 ( 2.65E8 ) >
+CE  2 1 ( M 1.E-8 31.7 20. 14.2 12.1 10.7 10. 9.44 8.95 8.54 >
+           8.17 7.31 6.33 ) >
+LDL 2 1 ( 2 ) >
+DDL 2 1 ( 0. 2.58 ) >
+CDL 2 1 ( .67 .33 ) >
+CRD 2 1 ( F 1.69E-5 ) >
+>
+USE ( INPUT ) >

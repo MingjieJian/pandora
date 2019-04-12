@@ -1,0 +1,340 @@
+%\magnification=1200
+%\input wupstuff.tex
+\newtoks\footline \footline={\hss\tenrm 21.\folio\hss}
+%
+\pageno=1
+%
+\top
+\vskip 1.5 true in
+\centerline{Section 21: {\bf The Hydrogen Lyman Lines in the Continuum Calculations}}
+\blankline
+\blankline
+\centerline{\bf ***}
+\blankline
+\blankline
+\blankline
+\blankline
+\centerline{1. \underbar{Theory}}
+\blankline
+\blankline
+The Hydrogen Lyman lines are transitions between any upper level $U$ and the 
+lower level $L = 1$. The absorption coefficient for a line transition between
+levels $U$ and 1 is
+%
+$$ \kappa_\nu = n_1 { {h \nu_{U1} } \over { 4\pi } } {\cal B}_{1U}
+                { { \phi(a,x) } \over { \Delta \nu_D } } \eqno(1) $$
+%
+where $n_1$ is the number density of the lower level,
+%
+$$ \phi(a,x) = { a \over \pi^{3/2} } \int_{-\infty}^{+\infty} 
+               { { \exp^{-{z^2}} \over {a^2 + (z-x)^2} } } \, , \eqno(2) $$
+%
+and where $x = \Delta \nu / {\Delta \nu_D}$, $\Delta \nu = \nu -\nu_{U1}$,
+and $a = \delta / {\Delta \nu_D}$. In equation (1) we have ignored stimulated
+emission since it is negligible at Lyman line wavelengths. Here $\nu_{U1}$ is
+the line-center frequency, and the Doppler width $\Delta \nu_D$ is given by
+%
+$$ \Delta \nu_D = { \nu_{U1} \over c } \sqrt { { {2kT} \over M } + V^2 } \eqno(3) $$
+%
+where $M$ is the mass of the atom and $V$ is the line-broadening or
+microturbulent velocity.
+
+The damping parameter is the sum
+%
+$$ \delta = \delta_{\rm Nat} + \delta_{\rm Res} + \delta_{\rm Stark} + \cdots  \eqno(4) $$
+%
+and here we consider only the natural, resonance and Stark components
+%
+$$ \delta_{\rm Nat} = { 1 \over {4\pi} } \sum_{k=1}^{U-1}A_{Uk}      \eqno(5) $$
+%
+and
+%
+$$ \delta_{\rm Res} = { 1 \over {4\pi} } { {3e^2} \over m }
+                      \sqrt { g_L \over g_U } { f_{1U} \over \nu_{U1} }
+                      n_1   \, , \eqno(6) $$
+%
+and
+% 
+$$ \delta_{\rm Stark} = 7.06 \times 10^{-6} \, {\bf PMSK} \, a^{U1}
+                        { U^4 \over { U^2 -1 } }
+                        \left( { NE \over 10^{12} } \right) ^{2/3} \eqno(7) $$
+%
+where
+%
+$$ a^{U1} = \cases{
+                   0.642
+                   & if $U = 2$
+                   \cr
+                   \cr
+                   1.0
+                   & otherwise
+                   \cr
+                  } \, , \eqno(8) $$
+% 
+and $\bf PMSK$ is an input parameter (default = 1). This expression for Stark
+\break damping is from Sutton, K., 1978, J.Q.S.R.T., 20, 333.
+(Including $\delta_{\rm Stark}$ is optional in PANDORA; see below.)
+
+In equation (6) $n_1$ represents the number
+density of perturbing atoms of the same ionization stage. The Einstein
+coefficients in equations (1) and (5) are related by the equations
+$A_{U1} = ( 2 h \nu_{U1}^3 / c^2 ) {\cal B}_{U1}$ and 
+$g_U {\cal B}_{U1} = g_1{\cal B}_{1U}$, where $g_U$ and $g_1$ are the
+statistical weights of the upper and lower levels. $A_{U1}$ and the
+oscillator strength $f_{1U}$ are related by
+%
+$$ A_{U1} = { g_1 \over g_U } { { 8 \pi^2 e^2 \nu_{U1}^2 } \over {m c^3} }
+            f_{1U}  \eqno(9)  $$
+%
+where $e$ and $m$ are the electron's charge and mass, respectively.
+
+
+When $a=0$ in equation (2) the profile function reduces to
+%
+$$ \phi (0,x) = { 1 \over \sqrt{\pi} } \exp^{-x^2}  \, .  \eqno(10)  $$
+%
+For $x$ larger than 3 (typically), and $a > 0$,
+%
+$$ \phi (a,x) \to { a \over {\pi x^2} }  \, ,  \eqno(11) $$
+%
+or
+%
+$$ { \phi(a,x) \over {\Delta \nu_D} } \to { \delta \over { \pi (\Delta\nu)^2 } }
+               \, .  \eqno(12)  $$
+%
+Thus in the line wings we can write equation (1) as
+%
+$$ \kappa_\nu = n_1 { {h \nu_{U1} } \over {4 \pi^2} } {\cal B}_{1U}
+                { { \delta_{\rm Nat} + \delta_{\rm Res} + \delta_{\rm Stark}} \over
+                { (\Delta \nu )^2 } }    \, .  \eqno(13)  $$
+%
+In PANDORA we use equation (1) to determine $\kappa_\nu$ in the line core
+and equation (13) for larger $\Delta \nu$ in the line wings.
+
+In the line core  the source function is the frequency-independent line source
+function
+%
+$$ S_{U1} = { { 2 h \nu_{U1}^2 / c^2 } \over { { g_U \over g_1 }
+            { n_1 \over n_U } -1 } }  \, .    \eqno(14)   $$
+%
+In the line wings, however, photons can be scattered (changing only their direction
+by the encounter with the atom) with no change in frequency, rather than being
+absorbed and the re-emitted with $\phi(a,x)$ frequency distribution. For those
+scattered photons the source function (i.e., the ratio of emission to
+absorption coefficients) is the mean intensity $J_\nu$.
+
+The transfer equation then is written as
+%
+$$ \mu { {dI_\nu} \over {dz} } = \kappa_\nu^{\rm abs} ( I_\nu - S_{U1} )
+                 + \kappa_\nu^{\rm sct} ( I_\nu - J_\nu )  \, .  \eqno(15) $$
+%
+We introduce a scattering albedo $\alpha_\nu$ and let
+%
+$$ \kappa_\nu^{\rm abs} = (1 - \alpha_\nu) \kappa_\nu  \, ,  \eqno(16) $$
+%
+and
+%
+$$ \kappa_\nu^{\rm sct} = \alpha_\nu \kappa_\nu  \, .  \eqno(17)  $$
+%
+We specify $\alpha_\nu$ as a function of $x = \Delta \nu / \Delta \nu_D$. 
+(Note that $\Delta \nu_D$, a function of $T$ and $V$, varies with depth.)
+We define $(1-\alpha_\nu) = DR(x)$, which is determined as described below.
+$DR(x)$ must not be less than the allowed lower limit which, for
+$3 \le U \le 15$ is given by the branching ratio equation
+%
+$$ drlim^{u,1} = { { \sum_{k=2}^{U-1} A_{Uk} } \over
+                   { \sum_{k=1}^{U-1} A_{Uk} } } \, . \eqno(18) $$
+%
+
+Equation (13), which we use in the line wings ({\it i.e.}, when
+$x \ge XLIM$; see below), is written as
+%
+$$ \kappa_\nu = \kappa_\nu^{\rm Nat} + \kappa_\nu^{\rm Res}  + 
+                \kappa_\nu^{\rm Stark} \eqno(19) $$
+%
+where
+%
+$$ \kappa_\nu^{\rm Nat} = \cases{
+                          n_1 { { h \nu_{U1} } \over { 4 \pi^2 } }
+                         {\cal B}_{1U} { \delta_{\rm Nat}
+                          \over { (\Delta \nu)^2 } }
+                          & $\lambda < 142.5\ {\rm nm}$
+                          \cr
+                          \cr
+                          0
+                          & $\lambda \ge 142.5\ {\rm nm}$
+                          \cr
+                          }  \eqno(20) $$
+%
+and
+%
+$$ \kappa_\nu^{\rm Res} = \cases{
+                          n_1 { { h \nu_{U1} } \over { 4 \pi^2 } }
+                         {\cal B}_{1U} { \delta_{\rm Res}
+                          \over { (\Delta \nu)^2 } } 
+                          & $U > 2$
+                          \cr
+                          \cr
+                          10^{-17} n_1^2 \pi f_{12} r_{\rm el} F(\lambda,T)
+                          & $U = 2$
+                          \cr
+                          } \eqno(21)  $$
+%
+(where $r_{\rm el} = 2.818 \times 10^{-13}$ cm is the classical electron radius),
+and
+% 
+$$ \kappa_\nu^{\rm Stark} = n_1 { {h\nu_{U1}} \over {4\pi^2} } {\cal B}_{1U}
+                            { \delta_{\rm Stark} \over (\Delta\nu)^2 }
+                                      \, .  \eqno(22) $$
+% 
+
+We set $\kappa_\nu^{\rm Nat} = 0$ for $\lambda \geq 142.5$ nm in equation (20)
+since this is a component of the Rayleigh scattering opacity which we determine
+separately according to
+%
+$$ \sigma_\nu^{\rm Ray} = \cases{
+                          0
+                          & $\lambda < 142.5\ {\rm nm}$
+                          \cr
+                          \cr
+                          n_1 R(\lambda)
+                          & $\lambda \geq 142.5\ {\rm nm}$
+                          \cr
+                          } \, .  \eqno(23) $$
+%
+The values of $R(\lambda)$ are given by: M. Gavrila, 1967, Phys.Rev., 163, 147, 
+Table I.
+
+The standard formula for $\kappa_\nu^{\rm Res}$ in equation (21) is used only
+for the $U > 2$ Lyman lines. For the wings of Lyman alpha we can use values of
+$F(\lambda,T)$ calculated by N. F. Allard (private communication, October 2002),
+based on general unified theory, including all the transitions contributing to
+Lyman alpha, taking into account the variation of the dipole moment during the
+collision, averaging over velocity. (HH potentials from: T. Detmer, P. Schmelcher,
+L. S. Cederbaum, 1998, J.Chem.Phys., 109, 9694; dipole moments from: I. Drira,
+1999, J.Mol. \break Spectrosc., 198, 52.) $F(\lambda,T)$ has been tabulated
+for two values of temperatures,
+$T = 5000$ K and $T = 8000$ K, and for the wavelength range $261.3429\ {\rm nm}
+\geq \lambda \geq 110.1760\ {\rm nm}$ (the actual values can be found in the
+listing of subroutine {\tt reaper}; for example,
+$F(140.1269, 8000) = 9.7522 \times 10^{-11}$).
+We obtain any value of $F(\lambda,T)$ by linear
+interpolation/extrapolation between 4000 K and 10,000 K; we use
+$F(\lambda,4000)$ for $T < 4000$ K and $F(\lambda,10000)$ for $T > 10,000$ K.
+We set $F(\lambda,T) = 0$ for values of $\lambda$ outside the tabulated
+wavelength range.
+\blankline
+While we use equation (1) in the line core and equation (13) in the line wings
+for $1 \le U \le 15$, for $U > 15$ only the line core eqution is used.
+At wavelengths near the $U = \infty$ Rydberg limit $(911.75347 \ldots$ \AA) there
+are contributions from many overlapping Lyman lines. As many of these 
+contributions are computed and summed as seem significant.
+
+For $U > {\bf NQLYM}$ linear combinations of the Lyman line
+and Lyman continuum absorption coefficients and source functions can be used
+to avoid a discontinuity at the Rydberg limit; when ${\bf NQLYM} = 0$, however,
+such linear combinations are not used (and ${\bf NQLYM} = 0$ is the default).
+\ej
+% \blankline
+% \blankline
+% \blankline
+\centerline{2. \underbar{Practice}}
+\blankline
+\blankline
+A simulation of the H Lyman-$\alpha$ line has been used in PANDORA as one of
+the contributors to the background (or ``continuum'') absorption for a long time.
+(In the 1960s Yvette Cuny's work, revealing the enormous wings of this line,
+had shown this to be an important opacity in the sun.) From the beginning
+H Ly-$\alpha$ absorption and scattering have been treated separately. Recently
+further incremental additions were made to the treatment of background H Lyman
+lines simulations.
+
+This incremental development has resulted in five different contributors to
+the background absorption and emission calculations, as shown in the printout
+section BACKGROUND:
+\settabs 6 \columns
+\blankline
+\+  & 11 --- H Ly alpha Abs. && = H(2/1) Line absorption \cr
+\+  & 16 --- H Ly alpha Sct. && = H(2/1) Line scattering \cr
+\+  & 34 --- H Ly 3-15 Abs.  && = H(u,1), $3 \le {\rm u} \le 15$, Lines absorption \cr
+\+  & 36 --- H Ly 3-15 Sct.  && = H(u,1), $3 \le {\rm u} \le 15$, Lines scattering \cr
+\+  & 37 --- H Ly$>$15 Abs.  && = H(u,1), ${\rm u} > 15$, Lines absorption \cr
+\blankline
+\noindent(See printout section BACKGROUND for more information regarding these
+background contributors.)
+% \ej
+\blankline
+The following input parameters control these calculations: {\bf NLY};
+${\bf LMXX}_j$, ${\bf LMDR}_j$, $1 \le j \le {\bf LLY}$; {\bf LMXC}, {\bf LMXP},
+{\bf LMDL2}; {\bf LMDL3}; {\bf LMZ}, {\bf LMH}; and {\bf NQLYM}, {\bf IFALL},
+{\bf JHLSK}, {\bf PMSK}. These
+are briefly discussed below; their values for the run are listed in printput
+section INPUT, under the subheading ``Hydrogen Lyman alpha opacity.''
+
+If the additional input parameter ${\bf LYODS} > 0$, then extensive printouts
+of computational details, for every {\bf LYODS}'th depth, will be printed for
+every wavelength for which dumps of the background calculation details have been
+turned on (input table {\bf DWAVE}; see Section 5, Note 65).
+\blankline
+For the lines $(u,1), 2 \le u \le 15$, PANDORA's simulation needs values of
+$XLIM$ (the boundary beween core and wing) and of $DR(x)$ (which describes the
+change from zero coherent scattering in the Doppler core to partial coherent
+scattering in the wings).
+%
+$$ XLIM = \cases{ {\bf LMXC} 
+                  & ${\bf LMXC} > 0$ \cr
+                  \cr
+                  {\bf LMXX}_1 
+                  & otherwise \cr
+                  } \, . $$
+% 
+\ej
+
+$DR(x)$ is computed by the same procedure as that used for calculating PRD
+terms in PANDORA's detailed line source function calculations. (In many
+Hydrogen runs the $(2,1)$-line and the $(3,1)$-line are computed with PRD.)
+This calculation of $DR(x)$ is described in subsections (3.) and (4.)
+of Section 15. The input parameters {\bf LMXC}, {\bf LMXP}, {\bf LMDL2},
+and {\bf LMDL3}, and the input tables ${\bf LMXX}_j$,
+${\bf LMDR}_j$, $1 \le j \le {\bf LLY}$, are used for this.
+(Note that ${\bf LMXC} = 0$ is not allowed.)
+\blankline
+When ``H Ly 3-15'' (the ``higher Lyman lines'') are simulated, the upper
+limit is the value of {\bf NLY} (default = 15). ``H Ly$>$15'' (the
+``highest Lyman lines'') are done only when ${\bf NLY} = 15$; in that
+case, as many of the converging lines are computed as ``make a difference''
+to the total absorption (or emission) resulting from many overlapping line
+wings (this calculation uses the built-in upper limit 500).
+\blankline
+Values of the contributions to the background absorption or emission due
+to the cores and wings of the Lyman-$\alpha$ and the higher Lyman lines
+are computed only at wavelengths less than {\bf LMZ} \AA (default = 1682);
+values of the highest Lyman lines are computed only at wavelengths less
+than {\bf LMH} \AA (default = 950). The lower wavelength limit for all
+these simulations is the head of the Lyman continuum (the Rydberg
+wavelength, $\approx$ 911 \AA).
+\blankline
+The Lyman-$\alpha$ line simulation can use N. F. Allard's experimental
+values of $F(\lambda,T)$, as mentioned earlier. These data are used only
+when {\bf IFALL} = 1 (the default); otherwise $F(\lambda,T) = 0$ 
+is used.
+\blankline
+Stark broadening can be included in the simulations, as mentioned earlier.
+This is done only when {\bf JHLSK} = 1 (the default). {\bf PMSK} is
+a parameter for computing Stark damping.
+\blankline
+{\bf NQLYM} controls the provision for avoiding absorption and emission
+discontinuities at the Lyman continuum edge.
+%\vfill \vfill
+%\vfill \vfill
+%\vfill \vfill
+%\vfill \vfill
+%\vfill \vfill
+%\vfill \vfill
+%\vfill \vfill
+%\vfill 
+\vfill
+\noindent (Section 21 -- last revised: 2004 Nov 09)% \par
+\message{Section 21 ends at page 21.\the\pageno}
+\ej
+%\end

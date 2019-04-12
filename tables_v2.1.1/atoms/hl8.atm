@@ -1,0 +1,67 @@
+> 
+>   H Y D R O G E N ,   8   L E V E L S 
+> 
+> 
+> 2006 Mar 01: reduced from 15-level model
+> 
+> 
+NL       ( 8 ) > 
+RUNTOPOP ( 1 2 3 4 5 6 7 8 ) > 
+MR       ( 57 17 7 4 5 6 7 8 ) >
+> 
+NT     ( 28 ) > 
+INPAIR (  2  1   3  1   3  2   4  1   4  2   4  3   5  1   5  2   5  3 > 
+          5  4   6  1   6  2   6  3   6  4   6  5   7  1   7  2   7  3 > 
+          7  4   7  5   7  6   8  1   8  2   8  3   8  4   8  5   8  6 > 
+          8  7   )  > 
+> 
+NTE ( 6 ) >
+> 
+USE ( INPUT ) >
+> 
+> 
+>   H Y D R O G E N ,   8   L E V E L S 
+> 
+> 
+ATOLAB ( HL8 ) > 
+NAME   ( HYDROGEN ) > 
+> 
+ELSYM    ( H ) > 
+IONSTAGE ( 1 ) > 
+> 
+MASS ( 1. ) > 
+ABD  ( 1. ) > 
+PART ( 0. ) > 
+> 
+PW ( 0.666666666667 ) > 
+> 
+LCH ( 0 1 1 1 1 1 1 1 ) > 
+>
+> The default values of NUK, NU, P, CP, CI AND RRCP are used
+> 
+TER ( M 1000. 4. 5. 9. 15. 25. 35. ) >
+> 
+WRAT  1 ( 898. 875. 860. 845. 830. 815. 800. 785. 770. 755. > 
+          740. 715. 685. 655. 625. 595. 565. 535. 505. 503. > 
+          495. 490. 485. 480. 470. 460. 440. 400. 350. 304.2 > 
+          303.9 303.84 303.82 303.8 303.78 303.76 303.7 260. > 
+          229. 227. 226. 225. 224. 223. 221.5 220. 217. 214. > 
+          210. 205. 200. 175. 150. 120. 100. 80. 60. ) > 
+WRAT  2 ( M 1000. 3.4 3.2 2.8 2.65 2.5 2.3 2.1 2. 1.7 1.5 1.4 > 
+          1.3 1.21 1.2 1.154 1.098 1.059 ) >
+WRAT  3 ( M 1000. 7. 6. 4.5 4. 3.8 3.2 2.5 ) > 
+WRAT  4 ( M 1000. 10. 7. 5. 3. ) >
+WRAT  5 ( M 1000. 20. 10. 7. 5. 3. ) >
+WRAT  6 ( M 1000. 25. 20. 10. 7. 5. 3. ) >
+WRAT  7 ( M 1000. 35. 25. 20. 10. 7. 5. 3. ) >
+WRAT  8 ( M 1000. 50. 35. 25. 20. 10. 7. 5. 3. ) >
+>
+> The default values of A, CE, CRD, CVW, CSK and CRS are used;
+> however, instead of the default value of CSK 2/1 = 1.417e-5
+> (from Sutton, K. 1978, JQSRT, 20, 333), use the value from VAL81,
+> and an ad-hoc value is assigned to CSK 3/1
+>
+CSK 2 1 ( 1.7e-8 ) > 
+CSK 3 1 ( 2.0e-5 ) > 
+>
+USE ( INPUT ) >

@@ -1,0 +1,934 @@
+% \documentstyle[11pt,newpasp,twoside,epsf]{article}
+\documentclass[11pt,twoside]{article}
+\usepackage{newpasp,epsf}
+\markboth{Avrett \& Loeser}{Modeling with Pandora}
+
+\def\blankline{\par\vskip 11 pt}
+\def\hang{}
+
+\begin{document}
+\title{Solar and Stellar Atmospheric Modeling Using the
+Pandora Computer Program}
+
+\author{Eugene H. Avrett and Rudolf Loeser}
+
+\affil{ Smithsonian Astrophysical Observatory,
+Harvard-Smithsonian Center for Astrophysics,
+60 Garden Street, Cambridge, MA 02138, USA \break
+{\tt avrett,rloeser@cfa.harvard.edu} }
+
+\begin{abstract}
+The Pandora computer program is a general-purpose non-LTE atmospheric
+modeling and spectrum synthesis code which has been used extensively to
+determine models of the solar atmosphere, other stellar atmospheres, and
+nebulae. The Pandora program takes into account,
+for a model atmosphere which is either planar or spherical,
+which is either stationary or in motion, and which may
+have an external source of illumination, the time-independent optically-thick 
+non-LTE transfer of line and continuum radiation for multilevel atoms and multiple 
+stages of ionization, with partial frequency redistribution, fluorescence, and 
+other physical processes and constraints, including momentum balance and radiative 
+energy balance with mechanical heating. Pandora includes the detailed
+effects of both particle diffusion and flow velocities in the equations of 
+ionization equilibrium. Such effects must be taken into account whenever the 
+temperature gradient is large, such as in a chromosphere-corona transition 
+region.
+\end{abstract}
+
+\section{Introduction}
+
+In this paper we first present a description of four different types of model 
+atmosphere calculations: radiative equilibrium, general equilibrium, 
+semi-empirical, and hydrodynamical, followed by a brief discussion of the 
+important effects that should be included in model calculations.  Then
+we describe the Pandora program which can be used for many
+different purposes, but is restricted at present by the assumptions of
+one-dimensionality and time-independence.  Pandora can be used
+for the first three types of model calculations but does not include the
+detailed time-dependent effects used in the hydrodynamic calculations.  
+We list the publications that document the methods used in the program and 
+that give the results of many different applications.  The program is 
+available to new users on request (with the caveat that it is an extensive
+general-purpose program that requires a significant commitment of learning
+time on the part of the user; see the Pandora webpage
+{\tt http://cfa-www.harvard.edu/$\sim$rloeser/pandora.html}).
+
+\section{Types of Model Atmosphere Calculations: An Overview}
+
+Model atmospheres can be classified as being of four general types: 
+radiative equilibrium, general equilibrium, semi-empirical, and 
+hydrodynamical.  The first is based on the constraint of radiative 
+equilibrium for which the temperature distribution is determined so that 
+the outward radiative flux is constant with depth.  Radiative equilibrium 
+models assume that there are no sources of non-radiative heating, and are 
+normally time-independent without mass flows.  Except in special cases, 
+the temperature decreases monotonically with decreasing depths.  Examples 
+are the deeper layers of stellar atmospheres (photospheres) that show no 
+evidence of non-radiative heating effects.  See Kurucz (1970, 1979, 
+1991, 1998).
+
+General equilibrium models are usually time-independent but include the
+effects of non-radiative energy flow due to thermal conduction, particle
+diffusion, and mass flows, and can include mechanical heating specified
+in some parametric way.  Examples are the thin transition regions between
+neutral and ionized regions where a very steep temperature gradient 
+results from strong resonance-line cooling at the lower temperatures.  
+See Fontenla, Avrett, \& Loeser (2002).
+
+Semi-empirical models use a prescribed temperature distribution which is
+selected to obtain agreement between the spectrum calculated from the model
+and an observed spectrum.  From such a model one can use the calculated
+departures from constant radiative flux to infer the corresponding
+mechanical heating distribution.  Examples are stellar
+chromospheres that show emission due to an outward increase in temperature
+caused by the dissipation of mechanical energy in some form.  See
+Vernazza, Avrett, \& Loeser (1981) and Avrett (2002).
+
+Hydrodynamical models simulate dynamical processes and use their properties 
+to supply the mechanical heating necessary to account for an 
+observed spectrum that shows emission in excess of that determined by 
+radiative equilibrium.  Such hydrodynamical models must assume some initial 
+conditions to get the gas motions started, but then the model relies on 
+internal wave motions to produce the mechanical heating.  The aim in such 
+calculations is to include all important physical processes and to match the 
+given observations well enough to have confidence that the simulation is
+realistic.  The time-dependent hydrodynamical models cannot be expected to lead 
+to good agreement with observations if any important physical processes are not 
+included or are not treated correctly.  To the extent that the hydrodynamical 
+models agree with observations they tell us more about the physical 
+mechanisms at work than can be learned from the semi-empirical models, since
+the latter can indicate only the general properties of the temperature and 
+mechanical heating distributions yielding a given spectrum.  In 
+extreme cases the variations with time in hydrodynamical models can be 
+very large, suggesting that time-averaged quantities in a corresponding
+time-independent semi-empirical model may not properly represent the
+physical conditions in the atmosphere.  Examples are the dynamical solar
+atmospheric models of Carlsson \& Stein (1997, 1999).
+
+For a radiative equilibrium model one must specify the effective temperature 
+(which measures the total radiative flux), the surface gravity, and the 
+chemical composition of the atmosphere, and can then calculate a model 
+atmosphere and the corresponding spectrum to compare with an observed 
+stellar spectrum.  In many cases, combinations of values of the effective
+temperature, gravity, and composition can be found that lead to good
+agreement between calculated and observed spectra.  However, if the observed
+spectrum shows emission features that cannot be explained with radiative
+equilibrium models, one can carry out general equilibrium calculations,
+or can change the radiative equilibrium temperature distribution to a
+semi-empirical distribution chosen by trial-and-error to give a best match 
+between the calculated and observed spectra.  The final alternative is to 
+introduce wave motions that heat the atmosphere and to calculate a 
+self-consistent time-dependent hydrodynamical model in an attempt to match 
+the observed spectrum.  The hydrodynamical calculations are complex, 
+and the results reported to date by Carlsson \& Stein match some 
+observations well but fail to match others.  See Kalkofen (2001).  
+
+
+\section{Important Processes in Model Atmosphere Calculations}
+
+\subsection{Atomic and Molecular Data}
+
+Consider the calculation of the spectrum of atomic hydrogen.  A
+good representation of the hydrogen atom in most cases is one having 15
+levels, with 105 line transitions.  It is not possible to calculate the
+hydrogen spectrum without including the many other atoms, ions, and
+molecules that influence the lines and bound-free continua of hydrogen
+and that provide the dominant opacity contributions in various parts of
+the spectrum. These contributions include not only the negative hydrogen
+ion and the bound-free continua of He, C, Mg, Si, Al, Ca, Na, Fe, and
+other atoms, but vast numbers of line transitions from these and other 
+atoms, ions, and molecules.  All of these need to be represented in 
+detail with many levels and transitions, and all interact with each other.  
+Fortunately, most of these interactions can be treated iteratively with
+no intrinsic convergence problems.  The model calculations of all 
+four types require extensive multilevel atomic and molecular systems
+in order to calculate in detail the intensity of radiation as a function
+of both wavelength and depth.  When LTE (see below) can be assumed, it is
+sufficient to include in the model calculation only the opacity due to
+all the lines and the various continua as functions of wavelength and
+depth (since the ratio of emission to absorption is then given by the
+Planck function). Extensive line-opacity tabulations are available
+on CD-ROMs from R. Kurucz (see {\tt http://kurucz.harvard.edu}). 
+
+\subsection{Non-LTE Effects}
+
+Radiative equilibrium models usually are calculated assuming local
+thermodynamic equilibrium (LTE), i.e., assuming that all atomic and
+molecular energy levels are populated at each depth as they would be in
+thermal equilibrium corresponding to the kinetic temperature at that depth.
+This is a good approximation for high-density regions at large optical
+depths where the radiation intensity at a given location is produced in a
+small surrounding volume and hence can be represented by the Planck
+function at the local temperature.  But in low-density atmospheric regions
+where photons are likely to be scattered (i.e., re-emitted after an
+absorption with no intervening collisional transitions) the radiation is
+produced in a larger surrounding volume.  If this volume extends into or
+beyond the surface layers, where there is little or no emission, 
+the radiation intensity at the given location
+is usually smaller than that given by the local Planck function.
+Such non-LTE effects are of critical importance
+in low-density atmospheric regions, such as in stellar chromospheres and
+higher layers.   To account for non-LTE effects it is necessary to solve 
+complicated systems of radiative transfer and statistical equilibrium 
+equations.  See Vernazza, Avrett, \& Loeser (1973), Mihalas (1978), 
+Anderson (1989), Avrett \& Loeser (1992), Avrett (1996), and especially 
+the proceedings of the recent T\"ubingen workshop on Stellar Atmospheric 
+Modeling (Hubeny, Mihalas, \& Werner 2002).  
+
+\subsection{Partial Redistribution}
+
+The thermal motions of atoms which absorb and re-emit photons in a given
+line cause frequency redistribution within the narrow Doppler core of the
+line.  In the far wings, however, frequency redistribution is limited and the
+scattering is essentially coherent.  Complete frequency redistribution (CRD)
+over the entire line is a useful simplifying approximation, but one that is
+inappropriate for strong lines formed in low-density atmospheric regions.
+
+The theory of partial frequency redistribution (PRD) is reasonably well 
+understood and should be included for all strong lines.  See the review of 
+early developments by Linsky (1985), and the more recent papers by Cooper, 
+Ballagh, \& Hubeny (1989), Hubeny \& Lanz (1995), and Uitenbroek (2001).
+
+The CRD line source function is frequency-independent while the line source
+function determined from the more general PRD theory varies from core to
+wing.  It is often important to include PRD interlocking between lines having 
+an energy level in common, and between blended or partially overlapping
+lines (e.g., see Mauas, Avrett, \& Loeser 1989), and to include the detailed 
+effects of Doppler shifts due to relative gas motions.
+
+\subsection{Particle Diffusion and Advection}
+
+In atmospheric regions with steep temperature gradients, e.g., a
+chromosphere-corona transition region, three sources of heat flow should
+be considered: thermal conduction, particle diffusion, and, in the case
+of mass flows, advection (understood to include the ionization effects
+described below).  Thermal conduction depends in a simple way on the
+temperature gradient.
+
+In a partially ionized gas, ambipolar diffusion
+of ions (diffusing toward lower temperatures) and of atoms (diffusing
+toward higher temperatures) also depends on the temperature gradient, 
+and is often more important than thermal conduction.  The main heat flow 
+contribution made by diffusion is the ionization energy carried by ions 
+that recombine to release energy at lower temperatures.
+
+Advection refers to the effects of mass and particle flow velocities.  Flows
+toward lower temperature regions also cause ions to release their ionization
+energy at the lower temperatures and heat the gas, but this component 
+of the heat flow does not depend on the temperature gradient. If roughly 
+the same total heat flow toward lower temperatures is needed to balance 
+the losses of energy by radiation, then the temperature gradient will be
+reduced in order to reduce the conduction and diffusion contributions.
+Conversely, given roughly the same radiative losses to be balanced,
+a flow toward higher temperature regions counteracts the opposite flow of
+heat carried by conduction and diffusion, so that the temperature gradient
+must be larger in order to enhance the conduction and diffusion contributions.
+ 
+The profiles of the hydrogen and helium resonance lines formed in 
+the solar transition region are greatly affected by diffusion and by flows, 
+and Doppler line shifts are much less important than the asymmetric changes 
+in line intensity and central reversal due to the influence of flows on 
+excitation and ionization. These conclusions are based on our current reference 
+model of the solar atmosphere that extends from the photosphere into the
+corona, and that is roughly in accord with the observed solar spectrum
+from radio waves to X-rays (Fontenla, Avrett, \& Loeser 2002).  
+
+
+\section{The Pandora Atmosphere Program: General Description}
+
+Pandora deals with a time-independent one-dimensional atmospheric 
+region that is either finite or semi-infinite in the plane-parallel
+case, or that has spherical symmetry. The atmospheric
+layers can be stationary or can be moving relative to each
+other. Illumination from an external source can be
+prescribed at the atmospheric boundary (front or back in
+the finite case).
+
+The basic calculation assumes a given temperature and density stratification. 
+Typically a temperature distribution is prescribed and the density is
+determined assuming 1) hydrostatic equilibrium (balancing gas pressure 
+and gravity), or 2) pressure equilibrium in the absence of gravity (or any
+other constraint). After the radiative properties of the atmosphere are 
+calculated, a revised temperature distribution can be determined subject 
+to energy balance constraints, using parameters that describe given 
+non-radiative processes.  For example, Avrett and Loeser (1988) in a study
+of quasar broad emission line regions calculated the internal structure 
+and the emergent spectrum of a constant-pressure cloud of a given large 
+optical thickness with given illumination incident upon one face. The 
+temperature distribution in this case was determined from the constraint 
+of radiative energy balance.  This is an example of the general equilibrium
+type of calculation discussed above.  A new temperature distribution also
+can be determined by trial-and-error to obtain agreement between the
+calculated spectrum and an observed one, thus obtaining a semi-empirical
+model.  
+
+Given the temperature and density distributions, the
+non-LTE energy level populations of the various atoms and
+ions can be calculated. In typical problems the line and
+continuum optical depths can reach very large values, but collisions
+between atoms and electrons are too infrequent to establish LTE
+except in the deepest layers. The statistical equilibrium equations
+determine the populations at any point in the atmosphere given the
+properties of the radiation at that point. According to the
+radiative transfer equation, the radiation at that point 
+depends on the radiative sources and hence on the
+populations throughout a large surrounding volume. The set
+of coupled transfer and statistical equilibrium equations
+must be solved for both the populations and the radiative
+intensities at all points in the atmosphere. For a single
+line transition this can be called the two-level transfer
+problem. The general case of an atom or ion with many
+interacting line transitions can be called the multi-level
+transfer problem. These cases will be discussed further in
+the following sections. First, however, we consider some 
+other parameters that need to be determined as part of
+the overall solution.
+
+As the temperature changes throughout the atmosphere we may
+need to calculate the level populations of each successive
+ionization stage of a given element, e.g., Si-I, Si-II, Si-III,
+Si-IV, $\ldots$, and each of these stages may have
+a large number of discrete energy levels. For simplicity,
+Pandora treats, in any one computer run, the levels of a
+single ionization stage together with the lowest level of
+the next higher stage to determine the relative populations
+of these levels. The sum of the populations of these two
+stages is a certain fraction of the total element abundance.
+After calculating the populations for Si-I--II, assuming all
+silicon to be in these two stages, the subsequent Si-II--III
+calculation will then exclude the Si-I fraction, etc.
+The Si-I--II populations must then be redetermined by a
+calculation that excludes the fraction in Si-III and higher stages.
+Such iterations require several repeats to get consistent
+results. This approach assumes that ionization and recombination
+take place only between successive stages and not, e.g., between
+Si-I and Si-III.
+
+The electron number density needed in these calculations depends
+on the ionization of various constituents. Consider the simple case
+in which the electron density $n_{\rm e}$ is the sum of the proton
+density $n_{\rm p}$ and the contribution $(Z \times n_{\rm H})$ from all
+other elements, where $n_{\rm H}$ is the total hydrogen density and
+$Z$, in the simplest case, is the fraction of those elements that
+are once ionized, thus contributing one electron. For hydrogen we
+can write $n_{\rm H} = n_{\rm HI} + n_{\rm p}$ (when molecular
+hydrogen can be ignored), and
+$n_{\rm HI} = b_1 n_{\rm e} n_{\rm p} \psi (T)$ where
+$n_{\rm HI} = n_{\rm e} n_{\rm p} \psi (T)$ is the LTE Saha-Boltzmann
+equation for the neutral hydrogen density (in the lowest level) and
+$b_1$ is the departure coefficient, or correction factor, 
+obtained from the detailed non-LTE calculation for hydrogen.
+Eliminating $n_{\rm HI}$ and $n_{\rm p}$ gives a quadratic equation
+that can be solved for $n_{\rm e}$, given $Z$, $n_{\rm H}$, $b_1$,
+and $T$. The indirect dependence of $Z$ and $b_1$ on $n_{\rm e}$
+is treated iteratively.
+
+The different ions (including neutral atoms) interact
+with one another not only through their contributions to $n_{\rm e}$
+but also because the different ions influence and are
+influenced by the common radiation field which varies with
+wavelength and with location in the atmosphere. When solving
+for the populations of a given ion we need to know in detail
+how other ions absorb and emit radiation at the transition
+frequencies of the given ion. Pandora treats this
+dependence iteratively, including all important non-LTE
+effects. In the case of the Sun the non-LTE populations of
+H, H$^-$, He-I, He-II, C-I, Si-I, Mg-I, 
+Fe-I, Al-I, Ca-I, and Na-I are
+computed to determine $n_{\rm e}$ and the observed continuum, and the
+influence of the very large number of lines in the spectrum
+is considered when calculating photoionization rates. For
+this purpose Pandora uses a sampled set of Kurucz's line
+opacities (see Avrett, Machado, and Kurucz 1986).
+
+
+\section{The two-level transfer problem}
+
+Consider a line transition involving levels $1$ and $2$.
+Ignoring absorption and emission by other sources and
+ignoring stimulated emission for simplicity, the radiation
+intensity at a given location results from the emission and
+absorption at every frequency. The radiative transfer
+equation for frequency $\nu$ in the line is
+%  1
+\begin{equation}
+ {d I_{\nu} \over d z} =  { -h\nu\over  4\pi} \phi_{\nu}
+(n_1B_{12}I_{\nu} - n_2A_{21}),  
+\end{equation}
+%
+where $B_{12}$ and $A_{21}$ are the Einstein coefficients for
+absorption and spontaneous emission, $z$ is geometrical
+distance measured in the direction of the radiation intensity
+$I_{\nu}$, $n_\ell$ represents number density of level
+$\ell$, and $\phi_{\nu}$ is the normalized absorption profile
+that includes the effects of Doppler broadening near line
+center and other types of broadening in the wings.
+Here for simplicity we have assumed that the emission
+profile is also $\phi_{\nu}$ so that the
+absorbed and emitted photons are uncorrelated; this is the
+assumption of complete frequency redistribution (CRD). When
+a line such as the hydrogen L$\alpha$ line has substantial
+opacity in the wings, and when the perturbing densities are
+low, then the absorption of a photon in the wings is
+followed by the re-emission of a photon with a frequency
+that is likely to be close to that of the absorbed photon,
+rather than a frequency near line center; this is the more
+general case of partial frequency redistribution (PRD).
+Pandora allows any line to include PRD effects (see
+Vernazza, Avrett, and Loeser 1981 and Avrett and Loeser 1984).
+
+Using CRD as in equation (1), we introduce the monochromatic
+optical depth $\tau_{\nu}$ (again in the direction of $I_{\nu}$),
+and write
+%  2
+\begin{equation}
+ {d I_{\nu} \over d \tau_{\nu}} = - I_{\nu} + S , 
+\end{equation}
+%
+where $S$ is the line source function
+%  3
+\begin{equation}
+ S = {n_2 \over n_1} {A_{21} \over B_{12}}  
+\end{equation}
+%
+(without stimulated emission). In the simple case of
+only radiative and collisional transitions between levels $1$
+and $2$ (and no continuum), the statistical equilibrium equation is
+%  4
+\begin{equation}
+ 0 = n_1 \bigl(B_{12} {\overline J} + C_{12}\bigr) - 
+n_2 \bigl(A_{21} + C_{21}\bigr) , 
+\end{equation}
+%
+where
+%  5
+\begin{equation}
+ {\overline J} = \int\! \phi_\nu J_\nu d\nu  
+\end{equation}
+%
+and where the mean intensity is given by
+%  6
+\begin{equation}
+ J_\nu = { 1 \over {4 \pi } } \int \! I_\nu d\Omega  .  
+\end{equation}
+%
+One can solve equation (2) for $I_\nu$ in terms of $S$ and express
+the result as
+%  7
+\begin{equation}
+ I_{ik} = \sum_j \Lambda_{ijk} S_j  ,  
+\end{equation}
+%
+where $i$ and $j$ are depth indices between 1 and $N_D$ and $k$ is the 
+frequency index. Here the integral has been approximated by the sum of the
+values of $S$ weighted by appropriate coefficients. These Lambda-operator
+weighting coefficients depend only on the values of $\tau_{ik}$ and on the
+choice of formal approximation of the variation of $S(\tau_\nu)$ between
+one value of $\tau_\nu$ and the next. Several different functional
+representations are available in Pandora; the choice we find works best
+is simply to approximate $S$ in the interval $\tau_{i-1,k} \leq \tau \leq
+\tau_{i+1,k}$ by the parabola through $S(\tau_{i-1,k})$, $S(\tau_{i,k})$,
+and $S(\tau_{i+1,k})$, $i \neq 1, N_D$, and linearly in all other intervals.
+
+Combining equations (5) -- (7) gives
+%  8
+\begin{equation}
+ {\overline J}_i = \sum_j W_{ij}^\Lambda S_j  .  
+\end{equation}
+%
+The statistical equilibrium equation (4) can be
+written in terms of $S$ as
+%  9
+\begin{equation}
+ S_i = {{{\overline J}_i + \epsilon B_i} \over {1 + \epsilon}}, 
+\end{equation}
+%
+where $\epsilon = C_{21}/A_{21}$ and
+$B_i = (2h{\nu^3}/c^2) \, \exp (-h{\nu}/kT_i)$
+(the Planck function without stimulated emission). Combining
+equations (8) and (9) gives a set of simultaneous equations
+for $S$ at each depth.
+
+This is basically the way the two-level problem should be solved
+when $\epsilon$ is very small. Normally over $1/\epsilon$ iterations
+would be required to obtain a solution by alternately evaluating
+equations (8) and (9), i.e. by iterating between the radiative transfer
+and statistical equilibrium equations. Accelerated Lambda Iteration
+(ALI) techniques have been developed that allow this iterative
+approach to succeed (see Rybicki \& Hummer 1991, 1992, Heinzel 1995,
+and the review by Avrett 1996). For a single transition we have
+found that solving the set of simultaneous equations is faster than
+ALI. For multilevel cases (discussed below) however, ALI is
+usually much faster because ALI can take account of the
+interactions between transitions while computing the iterative
+solutions for each transition.
+
+
+\section{The multi-level transfer problem}
+
+When there are many radiative transitions in the model atom,
+equations (8) and (9) still can be applied
+to each transition, but $\epsilon$ and $B$ now take a more
+general form based on all transition pathways between the
+upper and lower levels of the given transition, apart from
+the direct radiative transition. Pandora is based on such a
+generalization of the two-level solution. Since the $\epsilon$
+and $B$ terms for a given radiative transition depend on the
+solutions of other radiative transitions, one must iterate on
+these terms even though the solution for each transition, given
+$\epsilon$ and $B$, is exact. The advantage of this method is
+that the individual solutions show the causes of calculated results
+(e.g., why a given source function has a particular variation with
+depth). The disadvantage is that this method generally requires
+more computing than other methods developed in recent years.
+
+As explained above, Pandora combines the radiative transfer and
+the statistical equilibrium equations for a given radiative
+transition into sets of simultaneous equations, one such set for
+each of the $N_D$ depth points of the atmosphere.  For a model ion
+with $N_L$ levels and a continuum, we have $N_L$ statistical
+equilibrium equations analogous to equation (4). For
+a model ion with $N_T$ transitions there are $N_T$ sets of
+simultaneous equations that must be solved.
+(If every radiative transition between $N_L$ levels is treated
+in the ion model, then $N_T = N_L ( N_L -1)/2$.) These calculations
+must be repeated iteratively because the $\epsilon$ and $B$ terms
+for one radiative transition depend on the other radiative
+transitions. Solving $N_T$ sets of
+simultaneous equations for $N_D$ depths 
+for many iterations can require much computing.
+However, it is rarely necessary to solve all these sets of
+simultaneous equations (i.e., to compute a ``full solution'') for
+each of the $N_T$ radiative transitions of a particular model ion.
+For all but the relatively strong line transitions it is sufficient
+just to let Pandora iterate between equations (8) and (9), i.e.,
+just to carry out ``Lambda iterations'' for the relatively weak
+transitions. For other, often faster, methods in current use,
+see the papers in Hubeny, Mihalas, \& Werner (2002).
+
+
+\section{Non-local statistical equilibrium (non-LTE)}
+
+We have also incorporated velocity terms in the Pandora
+statistical equilibrium equations, so that equation (4)
+would be written as
+%  10
+\begin{equation}
+ -{d \over d z} (n_1 V) = n_1 \bigl( B_{12}{\overline J}
++ C_{12}\bigr) - n_2 \bigl( A_{21} + C_{21} \bigr) 
+\end{equation}
+%
+to take account of the effect of a mass velocity $V$
+(increasing in the direction of the $z$ coordinate). The
+derivative term causes $n_1$ at each depth to depend on $n_1$ at
+other depths, so that we use a finite difference procedure to
+solve the differential equation for $n_1(z)$ assuming given
+values for the other terms, including $n_2$.  Then we evaluate
+%  11
+\begin{equation}
+ G = { 1 \over n_1} {d \over d z} \bigl( n_1 V \bigr), 
+\end{equation}
+%
+and finally write equation (8) as
+%  12
+\begin{equation}
+ 0 = n_1 \bigl( B_{12} {\overline J} + C_{12} + G \bigr) 
+- n_2 \bigl( A_{21} + C_{21} \bigr), 
+\end{equation}
+%
+which is then solved as before.
+In this way an advection term has been
+introduced into the equations of statistical equilibrium. 
+(The Doppler shift due to mass flow is also included in the
+line absorption profile calculations.) The term on the left side
+of equation (10) is more important for ionization than for
+excitation (i.e., when $n_2$ represents the ion density rather
+than excitation level 2).
+
+We also include particle diffusion velocities when
+there are steep temperature and ionization gradients. The
+hydrogen atom and proton diffusion velocities are given by
+$V_{\rm H} = [X/(1+X)]V_A$ and $V_{\rm p} = -[1/(1+X)]V_A$ 
+where $X$ is the ionization fraction $n_{\rm p}/n_{\rm HI}$ and
+%  13
+\begin{equation}
+ V_A = D_X { d \over d z} (\ln X)
++ D_T { d \over d z} (\ln T) 
+\end{equation}
+%
+is the ambipolar diffusion velocity. The coefficients $D_X$
+and $D_T$ are functions of the local number densities and the
+temperature, respectively.  The diffusion velocity enters
+the calculation in the same way as the mass flow velocity
+except that hydrogen atoms and protons diffuse in opposite
+directions. See Fontenla, Avrett, \& Loeser (1990, 1991)
+for details.
+
+
+\section{Implementation}
+
+Rather than going through the calculations in a fixed way,
+Pandora assumes a hands-on approach by the user. There are
+many input switches for specifying 1) alternative methods for
+specific calculations, 2) amounts of printout, 3) levels of
+printout detail, and 4) auxiliary output files (for use by
+other programs needing various Pandora-computed quantities).
+The user need not specify any of these options, alternative
+methods, or numerical control parameters at the start of a new
+calculation because Pandora provides defaults for all of them.
+There now exists a collection of atomic data input files for
+model ions of general interest; in many cases more than one
+version of a given ion is available, ranging from abbreviated
+to detailed models.
+
+Pandora proceeds by iterating. It 
+computes a specified number of grand iterations and then stops,
+having saved in various disk files all the data needed to resume
+the calculation for another specified number of iterations.
+Thus the evolving solution can be supervised closely and 
+various control parameters and choices of method can be
+adjusted for optimal progress.
+
+The computational properties of some of the procedures
+Pandora uses for various steps in the calculation have not
+been studied in detail for all types of applications. What
+has worked well for specific calculations in the past may
+not work well when applied to new, different regimes. We
+have provided many input control parameters to try to
+prevent unreasonable numerical behavior.
+
+For some steps in the calculation, e.g. the evaluation
+of the $\Lambda_{ijk}$ coefficients in
+equation (7), Pandora provides a menu of different
+methods that have been found to be well suited for specific
+situations. In each case the user can specify which method
+to use. We have begun to document what we have learned about
+the advantages and disadvantages of these alternatives, to
+help others choose.
+
+
+\section{Documentation}
+
+There are four sources of information about the program.
+1) The Pandora printout is intended to be reasonably
+self-explanatory.  There are printing options that allow the
+details of almost any calculation to be printed so that any step
+can be studied or verified. 2) A User's Guide is available that
+lists all input parameters, program options, and program outputs,
+along with extensive explanations of parameters and options.
+We continue to add material to this Guide. 3) The basic Pandora
+documentation, begun  36 years ago in October 1966, now consists of
+over 3400 pages of handwritten program notes specifying every
+program change or addition. Finally, a readily accessible source
+of information consists of 4) the derivations and explanations
+included in the following publications:
+%
+%
+\blankline
+\noindent Avrett, E. H., \& Loeser, R. 1969, Formation of line and
+continuous spectra. I. Source-function calculations, Smithsonian
+Astrophys. Obs. Spec. Rept. No. 303, 99pp
+
+\indent\hang [Complete derivation of the two-level and multi-level
+statistical equilibrium and transfer equations, with integral 
+operators used for the formal solution of the transfer equation.]
+%
+%
+\blankline
+\noindent Avrett, E. H. 1971, Solution of non-LTE transfer problems,
+J. Quant. Spectrosc. Radiat. Transfer, 11, 511-529
+
+\indent\hang [Basic formulation and discussion of non-LTE
+computational methods.]
+%
+%
+\blankline
+\noindent Vernazza, J. E., Avrett, E. H., \& Loeser, R. 1973,
+Structure of the solar chromosphere. I. Basic computations and summary
+of results, ApJ 184, 605-631
+
+\indent\hang [Derivation of the equations of statistical equilibrium and
+radiative transfer for lines and the hydrogen Lyman-continuum; electron 
+number density, hydrostatic equilibrium, and H$^-$ non-LTE equations.]
+%
+%
+\blankline
+\noindent Vernazza, J. E., Avrett, E. H., \& Loeser, R. 1976,
+Structure of the solar chromosphere. II. The photosphere and the
+temperature-minimum region, ApJS 30, 1-60
+
+\indent\hang [Effect of line opacities throughout the spectrum based on
+Kurucz data; continuum data calculations for wavelengths 0.13 -- 500 $\mu$m.]
+%
+%
+\blankline
+\noindent Vernazza, J. E., Avrett, E. H., \& Loeser, R. 1981,
+Structure of the solar chromosphere. III. Models of the EUV
+brightness components of the quiet Sun, ApJS 45, 635-725
+
+\indent\hang [Derivation of the energy balance equations, L$\alpha$ partial
+redistribution, supplementary levels in the statistical equilibrium
+equations and in the Lyman-continuum transfer equation. Continuum
+data calculations for wavelengths 40 nm -- 3 cm.]
+%
+%
+\blankline
+\noindent Avrett, E. H., and Loeser, R. 1984, Line transfer in static and
+expanding spherical atmospheres, in Methods in Radiative Transfer,
+ed. W. Kalkofen (Cambridge: Cambridge Univ. Press), 341-379
+
+\indent\hang [Derivation of the line transfer equations in spherical
+geometry with radial expansion and partial frequency redistribution.]
+%
+%
+\blankline
+\noindent Hartmann, L., \& Avrett, E. H. 1984, On the extended chromosphere
+of $\alpha$ Orionis, ApJ 284, 238-249
+
+\indent\hang [Application of Pandora calculations in spherical geometry 
+with radial expansion.]
+%
+%
+\blankline
+\noindent Avrett, E. H. 1985, Recent thermal models of the chromosphere, in
+Chromospheric Diagnostics and Modelling, ed. B. W. Lites
+(Sunspot, NM: National Solar Observatory), 67-127
+
+\indent\hang [Detailed calculations of net radiative cooling rates.]
+%
+%
+\blankline
+\noindent Avrett, E. H., Machado, M. E., \& Kurucz, R. L. 1986,
+Chromospheric flare models, in The Lower Atmosphere in Solar Flares,
+ed. D. F. Neidig (Sunspot, NM: National Solar Observatory), 216-281
+
+\indent\hang [Describes the use of Kurucz's sampled line opacities in
+photoionization rate calculations and spectrum synthesis.]
+%
+%
+\blankline
+\noindent Avrett, E. H., \& Loeser, R. 1987, Iterative solution of multilevel
+transfer problems, in Numerical Radiative Transfer, ed. W. Kalkofen
+(Cambridge: Cambridge Univ. Press), 135-161
+
+\indent\hang [Derivation and discussion of the equivalent two-level
+atom method of solving multi-level problems, with tabulated numerical
+solutions.]
+%
+%
+\blankline
+\noindent Avrett, E. H., \& Loeser, R. 1988, Radiative transfer in the
+broad emission-line regions of quasi-stellar objects, ApJ 331, 211-246
+
+\indent\hang [Energy-balance non-LTE model atmosphere calculations with
+incident radiation, heavy-element cooling, and X-ray absorption.]
+%
+%
+\blankline
+\noindent Mauas, P. J., Avrett, E. H., \& Loeser, R. 1988,
+Mg-I as a probe of the solar chromosphere, 
+ApJ 330, 1008-1021
+
+\indent\hang [Includes a discussion of how to combine multiplet transitions
+in a simple way.]
+%
+%
+\blankline
+\noindent Luttermoser, D. G., Johnson, H. R., Avrett, E. H., \& Loeser, R. 1989,
+Chromospheric structure of cool carbon stars, ApJ 345, 543-553
+
+\indent\hang [Modeling of N-type carbon stars with PRD calculations 
+of the Mg-II lines.]
+%
+%
+\blankline
+\noindent Mauas, P. J., Avrett, E. H., \& Loeser, R. 1989, Computed profiles
+of the C-I multiplets at $\lambda$1561 and $\lambda$1657,
+ApJ 345, 1104-1113
+
+\indent\hang [Partial frequency redistribution in multiplet lines.]
+%
+%
+\blankline
+\noindent Fontenla, J. M., Avrett, E. H., \& Loeser, R. 1990, Energy balance
+in the solar transition region. I. Hydrostatic thermal models with
+ambipolar diffusion, ApJ 355, 700-718
+
+\indent\hang [Derivation of the effects of hydrogen ambipolar diffusion
+on the hydrogen number density calculations and on energy transport.]
+%
+%
+\blankline
+\noindent Mauas, P. J., Avrett, E. H., \& Loeser, R. 1990, On carbon monoxide
+cooling in the solar atmosphere, ApJ 357, 279-287
+
+\indent\hang [CO opacity and net radiative cooling rate calculations.]
+%
+%
+\blankline
+\noindent Mauas, P. J., Machado, M. E., \& Avrett, E. H. 1990, The white light
+flare of June 15, 1982: Models, ApJ 360, 715-726
+
+\indent\hang [Detailed set of flare model calculations using Pandora.]
+%
+%
+\blankline
+\noindent Fontenla, J. M., Avrett, E. H., \& Loeser, R. 1991, Energy balance 
+in the solar transition region. II. Effects of pressure and energy input
+on hydrostatic models, ApJ 377, 712-725
+
+\indent\hang [Results of model calculations with hydrogen ambipolar
+diffusion for quiet and active regions of the solar atmosphere.]
+%
+%
+\blankline
+\noindent Chang, E. S., Avrett, E. H., Mauas, P. J., Noyes, R. W., \&
+Loeser, R. 1991, Formation of the infrared emission lines of 
+Mg-I in the solar atmosphere, ApJ 379, L79-L82
+
+\indent\hang [Line transfer calculation with a 41-level atomic
+model for Mg-I, including charge exchange and 
+collisions with hydrogen atoms.]
+%
+%
+\blankline
+\noindent Fontenla, J. M., Avrett, E. H., \& Loeser, R. 1993, Energy balance
+in the solar transition region. III. Helium emission in hydrostatic,
+constant-abundance models with diffusion, ApJ 406, 319-345
+
+\indent\hang [Calculation of solar He-I and He-II lines.]
+%
+%
+\blankline
+\noindent Avrett, E. H., Chang, E. S., \& Loeser, R. 1994, Modeling the infrared
+magnesium and hydrogen lines from quiet and active solar regions, in
+Infrared Solar Physics, eds. D. M. Rabin, J. T. Jefferies, \& 
+C. Lindsey (Dordrecht: Kluwer), 323-339
+
+\indent\hang [Calculation of infrared line spectra.]
+%
+%
+\blankline
+\noindent Avrett, E. H., Fontenla, J. M., \& Loeser, R. 1994, Formation of the
+solar 10830 A line, in Infrared Solar Physics, eds. D. M. Rabin,
+J. T. Jefferies, \& C. Lindsey (Dordrecht: Kluwer), 35-47
+
+\indent\hang [Modeling the absorption of the infrared continuum by the
+He-I line due to coronal-line illumination.]
+%
+%
+\blankline
+\noindent Avrett, E. H. 1995, Two-component modeling of the solar IR CO lines, in
+Infrared Tools for Solar Astrophysics: What's Next, eds. J. Kuhn \&
+M. Penn (Singapore: World Scientific), 303-311
+
+\indent\hang [Construction of models based on spacecraft observations
+of the infrared CO lines.]
+%
+%
+\blankline
+\noindent Avrett, E. H. 1996, Next generation model atmospheres, in IAU Symp. 176,
+\break Stellar Surface Structure, eds. K. G. Strassmeier \& J. L. Linsky
+(Dordrecht: Kluwer), 503-518
+
+\indent\hang [Review of current stellar atmosphere modeling.]
+%
+%
+\blankline
+\noindent Avrett, E. H., Hoeflich, P., Uitenbroek, H., \& Ulmschneider, P. 1996,
+Temporal Variations in solar chromospheric modeling, in Cool Stars,
+Stellar Systems, and the Sun: Ninth Cambridge Workshop, eds. 
+R. Pallavicini \& A. K. Dupree (San Francisco: ASP), {\bf 109}, 105
+
+\indent\hang [Effects of time variation in the formation of CO lines.]
+%
+%
+\blankline
+\noindent Fontenla, J. M., Avrett, E. H., \& Loeser, R. 2002, Energy balance
+in the solar transition region. IV. Hydrogen and helium mass flows with
+diffusion, ApJ 572, 636-662
+
+\indent\hang [Effects of flow velocities on energy-balance solutions.]
+
+
+\begin{references}
+
+%
+\reference{} Anderson, L. S. 1989, ApJ, 339, 558
+%
+\reference{} Avrett, E. H. 1996, in Stellar Surface Structure, IAU Symp. 176, ed. 
+K. G. Strassmeier \& J. L. Linsky (Dordrecht: Kluwer), 503
+\reference{} {---}{---}{---}{---}. 2002, in Current Theoretical Models and Future High Resolution 
+Solar Observatioins: Preparing for ATST, ed. A. A. Pevtsov \& H. Uitenbroek,
+ASP Conference Series, in press
+%
+\reference{} Avrett, E. H., and Loeser, R. 1984, in
+Methods in Radiative Transfer, ed. W. Kalkofen
+(Cambridge: Cambridge Univ. Press), 341
+\reference{} {---}{---}{---}{---}. 1988, ApJ, 331, 211
+\reference{} {---}{---}{---}{---}. 1992, in Cool Stars, Stellar Systems, and
+the Sun, ed. M. S. Giampapa \& J. A. Bookbinder 
+(San Francisco: ASP), {\bf 26}, 489
+%
+\reference{} Avrett, E. H., Machado, M. E., and Kurucz, R. L. 1986
+in The Lower Atmosphere in Solar Flares, ed. D. F. Neidig
+(Sunspot, NM: National Solar Observatory), 216
+%
+\reference{} Carlsson, M. \& Stein, R. G. 1997, ApJ, 481, 500
+\reference{} {---}{---}{---}{---}. 1999, in AIP Conf. Proc. 471, Solar Wind 9, 
+ed. S. R. Habbal (New York: AIP), 23
+%
+\reference{} Cooper, J., Ballagh, R. J., \& Hubeny, I. 1989, ApJ, 344, 949
+%
+\reference{} Fontenla, J. M., Avrett, E. H., \& Loeser, R. 1990, ApJ, 355, 700.
+\reference{} {---}{---}{---}{---}. 1991, ApJ, 377, 712
+\reference{} {---}{---}{---}{---}. 2002, ApJ, 572, 636
+%
+\reference{} Heinzel, P. 1995, A\&A, 299, 563
+%
+\reference{} Hubeny, I., \& Lanz, T. 1995, ApJ, 439, 875
+%
+\reference{} Hubeny, I., Mihalas, D., \& Werner, K., eds. 2002, Stellar Atmospheric
+Modeling, ASP Conference Series, in press
+%
+\reference{} Kalkofen, W. 2001, ApJ, 557, 376
+%
+\reference{} Kurucz, R. 1979, ApJS, 40, 1
+\reference{} {---}{---}{---}{---}. 1970, Atlas: A computer program for calculating model stellar
+atmospheres, Smithson. Astrophys. Obs. Spec. Rept. No. 309, 291 pp.
+\reference{} {---}{---}{---}{---}. 1991, in 
+Stellar Atmospheres: Beyond Classical Models,
+ed. L. Crivellari, I. Hubeny, \& D. G. Hummer (Dordrecht: Kluwer), 440
+\reference{} {---}{---}{---}{---}. 1998, in Fundamental Stellar Properties: The Interaction 
+between Observation and Theory, ed T. R. Bedding, A. J. Boothe \& J. Davis, IAU Symp. 
+189 (Dordrecht: Kluwer) 217
+%
+\reference{} Linsky, J. L. 1985, in Progress in Stellar Spectral Line Formation Theory,
+ed. J. E. Beckman \& L. Crivellari (Dordrecht: Reidel), 1
+%
+\reference{} Mauas, P. J., Avrett, E. H., \& Loeser, R. 1989, ApJ 345, 1104
+%
+\reference{} Mihalas, D. 1978, Stellar Atmospheres, (San Francisco: Freeman)
+%
+\reference{} Rybicki, G. B., \& Hummer, D. G. 1991, A\&A, 245, 171
+\reference{} {---}{---}{---}{---}. 1992, A\&A, 262, 209
+%
+\reference{} Uitenbroek, H. 2001, ApJ, 557, 389
+%
+\reference{} Vernazza, J. E., Avrett, E. H., and Loeser, R. 1973, ApJ, 184, 605
+\reference{} {---}{---}{---}{---}. 1981, ApJS, 45, 635
+
+\end{references}
+
+\blankline
+\blankline
+\blankline
+\blankline
+\noindent This paper was prepared for a conference in Summer 2002: 
+{\it Modeling of Stellar Atmospheres} (I.A.U. Symposium 210), 
+ed. W. Weiss \& N. Piskunov (Dordrecht: Kluwer), in press.
+\blankline
+\noindent 2002 Aug 06
+
+\end{document}
+

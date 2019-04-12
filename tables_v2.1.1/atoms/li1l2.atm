@@ -1,0 +1,29 @@
+[   L I T H I U M   I ,   2   L E V E L S   ] 
+[ Revised by Pablo Mauas, May 1987 ] 
+NL ( 2 ) > 
+NTE ( 1 ) > 
+NT ( 1 )  INPAIR ( 2 1 ) > 
+USE ( INPUT ) > 
+[   L I T H I U M   I ,   2   L E V E L S   ] 
+ATOLAB ( LI1L2 ) > 
+NAME ( LITHIUM ) > 
+ELSYM ( LI )  IONSTAGE ( 1 ) > 
+MASS ( 6.941 ) > 
+[ PART ( 1. ) ]  PART ( 0. ) > 
+NUK ( 1.3033 ) > 
+NU ( 0. .44693 ) > 
+TER ( 4500. ) > 
+P ( 2. 2. ) > 
+LCH ( f 0 ) > 
+CP ( M 1.E-18 .87 1050. ) > 
+CI 1 ( 1.1E-8 ) > 
+CI 2 ( 5.9E-8 ) > 
+[ A21: Senao (1982, J.Phys.B 15, 2009) and ] > 
+[      Gaupp et al. (1982, Phys.Rev.A 26, 3351) ] > 
+A 2 1 ( 1.1E8 ) > 
+CE 2 1 ( .0018 ) > 
+[ CRD21: Hansen (1983, J.Phys.B 16, 933) ] > 
+CRD 2 1 ( 4.44E-5 ) > 
+[ CSK21: Dimitrijevic et al. (1981, J.Phys.B 14, 2559) ] >
+CSK 2 1 ( 1.7E-4 ) > 
+USE ( INPUT ) > 

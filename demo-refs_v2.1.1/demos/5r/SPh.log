@@ -1,0 +1,554 @@
++ Mon Mar 24 15:46:25 EDT 2014 bin/pandora started
+  running case=SPh, atmospheric model=SP, atomic data=hl15
+          stats=stats/, opac=opacities/, bin=bin/, atoms=atoms/, input=./, output=./
+running on:
+Linux menfin 2.6.32-431.3.1.el6.x86_64 #1 SMP Fri Jan 3 21:39:27 UTC 2014 x86_64 x86_64 x86_64 GNU/Linux
+input files:
+-rw-r----- 1 sylvain sylvain  11371 Mar 24 15:46 ./SPh.dat
+-rw-r----- 1 sylvain sylvain 444674 Sep 24 11:09 ./SP.mod
+-rw-r----- 1 sylvain sylvain 665046 Sep 24 09:55 ./SPh.jnu
+-rw-r----- 1 sylvain sylvain 876744 Sep 24 09:55 ./SPh.res
+-rw-r--r-- 1 sylvain sylvain   3351 Apr 18  2007 atoms/hl15.atm
+opacity files:
+-rw-r--r-- 1 sylvain sylvain        0 Apr 15  2009 opacities/average.dat
+-r--r--r-- 1 sylvain sylvain 64155430 Apr 18  2007 opacities/composite.dat
+-r--r--r-- 1 sylvain sylvain  1074363 Apr 18  2007 opacities/statistical.dat
++ Mon Mar 24 15:46:38 EDT 2014 bin/pandora.x started
+Warning: ieee_underflow is signaling
+Warning: ieee_inexact is signaling
+PANDORA done
+ 2014-Mar-24 15:46:38  #                Read input, part 1              
+ "Delayed-ABORT" now activated.
+ 2014-Mar-24 15:46:38  #                Read input, part 2              
+ 2014-Mar-24 15:46:39  #                Input printing                  
+ "Delayed-ABORT" now deactivated.
+ 2014-Mar-24 15:46:39  #                Populations Initialization      
+ 2014-Mar-24 15:46:39  #                Precalculations                 
+ 2014-Mar-24 15:46:40  #                Line Opacities Start-Up         
+ 2014-Mar-24 15:46:41  #                Continuum Initialization        
+ 2014-Mar-24 15:46:41  #   1/11         Continuum Calculations          
+ 2014-Mar-24 15:48:52  #   1/11         Rates                           
+ 2014-Mar-24 15:48:53  #   1/11         H minus                         
+ 2014-Mar-24 15:48:53  #   1/11         B-ratios Initialization         
+ 2014-Mar-24 15:48:53  #   1/11         Damping Parameter               
+ 2014-Mar-24 15:48:54  #   1/11   1/ 1  Line Source Functions           
+ Jnu Trans( 2, 1),   1. Frequ. of 167: 1.0E-02 sec, 2.8E-02 min to go.  (IDEX = 50)
+ Jnu Trans( 2, 1),  51. Frequ. of 167: 1.0E-02 sec, 1.1E-02 min to go.             
+ Jnu Trans( 2, 1), 101. Frequ. of 167: 0.0E+00 sec, 6.2E-03 min to go.             
+ Jnu Trans( 2, 1), 151. Frequ. of 167: 0.0E+00 sec, 1.3E-03 min to go.             
+ Jnu Trans( 2, 1),   1. Frequ. of 167: 0.0E+00 sec, 0.0E+00 min to go.  (IDEX = 50)
+ Jnu Trans( 2, 1),  51. Frequ. of 167: 1.0E-02 sec, 1.0E-02 min to go.             
+ Jnu Trans( 2, 1), 101. Frequ. of 167: 0.0E+00 sec, 6.1E-03 min to go.             
+ Jnu Trans( 2, 1), 151. Frequ. of 167: 0.0E+00 sec, 1.3E-03 min to go.             
+ Jnu Trans( 2, 1),   1. Frequ. of 167: 1.0E-02 sec, 2.8E-02 min to go.  (IDEX = 50)
+ Jnu Trans( 2, 1),  51. Frequ. of 167: 1.0E-02 sec, 1.0E-02 min to go.             
+ Jnu Trans( 2, 1), 101. Frequ. of 167: 0.0E+00 sec, 6.0E-03 min to go.             
+ Jnu Trans( 2, 1), 151. Frequ. of 167: 1.0E-02 sec, 1.3E-03 min to go.             
+ Jnu Trans( 2, 1),   1. Frequ. of 167: 0.0E+00 sec, 0.0E+00 min to go.  (IDEX = 50)
+ Jnu Trans( 2, 1),  51. Frequ. of 167: 0.0E+00 sec, 9.9E-03 min to go.             
+ Jnu Trans( 2, 1), 101. Frequ. of 167: 0.0E+00 sec, 6.0E-03 min to go.             
+ Jnu Trans( 2, 1), 151. Frequ. of 167: 1.0E-02 sec, 1.3E-03 min to go.             
+ Jnu Trans( 3, 1),   1. Frequ. of 277: 0.0E+00 sec, 0.0E+00 min to go.  (IDEX = 50)
+ Jnu Trans( 3, 1),  51. Frequ. of 277: 0.0E+00 sec, 1.5E-02 min to go.             
+ Jnu Trans( 3, 1), 101. Frequ. of 277: 1.0E-02 sec, 1.3E-02 min to go.             
+ Jnu Trans( 3, 1), 151. Frequ. of 277: 0.0E+00 sec, 8.2E-03 min to go.             
+ Jnu Trans( 3, 1), 201. Frequ. of 277: 0.0E+00 sec, 4.8E-03 min to go.             
+ Jnu Trans( 3, 1), 251. Frequ. of 277: 0.0E+00 sec, 1.6E-03 min to go.             
+ Jnu Trans( 3, 1),   1. Frequ. of 277: 0.0E+00 sec, 0.0E+00 min to go.  (IDEX = 50)
+ Jnu Trans( 3, 1),  51. Frequ. of 277: 1.0E-02 sec, 1.6E-02 min to go.             
+ Jnu Trans( 3, 1), 101. Frequ. of 277: 1.0E-02 sec, 1.3E-02 min to go.             
+ Jnu Trans( 3, 1), 151. Frequ. of 277: 0.0E+00 sec, 8.2E-03 min to go.             
+ Jnu Trans( 3, 1), 201. Frequ. of 277: 0.0E+00 sec, 4.8E-03 min to go.             
+ Jnu Trans( 3, 1), 251. Frequ. of 277: 1.0E-02 sec, 1.6E-03 min to go.             
+ Jnu Trans( 3, 1),   1. Frequ. of 277: 0.0E+00 sec, 0.0E+00 min to go.  (IDEX = 50)
+ Jnu Trans( 3, 1),  51. Frequ. of 277: 0.0E+00 sec, 1.5E-02 min to go.             
+ Jnu Trans( 3, 1), 101. Frequ. of 277: 0.0E+00 sec, 1.3E-02 min to go.             
+ Jnu Trans( 3, 1), 151. Frequ. of 277: 1.0E-02 sec, 8.2E-03 min to go.             
+ Jnu Trans( 3, 1), 201. Frequ. of 277: 1.0E-02 sec, 4.8E-03 min to go.             
+ Jnu Trans( 3, 1), 251. Frequ. of 277: 1.0E-02 sec, 1.6E-03 min to go.             
+ 2014-Mar-24 15:50:57  #   1/11         Number Densities                
+ 2014-Mar-24 15:50:57  #   1/11         Continuum Calculations          
+ 2014-Mar-24 15:51:12  #   1/11         Lyman                           
+ 2014-Mar-24 15:51:12  #   1/11         Number Densities                
+ 2014-Mar-24 15:51:12  #   1/11         Hydrostatic Equilibrium         
+ 2014-Mar-24 15:51:17  #   1/11         Number Densities                
+ 2014-Mar-24 15:51:17  #   1/11         Restart Data                    
+ 2014-Mar-24 15:51:18  #   2/11         Continuum Calculations          
+ 2014-Mar-24 15:52:58  #   2/11         Rates                           
+ 2014-Mar-24 15:53:01  #   2/11         H minus                         
+ 2014-Mar-24 15:53:01  #   2/11         Damping Parameter               
+ 2014-Mar-24 15:53:01  #   2/11   1/ 1  Line Source Functions           
+ Jnu Trans( 2, 1),   1. Frequ. of 167: 1.0E-02 sec, 2.8E-02 min to go.  (IDEX = 50)
+ Jnu Trans( 2, 1),  51. Frequ. of 167: 0.0E+00 sec, 9.9E-03 min to go.             
+ Jnu Trans( 2, 1), 101. Frequ. of 167: 1.0E-02 sec, 6.0E-03 min to go.             
+ Jnu Trans( 2, 1), 151. Frequ. of 167: 1.0E-02 sec, 1.3E-03 min to go.             
+ Jnu Trans( 2, 1),   1. Frequ. of 167: 0.0E+00 sec, 0.0E+00 min to go.  (IDEX = 50)
+ Jnu Trans( 2, 1),  51. Frequ. of 167: 0.0E+00 sec, 1.0E-02 min to go.             
+ Jnu Trans( 2, 1), 101. Frequ. of 167: 1.0E-02 sec, 6.0E-03 min to go.             
+ Jnu Trans( 2, 1), 151. Frequ. of 167: 0.0E+00 sec, 1.3E-03 min to go.             
+ Jnu Trans( 2, 1),   1. Frequ. of 167: 0.0E+00 sec, 0.0E+00 min to go.  (IDEX = 50)
+ Jnu Trans( 2, 1),  51. Frequ. of 167: 1.0E-02 sec, 9.9E-03 min to go.             
+ Jnu Trans( 2, 1), 101. Frequ. of 167: 0.0E+00 sec, 5.9E-03 min to go.             
+ Jnu Trans( 2, 1), 151. Frequ. of 167: 0.0E+00 sec, 1.3E-03 min to go.             
+ Jnu Trans( 2, 1),   1. Frequ. of 167: 0.0E+00 sec, 0.0E+00 min to go.  (IDEX = 50)
+ Jnu Trans( 2, 1),  51. Frequ. of 167: 1.0E-02 sec, 1.0E-02 min to go.             
+ Jnu Trans( 2, 1), 101. Frequ. of 167: 0.0E+00 sec, 6.0E-03 min to go.             
+ Jnu Trans( 2, 1), 151. Frequ. of 167: 0.0E+00 sec, 1.3E-03 min to go.             
+ Jnu Trans( 3, 1),   1. Frequ. of 277: 0.0E+00 sec, 0.0E+00 min to go.  (IDEX = 50)
+ Jnu Trans( 3, 1),  51. Frequ. of 277: 0.0E+00 sec, 1.4E-02 min to go.             
+ Jnu Trans( 3, 1), 101. Frequ. of 277: 1.0E-02 sec, 1.2E-02 min to go.             
+ Jnu Trans( 3, 1), 151. Frequ. of 277: 0.0E+00 sec, 7.9E-03 min to go.             
+ Jnu Trans( 3, 1), 201. Frequ. of 277: 0.0E+00 sec, 4.6E-03 min to go.             
+ Jnu Trans( 3, 1), 251. Frequ. of 277: 0.0E+00 sec, 1.5E-03 min to go.             
+ Jnu Trans( 3, 1),   1. Frequ. of 277: 0.0E+00 sec, 0.0E+00 min to go.  (IDEX = 50)
+ Jnu Trans( 3, 1),  51. Frequ. of 277: 0.0E+00 sec, 1.5E-02 min to go.             
+ Jnu Trans( 3, 1), 101. Frequ. of 277: 0.0E+00 sec, 1.3E-02 min to go.             
+ Jnu Trans( 3, 1), 151. Frequ. of 277: 0.0E+00 sec, 8.2E-03 min to go.             
+ Jnu Trans( 3, 1), 201. Frequ. of 277: 1.0E-02 sec, 4.8E-03 min to go.             
+ Jnu Trans( 3, 1), 251. Frequ. of 277: 0.0E+00 sec, 1.5E-03 min to go.             
+ Jnu Trans( 3, 1),   1. Frequ. of 277: 0.0E+00 sec, 0.0E+00 min to go.  (IDEX = 50)
+ Jnu Trans( 3, 1),  51. Frequ. of 277: 1.0E-02 sec, 1.5E-02 min to go.             
+ Jnu Trans( 3, 1), 101. Frequ. of 277: 0.0E+00 sec, 1.2E-02 min to go.             
+ Jnu Trans( 3, 1), 151. Frequ. of 277: 0.0E+00 sec, 7.9E-03 min to go.             
+ Jnu Trans( 3, 1), 201. Frequ. of 277: 0.0E+00 sec, 4.7E-03 min to go.             
+ Jnu Trans( 3, 1), 251. Frequ. of 277: 0.0E+00 sec, 1.5E-03 min to go.             
+ 2014-Mar-24 15:55:09  #   2/11         Number Densities                
+ 2014-Mar-24 15:55:09  #   2/11         Continuum Calculations          
+ 2014-Mar-24 15:55:14  #   2/11         Lyman                           
+ 2014-Mar-24 15:55:14  #   2/11         Number Densities                
+ 2014-Mar-24 15:55:14  #   2/11         Hydrostatic Equilibrium         
+ 2014-Mar-24 15:55:19  #   2/11         Number Densities                
+ 2014-Mar-24 15:55:19  #   2/11         Restart Data                    
+ 2014-Mar-24 15:55:19  #   3/11         Continuum Calculations          
+ 2014-Mar-24 15:57:04  #   3/11         Rates                           
+ 2014-Mar-24 15:57:05  #   3/11         H minus                         
+ 2014-Mar-24 15:57:05  #   3/11         Damping Parameter               
+ 2014-Mar-24 15:57:05  #   3/11   1/ 1  Line Source Functions           
+ Jnu Trans( 2, 1),   1. Frequ. of 167: 0.0E+00 sec, 0.0E+00 min to go.  (IDEX = 50)
+ Jnu Trans( 2, 1),  51. Frequ. of 167: 1.0E-02 sec, 1.0E-02 min to go.             
+ Jnu Trans( 2, 1), 101. Frequ. of 167: 0.0E+00 sec, 6.1E-03 min to go.             
+ Jnu Trans( 2, 1), 151. Frequ. of 167: 1.0E-02 sec, 1.3E-03 min to go.             
+ Jnu Trans( 2, 1),   1. Frequ. of 167: 0.0E+00 sec, 0.0E+00 min to go.  (IDEX = 50)
+ Jnu Trans( 2, 1),  51. Frequ. of 167: 1.0E-02 sec, 9.9E-03 min to go.             
+ Jnu Trans( 2, 1), 101. Frequ. of 167: 0.0E+00 sec, 5.9E-03 min to go.             
+ Jnu Trans( 2, 1), 151. Frequ. of 167: 0.0E+00 sec, 1.3E-03 min to go.             
+ Jnu Trans( 2, 1),   1. Frequ. of 167: 0.0E+00 sec, 0.0E+00 min to go.  (IDEX = 50)
+ Jnu Trans( 2, 1),  51. Frequ. of 167: 1.0E-02 sec, 9.9E-03 min to go.             
+ Jnu Trans( 2, 1), 101. Frequ. of 167: 0.0E+00 sec, 5.9E-03 min to go.             
+ Jnu Trans( 2, 1), 151. Frequ. of 167: 1.0E-02 sec, 1.3E-03 min to go.             
+ Jnu Trans( 2, 1),   1. Frequ. of 167: 1.0E-02 sec, 2.8E-02 min to go.  (IDEX = 50)
+ Jnu Trans( 2, 1),  51. Frequ. of 167: 1.0E-02 sec, 1.0E-02 min to go.             
+ Jnu Trans( 2, 1), 101. Frequ. of 167: 1.0E-02 sec, 6.1E-03 min to go.             
+ Jnu Trans( 2, 1), 151. Frequ. of 167: 1.0E-02 sec, 1.3E-03 min to go.             
+ Jnu Trans( 3, 1),   1. Frequ. of 277: 0.0E+00 sec, 0.0E+00 min to go.  (IDEX = 50)
+ Jnu Trans( 3, 1),  51. Frequ. of 277: 1.0E-02 sec, 1.5E-02 min to go.             
+ Jnu Trans( 3, 1), 101. Frequ. of 277: 0.0E+00 sec, 1.2E-02 min to go.             
+ Jnu Trans( 3, 1), 151. Frequ. of 277: 0.0E+00 sec, 7.9E-03 min to go.             
+ Jnu Trans( 3, 1), 201. Frequ. of 277: 0.0E+00 sec, 4.7E-03 min to go.             
+ Jnu Trans( 3, 1), 251. Frequ. of 277: 0.0E+00 sec, 1.5E-03 min to go.             
+ Jnu Trans( 3, 1),   1. Frequ. of 277: 0.0E+00 sec, 0.0E+00 min to go.  (IDEX = 50)
+ Jnu Trans( 3, 1),  51. Frequ. of 277: 0.0E+00 sec, 1.5E-02 min to go.             
+ Jnu Trans( 3, 1), 101. Frequ. of 277: 0.0E+00 sec, 1.3E-02 min to go.             
+ Jnu Trans( 3, 1), 151. Frequ. of 277: 0.0E+00 sec, 8.2E-03 min to go.             
+ Jnu Trans( 3, 1), 201. Frequ. of 277: 1.0E-02 sec, 4.8E-03 min to go.             
+ Jnu Trans( 3, 1), 251. Frequ. of 277: 1.0E-02 sec, 1.5E-03 min to go.             
+ Jnu Trans( 3, 1),   1. Frequ. of 277: 0.0E+00 sec, 0.0E+00 min to go.  (IDEX = 50)
+ Jnu Trans( 3, 1),  51. Frequ. of 277: 0.0E+00 sec, 1.4E-02 min to go.             
+ Jnu Trans( 3, 1), 101. Frequ. of 277: 1.0E-02 sec, 1.2E-02 min to go.             
+ Jnu Trans( 3, 1), 151. Frequ. of 277: 0.0E+00 sec, 7.9E-03 min to go.             
+ Jnu Trans( 3, 1), 201. Frequ. of 277: 0.0E+00 sec, 4.7E-03 min to go.             
+ Jnu Trans( 3, 1), 251. Frequ. of 277: 1.0E-02 sec, 1.5E-03 min to go.             
+ 2014-Mar-24 15:59:22  #   3/11         Number Densities                
+ 2014-Mar-24 15:59:22  #   3/11         Continuum Calculations          
+ 2014-Mar-24 15:59:28  #   3/11         Lyman                           
+ 2014-Mar-24 15:59:28  #   3/11         Number Densities                
+ 2014-Mar-24 15:59:28  #   3/11         Hydrostatic Equilibrium         
+ 2014-Mar-24 15:59:33  #   3/11         Number Densities                
+ 2014-Mar-24 15:59:33  #   3/11         Restart Data                    
+ 2014-Mar-24 15:59:33  #   4/11         Continuum Calculations          
+ 2014-Mar-24 16:01:28  #   4/11         Rates                           
+ 2014-Mar-24 16:01:29  #   4/11         H minus                         
+ 2014-Mar-24 16:01:29  #   4/11         Damping Parameter               
+ 2014-Mar-24 16:01:30  #   4/11   1/ 1  Line Source Functions           
+ Jnu Trans( 2, 1),   1. Frequ. of 167: 0.0E+00 sec, 0.0E+00 min to go.  (IDEX = 50)
+ Jnu Trans( 2, 1),  51. Frequ. of 167: 0.0E+00 sec, 9.9E-03 min to go.             
+ Jnu Trans( 2, 1), 101. Frequ. of 167: 9.9E-03 sec, 6.1E-03 min to go.             
+ Jnu Trans( 2, 1), 151. Frequ. of 167: 9.9E-03 sec, 1.3E-03 min to go.             
+ Jnu Trans( 2, 1),   1. Frequ. of 167: 1.0E-02 sec, 2.8E-02 min to go.  (IDEX = 50)
+ Jnu Trans( 2, 1),  51. Frequ. of 167: 1.0E-02 sec, 1.1E-02 min to go.             
+ Jnu Trans( 2, 1), 101. Frequ. of 167: 1.0E-02 sec, 6.2E-03 min to go.             
+ Jnu Trans( 2, 1), 151. Frequ. of 167: 0.0E+00 sec, 1.3E-03 min to go.             
+ Jnu Trans( 2, 1),   1. Frequ. of 167: 1.0E-02 sec, 2.8E-02 min to go.  (IDEX = 50)
+ Jnu Trans( 2, 1),  51. Frequ. of 167: 0.0E+00 sec, 1.0E-02 min to go.             
+ Jnu Trans( 2, 1), 101. Frequ. of 167: 9.9E-03 sec, 6.1E-03 min to go.             
+ Jnu Trans( 2, 1), 151. Frequ. of 167: 0.0E+00 sec, 1.3E-03 min to go.             
+ Jnu Trans( 2, 1),   1. Frequ. of 167: 0.0E+00 sec, 0.0E+00 min to go.  (IDEX = 50)
+ Jnu Trans( 2, 1),  51. Frequ. of 167: 0.0E+00 sec, 9.9E-03 min to go.             
+ Jnu Trans( 2, 1), 101. Frequ. of 167: 9.9E-03 sec, 6.0E-03 min to go.             
+ Jnu Trans( 2, 1), 151. Frequ. of 167: 0.0E+00 sec, 1.3E-03 min to go.             
+ Jnu Trans( 3, 1),   1. Frequ. of 277: 0.0E+00 sec, 0.0E+00 min to go.  (IDEX = 50)
+ Jnu Trans( 3, 1),  51. Frequ. of 277: 0.0E+00 sec, 1.5E-02 min to go.             
+ Jnu Trans( 3, 1), 101. Frequ. of 277: 0.0E+00 sec, 1.2E-02 min to go.             
+ Jnu Trans( 3, 1), 151. Frequ. of 277: 0.0E+00 sec, 8.1E-03 min to go.             
+ Jnu Trans( 3, 1), 201. Frequ. of 277: 0.0E+00 sec, 4.7E-03 min to go.             
+ Jnu Trans( 3, 1), 251. Frequ. of 277: 1.0E-02 sec, 1.6E-03 min to go.             
+ Jnu Trans( 3, 1),   1. Frequ. of 277: 1.0E-02 sec, 4.6E-02 min to go.  (IDEX = 50)
+ Jnu Trans( 3, 1),  51. Frequ. of 277: 0.0E+00 sec, 1.5E-02 min to go.             
+ Jnu Trans( 3, 1), 101. Frequ. of 277: 1.0E-02 sec, 1.3E-02 min to go.             
+ Jnu Trans( 3, 1), 151. Frequ. of 277: 0.0E+00 sec, 8.1E-03 min to go.             
+ Jnu Trans( 3, 1), 201. Frequ. of 277: 0.0E+00 sec, 4.8E-03 min to go.             
+ Jnu Trans( 3, 1), 251. Frequ. of 277: 0.0E+00 sec, 1.6E-03 min to go.             
+ Jnu Trans( 3, 1),   1. Frequ. of 277: 0.0E+00 sec, 0.0E+00 min to go.  (IDEX = 50)
+ Jnu Trans( 3, 1),  51. Frequ. of 277: 0.0E+00 sec, 1.5E-02 min to go.             
+ Jnu Trans( 3, 1), 101. Frequ. of 277: 1.0E-02 sec, 1.3E-02 min to go.             
+ Jnu Trans( 3, 1), 151. Frequ. of 277: 0.0E+00 sec, 8.1E-03 min to go.             
+ Jnu Trans( 3, 1), 201. Frequ. of 277: 0.0E+00 sec, 4.8E-03 min to go.             
+ Jnu Trans( 3, 1), 251. Frequ. of 277: 1.0E-02 sec, 1.6E-03 min to go.             
+ 2014-Mar-24 16:03:38  #   4/11         Number Densities                
+ 2014-Mar-24 16:03:38  #   4/11         Continuum Calculations          
+ 2014-Mar-24 16:03:54  #   4/11         Lyman                           
+ 2014-Mar-24 16:03:55  #   4/11         Number Densities                
+ 2014-Mar-24 16:03:55  #   4/11         Hydrostatic Equilibrium         
+ 2014-Mar-24 16:04:00  #   4/11         Number Densities                
+ 2014-Mar-24 16:04:00  #   4/11         Restart Data                    
+ 2014-Mar-24 16:04:01  #   5/11         Continuum Calculations          
+ 2014-Mar-24 16:05:47  #   5/11         Rates                           
+ 2014-Mar-24 16:05:49  #   5/11         H minus                         
+ 2014-Mar-24 16:05:49  #   5/11         Damping Parameter               
+ 2014-Mar-24 16:05:50  #   5/11   1/ 1  Line Source Functions           
+ Jnu Trans( 2, 1),   1. Frequ. of 167: 0.0E+00 sec, 0.0E+00 min to go.  (IDEX = 50)
+ Jnu Trans( 2, 1),  51. Frequ. of 167: 9.9E-03 sec, 1.0E-02 min to go.             
+ Jnu Trans( 2, 1), 101. Frequ. of 167: 0.0E+00 sec, 6.1E-03 min to go.             
+ Jnu Trans( 2, 1), 151. Frequ. of 167: 0.0E+00 sec, 1.3E-03 min to go.             
+ Jnu Trans( 2, 1),   1. Frequ. of 167: 0.0E+00 sec, 0.0E+00 min to go.  (IDEX = 50)
+ Jnu Trans( 2, 1),  51. Frequ. of 167: 1.0E-02 sec, 9.9E-03 min to go.             
+ Jnu Trans( 2, 1), 101. Frequ. of 167: 0.0E+00 sec, 5.9E-03 min to go.             
+ Jnu Trans( 2, 1), 151. Frequ. of 167: 0.0E+00 sec, 1.3E-03 min to go.             
+ Jnu Trans( 2, 1),   1. Frequ. of 167: 0.0E+00 sec, 0.0E+00 min to go.  (IDEX = 50)
+ Jnu Trans( 2, 1),  51. Frequ. of 167: 0.0E+00 sec, 9.9E-03 min to go.             
+ Jnu Trans( 2, 1), 101. Frequ. of 167: 1.0E-02 sec, 6.0E-03 min to go.             
+ Jnu Trans( 2, 1), 151. Frequ. of 167: 1.0E-02 sec, 1.3E-03 min to go.             
+ Jnu Trans( 2, 1),   1. Frequ. of 167: 0.0E+00 sec, 0.0E+00 min to go.  (IDEX = 50)
+ Jnu Trans( 2, 1),  51. Frequ. of 167: 9.9E-03 sec, 1.0E-02 min to go.             
+ Jnu Trans( 2, 1), 101. Frequ. of 167: 1.0E-02 sec, 6.1E-03 min to go.             
+ Jnu Trans( 2, 1), 151. Frequ. of 167: 1.0E-02 sec, 1.3E-03 min to go.             
+ Jnu Trans( 3, 1),   1. Frequ. of 277: 0.0E+00 sec, 0.0E+00 min to go.  (IDEX = 50)
+ Jnu Trans( 3, 1),  51. Frequ. of 277: 0.0E+00 sec, 1.5E-02 min to go.             
+ Jnu Trans( 3, 1), 101. Frequ. of 277: 0.0E+00 sec, 1.3E-02 min to go.             
+ Jnu Trans( 3, 1), 151. Frequ. of 277: 0.0E+00 sec, 8.1E-03 min to go.             
+ Jnu Trans( 3, 1), 201. Frequ. of 277: 0.0E+00 sec, 4.7E-03 min to go.             
+ Jnu Trans( 3, 1), 251. Frequ. of 277: 1.0E-02 sec, 1.6E-03 min to go.             
+ Jnu Trans( 3, 1),   1. Frequ. of 277: 0.0E+00 sec, 0.0E+00 min to go.  (IDEX = 50)
+ Jnu Trans( 3, 1),  51. Frequ. of 277: 1.0E-02 sec, 1.5E-02 min to go.             
+ Jnu Trans( 3, 1), 101. Frequ. of 277: 0.0E+00 sec, 1.2E-02 min to go.             
+ Jnu Trans( 3, 1), 151. Frequ. of 277: 0.0E+00 sec, 8.1E-03 min to go.             
+ Jnu Trans( 3, 1), 201. Frequ. of 277: 9.9E-03 sec, 4.7E-03 min to go.             
+ Jnu Trans( 3, 1), 251. Frequ. of 277: 0.0E+00 sec, 1.5E-03 min to go.             
+ Jnu Trans( 3, 1),   1. Frequ. of 277: 0.0E+00 sec, 0.0E+00 min to go.  (IDEX = 50)
+ Jnu Trans( 3, 1),  51. Frequ. of 277: 0.0E+00 sec, 1.4E-02 min to go.             
+ Jnu Trans( 3, 1), 101. Frequ. of 277: 0.0E+00 sec, 1.2E-02 min to go.             
+ Jnu Trans( 3, 1), 151. Frequ. of 277: 0.0E+00 sec, 7.9E-03 min to go.             
+ Jnu Trans( 3, 1), 201. Frequ. of 277: 1.0E-02 sec, 4.7E-03 min to go.             
+ Jnu Trans( 3, 1), 251. Frequ. of 277: 0.0E+00 sec, 1.5E-03 min to go.             
+ 2014-Mar-24 16:08:00  #   5/11         Number Densities                
+ 2014-Mar-24 16:08:00  #   5/11         Continuum Calculations          
+ 2014-Mar-24 16:08:05  #   5/11         Lyman                           
+ 2014-Mar-24 16:08:06  #   5/11         Number Densities                
+ 2014-Mar-24 16:08:06  #   5/11         Hydrostatic Equilibrium         
+ 2014-Mar-24 16:08:11  #   5/11         Number Densities                
+ 2014-Mar-24 16:08:11  #   5/11         Restart Data                    
+ 2014-Mar-24 16:08:19  #   6/11         Continuum Calculations          
+ 2014-Mar-24 16:10:05  #   6/11         Rates                           
+ 2014-Mar-24 16:10:06  #   6/11         H minus                         
+ 2014-Mar-24 16:10:06  #   6/11         Damping Parameter               
+ 2014-Mar-24 16:10:07  #   6/11   1/ 1  Line Source Functions           
+ Jnu Trans( 2, 1),   1. Frequ. of 167: 0.0E+00 sec, 0.0E+00 min to go.  (IDEX = 50)
+ Jnu Trans( 2, 1),  51. Frequ. of 167: 1.0E-02 sec, 1.0E-02 min to go.             
+ Jnu Trans( 2, 1), 101. Frequ. of 167: 1.0E-02 sec, 6.2E-03 min to go.             
+ Jnu Trans( 2, 1), 151. Frequ. of 167: 0.0E+00 sec, 1.3E-03 min to go.             
+ Jnu Trans( 2, 1),   1. Frequ. of 167: 0.0E+00 sec, 0.0E+00 min to go.  (IDEX = 50)
+ Jnu Trans( 2, 1),  51. Frequ. of 167: 0.0E+00 sec, 9.9E-03 min to go.             
+ Jnu Trans( 2, 1), 101. Frequ. of 167: 1.0E-02 sec, 6.0E-03 min to go.             
+ Jnu Trans( 2, 1), 151. Frequ. of 167: 0.0E+00 sec, 1.3E-03 min to go.             
+ Jnu Trans( 2, 1),   1. Frequ. of 167: 0.0E+00 sec, 0.0E+00 min to go.  (IDEX = 50)
+ Jnu Trans( 2, 1),  51. Frequ. of 167: 1.0E-02 sec, 9.9E-03 min to go.             
+ Jnu Trans( 2, 1), 101. Frequ. of 167: 1.0E-02 sec, 5.9E-03 min to go.             
+ Jnu Trans( 2, 1), 151. Frequ. of 167: 1.0E-02 sec, 1.3E-03 min to go.             
+ Jnu Trans( 2, 1),   1. Frequ. of 167: 0.0E+00 sec, 0.0E+00 min to go.  (IDEX = 50)
+ Jnu Trans( 2, 1),  51. Frequ. of 167: 9.9E-03 sec, 1.0E-02 min to go.             
+ Jnu Trans( 2, 1), 101. Frequ. of 167: 1.0E-02 sec, 6.1E-03 min to go.             
+ Jnu Trans( 2, 1), 151. Frequ. of 167: 0.0E+00 sec, 1.3E-03 min to go.             
+ Jnu Trans( 3, 1),   1. Frequ. of 277: 0.0E+00 sec, 0.0E+00 min to go.  (IDEX = 50)
+ Jnu Trans( 3, 1),  51. Frequ. of 277: 0.0E+00 sec, 1.4E-02 min to go.             
+ Jnu Trans( 3, 1), 101. Frequ. of 277: 0.0E+00 sec, 1.2E-02 min to go.             
+ Jnu Trans( 3, 1), 151. Frequ. of 277: 0.0E+00 sec, 7.8E-03 min to go.             
+ Jnu Trans( 3, 1), 201. Frequ. of 277: 0.0E+00 sec, 4.6E-03 min to go.             
+ Jnu Trans( 3, 1), 251. Frequ. of 277: 0.0E+00 sec, 1.5E-03 min to go.             
+ Jnu Trans( 3, 1),   1. Frequ. of 277: 0.0E+00 sec, 0.0E+00 min to go.  (IDEX = 50)
+ Jnu Trans( 3, 1),  51. Frequ. of 277: 9.9E-03 sec, 1.5E-02 min to go.             
+ Jnu Trans( 3, 1), 101. Frequ. of 277: 0.0E+00 sec, 1.2E-02 min to go.             
+ Jnu Trans( 3, 1), 151. Frequ. of 277: 0.0E+00 sec, 7.9E-03 min to go.             
+ Jnu Trans( 3, 1), 201. Frequ. of 277: 0.0E+00 sec, 4.7E-03 min to go.             
+ Jnu Trans( 3, 1), 251. Frequ. of 277: 1.0E-02 sec, 1.5E-03 min to go.             
+ Jnu Trans( 3, 1),   1. Frequ. of 277: 0.0E+00 sec, 0.0E+00 min to go.  (IDEX = 50)
+ Jnu Trans( 3, 1),  51. Frequ. of 277: 1.0E-02 sec, 1.5E-02 min to go.             
+ Jnu Trans( 3, 1), 101. Frequ. of 277: 0.0E+00 sec, 1.2E-02 min to go.             
+ Jnu Trans( 3, 1), 151. Frequ. of 277: 0.0E+00 sec, 7.9E-03 min to go.             
+ Jnu Trans( 3, 1), 201. Frequ. of 277: 0.0E+00 sec, 4.7E-03 min to go.             
+ Jnu Trans( 3, 1), 251. Frequ. of 277: 1.0E-02 sec, 1.5E-03 min to go.             
+ 2014-Mar-24 16:12:28  #   6/11         Number Densities                
+ 2014-Mar-24 16:12:28  #   6/11         Continuum Calculations          
+ 2014-Mar-24 16:12:33  #   6/11         Lyman                           
+ 2014-Mar-24 16:12:33  #   6/11         Number Densities                
+ 2014-Mar-24 16:12:33  #   6/11         Hydrostatic Equilibrium         
+ 2014-Mar-24 16:12:38  #   6/11         Number Densities                
+ 2014-Mar-24 16:12:38  #   6/11         Restart Data                    
+ 2014-Mar-24 16:12:38  #   7/11         Continuum Calculations          
+ 2014-Mar-24 16:14:31  #   7/11         Rates                           
+ 2014-Mar-24 16:14:33  #   7/11         H minus                         
+ 2014-Mar-24 16:14:33  #   7/11         Damping Parameter               
+ 2014-Mar-24 16:14:33  #   7/11   1/ 1  Line Source Functions           
+ Jnu Trans( 2, 1),   1. Frequ. of 167: 1.0E-02 sec, 2.8E-02 min to go.  (IDEX = 50)
+ Jnu Trans( 2, 1),  51. Frequ. of 167: 0.0E+00 sec, 1.0E-02 min to go.             
+ Jnu Trans( 2, 1), 101. Frequ. of 167: 1.0E-02 sec, 6.2E-03 min to go.             
+ Jnu Trans( 2, 1), 151. Frequ. of 167: 1.0E-02 sec, 1.3E-03 min to go.             
+ Jnu Trans( 2, 1),   1. Frequ. of 167: 1.0E-02 sec, 2.8E-02 min to go.  (IDEX = 50)
+ Jnu Trans( 2, 1),  51. Frequ. of 167: 1.0E-02 sec, 1.0E-02 min to go.             
+ Jnu Trans( 2, 1), 101. Frequ. of 167: 0.0E+00 sec, 6.0E-03 min to go.             
+ Jnu Trans( 2, 1), 151. Frequ. of 167: 0.0E+00 sec, 1.3E-03 min to go.             
+ Jnu Trans( 2, 1),   1. Frequ. of 167: 0.0E+00 sec, 0.0E+00 min to go.  (IDEX = 50)
+ Jnu Trans( 2, 1),  51. Frequ. of 167: 1.0E-02 sec, 1.0E-02 min to go.             
+ Jnu Trans( 2, 1), 101. Frequ. of 167: 1.0E-02 sec, 6.1E-03 min to go.             
+ Jnu Trans( 2, 1), 151. Frequ. of 167: 1.0E-02 sec, 1.3E-03 min to go.             
+ Jnu Trans( 2, 1),   1. Frequ. of 167: 1.0E-02 sec, 2.8E-02 min to go.  (IDEX = 50)
+ Jnu Trans( 2, 1),  51. Frequ. of 167: 1.0E-02 sec, 1.0E-02 min to go.             
+ Jnu Trans( 2, 1), 101. Frequ. of 167: 0.0E+00 sec, 6.0E-03 min to go.             
+ Jnu Trans( 2, 1), 151. Frequ. of 167: 1.0E-02 sec, 1.3E-03 min to go.             
+ Jnu Trans( 3, 1),   1. Frequ. of 277: 1.0E-02 sec, 4.6E-02 min to go.  (IDEX = 50)
+ Jnu Trans( 3, 1),  51. Frequ. of 277: 1.0E-02 sec, 1.5E-02 min to go.             
+ Jnu Trans( 3, 1), 101. Frequ. of 277: 0.0E+00 sec, 1.2E-02 min to go.             
+ Jnu Trans( 3, 1), 151. Frequ. of 277: 0.0E+00 sec, 7.9E-03 min to go.             
+ Jnu Trans( 3, 1), 201. Frequ. of 277: 1.0E-02 sec, 4.7E-03 min to go.             
+ Jnu Trans( 3, 1), 251. Frequ. of 277: 0.0E+00 sec, 1.6E-03 min to go.             
+ Jnu Trans( 3, 1),   1. Frequ. of 277: 0.0E+00 sec, 0.0E+00 min to go.  (IDEX = 50)
+ Jnu Trans( 3, 1),  51. Frequ. of 277: 0.0E+00 sec, 1.4E-02 min to go.             
+ Jnu Trans( 3, 1), 101. Frequ. of 277: 1.0E-02 sec, 1.2E-02 min to go.             
+ Jnu Trans( 3, 1), 151. Frequ. of 277: 0.0E+00 sec, 7.9E-03 min to go.             
+ Jnu Trans( 3, 1), 201. Frequ. of 277: 0.0E+00 sec, 4.6E-03 min to go.             
+ Jnu Trans( 3, 1), 251. Frequ. of 277: 1.0E-02 sec, 1.5E-03 min to go.             
+ Jnu Trans( 3, 1),   1. Frequ. of 277: 0.0E+00 sec, 0.0E+00 min to go.  (IDEX = 50)
+ Jnu Trans( 3, 1),  51. Frequ. of 277: 0.0E+00 sec, 1.4E-02 min to go.             
+ Jnu Trans( 3, 1), 101. Frequ. of 277: 0.0E+00 sec, 1.2E-02 min to go.             
+ Jnu Trans( 3, 1), 151. Frequ. of 277: 0.0E+00 sec, 7.9E-03 min to go.             
+ Jnu Trans( 3, 1), 201. Frequ. of 277: 0.0E+00 sec, 4.7E-03 min to go.             
+ Jnu Trans( 3, 1), 251. Frequ. of 277: 0.0E+00 sec, 1.6E-03 min to go.             
+ 2014-Mar-24 16:16:46  #   7/11         Number Densities                
+ 2014-Mar-24 16:16:46  #   7/11         Continuum Calculations          
+ 2014-Mar-24 16:16:51  #   7/11         Lyman                           
+ 2014-Mar-24 16:16:51  #   7/11         Number Densities                
+ 2014-Mar-24 16:16:51  #   7/11         Hydrostatic Equilibrium         
+ 2014-Mar-24 16:16:56  #   7/11         Number Densities                
+ 2014-Mar-24 16:16:56  #   7/11         Restart Data                    
+ 2014-Mar-24 16:17:10  #   8/11         Continuum Calculations          
+ 2014-Mar-24 16:18:52  #   8/11         Rates                           
+ 2014-Mar-24 16:18:53  #   8/11         H minus                         
+ 2014-Mar-24 16:18:53  #   8/11         Damping Parameter               
+ 2014-Mar-24 16:18:54  #   8/11   1/ 1  Line Source Functions           
+ Jnu Trans( 2, 1),   1. Frequ. of 167: 0.0E+00 sec, 0.0E+00 min to go.  (IDEX = 50)
+ Jnu Trans( 2, 1),  51. Frequ. of 167: 9.9E-03 sec, 1.0E-02 min to go.             
+ Jnu Trans( 2, 1), 101. Frequ. of 167: 1.0E-02 sec, 6.1E-03 min to go.             
+ Jnu Trans( 2, 1), 151. Frequ. of 167: 0.0E+00 sec, 1.3E-03 min to go.             
+ Jnu Trans( 2, 1),   1. Frequ. of 167: 0.0E+00 sec, 0.0E+00 min to go.  (IDEX = 50)
+ Jnu Trans( 2, 1),  51. Frequ. of 167: 1.0E-02 sec, 1.1E-02 min to go.             
+ Jnu Trans( 2, 1), 101. Frequ. of 167: 9.9E-03 sec, 6.2E-03 min to go.             
+ Jnu Trans( 2, 1), 151. Frequ. of 167: 1.0E-02 sec, 1.3E-03 min to go.             
+ Jnu Trans( 2, 1),   1. Frequ. of 167: 0.0E+00 sec, 0.0E+00 min to go.  (IDEX = 50)
+ Jnu Trans( 2, 1),  51. Frequ. of 167: 0.0E+00 sec, 9.9E-03 min to go.             
+ Jnu Trans( 2, 1), 101. Frequ. of 167: 1.0E-02 sec, 6.0E-03 min to go.             
+ Jnu Trans( 2, 1), 151. Frequ. of 167: 0.0E+00 sec, 1.3E-03 min to go.             
+ Jnu Trans( 2, 1),   1. Frequ. of 167: 0.0E+00 sec, 0.0E+00 min to go.  (IDEX = 50)
+ Jnu Trans( 2, 1),  51. Frequ. of 167: 1.0E-02 sec, 1.0E-02 min to go.             
+ Jnu Trans( 2, 1), 101. Frequ. of 167: 1.0E-02 sec, 6.0E-03 min to go.             
+ Jnu Trans( 2, 1), 151. Frequ. of 167: 0.0E+00 sec, 1.3E-03 min to go.             
+ Jnu Trans( 3, 1),   1. Frequ. of 277: 0.0E+00 sec, 0.0E+00 min to go.  (IDEX = 50)
+ Jnu Trans( 3, 1),  51. Frequ. of 277: 0.0E+00 sec, 1.4E-02 min to go.             
+ Jnu Trans( 3, 1), 101. Frequ. of 277: 1.0E-02 sec, 1.2E-02 min to go.             
+ Jnu Trans( 3, 1), 151. Frequ. of 277: 0.0E+00 sec, 7.9E-03 min to go.             
+ Jnu Trans( 3, 1), 201. Frequ. of 277: 0.0E+00 sec, 4.7E-03 min to go.             
+ Jnu Trans( 3, 1), 251. Frequ. of 277: 0.0E+00 sec, 1.5E-03 min to go.             
+ Jnu Trans( 3, 1),   1. Frequ. of 277: 0.0E+00 sec, 0.0E+00 min to go.  (IDEX = 50)
+ Jnu Trans( 3, 1),  51. Frequ. of 277: 0.0E+00 sec, 1.5E-02 min to go.             
+ Jnu Trans( 3, 1), 101. Frequ. of 277: 0.0E+00 sec, 1.3E-02 min to go.             
+ Jnu Trans( 3, 1), 151. Frequ. of 277: 0.0E+00 sec, 8.2E-03 min to go.             
+ Jnu Trans( 3, 1), 201. Frequ. of 277: 0.0E+00 sec, 4.9E-03 min to go.             
+ Jnu Trans( 3, 1), 251. Frequ. of 277: 0.0E+00 sec, 1.6E-03 min to go.             
+ Jnu Trans( 3, 1),   1. Frequ. of 277: 0.0E+00 sec, 0.0E+00 min to go.  (IDEX = 50)
+ Jnu Trans( 3, 1),  51. Frequ. of 277: 0.0E+00 sec, 1.5E-02 min to go.             
+ Jnu Trans( 3, 1), 101. Frequ. of 277: 0.0E+00 sec, 1.2E-02 min to go.             
+ Jnu Trans( 3, 1), 151. Frequ. of 277: 1.0E-02 sec, 8.1E-03 min to go.             
+ Jnu Trans( 3, 1), 201. Frequ. of 277: 0.0E+00 sec, 4.7E-03 min to go.             
+ Jnu Trans( 3, 1), 251. Frequ. of 277: 0.0E+00 sec, 1.5E-03 min to go.             
+ 2014-Mar-24 16:21:20  #   8/11         Number Densities                
+ 2014-Mar-24 16:21:20  #   8/11         Continuum Calculations          
+ 2014-Mar-24 16:21:26  #   8/11         Lyman                           
+ 2014-Mar-24 16:21:26  #   8/11         Number Densities                
+ 2014-Mar-24 16:21:26  #   8/11         Hydrostatic Equilibrium         
+ 2014-Mar-24 16:21:31  #   8/11         Number Densities                
+ 2014-Mar-24 16:21:31  #   8/11         Restart Data                    
+ 2014-Mar-24 16:21:31  #   9/11         Continuum Calculations          
+ 2014-Mar-24 16:23:18  #   9/11         Rates                           
+ 2014-Mar-24 16:23:19  #   9/11         H minus                         
+ 2014-Mar-24 16:23:19  #   9/11         Damping Parameter               
+ 2014-Mar-24 16:23:20  #   9/11   1/ 1  Line Source Functions           
+ Jnu Trans( 2, 1),   1. Frequ. of 167: 1.0E-02 sec, 2.8E-02 min to go.  (IDEX = 50)
+ Jnu Trans( 2, 1),  51. Frequ. of 167: 1.0E-02 sec, 1.1E-02 min to go.             
+ Jnu Trans( 2, 1), 101. Frequ. of 167: 1.0E-02 sec, 6.3E-03 min to go.             
+ Jnu Trans( 2, 1), 151. Frequ. of 167: 0.0E+00 sec, 1.3E-03 min to go.             
+ Jnu Trans( 2, 1),   1. Frequ. of 167: 0.0E+00 sec, 0.0E+00 min to go.  (IDEX = 50)
+ Jnu Trans( 2, 1),  51. Frequ. of 167: 1.0E-02 sec, 1.1E-02 min to go.             
+ Jnu Trans( 2, 1), 101. Frequ. of 167: 1.0E-02 sec, 6.2E-03 min to go.             
+ Jnu Trans( 2, 1), 151. Frequ. of 167: 0.0E+00 sec, 1.3E-03 min to go.             
+ Jnu Trans( 2, 1),   1. Frequ. of 167: 0.0E+00 sec, 0.0E+00 min to go.  (IDEX = 50)
+ Jnu Trans( 2, 1),  51. Frequ. of 167: 1.0E-02 sec, 1.0E-02 min to go.             
+ Jnu Trans( 2, 1), 101. Frequ. of 167: 1.0E-02 sec, 6.1E-03 min to go.             
+ Jnu Trans( 2, 1), 151. Frequ. of 167: 1.0E-02 sec, 1.3E-03 min to go.             
+ Jnu Trans( 2, 1),   1. Frequ. of 167: 0.0E+00 sec, 0.0E+00 min to go.  (IDEX = 50)
+ Jnu Trans( 2, 1),  51. Frequ. of 167: 1.0E-02 sec, 1.0E-02 min to go.             
+ Jnu Trans( 2, 1), 101. Frequ. of 167: 1.0E-02 sec, 6.2E-03 min to go.             
+ Jnu Trans( 2, 1), 151. Frequ. of 167: 1.0E-02 sec, 1.3E-03 min to go.             
+ Jnu Trans( 3, 1),   1. Frequ. of 277: 1.0E-02 sec, 4.6E-02 min to go.  (IDEX = 50)
+ Jnu Trans( 3, 1),  51. Frequ. of 277: 1.0E-02 sec, 1.6E-02 min to go.             
+ Jnu Trans( 3, 1), 101. Frequ. of 277: 1.0E-02 sec, 1.3E-02 min to go.             
+ Jnu Trans( 3, 1), 151. Frequ. of 277: 1.0E-02 sec, 8.3E-03 min to go.             
+ Jnu Trans( 3, 1), 201. Frequ. of 277: 0.0E+00 sec, 4.9E-03 min to go.             
+ Jnu Trans( 3, 1), 251. Frequ. of 277: 0.0E+00 sec, 1.6E-03 min to go.             
+ Jnu Trans( 3, 1),   1. Frequ. of 277: 0.0E+00 sec, 0.0E+00 min to go.  (IDEX = 50)
+ Jnu Trans( 3, 1),  51. Frequ. of 277: 0.0E+00 sec, 1.5E-02 min to go.             
+ Jnu Trans( 3, 1), 101. Frequ. of 277: 1.0E-02 sec, 1.3E-02 min to go.             
+ Jnu Trans( 3, 1), 151. Frequ. of 277: 0.0E+00 sec, 8.1E-03 min to go.             
+ Jnu Trans( 3, 1), 201. Frequ. of 277: 1.0E-02 sec, 4.8E-03 min to go.             
+ Jnu Trans( 3, 1), 251. Frequ. of 277: 0.0E+00 sec, 1.6E-03 min to go.             
+ Jnu Trans( 3, 1),   1. Frequ. of 277: 1.0E-02 sec, 4.6E-02 min to go.  (IDEX = 50)
+ Jnu Trans( 3, 1),  51. Frequ. of 277: 0.0E+00 sec, 1.6E-02 min to go.             
+ Jnu Trans( 3, 1), 101. Frequ. of 277: 1.0E-02 sec, 1.3E-02 min to go.             
+ Jnu Trans( 3, 1), 151. Frequ. of 277: 0.0E+00 sec, 8.5E-03 min to go.             
+ Jnu Trans( 3, 1), 201. Frequ. of 277: 0.0E+00 sec, 4.9E-03 min to go.             
+ Jnu Trans( 3, 1), 251. Frequ. of 277: 0.0E+00 sec, 1.6E-03 min to go.             
+ 2014-Mar-24 16:25:45  #   9/11         Number Densities                
+ 2014-Mar-24 16:25:45  #   9/11         Continuum Calculations          
+ 2014-Mar-24 16:25:50  #   9/11         Lyman                           
+ 2014-Mar-24 16:25:51  #   9/11         Number Densities                
+ 2014-Mar-24 16:25:51  #   9/11         Hydrostatic Equilibrium         
+ 2014-Mar-24 16:25:56  #   9/11         Number Densities                
+ 2014-Mar-24 16:25:56  #   9/11         Restart Data                    
+ 2014-Mar-24 16:25:56  #  10/11         Continuum Calculations          
+ 2014-Mar-24 16:27:42  #  10/11         Rates                           
+ 2014-Mar-24 16:27:44  #  10/11         H minus                         
+ 2014-Mar-24 16:27:44  #  10/11         Damping Parameter               
+ 2014-Mar-24 16:27:45  #  10/11   1/ 1  Line Source Functions           
+ Jnu Trans( 2, 1),   1. Frequ. of 167: 0.0E+00 sec, 0.0E+00 min to go.  (IDEX = 50)
+ Jnu Trans( 2, 1),  51. Frequ. of 167: 0.0E+00 sec, 1.0E-02 min to go.             
+ Jnu Trans( 2, 1), 101. Frequ. of 167: 0.0E+00 sec, 6.2E-03 min to go.             
+ Jnu Trans( 2, 1), 151. Frequ. of 167: 0.0E+00 sec, 1.3E-03 min to go.             
+ Jnu Trans( 2, 1),   1. Frequ. of 167: 0.0E+00 sec, 0.0E+00 min to go.  (IDEX = 50)
+ Jnu Trans( 2, 1),  51. Frequ. of 167: 1.0E-02 sec, 1.1E-02 min to go.             
+ Jnu Trans( 2, 1), 101. Frequ. of 167: 1.0E-02 sec, 6.2E-03 min to go.             
+ Jnu Trans( 2, 1), 151. Frequ. of 167: 1.0E-02 sec, 1.3E-03 min to go.             
+ Jnu Trans( 2, 1),   1. Frequ. of 167: 0.0E+00 sec, 0.0E+00 min to go.  (IDEX = 50)
+ Jnu Trans( 2, 1),  51. Frequ. of 167: 0.0E+00 sec, 1.1E-02 min to go.             
+ Jnu Trans( 2, 1), 101. Frequ. of 167: 1.0E-02 sec, 6.3E-03 min to go.             
+ Jnu Trans( 2, 1), 151. Frequ. of 167: 0.0E+00 sec, 1.4E-03 min to go.             
+ Jnu Trans( 2, 1),   1. Frequ. of 167: 0.0E+00 sec, 0.0E+00 min to go.  (IDEX = 50)
+ Jnu Trans( 2, 1),  51. Frequ. of 167: 0.0E+00 sec, 1.0E-02 min to go.             
+ Jnu Trans( 2, 1), 101. Frequ. of 167: 0.0E+00 sec, 6.1E-03 min to go.             
+ Jnu Trans( 2, 1), 151. Frequ. of 167: 1.0E-02 sec, 1.3E-03 min to go.             
+ Jnu Trans( 3, 1),   1. Frequ. of 277: 0.0E+00 sec, 0.0E+00 min to go.  (IDEX = 50)
+ Jnu Trans( 3, 1),  51. Frequ. of 277: 9.9E-03 sec, 1.6E-02 min to go.             
+ Jnu Trans( 3, 1), 101. Frequ. of 277: 0.0E+00 sec, 1.3E-02 min to go.             
+ Jnu Trans( 3, 1), 151. Frequ. of 277: 0.0E+00 sec, 8.3E-03 min to go.             
+ Jnu Trans( 3, 1), 201. Frequ. of 277: 0.0E+00 sec, 4.9E-03 min to go.             
+ Jnu Trans( 3, 1), 251. Frequ. of 277: 0.0E+00 sec, 1.5E-03 min to go.             
+ Jnu Trans( 3, 1),   1. Frequ. of 277: 9.9E-03 sec, 4.5E-02 min to go.  (IDEX = 50)
+ Jnu Trans( 3, 1),  51. Frequ. of 277: 1.0E-02 sec, 1.6E-02 min to go.             
+ Jnu Trans( 3, 1), 101. Frequ. of 277: 1.0E-02 sec, 1.3E-02 min to go.             
+ Jnu Trans( 3, 1), 151. Frequ. of 277: 0.0E+00 sec, 8.3E-03 min to go.             
+ Jnu Trans( 3, 1), 201. Frequ. of 277: 0.0E+00 sec, 4.9E-03 min to go.             
+ Jnu Trans( 3, 1), 251. Frequ. of 277: 1.0E-02 sec, 1.6E-03 min to go.             
+ Jnu Trans( 3, 1),   1. Frequ. of 277: 0.0E+00 sec, 0.0E+00 min to go.  (IDEX = 50)
+ Jnu Trans( 3, 1),  51. Frequ. of 277: 1.0E-02 sec, 1.5E-02 min to go.             
+ Jnu Trans( 3, 1), 101. Frequ. of 277: 1.0E-02 sec, 1.3E-02 min to go.             
+ Jnu Trans( 3, 1), 151. Frequ. of 277: 0.0E+00 sec, 8.2E-03 min to go.             
+ Jnu Trans( 3, 1), 201. Frequ. of 277: 0.0E+00 sec, 4.8E-03 min to go.             
+ Jnu Trans( 3, 1), 251. Frequ. of 277: 0.0E+00 sec, 1.6E-03 min to go.             
+ 2014-Mar-24 16:30:00  #  10/11         Number Densities                
+ 2014-Mar-24 16:30:00  #  10/11         Continuum Calculations          
+ 2014-Mar-24 16:30:06  #  10/11         Lyman                           
+ 2014-Mar-24 16:30:06  #  10/11         Number Densities                
+ 2014-Mar-24 16:30:06  #  10/11         Hydrostatic Equilibrium         
+ 2014-Mar-24 16:30:11  #  10/11         Number Densities                
+ 2014-Mar-24 16:30:11  #  10/11         Restart Data                    
+ 2014-Mar-24 16:30:19  #  11/11         Continuum Calculations          
+ 2014-Mar-24 16:32:08  #  11/11         Rates                           
+ 2014-Mar-24 16:32:09  #  11/11         H minus                         
+ 2014-Mar-24 16:32:10  #  11/11         Damping Parameter               
+ 2014-Mar-24 16:32:11  #  11/11   1/ 1  Line Source Functions           
+ Jnu Trans( 2, 1),   1. Frequ. of 167: 0.0E+00 sec, 0.0E+00 min to go.  (IDEX = 50)
+ Jnu Trans( 2, 1),  51. Frequ. of 167: 0.0E+00 sec, 1.0E-02 min to go.             
+ Jnu Trans( 2, 1), 101. Frequ. of 167: 0.0E+00 sec, 6.2E-03 min to go.             
+ Jnu Trans( 2, 1), 151. Frequ. of 167: 0.0E+00 sec, 1.3E-03 min to go.             
+ Jnu Trans( 2, 1),   1. Frequ. of 167: 0.0E+00 sec, 0.0E+00 min to go.  (IDEX = 50)
+ Jnu Trans( 2, 1),  51. Frequ. of 167: 0.0E+00 sec, 1.0E-02 min to go.             
+ Jnu Trans( 2, 1), 101. Frequ. of 167: 9.8E-03 sec, 6.2E-03 min to go.             
+ Jnu Trans( 2, 1), 151. Frequ. of 167: 1.0E-02 sec, 1.3E-03 min to go.             
+ Jnu Trans( 2, 1),   1. Frequ. of 167: 0.0E+00 sec, 0.0E+00 min to go.  (IDEX = 50)
+ Jnu Trans( 2, 1),  51. Frequ. of 167: 1.0E-02 sec, 1.0E-02 min to go.             
+ Jnu Trans( 2, 1), 101. Frequ. of 167: 1.0E-02 sec, 6.1E-03 min to go.             
+ Jnu Trans( 2, 1), 151. Frequ. of 167: 0.0E+00 sec, 1.3E-03 min to go.             
+ Jnu Trans( 2, 1),   1. Frequ. of 167: 1.0E-02 sec, 2.8E-02 min to go.  (IDEX = 50)
+ Jnu Trans( 2, 1),  51. Frequ. of 167: 9.8E-03 sec, 1.1E-02 min to go.             
+ Jnu Trans( 2, 1), 101. Frequ. of 167: 1.0E-02 sec, 6.3E-03 min to go.             
+ Jnu Trans( 2, 1), 151. Frequ. of 167: 1.0E-02 sec, 1.4E-03 min to go.             
+ Jnu Trans( 3, 1),   1. Frequ. of 277: 0.0E+00 sec, 0.0E+00 min to go.  (IDEX = 50)
+ Jnu Trans( 3, 1),  51. Frequ. of 277: 0.0E+00 sec, 1.5E-02 min to go.             
+ Jnu Trans( 3, 1), 101. Frequ. of 277: 0.0E+00 sec, 1.3E-02 min to go.             
+ Jnu Trans( 3, 1), 151. Frequ. of 277: 0.0E+00 sec, 8.2E-03 min to go.             
+ Jnu Trans( 3, 1), 201. Frequ. of 277: 1.0E-02 sec, 4.9E-03 min to go.             
+ Jnu Trans( 3, 1), 251. Frequ. of 277: 0.0E+00 sec, 1.6E-03 min to go.             
+ Jnu Trans( 3, 1),   1. Frequ. of 277: 1.0E-02 sec, 4.6E-02 min to go.  (IDEX = 50)
+ Jnu Trans( 3, 1),  51. Frequ. of 277: 0.0E+00 sec, 1.5E-02 min to go.             
+ Jnu Trans( 3, 1), 101. Frequ. of 277: 1.0E-02 sec, 1.3E-02 min to go.             
+ Jnu Trans( 3, 1), 151. Frequ. of 277: 0.0E+00 sec, 8.1E-03 min to go.             
+ Jnu Trans( 3, 1), 201. Frequ. of 277: 0.0E+00 sec, 4.7E-03 min to go.             
+ Jnu Trans( 3, 1), 251. Frequ. of 277: 0.0E+00 sec, 1.6E-03 min to go.             
+ Jnu Trans( 3, 1),   1. Frequ. of 277: 1.0E-02 sec, 4.6E-02 min to go.  (IDEX = 50)
+ Jnu Trans( 3, 1),  51. Frequ. of 277: 0.0E+00 sec, 1.5E-02 min to go.             
+ Jnu Trans( 3, 1), 101. Frequ. of 277: 1.0E-02 sec, 1.3E-02 min to go.             
+ Jnu Trans( 3, 1), 151. Frequ. of 277: 0.0E+00 sec, 8.1E-03 min to go.             
+ Jnu Trans( 3, 1), 201. Frequ. of 277: 1.0E-02 sec, 4.7E-03 min to go.             
+ Jnu Trans( 3, 1), 251. Frequ. of 277: 0.0E+00 sec, 1.6E-03 min to go.             
+ 2014-Mar-24 16:34:32  #  11/11         Number Densities                
+ 2014-Mar-24 16:34:32  #  11/11         Continuum Calculations          
+ 2014-Mar-24 16:34:38  #  11/11         Lyman                           
+ 2014-Mar-24 16:34:38  #  11/11         Number Densities                
+ 2014-Mar-24 16:34:38  #  11/11         Hydrostatic Equilibrium         
+ 2014-Mar-24 16:34:43  #  11/11         Number Densities                
+ 2014-Mar-24 16:34:43  #  11/11         Restart Data                    
+ 2014-Mar-24 16:34:43  #                Line Post-Processing            
+ 2014-Mar-24 16:35:07  #                Continuum Calculations          
+ 2014-Mar-24 16:36:19  #                Continuum Summary               
+ 2014-Mar-24 16:36:32  #                Iterations Summaries            
+ 2014-Mar-24 16:36:32  #                Spectrum File Start-Up          
+ 2014-Mar-24 16:36:32  #                Continuum Emission              
+ 2014-Mar-24 16:37:02  #                Line Emission                   
+2014-Mar-24 A1001    H   ; itr  11  1(1); n,nl,nt  91   15  105; sec    2283; ela  0:50:43; vrsn 78.018; cpu menfin             
++ Mon Mar 24 16:37:21 EDT 2014 bin/pandora.x completed, exit status=0
+ouput files:
+-rw-r----- 1 sylvain sylvain  1691001 Mar 24 16:37 ./SPh.jrl.001
+-rw-r----- 1 sylvain sylvain 21602493 Mar 24 16:37 ./SPh.aaa.001
+-rw-r----- 1 sylvain sylvain    15824 Mar 24 16:37 ./SPh.aix.001
+-rw-r----- 1 sylvain sylvain    83939 Mar 24 16:37 ./SPh.msc.001
+-rw-r----- 1 sylvain sylvain  8758226 Mar 24 16:37 ./SPh.spc.001
+-rw-r----- 1 sylvain sylvain   876744 Mar 24 16:35 ./SPh.rst.001
+-rw-r----- 1 sylvain sylvain   258110 Mar 24 16:35 ./SPh.pop.001
+-rw-r----- 1 sylvain sylvain   665046 Mar 24 16:34 ./SPh.jnr.001
+= Mon Mar 24 16:37:21 EDT 2014 done.

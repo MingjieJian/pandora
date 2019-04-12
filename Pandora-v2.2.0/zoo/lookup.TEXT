@@ -1,0 +1,81 @@
+      subroutine LOOKUP
+     $(T,N,X,K,NOTE,LOOK)
+C     Rudolf Loeser, 1979 Apr 12
+C     (Originally written for CDC 6400, 1970 Oct 26)
+C
+C     This is a dummy routine, serving merely as a vehicle for an
+C     explanation of the "LOOK'X'Y" routines.
+C
+C---- "LOOKUP" finds the number of the beast;
+C     in other words,
+C     it is a table look-up routine.
+C
+C---- Given the table "T" comprising "N" elements, 
+C     and the key "X."
+C
+C---- If T is in ascending sorted order, then upon normal return:
+C     LOOK=1;
+C     the value of K is set such that T(K) .le. X .lt. T(K+1),
+C     1 .le. K .lt. N; and
+C     NOTE=1 if T(K) .eq. X, NOTE=2 if T(K) .lt. X.
+C
+C     The following abnormal returns can occur:
+C     LOOK=2 if T(N) .eq. X;
+C     LOOK=3 if X .gt. T(N); and
+C     LOOK=4 if X .lt. T(1).
+C     (Upon abnormal return, neither K nor NOTE are set.)
+C
+C---- If T is unsorted, then upon normal return:
+C     LOOK=1; and
+C     the value of K is set such that T(K) .eq. X,
+C     1 .le. K .le. N.
+C     The following abnormal return can occur:
+C     LOOK=2 if there is no K such that T(K) .eq. X.
+C     (Upon abnormal return, K is not set.)
+C
+C---- Comparisons between X and elements of T are done through
+C     the use of "COMP'X" routines, some of which require an
+C     additional argument (i.e. "DELTA" or "INT"); these
+C     are passed as described below.
+C     !EJECT
+C---- The following flavors of "LOOKUP" have been implemented:
+C 
+C   ..1) Mode "S", for arrays sorted in ascending order:
+C
+C     LOOKSC (T,N,X,K,NOTE,LOOK)       - T,X are type CHARACTER;
+C
+C     LOOKSD (D,N,DELTA,X,K,NOTE,LOOK) - D,X,DELTA are type
+C             DOUBLE PRECISION;
+C
+C     LOOKSI (I,N,INT,X,K,NOTE,LOOK)   - I,X,INT are type INTEGER;
+C
+C     LOOKSR (R,N,DELTA,X,K,NOTE,LOOK) - R,X,DELTA are type REAL.
+C
+C
+C     NOTLESS (T,N,X,I) - T and X are type DOUBLE PRECISION;
+C              and I will be set so that T(I) is the smallest
+C              value of T not less than X;
+C
+C     NOTMORE (T,N,X,I) - T and X are type DOUBLE PRECISION;
+C              and I will be set so that T(I) is the largest
+C              value of T not more than X;
+C
+C     NEARSD (T,N,X,I) - T and X are typr DOUBLE PRECISION;
+C             and I will be set so that abs(T(I)-X) is as
+C             small as possible.
+C
+C   ..2) Mode "U", for unsorted arrays:
+C
+C     LOOKUC (C,N,X,K,LOOK)       - analogous to LOOKSC;
+C
+C     LOOKUD (D,N,DELTA,X,K,LOOK) - analogous to LOOKSD;
+C
+C     LOOKUI (I,N,INT,X,K,LOOK)   - analogous to LOOKSI;
+C
+C     LOOKUR (R,N,DELTA,X,K,LOOK) - analogous to LOOKSR;
+C
+C
+C     NEARUD (T,N,X,I)            - analogous to NEARSD.
+C     !beg
+C     !end
+      end

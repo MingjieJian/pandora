@@ -1,0 +1,137 @@
+      subroutine GUINEA
+     $(X,XNE,TE,HND,RZM,CPR,CHI,XPBL,W1,W2,N,ZME,ETA,ZTRM)
+C
+C     Rudolf Loeser, 1978 Aug 12
+C     Revised RL/SGK Apr  9 2014 
+C---- Computes ZME and ETA, for PEARL.
+C     !DASH
+      save
+C     !DASH
+      real*8 ABUN, CHI, CPR, ETA, TE, HND, RZM, W1, W2, X, XNE, 
+     $       XPBL, ZME, dummy, ZTRM
+      integer J, KODE, N, IPOP
+      logical ZABUN
+      character SYM*3
+C     !COM
+C---- ELEMENT     as of 1998 Aug 17
+      integer     NELX
+      parameter   (NELX=50)
+C     (Remember to recompile all users when changing NELX)
+      real*8      ELABD,ELCHI,ELLU1,ELLU2,ELABL,ELDEF
+      integer     LATNO,LDEFR,NMT,NMTMAX
+      logical     LATEM
+      character   ELSYM*3, ELSUB*3
+      dimension   ELSYM(NELX),ELSUB(NELX),ELABD(NELX),ELCHI(NELX),
+     $            ELLU1(NELX),ELLU2(NELX),ELABL(NELX),ELDEF(NELX),
+     $            LATNO(NELX),LDEFR(NELX),LATEM(NELX)
+C
+      common      /ELEMNT0/ NMT,NMTMAX
+      common      /ELEMNT1/ ELSYM,ELSUB
+      common      /ELEMNT2/ ELABD,ELCHI,ELLU1,ELLU2,ELABL,ELDEF
+      common      /ELEMNT3/ LATNO,LDEFR
+      common      /ELEMNT4/ LATEM
+C
+C     Element data tables:
+C             ELSYM - element symbol;
+C             ELSUB - (Scratch storage for I.D. symbols);
+C             ELABD - abundance (w.r.t. Hydrogen);
+C             ELCHI - Chi, i.e. ionization potential;
+C             ELLU1 - U-I partition function;
+C             ELLU2 - U-II partition function;
+C             ELABL - logarithmic abundance;
+C             ELDEF - defaults values of logarithmic abundance;
+C             LATNO - atomic number; and
+C             LDEFR - default values sources codes.
+C             LATEM - "metal" designator
+C     .
+C     !DASH
+C     !EJECT
+      external NATASHA, ZERO1, FRANK,
+     $         HI, BYE,
+     $         PARA, POPUTIL, MELISSA, ARRADD
+C
+      dimension X(*)
+C
+C               ETA(N,NMT), CPR(N,NMT), CHI(NMT), TE(N), W1(N), XNE(N),
+      dimension ETA(N,*),   CPR(N,*),   CHI(*),   TE(*), W1(*), XNE(*),
+C
+C               W2(N), ZME(N), XPBL(Lenpbl)
+     $          W2(*), ZME(*), XPBL(*),    
+C
+C               ZTRM(N,NMT), HND(N), RZM(N)
+     $          ZTRM(N,*),   HND(*), RZM(*)
+C
+#ifdef DEBUG
+      INTEGER LUNO
+      parameter (LUNO=15)
+#endif
+      call HI ('GUINEA')
+C     !BEG
+C---- Initialize
+      call ZERO1        (ZTRM, (N*NMT))
+      call ZERO1        (ETA,  (N*NMT))
+      call ZERO1        (ZME,  N)
+C---- Initialize intermediates for ETA calculation
+      call NATASHA      (TE, W1, W2, N)
+#ifdef DEBUG
+      write (LUNO, 200)
+ 200  format(///,' Debug from GUINEA')
+      call DVECOUT (LUNO, TE,  N, 'TE')
+      call DVECOUT (LUNO, XNE, N, 'NE')
+      call DVECOUT (LUNO, W1,  N, 'W1')
+      call DVECOUT (LUNO, W2,  N, 'W2')
+#endif
+C---- Loop over all elements
+      do 101 J = 1,NMT
+        if (LATEM(J)) then
+C----     Get element symbol and set up abundance table
+          call FRANK    (SYM, J, ABUN, dummy, dummy, dummy, KODE)
+C---      Set population ion index
+          call PARA     (SYM, IPOP)
+#ifdef DEBUG
+          write (LUNO,9201) SYM,ABUN,KODE,IPOP
+ 9201     format(//,' SYM, ABUN, KODE, IPOP', 5X, A3, E16.8, 2I10)
+#endif
+C---      exclude OII and OIII as of Mar 29 2014 
+          if ((IPOP.gt.0)) then
+C---        set ZTRM = NK
+            call POPUTIL(XPBL, IPOP, 0, dummy,
+     $                   1, ZTRM(1,J), 0, dummy,
+     $                   0, dummy)
+#ifdef DEBUG
+            call DVECOUT (LUNO, ZTRM(1,J), N, 'ZTRM')
+#endif
+          else
+            if(KODE.gt.0) then
+C----         Compute ETA ...
+#ifdef DEBUG
+              write (LUNO,9202) SYM,CHI(J)
+ 9202         format(//,' SYM, CHI', 5X, A3, E16.8)
+              call DVECOUT (LUNO, CPR(1,J), N, 'Partition fn ratio')
+#endif
+              call MELISSA(XNE, W1, W2, N, CPR(1,J),
+     $                     CHI(J), ETA(1,J))
+#ifdef DEBUG
+              call DVECOUT (LUNO, ETA(1,J), N, 'ETA')
+#endif
+C----         ... and ZTRM
+              do 100 I = 1, N
+                ZTRM(I,J) = ETA(I,J)*(ABUN*HND(I)*RZM(I))
+ 100          continue
+#ifdef DEBUG
+              call DVECOUT (LUNO, ZTRM(1,J), N, 'ZTRM')
+#endif
+            end if
+          end if
+C----     Add J'th ZTRM to ZME
+          call ARRADD(ZTRM(1,J), ZME, ZME, N)
+        end if
+ 101  continue
+#ifdef DEBUG
+      call DVECOUT (LUNO, ZME, N, 'ZME')
+#endif
+C     !END
+      call BYE ('GUINEA')
+C
+      return
+      end

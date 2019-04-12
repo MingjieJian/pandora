@@ -1,0 +1,131 @@
+HOW TO RUN THIS:
+
+   ! set H HeI and CaII computation to run 11 iterations (or any other number)
+
+   bin/ready leidh 
+   iomx? 11
+   mv leidh.dat.new leidh.dat 
+
+   bin/ready leidhe1
+   mv leidhe1.dat.new leidhe1.dat 
+
+   bin/ready leidca2
+   mv leidca2.dat.new leidca2.dat 
+
+   ! run case '001' using the atmospheric model profile in the file leid.mod
+   ! 5 levels
+
+   bin/pandora leid h   l5 001 >& leidh.log
+
+   ! update ion popuplation: merge pop file in the mod file
+   bin/pmerge @NE+,@NP+ leidh.pop.001 leid.mod
+   mv output.mod leid.mod
+
+   bin/pandora leid he1 l5 001 >& leidhe1.log 
+
+   ! update ion population: merge pop file in the mod file
+   bin/pmerge @HE+ leidhe1.pop.001 leid.mod
+   mv output.mod leid.mod
+
+   bin/pandora leid ca2 l5 001 >& leidca2.log 
+
+   ! CaII is not a pop ion so there is no updating of leid.mod
+   ! extract tables for plotting results
+
+   bin/extract 'PROF (3/2)' leidh.aaa.001   leidh.prof_3-2.out.001
+   bin/extract 'MODEL DATA' leidh.aaa.001   leidh.model_data.out.001
+   bin/extract 'PROF (4/2)' leidhe1.aaa.001 leidhe1.prof_4-2.out.001
+   bin/extract 'PROF (5/1)' leidca2.aaa.001 leidca2.prof_5-1.out.001
+
+   ! save the atmospheric model used for case 001 (optional)
+
+   cp leid.mod leid.mod.001 
+
+   ! plot the profile(s)
+
+   idl pro/init
+   IDL> .r plot-profile
+
+   ! or
+
+   idl pro/init
+   IDL> .r plot-profiles
+
+   ! either:
+   ! change the T(h) atmospheric model to run case 002 (or see alternative)
+   ! will produce the file save.zee w/ a new T(h)
+   idl pro/init
+   IDL> xtwiddle, 'leid.zee'
+   
+   ! merge the T(h) profile saved in in save.zee to a new model file, using
+   ! the case 001 model file template to produce a new leid.mod file
+
+   bin/pmerge -o leid.mod 'Z,TE' save.zee leid.mod.001
+
+   ! or:
+   ! alternatively use the existing leid.mod.002
+
+   cp leid.mod.002 leid.mod
+
+   ! run case '002', using the new atmospheric model profile in the file
+   ! leid.mod
+
+   bin/pandora leid h   l5 002 >& leidh.log
+   ! update ion popuplation: merge pop file in the mod file
+   bin/pmerge @NE+,@NP+ leidh.pop.002 leid.mod
+   mv output.mod leid.mod
+
+   bin/pandora leid he1 l5 002 >& leidhe1.log 
+   ! update ion population: merge pop file in the mod file
+   bin/pmerge @NHE leidhe1.pop.002 leid.mod
+   mv output.mod leid.mod
+
+   bin/pandora leid ca2 l5 002 >& leidca2.log 
+
+   ! extract tables for plotting the results
+
+   bin/extract 'PROF (3/2)' leidh.aaa.002   leidh.prof_3-2.out.002
+   bin/extract 'MODEL DATA' leidh.aaa.002   leidh.model_data.out.002
+   bin/extract 'PROF (4/2)' leidhe1.aaa.002 leidhe1.prof_4-2.out.002
+   bin/extract 'PROF (5/1)' leidca2.aaa.002 leidca2.prof_5-1.out.002
+
+   ! save the atmospheric model used for case 002 (optional)
+
+   cp leid.mod leid.mod.002
+
+   ! compare the profiles
+
+   idl pro/init
+   IDL> .r compare-profiles
+
+   ! The file 'run.sou' can be used to run and extract, 
+   ! simply set N to the appropriate value, and source it:
+
+   source run.sou >& run.log &
+
+   ! and wait for completion
+
+   ! At this point, you can modify T(h) to produce case 003, etc...
+   ! the output of xtwiddle is 'save.zee', so to further adjust that profile
+   ! you could:
+
+   mv save.zee leid.zee.002
+   idl pro/init
+   IDL> xtwiddle, 'leid.zee.002'
+
+   ! and produce a new save.zee
+
+   ! to plot velocities
+
+   bin/extract VELOCITIES leidca2.aaa.001 leidca2.veloc.out.001
+   bin/extract VELOCITIES leidca2.aaa.002 leidca2.veloc.out.002
+
+   idl pro/init
+   IDL> .r plot-velocities
+
+---
+
+<- Last updated: Mon Jun 15 11:50:04 2015 -> SGK
+
+
+

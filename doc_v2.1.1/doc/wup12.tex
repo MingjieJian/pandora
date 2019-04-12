@@ -1,0 +1,134 @@
+%\magnification=1200
+%\input wupstuff.tex
+\newtoks\footline \footline={\hss\tenrm 12.\folio\hss}
+\pageno=1
+\top
+\vskip 1.5 true in
+\centerline{Section 12: {\bf Source Functions}}
+\blankline
+\blankline
+\centerline{\bf ***}
+\blankline
+\blankline
+PANDORA has three methods for calculating the weight matrices needed for
+source function calculations:
+\blankline
+\bull {\bf QR} -- \np
+the quadratic representation method, which requires an input parameter, Y,
+the `damping parameter' (see: SAO Special Report No. 303);
+\blankline
+\bull {\bf RT} -- \np
+the ray tracing method, with analytic angle integration (see: E. H. Avrett's
+program specification `[7/1/71] New Subroutine for Weighting Coefficients');
+\blankline
+\bull {\bf GR} -- \np
+a general ray tracing method based on an integral equation approach,
+with numerical angle integration (see: E. H. Avrett's program specification
+`[81 Feb 27] Expansion Velocity in the Source Function Calculations').
+\ej
+When the {\bf QR} method is used for the Line Source Function calculation
+\break (where {\bf KS} or KF weight matrices are required) or for the 
+Level-${\cal N}$-to-Continuum ({\it i.e.} Lyman) Source Function
+calculation (where {\bf KK} weight matrices are required), then it can be
+used in one of two flavors: `QR-direct' or `QR-mapped.'
+
+When `QR-direct' is specified, weight matrices (as functions of TNU, 
+mono-chromatic optical depth) are computed directly as needed. 
+
+When `QR-mapped' is specified, a `standard weight matrix'
+is computed once (using the standard TAU table {\bf TS},
+of length {\bf M}, and the standard value of the damping parameter {\bf YPRE});
+the required weight matrices 
+(which are functions of {\bf KS}, KF, or {\bf KK}
+different TNU tables) are obtained from the standard matrix by an interpolation
+procedure. {\it Note}: the purpose of the mapping procedure is to save
+time; it is less accurate than the direct method.
+In cases where the {\bf QR} method is chosen, 
+mapping might be appropriate for the early iterations
+of a calculation, switching to direct calculation of weight matrices 
+when homing in on the final solution.
+
+The input values of the various `method control parameters' MCP are used
+to specify which method to use for the various source function calculations
+to be performed. A value of MCP is interpreted as follows: 
+\blankline \noindent
+$\qquad$ $0 \, \leq$ MCP $\leq$ +1 means: {\bf QR}-direct; \np
+$\qquad$ $\phantom{0 \, \leq}$ MCP = --2 means: {\bf QR}-mapped; \np
+$\qquad$ $\phantom{0 \, \leq}$ MCP = --1 means: {\bf RT}; \np
+$\qquad$ $\phantom{0 \, \leq}$ MCP = --3 means: {\bf GR}.
+\blankline 
+\noindent {\it Note:} When MCP selects {\bf QR}-direct, then the value of
+MCP is also used as the required `damping parameter' Y = MCP. \np
+{\it Note}: {\bf GR} is used automatically for all source
+function calculations when options SPHERE and/or EXPAND are on. \np
+{\it Note}: {\bf RT} is the default method for stationary
+plane-parallel cases.
+\blankline
+Remember the following input parameters: {\bf TMS}, which affects
+{\bf RT} and {\bf GR}; {\bf TBAR}, which affects {\bf QR}-mapped only;
+{\bf TLARGE}, which affects {\bf QR} and {\bf QR}-mapped;
+and {\bf TSMALL}, which affects all except {\bf GR} (see Section 5).
+\blankline
+({\it Note} added 2006 Aug 30: The decision to use a single floating
+point input parameter combining the values of MCP and Y dates from the
+ancient past. I have long wanted to undo it in favor of using two separate
+quantities. Today such a change would require a great deal of work because
+this ancient convention so pervades PANDORA. It is now much too late for that.)
+\ej
+The following list recapitulates the names of the various method control
+parameters (single values, or tables -- see Section 5)
+used to select the weight matrix
+method to be used for the various types of source function calculations:
+\blankline
+\bull {\bf YPRE} -- for {\bf QR}-mapped, as discussed above;
+\blankline
+\bull {\bf YLINE} -- for Line Source Function;
+\blankline
+\bull {\bf YL} -- for Level-${\cal N}$-to-Continuum (Lyman) source function;
+\blankline
+\bull {\bf YCONT} -- for Continuum Source Function at the 
+wavelengths of the cores of radiative transitions;
+\blankline
+\bull {\bf YWAVE} -- for Continuum Source Function at `additional'
+ wavelengths;
+\blankline
+\bull {\bf YRATE} -- for Continuum Source Function at the wavelengths 
+specified for the rates integrations;
+\blankline
+\bull {\bf YHM} -- for Continuum Source Function at the wavelengths
+specified for the H-minus calculation;
+\blankline
+\bull {\bf YLDT} -- for Continuum Source Function at the wavelengths 
+specified for the Type-2 Dust Temperature calculation;
+\blankline
+\bull {\bf YLYM} -- for Continuum Source Function at the wavelengths
+specified for the Level-${\cal N}$-to-Continuum (Lyman) transfer calculation;
+\blankline
+\bull {\bf YCR} -- for Continuum Source Function at the wavelengths 
+at which incident coronal radiation is specified;
+\blankline
+\bull {\bf YKR} -- for Continuum Source Function at the wavelengths
+for which additional photoionization is specified;
+\blankline
+\bull {\bf BANDY} -- for Continuum Source Function at Composite Line
+opacity wavelengths in a particular band;
+\blankline
+\bull {\bf YRATS} -- for Continuum Source Function at standard rates
+integrations wavelengths;
+\blankline
+\bull {\bf YCOL} -- for Continuum Source Function at CO-lines absorption
+wavelengths.
+\blankline
+\blankline
+\vfill \vfill
+\vfill \vfill
+\vfill \vfill
+\vfill \vfill
+\vfill \vfill
+\vfill \vfill
+\vfill \vfill
+\vfill \vfill
+\noindent (Section 12 -- last revised: 2006 Nov 02) \par
+\message{Section 12 ends at page 12.\the\pageno}
+\ej
+%\end

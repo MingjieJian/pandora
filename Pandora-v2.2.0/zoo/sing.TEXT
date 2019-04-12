@@ -1,0 +1,64 @@
+      subroutine SING
+     $(VEC,N,L,PNT)
+C
+C---- ACM Algorithm # 347, written by R. C. Singleton,
+C     CACM Vol. 12, # 3, March 1969, p. 185.
+C     Incorporates the improvement suggested by R. Peto,
+C     CACM Vol. 13, # 10, October 1970, p. 624.
+C
+C     Adapted to the DEC VAX11/780 by R. Loeser, April 1979.
+C
+C     This is a dummy routine, serving merely as a vehicle for
+C     a general explanation of various versions of "SING."
+C
+C---- "SING" is an internal sorting procedure.
+C     It permutes the array "VEC", of length "N", into
+C     increasing order.
+C
+C---- The following flavors of "SING" have been implemented:
+C
+C     SINGC (C,N,L,PNT) - C is type CHARACTER, len(C(i)) must be
+C                         .le. 256 for all i;
+C
+C     SINGD (D,N,L,PNT) - D is type DOUBLE PRECISION;
+C
+C     SINGI (I,N,L,PNT) - I is type INTEGER;
+C
+C     SINGR (R,N,L,PNT) - R is type REAL;
+C
+C
+C     SINGA (D,N,L)     - is a special version of SINGD which
+C                         considers the absolute values of array
+C                         elements (and does not use PNT).
+C     !EJECT
+C---- "SING" has two internal arrays for temporary storage,
+C     "IU" and "IL", which simulate a pushdown stack. The sizes
+C     of these arrays imply a limit on the value of "N" which
+C     these implementations of "SING" can handle. Their present
+C     size is sufficient for values of "N" .le. 2**(24)-1,
+C     i.e. about 16 million.
+C
+C---- The array "PNT" (type INTEGER), of length "N", must be
+C     provided so that "SING" can construct a canonical pointer
+C     array, which can then be used by means of the subroutines
+C     "ORDER'X" to permute other arrays just like "VEC" was
+C     permuted by "SING." In this way, other arrays which might
+C     be associated with the key array "VEC" can be sorted
+C     along with it.
+C
+C---- Error returns:
+C     L .gt. 0 means - OK;
+C     L .eq. 0 means - N .le. 0; and
+C     L .lt. 0 means - pushdown storage capacity exceeded.
+C
+C---- Two measures of algorithm performance are also returned
+C     by "SING", in
+C     COMMON /SORTST/ XNC,XNR
+C     XNC will be the number of comparisons, and
+C     XNR will be the number of recursive calls,
+C     each normalized by N*log2(N).
+C
+C----
+C     !beg
+C     !end
+      end

@@ -1,0 +1,134 @@
+DETAILS
+
+  The Pandora computer program is a general-purpose non-LTE atmospheric
+  modeling and spectrum synthesis code which has been used extensively to
+  determine models of the solar atmosphere, other stellar atmospheres, and
+  nebulae. The Pandora program takes into account, for a model atmosphere
+  which is either planar or spherical, which is either stationary or in
+  motion, and which may have an external source of illumination, the
+  time-independent optically-thick non-LTE transfer of line and continuum
+  radiation for multilevel atoms and multi\ ple stages of ionization, with
+  partial frequency redistribution, fluorescence, and other physical processes
+  and constraints, including momentum balance and radiat\ ive energy balance
+  with mechanical heating. Pandora includes the detailed effects of both
+  particle diffusion and flow velocities in the equations of ionization
+  equilibrium. Such effects must be taken into account whenever the
+  temperature gradient is large, such as in a chromosphere-corona transition
+  region.
+
+  This program was written by Rudy Loeser (RL) under the supervision of Eugene
+  Avrett (EA). This release holds version 78.018, as left by Rudy, but for
+  minor fixes to avoid compilation and runtime errors (SGK).
+
+  It has been tested using two compilers: ifort and pgif77, both using the
+  compilation flag -O.
+
+  It was packaged by Sylvain Korzennik (SGK), who rewrote the wrapper scripts,
+  and made sure that pandoar compiles under the PGI and Intel F77
+  compilers. SGK also consolidated the documenation in two documents: wup and
+  paper.
+
+  This distribution include
+    atoms/     - atomic data                           (EA+RL)
+    demos/     - demo to run the code and plot results (EA+RL / SGK)
+    doc/       - documentation                         (EA+RL)
+    opacities/ - opacities                             (EA+RL)
+    pan/       - source code                           (EA+RL)
+    pro/       - IDL scripts                           (SGK)
+    sbin/      - c-shell wrappers, perl script         (SGK)
+    stats/     - holder for run statistc
+    sys/       - source code                           (EA+RL)
+    util/      - source code, utilities                (EA+RL)
+    zoo/       - source code                           (EA+RL)
+
+  The full documentation by RL is available under the directory doc/ 
+
+   * paper.pdf (or .ps or .dvi) is the "Solar and Stellar Atmospheric
+     Modeling Using the Pandora Computer Program", ASP Conference Series 2003
+     paper by A. and R. Loeser, , "Solar and Stellar Atmospheric Modeling Using
+     the Pandora Computer Program", ASP Conference Series paper - 14 pages
+
+   * wup.pdf (or .ps or .dvi) is Pandora full documentation, writted by RL -
+     368 pages.
+
+  The actual executables are:
+
+    bin/pandora   - C-shell script to run the pandora executable (SGK)
+    bin/pandora.x - the pandora f77 executable (RL)
+    bin/pmerge    - PERL script to merge parameters
+    bin/ready     - C-shell script to run the ready executable (SGK)
+    bin/ready.x   - f77 executable (RL) used to prepare input files
+    bin/extract   - C-shell script to extract output of pandora in a machine
+                    readable format (SGK) 
+    bin/census    - C-shell script to correct the fractional ionization for a
+                    given ion (SGK) 
+                    runs the f77 executables cents.x census.x dimes.x
+    bin/cents.x   - f77 executable to build the input file for census.x,
+                    updating a given atom. (RL) 
+    bin/census.x  - f77 executable to determine abundance ratios (RL)
+    bin/dimes.x   - f77 executable to separate an abundance ratios file
+                    produced by census.x into one per ion. (RL) 
+
+  The following (util/) do not have an updated C-shell scripts (yet) 
+
+    bin/he1diff.x - f77 executable (RL) extracts PALBET/PBETAL from a
+                    ---he1.msc file 
+    bin/modup.x   - f77 executable (RL) updates a model file from a given
+                    ---.pop file. 
+    bin/wrap.x    - f77 executable (RL) sets aside a PANDORA input file
+                    (---.dat) by modifying the header, and the IOMX statement
+
+    RL's codes are FORTRAN77 and use LUs (logical units) to read and
+  write. The codes do not use any filename. The c-shell wrappers allow you to
+  avoid having to use names like fort.1 and fort.29. These wrappers have been
+  written to use a specific file name structure based on an atmosperic model
+  name, an atom, a number of levels and a run identifier. The pandora wrapper
+  looks first if all the required file exists, check that no output files for
+  that specific case exists, and upon completion removes the temporary file
+  used by the code.
+
+    Pmerge is a PERL script to copy tables between files, i.e., to copy some
+  tables from an output file (like a population profile) to an input file,
+  rather than using an editor.
+
+    Extract is a C-shell script that uses the UNIX command sed to extract what
+  RL calls a section from the main output file of pandora (.aaa file), using
+  the index file (.aix file). That section is also converted to be 'machine
+  readable'. Namely, each output line either is tagged as a comment (starts
+  with a ;) or is a table of numbers, whose first column is an index. The
+  resulting file can, in principle, be read with the IDL routine read_out.pro
+  (see below)
+
+  Additional IDL code:
+
+    pro/init.pro      - initialization file to set IDL's path
+    pro/read_out.pro  - generic file to read the output of extract
+    pro/sgklib/       - library procedure used in demo .pro files
+    pro/xtwiddle.pro  - IDL GUI to adjust a model T(z) profile
+
+  These routines, written by SGK, allow you to
+
+  (1) adjust a model temperature  profile T(z) interactively, using a GUI:
+
+   idl pro/init
+   IDL> xtwiddle, 'test.zee'
+
+
+  (2) read and plot output of extract, look in demos/5 and demos/6 at the
+      plot-*.pro files.
+
+MISSING:
+
+  Basic instructions on how to setup a run from scratch, detailed
+  (overwhelming?) instructions are in RL's writeups.
+
+  Description of the tables:
+
+    atoms/
+    opacities/
+    util/ions.list
+
+---
+
+<- Last updated: Fri Mar 21 11:03:20 2014 -> SGK
+

@@ -1,0 +1,386 @@
+%\magnification=1200
+%\input wupstuff.tex
+\newtoks\footline \footline={\hss\tenrm 16.\folio\hss}
+%
+\pageno=1
+%
+\top
+\vskip 1.5 true in
+\centerline{Section 16: {\bf Velocities}}
+\blankline
+\blankline
+\centerline{\bf ***}
+\blankline
+\blankline
+PANDORA uses several velocity tables, for various purposes. A velocity
+\break table may be specified in the input either as a tabulated
+function of depth (like other input tables), or by means of
+parameters appearing in the equation used \break to generate velocity tables
+as functions of depth.
+
+This section 1) describes the various velocities, by exhibiting instances
+of their use in the program, 2) describes input procedures and post-read defaults,
+and 3) lists additional information about how PANDORA uses these velocities.
+The descriptions given here are rather sketchy (full information can be
+found in E. H. Avrett's program specifications and explanatory memoranda);
+the descriptions and equations appearing in this section are only meant to
+be illustrative, not exhaustive.
+
+All the velocities treated in this section are arrays of length {\bf N}.
+\ej
+\centerline{{\bf 1) Descriptions of Velocities}}
+\blankline
+\blankline
+\underbar{{\it a) Broadening velocities} {\bf V} {\it and} {\bf VR}}
+\blankline
+PANDORA uses two ``broadening velocities'' to compute doppler widths, depending
+on the option VSWICH. When VSWICH is off, then one velocity is used: {\bf V}$_i$
+(in km/s), called the ``broadening'' velocity or ``microturbulent'' velocity.
+When VSWICH is on, then two velocities are used: {\bf V}$_i$ (in km/s), called
+the ``tangential'' broadening velocity and {\bf VR}$_i$ (in km/s), called the
+``radial'' broadening velocity.
+
+The doppler width ${DW}$ is computed from:
+$$ {DW}_{im} = \alpha \sqrt{ \beta \times {\bf TE}_i + {\cal V}^2_{im}} \quad , $$
+(where $\alpha$ and $\beta$ are terms specified elsewhere). When VSWICH is off:
+$$ {\cal V}^2_{im} = {\bf V}^2_i \quad , $$
+but when VSWICH is on:
+$$ {\cal V}^2_{im} = {\bf VR}^2_i {MU}^2_m + {\bf V}^2_i (1 - {MU}^2_m) \quad , $$
+where $MU_m$ is cosine of the angle between the direction $m$ and the outward 
+normal.
+% \ej
+\blankline
+\blankline
+\underbar{{\it b) Expansion velocities} {\bf VXS} {\it and} {\bf VX}}
+\blankline
+Two ``expansion velocities'' may be specified: {\bf VXS}$_i$ (in km/s,
+positive outwards), called the ``Source Function'' expansion velocity,
+and various tables of {\bf VX}$^m_i$, $1 \leq m \leq {\bf NVX}$ (in km/s,
+positive outwards), called ``additional'' expansion velocities. 
+
+{\bf VXS} describes differential mass motion in the atmosphere and is used
+together with option EXPAND. ``Expansion'' affects the line source function
+calculation in fundamental ways: a whole-profile solution must be done (see
+also Section 18); and WN-matrices ({\it i.e.,} $\Lambda$-operators) must be 
+computed with the general ray tracing method, which uses numerical (explicit)
+angle integration, in place of the other methods,which use analytic angle
+integration (and require much less computing). ({\it Note} that, for study
+and testing purposes, ${\bf VXS}_i = 0$ is allowed when option EXPAND is on;
+this forces PANDORA to use the general ray tracing method even in a stationary
+atmosphere.)
+\ej
+The effect of velocity on the calculated line profile can be studied
+approximately but economically by computing the line source function statically
+and then calculating not only the corresponding static line profile but also
+one or more additional profiles using ``additional'' expansion velocities {\bf VX}.
+\break
+({\bf Important:} tables of {\bf VX} are used {\it only} for the line profile
+calculations, {\it not} for source function calculations; however, their use
+does cause all line source function calculations to be whole-profile
+solutions; see Section 18.)
+
+Line absorption profiles are given by the Voigt function
+$$ {\phi}_{ik}^{jm} = {{a_i} \over {{\pi}^{3/2}}} \int_{-\infty}^{+\infty}
+{{\exp (-x^2) dx} \over {a_i^2 + (U_{ik}^{jm} -x)^2}} \quad , $$
+where $a_i = {DP}_i/{DW}_i$ (the doppler width ${DW}_i$ is given in section (1a)
+above), and ${DP}_i$ is the damping parameter. The damping parameter for
+transition $(u,\ell)$ is computed from:
+$$ \eqalign{ {DP}^{u,\ell}_i & = {\bf CRD}^{u,\ell} + {\bf CVW}^{u,\ell}
+    \left( {{\bf HN}^1_i \over 10^{16}} \right) 
+    \left( {{\bf TE}_i \over 5000} \right)^{0.3} +
+    {\bf CSK}^{u,\ell} \left( {{\bf NE}_i \over 10^{12}} \right)^{\bf PW} \cr
+    & + {\bf CRS}^{u,\ell} \left( {{\bf ND}^1_i \over 10^{16}} \right) +
+    {HDP}^{u,\ell}_i \quad , \cr } $$
+where ${HDP}$ is the ion broadening term (upper levels of Hydrogen only).
+
+The parameter $U$ is computed from
+$$ U_{ik}^{jm} = { { ({DL}_k + {DV}_i^m ) - {\bf DDL}^j \, {\bf FDDL}_i }
+    \over {DW}_i } \, , $$
+where ${DL}_k$ is wavelength offset (``delta Lambda'') computed from ${\bf XI}_k$,
+${DV}_i^m$ is the wavelength shift due to velocity, and ${\bf DDL}^j$ is the
+offset of the $j$th component of a blended line (most transitions are not
+``blended lines'' and have ${\bf LDL} = 1$ and ${\bf DDL}^1 = 0$.)
+
+The wavelength shift due to velocity is given by
+$$ {DV}_i^m = {VP}_i^m \, ( \lambda^{u,\ell} / c ) \times 10^5 \, , $$
+where ${VP}^m$ is the velocity projected along direction $m$, $\lambda^{u,\ell}$
+is the ``core'' wavelength of transition $(u,\ell)$, and c is the light speed
+(in cm/s). The projected velocity is given by
+$$ {VP}_i^m = {MU}^m \times ({\cal V}_i - {\cal V}^*) \, , $$
+where ${MU}^m$ is the cosine of the angle between direction $m$ and the outward
+normal, ${\cal V}^* = 0$ in the restframe but ${\cal V}^* = {\cal V}_I$ in
+the frame comoving with point $I$, and ${\cal V} = {\bf VXS}$ or
+${\cal V} = {\bf VX}$, as the case may be.
+\ej
+PANDORA provides two types of {\bf VX}: ``general {\bf VX}'' and
+``shock {\bf VX}.'' This distinction (described below) arises from the
+different generating formulas used to generate tables of ${\bf VX}_i$ when
+such tables were not explicitly given in the input.
+\blankline
+\blankline
+\underbar{{\it c) Flow-brodadening velocities, $VXFB$, for profiles}}
+\blankline
+When option FLWBROAD is on, a special set of velocities is generated and 
+used to compute a set of line profiles; these profiles are averaged to yield a
+``flow-broadened'' profile. These flow velocities, $VXFB$, enter the profile
+calculations just like the ``additional'' expansion velocities, {\bf VX},
+discussed above.
+% \ej
+\blankline
+\blankline
+\underbar{{\it d) Sobolev velocity} {\bf VSB}}
+\blankline
+The ``Sobolev'' velocity {\bf VSB}$_i$ (in km/s, positive outwards) is needed
+when the moving escape
+probability ({\it i.e.} Sobolev) solution is selected for one or more
+transitions. The Sobolev formula for the net radiative bracket is
+$$ {RHO}^{\rm Sobolev}_i = G_i \left( 1 - { J_i \over S_i } \right) \quad , $$
+$$ G_i = \int^1_0 {f_i(x)dx} \quad , $$
+$$ f_i(x) = { {1 - \exp [-H_i(x)] } \over {H_i(x)} } \quad , $$
+$$ H_i(x) = { {FXI}_i \over { x^2 {\bf VSB}^{\prime}_i + 
+( 1 - x^2 ) {RV}_i } } \quad , $$
+where {\bf VSB}$^{\prime}_i$ is the derivative of {\bf VSB} with respect
+to {\bf Z}. In the plane-parallel case: ${RV}_i = 0$; but in the
+spherical case:
+$$ {RV}_i = { {\bf VSB}_i \over { ( {\bf Z}_N - {\bf Z}_i ) + {\bf R1N} } } \quad . $$
+\blankline
+\blankline
+\underbar{{\it e) Mass motion velocity} {\bf VM}}
+\blankline
+The ``mass motion'' velocity {\bf VM}$_i$ (in km/s, positive inwards) is needed 
+when the option VELGRAD is on and is further explained in section (2b) below.
+The mass motion velocity can also be introduced into the
+hydrostatic equilibrium calculations, depending on the option HSEV. This is
+illustrated next, in the description of the use of {\bf VT}.
+\ej 
+% \blankline
+% \blankline
+\underbar{{\it f) Turbulent pressure velocity} {\bf VT}}
+\blankline
+{\bf VT} is the ``turbulent pressure'' velocity (in km/s), (note that when
+option VTV is on then, if no values of {\bf VT}$_i$ were specified in the input,
+{\bf VT}$_i$ will be set equal to {\bf V}$_i$). {\bf VT} is used in the
+hydrostatic equilibrium calculations in the equation for the total pressure.
+
+The hydrostatic equilibrium equation is
+$$ dp/dx = g\rho \, , $$
+where p is the total pressure, x is the distance from the outer boundary (in cm),
+and the density $\rho$ is given by
+$$ \rho_i = m_{\rm H} \, {\bf NH}_i \, \left( 1 + { m_{\rm He} \over m_{\rm H} } 
+           { {NHE}_i \over {\bf NH}_i }\right) \, , $$
+where ${NHE}_i$ is the Helium density. The total pressure is given by
+$$ p_i = ( 1 + \gamma ) P^{\rm gas}_i + P^{\rm turb}_i + P^{\rm exp}_i \quad . $$
+$\gamma$ is the input constant {\bf RMAGP} that can be used
+to simulate the effect of magnetic pressure; $P^{\rm gas}_i$ is the gas pressure
+$$ P^{\rm gas}_i = ({NHA}_i + {NHE}_i + {\bf NE}_i - {NH2}_i ) \, k \, {\bf TE}_i $$
+where ${NHA}_i$ is the atomic Hydrogen density and ${NH2}_i$ is the molecular
+Hydrogen density; $P^{\rm turb}_i$ is the turbulent pressure
+$$ P^{\rm turb}_i = { 1 / 2 } {\rho}_i ({\bf VT}_i \times 10^5)^2 \quad ; $$
+and $P^{\rm exp}_i$ is the expansion pressure
+$$ P^{\rm exp}_i = {\rho}_i ({\bf VM}_i \times 10^5)^2 $$
+{\it only} when the option HSEV is on; when the option HSEV is off, then 
+$P^{\rm exp}_i = 0$ (note that option HSEV is on by default). Here {\bf VM}
+is the mass motion velocity, further explained in section (2b) below.
+\ej
+\centerline{{\bf  2) Establishing and checking velocity values}}
+\blankline
+After all the input has been read, the values of {\bf V}, {\bf VR}, and
+{\bf VT}, are accepted as they stand (but note that option VTV is relevant). 
+\blankline
+{\bf a)} Values of {\bf VSB}, {\bf VXS}, and ``general'' {\bf VX}$^n$ may
+either be input directly as simple arrays, or by means of their corresponding
+generating parameters \break {\bf CVSB}, {\bf CVXS}, and {\bf CVX}$^n$,
+from which the input tables are computed. \break ``General'' {\bf VX} are
+computed when ${\bf ISSV}^1 = 0$; for ``shock'' {\bf VX}, see below. \break
+(Values of $VXFB$ cannot be input as simple arrays but can only be obtained
+with generating parameters; see below.)
+
+Such values of velocity
+${\cal V}_i$ are computed from the corresponding generating parameter
+$\cal C$ as follows:
+$$ {\cal V}_i = { { {\cal C} \times 10^{10} \times {TERM}_i } \over 
+                  {\bf NH}_i } \times { {FMV}_i \over {FFRS}^2_i } \quad $$
+(see E. H. Avrett's program specifications ``Use of the continuity equation
+for the fluid velocity,'' dated 8/9/88, and ``Depth-dependent helium
+abundance,'' dated 12/31/90, and the further modifications dated 1/25/93 
+and 4/26/95). Here 
+$$ {TERM}_i = { {(1 + \mu \times a^*)} \over {(1 + \mu \times a_i)} } , $$
+where $\mu = m_{\rm He} / m_{\rm H}$, $a_i = {ABD}_{\rm He}
+\times {\bf RHEAB}_i$, and $a^*$ is a reference value of $a_i$ determined as
+specified in [12/31/90].
+
+The multiplier ${FMV}_i$ is used to set ${\cal V}_i = 0$ deep in the
+atmosphere and is obtained as follows:
+$$ {FMV}_i = 0, \qquad t_i < {\bf FMVLIM} , $$
+or
+$$ {FMV}_i = t_i, \qquad t_i \geq {\bf FMVLIM} , $$
+where
+$$ t_i = {1 \over 2} [ 1 - \tanh (x_i) ] , $$
+and
+$$ x_i = ({\bf Z}_i - {\bf CVZ}) / {\bf CDZ}, \qquad {\bf CDZ} \neq 0 , $$
+or
+$$ x_i = 1, \qquad {\bf CDZ} = 0 . $$
+{\bf CDZ} (default = 1 km) and {\bf CVZ} (default = the smallest value of
+${\bf Z}_i$ for which ${\bf NH}_i > {10}^{11}$), and {\bf FMVLIM} (default
+ $ = 10^{-4}$), are input parameters.
+\ej
+The term ${FFRS}_i$ is required when spherical geometry has been selected. \break
+Thus, when the option SPHERE is off, ${FFRS}_i = 1$; but when the option \break
+SPHERE is on,
+$$ {FFRS}_i = { { ({\bf R1N} + {\bf Z}_{\bf N}) - {\bf Z}_i } \over
+                { ({\bf R1N} + {\bf Z}_{\bf N}) - Z^* } } \, , $$
+where $Z^* = {\bf Z}_1$ when ${\bf NH}_1 > 10^{10}$; $Z^* = {\bf Z}_{\bf N}$
+when ${\bf NH}_{\bf N} < 10^{10}$; but otherwise is obtained by interpolation
+in the {\bf Z} and {\bf NH} tables so that ${\bf NH}(Z^*) = 10^{10}$.
+\blankline
+\blankline
+\underbar{Shock velocity}
+\blankline
+When input parameter ${\bf ISSV}^1 > 0$, then tables of ``shock'' 
+velocity values ${\bf VX}^m_i$,
+$1 \leq m \le {\bf NVX}$, are generated from other input parameters as follows:
+\break $ {\bf VX}^m_i = {\bf SCVB}$ when $i > {\bf ISSV}^m$, but
+$$ {\bf VX}^m_i = - {\bf SCVA} \exp [({\bf Z}_i - {\bf Z}_{{\bf ISSV}^m})
+                    / {\bf SCVS} ] $$
+for $i \leq {\bf ISSV}^m$. Here {\bf ISSV} is the shock velocity depth index,
+{\bf SCVA} is the velocity amplitude, and {\bf SCVS} is the velocity scale height.
+\blankline
+\blankline
+\underbar{Flow-broadening velocities, $VXFB$}
+\blankline
+$VXFB$s consist of two groups: the $2 \times {\bf NFB}$ isotropic velocities
+generated with {\bf CVXM}, and the 2 mass-conserving flow velocities
+generated with {\bf CVXF}.
+The generating procedure discussed above does not produce proper values of the
+isotropic velocities, which are intended to represent ubiquitous ``random'' flows
+in the Sun's upper chromosphere and lower transition region. So these isotropic
+velocities are edited, after computation, to insure that they are nowhere smaller
+than values obtained by interpolation from the input table {\bf FNH}
+(a function of {\bf HNDF}).
+
+These $VXFB$ effectively constitute the {\bf VX}-set for this run (with {\bf NVX}
+determined by the program); when option FLWBROAD is on no other types of
+``additional'' expansion velocities are allowed (and the run will be aborted if
+an input value of ${\bf NVX} > 0$ is provided).
+\ej
+% \blankline
+{\bf b)} Values of {\bf VM} may either be input directly as a simple array, or by
+means of the generating parameters {\bf CFH} or {\bf CFHE}. These are used
+to compute {\bf VM} by a procedure that is intimately related to how {\bf VM}
+is used in the diffusion calculations when the option VELGRAD is on, as follows.
+
+In a Hydrogen run:
+$$ {\bf VM}_i = 10^{-5} \left( { {\bf CFH} \over {\bf NH}_i } 
+   - {RS}_i \times {\bf VBMB}_i \right) \times
+   { {FMV}_i \over {FFRS}^2_i } \, , $$
+while in a Helium run:
+$$ {\bf VM}_i = 10^{-5} \left( { {\bf CFHE} \over {NHE}_i } 
+   + {RH}_i \times {\bf VBMB}_i \right) \times
+   { {FMV}_i \over {FFRS}^2_i } \, ; $$
+where
+$$ {RS}_i = \mu \times {HEND}_i / ( {\bf NH}_i + \mu \times {HEND}_i ) \, , $$
+while
+$$ {RH}_i = {\bf NH}_i / ( {\bf NH}_i + \mu \times {HEND}_i ) \, ; $$
+where again $\mu = m_{\rm He} / m_{\rm H}$ and ${NHE}_i$, ${FMV}_i$ and ${FFRS}_i$ 
+are as in section (2a), above.
+\ej
+{\bf c)} When values of velocity tables are established by these procedures, then
+the following three remarks apply:
+
+\noindent {\bf 1)} whenever the input value of a generating
+parameter ${\cal C} \neq 0$, then the corresponding $\cal V$ will be computed
+from it, regardless of whether or not an input table of values was
+provided;
+
+\noindent {\bf 2)} whenever one velocity table is set equal to another 
+(see just below), then the corresponding generating parameters are set
+equal as well; and
+
+\noindent {\bf 3)} whenever ${NH}_i$ is recomputed during a run, those
+velocity tables whose corresponding generating parameters are $\neq 0$
+are recomputed as well.
+\blankline
+\blankline
+\blankline
+{\bf d)} After these procedures have been applied as needed during post-read
+input processing, the tables of {\bf VM}, 
+{\bf VXS} and {\bf VSB} are checked for reasonableness and consistency,
+as follows:
+
+First, the values {\bf VM} are checked. They may $= 0$, but they must
+be $\neq 0$ if VELGRAD is.
+
+Next, the values of {\bf VXS} are set up. When there are input values of
+{\bf VXS}, they are accepted and named ${VXI}$ ({\it i.e.} the `` original
+input'' values of {\bf VXS}).
+The values of ${VXI}$ must $= 0$ when EXPAND is off; they
+may be $\geq 0$ when EXPAND is on. [{\it NOTE: the values of {\bf VXS} that
+are used in the line source function calculations (and the emergent profile
+calculations) are redetermined from time to time, as needed; {\rm normally},
+however, {\bf VXS} is set = ${VXI}$.}]
+Then, when EXPAND is on, the following occcurs. If the values of {\bf VM} 
+$\neq 0$, then ${VXI}$ is set = -{\bf VM}. But if the values of
+{\bf VM} $= 0$, then ${VXI}$ retains its input values as read; note
+that these may $= 0$! After these rules have been enforced, 
+{\bf VXS} is set = ${VXI}$.
+
+Last, the values of {\bf VSB} are checked. If the values of {\bf VM}
+$\neq 0$, then {\bf VSB} is set = -{\bf VM}. If the values of
+{\bf VM} $= 0$ and the values of {\bf VXS} $\neq 0$, then {\bf VSB} is
+set = {\bf VXS}. If the values of {\bf VM} and of {\bf VXS} both
+$= 0$, then {\bf VSB} retains its input values as read. Note that
+{\bf VSB} must $\neq 0$ if a Sobolev solution is requested!
+\ej
+% \blankline
+% \blankline
+\centerline{{\bf 3) More about how velocities are used}}
+\blankline
+{\bf a)} As part of every diffusion calculation ({\it i.e.} when options
+AMDIFF and/or VELGRAD are on), tables ${VADD}_i$, ${VV1}_i$, and
+${VV2}_i$ are computed as follows: 
+$$ {VADD}_i = {VV1}_i + {VV2}_i \quad ; $$ \np
+where, when AMDIFF is on in a Hydrogen run:
+$$ {VV1}_i = - {VH}_i \times 10^{-5} \quad , $$ \np
+when AMDIFF is on in a Helium I run:
+$$ {VV1}_i = - {V1}_i \times 10^{-5} \quad , $$ \np
+or, when AMDIFF is on in a Helium II run:
+$$ {VV1}_i = - {V2}_i \times 10^{-5} \quad ; $$ \np
+and, when VELGRAD is on:
+$$ {VV2}_i = - {\bf VM}_i \quad ; $$ \np
+(see E. H. Avrett's program specification ``Use of diffusion velocities
+in emergent profile calculations,'' dated 10/25/89). Then, if the
+option VELS is on, the current values of {\bf VXS} are replaced
+by the following:
+$$ {\bf VXS}_i = {VXI}_i + {VV1}_i \quad . $$
+\ej
+% \blankline
+{\bf b)} Emergent line profile calculations are done with as many
+velocity tables as possible. (These enter the calculation
+by way of the ``doppler width'' ${DW}$, given above).
+A ``set'' of velocity tables is assembled as follows:
+
+The first velocity is either {\bf VXS}$_i$ or {\bf VSB}$_i$, depending
+on whether or not the Sobolev solution was used for this transition.
+
+If {VADD}$_i \neq 0$ and $\neq$ the first velocity, then {VADD} is added
+to the set as the second velocity.
+
+Thereafter, the tables ${\cal V}^n_i = {\bf VX}^n_i + {VADD}_i, \;
+1 \leq n \leq {\bf NVX}$, are added to \break the set, 
+provided that ${\cal V}^n_i \neq 0$ and $\neq$ any of the 
+preceding velocities. Recall that these {\bf VX} are either
+``additional'' expansion velocities (either of type ``general''
+or of type ``shock'') or flow-broadening velocities.
+%\vfill \vfill
+%\vfill \vfill
+%\vfill \vfill
+%\vfill \vfill
+%\vfill \vfill
+%\vfill \vfill
+%\vfill \vfill
+%\vfill 
+\vfill
+\noindent (Section 16 -- last revised: 2005 Aug 17) \par
+\message{Section 16 ends at page 16.\the\pageno}
+\ej
+%\end

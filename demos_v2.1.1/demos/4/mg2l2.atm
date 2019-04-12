@@ -1,0 +1,30 @@
+[   M A G N E S I U M   I I ,   2   L E V E L S   ]
+NL ( 2 )
+NTE ( 3 )
+MR ( 2 2 )
+NT ( 1 )  INPAIR ( 2 1 ) >
+USE ( INPUT ) >
+[   M A G N E S I U M   I I ,   2   L E V E L S   ]
+NAME ( MAGNESIUM2 )
+ELSYM ( MG )  IONSTAGE ( 2 ) >
+MASS ( 24.12 ) >
+ABD ( 3.90E-05 ) >
+PART ( 0. ) >
+NU ( 0. 1.072086 ) >
+NUK ( 3.635505 ) >
+P ( 2. 4. ) >
+CP ( M 1.E-19 2.7 4.5 )
+TER ( M 1000. 3. 7. 15. )
+CI 1 ( M 1.E-9 3.08 4.91 7.72 ) >
+WRAT 1 ( 700. 600. ) >
+RRCP 1 ( 1.1 1.15 ) >
+CI 2 ( M 1.E-8 1.27 1.94 2.84 ) >
+WRAT 2 ( 1110. 910. )
+RRCP 2 ( .83 .64 )
+A 2 1 ( 2.68E+8 ) >
+CE 2 1 ( M 1.E-7 9.04 6.24 5.8 ) >
+CRD 2 1 ( 5.59E-5 ) >
+CVW 2 1 ( 5.8E-5 ) >
+CSK 2 1 ( 6.63E-7 ) >
+PW ( 1. )
+USE ( INPUT ) >

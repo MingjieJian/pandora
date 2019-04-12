@@ -1,0 +1,122 @@
+README
+
+  This is Pandora release 2.2.0 - Dec 2014
+
+   - Pandora version 79.009
+   - support scripts & demos ver 2.1.1 (development release)
+
+HOWTO
+
+  * grab all the archives:
+
+      pandora-v2.2.0-src.tgz       - source code
+   and
+      pandora-v2.1.1-tables.tgz    - tables (opacities and atomic)
+      pandora-v2.1.1-doc.tgz       - original documentation
+      pandora-v2.1.1-demos.tgz     - demos (how to run the code)
+      pandora-v2.1.1-demo-refs.tgz - demo references
+                                     (what running the demos should produce)
+
+   namely this is not a complete release - the tables, documentation and demos
+   have not (yet) been updated.
+
+  * decide where to extract pandora, for example
+
+      mkdir ~/pandora
+
+    - if you build the code from source extract the tar-compressed archive:
+
+      cd ~/pandora
+      tar xf /where/you/downloaded/pandora-v2.2.0-src.tgz
+      cd v2.2.0
+
+    - build the code, specifying the compiler and the optimization level
+
+       make
+     or
+       make FC=pgfortran FFLAGS=-fast
+     or
+       make FC=ifort FFLAGS=-O3
+     or
+       make FC=pgf77 FFLAGS=-fast
+
+     where
+       FC=<fortran compiler>       
+       FFLAGS=<compiler flags>
+
+     Pandora was build and tested for these two compilers, and this release
+     provide version of the wrapper script for either compiler.
+     scripts 
+
+    - install the code
+
+       make install
+     or
+       make FC=pgfortran BIN=/home/pandora/bin install
+     or
+       make FC=ifort BIN=/home/pandora/bin install
+     or
+       make FC=pgf77 BIN=/home/pandora/bin install
+
+     where
+       BIN=<location for executables & scripts> is optional, by default it
+       will be under $cwd/bin
+
+    Alternatively to the FC=... FFLAGS=... BIN=... syntax, you can edit the
+    file Makefile to set their values:
+
+      FC=
+      FFLAGS=
+      BIN=
+
+    and just do
+
+      make
+      make install
+
+    - optional:
+
+      make clean
+    or
+      make cleaner
+    or
+      make cleanest
+   
+   * extract tables, demos, demo refs and the full documenation
+   
+      cd ~/pandora/
+      tar xf /where/you/downloaded/pandora-v2.1.1-tables.tgz
+      tar xf /where/you/downloaded/pandora-v2.1.1-demos.tgz
+      tar xf /where/you/downloaded/pandora-v2.1.1-demo-refs.tgz
+      tar xf /where/you/downloaded/pandora-v2.1.1-doc.tgz
+
+   * follow the instructions in demos/HOWTO on how to run Pandora and run
+     the test cases (aka demos)
+
+NOTE
+
+   This version of Pandora was checked to compile and run for all demo cases
+   under the following cases:
+
+      FC=pgfortran, FC=pgfortran FFLAGS=-O, FC=pgfortran FFLAGS=-fast
+      FC=ifort,     FC=ifort     FFLAGS=-O, FC=ifort     FFLAGS=-O3
+      FC=pgf77,     FC=pgf77     FFLAGS=-O, FC=pgf77     FFLAGS=-fast
+ 
+   where
+
+     ifort     - Intel(R) Fortran Intel(R) 64 Compiler XE
+     pgfortran - PGI Compiler 
+     pgf77     - PGI Compiler 
+
+   The tar-compressed file demos-refs.tgz hold the content of demos/ after
+   running them, using pandora 78.018 (not 79.009) built with FC=ifort
+   FFLAGS=-O3
+
+  More details can be found in the file DETAILS and HISTORY
+
+  The full documentation is under doc/
+
+
+---
+
+<- Last updated: Tue Dec  9 15:25:40 2014 -> SGK

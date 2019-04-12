@@ -1,0 +1,120 @@
+#!/bin/csh
+#
+# csh script to run f77 program ready
+#
+# to prepare a Pandora run by adusting the .dat input file 
+# it takes one argument the 'model/ion' combo name like SPh,
+# a string used as root for all the data files used by PANDORA
+# 
+# I got rid of the symlink nonsense, and use env var
+# note that both .dat and .rab file are needed by ready, 
+# so this scripts creates an empty one if need be
+#
+# <- Last updated: Thu Mar 20 16:46:13 2014 -> SGK
+#
+set BIN_D = bin
+set NEW_D = new
+#
+set BIN   = $BIN_D  
+set NEW   = $NEW_D  
+#
+loop:
+if ($#argv < 1) goto showUse
+if ("$argv[1]" =~ -*) then
+  switch ("$argv[1]")
+  case -new:
+   if ($#argv < 2) goto showUse
+    set NEW  = "$argv[2]"
+    shift
+  breaksw
+  case -bin:
+   if ($#argv < 2) goto showUse
+    set BIN  = "$argv[2]"
+    shift
+  breaksw
+  case *:
+    echo ERROR - invalid option '"'$argv[1]'"' to the ready script
+    goto showUse
+  endsw
+  shift
+  goto loop
+endif
+#
+if ($#argv != 1) then
+  echo ready: ERROR - the ready script needs 1 argument
+  goto showUse
+endif
+#
+source $BIN/setFORx.sou
+#
+set ready = $BIN/ready.x
+echo "ready: preparing $1"
+#
+set DAT = $1.dat
+set OUT = $1.dat.$NEW
+set RAB = $1.rab
+set PALBET = $1.palbet
+#
+if (-e $OUT) then
+  echo "ERROR - file $OUT exisst already, remove it first"
+  @ ERR++
+endif
+#
+if (! -e $DAT) then
+  echo "ERROR - file $DAT not found"
+  @ ERR++
+endif
+#
+# need an empty rab and palbet if none present
+#
+@ WARN = 0
+foreach file ($RAB $PALBET)
+  if (! -e $file) then
+    echo "Warning - file $file not found, creating an empty one"
+    :> $file
+    @ WARN++
+  endif
+end
+#
+if ($?ERR) then
+  echo "pandora script: $ERR error(s) $WARN warning(s)"
+  echo Exiting
+  exit 1
+endif
+#
+setFOR 61 $DAT
+setFOR 62 $OUT
+setFOR 63 $RAB
+setFOR 64 $PALBET
+#
+$ready
+if ($status != 0) then
+  echo "ERROR - ready failed"
+  exit 1
+endif
+# 
+foreach file ($RAB $PALBET)
+  if (-e $file) then
+    echo "Warning - removing $file"
+    \rm -f $file
+  endif
+end
+#
+echo $OUT is ready, copy it as $DAT in the input location.
+exit
+showUse:
+cat<<EOF
+
+  usage: 
+    $0 [options] <model/ion combo name>
+
+   where options are:
+    -new  <new-name-spec>,   def.: $NEW_D
+    -bin  <executable-dir>,  def.: $BIN_D
+
+example:
+  ready SPh
+  ready -new i12 SPh
+
+EOF
+exit 1

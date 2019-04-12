@@ -1,0 +1,22 @@
+# set N = 001
+set N = 002
+ echo + `date` running H, for case $N
+ bin/pandora leid h l5 $N > & leidh.log
+ bin/pmerge @NE+,@NP+ leidh.pop.$N leid.mod
+ mv output.mod leid.mod
+
+ echo + `date` running HeI, for case $N
+ bin/pandora leid he1 l5 $N >& leidhe1.log 
+ bin/pmerge @HE+ leidhe1.pop.$N leid.mod
+ mv output.mod leid.mod
+
+ echo + `date` running CaII, for case $N
+ bin/pandora leid ca2 l5 $N >& leidca2.log 
+
+ bin/extract 'PROF (3/2)' leidh.aaa.$N leidh.prof_3-2.out.$N
+ bin/extract 'MODEL DATA' leidh.aaa.$N leidh.model_data.out.$N
+ bin/extract 'PROF (5/1)' leidca2.aaa.$N leidca2.prof_5-1.out.$N
+ bin/extract 'PROF (4/2)' leidhe1.aaa.$N leidhe1.prof_4-2.out.$N
+
+ echo = `date` $N done.
+unset N

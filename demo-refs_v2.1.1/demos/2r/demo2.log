@@ -1,0 +1,66 @@
++ Mon Mar 24 15:44:45 EDT 2014 bin/pandora started
+  running case=demo2h, atmospheric model=demo2, atomic data=hl3
+          stats=stats/, opac=opacities/, bin=bin/, atoms=2//, input=2//, output=2//
+Warning - 2//demo2h.jnu file not found (LU=9)
+running on:
+Linux menfin 2.6.32-431.3.1.el6.x86_64 #1 SMP Fri Jan 3 21:39:27 UTC 2014 x86_64 x86_64 x86_64 GNU/Linux
+input files:
+ls: cannot access 2//demo2h.jnu: No such file or directory
+-rw-r----- 1 sylvain sylvain 1899 Apr 18  2007 2//demo2.mod
+-rw-r----- 1 sylvain sylvain  398 Apr 18  2007 2//demo2h.dat
+-rw-r----- 1 sylvain sylvain   17 Apr 18  2007 2//demo2h.res
+-rw-r----- 1 sylvain sylvain  913 Apr 18  2007 2//hl3.atm
+opacity files:
+-rw-r--r-- 1 sylvain sylvain        0 Apr 15  2009 opacities/average.dat
+-r--r--r-- 1 sylvain sylvain 64155430 Apr 18  2007 opacities/composite.dat
+-r--r--r-- 1 sylvain sylvain  1074363 Apr 18  2007 opacities/statistical.dat
++ Mon Mar 24 15:45:03 EDT 2014 bin/pandora.x started
+Warning: ieee_underflow is signaling
+Warning: ieee_inexact is signaling
+PANDORA done
+ 2014-Mar-24 15:45:03  #                Read input, part 1              
+ "Delayed-ABORT" now activated.
+ 2014-Mar-24 15:45:03  #                Read input, part 2              
+ 2014-Mar-24 15:45:03  #                Input printing                  
+ "Delayed-ABORT" now deactivated.
+ 2014-Mar-24 15:45:03  #                Populations Initialization      
+ 2014-Mar-24 15:45:03  #                Precalculations                 
+ 2014-Mar-24 15:45:03  #                Line Opacities Start-Up         
+ 2014-Mar-24 15:45:03  #                Continuum Initialization        
+ 2014-Mar-24 15:45:03  #   1/ 2         Continuum Calculations          
+ 2014-Mar-24 15:45:03  #   1/ 2         Rates                           
+ 2014-Mar-24 15:45:03  #   1/ 2         B-ratios Initialization         
+ 2014-Mar-24 15:45:03  #   1/ 2         Damping Parameter               
+ 2014-Mar-24 15:45:03  #   1/ 2   1/ 1  Line Source Functions           
+ 2014-Mar-24 15:45:03  #   1/ 2         Number Densities                
+ 2014-Mar-24 15:45:03  #   1/ 2         Continuum Calculations          
+ 2014-Mar-24 15:45:03  #   1/ 2         Lyman                           
+ 2014-Mar-24 15:45:03  #   1/ 2         NE Updating                     
+ 2014-Mar-24 15:45:03  #   1/ 2         Gas Parameters                  
+ 2014-Mar-24 15:45:03  #   1/ 2         Number Densities                
+ 2014-Mar-24 15:45:03  #   1/ 2         Restart Data                    
+ 2014-Mar-24 15:45:03  #   2/ 2         Continuum Calculations          
+ 2014-Mar-24 15:45:03  #   2/ 2         Rates                           
+ 2014-Mar-24 15:45:03  #   2/ 2         Damping Parameter               
+ 2014-Mar-24 15:45:03  #   2/ 2   1/ 1  Line Source Functions           
+ 2014-Mar-24 15:45:03  #   2/ 2         Number Densities                
+ 2014-Mar-24 15:45:03  #   2/ 2         Continuum Calculations          
+ 2014-Mar-24 15:45:03  #   2/ 2         Lyman                           
+ 2014-Mar-24 15:45:03  #   2/ 2         NE Updating                     
+ 2014-Mar-24 15:45:03  #   2/ 2         Gas Parameters                  
+ 2014-Mar-24 15:45:03  #   2/ 2         Number Densities                
+ 2014-Mar-24 15:45:03  #   2/ 2         Restart Data                    
+ 2014-Mar-24 15:45:03  #                Line Post-Processing            
+ 2014-Mar-24 15:45:03  #                Continuum Summary               
+ 2014-Mar-24 15:45:03  #                Iterations Summaries            
+2014-Mar-24 !NONAME! H   ; itr   2  1(0); n,nl,nt  25    3    3; sec       0; ela  0:00:00; vrsn 78.018; cpu menfin             
++ Mon Mar 24 15:45:03 EDT 2014 bin/pandora.x completed, exit status=0
+rm: cannot remove `2//demo2h.tmp.001': No such file or directory
+ouput files:
+-rw-r----- 1 sylvain sylvain   9215 Mar 24 15:45 2//demo2h.jrl.001
+-rw-r----- 1 sylvain sylvain 498474 Mar 24 15:45 2//demo2h.aaa.001
+-rw-r----- 1 sylvain sylvain   4343 Mar 24 15:45 2//demo2h.aix.001
+-rw-r----- 1 sylvain sylvain   8027 Mar 24 15:45 2//demo2h.rst.001
+-rw-r----- 1 sylvain sylvain  11024 Mar 24 15:45 2//demo2h.msc.001
+-rw-r----- 1 sylvain sylvain  15857 Mar 24 15:45 2//demo2h.pop.001
+= Mon Mar 24 15:45:03 EDT 2014 done.

@@ -1,0 +1,33 @@
+ [ DEMO-4                  2 L MG-II    ITER 01      02 OCT 02   ]               
+ 
+ 
+ PSN154520  OPTIONS               OVER=  0     SUB=  0     HSL=  0     LYM=  0                                                  
+ PSN154521  INPUT NOTES           OVER=  0     SUB=  0     HSL=  0     LYM=  0                                                  
+ PSN154522  ATMOSPHERE            OVER=  0     SUB=  0     HSL=  0     LYM=  0                                                  
+ PSN154523  ND, NK, + BD          OVER=  0     SUB=  0     HSL=  0     LYM=  0                                                  
+ PSN154524  ATOM                  OVER=  0     SUB=  0     HSL=  0     LYM=  0                                                  
+ PSN154525  RHO, JBAR ...         OVER=  0     SUB=  0     HSL=  0     LYM=  0                                                  
+ PSN154526  ELEMENTS              OVER=  0     SUB=  0     HSL=  0     LYM=  0                                                  
+ PSN154527  BACKGROUND            OVER=  0     SUB=  0     HSL=  0     LYM=  0                                                  
+ PSN154528  INPUT                 OVER=  0     SUB=  0     HSL=  0     LYM=  0                                                  
+ PSN154529  CONSTANTS             OVER=  0     SUB=  0     HSL=  0     LYM=  0                                                  
+ PSN154530  HYDROGEN              OVER=  0     SUB=  0     HSL=  0     LYM=  0                                                  
+ PSN154531  SILICON               OVER=  0     SUB=  0     HSL=  0     LYM=  0                                                  
+ PSN154532  MAGNESIUM             OVER=  0     SUB=  0     HSL=  0     LYM=  0                                                  
+ PSN154533  TABLES                OVER=  0     SUB=  0     HSL=  0     LYM=  0                                                  
+ PSN154534  INTEGRATION           OVER=  0     SUB=  0     HSL=  0     LYM=  0                                                  
+ PSN154535  ITERATION  1          OVER=  1     SUB=  0     HSL=  0     LYM=  0                                                  
+ PSN154536  RATES                 OVER=  1     SUB=  0     HSL=  0     LYM=  0                                                  
+ PSN154537  START VALUES          OVER=  1     SUB=  0     HSL=  0     LYM=  0                                                  
+ PSN154538  LINE (U/L)            OVER=  1     SUB=  1     HSL=  0     LYM=  0                                                  
+ PSN154539  LINE (2/1)            OVER=  1     SUB=  1     HSL=  0     LYM=  0                                                  
+ PSN154540  RHO AND RBD           OVER=  1     SUB=  1     HSL=  0     LYM=  0                                                  
+ PSN154541  POPULATIONS           OVER=  1     SUB=  0     HSL=  1     LYM=  0                                                  
+ PSN154542  POST (2/1)            OVER=  0     SUB=  0     HSL=  0     LYM=  0                                                  
+ PSN154543  PROF-PREP             OVER=  0     SUB=  0     HSL=  0     LYM=  0                                                  
+ PSN154544  WAVE SUMM 0           OVER=  0     SUB=  0     HSL=  0     LYM=  0                                                  
+ PSN154545  WAVE SUMM 1           OVER=  0     SUB=  0     HSL=  0     LYM=  0                                                  
+ PSN154546  CHECKS                OVER=  0     SUB=  0     HSL=  0     LYM=  0                                                  
+ PSN154547  ITERATES              OVER=  0     SUB=  0     HSL=  0     LYM=  0                                                  
+ PSN154548  PROF (2/1)            OVER=  0     SUB=  0     HSL=  0     LYM=  0                                                  
+ PSN154549  SIGN-OFF              OVER=  0     SUB=  0     HSL=  0     LYM=  0                                                  

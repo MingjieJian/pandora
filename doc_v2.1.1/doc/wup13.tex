@@ -1,0 +1,106 @@
+%\magnification=1200
+%\input wupstuff.tex
+\newtoks\footline \footline={\hss\tenrm 13.\folio\hss}
+\pageno=1
+\top
+\vskip 1.5 true in
+\centerline{Section 13: {\bf Auxiliary Depth Tables}}
+\blankline
+\blankline
+\centerline{\bf ***}
+\blankline
+\blankline
+PANDORA deals with many depth-dependent quantities. When these exist in
+tabular form, they are specified as functions of the set of discrete 
+geometrical depth values that constitute the standard kilometer depth
+table {\bf Z}$_i, 1 \leq i \leq ${\bf N}.
+
+However, it may happen that when such a quantity is to be input to
+PANDORA, it is known only as a function of a different set of depth values.
+When that is the case, such a different set of depth values may be input
+as an auxiliary depth table. Upon reading tables corresponding to
+that auxiliary Z table, PANDORA will perform, {\it during the input
+reading process}, the interpolations necessary to convert such tables
+to functions of the actual {\bf Z}-scale of the run. After input reading
+is finished, and before beginning the actual calculations, PANDORA
+discards the auxiliary Z tables.
+
+The remainder of this section discusses in detail how to introduce and
+use auxiliary Z tables.
+\blankline
+Every auxiliary Z table, {\bf ZAUX}, has a unique identifier $m$,
+$1 \leq  m \leq 50$. \break By definition, the value $m = 0$ refers
+to the standard kilometer depth table of the run, {\bf Z}.
+
+To introduce an auxiliary Z table, it is only necessary to specify its
+length, {\bf LZA}$_m$, in an {\tt LZA} statement in Part B of the
+input (see Section 4), and then the table itself, ${\bf ZAUX}^m_i, 1 \leq i
+\leq {\bf LZA}_m$, in a {\tt ZAUX} statement in a subsequent Section
+of the input file.
+\ej
+There are three ways of referring to ({\it i.e.} specifying) a depth
+table when specifying input values of depth-dependent quantities:
+
+\noindent 1) If none is referrenced explicitly, or if $m = 0$, then
+the standard kilometer depth table of the run, {\bf Z}, is assumed.
+
+\noindent 2) The auxiliary depth table index {\bf m} can be specified in the
+same input statement as the corresponding input quantity itself. Input
+statements of the \break Type {\bf 2*}, {\bf 3*} and {\bf 5*} (see
+Section 2) have been provided for this purpose. When the value of $m$ is
+specified in this manner, then it affects {\it that input statement only}.
+
+\noindent 3) A global value of auxiliary depth table identifier $m$ can be
+specified as the input parameter {\bf MAUX}. (The default value of
+{\bf MAUX} = 0.) Upon encountering a {\tt MAUX} statement, PANDORA assumes
+that all depth-dependent quantities that follow (except those that use input
+statement Types {\bf 2*}, {\bf 3*}, or {\bf 5*}) correspond to the auxiliary
+depth table whose index was specified in that statement, and will perform
+the necessary interpolations mentioned above. A value of $m$ as set by
+a {\tt MAUX} statement remains in effect until countermanded by a subsequent
+{\tt MAUX} statement. 
+
+The auxiliary depth table identifier value $m = 0$ is permitted in
+{\tt MAUX} statements, but not in {\tt LZA} or {\tt ZAUX} statements.
+\blankline
+Since the interpolation from {\bf ZAUX} to {\bf Z} is done during the
+reading of the input statements (as opposed to being done after all the
+input has been read), it is necessary that a given {\bf ZAUX} table
+must have already occurred in the input before it is first referred to,
+and the {\bf Z} table must already have occurred in the input before
+the first ZAUX-dependent input is read.
+\blankline
+\blankline
+{\it Note}: It is normally possible (indeed, convenient at times)
+to use several distinct, non-contiguous input statements to specify
+the sequence of elements of an input array (using {\bf I}, the
+explicit facility for specifying the index of the `array member
+currently being read into'; see Section 2). 
+
+{\it This is not possible with arrays that are functions of 
+auxiliary Z tables.} 
+
+For such arrays (even when PANDORA only needs to `go through the 
+motions' of interpolation), all elements must be specified in 
+{\it one} input statement.
+\blankline
+\blankline
+\centerline{{\bf Note}}
+\noindent Many years' experience with auxiliary Z tables
+has shown that their use causes confusion; it seems best only to
+use them as temporary expedients.
+\blankline
+%\blankline
+%\vfill \vfill
+%\vfill \vfill
+%\vfill \vfill
+%\vfill \vfill
+%\vfill \vfill
+%\vfill \vfill
+%\vfill \vfill
+%\vfill 
+\vfill
+\noindent (Section 13 -- last revised: 1998 Sep 17) \par
+\message{Section 13 ends at page 13.\the\pageno}
+\ej
+%\end

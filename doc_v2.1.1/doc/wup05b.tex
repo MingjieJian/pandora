@@ -1,0 +1,2003 @@
+%\magnification=1200
+%\input wupstuff.tex
+\newtoks\footline \footline={\hss\tenrm 5.\folio\hss}
+%\pageno=58
+%  available note # : 141
+%
+\headline={\centerline{\it Notes}}
+\blankline
+\blankline
+\centerline{\underbar{$\qquad \qquad$ {\bf *1} $\qquad \qquad$}}
+\space \noindent
+The default value of {\bf ABD} can be obtained from the element tables
+(see Section 10), provided that {\bf ELSYM} is a recognizable chemical
+element symbol.
+\blankline
+\blankline
+\centerline{\underbar{$\qquad \qquad$ {\bf *2} $\qquad \qquad$}}
+\space \noindent
+{\bf INPAIR} is a list of pairs of integers $u, \ell \; (u > \ell)$,
+which specify transitions between levels. These pairs may be listed in
+any order, as long as the proper pair relationships are preserved.
+For example, if (2,1), (5,1), (5,2), (5,3) and (5,4) are the transitions
+to be specified, then the input statement might be: \np
+``{\tt INPAIR ( 5 1   5 2   5 3   2 1   5 4 ) }''. \np
+The first pair will be used as the default for ({\bf MS},{\bf NS}).
+\blankline
+\blankline
+\centerline{\underbar{$\qquad \qquad$ {\bf *3} $\qquad \qquad$}}
+\space \noindent
+{\bf NAME} must not have more than 8 characters, and may not contain
+imbedded blanks.
+\blankline
+\blankline
+\centerline{\underbar{$\qquad \qquad$ {\bf *4} $\qquad \qquad$}}
+\space \noindent
+{\bf RHOPT} specifies the RHO option, and may only take on one of the following
+values: ``{\tt{RHOS}}'', ``{\tt{RHOJ}}'', or ``{\tt{RHOW}}''.
+\blankline
+\blankline
+\centerline{\underbar{$\qquad \qquad$ {\bf *5} $\qquad \qquad$}}
+\space \noindent
+When {\bf JSTCN} $> 0$, then PANDORA will do only background continuum
+calculations and emergent continuous spectrum calculations (depending on the
+specific options settings); this is called: a `continuum-only' run. \np
+The value of {\bf JSTCN} controls which wavelengths will be included in the
+computations of this run. \np
+{\bf JSTCN} should be set equal to $KAW + 2 \times KOM + 4 \times KCO$, where 
+\np
+$KAW = 1$ means: use `additional wavelengths' ({\it i.e.}
+{\bf WAVES}), $KAW = 0$ means: do not; \np
+$KOM = 1$ means: use Composite Lines Opacity wavelengths;
+$KOM = 0$ means: do not; \np
+$KCO = 1$ means: use CO-lines opacity wavelengths; $KCO = 0$ means: do not.
+\ej
+% \blankline
+% \blankline
+\centerline{\underbar{$\qquad \qquad$ {\bf *6} $\qquad \qquad$}}
+\space \noindent
+{\bf JSTCN} and {\bf JSTIN} may not both be $> 0$ for the same run. \np
+{\bf JSTCN} and {\bf NOION} may not both be $> 0$ for the same run.
+\blankline
+\blankline
+\centerline{\underbar{$\qquad \qquad$ {\bf *7} $\qquad \qquad$}}
+\space \noindent
+Any of the absorbers/emitters automatically included in the 
+background opacity/emission
+calculations can be turned off by mentioning them in {\bf NABS} statement(s).
+For this purpose, the absorbers/emitters are specified using the ``index''
+by which they are identified in the left margin of the `List of potential
+contributors to ``continuum'' or ``background'' absorption and
+emission.' which is part of the ATMOSPHERE printout at the beginning of
+the regular output from a run. For example, the following statement
+will cause the H Ly alpha Abs and the H$_2^+$
+opacity to be turned off: ``{\tt NABS ( 11 9 ) }''.
+\blankline
+\blankline
+\centerline{\underbar{$\qquad \qquad$ {\bf *8} $\qquad \qquad$}}
+\space \noindent
+The {\bf POPUP} switch is used to tell PANDORA whether this is a run in which
+the number densities computed at the end of every overall iteration must also
+be copied into the appropriate `non-LTE populations' tables set aside for
+certain ions. The {\bf POPUP} switch may only take on the values: \np
+1) {\tt HYDROGEN}, 2) {\tt CARBON}, 3) {\tt SILICON}, 4) {\tt HELIUM},
+5) {\tt HELIUM2}, 6) {\tt ALUMINUM},\np
+7) {\tt MAGNESIUM}, 8) {\tt IRON}, 9) {\tt SODIUM}, 10) {\tt CALCIUM},
+11) {\tt OXYGEN}, or 12) {\tt SULFUR}; \np
+{\it i.e.}: ``{\tt POPUP ( CARBON ) }''.
+A run that is not concerned with one of these should not have {\bf POPUP}
+among its input statements. Moreover, runs with `population ions' can be
+made without `population updating' simply by not specifying {\bf POPUP}. \np
+In a `population update' run, the values of the integer array {\bf RUNTOPOP}
+specify the correspondence between the levels of the ion-of-the-run and the
+levels of the built-in population-ion-model. (The description of the built-in
+population-ion-model is printed as part of the first printout of the 
+corresponding `population ion' number densities and departure coefficients;
+note that specific options must be turned on for this, {\it e.g.} CARPRNT.)
+{\bf RUNTOPUP}$_i = j$ means that level $j$ of the ion-of-the-run
+corresponds to level $i$ of the built-in population ion model. \np
+If $k$ is the lowest level of the built-in population-ion-model to which
+no level of the ion-of-the-run corresponds, then {\bf RUNTOPOP}$_\ell = 0, 
+k < \ell \leq $ LIMDAT, is required. (Note that the default values are
+{\bf RUNTOPOP}$_i = 0, 1 \leq i \leq $ LIMDAT.)
+\ej
+% \blankline
+% \blankline
+\centerline{\underbar{$\qquad \qquad$ {\bf *9} $\qquad \qquad$}}
+\space \noindent
+Input tables of {\bf TRN} may be specified in abbreviated forms: either \np
+(a) $\qquad$
+{\bf TR ( I} $k \; x_k \; x_{k+1} \; x_{k+2} \; \ldots 
+\; x_m$ {\bf ) },\np
+{\it i.e.} ``{\tt TR ( I 12 3600. 3700. 3750. 3800. ) }'', or \np
+(b) $\qquad$
+{\bf TRN} $j$ {\bf ( I} $k \; x_k \; x_{k+1} \; x_{k+2} \; \ldots 
+\; x_m$ {\bf ) },\np
+{\it i.e.} ``{\tt TRN 2 ( I 12 3600. 3700. 3750. 3800. ) }''\np
+In both these forms, several elements of an array, (beginning, here,  with
+the 12. one), are set equal to the floating point numbers given.
+\np
+Case (a) tells PANDORA to do the following (after {\bf GO} has been read):
+\np
+to set TR$_i = x_k, \; 1 \leq i \leq k$, to leave TR$_i = x_i,
+\; k+1 \leq i \leq m$, as specified in the input statement, and to set
+TR$_i = $ TE$_i, \; m+1 \leq i \leq $N. \np
+Case (b) is equivalent to (a) when $j = 1$; otherwise, it specifies the
+$j$'th TRN table. \np
+The rationale for this procedure derives from the structure of a typical
+TRN table, as follows: the initial elements of the table are equal to
+some constant value, then there is a variation extending over several
+values, until, finally, the values of TRN are equal to the values of
+TE at the corresponding interior depths. Thus the abbreviated input form
+specifies the index of the last of the constant values, that constant
+itself, and then the set of values which differ from TE. \np
+{\it Note}: 
+This abbreviated input form may only be used when the TRN
+table is specified with respect to the main depth table of the run;
+it may not be used when the TRN table is specified with respect to a
+{\bf ZAUX} (auxiliary depth) table.
+\blankline
+\blankline
+\centerline{\underbar{$\qquad \qquad$ {\bf *10} $\qquad \qquad$}}
+\space \noindent
+After {\bf GO} has been read, PANDORA examines the values of 
+{\bf KPC}$^{u,\ell}$ for every radiative transition $(u,\ell)$. 
+If all the values of {\bf KPC}$^{u,\ell}$ are = 0 (normal default), 
+then it sets 
+{\bf KPC}$^{u,\ell}$ = {\bf KPCR}$^{u,\ell}_i \times $ {\bf KPC}$^{MS,NS}_i,
+\; 1 \leq i \leq $ N, where ({\bf MS},{\bf NS}) is the reference transition.
+After this process is finished, {\bf KPC}$^{u,\ell}_i = 0$
+can only come about because {\bf KPC}$^{MS,NS}_i = 0$ (if there were
+no explicit input values $\neq 0$), or, for $i,j \neq MS,NS$, because
+either {\bf KPC}$^{MS,NS}_i = 0$, or because {\bf KPCR}$^{u,\ell} = 0$. \np
+Those transitions for which nonzero input values of continuous opacity
+were obtained by this procedure, will retain those values for the
+first overall iteration. For those transitions for which no
+nonzero values of continuous opacity could be obtained, PANDORA will
+compute them. (Normally, PANDORA computes opacity values for
+every radiative transition in every overall iteration.)
+\ej
+% \blankline
+% \blankline
+\centerline{\underbar{$\qquad \qquad$ {\bf *11} $\qquad \qquad$}}
+\space \noindent
+When {\bf NOION} = 1 ({\it i.e.} if the option DOION is off), 
+then no ion-related calculations will be done.
+{\bf JSTCN} and {\bf NOION} may not both be $> 0$ for the same run.
+See also Note 84.
+\blankline
+\blankline
+\centerline{\underbar{$\qquad \qquad$ {\bf *12} $\qquad \qquad$}}
+\space \noindent
+{\bf KONFORM} controls the format of the printing of detailed contributions
+to the background opacity and the absorption source function ({\it i.e.}
+the detailed printouts of `absorbers' and `emitters'). \np
+{\bf KONFORM} = 1
+means: print their absolute values, using Fortran E-format conversion; \np
+{\bf KONFORM} = 2 means: print them as fractions of the total, using
+Fortran \break F-format conversion.
+\blankline
+\blankline
+\centerline{\underbar{$\qquad \qquad$ {\bf *13} $\qquad \qquad$}}
+\space \noindent
+$X^{s+1}_i = {(1 - W_i)} \times X^{new}_i + W_i \times X^s_i, \; 
+1 \leq i \leq N$, where $X$ stands for RHO; or \np
+$X^{s+1}_i = [ (X^{new}_i)^{(1 - W_i)} ] \times [ (X^s_i)^{W_i} ], \; 1 \leq i 
+\leq N$, where $X$ stands for RK-KOLEV (Lyman). \np
+The values of $X_i$ for iteration $s+1$ will be obtained, in the manner
+shown, from the values of $X_i$ used during iteration $s$ and the $new$
+values of $X_i$ calculated at the end of iteration $s$. The values
+of $W_i$ (which may all be equal to some constant) are obtained from
+WRHO, {\bf WR}, {\bf WRLY}, and {\bf WTW}$_j$ as described in the
+writeup [7/3/72], (WRHO is continually recomputed as the calculation proceeds),
+or from {\bf RHOWT}$_i$ or {\bf RKW}$_i$, respectively, as described in the
+writeup [74 Oct 23]. \np
+{\bf Important}: Note 13 is now obsolete; {\bf see Note 131}.
+\blankline
+\blankline
+\centerline{\underbar{$\qquad \qquad$ {\bf *14} $\qquad \qquad$}}
+\space \noindent
+{\bf BLCSW}$^{u,\ell}$ tells which components of DP to use for the Line
+Source Function calculation for transitions $(u, \ell)$.
+Its input value should be established
+according to $BLCSW = SRD + 2 \times SVW + 4 \times SSK 
++ 8 \times SRS + 16 \times SIC$. \np
+Here $SRD = 1$ if radiative broadening should be used, $= 0$ if not;
+$SVW$, $SSK$, $SRS$, and $SIC$ similarly control van der Waals, Stark,
+resonance, and ion collision broadening, respectively. ({\it Note}: ion
+collision broadening is used for Hydrogen transitions above level 5 only.)
+In the ATOM printout, the values of $SRD$, $SVW$, $SSK$, $SRS$, and 
+$SIC$ are shown as a string of digits ({\it i.e.} as a
+binary number) in order from right to left.
+\ej
+% \blankline
+% \blankline
+\centerline{\underbar{$\qquad \qquad$ {\bf *15} $\qquad \qquad$}}
+\space \noindent
+$X^{s+1}_i = $ {\bf HSEC}$ \times X^{new}_i + (1 - ${\bf HSEC}$) \times X^s_i, 
+\; 1 \leq i \leq N$, where X stands for either NE or NH. \np
+When the option HSE is on, the $X_i$ for overall iteration $s+1$ will be
+obtained, in the manner shown, from the $X_i$ used during iteration $s$
+and the $new$ values of $X_i$ calculated at the end of overall iteration $s$.
+\blankline
+\blankline
+\centerline{\underbar{$\qquad \qquad$ {\bf *16} $\qquad \qquad$}}
+\space \noindent
+{\bf LSFBOC}$^{u, \ell}$ and {\bf OML}$^{u, \ell}$ control whether any of the
+`Line Background' \break opacities (see Section 9) are allowed as potential 
+contributors to the total background (or ``continuum'') opacity at wavelength(s)
+pertaining to transition $(u, \ell)$. \break If {\bf LSFBOC} = 0 then all these
+`Line Background' opacities will be suppressed; \break if {\bf LSFBOC} = 1 then
+the appropriate one, multiplied by {\bf OML}, will be used. \np
+By default, all {\bf LSFBOC} = 0 and all {\bf OML} = 1.
+\blankline
+\blankline
+\centerline{\underbar{$\qquad \qquad$ {\bf *17} $\qquad \qquad$}}
+\space \noindent
+If the value of {\bf PROF}$^{u,\ell} = 0$, then no emergent intensity nor flux
+profiles will be computed for transition $(u,\ell)$. If any value of
+{\bf PROF}$^{u,\ell}$ is $> 0$, then {\bf LF} $> 0$ is required. (A flux profile
+will not be computed if {\bf LF} = 1; see also Note 24.) \np
+Line profile intensity and flux values are computed for tables of
+$\Delta \lambda$ values which are derived for frequency ({\bf XI}) values;
+see Section 18, Frequency Tables, for additional information.
+\blankline
+\blankline
+\centerline{\underbar{$\qquad \qquad$ {\bf *18} $\qquad \qquad$}}
+\space \noindent
+{\bf OLL}$^{u, \ell}$ multiplies the values of GTN$^{u, \ell}$.
+(GTN$^{u, \ell}_i$ multiplies the line absorption profile $\phi^{u, \ell}
+_i$ in the equation for the monochromatic total opacity at the various
+frequency points of transition $(u, \ell)$.)
+\ej
+% \blankline
+% \blankline
+\centerline{\underbar{$\qquad \qquad$ {\bf *19} $\qquad \qquad$}}
+\space \noindent
+The RHO selection parameters: \np
+{\bf RHOPT} -- \np
+Values of RHO$^{u,\ell}_i$ are calculated three different ways:
+\bull as part of the Line Source Function calculation (RHOS);
+\bull from S, S*, RHOS and {\bf CWJ} (RHOJ); and
+\bull by combining RHOS and RHOJ (RHOW). 
+(See also the explanation printed with the RHO AND RBD section of the
+normal output.) 
+The value of {\bf RHOPT} tells which of these is to be
+chosen as the final RHO$^{u,\ell}_i$, to be used in subsequent iterations.
+\spice \noindent
+{\bf NWRHO}, {\bf WMN} and {\bf WMX} -- \np
+At the end of every iteration $s$, the current values of
+CHECK$_i^j$ are compared to the ones from the previous iteration $s-1$,
+for $1 \leq i \leq N$ and $3 \leq j \leq NL$. \break A counter $K$ is
+initialized to zero.
+Whenever: $CC = |$CHECK$_i^j -1| > 0.002$ and $OC = |$CHECK$_{i-1}^j
+-1| > 0.002$ and $OC / CC \leq 0$, then $K$ will be increased by 1.
+All values of CHECK$^j_i$ will be tested to determine $K$.
+If $K > $ {\bf NWRHO} then,
+if WRHO $<$ {\bf WMX}, WRHO will be increased by 0.1. 
+If $K \leq $ {\bf NWRHO}, then,
+if WRHO $>$ {\bf WMN}, WRHO will be decreased by 0.1. (If WRHO $<$ {\bf WMN} or
+WRHO $\geq$ {\bf WMX}, then WRHO will remain unchanged.) This new value of WRHO
+will then be used in the next iteration, as specified in Note 13.
+\spice \noindent
+{\bf CHOP}, {\bf CWR}, {\bf ILI}, {\bf NIL}, {\bf CHLIM}, and option RHOWOPT -- \np
+The significance of these parameters is explained in the text accompanying
+the RHO AND RBD printout (when option RHBPRNT is on). (If such a printout
+happens not to be immediately at hand, it won't hurt to set up a one-iteration
+run using the automatic defaults.)
+\blankline
+\blankline
+\centerline{\underbar{$\qquad \qquad$ {\bf *20} $\qquad \qquad$}}
+\space \noindent
+If the option ISCRS is on ({\it i.e.} if {\bf ISCRS} = 0),
+then `scratch I/O' will be done `in memory' to the
+extent possible ({\it i.e.} depending on the amount of memory reserved for the
+{\tt MEMOIR} routines). When memory is full, scratch I/O will overflow to the
+temporary scratch disk file (logical unit 1, see Section 7).
+(For some runs, scratch I/O can be accomodated entirely in memory,
+and no temporary scratch disk file will be required; in other runs,
+the size of the temporary scratch disk file will be reduced.) 
+This `in-memory scratch I/O mode' may be particularly
+beneficial when PANDORA is run on systems with real memory so large that
+no hard page faults occur. \np
+If the option ISCRS is off ({\it i.e.} if {\bf ISCRS} = 1),
+then `in-memory scratch I/O' is not allowed; 
+{\it all} scratch I/O will use the temporary scratch disk file. \np
+See also Note 84.
+\ej
+% \blankline
+% \blankline
+\centerline{\underbar{$\qquad \qquad$ {\bf *21} $\qquad \qquad$}}
+\space \noindent
+{\bf METEP} specifies the method for computing EP1 and EP2 in the
+Level-${\cal N}$-to-Continuum (Lyman) transfer calculation. \np
+{\bf METEP}=0 means: NOVA-like method (writeup dated 06/04/68); \np
+{\bf METEP}=1 means: COMPLEX/UPPER-like method (writeup dated 04/12/90); \np
+{\bf METEP}=2 means: COMPLEX/LOWER-like method (writeup dated 06/22/76); \np
+{\bf METEP}=3 means: CHAIN-like method (writeup dated 11/24/76). \np
+(The values of {\bf METEP} are analogous to those of {\bf METSE};
+see Note 35.)
+\blankline
+\blankline
+\centerline{\underbar{$\qquad \qquad$ {\bf *22} $\qquad \qquad$}}
+\space \noindent
+For a particular energy level $j$, {\bf WRAT}$^j$ specifies a set of wavelength
+values, {\bf RRCP}$^j$ a tabular function of these wavelength values, and
+{\bf YRATE}$^j$ a set of method control parameters (see Section 12) for
+Continuum Source Function calculations at these wavelengths. We have
+{\bf WRAT}$^j_m$, {\bf RRCP}$^j_m$, and {\bf YRATE}$^j_m, \; 1 \leq m \leq $
+{\bf MR}$^j+1$. Since the value of {\bf WRAT}$^j_1$ is obtained from
+$({\bf NUC}^j - {\bf NU}^j)$, this value need not (actually: {\it cannot}) be
+input; and since {\bf RRCP}$^j_1$ usually $= 1.0$, this value normally
+need not be input. Thus, for every level for which {\bf MR}$^j > 0$,
+the input must contain specifications of the values of {\bf WRAT}$^j_m$ and
+{\bf RRCP}$^j_m$, \break $2 \leq m \leq $ {\bf MR}$^j+1$. On the other hand,
+all values of {\bf YRATE}$^j_m$ can \break (actually: {\it must}) be input.
+Thus, the input statements for {\bf WRAT} and {\bf RRCP} are different
+from those for {\bf YRATE}. For example, if we have:
+\space
+\settabs 6 \columns
+\+ & $m$ & WRAT$^2_m$ & RRCP$^2_m$ & YRATE$^2_m$ \cr
+\+ & 1 & (3612.0) & (1.0) & -1.0 \cr
+\+ & 2 & 3575.0 & 0.99 & 1.0 \cr
+\+ & 3 & 3540.0 & 0.97 & 0.9 \cr
+\space \noindent
+the input statements might be:\np
+``{\tt WRAT 2 ( 3575. 3540. ) }'', \np
+``{\tt RRCP 2 ( 0.99, 0.97 ) }'', \np
+``{\tt YRATE 2 ( -1.0 1.0 0.9 ) }''. \np
+However, there are infrequent occasions when {\bf RRCP}$^j_1$ should 
+not $= 1.0$. In such a case, such a value can be input by referring to
+that array under another name, namely {\bf RQCP}, for which the first
+value can (actually: {\it must}) be input (as with {\bf YRATE}).
+Thus if, in the above example, {\bf RRCP}$^2_1 = 1.2$ is wanted,
+the input statements might be: \np
+``{\tt WRAT 2 ( 3575. 3540. ) }'', \np
+``{\tt RQCP 2 ( 1.2 .99, .97 ) }'', \np
+``{\tt YRATE 2 ( -1.0 1.0 0.9 ) }''.
+\ej
+% \blankline
+% \blankline
+\centerline{\underbar{$\qquad \qquad$ {\bf *23} $\qquad \qquad$}}
+\space \noindent
+{\bf OUTPUT} can take on the values: {\tt MERGE}, {\tt SPLIT}. See
+Section 7, the part headed ``{\bf Output files}''.
+\blankline
+\blankline
+\centerline{\underbar{$\qquad \qquad$ {\bf *24} $\qquad \qquad$}}
+\space \noindent
+The {\bf MU} table (for intensity) must be a proper subset of the 
+{\bf MUF} table (for flux); thus it is required that {\bf L} $\leq$ 
+{\bf LF} and that, for every $m$, {\bf MU}$_m$ = {\bf MUF}$_n$, some $n$.
+Both {\bf MU} and {\bf MUF} must be in order of decreasing values.
+\blankline
+\blankline
+\centerline{\underbar{$\qquad \qquad$ {\bf *25} $\qquad \qquad$}}
+\space \noindent
+{\bf CE} is used in the calculations of the collisional transition rates,
+which normally depend on NE. However, if some input value of
+{\bf CE}$^j$ is negative, then its absolute value will be used, and the
+corresponding rate calculation for level $j$ will use NH in place of NE.
+\blankline
+\blankline
+\centerline{\underbar{$\qquad \qquad$ {\bf *26} $\qquad \qquad$}}
+\noindent
+{\bf WPOP} is used for the iterative calculation of number densities,
+as follows: \np
+$ P^{i+1} = 10^{[ W \times \log(P^{new}) + (1 - W) \times \log(P^i) ]}$,
+where $W$ stands for {\bf WPOP} and
+$P$ stands for the level populations or the ionized number density
+computed at the end of an overall iteration. 
+When the POPUP switch is on, the values of $P^{i+1}$ for overall iteration
+$i+1$ will be obtained, in the manner shown, from the $P^i$ available at the
+start of iteration $i$ and the $P^{new}$ computed during iteration $i$. \np
+{\bf WBD} is used similarly for departure coefficients.
+\blankline
+\blankline
+\centerline{\underbar{$\qquad \qquad$ {\bf *27} $\qquad \qquad$}}
+\space \noindent
+Any values of {\bf WAVES}$_k$ may be $< 0.0$, and only $|${\bf WAVES}$_k|$
+will be used, both for the `additional'
+background continuum calculations and the emergent continuous spectrum
+calculations. Moreover, when {\bf WAVES}$_k < 0.0$, then the Continuum
+Eclipse Intensities for $|${\bf WAVES}$_k|$ will also be computed 
+(provided the option ECLIPSE is on).
+\ej
+% \blankline
+% \blankline
+\centerline{\underbar{$\qquad \qquad$ {\bf *28} $\qquad \qquad$}}
+\space \noindent
+These input statements are not intended for general use. They provide
+emergency means for changing the built-in contents of the population-ion-model
+data tables. (These data are printed the first time that the values of
+number density and departure coefficient for the `population update ion'
+are printed.) The preferred way to change these data is for me to change the
+program. \np
+The statements have the following forms: \np
+{\bf POPION} $ \, k \quad j \quad ( \quad V \quad )$, \np
+where $k$ is the `population update ion' number (as in Note 8); $V$ is a simple
+array specifying all or some of the elements of data table $j$; and $j$
+designates one of the population-ion-model data tables, as follows:
+$j = 1$ for XLMTHR, threshhold wavelength (\flpt), $j = 2$ for CCPLEV,
+coefficient CCP (\flpt), $j = 3$ for NPTABL, LM-table length (\intg),
+$j = 4$ for SCPLEV, exponent SCP (\flpt), $j = 5$ for PILEVL, statistical
+weight (\flpt), $j = 6$ for LLABEL, term designation (\alfa, $\leq$ 16
+characters, embedded blanks not permitted). \np
+{\bf POPXLM} $\, k \quad \ell \quad ( \quad V \quad )$, \np
+where $k$ and $V$ are as for {\bf POPION} above, and $\ell$ designates a
+level of the \break population-ion-model. This statement provides
+values for one of the LM tables. \np
+{\bf POPRCP} $\, k \quad \ell \quad ( \quad V \quad )$, \np
+which is like {\bf POPXLM}, but provides values for one of the
+RCP tables.
+\blankline
+\blankline
+\centerline{\underbar{$\qquad \qquad$ {\bf *29} $\qquad \qquad$}}
+\space \noindent
+The size limits on {\bf NAB}, {\bf NCL}, {\bf NMT}, {\bf NSL},
+{\bf NVX} and the total number of Composite Lines Opacity wavelengths
+(see Section 3, Notes) are for programming convenience; 
+to enlarge them requires changing the source code.
+\blankline
+\blankline
+\centerline{\underbar{$\qquad \qquad$ {\bf *30} $\qquad \qquad$}}
+\space \noindent
+When detailed PRD results are printed, the amount of output can be controlled
+as follows: data for frequency value $XI = 0$ are printed, and for every
+{\bf IPRDF}$^{th}$ one from there; data for the first Z value are printed,
+and for every {\bf IPRDD}$^{th}$ one thereafter.
+\ej
+% \blankline
+% \blankline
+\centerline{\underbar{$\qquad \qquad$ {\bf *31} $\qquad \qquad$}}
+\space \noindent
+{\bf A}$^{u,\ell}$ can be greater than or equal to zero. If zero, then there
+is no line transition between levels $u$ and $\ell$; if greater than zero,
+then there is. The input parameter {\bf KTRANS}$^{u, \ell}$ (see Note 33)
+further specifies the type of transition.
+Line Source Functions are computed iteratively for radiative transitions,
+and only once (from the final iterated results) for passive transitions.
+\blankline
+\blankline
+\centerline{\underbar{$\qquad \qquad$ {\bf *32} $\qquad \qquad$}}
+\space \noindent
+The default values of
+{\bf ND}$^j_i, \; 1 \leq i \leq$ N, $1 \leq j \leq$ NL, are zero, unless this
+is a run with the POPUP switch on, in which case the input population data,
+or the LTE population data computed before the first overall iteration, will
+be used as the defaults for {\bf ND}$^j_i$.
+\blankline
+\blankline
+\centerline{\underbar{$\qquad \qquad$ {\bf *33} $\qquad \qquad$}}
+\space \noindent
+{\bf KTRANS}$^{u,\ell}$ is used only when {\bf A}$^{u,\ell} > 0$, and describes
+that transition. It may take on the values: ``{\tt RADIATIVE}'', 
+``{\tt PASSIVE}'', ``{\tt THICK}, ``{\tt THIN}'', or ``{\tt 2-PHOTON}''.
+\blankline
+\blankline
+\centerline{\underbar{$\qquad \qquad$ {\bf *34} $\qquad \qquad$}}
+\space \noindent
+The ordinates controlled by the options OPAGRAF and EMIGRAF increase 
+logarithmically (base 10) upwards from {\bf BLIMG} to {\bf TLIMG}.
+\blankline
+\blankline
+\centerline{\underbar{$\qquad \qquad$ {\bf *35} $\qquad \qquad$}}
+\space \noindent
+{\bf METSE}$^{u,\ell}$ selects the method of computing the statistical 
+equilibrium equations ({\it i.e.} the values of PE$^{u,\ell}$ and 
+FE$^{u,\ell}$) for transition $(u,\ell)$. \np
+{\bf METSE}$^{u, \ell}$ = 0 means: NOVA; \np
+{\bf METSE}$^{u, \ell}$ = 1 means: COMPLEX/upper; \np
+{\bf METSE}$^{u, \ell}$ = 2 means: COMPLEX/lower; \np
+{\bf METSE}$^{u, \ell}$ = 3 means: CHAIN; \np
+{\bf METSE}$^{u, \ell}$ = 4 means: VAMOS. \np
+(Except for VAMOS, the values of {\bf METSE} are analogous to those
+of {\bf METEP}; see Note 21.) 
+Suggestions for choosing {\bf METSE} are given in the printout
+section ``LINE (U/L).'' 
+The default value of {\bf METSE}$^{u, \ell}$ = {\bf METSEDW} if
+$\ell = 1$, and = {\bf METSEDG} otherwise.
+\ej
+% \blankline
+% \blankline
+\centerline{\underbar{$\qquad \qquad$ {\bf *36} $\qquad \qquad$}}
+\space \noindent
+{\bf LSFFDB}$^{u,\ell} = 0$ means: use `constant background' for the Line
+Source Function calculation ({\it i.e.} use line-core background opacity
+and source function for all line integration frequencies).
+{\bf LSFFDB}$^{u,\ell} = 1$ means: use `varying background' for the Line
+Source Function calculation ({\it i.e.} compute background opacity and
+source function explicitly at all line integration frequencies, as in a
+PRD solution). FDB solutions can only be calculated for radiative
+transitions ({\it i.e.} {\bf KTRANS}$^{u,\ell} =$ ``{\tt RADIATIVE}'')
+using the `full' solution ({\it i.e.} {\bf LSFTYP}$^{u,\ell}$ = 0). \np
+{\it Note:} {\bf LSFFDB} is set $= 1$ automatically when PRD is 
+used (see Note 47).
+\blankline
+\blankline
+\centerline{\underbar{$\qquad \qquad$ {\bf *37} $\qquad \qquad$}}
+\space \noindent
+{\bf MODLAB} (up to 8 characters long) is an `atmospheric model name'
+used for the MODEL DATA section of the normal output, and for the
+`performance data archive record' (in file 28; set Section 7).
+\blankline
+\blankline
+\centerline{\underbar{$\qquad \qquad$ {\bf *38} $\qquad \qquad$}}
+\space \noindent
+The PANDORA output includes many printed graphs as functions of depth. \break
+The abscissae of the graphs are established under control of input
+parameters \break {\bf IZOPT}, {\bf NGRL} and {\bf NGRR},
+as follows: \np
+{\bf IZOPT} = 1 means: the abscissa is depth index $i, \; LG \leq i \leq MG$;
+\np
+{\bf IZOPT} = 2 means: the abscissa is $Z_i, \; LG \leq i \leq MG$; \np
+{\bf IZOPT} = 3 means: the abscissa is $\log ( |Z_i| ), \; LG \leq i
+\leq MG$, but excluding \break $Z=0$, (moreover, if $Z_i$ changes sign in the
+range of interest, proceed as if \break {\bf IZOPT} = 1); \np
+{\bf IZOPT} = 4 means: the abscissa is $\log(TAU_i), \; LG \leq i \leq MG$.
+
+Here $LG$ and $MG$ are determined as follows: 
+if {\bf NGRL} $\leq 0$, then $LG = 1$; if {\bf NGRL} $> 0$, then 
+$LG = $ {\bf NGRL}, but the limit $LG \leq (N-1)$ is enforced;
+if {\bf NGRR} $\leq 0$, then $MG = N$; if {\bf NGRR} $> 0$, then
+$MG = $ {\bf NGRR}, but the limit $MG \leq N$ is enforced.
+
+For some graphs, $LG$ and $MG$ are also controlled by the value of the
+input parameter {\bf JZOPT}, as follows: \np
+{\bf JZOPT} = 1 means: use the above procedure controlled by {\bf IZOPT}; \np
+{\bf JZOPT} = 0 means: $LG$ is set to the greatest value of $i$ such that
+$TAU_i \leq 10^{-4}$ ($LG > 1$ if {\bf IZOPT} = 4), and $MG$ is set to the
+smallest value of $i$ such that $TAU_i \geq 10^3$.
+\ej
+% \blankline
+% \blankline
+\centerline{\underbar{$\qquad \qquad$ {\bf *39} $\qquad \qquad$}}
+\space \noindent
+The selector {\bf IRLS1} is used to select RLA ({\bf IRLS1} = 1) or RLB
+({\bf IRLS1} = 2) for $RL^j, j =$ {\bf KOLEV}; {\bf IRLSN} is used similarly
+for $RL^j, \; j \neq$ {\bf KOLEV}.
+\blankline
+\blankline
+\centerline{\underbar{$\qquad \qquad$ {\bf *40} $\qquad \qquad$}}
+\space \noindent
+When the option JSTIN is on ({\i.e.} if {\bf JSTIN} $ > 0$),
+then PANDORA will just read all the input, print it,
+and stop; this is called an `input-only' run. See also Note 84.
+\blankline
+\blankline
+\centerline{\underbar{$\qquad \qquad$ {\bf *41} $\qquad \qquad$}}
+\space \noindent
+{\bf KHFFS} controls whether H free-free is part of the subtotal labelled
+`Total Hydrogen' in the cooling rate calculation of a Hydrogen run.
+${\bf KHFFS} = 1$ means that it is, ${\bf KHFFS} = 0$ means that it is
+not, part of that subtotal. 
+\spice \noindent
+{\bf KOOLSUM} controls which components are added to `Total Hydrogen'
+to compute the grand total labelled `Total Cooling Rate' in a
+Hydrogen run. \np
+{\bf KOOLSUM}
+should be set equal to $K1 + 2 \times K2 + 4 \times K3 + 8 \times K4
++ 16 \times K5$, where\np
+$K1 = 1$ means: add H-minus, $K1 = 0$ means: do not add H-minus; \np
+$K2 = 1$ means: add conduction, $K2 = 0$ means: do not add conduction; \np
+$K3 = 1$ means: add composite lines, $K3 = 0$ means: do not add composite
+lines; \np
+$K4 = 1$ means: add X-ray, $K4 = 0$ means: do not add X-ray; \np
+$K5 = 1$ means: add CO-lines, $K5 = 0$ means: do not add CO-lines.
+\blankline
+\blankline
+\centerline{\underbar{$\qquad \qquad$ {\bf *42} $\qquad \qquad$}}
+\space \noindent
+See Section 15, Partial Redistribution.
+\blankline
+\blankline
+\centerline{\underbar{$\qquad \qquad$ {\bf *43} $\qquad \qquad$}}
+\space \noindent
+{\bf BDOPT} specifies the BD option, and may take on one of the following
+values: ``{\tt BDJ}'', ``{\tt BDR}'', or ``{\tt BDQ}''
+(see explanation in RHO AND RBD section of normal printout).
+\ej
+% \blankline
+% \blankline
+\centerline{\underbar{$\qquad \qquad$ {\bf *44} $\qquad \qquad$}}
+\space \noindent
+PANDORA can read input from several files. The parameter {\bf USE} specifies
+which one of these files to use; it can take on any one of the following
+values: ``{\tt ATOM}'', ``{\tt INPUT}'', ``{\tt MODEL}'', ``{\tt RESTART}''
+or ``{\tt GENERAL}''. \np
+After a {\bf USE} statement has been read, the next input statement(s) will
+be read from the file designated by the last {\bf USE} statement.
+Specifications to read from any file may be arbitrarily intermixed among the
+input statements. The first occurrence of {\bf USE} {\it must}
+be in {\tt INPUT} ({\it i.e.} file 03, see Section 7). \np
+When ``{\tt USE ( GENERAL )} '' occurs, reading will continue from 
+the file defined by the last preceding {\bf FILE} statement. 
+Thus, at least one {\bf FILE} statement {\it must} \break {\it precede} the 
+first occurrence of  ``{\tt USE ( GENERAL )} ''. \np
+The {\bf FILE} statement specifies two parameters, $k$ and $f$, in that order;
+for example, ``{\tt FILE ( 0 FILESPEC ) }''. $f$ is \alfa\ 
+($ \leq 60$ characters, embedded blanks not permitted); 
+it is the ``complete'' file specification of a file to be read,
+\ie whatever the operating system requires under the current circumstances
+to identify the file uniquely, in other words, $f$ is used as the file-name
+specification with the FILE keyword in a Fortran `{\tt open}' statement.
+$k$ (\intg) is a switch: when $k = 1$, a message containing the value of
+$f$ will be printed on in the `message printout file' (\ie file 16, see
+Section 7) whenever ``{\tt USE ( GENERAL )} ''occurs; when $k = 0$,
+no message will be printed.
+\blankline
+\blankline
+\centerline{\underbar{$\qquad \qquad$ {\bf *45} $\qquad \qquad$}}
+\space \noindent
+{\bf IRKCOMP} is an array of switches specifying for which levels $RK$ should
+be computed in the Rates calculation of the first iteration. 
+{\bf IRKCOMP}$^j = 1$ means: compute $RK^j$; {\bf IRKCOMP}$^j = 0$ means:
+do not compute $RK^j$ (in this case, presumably, $RK^j$ was supplied in
+the input of the run). {\bf IRLCOMP}, analogously, concerns $RL$.
+\blankline
+\blankline
+\centerline{\underbar{$\qquad \qquad$ {\bf *46} $\qquad \qquad$}}
+\space \noindent
+If a set of $JNU$ values for partial redistribution (PRD) calculations
+has been provided in a file on unit 09, then PANDORA can be made to read them
+by setting {\bf JNUNC} = 1. These $JNU$ values pertain to particular values of
+$Z$ and $XI$; if necessary, these data will be interpolated
+to the values of $Z_i, \; 1 \leq i \leq N$, and of $XI_k, \; 1 \leq k \leq K$,
+currently in use.
+\ej
+% \blankline
+% \blankline
+\centerline{\underbar{$\qquad \qquad$ {\bf *47} $\qquad \qquad$}}
+\space \noindent
+For general background, see Section 15. \np
+{\bf SCH}$^{u,\ell} = 0$ means: do not include partial redistribution (PRD)
+calculations for line $(u,\ell)$; \np
+{\bf SCH}$^{u,\ell} = 1$ means: do include PRD calculations for line $(u,\ell)$. \np
+{\it Note:} Only {\bf SCH}$^{u,\ell} = 0$ is allowed when {\bf DIRECT}$^{u,\ell} = 1$. \np
+{\it Note:} PRD solutions are only calculated for radiative transitions, {\it i.e.}
+those with \break {\bf KTRANS}$^{u,\ell} = $ ``{\tt RADIATIVE}''. \np
+{\it Note:} When PRD is requested for line $(u,\ell)$, then {\bf LSFFDB}$^{u,\ell}$
+is set $= 1$ automatically. \np
+{\it Note:} In a stationary plane-parallel atmosphere, a single ray 
+({\it i.e.} the normal) is traced; in a spherical and/or expanding atmosphere,
+many rays are traced. The number of frequency values used must be less 
+than 1000. Moreover, the product of the number of frequency values used
+(see also Note 66) times the number of depth points probably should not be
+larger than 10000, except for good reason.
+\blankline
+\blankline
+\centerline{\underbar{$\qquad \qquad$ {\bf *48} $\qquad \qquad$}}
+\space \noindent
+{\bf LSFTYP}$^{u,\ell}$ is the Line Source Function solution method selection
+selector, used as follows: \np
+{\bf LSFTYP}$^{u,\ell} = 0$ means: do a `full Line Source Function solution',
+computing the line source function using frequency/angle sums and a final
+grand matrix, and then $RHO$ and $JBAR$ from that $S$; \np
+{\bf LSFTYP}$^{u,\ell} = 1$ means: compute the 
+line source function `directly' from the number
+densities of levels $u$ and $\ell$, do frequency/angle sums, then compute
+$RHO$ from those sums and $S$, and then $JBAR$; \np
+{\bf LSFTYP}$^{u,\ell} = 2$ means: compute the line source function from the
+number densities of levels $u$ and $\ell$, compute $RHO$ with the
+`escape probability approximation', and then $JBAR$ from them. 
+(See also Note 51.) \np
+`Direct' solutions are only calculated for radiative transitions,
+{\it i.e.} {\bf KTRANS}$^{u,\ell}$ = ``{\tt RADIATIVE}''. \np
+{\it Note:} 
+If transition $(u,\ell)$ is a passive transition, or if the
+Line Flux Distribution calculation has been requested for it, then the
+value of {\bf LSFTYP}$^{u,\ell}$ will automatically be forced $= 1$! \np
+{\it Note:} 
+If $TAU^{u,\ell}_2 > $ {\bf ESCTAU}, then the `static'
+escape probability approximation is used for transition $(u,\ell)$,
+regardless of the value of {\bf LSFTYP}$^{u,\ell}$.
+\ej
+% \blankline
+% \blankline
+\centerline{\underbar{$\qquad \qquad$ {\bf *49} $\qquad \qquad$}}
+\space \noindent
+The statement {\bf SMOOTH} $u$ $\ell$ {\bf (} {\it q} {\bf )} 
+({\it e.g.} ``{\tt SMOOTH 3 1 ( ILS 17 WSM 0.5 ) }'')
+is used for the parameters governing smoothing of the $RHO$ values of
+transition $(u,\ell)$. {\it q} consists of pairs of input fields of the
+form ``{\it A} {\it v} '', where {\it A} is an alphanumeric identification
+field whose value may be ``{\tt WSM}'', ``{\tt IFS}'' or ``{\tt ILS}'', and
+{\it v} is a numerical field, which must be floating point if it follows
+{\tt WSM}, and integer otherwise. WSM is the smoothing weight ( = 0.0 means:
+no smoothing; 0.0 is the default). IFS and ILS are limiting indices
+such that smoothing is done only for RHO$^{u,\ell}_i, \; 1 \leq IFS \leq i
+\leq ILS \leq N$; (defaults are: IFS = 1 and ILS = N).
+\blankline
+\blankline
+\centerline{\underbar{$\qquad \qquad$ {\bf *50} $\qquad \qquad$}}
+\space \noindent
+The Voigt profile may be computed by one of three subroutines, as specified
+by the input parameter {\bf IVOIT}. \np
+{\bf IVOIT} = 1 selects George Rybicki's method; this is the most precise
+routine but also the slowest, as it takes about 12 times longer than the
+high-speed routine. \np
+{\bf IVOIT} = 2 selects S. R. Drayson's method, which takes about 2 times
+longer than the high-speed routine; its relative difference from Rybicki's
+routine is generally below the seventh significant figure, but sometimes in
+the fourth significant figure. \np
+{\bf IVOIT} = 3 selects Eric Peytremann's method, which is the high-speed
+routine; it has a relative difference from Rybicki's routine that is generally
+less than 0.001, but sometimes as large as 0.05. \np
+If the value $V = Voigt(x,a)$ must be computed immediately after the 
+value \break $V^{\prime} = Voigt(x^{\prime},a^{\prime})$ has been computed,
+then, if both $x = x^{\prime}$ and $a = a^{\prime}$ to relative accuracy
+{\bf VOITC}, $V = V^{\prime}$ will be used (to save time). \np
+{\it Note:} If {\bf IHSSW} $= 1$ and any value of {\bf CSTARK}$^{u,\ell} = 1$
+(indicating that a convolved Stark profile should be computed) in a Hydrogen
+run, then PANDORA will set ${\bf IVOIT} = 3$ and ${\bf NVOIT} = 1$.
+\ej
+% \blankline
+% \blankline
+\centerline{\underbar{$\qquad \qquad$ {\bf *51} $\qquad \qquad$}}
+\space \noindent
+The {\bf SOBOLEV} statement specifies a particular transition $(u, \ell)$,
+and provides an array of two indices: the first of these is ISB1$^{u, \ell}$,
+and the second of these is ISB2$^{u, \ell}$. \np
+The `escape probability' solution for transition $(u,\ell)$ ({\it i.e.}
+{\bf LSFTYP}$^{u,\ell} = 2$) comes in two flavors: `static' and
+`Sobolev'. The static solution is used by default. If ISB1$^{u, \ell} 
+> 1$, the Sobolev solution will be used for depths $i, \; 1 \leq i
+\leq $ ISB1$^{u, \ell}$; the static solution will be used for the 
+depths $i$, ISB2$^{u, \ell} \leq i \leq N$; and a linear
+transition from one to the other for depths $i$, ISB1$^{u, \ell}
+ < i < $ ISB2$^{u, \ell}$. \np
+A table of velocity values, {\bf VSB}, is needed for the Sobolev calculation
+(see Section 16, Velocities). \np
+The integral needed for the Sobolev solution is computed by trapezoidal rule
+using an interval refinement procedure which seeks to achieve a
+piecewise-linear approximation to the run of the integrand, with a specified
+tolerance. Three parameters control this interval refinement process:
+{\bf SOBDMN} is the smallest interval size needed ({\it i.e.} intervals need
+not be reduced further than {\bf SOBDMN}); {\bf SOBDMX} is the maximum 
+acceptable interval size ({\it i.e.} intervals must be reduced to a size smaller
+than {\bf SOBDMX}); {\bf SOBFEQ} is the tolerance to which interpolated and
+actual values of the integrand must agree ({\it i.e.} these two quantities
+are computed at the midpoint of the current interval, and if they do not
+agree to this tolerance, then the interval must be reduced further).
+\blankline
+\blankline
+\centerline{\underbar{$\qquad \qquad$ {\bf *52} $\qquad \qquad$}}
+\space \noindent
+{\bf IPPOD} controls absorption/emission calculation debug dumps at all
+wavelengths for all `population update ions'; {\bf IPPOD} = 0 for nothing,
+{\bf IPPOD} = 1 for absorption, {\bf IPPOD} = 2 for emission, {\bf IPPOD} = 3
+for both. Printout occurs for every $Z_i$ such that {\tt mod}[$i$,{\bf LDINT}]
+= 0.
+\blankline
+\blankline
+\centerline{\underbar{$\qquad \qquad$ {\bf *53} $\qquad \qquad$}}
+\space \noindent
+`Level designations' are {\alfa} labels consisting of up to 8 (non-blank)
+characters, which will be printed with the levels data as part of the
+ATOM printout. \np
+The {\bf LEVDES} statement DOES NOT conform to the standard
+PANDORA input conventions. It has the form: \np
+``{\tt LEVDES ( label1 label2 . . . . ) }''. \np
+Exactly {\bf NSL} labels {\it must} be provided.
+\ej
+% \blankline
+% \blankline
+\centerline{\underbar{$\qquad \qquad$ {\bf *54} $\qquad \qquad$}}
+\space \noindent
+Detailed printout of transition terms ({\it i.e.} `A*RHO' and `Term added
+to upward C') is controlled by {\bf LDINT} and {\bf LDTYP}.
+(Of course, option ARHODMP must be on.)
+
+{\bf LDTYP}
+specifies the context from which printout is wanted: \np
+{\bf LDTYP} = 1 means: statistical equilibrium calculation; \np
+{\bf LDTYP} = 2 means: b-ratio calculation; \np
+{\bf LDTYP} = 3 means: both.
+
+{\bf LDINT}
+specifies the depth points for which printout is wanted: \np
+${\bf LDINT} > 0$ means: print every {\bf LDINTH}'th depth point, beginning
+with the first point;\np
+${\bf LDINT} < 0$ means: print for depth \# $\vert {\bf LDINT} \vert$ only; \np
+${\bf LDINT} = 0$ means: no printout.
+
+In the same way, {\bf LDINT} specifies the interval between depth points for
+the printouts controlled by the options EPDMP and SEBUG, and by {\bf IPPOD}
+(see Note 52). 
+\blankline
+\blankline
+\centerline{\underbar{$\qquad \qquad$ {\bf *55} $\qquad \qquad$}}
+\space \noindent
+A simple simulation of a shock wave can be obtained by specifying the shock's
+velocity and temperature perturbation. The shock velocity is further treated
+in Section 16. The temperature perturbation is computed from input parameters
+and then added to the input values of {\bf TE} to obtain the $TE_i$ actually
+used in the run:
+$$ TE^{used}_i = {\bf TE}^{input}_i + DTE_i \, , $$
+where $DTE_i = 0$ for $i < {\bf JSSV}$ but
+$$ DTE_i = {\bf SCTA} \exp [({\bf Z}_{\bf JSSV} - {\bf Z}_i) / {\bf SCTA}] \, . $$
+Here {\bf JSSV} is the depth index of the shock's location, {\bf SCTA}
+is the amplitude of the temperature perturbation, and {\bf SCTS}
+is the temperature scale height.
+\blankline
+\blankline
+\centerline{\underbar{$\qquad \qquad$ {\bf *56} $\qquad \qquad$}}
+\space \noindent
+{\bf CP}$^{NSL+1} > 0.0$ is the signal that the K-shell photoionization effect
+is to be computed. If {\bf MR}$^{NSL+1}$ is then set $\neq 0$ but, say, equal
+to $IKS$, then values of {\bf RRCP}$^{NSL+1}_m, \; 1 \leq m \leq IKS$ must be 
+provided (as for the other levels), as well as $IKS+1$ values of {\bf WRAT}
+(see also Note 22). Note that 
+{\bf WRAT} input for the K-shell differs from that of the
+other levels in that the wavelength of the head of that continuum must be
+specified explicitly.
+\ej
+% \blankline
+% \blankline
+\centerline{\underbar{$\qquad \qquad$ {\bf *57} $\qquad \qquad$}}
+\space \noindent
+{\bf VX} values must be specified as functions of {\bf Z}
+(the main depth-table of the run).
+Extra(inter)polation involving {\bf ZAUX} tables has not been provided
+for {\bf VX}.
+\blankline
+\blankline
+\centerline{\underbar{$\qquad \qquad$ {\bf *58} $\qquad \qquad$}}
+\space \noindent
+If the value of {\bf ECLI}$^{u,\ell}$ is $> 0$, then Eclipse emergent line 
+intensity and flux profiles will be computed for transition $(u,\ell)$,
+but only if this is a transition for which a full-profile integration
+is done.
+\blankline
+\blankline
+\centerline{\underbar{$\qquad \qquad$ {\bf *59} $\qquad \qquad$}}
+\space \noindent
+Detailed dump printouts from the Line Source Function calculations
+performed in subroutine {\tt PERSEUS} can be
+obtained using the options PERDMP0, PERDMP1, \break PERDMP2 and 
+PERDMP3. \np
+The `frequency sums'
+(subroutine {\tt DIANA}) or the `frequency/angle sums' (subroutine {\tt 
+ORION)} accumulate the contributions from the `frequency data blocks' or the
+`frequency/angle data blocks'. The contents of these data blocks will be printed
+when the option PERDMP0 is on. \np
+WN matrices of each data block, and the results
+of computing the above sums, will be printed when the option PERDMP1 is on. \np
+All terms and intermediates for these sums at selected depths will be printed
+when the option PERDMP2 is on. \np
+PRD data arrays will be printed when the option PERDMP3 is on. \np
+The data blocks are identified by the value of the index $IND$, whose values
+range from 1 to $K$, or from 1 to $NR \times K$, where $NR$ is the total number
+of rays, and $K$ is the number of entries in the $XI$ table, as explained
+in Note 66, below. Only data for {\bf IPR01} $ \leq IND \leq $ {\bf IPR02} 
+will be dumped by PERDMP0, PERDMP1, PERDMP2 and/or PERDMP3. Moreover,
+only the details for the depths \break
+{\bf IPR03} $ \leq i \leq $ {\bf IPR04} will be dumped by PERDMP2. \np
+These dump printouts will be provided only for transition ({\bf MS},{\bf NS}).
+\blankline
+\blankline
+\centerline{\underbar{$\qquad \qquad$ {\bf *60} $\qquad \qquad$}}
+\space \noindent
+PANDORA can be instructed to compute an expanding atmosphere by turning
+the option EXPAND on. When EXPAND is on, then the velocity table {\bf VXS}
+is used; see Section 16, Velocities.
+\ej
+% \blankline
+% \blankline
+\centerline{\underbar{$\qquad \qquad$ {\bf *61} $\qquad \qquad$}}
+\space \noindent
+{\bf PART} is the partition function of the next higher stage of ionization
+of the ion of the run, and is a constant. \np
+If {\bf PART} $> 0.0$, then all values
+of the depth-dependent partition function table will be set equal to it. \np
+If {\bf PART} $ \leq 0.0$, then values of the depth-dependent partition function
+of the ion of the run can be obtained as follows: \np
+If the option PARTVAR is off, then, if the appropriate value of U2 can be
+located in the element data tables (see Section 10), that will be used; if not,
+the run will stopped. \np
+If the option PARTVAR is on, then PANDORA attempts to compute the values
+of the depth-dependent partition function with the subroutines incorporating
+the `Hamburg' data. If this is unsuccessful, then the run will be stopped. \np
+{\it Note:} 
+Therefore, to obtain truly depth-varying entries in the
+partition function table, the option PARTVAR must be on, and the value of
+{\bf PART} must not be greater than 0.0.
+\blankline
+\blankline
+\centerline{\underbar{$\qquad \qquad$ {\bf *62} $\qquad \qquad$}}
+\space \noindent
+The set of shell rays, and the associated weight matrices, for a spherical
+atmosphere, are regulated by {\bf NTAN} and {\bf MSKIP}. The value of {\bf NTAN}
+must be $> 0$, that of {\bf MSKIP} must be 0, 1, or 3. \np
+Rays will be sent tangent to every {\bf NTAN}$^{th}$ shell (= depth), 
+beginning with the innermost one ({\it i.e.} $Z_N$), 
+and going out as far as possible. (The
+option TANG also plays a role here.) \np
+The value of {\bf MSKIP} matters only
+when {\bf NTAN} = 1. In that case, \np
+when {\bf MSKIP} = 0, then the weight matrices
+for every shell ray will be computed directly; \np
+when {\bf MSKIP} = 1, then
+only weight matrices for every $2^{nd}$ shell ray will be computed directly,
+while the others will be obtained by interpolation; \np
+when {\bf MSKIP} = 3,
+then only weight matrices for every $4^{th}$ shell ray will be computed
+directly, while the others will be obtained by interpolation.
+\blankline
+\blankline
+\centerline{\underbar{$\qquad \qquad$ {\bf *63} $\qquad \qquad$}}
+\space \noindent
+{\bf IRTIS} controls extra(inter)polation of the input table
+of incident radiation. \np
+{\bf IRTIS} = 1 means: linear in XINK, linear in FINK; \np
+{\bf IRTIS} = 2 means: linear in XINK, linear in log(FINK); \np
+{\bf IRTIS} = 3 means: linear in log(XINK), linear in log(FINK).
+\ej
+% \blankline
+% \blankline
+\centerline{\underbar{$\qquad \qquad$ {\bf *64} $\qquad \qquad$}}
+\space \noindent
+{\bf NHTSW} controls the calculation of the correction to the abundance of
+atomic Hydrogen due to the possible presence of $H_2$ molecules. \np
+{\bf NHTSW} = 0 means: do not compute the H2 abundance correction; \np
+{\bf NHTSW} = 1 means: compute the H2 abundance according to Kurucz 
+(1970); \np
+{\bf NHTSW} = 2 means: compute the H2 abundance according to Tsuji; \np
+{\bf NHTSW} = 3 means: compute the H2 abundance according to Kurucz (1985).
+\blankline
+\blankline
+\centerline{\underbar{$\qquad \qquad$ {\bf *65} $\qquad \qquad$}}
+\space \noindent
+Detailed dump printouts from the Continuum Calculations (intended to help
+with handchecks) can be obtained by means of various options
+and input switches. Such printouts will only be provided for wavelengths listed
+in the input table {\bf DWAVE}, of length {\bf NDV}, {\it except} when
+${\bf DWAVE}_1 = 0.0$, in which case such printouts will be provided for all
+wavelengths.  When values of {\bf DWAVE} are provided they must match to
+8 figures or more the values of the Continuum Calculation wavelengths for
+which dumps are wanted.
+\blankline
+\blankline
+\centerline{\underbar{$\qquad \qquad$ {\bf *66} $\qquad \qquad$}}
+\space \noindent
+See Section 18, Frequency Tables, for more information about this input parameter.
+{\bf See also} the {\it Note} at the end of Note 47.
+\blankline
+\blankline
+\centerline{\underbar{$\qquad \qquad$ {\bf *67} $\qquad \qquad$}}
+\space \noindent
+The ``Lyman'' source function can be calculated in three ways: \np
+1) using the coupled ``Lyman'' continuum equations, Case A; \np
+2) using the large-depth, saturation, or generalized on-the-spot approximation,
+Case B (see: Avrett and Loeser 1988, Ap.J., {\bf 331}, 221, Appendix B); or \np
+3) using Case A for depths 1 through $\eta$ (if any), and Case B for depths 
+$\eta + 1$ to N (if any); this is Case C, the `normal' procedure. \np
+({\it Note} that $\eta =$ N means: Case A throughout;
+$\eta = 0$ means: Case B throughout.) \np
+PANDORA computes the value of $\eta$ as follows: it finds
+smallest index $k$ for which both $TAUK_k > $ {\bf TGLYM} and 
+$(EP1_k)^2 \times TAUK_k \ge $ {\bf EXLYM}. (If it finds no such index,
+then $k =$ N.) It then sets $\eta = k$
+unless: (a) if {\bf LN} $\le 1$, it sets $\eta = 0$; 
+(b) if $k \le$ {\bf LN}, it sets $\eta = 0$; or 
+(c) if TAUK$_2 \ge 10$, it sets $\eta = 0$. \np
+{\bf TGLYM}, {\bf EXLYM} and {\bf LN} are input parameters. \np
+{\it Special cases:} \np
+1) When the option SPHERE is on, $\eta$ is set = N; \np
+2) when the  option SPHERE is off but the option FINITE is on, $\eta$ is set = N. 
+\ej
+% \blankline
+% \blankline
+\centerline{\underbar{$\qquad \qquad$ {\bf *68} $\qquad \qquad$}}
+\space \noindent
+{\bf LSFGC} controls the format of all the Line Source Function graphs. \np
+When {\bf LSFGC}$ = 1$, then the x-axis is {\bf Z}-index; \np
+when {\bf LSFGC}$ = 2$, then the x-axis is {\bf Z}$_i$; \np
+when {\bf LSFGC}$ = 3$, then two graphs will be provided, one of each format.
+\blankline
+\blankline
+\centerline{\underbar{$\qquad \qquad$ {\bf *69} $\qquad \qquad$}}
+\space \noindent
+Use of broadening velocity (= microturbulent velocity) depends on the option
+VSWITCH. When the option VSWITCH is off, then the broadening velocity is
+isotropic and is specified by the input table {\bf V}. 
+When the option VSWITCH is on, then the broadening is anisotropic: the input
+values of {\bf V} are the tangential component, and the input values of
+{\bf VR} are the radial component. See Section 16, Velocities.
+\blankline
+\blankline
+\centerline{\underbar{$\qquad \qquad$ {\bf *70} $\qquad \qquad$}}
+\space \noindent
+The input value of {\bf IFXDS} should $= 8 \times ICF + 4 \times ICM +
+2 \times IFD + IFX$. \np
+To print flux tables, use $IFX = 1$, to omit them,
+use $IFX = 0$. \np
+To print flux derivative tables use $IFD = 1$, to omit
+them, use $IFD = 0$. \np
+To print cumulative derivative tables, use $ICM = 1$,
+to omit them, use $ICM = 0$. \np
+To print quadratic coefficients, use $ICF = 1$,
+to omit them, use $ICF = 0$. \np
+The default is {\bf IFXDS} = 0 ({\it i.e.} no details at all are printed.)
+\blankline
+\blankline
+\centerline{\underbar{$\qquad \qquad$ {\bf *71} $\qquad \qquad$}}
+\space \noindent
+Many quotient calculations are done in subroutine {\tt DIVIDE},
+which checks for denominator = 0.0. {\bf VSMLL} is used in place of
+such vanished divisors. \np
+{\tt DIVIDE} will print various error messages,
+depending on the value of the control switch {\bf IPZER}. When {\bf IPZER}
+= 0, no messages are printed; when {\bf IPZER} = 1, a message will be
+printed every time `$A/0$' occurs; when {\bf IPZER} = 2, a message will
+be printed every time `$0/0$' occurs; {\bf IPZER} = 3 enables both messages.
+\blankline
+\blankline
+\centerline{\underbar{$\qquad \qquad$ {\bf *72} $\qquad \qquad$}}
+\space \noindent
+When {\bf LFLUX}$^{u,\ell} = 1$, then the Line Flux Distribution and the
+Radiative Force for transition $(u,\ell)$ will be computed. The option
+LFDPRNT affects the amount of printout. Dump output (for transition
+[{\bf MS},{\bf NS}]) is controlled by {\bf IHDMP}.
+\ej
+% \blankline
+% \blankline
+\centerline{\underbar{$\qquad \qquad$ {\bf *73} $\qquad \qquad$}}
+\space \noindent
+The `HI/BYE' system, and the control parameters for it, are intended as
+debugging aids for me as program developer. `HI/BYE' is not intended for
+use in regular production runs.
+\blankline
+\blankline
+\centerline{\underbar{$\qquad \qquad$ {\bf *74} $\qquad \qquad$}}
+\space \noindent
+When the option IRUNT is on ({\it i.e.} when {\bf IRUNT} = 1),
+then more extensive execution performance data and
+program version description data will be printed than when 
+the option IRUNT is off ({\it i.e.} when {\bf IRUNT} = 0
+(the default)). It should not be necessary to use {\bf IRUNT} = 1
+in regular production runs.
+\blankline
+\blankline
+\centerline{\underbar{$\qquad \qquad$ {\bf *75} $\qquad \qquad$}}
+\space \noindent
+The `banner' pages at the start of the printout file (see Section 3) display
+`giant' characters that are themselves composed (in `dot-matrix' fashion)
+of individual print characters. The value of {\bf NARB} tells how many such
+pages to print, the value of {\bf KARB} selects the print
+character(s) used for this purpose. \np
+{\bf KARB} = 1 means: use ``\$'' to represent the giant character. \np
+{\bf KARB} = -1 means: use ``O'' over ``X'' over ``+''
+(this of course works only with processing systems 
+which fully implement traditional `Fortran carriage control'). \np
+{\bf NARB} may assume the values 0, 1, or 2.
+\blankline
+\blankline
+\centerline{\underbar{$\qquad \qquad$ {\bf *76} $\qquad \qquad$}}
+\space \noindent
+In many runs, the sets of `Composite Lines Opacity' wavelengths and
+`CO-lines Opacity' wavelengths are added automatically to the list of
+wavelengths for which continuum calculations are done. If any value of
+{\bf DELWAVE}$_i, 1 \leq i \leq $ {\bf NWS}, equals (to one part in $10^{10}$)
+a wavelength in one of these two sets, then that wavelength value will be
+deleted from the list of wavelengths for which continuum calculations are
+done. (These counterparts to the `additional' wavelengths are therefore
+called `subtractional' wavelengths.)
+\blankline
+\blankline
+\centerline{\underbar{$\qquad \qquad$ {\bf *77} $\qquad \qquad$}}
+\space \noindent
+See also the note regarding maximum counter values, and order of occurrence
+among the input, at the end of Section 3. See also Note 29.
+\ej
+% \blankline
+% \blankline
+\centerline{\underbar{$\qquad \qquad$ {\bf *78} $\qquad \qquad$}}
+\space \noindent
+{\bf DOPROF} is an alternate form of the {\bf PROF} statement; it contains
+pairs of transition indices, like the {\bf INPAIR} statement (see Note 2).
+The occurrence of the index pair $u,\ell$ in {\bf DOPROF} causes the program
+to set {\bf PROF}$^{u,\ell} = 1$.
+\blankline
+\blankline
+\centerline{\underbar{$\qquad \qquad$ {\bf *79} $\qquad \qquad$}}
+\space \noindent
+{\bf DOFLUX} is an alternate form of the {\bf LFLUX} statement; it contains
+pairs of transition indices, like the {\bf INPAIR} statement (see Note 2).
+The occurrence of the index pair $u,\ell$ in {\bf DOFLUX} causes the program
+to set {\bf LFLUX}$^{u,\ell} = 1$.
+\blankline
+\blankline
+\centerline{\underbar{$\qquad \qquad$ {\bf *80} $\qquad \qquad$}}
+\space \noindent
+{\bf DOFDB} is an alternate form of the {\bf LSFFDB} statement; it contains
+pairs of transition indices, like the {\bf INPAIR} statement (see Note 2).
+The occurrence of the index pair $u,\ell$ in {\bf DOFDB} causes the program
+to set {\bf LSFFDB}$^{u,\ell} = 1$.
+\blankline
+\blankline
+\centerline{\underbar{$\qquad \qquad$ {\bf *81} $\qquad \qquad$}}
+\space \noindent
+{\bf DOSFPRNT} is an alternate form of the {\bf LSFPRINT} statement; it contains
+pairs of transition indices, like the {\bf INPAIR} statement (see Note 2).
+The \break occurrence of the index pair $u,\ell$ in {\bf DOSFPRNT} causes the
+program to set \break {\bf LSFPRINT}$^{u,\ell} = 1$. \np
+{\it Note:} {\bf LSFPRINT}$^{u,\ell}$ and option LSFPRNT are different
+beasties, but they work together.
+\blankline
+\blankline
+\centerline{\underbar{$\qquad \qquad$ {\bf *82} $\qquad \qquad$}}
+\space \noindent
+See Section 16, Velocities, for more information about this input parameter.
+\blankline
+\blankline
+\centerline{\underbar{$\qquad \qquad$ {\bf *83} $\qquad \qquad$}}
+\space \noindent
+When {\bf MTHEI} = 0, then exponential integrals are computed using Cooley's
+routine, which gives about 8 figures for the first exponential integral;
+higher orders are computed with the recursion relation which rapidly loses
+precision for increasing orders. See Avrett \& Loeser, SAO Special Report
+No. {\bf 303}, 1969. \np
+When {\bf MTHEI} = 1, then exponential integrals are computed using a routine
+published by Press and Teukolsky. This routine has been set up to deliver
+about 14 figures for all orders; it is slower than Cooley's routine.
+See Press \& Teukolsky, Computers in Physics, Sep/Oct 1988.
+\ej
+% \blankline
+% \blankline
+\centerline{\underbar{$\qquad \qquad$ {\bf *84} $\qquad \qquad$}}
+\space \noindent
+The switches {\bf ISCRS}, {\bf NOION}, {\bf NVOIT}, {\bf IXSTA},
+{\bf JBDNC}, {\bf JSTIN}, \break {\bf IRPUN}, {\bf IRUNT} and {\bf TOPE}
+are alternate forms of the options \break ISCRS, DOION, NVOIT, IXSTA,
+JBDNC, JSTIN, RABDAT, IRUNT \break and TOPE, respectively. The
+program will set their {\it default} values to agree with the status
+of the corresponding options.
+\blankline
+\blankline
+\centerline{\underbar{$\qquad \qquad$ {\bf *85} $\qquad \qquad$}}
+\space \noindent
+Subroutine {\tt EDITH} is used in various context to edit values $\le 0$
+out of various computed tables; it is set up to print error messages to
+report what it did. For each editing context $k$, a separate count of
+error messages, $KERM_k$, is kept. The value of the input parameter
+{\bf NERM} controls the printing of error messages: \np
+when {\bf NERM} $= 0$, then no error messages are printed; \np
+when {\bf NERM} $> 0$, then error messages from context $k$ are printed as
+long as $KERM_k \le$ {\bf NERM}; \np
+when {\bf NERM} $< 0$, then all error messages are printed, but greatly
+abbreviated.
+\blankline
+\blankline
+\centerline{\underbar{$\qquad \qquad$ {\bf *86} $\qquad \qquad$}}
+\space \noindent
+If {\bf ZNDW}$ \neq 0$, then {\bf NDW} will be set equal to $i$, where
+$\min(|Z_i - ZNDW|)$, \break $ 1 \leq i \leq N$. If {\bf ZNDW} $=0$, then,
+if {\bf NDW} $<1$ or {\bf NDW} $> N$, {\bf NDW} will be set
+equal to $N/2$.
+\blankline
+\blankline
+\centerline{\underbar{$\qquad \qquad$ {\bf *87} $\qquad \qquad$}}
+\space \noindent
+As the final step in constructing WN-matrices (which are used in source
+function calculations), the computed matrix is scanned and every
+element whose absolute value is less than {\bf WNJUNK} is set = 0.
+\blankline
+\blankline
+\centerline{\underbar{$\qquad \qquad$ {\bf *88} $\qquad \qquad$}}
+\space \noindent
+{\bf LODCG} and {\bf NODCG} are parameters controlling the depth range
+for diffusion graphs (no graphs appear when {\bf NODCG} = 0).
+Various parameters are plotted as functions of {\bf Z},
+for the range {\bf Z}$_I$ to {\bf Z}$_J$. \np
+When {\bf LODCG}$ < 0$, then $I = 1$; when {\bf LODCG}$ > 0$, then
+$I = {\bf LODCG}$. \np
+When {\bf NODCG}$ < 0$, then $J = K$; when {\bf NODCG}$ > 0$, then
+$J = {\bf NODCG}$ or $K$, whichever is less.
+$K$ is the smallest depth index such that ${\bf TE}_K < 9000$.
+\ej
+% \blankline
+% \blankline
+\centerline{\underbar{$\qquad \qquad$ {\bf *89} $\qquad \qquad$}}
+\space \noindent
+d-coefficients are computed for the diffusion calculations. \np
+When {\bf IDFDM} = 0, the ``original'' method is used; \np
+when {\bf IDFDM} = 1, an ``improved,'' more complete method is used. \np
+When options AMDDMP and/or GNVDMP are on, then the d-coefficients
+will be printed for depth $i$; when {\bf IDFDI} $> 0$, then
+$i =$ {\bf IDFDI}, but when no value of {\bf IDFDI} is input,
+then $i =$ {\bf N}$/4$.
+\blankline
+\blankline
+\centerline{\underbar{$\qquad \qquad$ {\bf *90} $\qquad \qquad$}}
+\space \noindent
+If the input values of {\bf V}$_i = 0, 1 \leq i \leq {\bf N}$, then, 
+if ${\bf NVH} > 0$, ``default'' values of ${\bf V}_i$ will be
+computed from ${\bf VNH}_j, 1 \leq j \leq {\bf NVH}$. Here
+{\bf VNH} is a velocity table appropriate for the quiet Sun, and is
+specified as a function of Hydrogen density, {\bf HNDV}. Values of
+{\bf V}$_i$ corresponding to the input values of {\bf NH}$_i$ are
+obtained by interpolation from the tables {\bf HNDV}$_j$ and {\bf VNH}$_j$;
+the logarithms of {\bf NH}$_i$ and {\bf HNDV}$_j$ are used for this 
+purpose. \np
+\blankline
+{\bf IMPORTANT}: if {\bf V}$_i = 0$ is intended, then {\bf NVH} must be set
+$= 0$ explicitly in the input, since the default value of ${\bf NVH} > 0$.
+\blankline
+\blankline
+\centerline{\underbar{$\qquad \qquad$ {\bf *91} $\qquad \qquad$}}
+\space \noindent
+{\bf CIJADD} uses special cases of Statement Forms 5* and 5, in that
+$u > \ell$ is not required -- rather, all combinations $u \neq \ell$ are 
+accepted.
+\blankline
+\blankline
+\centerline{\underbar{$\qquad \qquad$ {\bf *92} $\qquad \qquad$}}
+\space \noindent
+{\bf ASMCR} and {\bf NIASM} are parameters used in sequential smoothing; 
+see writeups [89 Dec 22] and [92 Jan 29]. The smoothing
+used here is based on the following principle. Consider the sequence
+of graphical points representing the values of a function. If the function
+varies smoothly, a given point usually lies within the triangle 
+defined by the two lines through the pair of points on either side
+and the line through the point on either side, provided the two lines
+intersect within the given interval. If the given point falls outside,
+it is moved to the boundary of this triangle; if the given point lies
+within this triangle, it is left unchanged. \np
+Smoothing consists of a repeated search for the most deviant point,
+and then changing it if necessary. Then this edited sequence is searched
+for the most deviant point; and so on. The search is repeated at most
+{${\bf NIASM} \times n$} times, where $n$ is the number of points
+in the sequence. However, the process stops after the first time that
+the relative change applied to the most deviant point is less than
+{\bf ASMCR}.
+\ej
+% \blankline
+% \blankline
+\centerline{\underbar{$\qquad \qquad$ {\bf *93} $\qquad \qquad$}}
+\space \noindent
+See Section 19, Atomic Models, for more information about this input
+parameter.
+\blankline
+\blankline
+\centerline{\underbar{$\qquad \qquad$ {\bf *94} $\qquad \qquad$}}
+\space \noindent
+{\bf NLPAIR} is a list of integers $(n_j, \ell_j), \; 1 \leq j \leq 
+{\bf NL}$, such that $n_j$ is the principal quantum number of level $j$
+and $\ell_j$ is the rotational quantum number of level $j$ of the
+model of the ion-of-the-run. For example, $(n_{22}, \ell_{22}) = (5, 3)$
+means the for level 22 the principal quantum number $n = 5$ and the
+rotational quantum number $\ell = 3$. \np
+The value $\ell_j = -1$ is meaningful; this means that level $j$ is a
+synthetic level obtained by combining all of the sublevels characterized
+by the same value of $n$ but different values of $\ell$. \np
+When $\ell_j = -1$, then $n_j$ must be $> 0$. For
+Hydrogen, default values of $(n_j, \ell_j)$ are provided: $n_j = j$
+and $\ell_j = -1$. \np
+In the {\bf NLPAIR} statement, the $(n, \ell)$ pairs should be specified
+in level sequence, beginning with level 1.
+\blankline
+\blankline
+\centerline{\underbar{$\qquad \qquad$ {\bf *95} $\qquad \qquad$}}
+\space \noindent
+The ``\underbar{upper-level charge-exchange}'' calculation 
+is enabled when option CHEXUP is on and this is a run with Hydrogen, or
+with a ``charge-exchange'' ion. The list of eligible ``charge-exchange'' ions
+is built into PANDORA; it consists of: He-I, C-I, N-I, O-I, Na-I, Mg-I,
+Al-I, Si-I, S-I, and \break Ca-I, in that order. A particular ``charge-exchange''
+ion is internally known to PANDORA by the value of $MCX, \; 1 \leq MCX \leq 10$,
+{\it i.e.} by the index of that ion in the above list. \np
+In a run other than Hydrogen in which ``upper-level charge-exchange'' is
+enabled, only a subset of levels, namely ``levels affected by charge-exchange''
+a.k.a. ``CX-levels,'' is affected. Any level $j$ of the model of the 
+ion-of-the-run whose rotational quantum number $\ell_j \neq 0, 1, 2$ is a
+CX-level, but only if that level's principal quantum number $n_j > \ell_j$.
+Such runs produce the output tables {\bf XRKH} and {\bf XRLH} for
+use in Hydrogen upper-level charge-exchange runs. \np
+In a Hydrogen run with ``upper-level charge-exchange,''
+all levels $j, \; j \geq 4$, are CX-levels. Such runs make use of various
+input sets of {\bf XRKH} and {\bf XRLH} produced by upper-level charge-exchange
+calculations with other elements.
+\ej
+% \blankline
+% \blankline
+\centerline{\underbar{$\qquad \qquad$ {\bf *96} $\qquad \qquad$}}
+\space \noindent
+The arrays {\bf XRKH}$^{k,n}_i$ and {\bf XRLH}$^{k,n}_i$ are input for the
+upper-level charge exchange calculation (option CHEXUP on) in Hydrogen runs. \np
+The superscript $k, \; 1 \leq k \leq 10$, designates a particular
+charge-exchange element (see also Note 95); the superscript $n, \; 1 \leq n 
+\leq {\bf NL}$, designates the affected level of the Hydrogen ion model.
+(In the case of Hydrogen, the level number is numerically equal to the
+principal quantum number of that level.) The indices $k$ and $n$ appear
+in that order in an {\bf XRKH} or {\bf XRLH} input statements; for example: \np
+``{\tt XRKH 4 6 ( . . . . . ) }'' \np
+which are data from a Mg-I run for level 4 of the Hydrogen ion model; or: \np
+``{\tt XRLH 14 2 ( . . . . . ) }'' \np
+which are data from a C-I run for level 14 of the Hydrogen ion model. \np
+{\it Note:} values of $n$ must not be greater than {\bf NL}.
+\blankline
+\blankline
+\centerline{\underbar{$\qquad \qquad$ {\bf *97} $\qquad \qquad$}}
+\space \noindent
+{\bf RCHX}$^{n,\ell}$ is a parameter used for the upper-level charge-exchange
+calculation (option CHEXUP on). The value of {\bf RCHX}$^{n,\ell}$ is used
+for all those levels of the model of the ion-of-the-run for which the
+principal quantum number is $n$ and the rotational quantum number is $\ell$.
+The indices $n$ and $\ell$ appear in that order in the {\bf RCHX} input
+statement; for example: \np
+``{\tt RCHX 4 3 ( 1.23 ) }'' \np
+which sets {\bf RCHX}$^{4,3} = 1.23$.
+\blankline
+\blankline
+\centerline{\underbar{$\qquad \qquad$ {\bf *98} $\qquad \qquad$}}
+\space \noindent
+The emergent line profile graphs for transition $(u,\ell)$ (option
+INTGRAF) can be controlled with {\bf PROGLI}$^{u,\ell}$, which
+controls the limits of the wavelength axis, and with {\bf SGRAF}$^{u,\ell}$,
+which applies to `blended' lines. \np
+When ${\bf PROGLI}^{u,\ell} = 0$ (the default), then the x-axis spans
+the entire $\Delta\lambda$ range. \np
+When ${\bf PROGLI}^{u,\ell} > 0$, then the x-axis extends from the 
+core out to {\bf PROGLI}. \np
+When ${\bf PROGLI}^{u,\ell} < 0$, then the x-axis extends from the core out
+to that point where successive intensity values differ relatively
+by less than $|{\bf PROGLI}|$. \break (If there are several such points,
+the point with the largest $\Delta\lambda$ value is used.) \np
+If transition $(u,\ell)$ is a blended line then, \np
+when ${\bf SGRAF}^{u,\ell} = 1$, separate graphs are provided for each
+component; \np
+when ${\bf SGRAF}^{u,\ell} = 0$, only a single, composite graph is provided.
+\ej
+% \blankline
+% \blankline
+\centerline{\underbar{$\qquad \qquad$ {\bf *99} $\qquad \qquad$}}
+\space \noindent
+{\bf ISMSW} provides additional control over the format of Iterative
+Summaries. \np
+When ${\bf ISMSW} = 0$, then the format is controlled by option SUMGRAF. \np
+When ${\bf ISMSW} > 0$, then the summaries will be provided in both formats.
+\blankline
+\blankline
+\centerline{\underbar{$\qquad \qquad$ {\bf *100} $\qquad \qquad$}}
+\space \noindent
+Regardless of the setting of option RATEPRNT, a `minimal' RATES
+calculation printout is provided when the input value of {\bf IRATE}
+is a valid depth index. In that case, values of QU, QS, GM, RK, RL
+and CK for all levels, and of CIJ and PIJ for all transitions,
+will be printed, for that depth only.
+\blankline
+\blankline
+\centerline{\underbar{$\qquad \qquad$ {\bf *101} $\qquad \qquad$}}
+\space \noindent
+{\bf ICDIT} specifies the classes of continuum wavelengths for which
+dI/dh analyses will be printed when option DIDHC is on. \np
+{\bf ICDIT}$ = 1$ means: for all `additional' wavelengths; \np
+{\bf ICDIT}$ = 2$ means: for the line center wavelengths of those
+transitions for which a Line Source Function calculation printout
+was provided; \np
+{\bf ICDIT}$ = 3$ means: 1 and 2.
+\blankline
+\blankline
+\centerline{\underbar{$\qquad \qquad$ {\bf *102} $\qquad \qquad$}}
+\space \noindent
+The photorecombination rates {\bf RL} and photoionization rates
+{\bf RK} can be computed either by detailed integration of the
+continuum radiation field, or from specified runs of radiation
+temperatures (input tables of {\bf TRN}$_i$). These alternatives
+are controlled by option USETRIN. \np
+When USETRIN is on, then the computed values of ${\bf RK}^\ell_i,
+1 \leq i \leq {\bf N}, 1 \leq \ell \leq {\bf NSL}$, can be manipulated
+by means of the factor $HJ_i$, the photoionization rates multiplier.
+Values of $HJ_i = 1$ by default; however, if appropriate input values
+of {\bf JH1} and {\bf JH2} are provided, then various specific runs of
+$HJ_i$ are constructed such that $HJ = 0.5$ near the surface and
+$HL = 1.0$ at depth, with an intermediate transition region defined
+by depth indices {\bf JH1} and {\bf JH2}. This is also explained in
+a note following the ATMOSPHERE printout. \np
+When full continuum integrations are done (option USETRIN off),
+PANDORA also computes ``effective radiation temperatures''---\ie 
+those values of radiation temperature which yield the same values of
+${\bf RK}^\ell_i$ as the full integrations did. These computed
+${\bf TRN}^\ell_i$ values are included in output file {\tt FOR020}
+(see Section 8), and can be used as input for a subsequent 
+restart run with option USETRIN on.
+\ej
+% \blankline
+% \blankline
+\centerline{\underbar{$\qquad \qquad$ {\bf *103} $\qquad \qquad$}}
+\space \noindent
+PANDORA can be requested to adjust the values 
+of {\bf Z} so that certain constraints are satisfied: 1) that each value
+of the computed mass table be equal to the corresponding value of 
+an input mass table (for this case option HSE must be on),
+or 2) that each value of a computed TAUK table
+(continuum optical depth at a specific wavelength) be equal to the
+corresponding value of an input TAUK table. \np
+What happens in such runs is that a particular relationship between
+{\bf TE} and mass, or between {\bf TE} and TAUK, is intended, and
+PANDORA tries to make sure ---by adjusting the {\bf Z} values---that its
+computed mass or continuum optical depth values come as close as
+possible to the specified ones. Like so much else in PANDORA, these
+`Z-recalculation' procedures require several iterations to give 
+good results. \np
+(In principle, atmospheric parameters can be specified not only on
+a grid of Z-values, but also on grids of other quantities, such as
+mass or optical depth. We did not think to allow for such flexibility 
+during the early years of PANDORA development, and internally PANDORA
+is solidly based on a grid of geometric depth values. Thus---to
+allow the user the convenience of working with fixed sets of
+mass or optical depth values---the program must establish the
+corresponding geometrical depth values in order to function at
+all.) \np
+When such `Z-recalculation' is requested, this will be done whenever
+appropriate as the calculations proceed. \np
+The final recomputed {\bf Z} table is included in output file {\tt fort.20}
+(see Section 8), and can then be used to replace the previous {\bf Z}
+table of that atmospheric model. \np
+\spice
+1) To specify an input mass table, use the input parameters {\bf ZMASS}
+and \break {\bf RFMAS}; these define the `input' mass table:
+$MASS_i = {\bf ZMASS}_i + {\bf RFMAS}$. This Z-recalculation procedure
+will be done whenever the input values of \break {\bf ZMASS}$_i$ do not
+all $= 0$. It is possible that overcorrections
+computed during early iterations of this process can cause things
+to go awry, and a weighting step has been included to keep things
+under control. Thus, in the current iteration, the final new {\bf Z}
+values = {\bf WZM} $\x$ (newly-computed Z) + (1 - {\bf WZM}) $\x$
+(final Z from previous iteration).  \np
+\spice
+2) The other Z-recalculation procedure will be done whenever the
+input values of {\bf TAUKIN}$_i$ do not all $= 0$; a value of {\bf PZERO}
+(surface pressure) may need to be specified; the value of
+{\bf REFLM} (the specific wavelength) can also be specified.
+\ej
+% \blankline
+% \blankline
+\centerline{\underbar{$\qquad \qquad$ {\bf *104} $\qquad \qquad$}}
+\space \noindent
+The meanings of {\bf LMA}, {\bf LMB}, {\bf LME}, {\bf LMF}, {\bf LMR},
+{\bf LMT}, {\bf WEP}, and of options ENL and ENL2, are 
+explained in detail in the text included in the \break
+LEVEL 1 TO K (\ie ``Lyman'') printout.
+\blankline
+\blankline
+\centerline{\underbar{$\qquad \qquad$ {\bf *105} $\qquad \qquad$}}
+\space \noindent
+When transition $(u,\ell)$ is designated as a blend of component lines,
+then ${\bf LDL}^{u,\ell}$ input values of the displacements ${\bf DDL}^{u,\ell}$
+and of the relative line strengths \break
+${\bf CDL}^{u,\ell}$ must be provided for
+that line. The units of {\bf DDL} are Angstroms; however, if it is more
+convenient to specify displacements in units of wavenumbers (/cm), 
+then the alternate input parameter ${\bf DWN}^{u,\ell}$ may be used. 
+The sum of the values of ${\bf CDL}^{u,\ell}$ should be 1. 
+Furthermore, ${\bf LDL}^{u,\ell}$ input values
+of ${\bf CRD}^{u,\ell}$, of ${\bf CVW}^{u,\ell}$, and of ${\bf CSK}^{u,\ell}$
+must also be provided (zeroes will be used otherwise). \np
+For blended line transition $(u,\ell)$, the line profile function
+is calculated as
+%
+$$ PHI_i = \sum_{L=1}^{LDL} {\bf CDL}^L PHI^L_i $$
+%
+where each set $PHI^L$ is displaced (in wavelength or in wavenumber)
+as specified.
+\blankline
+\blankline
+\centerline{\underbar{$\qquad \qquad$ {\bf *106} $\qquad \qquad$}}
+\space \noindent
+Details of a Hydrogen Stark broadening convolved profile calculation
+for the \break ({\bf MS},{\bf NS}) transition are printed for the
+{\bf IHSDP}'th depth point and for the \break {\bf IHSDD}'th frequency
+value, when option ANALYSIS is on.
+\blankline
+\blankline
+\centerline{\underbar{$\qquad \qquad$ {\bf *107} $\qquad \qquad$}}
+\space \noindent
+Input parameter {\bf IHSSW} overrides all ${\bf CSTARK}^{u,\ell}$.
+\blankline
+\blankline
+\centerline{\underbar{$\qquad \qquad$ {\bf *108} $\qquad \qquad$}}
+\space \noindent
+When option AMDIFF is on and option VELS is off, then PANDORA will
+automatically set ${\bf NVX} = 1$. See Section 16, Velocities.
+\ej
+% \blankline
+% \blankline
+\centerline{\underbar{$\qquad \qquad$ {\bf *109} $\qquad \qquad$}}
+\space \noindent
+When ${\bf NCB} > 0$ ({\it i.e.} when CO-lines wavelength bands are 
+specified): \np
+1) if ${\bf NCL} = 0$, then no CO-related wavelengths will be added to 
+the list of wavelengths for which continuum calculations are done; \np
+2) if ${\bf NCL} = 1$, then ${\bf XCOL}_1 = 0$ is assumed, and only
+CO-line core wavelengths and the specified band limits will be added to
+the list of wavelengths for which continuum calculations are done.
+\blankline
+\blankline
+\centerline{\underbar{$\qquad \qquad$ {\bf *110} $\qquad \qquad$}}
+\space \noindent
+If ${\bf WAVEMN} > 0$ and ${\bf WAVEMX} > {\bf WAVEMN}$, then PANDORA attempts
+to use built-in procedures to add more additional wavelengths to the table
+${\bf WAVES}_i, 1 \leq i \leq {\bf NWV}$, as follows. \np 
+If {${\bf NWV} > 0$} and there is an index I, {${\rm I} < {\bf NWV}$}, such that
+{${\bf WAVES}_i = 0$} \break for all ${\rm I} < i \leq {\bf NWV}$, then: \np
+1) all standard rates integration wavelengths $\lambda^c$ falling in the range
+\break ${\bf WAVEMN} \leq \lambda^c \leq {\bf WAVEMX}$, will replace such zeroes
+(working systematically upwards from $i = {\rm I}+1$). \np
+If thereafter it is still the case that there is an
+index I, ${\rm I} < {\bf NWV}$, such that \break
+${\bf WAVES}_i = 0$ for all ${\rm I} < i \leq {\bf NWV}$, then: \np
+2) those remaining zeroes will be replaced by values $\lambda^a$ such that \break
+${\bf WAVEMN} \leq \lambda^a \leq {\bf WAVEMX}$; these $\lambda^a$ will be
+equi-spaced in the log. \np
+\blankline
+\blankline
+\centerline{\underbar{$\qquad \qquad$ {\bf *111} $\qquad \qquad$}}
+\space \noindent
+The input switch {\bf IXNCS} (default =1) allows reversion to the ``old'' method of
+calculating default values of {\bf CE} and {\bf CI} in Hydrogen runs
+(see Section 19). \np
+``Old'' method (${\bf IXNCS} = 0$): if no input values of {\bf CE} or {\bf CI}
+(as tabulated functions of {\bf TER}) are given, then default tables are computed
+(using the method specified) and listed in the ATOM printout. These calculations
+do not take the ``lowering of the ionization potential'' into account. Whenever
+particular values of ${\bf CE}^{u,\ell}_i$ or ${\bf CI}^j_i$ as functions of
+temperature are needed during the calculations, then they will be obtained from
+these tables by interpolation. \np
+``New'' method (${\bf IXNCS} = 1$): if no input values of {\bf CE} or {\bf CI}
+(as tabulated functions of {\bf TER}) are given, then particular values of
+${\bf CE}^{u,\ell}_i$ or ${\bf CI}^j_i$ as functions of temperature and charged
+particle density will be computed as needed during the calculations; values
+pertaining to {\bf TER} and a reference value of charged particle density (note
+input parameter {\bf IRFNC}) appear in the ATOM printout as sample values only.
+(This only makes sense if the method of Johnson, or of Vriens and Smeets, is
+specified; or if no set of {\bf TER} values yields acceptable interpolated
+results.)
+\ej
+% \blankline
+% \blankline
+\centerline{\underbar{$\qquad \qquad$ {\bf *112} $\qquad \qquad$}}
+\space \noindent
+The statement {\bf COLINES ( {\it q} )} 
+({\it e.g.} ``{\tt COLINES ( KROT 15 RC1213 17. ) }'') \break is used for
+parameters controlling the CO-lines calculations. {\it q} consists of
+pairs of input fields of the form ``{\it A v}'', where {\it A} is an
+alphanumeric input field whose value may be ``{\tt JFUND}'', ``{\tt KFUND}'',
+``{\tt JOVER}'', ``{\tt KOVER}'',``{\tt JSECN}'', ``{\tt KSECN}'',
+``{\tt JROT}'', ``{\tt KROT}'', ``{\tt ISOSLCT}'', ``{\tt METHCOF}'',
+``{\tt METHCOW}'', or ``{\tt RC1213}'', and {\it v} is a numeric field,
+which must be {\flpt} if it follows {\tt RC1213}, and {\intg} otherwise.
+Here: \np
+JFUND $\ldots$ KROT specify maximum values of the quantum numbers j and
+$\nu$, as follows: \np
+$\quad$ JFUND is the maximum value of j for fundamental lines (default = 111); \np
+$\quad$ KFUND is the maximum value of $\nu$ for fundamental lines (default = 20); \np
+$\quad$ JOVER is the maximum value of j for first overtone lines (default = 111); \np
+$\quad$ KOVER is the maximum value of $\nu$ for first overtone lines (default = 13); \np
+$\quad$ JSECN is the maximum value of j for second overtone lines (default = 111); \np
+$\quad$ KSECN is the maximum value of $\nu$ for second overtone lines (default = 12); \np
+$\quad$ JROT is the maximum value of j for rotational lines (default = 53); \np
+$\quad$ KROT is the maximum value of $\nu$ for rotational lines (default = 21); \np
+ISOSLCT selects the isotope; = 1 means: use $^{12}$CO,
+= 2 means: use $^{13}$CO, \break = 3 means: use both (default = 3); \np
+METHCOF selects the method for computing f-values; \break = 1 means: use
+Chackerian and Tipping, = 2 means: use new Chackerian data, \break = 3 means:
+use Goorvitch, 1994 (default = 3); \np
+METHCOW selects the method for computing energies (wavelengths); \break
+= 1 means: use Farrenq \ea, = 2 means: use Coxon and Hajigeorgiou,
+\break = 3 means: use Goorvitch, 1994 (default = 3); \np
+RC1213 is the isotopic abundance ratio ${^{12}{\rm CO}}/{^{13}{\rm CO}}$
+(default = 90). \np
+{\it Notes:} \np
+The input values of the maximum quantum numbers JFUND $\ldots$ KROT
+cannot be set larger than their respective default values. \np
+${\rm JFUND} = 0$ and/or ${\rm KFUND} = 0$ means: do not include any
+fundamental lines. \np
+${\rm JOVER} = 0$ and/or ${\rm KOVER} = 0$ means: do not include any
+first overtone lines. \np
+${\rm JSECN} = 0$ and/or ${\rm KSECN} = 0$ means: do not include any
+second overtone lines. \np
+${\rm JROT} = 0$ and/or ${\rm KROT} = 0$ means: do not include any
+rotational lines. \np
+\ej
+% \blankline
+% \blankline
+\centerline{\underbar{$\qquad \qquad$ {\bf *113} $\qquad \qquad$}}
+\space \noindent
+{\bf IPEX} controls debug printout intended to be useful for program
+development only. ${\bf IPEX} = -1$ will generate a flood of printout;
+${\bf IPEX} = k$, where $k$ is one of several integers $> 0$, will generate
+selected printouts only.
+\blankline
+\blankline
+\centerline{\underbar{$\qquad \qquad$ {\bf *114} $\qquad \qquad$}}
+\space \noindent
+${\bf LOGAS} > 0$ turns on the ``location analysis graph'' of the emergent
+line profile calculation, and selects the type of abscissa: = 1 for
+$\Delta\lambda$-index or wavenumber-index, =2 for $\Delta\lambda$-value or
+wavenumber-value. (Option WAVENUMB controls whether wavelength or wavenumber 
+is used.)
+\blankline
+\blankline
+\centerline{\underbar{$\qquad \qquad$ {\bf *115} $\qquad \qquad$}}
+\space \noindent
+Debug output from the calculation of CI (in Hydrogen runs using {\tt AR}, 
+{\tt VORONOV}, {\tt VS}, or {\tt JOHNSON})
+can be obtained by setting ${\bf JDMCI} = [(1000 \times i) + j], \;
+1 \leq i \leq {\bf N}, \break 1 \leq j \leq {\bf NL}$, where $i$ is a depth index and
+$j$ is a level index. When $i = 0$, then output is provided for level $j$ at all
+depths; when $j = 0$, then output is provided at depth $i$ for all levels. \np
+Debug output from the calculation of CE (in Hydrogen runs using {\tt VS}
+or {\tt JOHNSON}) can be obtained by setting ${\bf JDMCE} = [1000 \times 
+(100 \times u + \ell) + i]$, \break $1 \leq i \leq {\bf N}$, where $i$ is a depth
+index and $(u,\ell)$ are transition indices, $u > \ell$. When $i = 0$, then output
+is provided for transition $(u,\ell)$ at all depths; when the transition indices
+are $(0,0)$, then output is provided at depth $i$ for all transitions.
+\blankline
+\blankline
+\centerline{\underbar{$\qquad \qquad$ {\bf *116} $\qquad \qquad$}}
+\space \noindent
+When ${\bf NGNV} > 0$, then ${GNV}^\ell, \; {\bf NGNV} \leq \ell \leq {\bf NL}$ will
+be suppressed (i.e. set = 0) in the diffusion calculations.
+\ej
+% \blankline
+% \blankline
+\centerline{\underbar{$\qquad \qquad$ {\bf *117} $\qquad \qquad$}}
+\space \noindent
+CQM$_i$ occurs in the equation of the scattering albedo of the `Line \break
+Background' opacities (see Section 9). \np
+If input parameter ${\bf CQM} > 0$, then PANDORA uses CQM$_i$ = {\bf CQM},
+$1 \leq i \leq {\bf N}$. \np
+If input parameter ${\bf CQM} \leq 0$, then PANDORA expects to find the tables \break
+{\bf CQT}$_k$, {\bf CQA}$_k$, $1 \leq k \leq {\bf NCQ}$, which specify
+CQM as a tabulated function of temperature. PANDORA interpolates in $\log[{\bf CQA}
+({\bf CQT})]$ to obtain \break CQM$_i$ = {\bf CQA}({\bf TE}$_i), 1 \leq i \leq {\bf N}$.
+\blankline
+\blankline
+\centerline{\underbar{$\qquad \qquad$ {\bf *118} $\qquad \qquad$}}
+\space \noindent
+${\bf KRATE}^{u,\ell}$ controls the formulation of certain terms in the statistical
+equilibrium equations: \np
+${\bf KRATE}^{u,\ell} = 1$ means: use net-rate (computed from
+$\rho$); \np
+${\bf KRATE}^{u,\ell} = 2$ means: use single-rate (computed from \Jbar).
+\blankline
+\blankline
+\centerline{\underbar{$\qquad \qquad$ {\bf *119} $\qquad \qquad$}}
+\space \noindent
+First derivatives of various quantities need to be computed for the diffusion calculations
+(option AMDIFF). The input parameter {\bf KDIFD1} selects one of several methods: \np
+{\bf KDIFD1} = 1 means: compute the slope at the given point as the slope of the straight
+line through the two bracketing points. \np
+{\bf KDIFD1} = 2 means: first apply ``sequential smoothing'' to the table of values; then
+compute the slope at the given point as the average of two slopes: the slope of the straight
+line through the given point and the adjacent point on the left, and the slope of the
+straight line through the given point and the adjacent point on the right. \np
+{\bf KDIFD1} = 3 means: first apply ``improved sequential smoothing with irregular point
+spacing'' to the table of values; then compute the slope at the given point from the
+cubic spline fitted to all the points. \np
+{\bf KDIFD1} = 4 means: compute the slope at the given point as the average of two slopes:
+the slope of the straight line through the given point and the adjacent point on the left,
+and the slope of the straight line through the given point and the adjacent point on the
+right (i.e., like {\bf KDIFD1} = 2 but without smoothing). \np
+The default value is ${\bf KDIFD1} = 1$.
+\ej
+% \blankline
+% \blankline
+\centerline{\underbar{$\qquad \qquad$ {\bf *120} $\qquad \qquad$}}
+\space \noindent
+If any nonzero values of {\bf RABDL}$_i$ were input, then {\bf RABD}$_i$ 
+will be set equal to antilog ({\bf RABDL}$_i$), all $i$.
+Otherwise, if any nonzero values of {\bf RABD}$_i$ were input,
+then those input values  will be used.
+Otherwise, {\bf RABD}$_i$ will be set equal to 1.0, all $i$.
+\blankline
+\blankline
+\centerline{\underbar{$\qquad \qquad$ {\bf *121} $\qquad \qquad$}}
+\space \noindent
+The detailed dump printout for the calculation of S-from-Number-Densities is controlled
+by {\bf ISNDD}. When ${\bf ISNDD} = 0$, then no dump ever appears; when ${\bf ISNDD} = 1$,
+then a dump appears for every such calculation; when ${\bf ISNDD} = 2$, then a dump
+appears only if an error occurred during the calculation.
+\blankline
+\blankline
+\centerline{\underbar{$\qquad \qquad$ {\bf *122} $\qquad \qquad$}}
+\space \noindent
+The `Special N1' calculation (part of the ``Diffusion Calculation'' when
+option AMDN1 is on) can be done in various ways; the choice of method is controlled by
+input parameters {\bf N1MET}, {\bf KDIAG}, {\bf I4DFM}, {\bf I4DEQ}, {\bf I4DIO},
+{\bf KBNDS} and {\bf KDAMP}. (A more detailed explanation of these parameters appears
+in sections INPUT and DIFFUSION of the main output file.)
+
+When ${\bf N1MET} = 1$, use the exponential method (if possible, otherwise, a diagonal
+method); when ${\bf N1MET} = 1$, use the diagonal method specified by {\bf KDIAG};
+when ${\bf N1MET} = 3$, use the simultaneous method (for He-I or He-II only).
+
+{\bf KDIAG} = 3, 4, or 5 selects the 3-diagonal, 4-diagonal, or 5-diagonal \break
+method, respectively. Additional controls are needed for the 4-diagonal method:
+${\bf I4DIO} = 1$ specifies the inward version, and ${\bf I4DIO} = 2$ the outward
+version (in the staionary case); {\bf I4DEQ} = 0, 1, or 2 specifies the ``original,''
+``method-1,'' or ``method-2'' equations, respectively; when ${\bf I4DEQ} = 1$, use
+the results from the Z-formulation, when ${\bf I4DEQ} = 2$, use the results from
+the $\zeta$-formulation.
+
+${\bf KDAMP} = 0$ means: use the raw matrix solution, whereas ${\bf KDAMP} = 1$ means:
+use the damped matrix solution (obtained by a weighted moving 3-point average), for
+the three-diagonal, five-diagonal, or simultaneous method.
+
+{\bf KBNDS} = 1 means: use equations incorporating relevant boundary conditions, = 0
+means: do not.
+\ej
+% \blankline
+% \blankline
+\centerline{\underbar{$\qquad \qquad$ {\bf *123} $\qquad \qquad$}}
+\space \noindent
+If not input values of the ``Lyman'' calculation tables ${\bf XK}_i$,
+${\bf GK}_i, 1 \leq i \leq {\bf KK}$ are specified, then defaults are provided from the
+rates integration data tables \break $RRNU^{\bf KOLEV}_i$, ${\bf RRCP}^{\bf KOLEV}_i,
+1 \leq i \leq {\bf MR}^{\bf KOLEV}$. If ${\bf MR}^{\bf KOLEV} > {\bf KK}$, then only
+the first {\bf KK} values of $RRNU$ and {\bf RRCP} are copied into {\bf XK} and
+{\bf GK}, respectively; if ${\bf KK} > {\bf MR}^{\bf KOLEV}$, then $RRNU$ and
+{\bf RRCP} are copied into the first {\bf KK} elements of {\bf XK} and {\bf GK},
+respectively, while the rest of those tables will be left undisturbed.
+\blankline
+\blankline
+\centerline{\underbar{$\qquad \qquad$ {\bf *124} $\qquad \qquad$}}
+\space \noindent
+The ``Diffusion Calculations'' (options AMDIFF and VELGRAD) 
+compute tables of $GNVL^\ell_i, \, 1 \leq i \leq {\bf N}, \,
+1 \leq \ell \leq {\bf NL}$. At times the raw computed values of these tables should not all
+be used; instead, they should be set $= 0$ at some depths. A table of $GRF_i$ values (`$GNVL$
+reduction factor') has been introduced for this purpose; $GRF_i$ multiplies the raw values
+to produce the final values of $GNVL^\ell_i$. The values, and the use, of $GRF_i$,
+are controlled by input parameters {\bf KDIFGS}, {\bf KDIFGA}, and {\bf KDIFGB}. \np
+The $GRF_i$ table is established as follows: $GRF_i = 1, \, 1 \leq i \leq {\bf KDIFGA}$; \break
+$GRF_i = ({\bf KDIFGB} - i)/({\bf KDIFGB} - {\bf KDIFGA}), \, {\bf KDIFGA} < i < {\bf KDIFGB}$;
+$GRF_i = 0, \, {\bf KDIFGB} \leq i \leq {\bf N}$. \np
+When {\bf KDIFGS} = 0, then $GRF_i$ is not used (and the raw values become the final values);
+when {\bf KDIFGS} = 2, then all values of $GNVL_i^\ell, \, 1 \leq \ell \leq {\bf NL}$
+are multiplied by $GRF_i$;
+when {\bf KDIFGS} = 1, then only values of $GNVL_i^1$ are multiplied by $GRF_i$.
+\blankline
+\blankline
+\centerline{\underbar{$\qquad \qquad$ {\bf *125} $\qquad \qquad$}}
+\space \noindent
+{\bf IPDEE} and {\bf NEFDF} are related to the calculation of the d-coefficients that are
+used in the diffusion calculation (the relavant routines are minor adaptations of code
+written and provided by Juan Fontenla). The d-coefficient-calculation needs values of
+the electron density; when ${\bf NEFDF} = 1$, then internally-computed values of electron
+density are used, when ${\bf NEFDF} = 2$, then the program-wide {\bf NE}-table is used. \np
+A schematic graph of the computed d-coefficients is always printed; the complete set of
+values will be printed, in addition, when ${\bf IPDEE} = 1$.
+\ej
+% \blankline
+% \blankline
+\centerline{\underbar{$\qquad \qquad$ {\bf *126} $\qquad \qquad$}}
+\space \noindent
+The table $beta_i$ (the He II number density) used in the diffusion calculations can be
+computed in different ways, controlled by {\bf IBETSW}. When ${\bf IBETSW} = 0$, then
+$beta_i = { 1 \over 2} ( HEK_i + HE21_i )$; when ${\bf IBETSW} = 1$, then
+$beta_i = HEK_i$; when ${\bf IBETSW} = 2$, then $beta_i = HE21_i$.
+\blankline
+\blankline
+\centerline{\underbar{$\qquad \qquad$ {\bf *127} $\qquad \qquad$}}
+\space \noindent
+The array $DIJ$ is one of the aids that are calculated, printed, and plotted for analyzing
+the effects of diffusion. When ${\bf IPDIJ} = 0$, then the entire array will be printed;
+when ${\bf IPDIJ} = 1$, then only an abbreviated analysis of $DIJ$ will be printed.
+\blankline
+\blankline
+\centerline{\underbar{$\qquad \qquad$ {\bf *128} $\qquad \qquad$}}
+\space \noindent
+{\bf KB1WA} and {\bf KB1WB} are depth indices that control the generation of B1-weights
+in the same way that {\bf KDIFGA} and {\bf KDIFGB} control the generation of values of
+$GRF_i$ (see Note 121).
+\blankline
+\blankline
+\centerline{\underbar{$\qquad \qquad$ {\bf *129} $\qquad \qquad$}}
+\space \noindent
+The input switch {\bf KANTNU} controls the summary printout of all {TNU} tables of
+a radiative transition. (The default is {\bf KANTNU} = 0.) \np
+{\bf KANTNU} = 0 means: none; \np
+{\bf KANTNU} = 1 means: for all transitions with {\bf LSFPRINT} = 1; \np
+{\bf KANTNU} = 2 means: for all transitions when option LSFPRNT is on; \np
+{\bf KANTNU} = 3 means: for all transitions when option LSFGRAF is on; \np
+{\bf KANTNU} = 4 means: for all transitions.
+\blankline
+\blankline
+\centerline{\underbar{$\qquad \qquad$ {\bf *130} $\qquad \qquad$}}
+\space \noindent
+The ORIGINS printout, and/or the CONTRIBUTORS printout, part of the spectrum
+analysis aids, can be restricted to a specified range of wavelengths (or of
+wavenumbers when option WAVENUMB is on). {\bf CORMIN}, when $> 0$, is the
+minimum value, and {\bf CORMAX}, when $> 0$, is the maximum value of wavelength
+(or of wavenumber, as the case may be).
+\ej
+% \blankline
+% \blankline
+\centerline{\underbar{$\qquad \qquad$ {\bf *131} $\qquad \qquad$}}
+\space \noindent
+$X^{s+1}_i = W_i \times X^{new}_i + {(1 - W_i)} \times X^s_i, \; 
+1 \leq i \leq N$, where $X$ stands for RHO$^{u,\ell}$ and $W$ syands
+for RHWT$^{u,\ell}$; or \np
+$X^{s+1}_i = [ (X^{new}_i)^{W_i} ] \times [ (X^s_i)^{(1 - W_i)} ], \; 1 \leq i 
+\leq N$, where $X$ stands for RK$^{KOLEV}$ and W stands for RKWT, as
+used in the Lyman calculation. \np
+The values of $X_i$ for iteration $s+1$ will be obtained, in the manner
+shown, from the values of $X_i$ used during iteration $s$ and the $new$
+values of $X_i$ calculated at the end of iteration $s$.
+
+The first equation above illustrates {\it linear} weighting, while the
+second illustrates {\it logarithmic} weighting. Logarithmic weighting
+is always used for RK$^{KOLEV}$; logarithmic weighting can also be used
+for RHO$^{u,\ell}$, depending on option \break WATESTR.
+
+The values of {\bf RHWT}$_i$ and {\bf RKWT}$_i$
+may vary with depth index $i$, or may be constants.
+They are updated in every iteration as described in the writeup
+\break [74 Oct 23]. The procedure for updating these weights 
+uses input parameters {\bf INCH}, {\bf WRMN}, and {\bf WRMX}.
+
+\blankline
+{\it Note: }
+RHO and RK weighting used to be done differently, using different input
+parameters and input tables (see Note 13).
+The former input quantities NTW, TAW, WTW,
+NWRHO, WRLY, and WRHO are no longer recognized by the program and must be
+removed from old files. The former input quantities WMN, WMX, RHOWT, and
+RKW are no longer used, however, the program continues to recognize them
+and uses their values to compute related values of {\bf WRMX}, {\bf WRMN},
+{\bf RHWT}, and {\bf RKWT}, according to: \np
+${\bf WRMX} = 1 - WMN$, $\qquad {\bf WRMN} = 1 - WMX$, \np
+${\bf RHWT} = 1 - RHOWT$, $\qquad$ and $\qquad {\bf RKWT} = 1- RKW$. \np
+Messages are written to the output file whenever these conversions are done.
+It is best to remove {\bf WMN} and {\bf WMX} from the input (using the
+above conversions). {\bf RHOWT} and {\bf RKW} tend to occur in the
+restart files written by old versions of the program; the program now
+writes {\bf RHWT} and {\bf RKWT} to these files. Thus, the old quantities
+will normally be encountered only when an old run is restarted with the
+current program, so that the automatic conversion described here needs to
+be done only once.
+\blankline
+\blankline
+\centerline{\underbar{$\qquad \qquad$ {\bf *132} $\qquad \qquad$}}
+\space \noindent
+The switch {\bf WORLDLY} can take on the values {\tt SCREEN} or {\tt DISK};
+it controls the storage-management-system dump (which uses file
+{\tt fort.97} when {\bf WORLDLY} \break = {\tt DISK}). I use this to check
+the source code; it is not intended for general use.
+\ej
+% \blankline
+% \blankline
+\centerline{\underbar{$\qquad \qquad$ {\bf *133} $\qquad \qquad$}}
+\space \noindent
+In the ATMOSPHERE and ATOM printout sections, parameter values = 0 are nomally
+printed as blanks. If the user prefers to see printed 0's, then the input
+parameters {\bf JZATMO} and/or {\bf JZATOM} may be set = 1.
+\blankline
+\blankline
+\centerline{\underbar{$\qquad \qquad$ {\bf *134} $\qquad \qquad$}}
+\space \noindent
+As explained in Section 11, output from the Continuum Calculations at various
+wavelengths is controlled by various OPTIONS pertaining to the various
+wavelength types (for example, output will be produced for all Additional
+Continuum Wavelengths, {\bf WAVES}, when option ADDCOPR is on). However,
+even if no wavelength-type OPTIONS are on, output will be produced for
+every wavelength specified in the table {\bf SCOW}, of length {\bf NSW}.
+For this purpose, a value of {\bf SCOW} must match the value of an actual
+Continuum Calculation wavelength to at least 8 figures (note that a list
+of all Continuum Calculation wavelengths appears in the WAVELENGTHS section
+near the end of the PANDORA printout).
+\blankline
+\blankline
+\centerline{\underbar{$\qquad \qquad$ {\bf *135} $\qquad \qquad$}}
+\space \noindent
+When option USEWTAB is on, the ``standard rates integrations wavelengths''
+table is added to the list of wavelengths for which continuum calculations
+are done. (This ``standard'' table contains values bracketing all the
+absorption edges contained in the built-in ion models and tries to
+capture, for integration purposes, all the lines included among the 
+background opacity contributors.) Only that portion of the ``standard''
+table falling between the limits {\bf WRATMN} and
+\break {\bf WRATMX} will be used.
+\ej
+% \blankline
+% \blankline
+\centerline{\underbar{$\qquad \qquad$ {\bf *136} $\qquad \qquad$}}
+\space \noindent
+Ionization and excitation rates always include the effects of collisions
+with electrons; the rates due to collisions with neutral Hydrogen are
+always computed (and printed if the options RATEPRNT and COLHPRNT are
+both on), but are used only if the input switch ${\bf ICHSW} = 1$.
+Rates due to collisions with Hydrogen, however, are computed only for
+those levels of the ion-of-the-run whose corresponding value of the
+input array ${\bf LCH}^j > 0, \; 1 \leq j \leq {\bf NSL}$.
+${\bf LCH}^1 = 0$ by definition; but a negative value of ${\bf LCH}^1$
+can be specified and will be used as a special code, as described below.
+
+Ionization rates due to collisions with Hydrogen are computed using the
+formulation of B. Kaulakys, 1985, J.Phys.B, {\bf 18}, L167.
+
+Kaulakys' formulation is also used to compute the effects of collisions
+with Hydrogen on the collisonial excitation rates for all those transitions
+$(u,\ell)$ for which both ${\bf LCH}^u$ and ${\bf LCH}^\ell > 0$. A
+second set of collisional ionization rates is then
+computed from H. W. Drawin, 1969, Z.Physik, {\bf 225}, 483
+for all transitions to and from those lower levels whose
+index $\leq |{\bf LCH}^1|$. (For an $A = 0$ transition the Drawin rate
+is zero, and the Drawin rates for transitions whose lower level
+index $= 1$ are zero if ${\bf LCH}^1 = 0$. Such Drawin rates then replace the 
+corresponding Kaulakys transitional rates that had already been computed.
+\blankline
+\blankline
+\centerline{\underbar{$\qquad \qquad$ {\bf *137} $\qquad \qquad$}}
+\space \noindent
+The Hydrogen Lyman lines background opacity parameters are explained in
+Section 21, and in section INPUT of PANDORA's regular output file.
+\blankline
+\blankline
+\centerline{\underbar{$\qquad \qquad$ {\bf *138} $\qquad \qquad$}}
+\space \noindent
+If no input values of {\bf DGM} are specified, and if {\bf NGM} = 0
+has been specified explicitly, then {\bf DGM}$_i = 1, \; 1 \leq i \leq {\bf N}$
+is set up internally (this is the "general" default, as specified above).
+However, if no input vales of {\bf DGM} are specified, {\it and} if
+{\bf NGM} = 0 has {\it not} been specified (so that {\bf NGM} retains its
+built-in default value which is $> 0$), then ``solar default'' values of
+{\bf DGM}$_i$ will be computed from {\bf DGMZ}$_j, \; 1 \leq j \leq {\bf NGM}$.
+Here {\bf DGMZ} is a table appropriate for the quiet Sun, and is
+specified as a function of Z, {\bf ZGM}. Values of {\bf DGM}$_i$
+corresponding to the input values of {\bf Z}$_i$ are obtained by
+interpolation from the tables {\bf ZGM}$_j$ and {\bf DGMZ}$_j$. \np
+{\it Note}: {\bf DGM}$_i = 0$ is not acceptable.
+\ej
+% \blankline
+% \blankline
+\centerline{\underbar{$\qquad \qquad$ {\bf *139} $\qquad \qquad$}}
+\space \noindent
+The {\bf CIMETHOD} and {\bf CEMETHOD} statements each may contain an arbitrary
+number of nonnumeric codewords for specifying the set of methods for
+calculating automatic values of $CI^j$ and/or $CE^{u,\ell}$.
+The {\bf CIMETHOD} statement recognizes: {\tt CLARK, AR, VORONOV, JOHNSON,
+VS, SHAH, ONTHEFLY}; while the {\bf CEMETHOD} statement recognizes: {\tt SEATON,
+VREGE, SCHOLZ, PB, VS, JOHNSON, AGGRWL, ONTHEFLY}. To enable a method, list
+its name in the pertinent statement; to turn off a method already enabled
+(say, because it is enabled by default) preface it with a minus sign (without
+intervening blank).
+
+With these statements the user can specify method
+sets different from the default sets. It is necessary to turn off explicitly
+any unwanted methods that are already enabled! For example, to use only
+{\tt VS} for all Hydrogen $CI^j$-values, use: 
+``{\tt CIMETHOD ( VS -SHAH -CLARK ) }''. 
+
+{\tt ONTHEFLY} is a calculation mode, not a method.
+
+See Section 19 for more details.
+\blankline
+\blankline
+\centerline{\underbar{$\qquad \qquad$ {\bf *140} $\qquad \qquad$}}
+\space \noindent
+The {\bf MATRIX} statement accepts control parameters for matrix manipulation.
+Their names are {\bf DRPSW} (integer, default = 0), {\bf EDJSW} (integer,
+default = 0), and {\bf CRITJ} (floating point, default = $10^{-50}$). When
+one or more of these names appear in a {\bf MATRIX} statement, each name
+should be followed immediately by its desired input value. For example:
+
+$\qquad$ {\tt MATRIX ( edjsw 1  critj 1.e-30 )  }
+\blankline
+\noindent When {\bf DRPSW} = 1: two lines of descriptive data will be written
+to the printout file for every matrix to be inverted.
+\blankline
+\noindent When {\bf EDJSW} = 1 ``junk'' is edited out of every matrix prior
+to inversion or determinant calculation: find $Y$, the matrix element having
+the largest absolute value; compute $Z = {\bf CRITJ} \times |Y|$; and then
+set = 0 every matrix element whose absolute value is less than $Z$.
+%\par
+%\vfill \vfill \vfill \vfill
+%\vfill \vfill \vfill \vfill
+%\vfill \vfill \vfill \vfill
+%\vfill \vfill \vfill \vfill
+%\vfill \vfill \vfill \vfill
+%\end

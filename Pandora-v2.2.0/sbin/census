@@ -1,0 +1,153 @@
+#!/bin/csh
+#
+# script to run Cents (consolidated in a single script)
+# Dec 18 2013/Mar 19 2014 SGK
+#
+# this script takes 1 positional arguments
+#
+#   #1 = model-name, ex: SPhe
+#
+# <- Last updated: Fri Mar 21 09:25:09 2014 -> SGK
+#
+set BIN_D  = bin
+set DIR_D  = .
+#
+set BIN = $BIN_D
+set DIR = $DIR_D
+#
+loop:
+if ($#argv < 1) goto showUse
+if ("$argv[1]" =~ -*) then
+  switch ("$argv[1]")
+  case -dir:
+   if ($#argv < 2) goto showUse
+    set DIR  = "$argv[2]"
+    shift
+  breaksw
+  case -ions:
+   if ($#argv < 2) goto showUse
+    set IONS = "$argv[2]"
+    shift
+  breaksw
+  case -bin:
+   if ($#argv < 2) goto showUse
+    set BIN  = "$argv[2]"
+    shift
+  breaksw
+  case *:
+    echo ERROR - invalid option '"'$argv[1]'"' to the pandora script
+    goto showUse
+  endsw
+  shift
+  goto loop
+endif
+#
+if ($#argv != 1) then
+    echo census: ERROR - the census script needs 1 argument
+    goto showUse
+endif
+# 
+source $BIN/setFORx.sou
+#
+set NAME = $1
+#
+# run cents.x
+set inp = /tmp/inp.$$
+#
+echo $NAME            > $inp
+ls $DIR/$NAME*.msc.* >> $inp
+setFOR 61 $inp
+setFOR 63 ${NAME}n.ion
+#
+# the file ions.list must be in the cwd
+# adding -ions <file> create a symlink 
+#
+if ($?IONS) then
+  if (-e $IONS) then
+    if (-l ions.list) rm ions.list
+    if (-e ions.list) then
+      echo "file ions.list exist, ignoring -ions $IONS"
+    else
+      ln -s $IONS ions.list
+    endif
+  else
+    echo 'file $IONS not found, adjust -ions <filespec> to point to the right one'
+    exit 91
+  endif
+else
+  if (! -e ions.list) then
+    echo 'file ions.list not found, use -ions <filespec> to point to it'
+    exit 92
+  endif
+endif
+#
+$BIN/cents.x
+#
+# ls -lt
+#
+rm $inp
+unsetFOR 61
+unsetFOR 63
+#
+# now that I have a .ion file
+# run census
+setFOR 91 ${NAME}n.ion
+setFOR 92 ${NAME}n.out
+setFOR 93 ${NAME}n.rab
+setFOR 94 ${NAME}n.grf
+$BIN/census.x
+#
+# ls -lt
+#
+unsetFOR 91
+unsetFOR 92
+unsetFOR 93
+#
+# run dimes on the .rab file
+setFOR 63 ${NAME}n.rab
+@ n  =  1
+@ nx = 20
+while ($n <= $nx)
+  @ LU = $n + 63
+  setFOR $LU ${NAME}$n.rab
+  @ n++
+end
+$BIN/dimes.x
+unsetFOR 63
+@ n  =  1
+while ($n <= $nx)
+  @ LU = $n + 63
+  unsetFOR $LU
+  @ n++
+end
+
+foreach ext (ion out rab)
+  \rm -f ${NAME}n.$ext
+end
+
+if ($?IONS) then
+  if (-e $IONS) then
+    if (-l ions.list) rm ions.list
+  endif
+endif
+
+ls -lt ${NAME}*.rab ${NAME}n.grf
+exit
+#
+# ---------------------------------------------------------------------------
+#
+showUse:
+cat<<EOF
+
+  usage:
+    $0 [options] <model-name>
+
+   where options are:
+    -dir   <data-dir>,        def.: $DIR_D
+    -bin   <executable-dir>,  def.: $BIN_D
+    -ions  path/to/ions.list  use if the file ions.list is not in the cwd
+
+examples:
+   census demo1
+
+EOF

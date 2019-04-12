@@ -1,0 +1,225 @@
+      subroutine KTEXT
+C
+C     Rudolf Loeser, 1970 Dec 02
+C     Adapted for the DEC VAX 11/780, 1979 Feb 24.
+C     Major revision, 1986 May 21.
+C     Further revision, 1989 Jan 04.
+C     Further revision: use ENCODER, 1991 Aug 05
+C     Further revision: shrink NHmax to 117, 1993 Oct 14
+C
+C     KTEXT is a dummy routine, serving merely as the vehicle for a
+C     general explanation of the K-type printer plotting routines.
+C
+C---- The K-type plotting routines construct a plot image to be
+C     printed on a line printer. Plot position (1,1) is the upper left
+C     corner of the graph; vertical plot positions are thence numbered
+C     consecutively downward, and horizontal plot positions are thence
+C     numbered consecutively to the right.
+C
+C---- The plot image is assembled in a long character variable, which
+C     must be supplied by the caller for most of the many routines of
+C     this package. It must provide room for all the characters of the
+C     plot image, i.e. NH*NV characters, where NH is the number of
+C     horizontal plot positions desired, and NV is the number of
+C     vertical plot positions desired. This character variable that 
+C     holds the plot image is called W.
+C
+C     (Contrary to previous versions of the K-type printer plotting
+C     routines, this version will do only one plot at a time (since
+C     only a single set of scaling parameters is kept, internally).
+C     After a call to _INIT, all processing of the current plot must
+C     be completed before another call to _INIT.)
+C
+C---- A number of routines are available for constructing and printing
+C     graphs. They are listed and described as follows:
+C     !EJECT
+C     KINIT (W,XL,XH,YL,YH,NV,NH,SYM,GOOD)
+C
+C         is the initialization routine, and must be called before any
+C         other routines for a particular plot. XL,XH and YL,YH
+C         specify the lengths of the axes in problem coordinates:
+C         XL - value of X at left end of (horizontal) x-axis;
+C         XH - value of X at right end of (horizontal) x-axis;
+C         YL - value of Y at bottom end of (vertical) y-axis;
+C         YH - value of Y at top end of (vertical) y-axis;
+C         (XL, XH, YL and YH must all be type R*8; they are converted
+C         to R*4 before use).
+C
+C         NV is the number of vertical plot positions desired, and NH
+C         (NH .le. 117) is the number of horizontal plot positions.
+C         Thus the following correspondences exist between
+C            Problem Coordinates    and    Plot Positions
+C                  (XL,YH)                     (1,1)
+C                  (XL,YL)                     (NV,1)
+C                  (XH,YL)                     (NV,NH)
+C                  (XH,YH)                     (1,NH).
+C
+C         SYM (type CHAR*1) contains the character to be used to
+C         construct the four outer boundaries of the graph image.
+C
+C         GOOD (type logical) is returned = .true. if everything seemed
+C         OK, but set = .false. if XL .eq. XH, or YL .eq. YH,
+C         or NV .le. 0, or NH .le. 0, so that nothing could be done.
+C
+C
+C     SINIT (W,XL,XH,YL,YH,NV,NH,SYM,GOOD)
+C
+C         same as KINIT, except that XL, XH, YL and YH must be
+C         type R*4.
+C
+C
+C     KKOUNT (W,KOUNT)
+C
+C         will return, in KOUNT, the number of plotted points that
+C         have already been entered into the current plot.
+C         (Note: argument W is not used; it remains for compatibility.)
+C
+C
+C     KPRINT (W,NO)
+C
+C         will print the graph whose image is in W, onto logical unit
+C         NO. It does not do any preliminary spacing before printing.
+C         If NO .le. 0, no printing will be done.
+C     !EJECT
+C     KGIVE (W,N,LINE)
+C
+C         will return in LINE the image of the N'th line of the graph
+C         image in W. LINE must be of type CHAR, and must be at least
+C         NH characters long. The numbering of lines of the graph image 
+C         is the same as that for vertical plot positions.
+C         This routine is useful if it is desired to print the graph
+C         side-by-side with other information (say, tables) on the
+C         same page.
+C         If N falls outside the limits of the graph, then blanks will
+C         be returned in LINE.
+C
+C
+C     KPLOTC (W,X,Y,SYM)
+C
+C         will insert the character in SYM into the
+C         graph image in W at a position specified by X,Y (in problem
+C         coordinates). Points falling outside the limits of the
+C         graph will neither be plotted nor flagged. X and Y must be
+C         type R*8, they are converted to R*4 before use;
+C         SYM must be type CHAR*1.
+C
+C
+C     SPLOTC (W,X,Y,SYM)
+C
+C         same as KPLOTC, except that X and Y must be type R*4.
+C
+C
+C     KPLOTP (W,J,I,SYM)
+C
+C         will insert the character in SYM into that
+C         plot position of the graph image in W whose horizontal
+C         position number is J and whose vertical position number is I.
+C         Points falling outside the limits of the graph will neither
+C         be plotted nor flagged. SYM must be type CHAR*1.
+C
+C
+C     KWHERE (W,X,Y,J,I)
+C
+C         will compute, for the current plot, the horizontal plot
+C         position number J and the vertical plot position number I
+C         of the point whose coordinates are X,Y (in problem
+C         coordinates). X and Y must be type R*8, they are converted
+C         to R*4 before use.
+C         If the point X,Y falls outside the limits of the graph, then
+C         the corresponding values of J and I will similarly fall
+C         outside the limits of the graph - NOTE that integer overflow
+C         could then occur!
+C         (Note: argument W is not used; it remains for compatibility.)
+C
+C
+C     SWHERE (W,X,Y,J,I)
+C
+C         same as KWHERE, except that X and Y must be type R*4.
+C     !EJECT
+C     KWHATC (W,X,Y,SYM)
+C
+C         will return in SYM, for the plot whose image is
+C         in W, the current contents of the plot position specified
+C         by X,Y (in problem coordinates). X and Y must be
+C         type R*8, they are converted to R*4 before use;
+C         SYM must be type CHAR*1. This routine uses KWHERE (q.v.).
+C         For points outside the limits of the graph, SYM will be
+C         set to blank.
+C
+C
+C     SWHATC (W,X,Y,SYM)
+C
+C         same as KWHATC, except that X and Y must be type R*4.
+C         This routine uses SWHERE (q.v.).
+C
+C
+C     KWHATP (W,J,I,SYM)
+C
+C         same as KWHATC, except plot position specified by J, its
+C         horizontal position number, and I, its vertical position
+C         number.
+C
+C
+C     KTESTP (W,J,I,KODE)
+C
+C         tests whether the plot position specified by J, its
+C         horizontal position number, and I, its vertical position
+C         number, falls within the plot image. Returns KODE=.true. if
+C         yes, KODE=.false. if not; (KODE must be type LOGICAL).
+C         (Note: argument W is not used; it remains for compatibility.)
+C
+C
+C     KLINEC (W,XA,YA,XB,YB,SYM,KODE)
+C
+C         will insert repeatedly the character in SYM,
+C         into the graph image in W, to form a string of characters,
+C         in adjacent plot positions, that falls along the straight
+C         line between the positions specified by XA,YA and XB,YB
+C         (problem coordinates). Portions of the line falling outside
+C         the limits of the graph will be neither plotted nor flagged.
+C         If KODE=1, SYM will also be entered into the graph at
+C         plot positions XA,YA and XB,YB; if KODE=0, SYM will not be
+C         entered into those plot positions. XA, YA, XB and YB
+C         must be type R*8, they are converted to R*4 before use;
+C         SYM must be type CHAR*1.
+C
+C
+C     SLINEC (W,XA,YA,XB,YB,SYM,KODE)
+C
+C         same as KLINEC, except that XA, YA, XB and YB must be
+C         type R*4.
+C     !EJECT
+C     KLINEP (W,JA,IA,JB,IB,SYM,KODE)
+C
+C         same as KLINEC, except positions specified by JA and JB,
+C         their horizontal position numbers, and IA and IB, their
+C         vertical position numbers.
+C
+C
+C     KANOTC (W,X,Y,STRING,L,KODE)
+C
+C         will insert a string of characters into the graph image in W;
+C         the first character will be inserted in the plot position
+C         specified by X,Y (problem coordinates); subsequent characters
+C         will be inserted into successive plot positions to the right
+C         if KODE=1, or into successive plot positions downwards if
+C         KODE=2. Characters falling outside the limits of the graph
+C         will be neither plotted nor flagged. STRING must be of
+C         type CHAR and contain at least L characters. X and Y
+C         must be type R*8, they are converted to R*4 before use.
+C
+C
+C     SANOTC (W,X,Y,STRING,L,KODE)
+C
+C         same as KANOTC, except that X and Y must be type R*4.
+C
+C
+C     KANOTP (W,J,I,STRING,L,KODE)
+C
+C         same as KANOTC, except starting position specified by J, its
+C         horizontal position number, and I, its vertical position
+C         number.
+C
+C     !beg
+C     !end
+      end 

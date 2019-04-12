@@ -1,0 +1,36 @@
+ [ DEMO-1                  3 L H, D.B.  ITER 01-02   24 MAR 00   ]               
+ 
+ 
+ PSN154444  OPTIONS               OVER=  0     SUB=  0     HSL=  0     LYM=  0                                                  
+ PSN154445  INPUT NOTES           OVER=  0     SUB=  0     HSL=  0     LYM=  0                                                  
+ PSN154446  ATMOSPHERE            OVER=  0     SUB=  0     HSL=  0     LYM=  0                                                  
+ PSN154447  ND, NK, + BD          OVER=  0     SUB=  0     HSL=  0     LYM=  0                                                  
+ PSN154448  ATOM                  OVER=  0     SUB=  0     HSL=  0     LYM=  0                                                  
+ PSN154449  RHO, JBAR ...         OVER=  0     SUB=  0     HSL=  0     LYM=  0                                                  
+ PSN154450  ELEMENTS              OVER=  0     SUB=  0     HSL=  0     LYM=  0                                                  
+ PSN154451  BACKGROUND            OVER=  0     SUB=  0     HSL=  0     LYM=  0                                                  
+ PSN154452  INPUT                 OVER=  0     SUB=  0     HSL=  0     LYM=  0                                                  
+ PSN154453  CONSTANTS             OVER=  0     SUB=  0     HSL=  0     LYM=  0                                                  
+ PSN154454  HYDROGEN              OVER=  0     SUB=  0     HSL=  0     LYM=  0                                                  
+ PSN154455  TABLES                OVER=  0     SUB=  0     HSL=  0     LYM=  0                                                  
+ PSN154456  INTEGRATION           OVER=  0     SUB=  0     HSL=  0     LYM=  0                                                  
+ PSN154457  ITERATION  1          OVER=  1     SUB=  0     HSL=  0     LYM=  0                                                  
+ PSN154458  START VALUES          OVER=  1     SUB=  0     HSL=  0     LYM=  0                                                  
+ PSN154459  ITERATION  2          OVER=  2     SUB=  0     HSL=  0     LYM=  0                                                  
+ PSN154460  RATES                 OVER=  2     SUB=  0     HSL=  0     LYM=  0                                                  
+ PSN154461  RECOMB                OVER=  2     SUB=  0     HSL=  0     LYM=  0                                                  
+ PSN154462  LINE (U/L)            OVER=  2     SUB=  1     HSL=  0     LYM=  0                                                  
+ PSN154463  LINE (3/2)            OVER=  2     SUB=  1     HSL=  0     LYM=  0                                                  
+ PSN154464  RHO AND RBD           OVER=  2     SUB=  1     HSL=  0     LYM=  0                                                  
+ PSN154465  POPULATIONS           OVER=  2     SUB=  0     HSL=  1     LYM=  1                                                  
+ PSN154466  HYDROGEN              OVER=  2     SUB=  0     HSL=  1     LYM=  1                                                  
+ PSN154467  LEVEL 1 TO K          OVER=  2     SUB=  0     HSL=  1     LYM=  1                                                  
+ PSN154468  NE                    OVER=  2     SUB=  0     HSL=  1     LYM=  0                                                  
+ PSN154469  GAS DATA              OVER=  2     SUB=  0     HSL=  1     LYM=  0                                                  
+ PSN154470  POPULATIONS           OVER=  2     SUB=  0     HSL=  1     LYM=  0                                                  
+ PSN154471  HYDROGEN              OVER=  2     SUB=  0     HSL=  1     LYM=  0                                                  
+ PSN154472  WAVE SUMM 0           OVER=  0     SUB=  0     HSL=  0     LYM=  0                                                  
+ PSN154473  WAVE SUMM 1           OVER=  0     SUB=  0     HSL=  0     LYM=  0                                                  
+ PSN154474  CHECKS                OVER=  0     SUB=  0     HSL=  0     LYM=  0                                                  
+ PSN154475  ITERATES              OVER=  0     SUB=  0     HSL=  0     LYM=  0                                                  
+ PSN154476  SIGN-OFF              OVER=  0     SUB=  0     HSL=  0     LYM=  0                                                  

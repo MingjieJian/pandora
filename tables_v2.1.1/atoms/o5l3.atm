@@ -1,0 +1,47 @@
+>
+>   O X Y G E N   V ,   3   L E V E L S
+>
+>   2004 Mar 02
+>   2005 Dec 06 3-level version of o5l5.atm, EHA
+>
+NL     ( 3 ) >
+NLPAIR ( 1 -1  2 -1  3 -1 ) >
+>
+NT     ( 2 ) >
+INPAIR ( 2 1  3 2 )  >
+>
+nte ( 4 ) >
+>
+USE ( INPUT ) >
+>
+> 
+>   O X Y G E N   V ,   3   L E V E L S
+> 
+>
+ATOLAB ( O4L3 ) >
+NAME   ( OXYGEN5 ) >
+ELSYM  ( O )  IONSTAGE ( 5 ) >
+>
+MASS ( 15.999 ) >
+PART ( 2. ) >
+>
+NU  ( 0. 4.760644 6.946851 ) >
+NUK ( 27.54064 ) >
+>
+P   ( 1. 3. 5. ) >
+LCH ( f 0 ) >
+CP  ( M 1.E-18 .78 1. 1. ) >
+>
+napknt ( 6 ) >
+apci   ( 2.389e-5 1.355e-4 5.885e-3 2.163e-3 6.341e-4 1.348e-2 ) >
+apei   ( 2.004 2.765 11.34 58. 163. 530. ) >
+>
+ter ( m 1000. 5. 10. 15. 30. ) >
+>
+A   2 1 ( 3.E+9 ) >
+CRD 2 1 ( 3.2E-5 ) >
+>
+A   3 2 ( 6.7E+8 ) >
+CRD 3 2 ( 3.3E-5 ) >
+>
+USE ( INPUT ) >

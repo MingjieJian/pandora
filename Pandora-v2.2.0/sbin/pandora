@@ -1,0 +1,250 @@
+#!/bin/csh
+#
+# script to run PANDORA
+#
+# Version 1.02, 1995 Oct 24: for DEC Alpha under OSF
+# Version 1.03, 1995 Oct 27: with version numbers
+#               (version # = process #, i.e. "$$")
+#
+# Version 1.10, 1996 Jun 20: for regular use
+#         1.11, 2000 Mar 27: fort.27 added
+# 
+# changed for Solaris, 2001 Oct 04
+#               2002 Mar    : fort.97 added
+#               2005 Aug 09 : pool change
+#
+# Sep 24 2013 SGK - replaced symlinks by set env
+#                   cleaned up/streamlined
+#
+# this script takes 4 positional arguments
+#
+#   #1 = atmospheric model name, ex: SP
+#   #2 = atom name,              ex: h
+#   #3 = atom number of levels,  ex: l15
+#   #4 = run identifier,         ex: 001
+#
+# <- Last updated: Mon Mar 24 16:59:27 2014 -> SGK
+#
+set STATS_D  = stats
+set OPAC_D   = opacities
+set BIN_D    = bin
+set ATOMS_D  = atoms
+set INPUT_D  = .
+set OUTPUT_D = .
+#
+set STATS      = $STATS_D 
+set OPAC       = $OPAC_D  
+set BIN        = $BIN_D  
+set ATOMS      = $ATOMS_D 
+set INPUT      = $INPUT_D 
+set OUTPUT     = $OUTPUT_D
+#
+loop:
+if ($#argv < 1) goto showUse
+if ("$argv[1]" =~ -*) then
+  switch ("$argv[1]")
+  case -inp:
+   if ($#argv < 2) goto showUse
+    set INPUT  = "$argv[2]"
+    shift
+  breaksw
+  case -out:
+   if ($#argv < 2) goto showUse
+    set OUTPUT = "$argv[2]"
+    shift
+  breaksw
+  case -io:
+   if ($#argv < 2) goto showUse
+    set INPUT  = "$argv[2]"
+    set OUTPUT = "$argv[2]"
+    shift
+  breaksw
+  case -stats:
+   if ($#argv < 2) goto showUse
+    set STATS  = "$argv[2]"
+    shift
+  breaksw
+  case -opac:
+   if ($#argv < 2) goto showUse
+    set OPAC  = "$argv[2]"
+    shift
+  breaksw
+  case -bin:
+   if ($#argv < 2) goto showUse
+    set BIN  = "$argv[2]"
+    shift
+  breaksw
+  case -atoms:
+   if ($#argv < 2) goto showUse
+    set ATOMS = "$argv[2]"
+    shift
+  breaksw
+  case *:
+    echo ERROR - invalid option '"'$argv[1]'"' to the pandora script
+    goto showUse
+  endsw
+  shift
+  goto loop
+endif
+if ($#argv != 4) then
+    echo pandora: ERROR - the pandora script needs 4 arguments
+    goto showUse
+endif
+#
+source $BIN/setFORx.sou
+#
+set ATMOS_MOD  = $1
+set ATOM_NAME  = $2
+set ATOM_LVLS  = $3
+set RUN_ID     = $4
+#
+set CASE     = $ATMOS_MOD$ATOM_NAME
+set ATOM_MOD = ${ATOM_NAME}${ATOM_LVLS}
+#
+echo + `date` $0 started
+echo "  running case=$CASE, atmospheric model=$ATMOS_MOD, atomic data=$ATOM_MOD"
+echo "          stats=$STATS/, opac=$OPAC/, bin=$BIN/, atoms=$ATOMS/, input=$INPUT/, output=$OUTPUT/"
+#
+# do not override existing output
+#
+@ WARN = 0
+set nonomatch
+foreach file ($OUTPUT/$CASE.???.$RUN_ID)
+  if (-f $file) then
+    echo "ERROR - $file file already exists, clean up or change the ID "
+    @ ERR++
+  endif
+end
+unset nonomatch
+#
+# check for input files and output directory
+# does not check for read/write permissions
+#
+foreach file ($INPUT/$CASE.dat \
+              $ATOMS/$ATOM_MOD.atm \
+              $OPAC/statistical.dat \
+              $OPAC/composite.dat \
+              $OPAC/average.dat \
+              $STATS/run_archive.txt \
+)
+  if (! -f $file) then
+    echo "ERROR - $file file not found"
+    @ ERR++
+  endif
+end
+#
+# optional files, produce a warning
+#
+foreach filex ($INPUT/$ATMOS_MOD.mod.4 \
+               $INPUT/$CASE.res.8 \
+               $INPUT/$CASE.jnu.9 \
+)
+  set file = $filex:r
+  set LU = $filex:e
+  if (! -f $file) then
+    echo "Warning - $file file not found (LU=$LU)"
+    @ WARN++
+  endif
+end
+#
+foreach dir ($OUTPUT)
+  if (! -d $dir) then
+    echo "ERROR - $dir/ directory not found"
+    @ ERR++
+  endif
+end
+#
+# error?
+#
+if ($?ERR) then
+  echo "pandora script: $ERR error(s) $WARN warning(s)"
+  echo Exiting
+  exit 1
+endif
+#
+# assign LUNs
+#
+setFOR  3 $INPUT/$CASE.dat
+#
+setFOR  4 $INPUT/$ATMOS_MOD.mod        
+setFOR  8 $INPUT/$CASE.res        
+setFOR  9 $INPUT/$CASE.jnu        
+setFOR  7 $ATOMS/$ATOM_MOD.atm           
+#
+setFOR  1 $OUTPUT/$CASE.tmp.$RUN_ID        
+setFOR 15 $OUTPUT/$CASE.aaa.$RUN_ID        
+setFOR 16 $OUTPUT/$CASE.aer.$RUN_ID        
+setFOR 19 $OUTPUT/$CASE.rst.$RUN_ID        
+setFOR 20 $OUTPUT/$CASE.msc.$RUN_ID        
+setFOR 21 $OUTPUT/$CASE.pop.$RUN_ID        
+setFOR 22 $OUTPUT/$CASE.jnr.$RUN_ID        
+setFOR 23 $OUTPUT/$CASE.spc.$RUN_ID        
+setFOR 24 $OUTPUT/$CASE.coo.$RUN_ID        
+setFOR 26 $OUTPUT/$CASE.mat.$RUN_ID        
+setFOR 25 $OUTPUT/$CASE.csp.$RUN_ID        
+setFOR 27 $OUTPUT/$CASE.tsf.$RUN_ID        
+setFOR 29 $OUTPUT/$CASE.jrl.$RUN_ID        
+setFOR 30 $OUTPUT/$CASE.itr.$RUN_ID        
+setFOR 31 $OUTPUT/$CASE.aix.$RUN_ID        
+setFOR 32 $OUTPUT/$CASE.cks.$RUN_ID        
+setFOR 97 $OUTPUT/$CASE.smd.$RUN_ID        
+#
+setFOR 10 $OPAC/statistical.dat
+setFOR 11 $OPAC/composite.dat
+setFOR 12 $OPAC/average.dat
+setFOR 28 $STATS/run_archive.txt
+#
+uname -a > /tmp/uname.$$
+echo 'running on:'
+cat /tmp/uname.$$
+setFOR 98 /tmp/uname.$$
+#
+cat <<EOF > /tmp/ls.$$
+echo input files:
+ls -lt \$`FORxxx 3` \$`FORxxx 4` \$`FORxxx 8` \$`FORxxx 9` \$`FORxxx 7`
+echo opacity files:
+ls -lt \$`FORxxx 10` \$`FORxxx 11` \$`FORxxx 12`
+#
+EOF
+source /tmp/ls.$$
+rm     /tmp/ls.$$
+echo + `date` "$BIN/pandora.x started"
+$BIN/pandora.x
+set STATUS = $status
+echo + `date` "$BIN/pandora.x completed, exit status=$STATUS"
+#
+\rm /tmp/uname.$$
+\rm $OUTPUT/$CASE.tmp.$RUN_ID
+#
+echo output files:
+ls -lt $OUTPUT/$CASE.???.$RUN_ID
+#
+echo = `date` done.
+#
+exit
+#
+# ---------------------------------------------------------------------------
+#
+showUse:
+cat<<EOF
+
+  usage:
+    $0 [options] <atm-model-name> <atom-name> <atom-n-levels> <run-id>
+
+   where options are:
+    -inp   <input-dir>,       def.: $INPUT_D
+    -out   <output-dir>,      def.: $OUTPUT_D
+    -io    <dir>, equivalent to -inp <dir> -out <dir>
+    -stats <stats-dir>,       def.: $STATS_D
+    -atoms <atoms-dir>,       def.: $ATOMS_D
+    -opac  <opacities-dir>,   def.: $OPAC_D
+    -bin   <executable-dir>,  def.: $BIN_D
+
+examples:
+   pandora demo1 none '' 001
+   pandora SP h l15 023
+   pandora -io /pool/tests/sun_spots SP h l15 2345
+
+
+EOF
+exit 1
