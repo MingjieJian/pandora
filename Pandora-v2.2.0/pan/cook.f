@@ -39,7 +39,6 @@ C     REAL*8 General Data Block components index.
       equivalence (IZOQ( 25),JJALF)
       equivalence (IZOQ( 39),JJBAT)
       equivalence (IZOQ( 43),JJBTR)
-      equivalence (IZOQ( 26),JJXNU)
 C     !EJECT
 C---- ELIZA       as of 2006 Feb 14
       integer     MML,LI1LEN,MMP,LI2LEN,MMT,LI3LEN

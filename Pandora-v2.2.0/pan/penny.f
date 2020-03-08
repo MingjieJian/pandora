@@ -61,7 +61,6 @@ C     Line Intensity Data Block components indices.
       equivalence (MML(19),MMPE )
       equivalence (MML(20),MMFE )
       equivalence (MML(23),MMBS )
-      equivalence (MML(15),MMGTN)
       equivalence (MMP( 3),MMSCN)
       equivalence (MMP( 4),MMKCN)
       equivalence (MMP( 6),MMSLF)

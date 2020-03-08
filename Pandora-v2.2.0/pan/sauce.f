@@ -2,7 +2,7 @@
      $(X,IX,W,IW,XKPCR,WAVC,NLPAIR,COP,RHW,RHWO,XLAM,Y,DDL,CDL,DWN,CRD,
      $ CVW,CSK,CRS,STNE,KST,IST,ISB1,WMNO,WMXO,RKWO)
 C     Rudolf Loeser, 1980 May 21
-C     Revised RL/SGK Apr 10 2014 
+C     Revised RL/SGK Apr 10 2014
 C---- Post-read defaults for the second batch of input data:
 C     expand shorthand input notations, set defaults and switches,
 C     and make explicit other things implied by input as read.
@@ -414,7 +414,6 @@ C     1 = printout; 2 = calculation; 3 = miscellaneous; 4 = debug.
       equivalence (IQQ( 16),IQHSE)
       equivalence (IQQ(184),IQCPS)
       equivalence (IQQ(169),IQEXA)
-      equivalence (IQQ( 60),IQGDS)
       equivalence (IQQ(208),IQEBI)
       equivalence (IQQ(245),IQBDC)
       equivalence (IQQ(281),IQHEA)
